@@ -18,6 +18,49 @@ training/export/benchmark scripts, field deployment automation, and a local dash
 - `RUNTIME_TESTING.md` — Runtime export, validation, and benchmark order.
 - `requirements-runtime-pi.txt` — Raspberry Pi CPU runtime stack pins.
 
+## Clone, Build, and Run Locally
+
+The Android app needs the two model assets stored with Git LFS. Install Git
+LFS before cloning so a fresh checkout receives the model files rather than
+small pointer files:
+
+```bash
+git lfs install
+git clone https://github.com/saksham-loonker/agribot.git
+cd agribot
+git lfs pull
+```
+
+For Android builds, install JDK 17 and Android SDK platform 35/build-tools
+35.0.0, then set `ANDROID_HOME` to the SDK directory. Build and reinstall the
+debug APK on a connected device with:
+
+```bash
+python 45_build_android_apk.py --variant debug
+adb install -r dist/agribot-field-app-debug.apk
+```
+
+The first Android build needs internet access to download the Gradle
+distribution and Android/Maven build dependencies. After installation, the
+native app performs camera processing and inference locally and does not
+request Android's `INTERNET` permission. The detailed build, signing, and
+device-verification steps are in
+[`agribot_android_app/README_APK.md`](agribot_android_app/README_APK.md).
+
+The dashboard runs on Python's standard library and serves local files and
+local API routes. To run the Python regression suite, install its optional
+image-processing dependencies in a virtual environment:
+
+```bash
+python -m venv .venv
+python -m pip install -r requirements-test.txt
+python -m unittest discover -s tests -p "test_*.py"
+```
+
+Pi runtime dependencies and setup commands are documented separately in
+[`RUNTIME_TESTING.md`](RUNTIME_TESTING.md) and target Raspberry Pi 5/aarch64
+with Python 3.13.
+
 ## Android App Features
 
 The native Android app (`agribot_android_app/android/`) provides:
@@ -77,6 +120,7 @@ live field data.
 
 ## Local Artifacts
 
-Large generated assets are intentionally not tracked in git. Keep trained weights, exported models,
-datasets, archives, virtual environments, build outputs, and benchmark runs on local storage or
-publish them through GitHub Releases or Git LFS.
+The two TFLite files used by the native Android app are distributed through
+Git LFS so clean clones can build a working offline inference app. Training
+checkpoints, datasets, other exported models, archives, virtual environments,
+build outputs, and benchmark runs remain local artifacts.

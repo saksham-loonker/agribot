@@ -1,0 +1,2 @@
+agribot_android_app/android/app/src/main/assets/models/classifier_fastcrop_float32.tflite filter=lfs diff=lfs merge=lfs -text
+agribot_android_app/android/app/src/main/assets/models/detector_nano_256_raw_float32.tflite filter=lfs diff=lfs merge=lfs -text

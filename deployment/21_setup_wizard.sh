@@ -83,12 +83,15 @@ info "Step 2: Preparing model bundle..."
 
 cd "$REPO_ROOT"
 if [ -f "46_prepare_android_model_bundle.py" ]; then
-    python3 46_prepare_android_model_bundle.py --json 2>/dev/null || {
-        warn "Model bundle preparation had issues. Continuing..."
-    }
-    ok "Model bundle prepared"
+    if ! python3 46_prepare_android_model_bundle.py --json --app-assets-only; then
+        fail "The Android app model assets are missing or do not match their manifest."
+        info "Install Git LFS, run 'git lfs pull' from the repository, and rerun this setup wizard."
+        exit 1
+    fi
+    ok "Android app model assets verified"
 else
-    warn "Model bundle preparation script not found. Skipping."
+    fail "Model bundle preparation script not found. Cannot verify app inference assets."
+    exit 1
 fi
 
 # Step 3: Build Android APK

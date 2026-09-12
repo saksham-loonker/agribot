@@ -57,6 +57,20 @@ class NativeAndroidRuntimeSurfaceTest(unittest.TestCase):
         self.assertIn("*.jks", gitignore)
         self.assertIn("signing.properties", gitignore)
 
+    def test_android_runtime_models_are_configured_for_lfs_and_unignored(self):
+        model_paths = [
+            "agribot_android_app/android/app/src/main/assets/models/classifier_fastcrop_float32.tflite",
+            "agribot_android_app/android/app/src/main/assets/models/detector_nano_256_raw_float32.tflite",
+        ]
+        attributes = (ROOT / ".gitattributes").read_text(encoding="utf-8")
+        gitignore = (ROOT / ".gitignore").read_text(encoding="utf-8")
+
+        for model_path in model_paths:
+            self.assertIn(model_path, attributes)
+        self.assertIn("filter=lfs diff=lfs merge=lfs -text", attributes)
+        self.assertIn("!agribot_android_app/android/app/src/main/assets/models/", gitignore)
+        self.assertIn("!agribot_android_app/android/app/src/main/assets/models/*.tflite", gitignore)
+
 
 if __name__ == "__main__":
     unittest.main()

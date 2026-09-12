@@ -80,3 +80,7 @@ CodexExpenseTracker/
 
 # Optional third-party field imagery stays local unless separately licensed
 tests/field_stimulation/fixtures/*.jpg
+
+# The two runnable Android model assets are distributed via Git LFS.
+!agribot_android_app/android/app/src/main/assets/models/
+!agribot_android_app/android/app/src/main/assets/models/*.tflite

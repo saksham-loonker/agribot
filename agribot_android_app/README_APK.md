@@ -24,10 +24,13 @@ do not run `cap sync` for this replacement app.
 
 ## Model Assets
 
-Before building a field APK, verify the bundled model manifest and app assets:
+The runnable classifier and detector assets are stored in Git LFS. Install Git
+LFS and run `git lfs pull` if either file is missing or is only a small text
+pointer after cloning. Before building an APK, verify the app assets and their
+manifest hashes:
 
 ```powershell
-python 46_prepare_android_model_bundle.py --json
+python 46_prepare_android_model_bundle.py --app-assets-only --json
 ```
 
 Expected readiness for the current bundle:
@@ -38,8 +41,9 @@ Expected readiness for the current bundle:
   `4 Magnesium Deficiency`, `5 Nitrogen Deficiency`,
   `6 Pottassium Deficiency`, `7 Spotted Wilt Virus`
 
-Generated `.tflite` exports are intentionally ignored by git unless the repo
-moves to Git LFS or release assets.
+Those two runtime `.tflite` assets are tracked with Git LFS. Training
+checkpoints, datasets, and alternate/quantized exports remain ignored; they are
+needed only for retraining or rebuilding the wider model-export bundle.
 
 ## Build Debug APK
 
@@ -199,7 +203,7 @@ operator resumes or exports.
 
 Development APK readiness requires:
 
-- `python 46_prepare_android_model_bundle.py --json` reports `"ready": true`.
+- `python 46_prepare_android_model_bundle.py --app-assets-only --json` reports `"ready": true`.
 - Unit/lint/debug build verification passes.
 - `connectedDebugAndroidTest` passes on the emulator.
 - Debug APK metadata shows package `com.sakshyam.agribot`, minSdk `26`, target

@@ -66,6 +66,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--copy-to-app-assets", action="store_true", help="Copy selected runnable TFLite exports into Android assets")
     parser.add_argument("--write-manifest", action="store_true", help="Write app model_manifest.json with current hashes")
     parser.add_argument("--write-bundle-manifest", action="store_true", help="Write android_model_exports/bundle/manifest.json")
+    parser.add_argument(
+        "--app-assets-only",
+        action="store_true",
+        help="Check only the model and label assets needed to run the native Android app",
+    )
     parser.add_argument("--json", action="store_true", help="Print the readiness report as JSON only")
     return parser.parse_args()
 
@@ -368,16 +373,57 @@ def output_candidate_count(tensors: dict[str, Any]) -> int:
     return max(fields_first, fields_last)
 
 
-def build_report(action_failures: list[str]) -> dict[str, Any]:
-    source_models = {
+def app_manifest_failures(app_assets: dict[str, dict[str, Any]]) -> list[str]:
+    failures: list[str] = []
+    try:
+        labels = json.loads(APP_LABELS.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return [f"Cannot read app labels: {exc}"]
+    if labels != EXPECTED_LABELS:
+        failures.append("App labels do not match the expected classifier order")
+
+    if not APP_MANIFEST.exists():
+        return failures + [f"Missing app model manifest: {APP_MANIFEST.relative_to(ROOT)}"]
+    try:
+        manifest = json.loads(APP_MANIFEST.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return failures + [f"Cannot read app model manifest: {exc}"]
+    if not isinstance(manifest, dict):
+        return failures + ["App model manifest must contain a JSON object"]
+
+    labels_hash = app_assets["labels"].get("sha256")
+    if labels_hash and manifest.get("labels_sha256") != labels_hash:
+        failures.append("App labels SHA-256 does not match model_manifest.json")
+
+    expected_models = {
+        "classifier": ("models/classifier_fastcrop_float32.tflite", app_assets["classifier"].get("sha256")),
+        "detector": ("models/detector_nano_256_raw_float32.tflite", app_assets["detector"].get("sha256")),
+    }
+    manifest_models = manifest.get("models")
+    if not isinstance(manifest_models, dict):
+        return failures + ["App model manifest is missing the models object"]
+    for name, (expected_file, actual_hash) in expected_models.items():
+        model_entry = manifest_models.get(name)
+        if not isinstance(model_entry, dict):
+            failures.append(f"App model manifest is missing the {name} model entry")
+            continue
+        if model_entry.get("file") != expected_file:
+            failures.append(f"App {name} model path does not match the expected asset path")
+        if actual_hash and model_entry.get("sha256") != actual_hash:
+            failures.append(f"App {name} model SHA-256 does not match model_manifest.json")
+    return failures
+
+
+def build_report(action_failures: list[str], *, app_assets_only: bool = False) -> dict[str, Any]:
+    source_models = {} if app_assets_only else {
         "classifier": path_status(CLASSIFIER_SOURCE),
         "detector": path_status(DETECTOR_SOURCE),
     }
-    pt_labels = {
+    pt_labels = {} if app_assets_only else {
         "classifier": inspect_pt_labels(CLASSIFIER_SOURCE, "classify"),
         "detector": inspect_pt_labels(DETECTOR_SOURCE, "detect"),
     }
-    exports = {
+    exports = {} if app_assets_only else {
         "classifier": {name: path_status(path) for name, path in CLASSIFIER_EXPORTS.items()},
         "detector": {name: path_status(path) for name, path in DETECTOR_EXPORTS.items()},
     }
@@ -389,20 +435,23 @@ def build_report(action_failures: list[str]) -> dict[str, Any]:
     }
 
     blockers = list(action_failures)
-    for name, status in source_models.items():
-        if not status["exists"]:
-            blockers.append(f"Missing source {name}: {status['path']}")
-    for name, variants in exports.items():
-        int8 = variants["int8"]
-        if not int8["exists"]:
-            blockers.append(f"Missing Android int8 {name} export: {int8['path']}")
+    if not app_assets_only:
+        for name, status in source_models.items():
+            if not status["exists"]:
+                blockers.append(f"Missing source {name}: {status['path']}")
+        for name, variants in exports.items():
+            int8 = variants["int8"]
+            if not int8["exists"]:
+                blockers.append(f"Missing Android int8 {name} export: {int8['path']}")
     for name, status in app_assets.items():
         if not status["exists"]:
             blockers.append(f"Missing app asset {name}: {status['path']}")
-    if pt_labels["classifier"]["status"] != "ok":
+    blockers.extend(app_manifest_failures(app_assets))
+    if not app_assets_only and pt_labels["classifier"]["status"] != "ok":
         blockers.append(f"Classifier .pt label order not verified: {pt_labels['classifier']['status']}")
     detector_candidates = output_candidate_count(app_assets["detector"].get("tensors", {}))
-    if app_assets["detector"]["exists"] and detector_candidates < 2:
+    detector_tensors = app_assets["detector"].get("tensors", {})
+    if detector_tensors.get("status") == "ok" and detector_candidates < 2:
         blockers.append(f"Detector TFLite output candidate count is too small for Front Overview: {detector_candidates}")
     for name in ("classifier", "detector"):
         tensors = app_assets[name].get("tensors", {})
@@ -417,6 +466,7 @@ def build_report(action_failures: list[str]) -> dict[str, Any]:
         "pt_labels": pt_labels,
         "exports": exports,
         "app_assets": app_assets,
+        "app_assets_only": app_assets_only,
     }
 
 
@@ -430,7 +480,7 @@ def main() -> int:
     except Exception as exc:
         action_failures.append(str(exc))
 
-    report = build_report(action_failures)
+    report = build_report(action_failures, app_assets_only=args.app_assets_only)
     if args.json:
         print(json.dumps(report, indent=2))
     else:
