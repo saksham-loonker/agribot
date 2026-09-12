@@ -1,0 +1,95 @@
+{
+  "schema": "agribot.public_field_media_stimulation.v1",
+  "status": "pass",
+  "image": {
+    "path": "C:\\tmp\\agribot-field-media\\healthy_leaves.jpg",
+    "format": "JPEG",
+    "width": 960,
+    "height": 643,
+    "mode": "RGB",
+    "brightness_0_to_1": 0.384733,
+    "contrast_0_to_1": 0.190432,
+    "finite_sample_pixels": true,
+    "quality_stimulation": "accept"
+  },
+  "geometry": {
+    "model_input": [
+      256,
+      256
+    ],
+    "frame": [
+      960,
+      643
+    ],
+    "mapped_boundary_boxes": {
+      "full_frame": [
+        0.0,
+        0.0,
+        960.0,
+        643.0
+      ],
+      "top_left": [
+        0.0,
+        0.0,
+        192.0,
+        128.6
+      ],
+      "top_right": [
+        768.0,
+        0.0,
+        960.0,
+        128.6
+      ],
+      "bottom_left": [
+        0.0,
+        514.4,
+        192.0,
+        643.0
+      ],
+      "bottom_right": [
+        768.0,
+        514.4,
+        960.0,
+        643.0
+      ]
+    },
+    "roundtrip_checks": 3,
+    "failures": [],
+    "status": "pass"
+  },
+  "public_sources": [
+    {
+      "title": "Healthy tomato leaves",
+      "page": "https://commons.wikimedia.org/wiki/File:Healthy_tomato_leaves_(7871755330).jpg",
+      "media": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Healthy_tomato_leaves_%287871755330%29.jpg/960px-Healthy_tomato_leaves_%287871755330%29.jpg",
+      "license": "CC BY 2.0"
+    },
+    {
+      "title": "Tomatoes in the field",
+      "page": "https://commons.wikimedia.org/wiki/File:Tomatoes_in_the_field_(4648307711).jpg",
+      "media": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Tomatoes_in_the_field_%284648307711%29.jpg/960px-Tomatoes_in_the_field_%284648307711%29.jpg",
+      "license": "CC BY 2.0"
+    },
+    {
+      "title": "Lufa Farms tomato rows",
+      "page": "https://commons.wikimedia.org/wiki/File:Lufa_Farms_Tomato_Rows.jpg",
+      "media": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Lufa_Farms_Tomato_Rows.jpg/960px-Lufa_Farms_Tomato_Rows.jpg",
+      "license": "CC BY-SA 2.0"
+    },
+    {
+      "title": "Powdery mildew on tomato leaves",
+      "page": "https://commons.wikimedia.org/wiki/File:O%C3%AFdium_sur_Feuilles_de_Plants_de_Tomate.JPG",
+      "media": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/O%C3%AFdium_sur_Feuilles_de_Plants_de_Tomate.JPG/960px-O%C3%AFdium_sur_Feuilles_de_Plants_de_Tomate.JPG",
+      "license": "CC BY-SA/GFDL"
+    }
+  ],
+  "android_model_inference": {
+    "executed": false,
+    "reason": "This host has no Android TFLite runtime/device camera session; native Android parser, crop, tracker, gate, and frame-quality tests are the executable local gate."
+  },
+  "interpretation": [
+    "The decoded public image passed bounded image-quality and coordinate-geometry stimulation.",
+    "This does not establish disease classification accuracy or detector recall on unseen public media.",
+    "A physical ARM64 phone run with the embedded model and a reviewed field export is still required before agronomic use."
+  ]
+}

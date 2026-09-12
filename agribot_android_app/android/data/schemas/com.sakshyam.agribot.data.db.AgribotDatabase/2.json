@@ -1,0 +1,830 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "8e9a3194dcae001c37d36d4b1a6afd57",
+    "entities": [
+      {
+        "tableName": "field_layouts",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `activeRowId` TEXT NOT NULL, `startPlant` INTEGER NOT NULL, `plantStep` INTEGER NOT NULL, `plantCooldownSec` REAL NOT NULL, `createdAt` INTEGER NOT NULL, `updatedAt` INTEGER NOT NULL, `isActive` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "activeRowId",
+            "columnName": "activeRowId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startPlant",
+            "columnName": "startPlant",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plantStep",
+            "columnName": "plantStep",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plantCooldownSec",
+            "columnName": "plantCooldownSec",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "createdAt",
+            "columnName": "createdAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAt",
+            "columnName": "updatedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isActive",
+            "columnName": "isActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "field_rows",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `fieldLayoutId` TEXT NOT NULL, `rowId` TEXT NOT NULL, `rowIndex` INTEGER NOT NULL, `plantsPerRow` INTEGER NOT NULL, `plantSpacingM` REAL NOT NULL, `rowSpacingM` REAL NOT NULL, `yM` REAL NOT NULL, PRIMARY KEY(`id`), FOREIGN KEY(`fieldLayoutId`) REFERENCES `field_layouts`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fieldLayoutId",
+            "columnName": "fieldLayoutId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rowId",
+            "columnName": "rowId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rowIndex",
+            "columnName": "rowIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plantsPerRow",
+            "columnName": "plantsPerRow",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "plantSpacingM",
+            "columnName": "plantSpacingM",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rowSpacingM",
+            "columnName": "rowSpacingM",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "yM",
+            "columnName": "yM",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_field_rows_fieldLayoutId",
+            "unique": false,
+            "columnNames": [
+              "fieldLayoutId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_field_rows_fieldLayoutId` ON `${TABLE_NAME}` (`fieldLayoutId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "field_layouts",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "fieldLayoutId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "scan_runs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`runId` TEXT NOT NULL, `mode` TEXT NOT NULL, `fieldLayoutId` TEXT NOT NULL, `startedAt` INTEGER NOT NULL, `completedAt` INTEGER, `state` TEXT NOT NULL, `note` TEXT, `modelBundleId` TEXT NOT NULL, `cameraId` TEXT, `analysisWidth` INTEGER, `analysisHeight` INTEGER, `targetFps` INTEGER NOT NULL, `appVersion` TEXT NOT NULL, PRIMARY KEY(`runId`))",
+        "fields": [
+          {
+            "fieldPath": "runId",
+            "columnName": "runId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mode",
+            "columnName": "mode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fieldLayoutId",
+            "columnName": "fieldLayoutId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startedAt",
+            "columnName": "startedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "completedAt",
+            "columnName": "completedAt",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "state",
+            "columnName": "state",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "note",
+            "columnName": "note",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "modelBundleId",
+            "columnName": "modelBundleId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cameraId",
+            "columnName": "cameraId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "analysisWidth",
+            "columnName": "analysisWidth",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "analysisHeight",
+            "columnName": "analysisHeight",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "targetFps",
+            "columnName": "targetFps",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "appVersion",
+            "columnName": "appVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "runId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "decisions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `runId` TEXT NOT NULL, `sequence` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `epochTime` REAL NOT NULL, `mode` TEXT NOT NULL, `fieldId` TEXT NOT NULL, `rowId` TEXT, `rowSide` TEXT, `rowIndex` INTEGER, `plantColumn` INTEGER, `plantNumber` INTEGER, `plantKey` TEXT, `xM` REAL, `yM` REAL, `label` TEXT NOT NULL, `confidence` REAL NOT NULL, `rawLabel` TEXT NOT NULL, `status` TEXT NOT NULL, `action` TEXT NOT NULL, `framesUsed` INTEGER NOT NULL, `reason` TEXT NOT NULL, `lateFrames` INTEGER NOT NULL, `gateAvgLatencyMs` REAL NOT NULL, `gateMaxLatencyMs` REAL NOT NULL, `modelVersion` TEXT NOT NULL, `manualOverride` INTEGER NOT NULL, `notes` TEXT, `scanIndex` INTEGER NOT NULL, `scanPass` INTEGER, `fieldComplete` INTEGER, `plannedTotalPlants` INTEGER, `plantDisplay` TEXT, `plantId` INTEGER, `threads` INTEGER, `fpsTarget` REAL, `evidencePath` TEXT, `evidenceStatus` TEXT, `measurementDistanceM` REAL, `measurementSource` TEXT, `measurementQuality` TEXT, `relativePlantWidth` REAL, `relativePlantHeight` REAL, `sizeSource` TEXT, `sizeQuality` TEXT, `gpsAccuracyM` REAL, `gpsFixAgeSeconds` REAL, `top2Margin` REAL, `predictionEntropy` REAL, PRIMARY KEY(`id`), FOREIGN KEY(`runId`) REFERENCES `scan_runs`(`runId`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "runId",
+            "columnName": "runId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sequence",
+            "columnName": "sequence",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "epochTime",
+            "columnName": "epochTime",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mode",
+            "columnName": "mode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fieldId",
+            "columnName": "fieldId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rowId",
+            "columnName": "rowId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rowSide",
+            "columnName": "rowSide",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rowIndex",
+            "columnName": "rowIndex",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "plantColumn",
+            "columnName": "plantColumn",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "plantNumber",
+            "columnName": "plantNumber",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "plantKey",
+            "columnName": "plantKey",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "xM",
+            "columnName": "xM",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "yM",
+            "columnName": "yM",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "label",
+            "columnName": "label",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "confidence",
+            "columnName": "confidence",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rawLabel",
+            "columnName": "rawLabel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "action",
+            "columnName": "action",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "framesUsed",
+            "columnName": "framesUsed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "reason",
+            "columnName": "reason",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lateFrames",
+            "columnName": "lateFrames",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gateAvgLatencyMs",
+            "columnName": "gateAvgLatencyMs",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gateMaxLatencyMs",
+            "columnName": "gateMaxLatencyMs",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modelVersion",
+            "columnName": "modelVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "manualOverride",
+            "columnName": "manualOverride",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "notes",
+            "columnName": "notes",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "scanIndex",
+            "columnName": "scanIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scanPass",
+            "columnName": "scanPass",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fieldComplete",
+            "columnName": "fieldComplete",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "plannedTotalPlants",
+            "columnName": "plannedTotalPlants",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "plantDisplay",
+            "columnName": "plantDisplay",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "plantId",
+            "columnName": "plantId",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "threads",
+            "columnName": "threads",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fpsTarget",
+            "columnName": "fpsTarget",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "evidencePath",
+            "columnName": "evidencePath",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "evidenceStatus",
+            "columnName": "evidenceStatus",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "measurementDistanceM",
+            "columnName": "measurementDistanceM",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "measurementSource",
+            "columnName": "measurementSource",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "measurementQuality",
+            "columnName": "measurementQuality",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "relativePlantWidth",
+            "columnName": "relativePlantWidth",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "relativePlantHeight",
+            "columnName": "relativePlantHeight",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sizeSource",
+            "columnName": "sizeSource",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sizeQuality",
+            "columnName": "sizeQuality",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gpsAccuracyM",
+            "columnName": "gpsAccuracyM",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gpsFixAgeSeconds",
+            "columnName": "gpsFixAgeSeconds",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "top2Margin",
+            "columnName": "top2Margin",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "predictionEntropy",
+            "columnName": "predictionEntropy",
+            "affinity": "REAL",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_decisions_runId",
+            "unique": false,
+            "columnNames": [
+              "runId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_decisions_runId` ON `${TABLE_NAME}` (`runId`)"
+          },
+          {
+            "name": "index_decisions_runId_sequence",
+            "unique": true,
+            "columnNames": [
+              "runId",
+              "sequence"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_decisions_runId_sequence` ON `${TABLE_NAME}` (`runId`, `sequence`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "scan_runs",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "runId"
+            ],
+            "referencedColumns": [
+              "runId"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "front_geometry",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`decisionId` TEXT NOT NULL, `captureSegmentId` TEXT, `bboxLeft` REAL, `bboxTop` REAL, `bboxRight` REAL, `bboxBottom` REAL, `centerX` REAL, `centerY` REAL, `rowSide` TEXT, `rowAssignmentConfidence` REAL, `plantPositionConfidence` REAL, `geometryReason` TEXT, `cameraDistanceM` REAL, `cameraHeightM` REAL, `cameraTiltDegrees` REAL, PRIMARY KEY(`decisionId`), FOREIGN KEY(`decisionId`) REFERENCES `decisions`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "decisionId",
+            "columnName": "decisionId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "captureSegmentId",
+            "columnName": "captureSegmentId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bboxLeft",
+            "columnName": "bboxLeft",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bboxTop",
+            "columnName": "bboxTop",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bboxRight",
+            "columnName": "bboxRight",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bboxBottom",
+            "columnName": "bboxBottom",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "centerX",
+            "columnName": "centerX",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "centerY",
+            "columnName": "centerY",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rowSide",
+            "columnName": "rowSide",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rowAssignmentConfidence",
+            "columnName": "rowAssignmentConfidence",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "plantPositionConfidence",
+            "columnName": "plantPositionConfidence",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "geometryReason",
+            "columnName": "geometryReason",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cameraDistanceM",
+            "columnName": "cameraDistanceM",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cameraHeightM",
+            "columnName": "cameraHeightM",
+            "affinity": "REAL",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cameraTiltDegrees",
+            "columnName": "cameraTiltDegrees",
+            "affinity": "REAL",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "decisionId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_front_geometry_decisionId",
+            "unique": false,
+            "columnNames": [
+              "decisionId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_front_geometry_decisionId` ON `${TABLE_NAME}` (`decisionId`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "decisions",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "decisionId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "run_events",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `runId` TEXT NOT NULL, `timestamp` INTEGER NOT NULL, `type` TEXT NOT NULL, `payloadJson` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "runId",
+            "columnName": "runId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timestamp",
+            "columnName": "timestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payloadJson",
+            "columnName": "payloadJson",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "model_bundles",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`bundleId` TEXT NOT NULL, `installedAt` INTEGER NOT NULL, `classifierFile` TEXT NOT NULL, `detectorFile` TEXT, `labelsHash` TEXT, `manifestJson` TEXT NOT NULL, `signatureStatus` TEXT NOT NULL, `active` INTEGER NOT NULL, PRIMARY KEY(`bundleId`))",
+        "fields": [
+          {
+            "fieldPath": "bundleId",
+            "columnName": "bundleId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "installedAt",
+            "columnName": "installedAt",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "classifierFile",
+            "columnName": "classifierFile",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "detectorFile",
+            "columnName": "detectorFile",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "labelsHash",
+            "columnName": "labelsHash",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "manifestJson",
+            "columnName": "manifestJson",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "signatureStatus",
+            "columnName": "signatureStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "active",
+            "columnName": "active",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "bundleId"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8e9a3194dcae001c37d36d4b1a6afd57')"
+    ]
+  }
+}

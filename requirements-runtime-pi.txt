@@ -1,0 +1,12 @@
+# Raspberry Pi 5 / aarch64 / Python 3.13 CPU-only runtime stack.
+# Pin torch from the PyTorch CPU index so pip does not pull CUDA wheels.
+https://download.pytorch.org/whl/cpu/torch-2.11.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+https://download.pytorch.org/whl/cpu/torchvision-0.26.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+ultralytics==8.4.45
+opencv-python>=4.10.0
+openvino>=2024.0.0
+onnx>=1.12.0,<2.0.0
+onnxruntime>=1.17.0
+onnxslim>=0.1.71
+PyYAML>=6.0
+tqdm>=4.66.0

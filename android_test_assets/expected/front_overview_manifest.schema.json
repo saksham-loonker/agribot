@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sakshyam.local/agribot/front_overview_manifest.schema.json",
+  "title": "Agribot Front Overview Golden Manifest Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fixture_id",
+    "source_file",
+    "mode",
+    "reviewer",
+    "reviewed_at",
+    "camera_pose",
+    "expected",
+    "acceptance"
+  ],
+  "properties": {
+    "fixture_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_file": {
+      "type": "string",
+      "pattern": "^front_overview/.+"
+    },
+    "mode": {
+      "const": "FRONT_ROW_OVERVIEW"
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "camera_pose": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["distance_m", "height_m", "tilt_degrees"],
+      "properties": {
+        "distance_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "tilt_degrees": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        }
+      }
+    },
+    "expected": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "bbox_px",
+          "row_side",
+          "row_id",
+          "plant_number",
+          "label_group",
+          "geometry_status"
+        ],
+        "properties": {
+          "bbox_px": {
+            "type": "array",
+            "prefixItems": [
+              { "type": "integer", "minimum": 0 },
+              { "type": "integer", "minimum": 0 },
+              { "type": "integer", "minimum": 0 },
+              { "type": "integer", "minimum": 0 }
+            ],
+            "items": false,
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "row_side": {
+            "enum": ["left", "right", "unknown"]
+          },
+          "row_id": {
+            "type": ["string", "null"]
+          },
+          "plant_number": {
+            "type": ["integer", "null"],
+            "minimum": 1
+          },
+          "label_group": {
+            "enum": ["plant_candidate", "background", "uncertain"]
+          },
+          "geometry_status": {
+            "enum": ["clear", "ambiguous", "occluded", "low_light", "unknown"]
+          }
+        }
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["row_side_required", "plant_number_required", "allow_unknown"],
+      "properties": {
+        "row_side_required": {
+          "type": "boolean"
+        },
+        "plant_number_required": {
+          "type": "boolean"
+        },
+        "allow_unknown": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

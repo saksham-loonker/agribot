@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1d4d3b" />
+    <title>Agribot Field App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Agribot</p>
+        <h1 data-i18n="fieldConsole">Field Console</h1>
+      </div>
+      <div class="top-actions">
+        <label class="language-control">
+          <span data-i18n="language">Language</span>
+          <select id="languageSelect"></select>
+        </label>
+        <span id="connectionBadge" class="badge" data-i18n="connecting">Connecting</span>
+        <button id="refreshButton" type="button" data-i18n="refresh">Refresh</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel connection">
+        <label for="piUrl" data-i18n="piUrl">Pi URL</label>
+        <div class="url-row">
+          <input id="piUrl" type="url" inputmode="url" value="http://10.42.0.1:8080" />
+          <button id="saveUrl" type="button" data-i18n="save">Save</button>
+          <a id="dashboardLink" class="link-button" href="#" data-i18n="openWeb">Open Web</a>
+        </div>
+        <p id="connectionError" class="connection-error"></p>
+      </section>
+
+      <section class="overview" aria-label="Latest run overview">
+        <div class="metric primary">
+          <span class="metric-label" data-i18n="latestDecision">Latest Decision</span>
+          <strong id="latestLabel" data-i18n="noData">No data</strong>
+          <small id="latestMeta" data-i18n="waitingForInference">Waiting for inference</small>
+        </div>
+        <div class="metric">
+          <span class="metric-label" data-i18n="decisions">Decisions</span>
+          <strong id="decisionCount">0</strong>
+          <small id="runTime">--</small>
+        </div>
+        <div class="metric">
+          <span class="metric-label" data-i18n="sickPlants">Sick Plants</span>
+          <strong id="sickCount">0</strong>
+          <small id="uncertainCount"></small>
+        </div>
+        <div class="metric">
+          <span class="metric-label" data-i18n="confidence">Confidence</span>
+          <strong id="confidenceValue">--</strong>
+          <small id="coverageNote" data-i18n="latestSavedLocally">Latest saved locally</small>
+        </div>
+      </section>
+
+      <section class="panel field-panel" aria-label="Field setup">
+        <div class="panel-head">
+          <h2 data-i18n="fieldSetup">Field Setup</h2>
+          <span id="fieldName" class="pill">Field 1</span>
+        </div>
+        <div class="field-setup-top">
+          <label class="field-picker">
+            <span data-i18n="selectField">Select Field</span>
+            <select id="fieldSelector"></select>
+          </label>
+          <div class="field-actions">
+            <button id="editFieldButton" type="button" data-i18n="editField">Edit Field</button>
+            <button id="addRowButton" type="button" data-i18n="addRow">Add Row</button>
+            <button id="addFieldButton" type="button" data-i18n="addField">Add Field</button>
+          </div>
+        </div>
+
+        <div class="row-table-shell">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="row">Row</th>
+                <th data-i18n="plantsPerRow">Plants / Row</th>
+                <th data-i18n="plantSpacing">Plant Spacing (m)</th>
+                <th data-i18n="rowSpacing">Row Spacing (m)</th>
+                <th data-i18n="totalPlantsDetected">Total Plants Detected</th>
+                <th data-i18n="sickPlants">Sick Plants</th>
+                <th data-i18n="uncertainPlants">Uncertain Plants</th>
+              </tr>
+            </thead>
+            <tbody id="rowTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <div id="fieldModal" class="modal-backdrop" hidden>
+        <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="fieldModalTitle">
+          <div class="modal-head">
+            <h2 id="fieldModalTitle" data-i18n="addField">Add Field</h2>
+            <button id="closeFieldModal" class="icon-button" type="button" aria-label="Close">x</button>
+          </div>
+          <form id="fieldLayoutForm" class="modal-form">
+            <label>
+              <span data-i18n="fieldNameInput">Field Name</span>
+              <input id="layoutFieldId" name="field_id" type="text" value="Field 1" />
+            </label>
+            <label>
+              <span data-i18n="rows">Rows</span>
+              <input id="layoutRows" name="row_count" type="number" min="1" max="100" value="1" />
+            </label>
+            <label>
+              <span data-i18n="plantsPerRow">Plants / Row</span>
+              <input id="layoutPlants" name="plants_per_row" type="number" min="1" max="1000" value="100" />
+            </label>
+            <label>
+              <span data-i18n="rowSpacing">Row Spacing (m)</span>
+              <input id="layoutRowSpacing" name="row_spacing_m" type="number" min="0" max="1000" step="0.01" value="1.0" />
+            </label>
+            <label>
+              <span data-i18n="plantSpacing">Plant Spacing (m)</span>
+              <input id="layoutPlantSpacing" name="plant_spacing_m" type="number" min="0" max="1000" step="0.01" value="0.5" />
+            </label>
+            <div class="modal-actions">
+              <button id="cancelFieldModal" type="button" data-i18n="cancel">Cancel</button>
+              <button id="saveFieldLayout" type="submit" data-i18n="saveField">Save Field</button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <section id="fieldDetailScreen" class="panel field-detail" aria-label="Selected field detail">
+        <div class="panel-head">
+          <div>
+            <h2 id="fieldDetailTitle">Field 1</h2>
+            <p id="fieldDetailMeta" class="field-hint">No detections yet</p>
+          </div>
+          <span id="fieldDetailBadge" class="pill">Selected</span>
+        </div>
+        <div class="field-stats">
+          <div><span data-i18n="totalPlantsDetected">Total Plants Detected</span><strong id="fieldTotalDetected">0</strong></div>
+          <div><span data-i18n="sickPlants">Sick Plants</span><strong id="fieldSickDetected">0</strong></div>
+          <div><span data-i18n="uncertainPlants">Uncertain Plants</span><strong id="fieldUncertainDetected">0</strong></div>
+        </div>
+        <div class="field-detail-grid">
+          <div>
+            <h3 data-i18n="diseaseCountLocation">Disease Count & Most Probable Location</h3>
+            <div id="fieldDiseaseSummary" class="disease-summary"></div>
+          </div>
+          <div>
+            <h3 data-i18n="sickUncertainLocations">Sick / Uncertain Locations</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th data-i18n="sickPlants">Sick Plants</th>
+                    <th data-i18n="uncertainPlants">Uncertain Plants</th>
+                  </tr>
+                </thead>
+                <tbody id="fieldIssueRows"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <h3 data-i18n="fieldMap">Field Map</h3>
+        <div id="fieldDetailMap" class="field-map field-map-wide"></div>
+      </section>
+
+      <section class="panel farm-live" aria-label="Farm live map">
+        <div class="panel-head">
+          <div>
+            <h2 data-i18n="farmMap">Farm Map</h2>
+            <p id="liveLocation" class="field-hint" data-i18n="waitingLivePosition">Waiting for live position</p>
+          </div>
+          <span id="robotFieldBadge" class="pill" data-i18n="robot">Robot</span>
+        </div>
+        <div id="farmRobotMap" class="farm-map"></div>
+      </section>
+
+      <section class="split">
+        <div class="panel">
+          <div class="panel-head">
+            <h2 data-i18n="recentPlantCatalogue">Recent Plant Catalogue</h2>
+            <a id="downloadLink" class="link-button" href="#" download>CSV</a>
+          </div>
+          <div id="recentCatalogue" class="recent-catalogue"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th data-i18n="time">Time</th>
+                  <th data-i18n="plant">Plant</th>
+                  <th data-i18n="result">Result</th>
+                  <th data-i18n="confidence">Confidence</th>
+                  <th data-i18n="action">Action</th>
+                  <th data-i18n="status">Status</th>
+                </tr>
+              </thead>
+              <tbody id="decisionRows"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside class="panel">
+          <div class="panel-head">
+            <h2 data-i18n="runSummary">Run Summary</h2>
+            <span id="runStatus" class="pill">--</span>
+          </div>
+          <dl class="summary-list">
+            <div><dt data-i18n="runId">Run ID</dt><dd id="runId">--</dd></div>
+            <div><dt data-i18n="started">Started</dt><dd id="startedAt">--</dd></div>
+            <div><dt data-i18n="updated">Updated</dt><dd id="updatedAt">--</dd></div>
+            <div><dt data-i18n="camera">Camera</dt><dd id="cameraSource">--</dd></div>
+            <div><dt data-i18n="model">Model</dt><dd id="modelName">--</dd></div>
+          </dl>
+          <h3 data-i18n="detectedLabels">Detected Labels</h3>
+          <div id="labelBars" class="label-bars"></div>
+        </aside>
+      </section>
+    </main>
+
+    <template id="emptyRows">
+      <tr>
+        <td colspan="6" class="empty" data-i18n="noInference">No inference decisions yet.</td>
+      </tr>
+    </template>
+
+    <script src="i18n.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

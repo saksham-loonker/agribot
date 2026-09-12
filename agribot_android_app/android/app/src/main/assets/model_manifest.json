@@ -1,0 +1,41 @@
+{
+  "bundle_id": "agribot-model-bundle-v001",
+  "created_at": "2026-06-08T23:05:49Z",
+  "labels_sha256": "c9dd8ac5138e41dbb3cd9a7130542c70e463277318941d6a17acc5841c03992b",
+  "models": {
+    "classifier": {
+      "file": "models/classifier_fastcrop_float32.tflite",
+      "source": "models/classifier_deploy_fastcrop.pt",
+      "input_width": 224,
+      "input_height": 224,
+      "color_space": "RGB",
+      "normalization": "ultralytics_classify_default",
+      "labels_file": "labels/labels.json",
+      "sha256": "8478c47e795bbf2f1beffe2f21b20d04aa5410148560d7f1912bfa8fbf2158f8",
+      "confidence_threshold": 0.62,
+      "high_confidence_threshold": 0.90,
+      "confidence_temperature": 3.0
+    },
+    "detector": {
+      "file": "models/detector_nano_256_raw_float32.tflite",
+      "source": "models/detector_nano_256.pt",
+      "input_width": 256,
+      "input_height": 256,
+      "postprocess": "kotlin_yolo_xywh_conf_nms",
+      "sha256": "83e7521447c7de4730dfea79eb830d286a4ecf44aa3f5cc8c6080947969f6910",
+      "output_candidates": 1344,
+      "output_layout": "raw_yolo_features_first",
+      "class_count": 1,
+      "has_objectness": false,
+      "coordinate_space": "normalized",
+      "color_space": "RGB",
+      "normalization": "zero_to_one",
+      "labels_file": "labels/detector_labels.json"
+    }
+  },
+  "compatibility": {
+    "min_android_sdk": 26,
+    "cpu_default": true,
+    "requires_network": false
+  }
+}

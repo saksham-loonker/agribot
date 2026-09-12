@@ -1,0 +1,82 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments
+.env
+.env.*
+venv/
+.venv/
+env/
+venv_unsloth/
+
+# Node / web app dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Android / Gradle build outputs
+.gradle/
+**/build/
+.idea/
+.vscode/
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+
+# Local toolchains and generated deployments
+.toolchains/
+dist/
+field_archives/
+*.log
+
+# Training, benchmark, and exported runtime artifacts
+runs/
+runtime_exports/
+runtime_reports/
+android_model_exports/
+models/
+*.pt
+*.onnx
+*.tflite
+*.engine
+*.ncnn*
+*.cache
+
+# Datasets and archived working copies
+archive/
+archive (2)/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+clf_dataset/
+clf_dataset_deploy_fastcrop/
+combined_crop_detector_yolo/
+dataset/
+tomato_crop_disease/
+tomato_crop_disease_yolo/
+
+# Local runtime state
+agribot_inference_data/*
+!agribot_inference_data/README.md
+.farmer_config.json.tmp-*
+.pi/
+.tmp_*/
+
+# Local verification artifacts and generated inventories
+/screen1.png
+/all_source_files.txt
+.github/modernize/
+
+# Unrelated nested project present in this workspace
+CodexExpenseTracker/
+
+# Optional third-party field imagery stays local unless separately licensed
+tests/field_stimulation/fixtures/*.jpg

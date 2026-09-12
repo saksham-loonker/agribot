@@ -1,0 +1,12 @@
+{
+  "name": "agribot-field-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Native offline Android field app reference assets for Agribot",
+  "scripts": {
+    "build:debug": "cd android && ./gradlew :app:assembleDebug --no-daemon --max-workers=1",
+    "build:release": "cd android && ./gradlew :app:assembleRelease --no-daemon --max-workers=1",
+    "test:unit": "cd android && ./gradlew :domain:test :camera:testDebugUnitTest :ml:testDebugUnitTest :data:testDebugUnitTest :feature-scan:testDebugUnitTest :app:testDebugUnitTest --no-daemon --max-workers=1",
+    "lint:debug": "cd android && ./gradlew :app:lintDebug --no-daemon --max-workers=1"
+  }
+}
