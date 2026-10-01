@@ -93,7 +93,7 @@ class AgribotModelGoldenTest {
             val dets = LeafDetectionDecoder.decode(raw, d.candidates, lb, f.width, f.height, d.scoreThreshold, d.nmsIou, d.maxDetections)
             val expected = e["detections"]!!.jsonArray.map { b -> b.jsonArray.map { it.jsonPrimitive.float } }
             // Scores near the threshold can flip either way under float rounding; compare the confident ones.
-            val confident = expected.filter { it[4] >= d.scoreThreshold + 0.02f }
+            val confident = expected.filter { it[4] >= d.scoreThreshold + 0.02 }
             for (b in confident) {
                 val match = dets.any { x -> abs(x.box.left - b[0]) <= 2f && abs(x.box.top - b[1]) <= 2f && abs(x.box.right - b[2]) <= 2f && abs(x.box.bottom - b[3]) <= 2f }
                 assertTrue("$name: expected leaf box $b not found in ${dets.map { it.box }}", match)

@@ -34,6 +34,7 @@ import kotlinx.serialization.json.jsonPrimitive
 data class ResultsUiState(
     val loading: Boolean = true,
     val missing: Boolean = false,
+    val loadFailed: Boolean = false,
     val run: Run? = null,
     val layout: FieldLayout? = null,
     /** Latest decision per plant, field order. */
@@ -45,6 +46,7 @@ data class ResultsUiState(
     val deleted: Boolean = false,
     val error: String? = null,
 ) {
+    val notSeen: Int get() = plants.count { it.status == DecisionStatus.SKIPPED }
     val attention: List<RecordedDecision> get() = plants.filter { it.status == DecisionStatus.OK && it.action == PlantHealthAction.INSPECT_OR_TREAT }
 }
 
@@ -80,7 +82,7 @@ class ResultsViewModel @Inject constructor(
                         walkedM = walked,
                     )
                 }
-            }.onFailure { e -> _state.update { it.copy(loading = false, error = e.message) } }
+            }.onFailure { _state.update { it.copy(loading = false, loadFailed = true) } }
         }
     }
 

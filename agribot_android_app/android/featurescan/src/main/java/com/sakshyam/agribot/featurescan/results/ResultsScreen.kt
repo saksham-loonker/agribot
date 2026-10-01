@@ -92,7 +92,7 @@ fun ResultsScreen(onBack: () -> Unit, vm: ResultsViewModel = hiltViewModel()) {
         Box(Modifier.padding(pad).fillMaxSize()) {
             when {
                 s.loading -> CircularProgressIndicator(Modifier.align(Alignment.Center))
-                s.missing -> Text(stringResource(R.string.result_missing), Modifier.padding(24.dp))
+                s.missing || s.loadFailed || s.run == null -> Text(stringResource(if (s.loadFailed) R.string.result_load_failed else R.string.result_missing), Modifier.padding(24.dp))
                 else -> LazyColumn(Modifier.fillMaxSize().testTag("results"), contentPadding = androidx.compose.foundation.layout.PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     item { Text(formatTime(s.run!!.startedAt), style = MaterialTheme.typography.bodyMedium) }
                     if (s.run!!.mode == RecordingMode.CHECK_PLANT) {
@@ -136,11 +136,12 @@ fun ResultsScreen(onBack: () -> Unit, vm: ResultsViewModel = hiltViewModel()) {
 private fun SummaryRow(s: ResultsUiState) {
     val sum = s.summary ?: return
     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-        StatTile(sum.decisions.toString(), stringResource(R.string.summary_checked), Tone.NEUTRAL, Modifier.weight(1f))
+        StatTile((sum.decisions - s.notSeen).toString(), stringResource(R.string.summary_checked), Tone.NEUTRAL, Modifier.weight(1f))
         StatTile(sum.sick.toString(), stringResource(R.string.summary_need_attention), Tone.ATTENTION, Modifier.weight(1f))
         StatTile(sum.ok.toString(), stringResource(R.string.summary_healthy), Tone.HEALTHY, Modifier.weight(1f))
         StatTile(sum.uncertain.toString(), stringResource(R.string.summary_unsure), Tone.UNSURE, Modifier.weight(1f))
     }
+    if (s.notSeen > 0) Text(stringResource(R.string.summary_not_seen, s.notSeen), style = MaterialTheme.typography.bodyMedium)
 }
 
 private fun cellTone(c: RunFieldMapCell): Tone = when (c.status) {
@@ -214,7 +215,7 @@ private fun reportText(s: ResultsUiState): ReportText {
         generatedAt = s.run?.let { formatTime(it.startedAt) }.orEmpty(),
         fieldLine = s.layout?.name ?: stringResource(R.string.run_item_check),
         summaryLine = if (sum == null) "" else listOf(
-            stringResource(R.string.summary_checked) + ": " + sum.decisions,
+            stringResource(R.string.summary_checked) + ": " + (sum.decisions - s.notSeen),
             stringResource(R.string.summary_need_attention) + ": " + sum.sick,
             stringResource(R.string.summary_healthy) + ": " + sum.ok,
             stringResource(R.string.summary_unsure) + ": " + sum.uncertain,

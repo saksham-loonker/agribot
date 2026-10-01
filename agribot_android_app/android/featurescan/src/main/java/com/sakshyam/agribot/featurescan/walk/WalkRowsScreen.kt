@@ -2,6 +2,7 @@ package com.sakshyam.agribot.featurescan.walk
 
 import android.Manifest
 import android.os.Build
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
@@ -20,7 +21,9 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
@@ -69,24 +72,41 @@ internal fun parseInRange(text: String, min: Double, max: Double): Double? =
 @Composable
 fun WalkRowsScreen(onBack: () -> Unit, onFinished: (String) -> Unit, defaultStride: Double, vm: WalkRowsViewModel = hiltViewModel()) {
     val s by vm.state.collectAsStateWithLifecycle()
+    var confirmLeave by remember { mutableStateOf(false) }
     LaunchedEffect(s.finished, s.runId) { if (s.finished) s.runId?.let(onFinished) }
+    val walking = s.started && !s.finished
+    // Never lose a walk to an accidental back gesture: ask first, and finishing saves the current plant.
+    BackHandler(enabled = walking) { confirmLeave = true }
     Scaffold(
         topBar = {
             TopAppBar(
                 title = { Text(stringResource(if (s.started) R.string.mode_walk_title else R.string.walk_setup_title)) },
-                navigationIcon = { IconButton(onClick = { if (s.started && !s.finished) vm.finish() else onBack() }) { Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.back)) } },
+                navigationIcon = { IconButton(onClick = { if (walking) confirmLeave = true else onBack() }) { Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.back)) } },
             )
         },
     ) { pad ->
         Box(Modifier.padding(pad).fillMaxSize()) {
-            if (!s.started) WalkSetupForm(defaultStride, s.vision, vm.stepsSupported, onStart = vm::start)
+            if (!s.started) WalkSetupForm(defaultStride, s.vision, vm.stepsSupported, onStart = vm::start, onRetry = vm::retryModels)
             else CameraPermissionGate { WalkLive(s, vm) }
+            s.error?.let { e ->
+                Text(
+                    stringResource(if (e == WalkError.START_FAILED) R.string.walk_error_start else R.string.error_analysis),
+                    color = MaterialTheme.colorScheme.onError,
+                    modifier = Modifier.align(Alignment.BottomCenter).padding(12.dp).background(MaterialTheme.colorScheme.error, RoundedCornerShape(10.dp)).padding(10.dp),
+                )
+            }
         }
     }
+    if (confirmLeave) AlertDialog(
+        onDismissRequest = { confirmLeave = false },
+        text = { Text(stringResource(R.string.walk_leave_confirm)) },
+        confirmButton = { TextButton(onClick = { confirmLeave = false; vm.finish() }) { Text(stringResource(R.string.walk_finish)) } },
+        dismissButton = { TextButton(onClick = { confirmLeave = false }) { Text(stringResource(R.string.walk_keep_walking)) } },
+    )
 }
 
 @Composable
-private fun WalkSetupForm(defaultStride: Double, vision: VisionStatus, stepsSupported: Boolean, onStart: (WalkSetup) -> Unit) {
+private fun WalkSetupForm(defaultStride: Double, vision: VisionStatus, stepsSupported: Boolean, onStart: (WalkSetup) -> Unit, onRetry: () -> Unit) {
     val context = LocalContext.current
     val defaultName = stringResource(R.string.field_name_default)
     var name by rememberSaveable { mutableStateOf(defaultName) }
@@ -112,6 +132,7 @@ private fun WalkSetupForm(defaultStride: Double, vision: VisionStatus, stepsSupp
         NumberField(spacing, { spacing = it }, R.string.plant_spacing, sp != null, "0.1", "5", KeyboardType.Decimal)
         NumberField(stride, { stride = it }, R.string.stride, st != null, "0.2", "2", KeyboardType.Decimal)
         Text(stringResource(R.string.stride_help), style = MaterialTheme.typography.bodySmall)
+        if (sp != null && st != null && st > sp) Text(stringResource(R.string.stride_longer_than_spacing), color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodyMedium)
         if ((needsSteps || needsLocation) && !asked) {
             Text(stringResource(if (needsSteps) R.string.perm_steps_body else R.string.perm_location_body), style = MaterialTheme.typography.bodyMedium)
             OutlinedButton(onClick = {
@@ -122,11 +143,15 @@ private fun WalkSetupForm(defaultStride: Double, vision: VisionStatus, stepsSupp
                 perms.launch(list.toTypedArray())
             }, modifier = Modifier.fillMaxWidth()) { Text(stringResource(if (needsSteps) R.string.perm_steps_grant else R.string.perm_location_grant)) }
         }
+        if (vision is VisionStatus.Failed) {
+            Text(stringResource(R.string.model_failed, vision.reason), color = MaterialTheme.colorScheme.error)
+            OutlinedButton(onClick = onRetry, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.retry)) }
+        }
         Button(
             onClick = { onStart(WalkSetup(name.trim(), r!!.toInt(), p!!.toInt(), sp!!, st!!)) },
             enabled = valid && vision is VisionStatus.Ready,
             modifier = Modifier.fillMaxWidth().height(56.dp).testTag("start_walk"),
-        ) { Text(stringResource(if (vision is VisionStatus.Ready) R.string.start_walking else R.string.model_loading)) }
+        ) { Text(stringResource(if (vision is VisionStatus.Loading) R.string.model_loading else R.string.start_walking)) }
     }
 }
 

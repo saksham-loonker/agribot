@@ -1,6 +1,7 @@
 package com.sakshyam.agribot.featurescan.walk
 
 import android.content.Context
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sakshyam.agribot.domain.model.DecisionId
@@ -29,6 +30,7 @@ import com.sakshyam.agribot.domain.scan.VerdictRecords
 import com.sakshyam.agribot.domain.scan.VisionFrame
 import com.sakshyam.agribot.domain.scan.VisionModelInfo
 import com.sakshyam.agribot.domain.scan.VisionStatus
+import com.sakshyam.agribot.domain.scan.toVerdict
 import com.sakshyam.agribot.featurescan.scan.FrameTools
 import com.sakshyam.agribot.featurescan.scan.LocationFeed
 import com.sakshyam.agribot.featurescan.scan.StepCounter
@@ -73,12 +75,15 @@ data class WalkUiState(
     val rowResults: List<VerdictKind?> = emptyList(),
     val lastSaved: Pair<Int, PlantVerdict>? = null,
     val labels: List<String> = emptyList(),
-    val error: String? = null,
+    val error: WalkError? = null,
 )
+
+enum class WalkError { START_FAILED, ANALYSIS_FAILED }
 
 @HiltViewModel
 class WalkRowsViewModel @Inject constructor(
     @ApplicationContext context: Context,
+    private val saved: SavedStateHandle,
     private val vision: LeafVision,
     private val runs: RunRepository,
     private val layouts: FieldLayoutRepository,
@@ -94,6 +99,9 @@ class WalkRowsViewModel @Inject constructor(
     private val retention = com.sakshyam.agribot.domain.logic.EvidenceRetentionPolicy()
     private val lock = Mutex()
     private val busy = AtomicBoolean(false)
+    private val starting = AtomicBoolean(false)
+    /** Incremented on every plant change; frames analysed for an older plant are dropped. */
+    @Volatile private var plantEpoch = 0
 
     @Volatile private var info: VisionModelInfo? = null
     private var walk: RowWalkTracker? = null
@@ -113,6 +121,7 @@ class WalkRowsViewModel @Inject constructor(
 
     init {
         vision.warmUp()
+        restoreIfNeeded()
         viewModelScope.launch {
             vision.status.collect { s ->
                 if (s is VisionStatus.Ready) info = s.info
@@ -124,8 +133,11 @@ class WalkRowsViewModel @Inject constructor(
     val stepsSupported: Boolean get() = stepCounter.isAvailable
     val stepPermission: Boolean get() = stepCounter.hasPermission
 
+    fun retryModels() = vision.warmUp()
+    fun clearError() = _state.update { it.copy(error = null) }
+
     fun start(setup: WalkSetup) {
-        if (_state.value.started) return
+        if (_state.value.started || !starting.compareAndSet(false, true)) return
         viewModelScope.launch(Dispatchers.IO) {
             runCatching {
                 val i = info ?: vision.status.first { it is VisionStatus.Ready }.let { (it as VisionStatus.Ready).info.also { x -> info = x } }
@@ -139,10 +151,12 @@ class WalkRowsViewModel @Inject constructor(
                     runId = rid; fieldId = fid.value
                     walk = RowWalkTracker(setup.rows, setup.plantsPerRow, setup.plantSpacingM, setup.strideM)
                     evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex)
-                    publish { it.copy(started = true, runId = rid.value, rows = setup.rows, plantsPerRow = setup.plantsPerRow, stepsAvailable = stepCounter.isAvailable && stepCounter.hasPermission) }
+                    saved[K_SETUP] = arrayListOf(setup.fieldName, setup.rows.toString(), setup.plantsPerRow.toString(), setup.plantSpacingM.toString(), setup.strideM.toString())
+                    saved[K_RUN] = rid.value; saved[K_FIELD] = fid.value
+                    publish { it.copy(started = true, runId = rid.value, rows = setup.rows, plantsPerRow = setup.plantsPerRow, stepsAvailable = stepsUsable) }
                 }
                 startSensors()
-            }.onFailure { e -> _state.update { it.copy(error = e.message) } }
+            }.onFailure { e -> starting.set(false); _state.update { it.copy(error = WalkError.START_FAILED) } }
         }
     }
 
@@ -157,13 +171,18 @@ class WalkRowsViewModel @Inject constructor(
                         val w = walk ?: return@withLock
                         val before = w.plantNumber
                         w.onStep()
-                        if (w.plantNumber != before) finalizeAndMoveLocked(w.rowIndex, before)
+                        val after = w.plantNumber
+                        if (after != before) {
+                            finalizeAndMoveLocked(w.rowIndex, before)
+                            // A long stride can pass plants without a single frame: record them honestly as not seen.
+                            for (skipped in (before + 1) until after) finalizeAndMoveLocked(w.rowIndex, skipped)
+                        }
                     }
                 }
             },
             viewModelScope.launch(Dispatchers.Default) {
                 location.fixes().collect { fix ->
-                    val walking = !stepCounter.isAvailable || System.currentTimeMillis() - lastStepAt < 5_000
+                    val walking = !stepsUsable || System.currentTimeMillis() - lastStepAt < 5_000
                     lock.withLock { trail.offer(fix, walking) }
                 }
             },
@@ -174,6 +193,7 @@ class WalkRowsViewModel @Inject constructor(
 
     fun onFrame(frame: VisionFrame) {
         if (!busy.compareAndSet(false, true)) return
+        val epoch = plantEpoch
         viewModelScope.launch(Dispatchers.Default) {
             try {
                 val i = info ?: return@launch
@@ -182,7 +202,7 @@ class WalkRowsViewModel @Inject constructor(
                 lock.withLock {
                     val w = walk ?: return@withLock
                     val ev = evidence ?: return@withLock
-                    if (_state.value.paused || _state.value.finished) return@withLock
+                    if (_state.value.paused || _state.value.finished || epoch != plantEpoch) return@withLock
                     frameIndex++
                     val here = w.rowIndex to w.plantNumber
                     val obs = a.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, q.weight) }
@@ -195,18 +215,19 @@ class WalkRowsViewModel @Inject constructor(
                     }
                     if (used >= bestLeaves && used > 0) { bestFrame = frame; bestLeaves = used }
                     val v = ev.verdict()
-                    publish { it.copy(boxes = a.leaves.map { l -> LeafBox.of(l, a.frameWidth, a.frameHeight, i) }, currentLeaves = ev.leavesSeen, currentVerdict = v.takeIf { x -> x.kind != VerdictKind.NEED_MORE_VIEWS }) }
+                    publish { it.copy(error = null, boxes = a.leaves.map { l -> LeafBox.of(l, a.frameWidth, a.frameHeight, i) }, currentLeaves = ev.leavesSeen, currentVerdict = v.takeIf { x -> x.kind != VerdictKind.NEED_MORE_VIEWS }) }
                 }
             } catch (e: Exception) {
-                _state.update { it.copy(error = e.message) }
+                _state.update { it.copy(error = WalkError.ANALYSIS_FAILED) }
             } finally {
                 busy.set(false)
             }
         }
     }
 
-    fun nextPlant() = move { w -> val p = w.plantNumber; if (w.nextPlant()) finalizeAndMoveLocked(w.rowIndex, p) }
-    fun previousPlant() = move { w -> val p = w.plantNumber; if (w.previousPlant()) finalizeAndMoveLocked(w.rowIndex, p) }
+    // A manual move means "I am at this plant now": leaves in view belong to the new plant.
+    fun nextPlant() = move { w -> val p = w.plantNumber; if (w.nextPlant()) { finalizeAndMoveLocked(w.rowIndex, p); leafTracker.reset(); trackPlant.clear() } }
+    fun previousPlant() = move { w -> val p = w.plantNumber; if (w.previousPlant()) { finalizeAndMoveLocked(w.rowIndex, p); leafTracker.reset(); trackPlant.clear() } }
 
     fun nextRow() = move { w ->
         val r = w.rowIndex; val p = w.plantNumber
@@ -243,6 +264,7 @@ class WalkRowsViewModel @Inject constructor(
                     runs.appendEvent(RunEvent(UUID.randomUUID().toString(), id, Instant.now(), "gps_trail", payload.toString()))
                 }
                 runs.markRunCompleted(id)
+                saved.remove<String>(K_RUN)
                 publish { it.copy(finished = true, boxes = emptyList()) }
             }
         }
@@ -265,6 +287,7 @@ class WalkRowsViewModel @Inject constructor(
         val i = info ?: return
         evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex)
         bestFrame = null; bestLeaves = 0
+        plantEpoch++
         publish { it.copy(currentLeaves = 0, currentVerdict = null) }
     }
 
@@ -273,12 +296,13 @@ class WalkRowsViewModel @Inject constructor(
         val i = info ?: return
         val id = runId ?: return
         val key = row to plant
-        // Never overwrite a real verdict with "not seen" when the farmer only passed back over a plant.
-        if (ev.observations == 0 && results.containsKey(key)) return
         val v = ev.verdict()
+        // Passing back over a plant must not replace a real verdict with "not seen" / "too few views".
+        if (v.kind == VerdictKind.NEED_MORE_VIEWS && results.containsKey(key)) return
         val decisionId = DecisionId(UUID.randomUUID().toString())
         val fix = trail.points.lastOrNull()
         sequence++
+        saved[K_SEQ] = sequence
         var decision = VerdictRecords.toDecision(decisionId, id, sequence, RecordingMode.WALK_ROWS, PlantPlace(fieldId, row, plant), v, i.labels,
             i.bundleId, Instant.now(), null, fix?.latitude, fix?.longitude, fix?.accuracyM)
         // Photos only for plants that need attention or a second look, within the per-run storage cap.
@@ -299,6 +323,7 @@ class WalkRowsViewModel @Inject constructor(
 
     private fun publish(f: (WalkUiState) -> WalkUiState) {
         val w = walk
+        if (w != null) { saved[K_ROW] = w.rowIndex; saved[K_DIST] = w.distanceM; saved[K_STEPS] = w.steps }
         _state.update { s ->
             val base = f(s)
             if (w == null) base else base.copy(
@@ -312,7 +337,43 @@ class WalkRowsViewModel @Inject constructor(
         sensorJobs.forEach { it.cancel() }
     }
 
+    private val stepsUsable: Boolean get() = stepCounter.isAvailable && stepCounter.hasPermission
+
+    /** After process death, continue the same run at the saved row/plant instead of losing it. */
+    private fun restoreIfNeeded() {
+        val rid = saved.get<String>(K_RUN) ?: return
+        val setup = saved.get<ArrayList<String>>(K_SETUP) ?: return
+        starting.set(true)
+        viewModelScope.launch(Dispatchers.IO) {
+            runCatching {
+                val i = info ?: (vision.status.first { it is VisionStatus.Ready } as VisionStatus.Ready).info.also { info = it }
+                val decisions = runs.decisionsForRun(RunId(rid))
+                lock.withLock {
+                    runId = RunId(rid); fieldId = saved.get<String>(K_FIELD).orEmpty()
+                    walk = RowWalkTracker(setup[1].toInt(), setup[2].toInt(), setup[3].toDouble(), setup[4].toDouble()).also {
+                        it.restore(saved.get<Int>(K_ROW) ?: 1, saved.get<Double>(K_DIST) ?: 0.0, saved.get<Int>(K_STEPS) ?: 0)
+                    }
+                    sequence = maxOf(saved.get<Int>(K_SEQ) ?: 0, decisions.maxOfOrNull { it.sequence } ?: 0)
+                    decisions.groupBy { (it.rowIndex ?: 0) to (it.plantNumber ?: 0) }.forEach { (k, d) ->
+                        results[k] = d.maxBy { it.sequence }.toVerdict().first.kind
+                    }
+                    evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex)
+                    publish { it.copy(started = true, runId = rid, rows = setup[1].toInt(), plantsPerRow = setup[2].toInt(), stepsAvailable = stepsUsable) }
+                }
+                runs.markRunRecording(RunId(rid))
+                startSensors()
+            }.onFailure { starting.set(false); _state.update { it.copy(error = WalkError.START_FAILED) } }
+        }
+    }
+
     companion object {
         private const val MAX_LEAVES = 4
+        private const val K_RUN = "walk_run"
+        private const val K_FIELD = "walk_field"
+        private const val K_SETUP = "walk_setup"
+        private const val K_ROW = "walk_row"
+        private const val K_DIST = "walk_dist"
+        private const val K_STEPS = "walk_steps"
+        private const val K_SEQ = "walk_seq"
     }
 }

@@ -22,7 +22,7 @@
     <string name="see_all">See all</string>
     <string name="history_title">All results</string>
     <string name="model_loading">Preparing the disease models…</string>
-    <string name="model_failed">The disease models could not be loaded: %1$s</string>
+    <string name="model_failed">The disease models could not be loaded. Try again; if it keeps failing, reinstall the app. (Details: %1$s)</string>
     <string name="run_item_check">Plant check</string>
     <string name="run_item_walk">Field walk · %1$s</string>
     <string name="run_item_plants">%1$d plants · %2$d need attention</string>
@@ -32,7 +32,7 @@
     <string name="perm_camera_body">Agribot uses the camera to look at leaves. Photos stay on your phone.</string>
     <string name="perm_grant">Allow camera</string>
     <string name="perm_open_settings">Open phone settings</string>
-    <string name="perm_location_body">Optional: allow location to draw your walking path on the field map.</string>
+    <string name="perm_location_body">Optional: allow precise location to draw your walking path on the field map. Approximate location is not accurate enough for a field.</string>
     <string name="perm_location_grant">Allow location</string>
     <string name="perm_steps_body">Allow activity tracking so the app can count your steps and move to the next plant automatically.</string>
     <string name="perm_steps_grant">Allow step counting</string>
@@ -49,6 +49,7 @@
     <string name="torch_off">Light off</string>
     <string name="check_again">Check again</string>
     <string name="save_result">Save result</string>
+    <string name="save_failed">Could not save the result. Please try again.</string>
     <string name="saved">Saved</string>
     <string name="check_another">Check another plant</string>
 
@@ -94,6 +95,11 @@
     <string name="walk_not_seen">Not seen</string>
     <string name="walk_row_end">End of row %1$d. Turn to the next row and tap “Next row”.</string>
     <string name="walk_all_done">All rows done. Tap “Finish” to see the results.</string>
+    <string name="walk_leave_confirm">Finish this walk? The current plant is saved and you will see the results.</string>
+    <string name="walk_keep_walking">Keep walking</string>
+    <string name="walk_error_start">Could not start the walk. Please try again.</string>
+    <string name="error_analysis">Could not check this camera picture. Hold steady and try again.</string>
+    <string name="stride_longer_than_spacing">Your step is longer than the gap between plants, so one step can pass a plant. Walk with shorter steps, or use “Next plant”.</string>
     <string name="walk_current_plant">This plant</string>
 
     <!-- Results -->
@@ -118,6 +124,8 @@
     <string name="delete_confirm">Delete this result? This cannot be undone.</string>
     <string name="gps_trail">Walked about %1$d m</string>
     <string name="result_time">%1$s</string>
+    <string name="result_load_failed">This result could not be opened. Please try again.</string>
+    <string name="summary_not_seen">%1$d plants were passed without being seen. They are shown as “Not scanned” on the map.</string>
     <string name="result_missing">This result is no longer available.</string>
 
     <string name="report_col_row">Row</string>
@@ -141,7 +149,7 @@
     <string name="settings_model">Disease models</string>
     <string name="settings_model_info">%1$s · %2$d conditions</string>
     <string name="settings_about">About and safety</string>
-    <string name="about_body">Agribot recognises 8 tomato leaf conditions (early blight, late blight, leaf miner, magnesium, nitrogen and potassium deficiency, spotted wilt virus) and healthy leaves, and says when a problem is not one of these. It works fully offline; photos never leave your phone. Results are guidance only and can be wrong — always confirm with your local agriculture officer or Krishi Vigyan Kendra (KVK) before treating plants.</string>
+    <string name="about_body">Agribot recognises 7 tomato leaf conditions (early blight, late blight, leaf miner, magnesium, nitrogen and potassium deficiency, spotted wilt virus) and healthy leaves, and says when a problem is not one of these. It works fully offline; photos never leave your phone. Results are guidance only and can be wrong — always confirm with your local agriculture officer or Krishi Vigyan Kendra (KVK) before treating plants.</string>
 
     <!-- Onboarding -->
     <string name="onb_1_title">Check tomato leaves, offline</string>
@@ -200,7 +208,7 @@
     <string name="cond_spotted_wilt_do4">Ask your KVK about resistant varieties for the next season.</string>
 
     <string name="cond_healthy">Healthy</string>
-    <string name="cond_healthy_body">No signs of the 8 conditions on the leaves that were checked.</string>
+    <string name="cond_healthy_body">No signs of the 7 conditions on the leaves that were checked.</string>
     <string name="cond_healthy_do1">Keep checking every week, especially after rain.</string>
     <string name="cond_healthy_do2">Look at the lower leaves too — problems often start there.</string>
 

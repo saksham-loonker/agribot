@@ -58,7 +58,7 @@ class GoldenParityTest {
             val (t, lb) = CanonicalImageOps.detectorInput(f, manifest.detector.inputSize)
             val c = e["detector_input_checks"]!!.jsonObject
             val ref = c["letterbox"]!!.jsonArray
-            assertEquals(ref[0].jsonPrimitive.double, lb.scale.toDouble(), 1e-5)
+            assertEquals(ref[0].jsonPrimitive.double, lb.scale, 1e-9)
             assertEquals(ref[1].jsonPrimitive.int, lb.padX)
             assertEquals(ref[2].jsonPrimitive.int, lb.padY)
             assertEquals(c["mean"]!!.jsonPrimitive.double, t.average(), 1e-4)
@@ -85,7 +85,7 @@ class GoldenParityTest {
             val top = (e["top_crop"] as? JsonObject) ?: continue
             val b = top["box"]!!.jsonArray.map { it.jsonPrimitive.float }
             val f = frame(e["file"]!!.jsonPrimitive.content)
-            val r = CanonicalImageOps.cropRect(f.width, f.height, PixelBox(b[0], b[1], b[2], b[3]), 0.10f)
+            val r = CanonicalImageOps.cropRect(f.width, f.height, PixelBox(b[0], b[1], b[2], b[3]), 0.10)
             assertTrue(r[2] > r[0] && r[3] > r[1])
             assertTrue(abs(r[0] - (b[0] - 0.1f * (b[2] - b[0]))) <= 1.0f || r[0] == 0)
         }

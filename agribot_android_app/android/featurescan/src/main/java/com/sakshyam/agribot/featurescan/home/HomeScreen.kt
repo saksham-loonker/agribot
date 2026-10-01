@@ -43,6 +43,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.repeatOnLifecycle
+import com.sakshyam.agribot.domain.model.DecisionStatus
 import com.sakshyam.agribot.domain.model.RecordingMode
 import com.sakshyam.agribot.domain.scan.VisionStatus
 import com.sakshyam.agribot.domain.scan.toVerdict
@@ -128,7 +129,7 @@ fun RunRow(item: RunListItem, onClick: () -> Unit) {
                     Text(stringResource(R.string.run_item_check) + " · " + time, style = MaterialTheme.typography.bodyMedium)
                 } else {
                     Text(stringResource(R.string.run_item_walk, item.fieldName ?: ""), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-                    Text(stringResource(R.string.run_item_plants, item.summary.decisions, item.summary.sick) + " · " + time, style = MaterialTheme.typography.bodyMedium)
+                    Text(stringResource(R.string.run_item_plants, item.summary.decisions - (item.summary.statuses[DecisionStatus.SKIPPED] ?: 0), item.summary.sick) + " · " + time, style = MaterialTheme.typography.bodyMedium)
                 }
             }
         }

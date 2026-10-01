@@ -30,8 +30,8 @@ data class VisionManifest(
         val sha256: String,
         val inputSize: Int,
         val candidates: Int,
-        val scoreThreshold: Float,
-        val nmsIou: Float,
+        val scoreThreshold: Double,
+        val nmsIou: Double,
         val maxDetections: Int,
     )
 
@@ -69,8 +69,8 @@ data class VisionManifest(
                 energyRejectBelow = if (energyGate) (c["energy_reject_below"] as? JsonPrimitive)?.doubleOrNull else null,
                 detector = Detector(
                     file = d.str("file"), sha256 = d.str("sha256"), inputSize = dIn[1], candidates = dOut[2],
-                    scoreThreshold = d["score_threshold"]!!.jsonPrimitive.double.toFloat(),
-                    nmsIou = d["nms_iou"]!!.jsonPrimitive.double.toFloat(),
+                    scoreThreshold = d["score_threshold"]!!.jsonPrimitive.double,
+                    nmsIou = d["nms_iou"]!!.jsonPrimitive.double,
                     maxDetections = d.int("max_detections"),
                 ),
             )

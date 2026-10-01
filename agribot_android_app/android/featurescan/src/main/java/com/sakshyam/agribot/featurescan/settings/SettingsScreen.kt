@@ -99,7 +99,7 @@ fun SettingsScreen(onBack: () -> Unit, vm: SettingsViewModel = hiltViewModel()) 
             Text(stringResource(R.string.stride_help), style = MaterialTheme.typography.bodySmall)
             HorizontalDivider()
             Section(stringResource(R.string.settings_model))
-            (vision as? VisionStatus.Ready)?.info?.let { Text(stringResource(R.string.settings_model_info, it.bundleId, it.labels.size - 1)) }
+            (vision as? VisionStatus.Ready)?.info?.let { Text(stringResource(R.string.settings_model_info, it.bundleId, it.labels.size - 2)) } // conditions = labels minus Healthy and Other
             Section(stringResource(R.string.settings_about))
             Text(stringResource(R.string.about_body), style = MaterialTheme.typography.bodyMedium)
         }

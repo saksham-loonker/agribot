@@ -132,6 +132,21 @@ class RowWalkTrackerTest {
         r.jumpTo(5); assertFalse(r.nextPlant())
     }
 
+    @Test fun `a stride longer than the spacing can jump a plant (the app records it as not seen)`() {
+        val r = RowWalkTracker(1, 20, plantSpacingM = 0.6, strideM = 0.72)
+        val seen = mutableListOf(r.plantNumber)
+        repeat(6) { r.onStep(); seen += r.plantNumber }
+        assertEquals(listOf(1, 2, 3, 4, 5, 7, 8), seen)          // plant 6 is passed within one step
+    }
+
+    @Test fun `restore puts the tracker back where the walk was`() {
+        val r = RowWalkTracker(3, 10, 0.5, 0.5)
+        r.restore(row = 2, distance = 2.2, stepCount = 5)
+        assertEquals(2, r.rowIndex); assertEquals(5, r.plantNumber); assertEquals(5, r.steps)
+        r.restore(row = 9, distance = -1.0, stepCount = 0)
+        assertEquals(3, r.rowIndex); assertEquals(1, r.plantNumber)
+    }
+
     @Test fun `next row resets distance and stops after last row`() {
         val r = RowWalkTracker(2, 4, 0.5, 0.5)
         repeat(3) { r.onStep() }

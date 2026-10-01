@@ -128,6 +128,8 @@ data class DecisionEntity(
     val partialFinding: Boolean? = null,
     val runnerUpLabel: String? = null,
     val runnerUpConfidence: Float? = null,
+    val latitude: Double? = null,
+    val longitude: Double? = null,
 )
 
 @Entity(

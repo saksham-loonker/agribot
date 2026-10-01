@@ -1,12 +1,14 @@
 package com.sakshyam.agribot.camera
 
 import android.Manifest
+import android.util.Log
 import android.util.Size
 import androidx.camera.core.Camera
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
+import androidx.camera.core.UseCase
 import androidx.camera.core.UseCaseGroup
 import androidx.camera.core.resolutionselector.AspectRatioStrategy
 import androidx.camera.core.resolutionselector.ResolutionSelector
@@ -25,6 +27,7 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.sakshyam.agribot.domain.scan.VisionFrame
 import java.util.concurrent.Executors
+import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicReference
 
 val requiredCameraPermission: String = Manifest.permission.CAMERA
@@ -47,6 +50,11 @@ fun LeafCamera(
     val latestOnFrame = rememberUpdatedState(onFrame)
     val latestReady = rememberUpdatedState(isReady)
     val cameraRef = remember { AtomicReference<Camera?>(null) }
+    val useCases = remember { AtomicReference<List<UseCase>>(emptyList()) }
+    val disposed = remember { AtomicBoolean(false) }
+    val latestTorch = rememberUpdatedState(torchOn)
+    // Reused RGBA staging buffer: the analyzer runs on one thread, so one copy per frame is enough.
+    val staging = remember { AtomicReference(ByteArray(0)) }
 
     LaunchedEffect(torchOn) { cameraRef.get()?.cameraControl?.enableTorch(torchOn) }
 
@@ -60,6 +68,7 @@ fun LeafCamera(
                 // ViewPort needs the view to be laid out.
                 post {
                     providerFuture.addListener({
+                        if (disposed.get()) return@addListener   // screen closed before the camera was ready
                         val provider = providerFuture.get()
                         val selector = ResolutionSelector.Builder()
                             .setAspectRatioStrategy(AspectRatioStrategy.RATIO_4_3_FALLBACK_AUTO_STRATEGY)
@@ -73,15 +82,17 @@ fun LeafCamera(
                             .build()
                         analysis.setAnalyzer(executor) { proxy ->
                             proxy.use {
-                                if (latestReady.value()) latestOnFrame.value(it.toVisionFrame())
+                                if (latestReady.value()) latestOnFrame.value(it.toVisionFrame(staging))
                             }
                         }
                         val group = UseCaseGroup.Builder().addUseCase(preview).addUseCase(analysis)
-                        viewPort?.let { group.setViewPort(it) }
-                        provider.unbindAll()
+                        val vp = viewPort
+                        if (vp != null) group.setViewPort(vp) else Log.w("LeafCamera", "ViewPort unavailable; overlay may not match the preview exactly")
+                        provider.unbind(*useCases.get().toTypedArray())
                         val camera = provider.bindToLifecycle(lifecycleOwner, CameraSelector.DEFAULT_BACK_CAMERA, group.build())
+                        useCases.set(listOf(preview, analysis))
                         cameraRef.set(camera)
-                        camera.cameraControl.enableTorch(torchOn)
+                        camera.cameraControl.enableTorch(latestTorch.value)
                     }, ContextCompat.getMainExecutor(ctx))
                 }
             }
@@ -90,18 +101,24 @@ fun LeafCamera(
 
     DisposableEffect(Unit) {
         onDispose {
-            val providerFuture = ProcessCameraProvider.getInstance(context)
-            providerFuture.addListener({ runCatching { providerFuture.get().unbindAll() } }, ContextCompat.getMainExecutor(context))
+            disposed.set(true)
             cameraRef.set(null)
-            executor.shutdown()
+            val providerFuture = ProcessCameraProvider.getInstance(context)
+            providerFuture.addListener({
+                // Unbind only this screen's use cases, then stop the analyzer thread.
+                runCatching { providerFuture.get().unbind(*useCases.getAndSet(emptyList()).toTypedArray()) }
+                executor.shutdown()
+            }, ContextCompat.getMainExecutor(context))
         }
     }
 }
 
-private fun ImageProxy.toVisionFrame(): VisionFrame {
+private fun ImageProxy.toVisionFrame(staging: AtomicReference<ByteArray>): VisionFrame {
     val plane = planes[0]
     val buf = plane.buffer.duplicate().apply { rewind() }
-    val bytes = ByteArray(buf.remaining()).also { buf.get(it) }
+    val n = buf.remaining()
+    val bytes = staging.get().let { if (it.size >= n) it else ByteArray(n).also { b -> staging.set(b) } }
+    buf.get(bytes, 0, n)
     val crop = cropRect
     val up = RgbaFrameConverter.toUpright(bytes, plane.rowStride, crop.left, crop.top, crop.width(), crop.height(), imageInfo.rotationDegrees)
     return VisionFrame(up.width, up.height, up.argb, imageInfo.timestamp)

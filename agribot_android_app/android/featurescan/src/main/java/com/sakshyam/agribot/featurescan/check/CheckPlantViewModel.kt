@@ -54,8 +54,10 @@ data class CheckUiState(
     val labels: List<String> = emptyList(),
     val saving: Boolean = false,
     val savedRunId: String? = null,
-    val error: String? = null,
+    val error: CheckError? = null,
 )
+
+enum class CheckError { ANALYSIS_FAILED, SAVE_FAILED }
 
 @HiltViewModel
 class CheckPlantViewModel @Inject constructor(
@@ -102,7 +104,7 @@ class CheckPlantViewModel @Inject constructor(
             try {
                 process(frame, gen)
             } catch (e: Exception) {
-                _state.update { it.copy(error = e.message) }
+                _state.update { it.copy(error = CheckError.ANALYSIS_FAILED) }
             } finally {
                 busy.set(false)
             }
@@ -124,7 +126,7 @@ class CheckPlantViewModel @Inject constructor(
                     framesWithoutLeaves > NO_LEAF_FRAMES_BEFORE_HELP -> CheckHint.NO_LEAVES
                     else -> CheckHint.FIND_LEAVES
                 }
-                _state.update { it.copy(hint = hint, boxes = emptyList()) }
+                _state.update { it.copy(hint = hint, boxes = emptyList(), error = null) }
                 return
             }
             framesWithoutLeaves = 0
@@ -144,7 +146,7 @@ class CheckPlantViewModel @Inject constructor(
             val progress = (ev.framesUsed.toFloat() / MIN_FRAMES_FOR_PROGRESS).coerceAtMost(0.95f)
             _state.update {
                 it.copy(
-                    boxes = boxes, leavesSeen = ev.leavesSeen, framesUsed = ev.framesUsed,
+                    error = null, boxes = boxes, leavesSeen = ev.leavesSeen, framesUsed = ev.framesUsed,
                     hint = if (quality.tooDark) CheckHint.TOO_DARK else if (smallLeaves) CheckHint.MOVE_CLOSER else CheckHint.HOLD_STEADY,
                     progress = if (decided) 1f else progress,
                     verdict = if (decided) v else null, scanning = !decided,
@@ -184,11 +186,12 @@ class CheckPlantViewModel @Inject constructor(
                 runs.markRunCompleted(runId)
                 runId.value
             }.onSuccess { id -> _state.update { it.copy(saving = false, savedRunId = id) } }
-                .onFailure { e -> _state.update { it.copy(saving = false, error = e.message) } }
+                .onFailure { _state.update { it.copy(saving = false, error = CheckError.SAVE_FAILED) } }
         }
     }
 
     fun clearError() = _state.update { it.copy(error = null) }
+    fun retryModels() = vision.warmUp()
 
     companion object {
         const val QUICK_CHECK_FIELD = "quick-check"

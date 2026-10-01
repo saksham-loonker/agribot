@@ -63,6 +63,8 @@ abstract class AgribotDatabase : RoomDatabase() {
                 db.execSQL("ALTER TABLE decisions ADD COLUMN partialFinding INTEGER")
                 db.execSQL("ALTER TABLE decisions ADD COLUMN runnerUpLabel TEXT")
                 db.execSQL("ALTER TABLE decisions ADD COLUMN runnerUpConfidence REAL")
+                db.execSQL("ALTER TABLE decisions ADD COLUMN latitude REAL")
+                db.execSQL("ALTER TABLE decisions ADD COLUMN longitude REAL")
             }
         }
     }

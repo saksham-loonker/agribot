@@ -60,6 +60,13 @@ class RowWalkTracker(
         distanceM = (plant.coerceIn(1, plantsPerRow) - 0.5) * plantSpacingM
     }
 
+    /** Restores a saved position (process death). */
+    fun restore(row: Int, distance: Double, stepCount: Int) {
+        rowIndex = row.coerceIn(1, rowCount)
+        distanceM = distance.coerceAtLeast(0.0)
+        steps = stepCount
+    }
+
     /** Starts the next row; returns false if this was the last row. */
     fun nextRow(): Boolean {
         if (rowIndex >= rowCount) return false

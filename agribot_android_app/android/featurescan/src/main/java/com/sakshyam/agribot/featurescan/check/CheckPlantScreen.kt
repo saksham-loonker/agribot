@@ -67,10 +67,10 @@ fun CheckPlantScreen(onBack: () -> Unit, onOpenResult: (String) -> Unit, vm: Che
         Box(Modifier.padding(pad).fillMaxSize()) {
             val verdict = s.verdict
             when {
-                s.vision is VisionStatus.Failed -> Text(
-                    stringResource(R.string.model_failed, (s.vision as VisionStatus.Failed).reason),
-                    modifier = Modifier.padding(24.dp), color = MaterialTheme.colorScheme.error,
-                )
+                s.vision is VisionStatus.Failed -> Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                    Text(stringResource(R.string.model_failed, (s.vision as VisionStatus.Failed).reason), color = MaterialTheme.colorScheme.error)
+                    Button(onClick = vm::retryModels, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.retry)) }
+                }
                 verdict != null -> Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                     VerdictCard(verdict, s.labels, Modifier.testTag("verdict"))
                     if (s.savedRunId == null) {
@@ -92,7 +92,11 @@ fun CheckPlantScreen(onBack: () -> Unit, onOpenResult: (String) -> Unit, vm: Che
                 }
             }
             s.error?.let { e ->
-                Text(e, color = MaterialTheme.colorScheme.error, modifier = Modifier.align(Alignment.BottomCenter).padding(8.dp))
+                Text(
+                    stringResource(if (e == CheckError.SAVE_FAILED) R.string.save_failed else R.string.error_analysis),
+                    color = MaterialTheme.colorScheme.onError,
+                    modifier = Modifier.align(Alignment.TopCenter).padding(top = 64.dp).background(MaterialTheme.colorScheme.error, RoundedCornerShape(10.dp)).padding(10.dp),
+                )
             }
         }
     }

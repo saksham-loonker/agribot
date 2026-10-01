@@ -46,7 +46,7 @@ object VerdictRecords {
             rowId = place.rowIndex?.toString(), rowSide = null, rowIndex = place.rowIndex, plantColumn = place.plantNumber,
             plantNumber = place.plantNumber,
             plantKey = if (place.rowIndex != null && place.plantNumber != null) "${place.rowIndex}-${place.plantNumber}" else null,
-            xM = longitude, yM = latitude, bboxPx = null,
+            xM = null, yM = null, bboxPx = null,
             geometryConfidence = null, plantPositionConfidence = null, geometryReason = null,
             label = if (status == DecisionStatus.SKIPPED) "" else label,
             confidence = if (status == DecisionStatus.SKIPPED) 0f else verdict.confidence,
@@ -57,6 +57,7 @@ object VerdictRecords {
             evidencePath = evidencePath, gpsAccuracyM = gpsAccuracyM,
             leavesSeen = verdict.leavesSeen, leavesAgreeing = verdict.leavesAgreeing, partialFinding = verdict.partial,
             runnerUpLabel = verdict.runnerUpIndex?.let { labels.getOrNull(it) }, runnerUpConfidence = verdict.runnerUpConfidence,
+            latitude = latitude, longitude = longitude,
         )
     }
 }

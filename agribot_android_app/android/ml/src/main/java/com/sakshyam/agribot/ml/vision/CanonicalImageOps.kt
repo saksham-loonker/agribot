@@ -81,6 +81,7 @@ object CanonicalImageOps {
     val IMAGENET_MEAN = floatArrayOf(0.485f, 0.456f, 0.406f)
     val IMAGENET_STD = floatArrayOf(0.229f, 0.224f, 0.225f)
     const val LETTERBOX_PAD = 114f
+    private val scratch = ThreadLocal.withInitial { FloatArray(0) }
 
     /**
      * Resizes the [cropW]x[cropH] region at ([cropL],[cropT]) to [outW]x[outH].
@@ -91,8 +92,10 @@ object CanonicalImageOps {
         require(cropL + cropW <= frame.width && cropT + cropH <= frame.height) { "crop outside frame" }
         val wy = AxisWeights.create(cropH, outH)
         val wx = AxisWeights.create(cropW, outW)
-        // Vertical pass: (outH, cropW, 3)
-        val tmp = FloatArray(outH * cropW * 3)
+        // Vertical pass: (outH, cropW, 3) into a per-thread scratch buffer (avoids MBs of garbage per frame).
+        val need = outH * cropW * 3
+        val tmp = scratch.get()!!.let { if (it.size >= need) it else FloatArray(need).also { a -> scratch.set(a) } }
+        java.util.Arrays.fill(tmp, 0, need, 0f)
         val px = frame.pixels
         val stride = frame.width
         for (oy in 0 until outH) {
@@ -143,17 +146,19 @@ object CanonicalImageOps {
     }
 
     /** Integer crop rectangle (l, t, r, b) for [box] grown by [pad] of its size, clamped to the frame. */
-    fun cropRect(frameW: Int, frameH: Int, box: PixelBox, pad: Float): IntArray {
-        val x1 = min(box.left, box.right)
-        val x2 = max(box.left, box.right)
-        val y1 = min(box.top, box.bottom)
-        val y2 = max(box.top, box.bottom)
+    fun cropRect(frameW: Int, frameH: Int, box: PixelBox, pad: Double): IntArray {
+        // Double precision, like the Python reference (avoids 1-px shifts at integer boundaries).
+        val x1 = min(box.left, box.right).toDouble()
+        val x2 = max(box.left, box.right).toDouble()
+        val y1 = min(box.top, box.bottom).toDouble()
+        val y2 = max(box.top, box.bottom).toDouble()
+        val p = pad
         val bw = x2 - x1
         val bh = y2 - y1
-        val l = max(0, floor(x1 - pad * bw).toInt())
-        val t = max(0, floor(y1 - pad * bh).toInt())
-        val r = min(frameW, ceil(x2 + pad * bw).toInt())
-        val b = min(frameH, ceil(y2 + pad * bh).toInt())
+        val l = max(0, floor(x1 - p * bw).toInt())
+        val t = max(0, floor(y1 - p * bh).toInt())
+        val r = min(frameW, ceil(x2 + p * bw).toInt())
+        val b = min(frameH, ceil(y2 + p * bh).toInt())
         return intArrayOf(l, t, r, b)
     }
 
@@ -162,7 +167,7 @@ object CanonicalImageOps {
      * canonical resize to size x size -> /255 -> ImageNet mean/std.
      * Returns null when the crop is degenerate.
      */
-    fun classifierInput(frame: RgbFrame, size: Int, box: PixelBox? = null, pad: Float = 0.10f): FloatArray? {
+    fun classifierInput(frame: RgbFrame, size: Int, box: PixelBox? = null, pad: Double = 0.10): FloatArray? {
         var l = 0
         var t = 0
         var w = frame.width
@@ -184,8 +189,10 @@ object CanonicalImageOps {
     }
 
     /** Letterbox geometry: model px = frame px * scale + pad. */
-    data class Letterbox(val scale: Float, val padX: Int, val padY: Int, val inputSize: Int) {
-        fun toFrame(modelX: Float, modelY: Float): Pair<Float, Float> = ((modelX - padX) / scale) to ((modelY - padY) / scale)
+    data class Letterbox(val scale: Double, val padX: Int, val padY: Int, val inputSize: Int) {
+        fun toFrameX(modelX: Float): Double = (modelX - padX) / scale
+        fun toFrameY(modelY: Float): Double = (modelY - padY) / scale
+        fun toFrame(modelX: Float, modelY: Float): Pair<Float, Float> = toFrameX(modelX).toFloat() to toFrameY(modelY).toFloat()
     }
 
     /** Detector input, NHWC float32 in 0..1 with 114-grey centred letterbox. */
@@ -201,6 +208,6 @@ object CanonicalImageOps {
             System.arraycopy(resized, y * nw * 3, out, ((y + padY) * size + padX) * 3, nw * 3)
         }
         for (i in out.indices) out[i] = out[i] / 255f
-        return out to Letterbox(k.toFloat(), padX, padY, size)
+        return out to Letterbox(k, padX, padY, size)
     }
 }

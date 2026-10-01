@@ -229,6 +229,9 @@ data class RecordedDecision(
     val partialFinding: Boolean? = null,
     val runnerUpLabel: String? = null,
     val runnerUpConfidence: Float? = null,
+    /** WGS84 position of the farmer when the plant was recorded (Walk rows, if location allowed). */
+    val latitude: Double? = null,
+    val longitude: Double? = null,
 )
 
 data class RunConfig(

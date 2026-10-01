@@ -22,7 +22,7 @@
     <string name="see_all">सभी देखें</string>
     <string name="history_title">सभी परिणाम</string>
     <string name="model_loading">रोग पहचान मॉडल तैयार हो रहे हैं…</string>
-    <string name="model_failed">रोग पहचान मॉडल लोड नहीं हो सके: %1$s</string>
+    <string name="model_failed">रोग पहचान मॉडल लोड नहीं हो सके। फिर से कोशिश करें; बार-बार ऐसा हो तो ऐप दोबारा इंस्टॉल करें। (विवरण: %1$s)</string>
     <string name="run_item_check">पौधे की जाँच</string>
     <string name="run_item_walk">खेत की जाँच · %1$s</string>
     <string name="run_item_plants">%1$d पौधे · %2$d पर ध्यान दें</string>
@@ -32,7 +32,7 @@
     <string name="perm_camera_body">पत्तियाँ देखने के लिए Agribot कैमरा इस्तेमाल करता है। फ़ोटो आपके फ़ोन में ही रहती हैं।</string>
     <string name="perm_grant">कैमरा की अनुमति दें</string>
     <string name="perm_open_settings">फ़ोन सेटिंग्स खोलें</string>
-    <string name="perm_location_body">वैकल्पिक: खेत के नक्शे पर आपका रास्ता दिखाने के लिए लोकेशन की अनुमति दें।</string>
+    <string name="perm_location_body">वैकल्पिक: खेत के नक्शे पर आपका रास्ता दिखाने के लिए सटीक (precise) लोकेशन की अनुमति दें। अनुमानित लोकेशन खेत के लिए पर्याप्त सटीक नहीं है।</string>
     <string name="perm_location_grant">लोकेशन की अनुमति दें</string>
     <string name="perm_steps_body">कदम गिनने और अपने-आप अगले पौधे पर जाने के लिए गतिविधि (activity) की अनुमति दें।</string>
     <string name="perm_steps_grant">कदम गिनने की अनुमति दें</string>
@@ -49,6 +49,7 @@
     <string name="torch_off">लाइट बंद</string>
     <string name="check_again">फिर से जाँचें</string>
     <string name="save_result">परिणाम सहेजें</string>
+    <string name="save_failed">परिणाम सहेजा नहीं जा सका। कृपया फिर से कोशिश करें।</string>
     <string name="saved">सहेजा गया</string>
     <string name="check_another">दूसरा पौधा जाँचें</string>
 
@@ -94,6 +95,11 @@
     <string name="walk_not_seen">नहीं देखा गया</string>
     <string name="walk_row_end">कतार %1$d समाप्त। अगली कतार पर जाएँ और “अगली कतार” दबाएँ।</string>
     <string name="walk_all_done">सभी कतारें हो गईं। परिणाम देखने के लिए “समाप्त” दबाएँ।</string>
+    <string name="walk_leave_confirm">यह जाँच समाप्त करें? मौजूदा पौधा सहेजा जाएगा और आपको परिणाम दिखेंगे।</string>
+    <string name="walk_keep_walking">चलते रहें</string>
+    <string name="walk_error_start">जाँच शुरू नहीं हो सकी। कृपया फिर से कोशिश करें।</string>
+    <string name="error_analysis">कैमरे की यह तस्वीर जाँची नहीं जा सकी। फ़ोन स्थिर रखें और फिर कोशिश करें।</string>
+    <string name="stride_longer_than_spacing">आपका कदम पौधों के बीच की दूरी से लंबा है, इसलिए एक कदम में पौधा छूट सकता है। छोटे कदम चलें या “अगला पौधा” दबाएँ।</string>
     <string name="walk_current_plant">यह पौधा</string>
 
     <!-- परिणाम स्क्रीन -->
@@ -118,6 +124,8 @@
     <string name="delete_confirm">यह परिणाम हटाएँ? इसे वापस नहीं लाया जा सकता।</string>
     <string name="gps_trail">लगभग %1$d मीटर चले</string>
     <string name="result_time">%1$s</string>
+    <string name="result_load_failed">यह परिणाम खोला नहीं जा सका। कृपया फिर से कोशिश करें।</string>
+    <string name="summary_not_seen">%1$d पौधे बिना देखे निकल गए। नक्शे पर वे “नहीं जाँचा” दिखते हैं।</string>
     <string name="result_missing">यह परिणाम अब उपलब्ध नहीं है।</string>
 
     <string name="report_col_row">कतार</string>
@@ -141,7 +149,7 @@
     <string name="settings_model">रोग पहचान मॉडल</string>
     <string name="settings_model_info">%1$s · %2$d स्थितियाँ</string>
     <string name="settings_about">जानकारी और सुरक्षा</string>
-    <string name="about_body">Agribot टमाटर की पत्तियों की 8 स्थितियाँ पहचानता है (अगेती झुलसा, पछेती झुलसा, लीफ़ माइनर, मैग्नीशियम, नाइट्रोजन और पोटैशियम की कमी, स्पॉटेड विल्ट वायरस) और स्वस्थ पत्तियाँ, और बताता है जब समस्या इनमें से कोई नहीं होती। यह पूरी तरह बिना इंटरनेट काम करता है; फ़ोटो कभी फ़ोन से बाहर नहीं जातीं। परिणाम केवल मार्गदर्शन हैं और गलत हो सकते हैं — पौधों का उपचार करने से पहले हमेशा अपने कृषि अधिकारी या कृषि विज्ञान केंद्र (KVK) से पुष्टि करें।</string>
+    <string name="about_body">Agribot टमाटर की पत्तियों की 7 स्थितियाँ पहचानता है (अगेती झुलसा, पछेती झुलसा, लीफ़ माइनर, मैग्नीशियम, नाइट्रोजन और पोटैशियम की कमी, स्पॉटेड विल्ट वायरस) और स्वस्थ पत्तियाँ, और बताता है जब समस्या इनमें से कोई नहीं होती। यह पूरी तरह बिना इंटरनेट काम करता है; फ़ोटो कभी फ़ोन से बाहर नहीं जातीं। परिणाम केवल मार्गदर्शन हैं और गलत हो सकते हैं — पौधों का उपचार करने से पहले हमेशा अपने कृषि अधिकारी या कृषि विज्ञान केंद्र (KVK) से पुष्टि करें।</string>
 
     <!-- परिचय -->
     <string name="onb_1_title">बिना इंटरनेट टमाटर की पत्तियाँ जाँचें</string>
@@ -200,7 +208,7 @@
     <string name="cond_spotted_wilt_do4">अगले मौसम के लिए रोग-प्रतिरोधी किस्मों के बारे में KVK से पूछें।</string>
 
     <string name="cond_healthy">स्वस्थ</string>
-    <string name="cond_healthy_body">जाँची गई पत्तियों पर इन 8 स्थितियों का कोई लक्षण नहीं मिला।</string>
+    <string name="cond_healthy_body">जाँची गई पत्तियों पर इन 7 स्थितियों का कोई लक्षण नहीं मिला।</string>
     <string name="cond_healthy_do1">हर हफ़्ते जाँच करते रहें, ख़ासकर बारिश के बाद।</string>
     <string name="cond_healthy_do2">नीचे की पत्तियाँ भी देखें — समस्याएँ अक्सर वहीं से शुरू होती हैं।</string>
 

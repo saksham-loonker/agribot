@@ -35,7 +35,7 @@ class CanonicalImageOpsTest {
 
     @Test fun `letterbox geometry for a 4 by 3 frame`() {
         val (input, lb) = CanonicalImageOps.detectorInput(solid(640, 480, 0xFFFFFF), 320)
-        assertEquals(0.5f, lb.scale, 1e-6f)
+        assertEquals(0.5, lb.scale, 1e-12)
         assertEquals(0, lb.padX); assertEquals(40, lb.padY)
         assertEquals(114f / 255f, input[0], 1e-6f)                     // top pad row is grey
         assertEquals(1f, input[(100 * 320 + 160) * 3], 1e-5f)          // image area is white
@@ -52,9 +52,9 @@ class CanonicalImageOpsTest {
     }
 
     @Test fun `crop rect pads and clamps and degenerate crops are rejected`() {
-        assertArrayEquals(intArrayOf(9, 18, 31, 42), CanonicalImageOps.cropRect(100, 100, PixelBox(11f, 20f, 29f, 40f), 0.10f))
-        assertArrayEquals(intArrayOf(0, 0, 100, 100), CanonicalImageOps.cropRect(100, 100, PixelBox(-50f, -5f, 150f, 120f), 0.10f))
-        assertNull(CanonicalImageOps.classifierInput(solid(50, 50, 0), 32, PixelBox(10f, 10f, 10.5f, 30f), 0f))
+        assertArrayEquals(intArrayOf(9, 18, 31, 42), CanonicalImageOps.cropRect(100, 100, PixelBox(11f, 20f, 29f, 40f), 0.10))
+        assertArrayEquals(intArrayOf(0, 0, 100, 100), CanonicalImageOps.cropRect(100, 100, PixelBox(-50f, -5f, 150f, 120f), 0.10))
+        assertNull(CanonicalImageOps.classifierInput(solid(50, 50, 0), 32, PixelBox(10f, 10f, 10.5f, 30f), 0.0))
     }
 
     @Test fun `classifier input is normalised with imagenet statistics`() {
@@ -66,7 +66,7 @@ class CanonicalImageOpsTest {
 }
 
 class LeafDetectionDecoderTest {
-    private val lb = CanonicalImageOps.Letterbox(0.5f, 0, 40, 320)
+    private val lb = CanonicalImageOps.Letterbox(0.5, 0, 40, 320)
 
     private fun out(vararg boxes: FloatArray): FloatArray {
         val n = boxes.size
@@ -75,7 +75,7 @@ class LeafDetectionDecoderTest {
 
     @Test fun `maps letterboxed corners to frame pixels and filters by score`() {
         val o = out(floatArrayOf(10f, 50f, 110f, 150f, 0.9f), floatArrayOf(0f, 40f, 50f, 90f, 0.2f))
-        val d = LeafDetectionDecoder.decode(o, 2, lb, 640, 480, 0.35f, 0.6f, 16)
+        val d = LeafDetectionDecoder.decode(o, 2, lb, 640, 480, 0.35, 0.6, 16)
         assertEquals(1, d.size)
         assertEquals(PixelBox(20f, 20f, 220f, 220f), d[0].box)
     }
@@ -85,14 +85,14 @@ class LeafDetectionDecoderTest {
             floatArrayOf(10f, 50f, 110f, 150f, 0.8f), floatArrayOf(12f, 52f, 112f, 152f, 0.95f),
             floatArrayOf(200f, 60f, 400f, 300f, 0.7f), floatArrayOf(250f, 200f, 260f, 200.5f, 0.99f),
         )
-        val d = LeafDetectionDecoder.decode(o, 4, lb, 640, 480, 0.35f, 0.6f, 16)
+        val d = LeafDetectionDecoder.decode(o, 4, lb, 640, 480, 0.35, 0.6, 16)
         assertEquals(listOf(0.95f, 0.7f), d.map { it.score })                   // tiny box dropped, duplicate suppressed
         assertEquals(640f, d[1].box.right, 1e-4f)                                 // clamped to frame
-        assertEquals(1, LeafDetectionDecoder.decode(o, 4, lb, 640, 480, 0.35f, 0.6f, 1).size)
+        assertEquals(1, LeafDetectionDecoder.decode(o, 4, lb, 640, 480, 0.35, 0.6, 1).size)
     }
 
     @Test fun `rejects truncated output`() {
-        assertThrows(IllegalArgumentException::class.java) { LeafDetectionDecoder.decode(FloatArray(9), 2, lb, 10, 10, 0.3f, 0.5f, 4) }
+        assertThrows(IllegalArgumentException::class.java) { LeafDetectionDecoder.decode(FloatArray(9), 2, lb, 10, 10, 0.3, 0.5, 4) }
     }
 }
 
