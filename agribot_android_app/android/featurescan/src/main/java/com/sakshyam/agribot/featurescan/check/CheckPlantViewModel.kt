@@ -59,6 +59,7 @@ data class CheckUiState(
 
 @HiltViewModel
 class CheckPlantViewModel @Inject constructor(
+    @dagger.hilt.android.qualifiers.ApplicationContext context: android.content.Context,
     private val vision: LeafVision,
     private val runs: RunRepository,
     private val evidenceRepo: EvidenceRepository,
@@ -68,6 +69,7 @@ class CheckPlantViewModel @Inject constructor(
     val state: StateFlow<CheckUiState> = _state.asStateFlow()
 
     private val busy = AtomicBoolean(false)
+    private val pacer = com.sakshyam.agribot.featurescan.scan.FramePacer(context)
     private val generation = AtomicInteger(0)
     private val lock = Mutex()
     @Volatile private var info: VisionModelInfo? = null
@@ -91,7 +93,7 @@ class CheckPlantViewModel @Inject constructor(
     }
 
     /** Camera thread: only accept a frame when nothing is in flight and we are still scanning. */
-    fun isReady(): Boolean = _state.value.scanning && _state.value.vision is VisionStatus.Ready && !busy.get()
+    fun isReady(): Boolean = _state.value.scanning && _state.value.vision is VisionStatus.Ready && !busy.get() && pacer.tryAcquire()
 
     fun onFrame(frame: VisionFrame) {
         if (!busy.compareAndSet(false, true)) return

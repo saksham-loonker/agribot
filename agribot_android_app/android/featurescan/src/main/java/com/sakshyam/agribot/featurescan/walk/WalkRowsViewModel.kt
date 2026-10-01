@@ -90,6 +90,8 @@ class WalkRowsViewModel @Inject constructor(
 
     private val stepCounter = StepCounter(context)
     private val location = LocationFeed(context)
+    private val pacer = com.sakshyam.agribot.featurescan.scan.FramePacer(context)
+    private val retention = com.sakshyam.agribot.domain.logic.EvidenceRetentionPolicy()
     private val lock = Mutex()
     private val busy = AtomicBoolean(false)
 
@@ -168,7 +170,7 @@ class WalkRowsViewModel @Inject constructor(
         )
     }
 
-    fun isReady(): Boolean = _state.value.started && !_state.value.paused && !_state.value.finished && !busy.get()
+    fun isReady(): Boolean = _state.value.started && !_state.value.paused && !_state.value.finished && !busy.get() && pacer.tryAcquire()
 
     fun onFrame(frame: VisionFrame) {
         if (!busy.compareAndSet(false, true)) return
@@ -275,14 +277,22 @@ class WalkRowsViewModel @Inject constructor(
         if (ev.observations == 0 && results.containsKey(key)) return
         val v = ev.verdict()
         val decisionId = DecisionId(UUID.randomUUID().toString())
-        val keepPhoto = v.kind != VerdictKind.HEALTHY && v.leavesSeen > 0 && settings.observeSettings().first().saveEvidenceFrames
-        val photo = if (keepPhoto) bestFrame?.let { f -> runCatching { evidenceRepo.saveEvidence(id, decisionId, FrameTools.toAnalysisFrame(f), "walk").path }.getOrNull() } else null
         val fix = trail.points.lastOrNull()
         sequence++
-        runs.appendDecision(
-            VerdictRecords.toDecision(decisionId, id, sequence, RecordingMode.WALK_ROWS, PlantPlace(fieldId, row, plant), v, i.labels,
-                i.bundleId, Instant.now(), photo, fix?.latitude, fix?.longitude, fix?.accuracyM),
-        )
+        var decision = VerdictRecords.toDecision(decisionId, id, sequence, RecordingMode.WALK_ROWS, PlantPlace(fieldId, row, plant), v, i.labels,
+            i.bundleId, Instant.now(), null, fix?.latitude, fix?.longitude, fix?.accuracyM)
+        // Photos only for plants that need attention or a second look, within the per-run storage cap.
+        val frame = bestFrame
+        if (frame != null && v.leavesSeen > 0) {
+            val plan = retention.shouldCapture(decision, evidenceRepo.retentionSnapshot(id), settings.observeSettings().first().saveEvidenceFrames)
+            if (plan.capture) {
+                val saved = runCatching { evidenceRepo.saveEvidence(id, decisionId, FrameTools.toAnalysisFrame(frame), "walk") }.getOrNull()
+                decision = decision.copy(evidencePath = saved?.path, evidenceStatus = saved?.status)
+            } else {
+                decision = decision.copy(evidenceStatus = plan.status)
+            }
+        }
+        runs.appendDecision(decision)
         results[key] = v.kind
         _state.update { it.copy(lastSaved = plant to v) }
     }

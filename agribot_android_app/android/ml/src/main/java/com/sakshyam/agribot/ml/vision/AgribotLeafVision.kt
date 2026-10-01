@@ -33,8 +33,8 @@ import kotlinx.coroutines.withContext
 import org.tensorflow.lite.Interpreter
 
 /** One LiteRT interpreter with reusable direct input/output buffers. Not thread-safe. */
-internal class LiteRtRunner(model: MappedByteBuffer, threads: Int) : AutoCloseable {
-    private val interpreter = Interpreter(model, Interpreter.Options().setNumThreads(threads).setUseXNNPACK(true))
+internal class LiteRtRunner(model: MappedByteBuffer, threads: Int, useXnnpack: Boolean) : AutoCloseable {
+    private val interpreter = Interpreter(model, Interpreter.Options().setNumThreads(threads).setUseXNNPACK(useXnnpack))
     val inputShape: IntArray = interpreter.getInputTensor(0).shape()
     val outputShape: IntArray = interpreter.getOutputTensor(0).shape()
     private val input = ByteBuffer.allocateDirect(inputShape.fold(4) { a, b -> a * b }).order(ByteOrder.nativeOrder())
@@ -86,11 +86,12 @@ class AgribotLeafVision @Inject constructor(
             val m = VisionManifest.parse(context.assets.open(MANIFEST).bufferedReader().use { it.readText() })
             verifyOnce(m)
             val threads = Runtime.getRuntime().availableProcessors().coerceIn(2, 4)
-            val det = LiteRtRunner(map(m.detector.file), threads)
+            val xnn = !isEmulator()
+            val det = LiteRtRunner(map(m.detector.file), threads, xnn)
             check(det.inputShape.contentEquals(intArrayOf(1, m.detector.inputSize, m.detector.inputSize, 3))) { "detector input ${det.inputShape.toList()}" }
             check(det.outputSize == 5 * m.detector.candidates) { "detector output ${det.outputShape.toList()}" }
             val mem = m.members.map { mm ->
-                LiteRtRunner(map(mm.file), threads).also { r ->
+                LiteRtRunner(map(mm.file), threads, xnn).also { r ->
                     check(r.inputShape.contentEquals(intArrayOf(1, mm.inputSize, mm.inputSize, 3))) { "${mm.file} input ${r.inputShape.toList()}" }
                     check(r.outputSize == m.labels.size) { "${mm.file} output ${r.outputShape.toList()}" }
                 }
@@ -136,10 +137,23 @@ class AgribotLeafVision @Inject constructor(
     }
 
     /** Raw detector output for golden tests. */
-    internal suspend fun detectRaw(frame: VisionFrame): Pair<FloatArray, CanonicalImageOps.Letterbox> = withContext(dispatcher) {
+    @androidx.annotation.VisibleForTesting
+    suspend fun detectRaw(frame: VisionFrame): Pair<FloatArray, CanonicalImageOps.Letterbox> = withContext(dispatcher) {
         check(ensureLoaded())
         val (inp, lb) = CanonicalImageOps.detectorInput(RgbFrame(frame.width, frame.height, frame.argb), manifest!!.detector.inputSize)
         detector!!.run(inp) to lb
+    }
+
+    /**
+     * Android emulators on Apple silicon advertise SVE2 to the guest but cannot execute it, and XNNPACK's
+     * SVE kernels then die with SIGILL. Emulators are QA-only, so they use LiteRT's built-in kernels
+     * (same model and ops, slower); real phones keep XNNPACK.
+     */
+    private fun isEmulator(): Boolean {
+        val qemu = runCatching {
+            Class.forName("android.os.SystemProperties").getMethod("get", String::class.java).invoke(null, "ro.kernel.qemu") as String
+        }.getOrDefault("")
+        return qemu == "1" || android.os.Build.FINGERPRINT.contains("emulator") || android.os.Build.HARDWARE.contains("ranchu")
     }
 
     private fun map(file: String): MappedByteBuffer = context.assets.openFd(MODEL_DIR + file).use { fd ->

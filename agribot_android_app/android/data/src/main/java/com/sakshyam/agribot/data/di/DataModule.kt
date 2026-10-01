@@ -40,6 +40,12 @@ object DatabaseModule {
     @Provides
     @Named("io")
     fun provideIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
+
+    /** Installed versionName, recorded with every run for traceability. */
+    @Provides
+    @Named("appVersion")
+    fun provideAppVersion(@ApplicationContext context: Context): String =
+        runCatching { context.packageManager.getPackageInfo(context.packageName, 0).versionName }.getOrNull() ?: "unknown"
 }
 
 @Module

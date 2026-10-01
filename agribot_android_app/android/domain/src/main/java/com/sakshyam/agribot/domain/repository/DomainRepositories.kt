@@ -8,10 +8,6 @@ import com.sakshyam.agribot.domain.model.EvidenceCaptureResult
 import com.sakshyam.agribot.domain.model.EvidenceRetentionSnapshot
 import com.sakshyam.agribot.domain.model.FieldId
 import com.sakshyam.agribot.domain.model.FieldLayout
-import com.sakshyam.agribot.domain.model.FramePrediction
-import com.sakshyam.agribot.domain.model.FrontOverviewCandidate
-import com.sakshyam.agribot.domain.model.ModelBundleReadiness
-import com.sakshyam.agribot.domain.model.ModelManifest
 import com.sakshyam.agribot.domain.model.RecordedDecision
 import com.sakshyam.agribot.domain.model.ReportText
 import com.sakshyam.agribot.domain.model.Run
@@ -21,7 +17,6 @@ import com.sakshyam.agribot.domain.model.RunId
 import com.sakshyam.agribot.domain.model.RunSummary
 import com.sakshyam.agribot.domain.model.ScanSettings
 import com.sakshyam.agribot.domain.model.TreatmentStatus
-import com.sakshyam.agribot.domain.model.ValidationResult
 import kotlinx.coroutines.flow.Flow
 
 interface RunRepository {
@@ -53,21 +48,6 @@ interface FieldLayoutRepository {
     suspend fun setActiveLayout(fieldId: FieldId)
 }
 
-interface InferenceRepository {
-    suspend fun classifySideFrame(frame: AnalysisFrame): FramePrediction
-    suspend fun detectFrontFrame(
-        frame: AnalysisFrame,
-        maxClassifiedCandidates: Int = Int.MAX_VALUE,
-        focusX: Float? = null,
-        focusY: Float? = null,
-    ): List<FrontOverviewCandidate>
-    fun setConfidenceThreshold(threshold: Float) {}
-    /** Applied between inference calls so a running interpreter is never closed. */
-    fun setCpuThreads(threads: Int) {}
-    fun observeModelManifest(): Flow<ModelManifest?>
-    fun observeModelReadiness(): Flow<ModelBundleReadiness>
-}
-
 interface EvidenceRepository {
     suspend fun saveEvidence(runId: RunId, decisionId: DecisionId, frame: AnalysisFrame, kind: String): EvidenceCaptureResult
     suspend fun retentionSnapshot(runId: RunId): EvidenceRetentionSnapshot
@@ -84,11 +64,6 @@ interface ExportRepository {
 
     /** Remove all local export artifacts for a run before its database row is deleted. */
     suspend fun deleteRunArtifacts(runId: RunId) {}
-}
-
-interface ModelManifestRepository {
-    suspend fun loadManifest(): ModelManifest?
-    suspend fun validateManifest(manifest: ModelManifest): ValidationResult
 }
 
 interface ScanSettingsRepository {

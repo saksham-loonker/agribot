@@ -22,8 +22,6 @@ android {
 
     kotlinOptions {
         jvmTarget = '17'
-        // LiteRT 2.2 ships Kotlin 2.3 metadata; only its Java API (org.tensorflow.lite.Interpreter) is used here.
-        freeCompilerArgs += ['-Xskip-metadata-version-check']
     }
 }
 

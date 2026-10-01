@@ -11,11 +11,6 @@ import android.content.pm.PackageManager;
 import android.content.res.XmlResourceParser;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
-import com.sakshyam.agribot.domain.logic.FarmerConfigImporter;
-import com.sakshyam.agribot.domain.model.ImportedFarmerConfig;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -78,25 +73,4 @@ public class AgribotInstrumentedTest {
         }
     }
 
-    @Test
-    public void bundledFarmerConfigImportsFieldLayout() throws Exception {
-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        String rawConfig;
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(appContext.getAssets().open("farmer_config.json"), StandardCharsets.UTF_8))) {
-            StringBuilder builder = new StringBuilder();
-            String line;
-            while ((line = reader.readLine()) != null) {
-                builder.append(line).append('\n');
-            }
-            rawConfig = builder.toString();
-        }
-
-        ImportedFarmerConfig imported = FarmerConfigImporter.INSTANCE.importFromJson(rawConfig);
-
-        assertEquals("Field 2", imported.getActiveLayout().getName());
-        assertEquals(3, imported.getActiveLayout().getRows().size());
-        assertEquals(10.0, imported.getRecordingProfile().getFps(), 0.0);
-        assertEquals(4, imported.getRecordingProfile().getThreads());
-    }
 }

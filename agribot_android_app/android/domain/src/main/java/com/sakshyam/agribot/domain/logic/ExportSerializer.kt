@@ -248,7 +248,7 @@ object ExportSerializer {
                 put("measurement_quality", snapshot.measurementQuality)
                 put("gps_status", snapshot.gpsStatus)
                 putNullable("gps_provider", snapshot.gpsProvider)
-                put("gps_path_status", snapshot.gpsPathStatus.name)
+                put("gps_path_status", snapshot.gpsPathStatus)
                 put("gps_path_point_count", snapshot.gpsPathPointCount)
                 put("motion_events_observed", snapshot.motionEventsObserved)
                 put("capture_quality_status", snapshot.captureQualityStatus)

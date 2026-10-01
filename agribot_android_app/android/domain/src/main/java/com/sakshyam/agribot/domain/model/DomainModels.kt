@@ -84,14 +84,6 @@ enum class TreatmentStatus {
     NOT_APPLICABLE,
 }
 
-data class TreatmentRecommendation(
-    val diseaseLabel: String,
-    val treatment: String,
-    val chemical: String? = null,
-    val organic: String? = null,
-    val notes: String? = null,
-)
-
 enum class RowSide {
     LEFT,
     RIGHT,
@@ -116,24 +108,6 @@ data class FieldRow(
     val plantSpacingM: Double,
     val rowSpacingM: Double,
     val yM: Double,
-)
-
-data class ImportedFarmerConfig(
-    val activeLayout: FieldLayout,
-    val layouts: List<FieldLayout>,
-    val recordingProfile: RecordingProfile,
-)
-
-data class RecordingProfile(
-    val fps: Double,
-    val threads: Int,
-    val classifierSourceNote: String?,
-    val cropMode: CropMode = CropMode.MASK,
-    val confidenceThreshold: Float = ScanConstants.DEFAULT_CONFIDENCE_THRESHOLD,
-    val highConfidenceThreshold: Float = ScanConstants.DEFAULT_HIGH_CONFIDENCE_THRESHOLD,
-    val cropScale: Float = 0.55f,
-    val cropPad: Float = 0.05f,
-    val maxEdge: Int = 256,
 )
 
 data class ScanSettings(
@@ -162,22 +136,6 @@ enum class CropMode {
     NONE,
 }
 
-data class FramePrediction(
-    val label: String,
-    val confidence: Float,
-    val rawLabel: String,
-    val isDisease: Boolean,
-    val isUncertain: Boolean,
-    val latencyMs: Double,
-    val modelVersion: String,
-    /** Difference between the top two class probabilities, when the model exposes them. */
-    val top2Margin: Float? = null,
-    /** Normalized entropy of the class distribution, when available. */
-    val entropy: Float? = null,
-    /** Probability mass on the "Healthy" class, when the model exposes it. */
-    val healthyConfidence: Float? = null,
-)
-
 data class AnalysisFrame(
     val width: Int,
     val height: Int,
@@ -193,30 +151,6 @@ data class AnalysisFrame(
     }
 }
 
-data class PlantDecision(
-    val label: String,
-    val confidence: Float,
-    val status: DecisionStatus,
-    val framesUsed: Int,
-    val reason: String,
-)
-
-data class SideScanPosition(
-    val fieldId: String,
-    val rowId: String,
-    val rowIndex: Int,
-    val plantColumn: Int,
-    val plantNumber: Int,
-    val plantKey: String,
-    val xM: Double,
-    val yM: Double,
-    val scanIndex: Int,
-    val scanPass: Int,
-    val fieldComplete: Boolean,
-    val plannedTotalPlants: Int,
-    val plantDisplay: String,
-)
-
 data class BoundingBox(
     val left: Float,
     val top: Float,
@@ -228,80 +162,6 @@ data class BoundingBox(
     val width: Float get() = right - left
     val height: Float get() = bottom - top
 }
-
-data class FrontCaptureCalibration(
-    val cameraHeightM: Double,
-    val cameraDistanceToNearestRowM: Double,
-    val cameraTiltDegrees: Double,
-    val rowSpacingM: Double,
-    val plantSpacingM: Double,
-    val leftRowId: String,
-    val rightRowId: String,
-    val nearestLeftPlantNumber: Int,
-    val nearestRightPlantNumber: Int,
-    val guideRailLeftPx: Float,
-    val guideRailRightPx: Float,
-    val frameWidthPx: Int,
-    val frameHeightPx: Int,
-    val calibrationQuality: Float,
-)
-
-data class FrontCorridorRows(
-    val left: FieldRow,
-    val right: FieldRow,
-)
-
-data class FrontCorridorSetup(
-    val leftRowId: String,
-    val rightRowId: String,
-    val nearestLeftPlantNumber: Int,
-    val nearestRightPlantNumber: Int,
-)
-
-data class FrontGeometryAssignment(
-    val bboxPx: BoundingBox,
-    val rowSide: RowSide,
-    val rowId: String?,
-    val plantColumnEstimate: Int?,
-    val plantNumber: Int?,
-    val rowAssignmentConfidence: Float,
-    val plantPositionConfidence: Float,
-    val geometryReason: String,
-)
-
-data class FrontOverviewCandidate(
-    val bboxPx: BoundingBox,
-    val detectorConfidence: Float,
-    val label: String,
-    val confidence: Float,
-    val rawLabel: String = label,
-    val top2Margin: Float? = null,
-    val entropy: Float? = null,
-)
-
-data class FrontOverviewDecisionDraft(
-    val bboxPx: BoundingBox,
-    val rowSide: RowSide,
-    val rowId: String?,
-    val plantColumnEstimate: Int?,
-    val plantNumber: Int?,
-    val label: String,
-    val rawLabel: String,
-    val confidence: Float,
-    val status: DecisionStatus,
-    val action: PlantHealthAction,
-    val rowAssignmentConfidence: Float,
-    val plantPositionConfidence: Float,
-    val geometryReason: String,
-    val reason: String,
-)
-
-data class FrontBurstReview(
-    val capturedFrameCount: Int,
-    val decisions: List<FrontOverviewDecisionDraft>,
-    val reviewRequired: Boolean,
-    val reason: String,
-)
 
 data class RecordedDecision(
     val id: DecisionId,
@@ -405,17 +265,6 @@ data class RunSummary(
     val latestDecision: RecordedDecision?,
 )
 
-data class RunHistoryItem(
-    val runId: RunId,
-    val startedAt: Instant,
-    val fieldName: String,
-    val modeLabel: String,
-    val stateLabel: String,
-    val sickCount: Int,
-    val uncertainRateLabel: String,
-    val decisionCountLabel: String,
-)
-
 data class DiagnosticsSnapshot(
     val appVersion: String,
     val modelBundleId: String,
@@ -434,7 +283,7 @@ data class DiagnosticsSnapshot(
     val measurementQuality: String = "not_started",
     val gpsStatus: String = "not_started",
     val gpsProvider: String? = null,
-    val gpsPathStatus: GpsPathStatus = GpsPathStatus.UNAVAILABLE,
+    val gpsPathStatus: String = "unavailable",
     val gpsPathPointCount: Int = 0,
     val motionEventsObserved: Boolean = false,
     val captureQualityStatus: String = "waiting",
@@ -442,25 +291,6 @@ data class DiagnosticsSnapshot(
     val latestDecisionReason: String? = null,
     val stepLengthM: Float = 0.72f,
     val stepCalibrationStatus: String = "default",
-)
-
-enum class DecisionFilter {
-    ALL,
-    SICK,
-    UNCERTAIN,
-    MANUAL,
-    SKIPPED,
-}
-
-data class RunDecisionRow(
-    val decisionId: DecisionId,
-    val sequence: Int,
-    val plantLabel: String,
-    val label: String,
-    val confidenceLabel: String,
-    val statusLabel: String,
-    val actionLabel: String,
-    val reason: String,
 )
 
 data class RunFieldMap(
@@ -522,69 +352,3 @@ data class ExportedFile(
     val absolutePath: String,
 )
 
-data class ModelManifest(
-    val bundleId: String,
-    val createdAt: String,
-    val classifier: ModelEntry,
-    val detector: ModelEntry?,
-    val labelsSha256: String?,
-    val minAndroidSdk: Int,
-    val cpuDefault: Boolean,
-    val requiresNetwork: Boolean,
-)
-
-data class ModelEntry(
-    val file: String,
-    val source: String,
-    val inputWidth: Int,
-    val inputHeight: Int,
-    val labelsFile: String?,
-    val sha256: String?,
-    val confidenceThreshold: Float?,
-    val highConfidenceThreshold: Float?,
-    /** Temperature used to temper the classifier's overconfident output. */
-    val confidenceTemperature: Float = ScanConstants.DEFAULT_CONFIDENCE_TEMPERATURE,
-    val outputCandidates: Int? = null,
-    /** Explicit TFLite output contract; never infer this from dimension order at runtime. */
-    val outputLayout: String? = null,
-    /** Number of detector classes for raw YOLO outputs (4 + classes [+ objectness]). */
-    val classCount: Int? = null,
-    /** Whether raw detector rows contain an objectness field at index 4. */
-    val hasObjectness: Boolean = false,
-    /** Detector coordinate representation, for example model_input_pixels or normalized. */
-    val coordinateSpace: String? = null,
-    /** Input channel order and normalization contract recorded for diagnostics. */
-    val colorSpace: String? = null,
-    val normalization: String? = null,
-)
-
-data class ValidationResult(
-    val isValid: Boolean,
-    val errors: List<String>,
-)
-
-data class ModelBundleReadiness(
-    val isReady: Boolean,
-    val statusText: String,
-    val errors: List<String>,
-    val progress: Float = 0f,
-)
-
-data class PerformanceProfile(
-    val targetFps: Int,
-    val resolutionStep: Int,
-)
-
-enum class ThermalStatus {
-    NONE,
-    LIGHT,
-    MODERATE,
-    SEVERE,
-    CRITICAL,
-}
-
-data class ThermalPolicyResult(
-    val profile: PerformanceProfile,
-    val pauseAfterCurrentGroup: Boolean,
-    val reason: String,
-)

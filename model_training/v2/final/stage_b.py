@@ -72,7 +72,8 @@ entries = []
 for n, (p, lab) in enumerate(gold):
     im = Image.open(p).convert("RGB")
     if max(im.size) > 640: im.thumbnail((640, 640), Image.BICUBIC)
-    name = f"golden_{n:02d}.png"; im.save(G / name); a = np.asarray(Image.open(G / name).convert("RGB"))
+    name = f"golden_{n:02d}.png"; Image.fromarray(np.asarray(im)).save(G / name);  # fresh image: no ICC profile (Android would colour-convert)
+    a = np.asarray(Image.open(G / name).convert("RGB"))
     per, lo = ens_logits(a); p_, e_ = decide(lo); cis = [canon.classifier_input(a, m["img"]) for m in MEM]
     di, lb = canon.detector_input(a); raw = run(DI, di); dets = canon.decode_detections(raw, lb, a.shape[1], a.shape[0])
     top = dets[0][:4] if dets else None

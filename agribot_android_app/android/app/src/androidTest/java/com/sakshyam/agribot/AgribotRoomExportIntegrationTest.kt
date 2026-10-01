@@ -8,7 +8,6 @@ import com.sakshyam.agribot.data.db.AgribotDatabase
 import com.sakshyam.agribot.data.repository.FileExportRepository
 import com.sakshyam.agribot.data.repository.RoomFieldLayoutRepository
 import com.sakshyam.agribot.data.repository.RoomRunRepository
-import com.sakshyam.agribot.domain.logic.RunEventFactory
 import com.sakshyam.agribot.domain.model.DecisionId
 import com.sakshyam.agribot.domain.model.DecisionStatus
 import com.sakshyam.agribot.domain.model.DiagnosticsSnapshot
@@ -20,6 +19,7 @@ import com.sakshyam.agribot.domain.model.RecordedDecision
 import com.sakshyam.agribot.domain.model.RecordingMode
 import com.sakshyam.agribot.domain.model.RowId
 import com.sakshyam.agribot.domain.model.RunConfig
+import com.sakshyam.agribot.domain.model.RunEvent
 import com.sakshyam.agribot.domain.model.RunId
 import com.sakshyam.agribot.domain.model.RunState
 import java.io.File
@@ -48,7 +48,7 @@ class AgribotRoomExportIntegrationTest {
         database = Room.inMemoryDatabaseBuilder(context, AgribotDatabase::class.java)
             .allowMainThreadQueries()
             .build()
-        runRepository = RoomRunRepository(database)
+        runRepository = RoomRunRepository(database, "test")
         fieldLayoutRepository = RoomFieldLayoutRepository(database)
         exportRepository = FileExportRepository(context, runRepository, fieldLayoutRepository)
     }
@@ -75,11 +75,12 @@ class AgribotRoomExportIntegrationTest {
             ),
         )
         runRepository.appendEvent(
-            RunEventFactory.started(
+            RunEvent(
+                id = "${runId.value}-started",
                 runId = runId,
                 timestamp = Instant.parse("2026-06-08T09:00:00Z"),
-                mode = RecordingMode.WALK_ROWS.name,
-                targetFps = 5,
+                type = "run_started",
+                payloadJson = "{\"mode\":\"WALK_ROWS\"}",
             ),
         )
         runRepository.appendDecision(recordedDecision(runId, sequence = 1, label = "Skipped"))
