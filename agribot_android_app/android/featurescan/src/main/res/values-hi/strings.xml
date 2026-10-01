@@ -113,6 +113,7 @@
     <string name="none_need_attention">किसी पौधे पर ध्यान देने की ज़रूरत नहीं।</string>
     <string name="export_pdf">रिपोर्ट भेजें (PDF)</string>
     <string name="export_csv">डेटा भेजें (CSV)</string>
+    <string name="export_zip">सारा डेटा और फ़ोटो भेजें (ZIP)</string>
     <string name="export_failed">फ़ाइल नहीं बन सकी: %1$s</string>
     <string name="delete_confirm">यह परिणाम हटाएँ? इसे वापस नहीं लाया जा सकता।</string>
     <string name="gps_trail">लगभग %1$d मीटर चले</string>

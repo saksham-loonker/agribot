@@ -116,6 +116,7 @@ fun ResultsScreen(onBack: () -> Unit, vm: ResultsViewModel = hiltViewModel()) {
                         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Button(onClick = { vm.exportPdf(report) }, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.export_pdf)) }
                             OutlinedButton(onClick = vm::exportCsv, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.export_csv)) }
+                            OutlinedButton(onClick = vm::exportZip, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.export_zip)) }
                         }
                     }
                 }

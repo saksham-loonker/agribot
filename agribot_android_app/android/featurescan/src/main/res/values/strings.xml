@@ -113,6 +113,7 @@
     <string name="none_need_attention">No plant needs attention.</string>
     <string name="export_pdf">Share report (PDF)</string>
     <string name="export_csv">Share data (CSV)</string>
+    <string name="export_zip">Share all data and photos (ZIP)</string>
     <string name="export_failed">Could not create the file: %1$s</string>
     <string name="delete_confirm">Delete this result? This cannot be undone.</string>
     <string name="gps_trail">Walked about %1$d m</string>

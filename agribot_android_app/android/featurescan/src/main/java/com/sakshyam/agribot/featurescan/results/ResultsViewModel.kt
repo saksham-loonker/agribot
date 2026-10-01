@@ -86,6 +86,7 @@ class ResultsViewModel @Inject constructor(
 
     fun exportPdf(text: ReportText) = export { exports.exportPdf(runId, text) }
     fun exportCsv() = export { exports.exportCsv(runId) }
+    fun exportZip() = export { exports.exportBundle(runId, null) }
 
     private fun export(block: suspend () -> ExportedFile) {
         viewModelScope.launch(Dispatchers.IO) {

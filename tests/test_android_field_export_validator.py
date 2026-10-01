@@ -5,6 +5,9 @@ import unittest
 import zipfile
 from pathlib import Path
 
+APP_MANIFEST = Path(__file__).resolve().parents[1] / "agribot_android_app/android/app/src/main/assets/model_manifest.json"
+BUNDLE_ID = json.loads(APP_MANIFEST.read_text(encoding="utf-8"))["bundle_id"]
+
 
 MODULE_PATH = Path(__file__).resolve().parents[1] / "49_validate_android_field_export.py"
 
@@ -74,7 +77,7 @@ class AndroidFieldExportValidatorTest(unittest.TestCase):
 
         self.assertFalse(report["ok"])
         self.assertIn("latest_run completed must be true", report["failures"])
-        self.assertIn("latest_run model_bundle_id must be agribot-model-bundle-v001", report["failures"])
+        self.assertIn(f"latest_run model_bundle_id must be {BUNDLE_ID}", report["failures"])
 
     def test_rejects_mismatched_decision_counts(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -209,7 +212,7 @@ def create_bundle(
     path,
     include_evidence,
     completed=True,
-    model_bundle_id="agribot-model-bundle-v001",
+    model_bundle_id=BUNDLE_ID,
     evidence_bytes=b"\xff\xd8\xff\xe0agribot-test\xff\xd9",
     include_skipped=False,
     include_app_log=True,
@@ -345,7 +348,7 @@ def create_front_bundle(path, decision_overrides=None):
         "decision_count": 1,
         "sick_count": 0,
         "uncertain_count": 0,
-        "model_bundle_id": "agribot-model-bundle-v001",
+        "model_bundle_id": BUNDLE_ID,
     }
     summary = {
         "run_id": run_id,
@@ -358,7 +361,7 @@ def create_front_bundle(path, decision_overrides=None):
         "run_id": run_id,
         "origin": "android",
         "mode": "FRONT_ROW_OVERVIEW",
-        "model_bundle_id": "agribot-model-bundle-v001",
+        "model_bundle_id": BUNDLE_ID,
     }
     field_layout = {
         "active_field_id": "field_2",
@@ -442,7 +445,7 @@ def decision(
         "late_frames": 0,
         "gate_avg_latency_ms": 80.0,
         "gate_max_latency_ms": 90.0,
-        "model_version": "agribot-model-bundle-v001",
+        "model_version": BUNDLE_ID,
         "scan_index": sequence,
         "scan_pass": 1,
         "planned_total_plants": 57,
@@ -482,7 +485,7 @@ def front_decision(run_id="android_20260608_150000"):
         "late_frames": 0,
         "gate_avg_latency_ms": 0.0,
         "gate_max_latency_ms": 0.0,
-        "model_version": "agribot-model-bundle-v001",
+        "model_version": BUNDLE_ID,
         "scan_index": 1,
         "plant_id": 4,
         "manual_override": False,
