@@ -1,0 +1,98 @@
+{
+ "y9t_416_comb@320": {
+  "onnx": "/home/genesis/sakshyam-agribot/v2/export/leaf_y9t_416_comb_320.onnx",
+  "size_MB": 8.3,
+  "input": [
+   "images",
+   [
+    "batch",
+    3,
+    320,
+    320
+   ]
+  ],
+  "outputs": [
+   [
+    "output",
+    [
+     "batch",
+     "Concatoutput_dim_1",
+     "Concatoutput_dim_2"
+    ]
+   ]
+  ],
+  "cpu4t_ms": 4.25
+ },
+ "y9t_416_comb@416": {
+  "onnx": "/home/genesis/sakshyam-agribot/v2/export/leaf_y9t_416_comb_416.onnx",
+  "size_MB": 8.32,
+  "input": [
+   "images",
+   [
+    "batch",
+    3,
+    416,
+    416
+   ]
+  ],
+  "outputs": [
+   [
+    "output",
+    [
+     "batch",
+     "Concatoutput_dim_1",
+     "Concatoutput_dim_2"
+    ]
+   ]
+  ],
+  "cpu4t_ms": 6.57
+ },
+ "y9s_416_comb@320": {
+  "onnx": "/home/genesis/sakshyam-agribot/v2/export/leaf_y9s_416_comb_320.onnx",
+  "size_MB": 28.98,
+  "input": [
+   "images",
+   [
+    "batch",
+    3,
+    320,
+    320
+   ]
+  ],
+  "outputs": [
+   [
+    "output",
+    [
+     "batch",
+     "Concatoutput_dim_1",
+     "Concatoutput_dim_2"
+    ]
+   ]
+  ],
+  "cpu4t_ms": 9.28
+ },
+ "y9s_416_comb@416": {
+  "onnx": "/home/genesis/sakshyam-agribot/v2/export/leaf_y9s_416_comb_416.onnx",
+  "size_MB": 29.0,
+  "input": [
+   "images",
+   [
+    "batch",
+    3,
+    416,
+    416
+   ]
+  ],
+  "outputs": [
+   [
+    "output",
+    [
+     "batch",
+     "Concatoutput_dim_1",
+     "Concatoutput_dim_2"
+    ]
+   ]
+  ],
+  "cpu4t_ms": 14.46
+ }
+}

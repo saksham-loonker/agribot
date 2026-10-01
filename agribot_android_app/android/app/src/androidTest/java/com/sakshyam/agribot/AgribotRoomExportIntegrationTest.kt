@@ -68,7 +68,7 @@ class AgribotRoomExportIntegrationTest {
         runRepository.createRun(
             RunConfig(
                 runId = runId,
-                mode = RecordingMode.SIDE_SCAN,
+                mode = RecordingMode.WALK_ROWS,
                 fieldLayoutId = layout.id,
                 targetFps = 5,
                 modelBundleId = "agribot-model-bundle-v001",
@@ -78,7 +78,7 @@ class AgribotRoomExportIntegrationTest {
             RunEventFactory.started(
                 runId = runId,
                 timestamp = Instant.parse("2026-06-08T09:00:00Z"),
-                mode = RecordingMode.SIDE_SCAN.name,
+                mode = RecordingMode.WALK_ROWS.name,
                 targetFps = 5,
             ),
         )
@@ -176,7 +176,7 @@ class AgribotRoomExportIntegrationTest {
             sequence = sequence,
             timestamp = Instant.parse("2026-06-08T09:00:0${sequence}Z"),
             epochTime = 1_780_907_200.0 + sequence,
-            mode = RecordingMode.SIDE_SCAN,
+            mode = RecordingMode.WALK_ROWS,
             fieldId = "Field 2",
             rowId = "B",
             rowSide = null,

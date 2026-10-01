@@ -1,0 +1,35 @@
+{
+ "members": [
+  {
+   "run": "field_vits2",
+   "model": "vit_small_patch14_dinov2.lvd142m",
+   "img": 224
+  }
+ ],
+ "num_classes": 9,
+ "classes": [
+  "Early_blight",
+  "Healthy",
+  "Late_blight",
+  "Leaf Miner",
+  "Magnesium Deficiency",
+  "Nitrogen Deficiency",
+  "Pottassium Deficiency",
+  "Spotted Wilt Virus",
+  "Other"
+ ],
+ "combine": "log(mean(softmax(logits_i)))",
+ "other_bias": 0.75,
+ "temperature": 0.8814700841903687,
+ "energy_gate": false,
+ "energy_reject_below": null,
+ "balanced_val_score": 0.841380899789883,
+ "torch_eval_test": {
+  "va_test_clean_full": 0.924,
+  "va_test_clean_crop": 0.9271,
+  "pd_test_mapped": 0.678,
+  "pd_test_other": 0.8672,
+  "tw_test_mapped": 0.8095,
+  "tw_test_other": 0.9529
+ }
+}

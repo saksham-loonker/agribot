@@ -31,8 +31,20 @@ value class DecisionId(val value: String) {
 }
 
 enum class RecordingMode {
-    SIDE_SCAN,
-    FRONT_ROW_OVERVIEW,
+    /** Point at one plant; the app votes over several leaves and frames. */
+    CHECK_PLANT,
+    /** Walk along rows; each plant is counted once and gets its own verdict. */
+    WALK_ROWS,
+    ;
+
+    companion object {
+        /** Tolerant parse so runs saved by older app versions still open. */
+        fun parse(name: String): RecordingMode = when (name) {
+            "SIDE_SCAN" -> WALK_ROWS
+            "FRONT_ROW_OVERVIEW" -> CHECK_PLANT
+            else -> runCatching { valueOf(name) }.getOrDefault(CHECK_PLANT)
+        }
+    }
 }
 
 enum class StepCalibrationStatus {
@@ -86,22 +98,6 @@ enum class RowSide {
     UNKNOWN,
 }
 
-data class ClassLabel(
-    val index: Int,
-    val displayName: String,
-)
-
-val AGRIBOT_LABEL_ORDER = listOf(
-    ClassLabel(0, "Early_blight"),
-    ClassLabel(1, "Healthy"),
-    ClassLabel(2, "Late_blight"),
-    ClassLabel(3, "Leaf Miner"),
-    ClassLabel(4, "Magnesium Deficiency"),
-    ClassLabel(5, "Nitrogen Deficiency"),
-    ClassLabel(6, "Pottassium Deficiency"),
-    ClassLabel(7, "Spotted Wilt Virus"),
-)
-
 data class FieldLayout(
     val id: FieldId,
     val name: String,
@@ -141,7 +137,7 @@ data class RecordingProfile(
 )
 
 data class ScanSettings(
-    val defaultMode: RecordingMode = RecordingMode.SIDE_SCAN,
+    val defaultMode: RecordingMode = RecordingMode.CHECK_PLANT,
     val targetFps: Int = 5,
     val cpuThreads: Int = 4,
     val confidenceThreshold: Float = ScanConstants.DEFAULT_CONFIDENCE_THRESHOLD,
@@ -155,7 +151,7 @@ data class ScanSettings(
     val gpsReferenceEnabled: Boolean = true,
     val showOnboarding: Boolean = true,
     val cropType: String? = null,
-    val modelBundleId: String = "agribot-model-bundle-v001",
+    val modelBundleId: String = "",
     val stepLengthM: Float = 0.72f,
     val stepCalibrationStatus: StepCalibrationStatus = StepCalibrationStatus.DEFAULT,
 )
@@ -366,6 +362,13 @@ data class RecordedDecision(
     val predictionEntropy: Double? = null,
     /** Stable in-run tracker identity used to audit a decision's evidence chain. */
     val trackId: String? = null,
+    /** Multi-leaf evidence behind the verdict (null for runs saved by older versions). */
+    val leavesSeen: Int? = null,
+    val leavesAgreeing: Int? = null,
+    /** Disease found on some leaves while most leaves looked healthy. */
+    val partialFinding: Boolean? = null,
+    val runnerUpLabel: String? = null,
+    val runnerUpConfidence: Float? = null,
 )
 
 data class RunConfig(
@@ -473,7 +476,9 @@ data class RunFieldMapRow(
 
 data class RunFieldMapCell(
     val plantNumber: Int,
-    val label: String,
+    /** Model label key of the latest decision, or null when the plant was not scanned. */
+    val labelKey: String?,
+    /** One of: empty, ok, sick, uncertain, manual, skipped. */
     val status: String,
     val sequence: Int?,
 )
@@ -494,6 +499,21 @@ data class EvidenceRetentionSnapshot(
 data class EvidenceCaptureResult(
     val path: String?,
     val status: String,
+)
+
+/** Localised strings for the shareable PDF report, supplied by the UI layer. */
+data class ReportText(
+    val title: String,
+    val generatedAt: String,
+    val fieldLine: String,
+    val summaryLine: String,
+    val columns: List<String>,
+    /** Model label key -> display name. */
+    val labelNames: Map<String, String>,
+    val unsure: String,
+    val notSeen: String,
+    val partial: String,
+    val disclaimer: String,
 )
 
 data class ExportedFile(

@@ -20,7 +20,7 @@ class RunHistoryPresenterTest {
     fun formatsRunHistoryItemWithFieldModeAndUncertainRate() {
         val run = Run(
             runId = RunId("android_20260608_145500"),
-            mode = RecordingMode.SIDE_SCAN,
+            mode = RecordingMode.WALK_ROWS,
             fieldLayoutId = FieldId("field_2"),
             startedAt = Instant.parse("2026-06-08T09:25:00Z"),
             completedAt = Instant.parse("2026-06-08T09:30:00Z"),
@@ -41,7 +41,7 @@ class RunHistoryPresenterTest {
 
         assertEquals("android_20260608_145500", item.runId.value)
         assertEquals("Field 2", item.fieldName)
-        assertEquals("Side Scan", item.modeLabel)
+        assertEquals("Walk rows", item.modeLabel)
         assertEquals(1, item.sickCount)
         assertEquals("33.3%", item.uncertainRateLabel)
         assertEquals("3 decisions", item.decisionCountLabel)
@@ -59,7 +59,7 @@ class RunHistoryPresenterTest {
         sequence = sequence,
         timestamp = Instant.parse("2026-06-08T09:25:0${sequence}Z"),
         epochTime = 1780910700.0 + sequence,
-        mode = RecordingMode.SIDE_SCAN,
+        mode = RecordingMode.WALK_ROWS,
         fieldId = "Field 2",
         rowId = "B",
         rowSide = null,

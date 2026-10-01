@@ -15,7 +15,7 @@ class ScanSettingsValidatorTest {
     fun defaultsPreservePiCompatibleSideScanProfile() {
         val settings = ScanSettingsValidator.sanitize(ScanSettings())
 
-        assertEquals(RecordingMode.SIDE_SCAN, settings.defaultMode)
+        assertEquals(RecordingMode.CHECK_PLANT, settings.defaultMode)
         assertEquals(5, settings.targetFps)
         assertEquals(4, settings.cpuThreads)
         assertEquals(ScanConstants.DEFAULT_CONFIDENCE_THRESHOLD, settings.confidenceThreshold)

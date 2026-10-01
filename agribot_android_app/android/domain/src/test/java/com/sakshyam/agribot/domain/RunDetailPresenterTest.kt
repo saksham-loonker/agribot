@@ -55,7 +55,7 @@ class RunDetailPresenterTest {
         sequence = sequence,
         timestamp = Instant.parse("2026-06-08T09:25:0${sequence}Z"),
         epochTime = 1780910700.0 + sequence,
-        mode = RecordingMode.SIDE_SCAN,
+        mode = RecordingMode.WALK_ROWS,
         fieldId = "Field 2",
         rowId = "B",
         rowSide = null,

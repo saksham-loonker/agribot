@@ -43,7 +43,7 @@ class RunSummaryReducerTest {
         sequence = sequence,
         timestamp = Instant.parse("2026-06-08T09:25:0${sequence}Z"),
         epochTime = sequence.toDouble(),
-        mode = RecordingMode.SIDE_SCAN,
+        mode = RecordingMode.WALK_ROWS,
         fieldId = "field",
         rowId = "row",
         rowSide = null,

@@ -53,7 +53,7 @@ class RunRecoveryPlannerTest {
 
     private fun run(state: RunState) = Run(
         runId = RunId("android_20260609_010203"),
-        mode = RecordingMode.SIDE_SCAN,
+        mode = RecordingMode.WALK_ROWS,
         fieldLayoutId = FieldId("field_2"),
         startedAt = Instant.parse("2026-06-09T01:02:03Z"),
         completedAt = null,
@@ -68,7 +68,7 @@ class RunRecoveryPlannerTest {
         sequence = scanIndex,
         timestamp = Instant.parse("2026-06-09T01:02:04Z"),
         epochTime = 1_780_000_000.0,
-        mode = RecordingMode.SIDE_SCAN,
+        mode = RecordingMode.WALK_ROWS,
         fieldId = "Field 2",
         rowId = "B",
         rowSide = null,

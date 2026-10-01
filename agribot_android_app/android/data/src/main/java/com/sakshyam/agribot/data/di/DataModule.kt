@@ -34,6 +34,7 @@ object DatabaseModule {
             .addMigrations(AgribotDatabase.MIGRATION_1_2)
             .addMigrations(AgribotDatabase.MIGRATION_2_3)
             .addMigrations(AgribotDatabase.MIGRATION_3_4)
+            .addMigrations(AgribotDatabase.MIGRATION_4_5)
             .build()
 
     @Provides

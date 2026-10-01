@@ -20,7 +20,7 @@ object RunHistoryPresenter {
         )
 
     private fun modeLabel(mode: RecordingMode): String = when (mode) {
-        RecordingMode.SIDE_SCAN -> "Side Scan"
-        RecordingMode.FRONT_ROW_OVERVIEW -> "Front Overview"
+        RecordingMode.WALK_ROWS -> "Walk rows"
+        RecordingMode.CHECK_PLANT -> "Check a plant"
     }
 }

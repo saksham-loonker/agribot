@@ -12,7 +12,7 @@ object RunFieldMapPresenter {
     fun map(layout: FieldLayout?, decisions: List<RecordedDecision>): RunFieldMap {
         if (layout == null) {
             return RunFieldMap(
-                fieldLabel = decisions.firstOrNull()?.fieldId ?: "Unknown field",
+                fieldLabel = decisions.firstOrNull()?.fieldId.orEmpty(),
                 rows = decisions
                     .filter { decision -> decision.rowId != null && decision.plantNumber != null }
                     .groupBy { decision -> decision.rowId.orEmpty() }
@@ -20,7 +20,7 @@ object RunFieldMapPresenter {
                     .map { (rowId, rowDecisions) ->
                         RunFieldMapRow(
                             rowId = rowId,
-                            rowLabel = "Row $rowId",
+                            rowLabel = rowId,
                             cells = rowDecisions
                                 .groupBy { it.plantNumber ?: it.sequence }
                                 .toSortedMap()
@@ -40,7 +40,7 @@ object RunFieldMapPresenter {
             rows = layout.rows.sortedBy { row -> row.rowIndex }.map { row ->
                 RunFieldMapRow(
                     rowId = row.id.value,
-                    rowLabel = "Row ${row.id.value}",
+                    rowLabel = row.rowIndex.toString(),
                     cells = (1..row.plantsPerRow).map { column ->
                         val plantNumber = layout.startPlant + ((column - 1) * layout.plantStep)
                         cell(plantNumber, latestByPosition[PositionKey(row.id.value, plantNumber)])
@@ -52,16 +52,11 @@ object RunFieldMapPresenter {
 
     private fun cell(plantNumber: Int, decision: RecordedDecision?): RunFieldMapCell {
         if (decision == null) {
-            return RunFieldMapCell(
-                plantNumber = plantNumber,
-                label = "Plant $plantNumber: Not scanned",
-                status = "empty",
-                sequence = null,
-            )
+            return RunFieldMapCell(plantNumber = plantNumber, labelKey = null, status = "empty", sequence = null)
         }
         return RunFieldMapCell(
             plantNumber = plantNumber,
-            label = "Plant $plantNumber: ${decision.label}",
+            labelKey = decision.label,
             status = status(decision),
             sequence = decision.sequence,
         )

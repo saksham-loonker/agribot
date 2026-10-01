@@ -22,13 +22,16 @@ android {
 
     kotlinOptions {
         jvmTarget = '17'
+        // LiteRT 2.2 ships Kotlin 2.3 metadata; only its Java API (org.tensorflow.lite.Interpreter) is used here.
+        freeCompilerArgs += ['-Xskip-metadata-version-check']
     }
 }
 
 dependencies {
     implementation project(':domain')
     implementation "androidx.core:core-ktx:$androidxCoreVersion"
-    implementation "org.tensorflow:tensorflow-lite:$tensorflowLiteVersion"
+    implementation "com.google.ai.edge.litert:litert:$litertVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinxSerializationJsonVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinxCoroutinesVersion"
     implementation "com.google.dagger:hilt-android:$hiltVersion"
     kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
@@ -36,4 +39,5 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinxCoroutinesVersion"
     testImplementation "io.mockk:mockk:$mockkVersion"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinxSerializationJsonVersion"
 }

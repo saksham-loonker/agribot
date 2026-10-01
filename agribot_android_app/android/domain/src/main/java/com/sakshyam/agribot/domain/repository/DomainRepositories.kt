@@ -13,6 +13,7 @@ import com.sakshyam.agribot.domain.model.FrontOverviewCandidate
 import com.sakshyam.agribot.domain.model.ModelBundleReadiness
 import com.sakshyam.agribot.domain.model.ModelManifest
 import com.sakshyam.agribot.domain.model.RecordedDecision
+import com.sakshyam.agribot.domain.model.ReportText
 import com.sakshyam.agribot.domain.model.Run
 import com.sakshyam.agribot.domain.model.RunConfig
 import com.sakshyam.agribot.domain.model.RunEvent
@@ -79,7 +80,7 @@ interface ExportRepository {
     suspend fun exportJsonl(runId: RunId): ExportedFile
     suspend fun exportLogs(runId: RunId): ExportedFile
     suspend fun exportBundle(runId: RunId, diagnostics: DiagnosticsSnapshot? = null): ExportedFile
-    suspend fun exportPdf(runId: RunId): ExportedFile
+    suspend fun exportPdf(runId: RunId, text: ReportText): ExportedFile
 
     /** Remove all local export artifacts for a run before its database row is deleted. */
     suspend fun deleteRunArtifacts(runId: RunId) {}

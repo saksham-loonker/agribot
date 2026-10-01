@@ -17,7 +17,6 @@ dependencyResolutionManagement {
 rootProject.name = 'AgribotNativeAndroid'
 
 include ':app'
-include ':core'
 include ':domain'
 include ':data'
 include ':ml'

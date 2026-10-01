@@ -108,3 +108,7 @@ val ColorScheme.sunModeAccent: Color
 
 val ColorScheme.sunModeText: Color
     get() = Color(0xFF000000)
+
+/** "Not one of the conditions this app knows" — distinct from both healthy and disease. */
+val ColorScheme.unknownCondition: Color
+    get() = if (surface.luminance() < 0.2f) Color(0xFFB9C3FF) else Color(0xFF3F4FA8)

@@ -1,13 +1,13 @@
 package com.sakshyam.agribot.ml.di
 
-import com.sakshyam.agribot.domain.repository.InferenceRepository
-import com.sakshyam.agribot.ml.inference.TfliteInferenceRepository
+import com.sakshyam.agribot.domain.scan.LeafVision
+import com.sakshyam.agribot.ml.vision.AgribotLeafVision
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
-import javax.inject.Qualifier
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Qualifier
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
@@ -22,22 +22,16 @@ annotation class InferenceDispatcher
 abstract class MlModule {
     @Binds
     @Singleton
-    abstract fun bindInferenceRepository(repository: TfliteInferenceRepository): InferenceRepository
+    abstract fun bindLeafVision(vision: AgribotLeafVision): LeafVision
 }
 
 @Module
 @InstallIn(SingletonComponent::class)
 @OptIn(ExperimentalCoroutinesApi::class)
 object MlRuntimeModule {
-    /**
-     * Model execution is serialized onto one bounded lane.  TFLite
-     * interpreters are stateful and the caller must never run them on Main.
-     * The ViewModel also keeps at most one active request, so this dispatcher
-     * cannot accumulate an unbounded inference backlog.
-     */
+    /** LiteRT interpreters are stateful: all model work runs on one background lane, never on Main. */
     @Provides
     @Singleton
     @InferenceDispatcher
-    fun provideInferenceDispatcher(): CoroutineDispatcher =
-        Dispatchers.Default.limitedParallelism(1)
+    fun provideInferenceDispatcher(): CoroutineDispatcher = Dispatchers.Default.limitedParallelism(1)
 }

@@ -15,7 +15,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
         RunEventEntity::class,
         ModelBundleEntity::class,
     ],
-    version = 4,
+    version = 5,
     exportSchema = true,
 )
 abstract class AgribotDatabase : RoomDatabase() {
@@ -52,6 +52,17 @@ abstract class AgribotDatabase : RoomDatabase() {
             override fun migrate(db: SupportSQLiteDatabase) {
                 db.execSQL("ALTER TABLE decisions ADD COLUMN treatmentStatus TEXT NOT NULL DEFAULT 'NOT_TREATED'")
                 db.execSQL("ALTER TABLE decisions ADD COLUMN treatmentNote TEXT")
+            }
+        }
+
+        /** v5: multi-leaf evidence behind each plant verdict. Nullable, so older rows stay valid. */
+        val MIGRATION_4_5: Migration = object : Migration(4, 5) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE decisions ADD COLUMN leavesSeen INTEGER")
+                db.execSQL("ALTER TABLE decisions ADD COLUMN leavesAgreeing INTEGER")
+                db.execSQL("ALTER TABLE decisions ADD COLUMN partialFinding INTEGER")
+                db.execSQL("ALTER TABLE decisions ADD COLUMN runnerUpLabel TEXT")
+                db.execSQL("ALTER TABLE decisions ADD COLUMN runnerUpConfidence REAL")
             }
         }
     }

@@ -25,6 +25,6 @@ ext {
     lifecycleVersion = '2.8.7'
     navigationComposeVersion = '2.8.5'
     hiltNavigationComposeVersion = '1.2.0'
-    tensorflowLiteVersion = '2.16.1'
+    litertVersion = '2.2.0'
     mockkVersion = '1.13.13'
 }

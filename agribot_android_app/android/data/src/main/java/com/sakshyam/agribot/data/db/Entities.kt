@@ -123,6 +123,11 @@ data class DecisionEntity(
     val gpsFixAgeSeconds: Double?,
     val top2Margin: Double?,
     val predictionEntropy: Double?,
+    val leavesSeen: Int? = null,
+    val leavesAgreeing: Int? = null,
+    val partialFinding: Boolean? = null,
+    val runnerUpLabel: String? = null,
+    val runnerUpConfidence: Float? = null,
 )
 
 @Entity(

@@ -13,7 +13,7 @@ class ScanSettingsPreferencesMapperTest {
     @Test
     fun mapsStoredPreferencesToDomainSettings() {
         val prefs = preferencesOf(
-            ScanSettingsPreferencesKeys.DEFAULT_MODE to RecordingMode.FRONT_ROW_OVERVIEW.name,
+            ScanSettingsPreferencesKeys.DEFAULT_MODE to RecordingMode.CHECK_PLANT.name,
             ScanSettingsPreferencesKeys.TARGET_FPS to 7,
             ScanSettingsPreferencesKeys.CPU_THREADS to 6,
             ScanSettingsPreferencesKeys.CONFIDENCE to 0.7f,
@@ -29,7 +29,7 @@ class ScanSettingsPreferencesMapperTest {
 
         val settings = ScanSettingsPreferencesMapper.fromPreferences(prefs)
 
-        assertEquals(RecordingMode.FRONT_ROW_OVERVIEW, settings.defaultMode)
+        assertEquals(RecordingMode.CHECK_PLANT, settings.defaultMode)
         assertEquals(7, settings.targetFps)
         assertEquals(6, settings.cpuThreads)
         assertEquals(0.7f, settings.confidenceThreshold)
@@ -59,7 +59,7 @@ class ScanSettingsPreferencesMapperTest {
 
         val settings = ScanSettingsPreferencesMapper.fromPreferences(prefs)
 
-        assertEquals(RecordingMode.SIDE_SCAN, settings.defaultMode)
+        assertEquals(RecordingMode.CHECK_PLANT, settings.defaultMode)
         assertEquals(10, settings.targetFps)
         assertEquals(1, settings.cpuThreads)
         assertEquals(0f, settings.confidenceThreshold)
@@ -74,7 +74,7 @@ class ScanSettingsPreferencesMapperTest {
     fun serializesSanitizedDomainSettings() {
         val pairs = ScanSettingsPreferencesMapper.toPreferencePairs(
             ScanSettings(
-                defaultMode = RecordingMode.FRONT_ROW_OVERVIEW,
+                defaultMode = RecordingMode.CHECK_PLANT,
                 targetFps = 99,
                 cpuThreads = 99,
                 cropMode = CropMode.NONE,
@@ -86,7 +86,7 @@ class ScanSettingsPreferencesMapperTest {
             ),
         ).toMap()
 
-        assertEquals(RecordingMode.FRONT_ROW_OVERVIEW.name, pairs[ScanSettingsPreferencesKeys.DEFAULT_MODE])
+        assertEquals(RecordingMode.CHECK_PLANT.name, pairs[ScanSettingsPreferencesKeys.DEFAULT_MODE])
         assertEquals(10, pairs[ScanSettingsPreferencesKeys.TARGET_FPS])
         assertEquals(8, pairs[ScanSettingsPreferencesKeys.CPU_THREADS])
         assertEquals(CropMode.NONE.name, pairs[ScanSettingsPreferencesKeys.CROP_MODE])
