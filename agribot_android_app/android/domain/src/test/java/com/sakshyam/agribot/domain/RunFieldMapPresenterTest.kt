@@ -31,7 +31,8 @@ class RunFieldMapPresenterTest {
         assertEquals(listOf("A", "B"), map.rows.map { it.rowId })
         assertEquals(listOf("ok", "sick", "empty"), map.rows[0].cells.map { it.status })
         assertEquals(listOf("uncertain", "empty", "empty"), map.rows[1].cells.map { it.status })
-        assertEquals("Plant 12: Late_blight", map.rows[0].cells[1].label)
+        assertEquals("Late_blight", map.rows[0].cells[1].labelKey)
+        assertEquals(null, map.rows[0].cells[2].labelKey)
     }
 
     @Test
@@ -45,7 +46,7 @@ class RunFieldMapPresenterTest {
         )
 
         assertEquals("manual", map.rows[0].cells[0].status)
-        assertEquals("Plant 10: Healthy", map.rows[0].cells[0].label)
+        assertEquals("Healthy", map.rows[0].cells[0].labelKey)
         assertEquals(4, map.rows[0].cells[0].sequence)
     }
 
@@ -78,7 +79,7 @@ class RunFieldMapPresenterTest {
         sequence = sequence,
         timestamp = Instant.parse("2026-06-08T09:25:00Z"),
         epochTime = 1780910700.0 + sequence,
-        mode = RecordingMode.SIDE_SCAN,
+        mode = RecordingMode.WALK_ROWS,
         fieldId = "Field 2",
         rowId = rowId,
         rowSide = null,

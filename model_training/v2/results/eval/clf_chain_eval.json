@@ -1,0 +1,365 @@
+{
+ "data": {
+  "variantA_test": 461,
+  "plantdoc_mapped_crops": 828,
+  "plantdoc_mapped_per_class": {
+   "Early_blight": 214,
+   "Healthy": 393,
+   "Late_blight": 221
+  },
+  "ood_tomato_other_disease": 2041,
+  "ood_other_plants": 1500,
+  "plantdoc_single_label_tomato_photos": 251
+ },
+ "mnv4m_384": {
+  "test": [
+   0.9458,
+   0.9277
+  ],
+  "test_clean": [
+   0.9331,
+   0.9238
+  ],
+  "test_tta": [
+   0.9393,
+   0.9136
+  ],
+  "test_clean_tta": [
+   0.921,
+   0.9028
+  ],
+  "plantdoc_tomato3": [
+   0.3611,
+   0.1549
+  ],
+  "plantdoc_tomato3_tta": [
+   0.3502,
+   0.1498
+  ],
+  "plantdoc_pred_hist": {
+   "Early_blight": 98,
+   "Healthy": 209,
+   "Late_blight": 225,
+   "Leaf Miner": 89,
+   "Magnesium Deficiency": 55,
+   "Nitrogen Deficiency": 32,
+   "Pottassium Deficiency": 38,
+   "Spotted Wilt Virus": 82
+  },
+  "ood_tomato_other_disease": {
+   "msp": {
+    "auroc": 0.8985,
+    "fpr_at_tpr95": 0.4875,
+    "thr_tpr95": 0.6443663835525513
+   },
+   "energy": {
+    "auroc": 0.8492,
+    "fpr_at_tpr95": 0.487,
+    "thr_tpr95": 2.0886104106903076
+   }
+  },
+  "ood_other_plants": {
+   "msp": {
+    "auroc": 0.8843,
+    "fpr_at_tpr95": 0.51,
+    "thr_tpr95": 0.6443663835525513
+   },
+   "energy": {
+    "auroc": 0.8705,
+    "fpr_at_tpr95": 0.4347,
+    "thr_tpr95": 2.0886104106903076
+   }
+  }
+ },
+ "mnv4m_384_kd1": {
+  "test": [
+   0.9501,
+   0.9452
+  ],
+  "test_clean": [
+   0.9422,
+   0.9458
+  ],
+  "test_tta": [
+   0.9458,
+   0.9237
+  ],
+  "test_clean_tta": [
+   0.9392,
+   0.9388
+  ],
+  "plantdoc_tomato3": [
+   0.349,
+   0.1547
+  ],
+  "plantdoc_tomato3_tta": [
+   0.3442,
+   0.1531
+  ],
+  "plantdoc_pred_hist": {
+   "Early_blight": 125,
+   "Healthy": 146,
+   "Late_blight": 294,
+   "Leaf Miner": 99,
+   "Magnesium Deficiency": 79,
+   "Nitrogen Deficiency": 19,
+   "Pottassium Deficiency": 27,
+   "Spotted Wilt Virus": 39
+  },
+  "ood_tomato_other_disease": {
+   "msp": {
+    "auroc": 0.89,
+    "fpr_at_tpr95": 0.4512,
+    "thr_tpr95": 0.6655601263046265
+   },
+   "energy": {
+    "auroc": 0.9009,
+    "fpr_at_tpr95": 0.3474,
+    "thr_tpr95": 2.101182699203491
+   }
+  },
+  "ood_other_plants": {
+   "msp": {
+    "auroc": 0.8836,
+    "fpr_at_tpr95": 0.4867,
+    "thr_tpr95": 0.6655601263046265
+   },
+   "energy": {
+    "auroc": 0.911,
+    "fpr_at_tpr95": 0.3207,
+    "thr_tpr95": 2.101182699203491
+   }
+  },
+  "per_class_test": {
+   "Early_blight": {
+    "precision": 0.9607843137254902,
+    "recall": 0.98,
+    "f1-score": 0.9702970297029703,
+    "support": 50.0
+   },
+   "Healthy": {
+    "precision": 0.7692307692307693,
+    "recall": 0.9090909090909091,
+    "f1-score": 0.8333333333333334,
+    "support": 22.0
+   },
+   "Late_blight": {
+    "precision": 0.9666666666666667,
+    "recall": 0.9456521739130435,
+    "f1-score": 0.9560439560439561,
+    "support": 92.0
+   },
+   "Leaf Miner": {
+    "precision": 0.9893617021276596,
+    "recall": 0.8942307692307693,
+    "f1-score": 0.9393939393939394,
+    "support": 104.0
+   },
+   "Magnesium Deficiency": {
+    "precision": 0.9791666666666666,
+    "recall": 0.9894736842105263,
+    "f1-score": 0.9842931937172775,
+    "support": 95.0
+   },
+   "Nitrogen Deficiency": {
+    "precision": 0.925,
+    "recall": 1.0,
+    "f1-score": 0.961038961038961,
+    "support": 37.0
+   },
+   "Pottassium Deficiency": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8.0
+   },
+   "Spotted Wilt Virus": {
+    "precision": 0.8928571428571429,
+    "recall": 0.9433962264150944,
+    "f1-score": 0.9174311926605505,
+    "support": 53.0
+   },
+   "accuracy": 0.9501084598698482,
+   "macro avg": {
+    "precision": 0.9353834076592995,
+    "recall": 0.9577304703575428,
+    "f1-score": 0.9452289507363736,
+    "support": 461.0
+   },
+   "weighted avg": {
+    "precision": 0.9530509867000505,
+    "recall": 0.9501084598698482,
+    "f1-score": 0.9505235285121206,
+    "support": 461.0
+   }
+  }
+ },
+ "mnv4m_384_kd2": {
+  "test": [
+   0.9458,
+   0.9436
+  ],
+  "test_clean": [
+   0.9362,
+   0.9406
+  ],
+  "test_tta": [
+   0.9544,
+   0.9515
+  ],
+  "test_clean_tta": [
+   0.9453,
+   0.9482
+  ],
+  "plantdoc_tomato3": [
+   0.3684,
+   0.1604
+  ],
+  "plantdoc_tomato3_tta": [
+   0.378,
+   0.1639
+  ],
+  "plantdoc_pred_hist": {
+   "Early_blight": 149,
+   "Healthy": 177,
+   "Late_blight": 238,
+   "Leaf Miner": 116,
+   "Magnesium Deficiency": 76,
+   "Nitrogen Deficiency": 23,
+   "Pottassium Deficiency": 14,
+   "Spotted Wilt Virus": 35
+  },
+  "ood_tomato_other_disease": {
+   "msp": {
+    "auroc": 0.8862,
+    "fpr_at_tpr95": 0.5184,
+    "thr_tpr95": 0.7547292709350586
+   },
+   "energy": {
+    "auroc": 0.9033,
+    "fpr_at_tpr95": 0.3332,
+    "thr_tpr95": 2.338560104370117
+   }
+  },
+  "ood_other_plants": {
+   "msp": {
+    "auroc": 0.8848,
+    "fpr_at_tpr95": 0.478,
+    "thr_tpr95": 0.7547292709350586
+   },
+   "energy": {
+    "auroc": 0.911,
+    "fpr_at_tpr95": 0.3073,
+    "thr_tpr95": 2.338560104370117
+   }
+  }
+ },
+ "dinov2l_t_448": {
+  "test": [
+   0.9544,
+   0.944
+  ],
+  "test_clean": [
+   0.9453,
+   0.9346
+  ],
+  "test_tta": [
+   0.9523,
+   0.9367
+  ],
+  "test_clean_tta": [
+   0.9422,
+   0.9221
+  ],
+  "plantdoc_tomato3": [
+   0.3527,
+   0.157
+  ],
+  "plantdoc_tomato3_tta": [
+   0.3563,
+   0.1587
+  ],
+  "plantdoc_pred_hist": {
+   "Early_blight": 137,
+   "Healthy": 129,
+   "Late_blight": 272,
+   "Leaf Miner": 82,
+   "Magnesium Deficiency": 123,
+   "Nitrogen Deficiency": 10,
+   "Pottassium Deficiency": 36,
+   "Spotted Wilt Virus": 39
+  },
+  "ood_tomato_other_disease": {
+   "msp": {
+    "auroc": 0.8108,
+    "fpr_at_tpr95": 0.5742,
+    "thr_tpr95": 0.8112713098526001
+   },
+   "energy": {
+    "auroc": 0.8295,
+    "fpr_at_tpr95": 0.4189,
+    "thr_tpr95": 3.4221742153167725
+   }
+  },
+  "ood_other_plants": {
+   "msp": {
+    "auroc": 0.7759,
+    "fpr_at_tpr95": 0.622,
+    "thr_tpr95": 0.8112713098526001
+   },
+   "energy": {
+    "auroc": 0.7982,
+    "fpr_at_tpr95": 0.4773,
+    "thr_tpr95": 3.4221742153167725
+   }
+  }
+ },
+ "chain_y9t_416_comb@320": {
+  "variantA_detect_rate": 0.9978,
+  "variantA_test": [
+   0.9306,
+   0.9269
+  ],
+  "variantA_test_clean": [
+   0.9149,
+   0.9221
+  ],
+  "plantdoc_photo_acc": 0.4502
+ },
+ "chain_y9t_416_comb@416": {
+  "variantA_detect_rate": 0.9957,
+  "variantA_test": [
+   0.9349,
+   0.9328
+  ],
+  "variantA_test_clean": [
+   0.921,
+   0.9281
+  ],
+  "plantdoc_photo_acc": 0.4582
+ },
+ "chain_y9s_416_comb@320": {
+  "variantA_detect_rate": 0.9957,
+  "variantA_test": [
+   0.9349,
+   0.9246
+  ],
+  "variantA_test_clean": [
+   0.921,
+   0.9267
+  ],
+  "plantdoc_photo_acc": 0.4661
+ },
+ "chain_y9s_416_comb@416": {
+  "variantA_detect_rate": 0.9978,
+  "variantA_test": [
+   0.9284,
+   0.9177
+  ],
+  "variantA_test_clean": [
+   0.9119,
+   0.9197
+  ],
+  "plantdoc_photo_acc": 0.4462
+ }
+}

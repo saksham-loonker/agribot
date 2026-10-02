@@ -68,7 +68,7 @@ class EvidenceRetentionPolicyTest {
         sequence = 1,
         timestamp = Instant.EPOCH,
         epochTime = 0.0,
-        mode = RecordingMode.SIDE_SCAN,
+        mode = RecordingMode.WALK_ROWS,
         fieldId = "Field 2",
         rowId = "B",
         rowSide = null,

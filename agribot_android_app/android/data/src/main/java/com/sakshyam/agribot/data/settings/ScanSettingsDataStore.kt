@@ -106,9 +106,7 @@ internal object ScanSettingsPreferencesMapper {
     }
 
     private fun String?.toRecordingMode(): RecordingMode =
-        runCatching {
-            if (this == null) RecordingMode.SIDE_SCAN else RecordingMode.valueOf(this)
-        }.getOrDefault(RecordingMode.SIDE_SCAN)
+        if (this == null) RecordingMode.CHECK_PLANT else RecordingMode.parse(this)
 
     private fun String?.toCropMode(): CropMode =
         runCatching {

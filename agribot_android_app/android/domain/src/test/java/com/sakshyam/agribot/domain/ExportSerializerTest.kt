@@ -110,7 +110,7 @@ class ExportSerializerTest {
     fun runBundleJsonContainsPiCompatibleFilesPayloads() {
         val run = Run(
             runId = RunId("android_20260608_145500"),
-            mode = RecordingMode.SIDE_SCAN,
+            mode = RecordingMode.WALK_ROWS,
             fieldLayoutId = FieldId("field_2"),
             startedAt = Instant.parse("2026-06-08T09:24:00Z"),
             completedAt = Instant.parse("2026-06-08T09:30:00Z"),
@@ -212,7 +212,7 @@ class ExportSerializerTest {
         sequence = 12,
         timestamp = Instant.parse("2026-06-08T09:25:21Z"),
         epochTime = 1780910721.0,
-        mode = RecordingMode.SIDE_SCAN,
+        mode = RecordingMode.WALK_ROWS,
         fieldId = "Field 2",
         rowId = "B",
         rowSide = null,
@@ -250,7 +250,7 @@ class ExportSerializerTest {
     private fun frontDecision() = decision().copy(
         id = DecisionId("front_decision_1"),
         sequence = 1,
-        mode = RecordingMode.FRONT_ROW_OVERVIEW,
+        mode = RecordingMode.CHECK_PLANT,
         rowId = "A",
         rowSide = RowSide.LEFT,
         rowIndex = 1,

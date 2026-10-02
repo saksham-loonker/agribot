@@ -16,11 +16,13 @@ import com.sakshyam.agribot.domain.model.TreatmentStatus
 import com.sakshyam.agribot.domain.repository.RunRepository
 import java.time.Instant
 import javax.inject.Inject
+import javax.inject.Named
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class RoomRunRepository @Inject constructor(
     private val database: AgribotDatabase,
+    @Named("appVersion") private val appVersion: String,
 ) : RunRepository {
     override suspend fun createRun(config: RunConfig): RunId {
         val now = Instant.now().toEpochMilli()
@@ -38,7 +40,7 @@ class RoomRunRepository @Inject constructor(
                 analysisWidth = null,
                 analysisHeight = null,
                 targetFps = config.targetFps,
-                appVersion = "1.0",
+                appVersion = appVersion,
             ),
         )
         return config.runId

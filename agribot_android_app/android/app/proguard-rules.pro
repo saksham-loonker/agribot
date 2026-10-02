@@ -5,7 +5,9 @@
 
 # TensorFlow Lite interpreter/runtime classes are called through JNI.
 -keep class org.tensorflow.lite.** { *; }
+-keep class com.google.ai.edge.litert.** { *; }
 -dontwarn org.tensorflow.lite.**
+-dontwarn com.google.ai.edge.litert.**
 
 # Hilt entry points and generated components.
 -keep @dagger.hilt.android.HiltAndroidApp class * { *; }

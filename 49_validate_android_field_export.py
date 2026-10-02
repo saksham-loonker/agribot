@@ -12,7 +12,9 @@ from pathlib import Path
 from typing import Any
 
 
-EXPECTED_MODEL_BUNDLE_ID = "agribot-model-bundle-v001"
+APP_MANIFEST = Path(__file__).resolve().parent / "agribot_android_app/android/app/src/main/assets/model_manifest.json"
+# The bundle the app ships; exports must come from it (read, never hard-coded).
+EXPECTED_MODEL_BUNDLE_ID = json.loads(APP_MANIFEST.read_text(encoding="utf-8"))["bundle_id"]
 REQUIRED_ENTRIES = [
     "metadata.json",
     "summary.json",

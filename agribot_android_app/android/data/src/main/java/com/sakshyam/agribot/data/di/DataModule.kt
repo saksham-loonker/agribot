@@ -34,11 +34,18 @@ object DatabaseModule {
             .addMigrations(AgribotDatabase.MIGRATION_1_2)
             .addMigrations(AgribotDatabase.MIGRATION_2_3)
             .addMigrations(AgribotDatabase.MIGRATION_3_4)
+            .addMigrations(AgribotDatabase.MIGRATION_4_5)
             .build()
 
     @Provides
     @Named("io")
     fun provideIoDispatcher(): CoroutineDispatcher = Dispatchers.IO
+
+    /** Installed versionName, recorded with every run for traceability. */
+    @Provides
+    @Named("appVersion")
+    fun provideAppVersion(@ApplicationContext context: Context): String =
+        runCatching { context.packageManager.getPackageInfo(context.packageName, 0).versionName }.getOrNull() ?: "unknown"
 }
 
 @Module

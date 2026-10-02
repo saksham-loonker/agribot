@@ -1,0 +1,35 @@
+{
+ "clf_mnv4m_kd1_384/float32": {
+  "size_MB": 33.69,
+  "out_shape": [
+   1,
+   8
+  ],
+  "max_abs_diff": 2.6226043701171875e-06,
+  "rel_diff": 1.0276025244354467e-06,
+  "cpu4t_ms": 5.32,
+  "variantA_test_acc": 0.9479
+ },
+ "leaf_y9t_416_comb_320/float32": {
+  "size_MB": 8.29,
+  "out_shape": [
+   1,
+   5,
+   2100
+  ],
+  "max_abs_diff": 0.000579833984375,
+  "rel_diff": 1.366818172463046e-06,
+  "cpu4t_ms": 5.06
+ },
+ "leaf_y9s_416_comb_320/float32": {
+  "size_MB": 28.97,
+  "out_shape": [
+   1,
+   5,
+   2100
+  ],
+  "max_abs_diff": 0.0060577392578125,
+  "rel_diff": 1.817153692839916e-05,
+  "cpu4t_ms": 9.98
+ }
+}

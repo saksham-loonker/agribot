@@ -4,7 +4,9 @@ import android.content.Context
 import android.graphics.pdf.PdfDocument
 import com.sakshyam.agribot.domain.logic.ExportSerializer
 import com.sakshyam.agribot.domain.logic.RunSummaryReducer
+import com.sakshyam.agribot.domain.model.DecisionStatus
 import com.sakshyam.agribot.domain.model.ExportedFile
+import com.sakshyam.agribot.domain.model.ReportText
 import com.sakshyam.agribot.domain.model.DiagnosticsSnapshot
 import com.sakshyam.agribot.domain.model.RunId
 import com.sakshyam.agribot.domain.repository.ExportRepository
@@ -49,74 +51,58 @@ class FileExportRepository @Inject constructor(
         ExportedFile(file.name, "application/x-jsonlines", file.absolutePath)
     }
 
-    override suspend fun exportPdf(runId: RunId): ExportedFile = withContext(ioDispatcher) {
-        val run = runRepository.runById(runId) ?: error("Run not found for export: ${runId.value}")
+    override suspend fun exportPdf(runId: RunId, text: ReportText): ExportedFile = withContext(ioDispatcher) {
+        runRepository.runById(runId) ?: error("Run not found for export: ${runId.value}")
+        // Latest decision per plant, in field order (a re-checked plant appears once).
         val decisions = runRepository.decisionsForRun(runId)
-        val summary = RunSummaryReducer.reduce(runId, decisions)
-        val layout = fieldLayoutRepository.layoutById(run.fieldLayoutId)
+            .groupBy { it.plantKey ?: "seq-${it.sequence}" }.values.map { d -> d.maxBy { it.sequence } }
+            .sortedWith(compareBy({ it.rowIndex ?: 0 }, { it.plantNumber ?: 0 }, { it.sequence }))
         val pdfDocument = PdfDocument()
         var pageNumber = 1
         var currentPage = pdfDocument.startPage(PdfDocument.PageInfo.Builder(595, 842, pageNumber).create())
         var canvas = currentPage.canvas
-        val paint = android.text.TextPaint().apply {
-            textSize = 12f
-            isAntiAlias = true
+        val paint = android.text.TextPaint().apply { textSize = 11f; isAntiAlias = true }
+        val small = android.text.TextPaint().apply { textSize = 9f; isAntiAlias = true }
+        val titlePaint = android.text.TextPaint().apply { textSize = 20f; isAntiAlias = true; isFakeBoldText = true }
+        val headerPaint = android.text.TextPaint().apply { textSize = 11f; isAntiAlias = true; isFakeBoldText = true }
+        var y = 56f
+        val cols = floatArrayOf(40f, 90f, 140f, 360f, 440f)
+        fun header() {
+            text.columns.take(cols.size).forEachIndexed { i, c -> canvas.drawText(c, cols[i], y, headerPaint) }
+            y += 16f
         }
-        val titlePaint = android.text.TextPaint().apply {
-            textSize = 20f
-            isAntiAlias = true
-            isFakeBoldText = true
-        }
-        val headerPaint = android.text.TextPaint().apply {
-            textSize = 14f
-            isAntiAlias = true
-            isFakeBoldText = true
-        }
-        var y = 60f
         fun newPage() {
             pdfDocument.finishPage(currentPage)
             pageNumber++
             currentPage = pdfDocument.startPage(PdfDocument.PageInfo.Builder(595, 842, pageNumber).create())
             canvas = currentPage.canvas
-            y = 60f
+            y = 56f
+            header()
         }
-        canvas.drawText("Agribot Scan Report", 50f, y, titlePaint)
-        y += 30f
-        canvas.drawText("Run ID: ${run.runId.value}", 50f, y, paint)
-        y += 20f
-        canvas.drawText("Field: ${layout?.name ?: run.fieldLayoutId.value}", 50f, y, paint)
-        y += 20f
-        canvas.drawText("Mode: ${run.mode.name}", 50f, y, paint)
-        y += 20f
-        canvas.drawText("State: ${run.state.name}", 50f, y, paint)
-        y += 30f
-        canvas.drawText("Summary", 50f, y, headerPaint)
-        y += 20f
-        canvas.drawText("Total decisions: ${summary.decisions}", 50f, y, paint)
-        y += 15f
-        canvas.drawText("Healthy (OK): ${summary.ok}", 50f, y, paint)
-        y += 15f
-        canvas.drawText("Sick: ${summary.sick}", 50f, y, paint)
-        y += 15f
-        canvas.drawText("Uncertain: ${summary.uncertain}", 50f, y, paint)
-        y += 15f
-        canvas.drawText("Uncertain rate: ${"%.1f".format(Locale.US, summary.uncertainRate * 100.0)}%", 50f, y, paint)
-        y += 15f
-        canvas.drawText("Avg confidence: ${"%.1f".format(Locale.US, summary.avgConfidence * 100.0)}%", 50f, y, paint)
-        y += 30f
-        canvas.drawText("Plant Decisions", 50f, y, headerPaint)
-        y += 20f
-        decisions.forEach { decision ->
-            if (y > 780f) {
-                newPage()
+        canvas.drawText(text.title, 40f, y, titlePaint); y += 24f
+        canvas.drawText(text.generatedAt, 40f, y, paint); y += 16f
+        canvas.drawText(text.fieldLine, 40f, y, paint); y += 16f
+        canvas.drawText(text.summaryLine, 40f, y, paint); y += 26f
+        header()
+        decisions.forEach { d ->
+            if (y > 770f) newPage()
+            val name = when {
+                d.status == DecisionStatus.SKIPPED -> text.notSeen
+                d.status == DecisionStatus.UNCERTAIN -> text.unsure
+                else -> (text.labelNames[d.label] ?: d.label) + if (d.partialFinding == true) " (${text.partial})" else ""
             }
-            val status = decision.status.name
-            val label = decision.label
-            val conf = "${(decision.confidence * 100).toInt()}%"
-            val plantNum = decision.plantNumber?.toString() ?: "-"
-            canvas.drawText("Plant #$plantNum: $label ($conf) - $status", 50f, y, paint)
+            val values = listOf(
+                d.rowIndex?.toString() ?: "-", d.plantNumber?.toString() ?: "-", name,
+                if (d.status == DecisionStatus.OK) "${(d.confidence * 100).toInt()}%" else "-",
+                if ((d.leavesSeen ?: 0) > 0) "${d.leavesAgreeing ?: 0}/${d.leavesSeen}" else "-",
+            )
+            values.forEachIndexed { i, v -> canvas.drawText(v, cols[i], y, paint) }
             y += 15f
         }
+        y += 20f
+        if (y > 790f) newPage()
+        val layout = android.text.StaticLayout.Builder.obtain(text.disclaimer, 0, text.disclaimer.length, small, 515).build()
+        canvas.save(); canvas.translate(40f, y); layout.draw(canvas); canvas.restore()
         pdfDocument.finishPage(currentPage)
         val runDir = File(exportsRoot(), LocalExportPathNames.runDirectoryName(runId)).apply { mkdirs() }
         val pdfFile = File(runDir, "scan_report.pdf")
