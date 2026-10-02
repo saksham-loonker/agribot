@@ -53,9 +53,6 @@ fun LeafCamera(
     val useCases = remember { AtomicReference<List<UseCase>>(emptyList()) }
     val disposed = remember { AtomicBoolean(false) }
     val latestTorch = rememberUpdatedState(torchOn)
-    // Reused RGBA staging buffer: the analyzer runs on one thread, so one copy per frame is enough.
-    val staging = remember { AtomicReference(ByteArray(0)) }
-
     LaunchedEffect(torchOn) { cameraRef.get()?.cameraControl?.enableTorch(torchOn) }
 
     AndroidView(
@@ -82,7 +79,7 @@ fun LeafCamera(
                             .build()
                         analysis.setAnalyzer(executor) { proxy ->
                             proxy.use {
-                                if (latestReady.value()) latestOnFrame.value(it.toVisionFrame(staging))
+                                if (latestReady.value()) latestOnFrame.value(it.toVisionFrame())
                             }
                         }
                         val group = UseCaseGroup.Builder().addUseCase(preview).addUseCase(analysis)
@@ -113,13 +110,10 @@ fun LeafCamera(
     }
 }
 
-private fun ImageProxy.toVisionFrame(staging: AtomicReference<ByteArray>): VisionFrame {
+private fun ImageProxy.toVisionFrame(): VisionFrame {
     val plane = planes[0]
-    val buf = plane.buffer.duplicate().apply { rewind() }
-    val n = buf.remaining()
-    val bytes = staging.get().let { if (it.size >= n) it else ByteArray(n).also { b -> staging.set(b) } }
-    buf.get(bytes, 0, n)
     val crop = cropRect
-    val up = RgbaFrameConverter.toUpright(bytes, plane.rowStride, crop.left, crop.top, crop.width(), crop.height(), imageInfo.rotationDegrees)
+    // Convert while the proxy is open; only the owned output pixels escape the analyzer callback.
+    val up = RgbaFrameConverter.toUpright(plane.buffer, plane.rowStride, crop.left, crop.top, crop.width(), crop.height(), imageInfo.rotationDegrees)
     return VisionFrame(up.width, up.height, up.argb, imageInfo.timestamp)
 }

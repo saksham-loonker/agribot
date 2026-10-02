@@ -10,8 +10,8 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Qualifier
 import javax.inject.Singleton
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.asCoroutineDispatcher
+import java.util.concurrent.Executors
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
@@ -27,11 +27,12 @@ abstract class MlModule {
 
 @Module
 @InstallIn(SingletonComponent::class)
-@OptIn(ExperimentalCoroutinesApi::class)
 object MlRuntimeModule {
     /** LiteRT interpreters are stateful: all model work runs on one background lane, never on Main. */
     @Provides
     @Singleton
     @InferenceDispatcher
-    fun provideInferenceDispatcher(): CoroutineDispatcher = Dispatchers.Default.limitedParallelism(1)
+    fun provideInferenceDispatcher(): CoroutineDispatcher = Executors.newSingleThreadExecutor { task ->
+        Thread(task, "AgribotInference").apply { isDaemon = true }
+    }.asCoroutineDispatcher()
 }

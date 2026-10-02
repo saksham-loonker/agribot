@@ -29,6 +29,8 @@ dependencies {
     implementation project(':domain')
     implementation "androidx.core:core-ktx:$androidxCoreVersion"
     implementation "com.google.ai.edge.litert:litert:$litertVersion"
+    implementation "com.google.ai.edge.litert:litert-gpu:$litertVersion"
+    implementation "com.google.ai.edge.litert:litert-gpu-api:$litertVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinxSerializationJsonVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinxCoroutinesVersion"
     implementation "com.google.dagger:hilt-android:$hiltVersion"

@@ -82,18 +82,55 @@ object CanonicalImageOps {
     val IMAGENET_STD = floatArrayOf(0.229f, 0.224f, 0.225f)
     const val LETTERBOX_PAD = 114f
     private val scratch = ThreadLocal.withInitial { FloatArray(0) }
+    private const val AXIS_CACHE_ENTRIES = 32
+    private val axisCache = ThreadLocal.withInitial { LinkedHashMap<Long, AxisWeights>(AXIS_CACHE_ENTRIES, 0.75f, true) }
+
+    /** Tables are immutable after construction and bounded independently on each calling thread. */
+    private fun axisWeights(nIn: Int, nOut: Int): AxisWeights {
+        val key = (nIn.toLong() shl 32) or (nOut.toLong() and 0xFFFFFFFFL)
+        val cache = axisCache.get()!!
+        cache[key]?.let { return it }
+        val weights = AxisWeights.create(nIn, nOut)
+        cache[key] = weights
+        if (cache.size > AXIS_CACHE_ENTRIES) cache.remove(cache.keys.iterator().next())
+        return weights
+    }
+
+    private fun tensorElements(width: Int, height: Int): Int {
+        require(width > 0 && height > 0) { "tensor dimensions must be positive" }
+        val pixels = width.toLong() * height
+        require(pixels <= Int.MAX_VALUE / 3) { "tensor dimensions are too large" }
+        return pixels.toInt() * 3
+    }
 
     /**
      * Resizes the [cropW]x[cropH] region at ([cropL],[cropT]) to [outW]x[outH].
      * Returns interleaved RGB floats in 0..255, row-major (HWC).
      */
     fun resize(frame: RgbFrame, cropL: Int, cropT: Int, cropW: Int, cropH: Int, outW: Int, outH: Int): FloatArray {
+        val out = FloatArray(tensorElements(outW, outH))
+        resizeInto(frame, cropL, cropT, cropW, cropH, outW, outH, out, 0, outW * 3)
+        return out
+    }
+
+    /** Writes directly to a packed tensor or its letterboxed image region, without an output copy. */
+    private fun resizeInto(
+        frame: RgbFrame, cropL: Int, cropT: Int, cropW: Int, cropH: Int, outW: Int, outH: Int,
+        destination: FloatArray, destinationOffset: Int, destinationRowStride: Int,
+    ) {
         require(cropL >= 0 && cropT >= 0 && cropW > 0 && cropH > 0)
         require(cropL + cropW <= frame.width && cropT + cropH <= frame.height) { "crop outside frame" }
-        val wy = AxisWeights.create(cropH, outH)
-        val wx = AxisWeights.create(cropW, outW)
+        val wy = axisWeights(cropH, outH)
+        val wx = axisWeights(cropW, outW)
+        val tmp = resizeVertical(frame, cropL, cropT, cropW, cropH, outH, wy)
+        resizeHorizontal(tmp, cropW, outW, outH, wx, destination, destinationOffset, destinationRowStride)
+    }
+
+    private fun resizeVertical(
+        frame: RgbFrame, cropL: Int, cropT: Int, cropW: Int, cropH: Int, outH: Int, wy: AxisWeights,
+    ): FloatArray {
         // Vertical pass: (outH, cropW, 3) into a per-thread scratch buffer (avoids MBs of garbage per frame).
-        val need = outH * cropW * 3
+        val need = tensorElements(cropW, outH)
         val tmp = scratch.get()!!.let { if (it.size >= need) it else FloatArray(need).also { a -> scratch.set(a) } }
         java.util.Arrays.fill(tmp, 0, need, 0f)
         val px = frame.pixels
@@ -116,11 +153,17 @@ object CanonicalImageOps {
                 }
             }
         }
+        return tmp
+    }
+
+    private fun resizeHorizontal(
+        tmp: FloatArray, cropW: Int, outW: Int, outH: Int, wx: AxisWeights,
+        destination: FloatArray, destinationOffset: Int, destinationRowStride: Int,
+    ) {
         // Horizontal pass: (outH, outW, 3)
-        val out = FloatArray(outH * outW * 3)
         for (oy in 0 until outH) {
             val inBase = oy * cropW * 3
-            val outBase = oy * outW * 3
+            val outBase = destinationOffset + oy * destinationRowStride
             for (ox in 0 until outW) {
                 val j0 = wx.start[ox]
                 var r = 0f
@@ -137,12 +180,11 @@ object CanonicalImageOps {
                     b += wgt * tmp[i + 2]
                 }
                 val o = outBase + ox * 3
-                out[o] = r
-                out[o + 1] = g
-                out[o + 2] = b
+                destination[o] = r
+                destination[o + 1] = g
+                destination[o + 2] = b
             }
         }
-        return out
     }
 
     /** Integer crop rectangle (l, t, r, b) for [box] grown by [pad] of its size, clamped to the frame. */
@@ -168,6 +210,18 @@ object CanonicalImageOps {
      * Returns null when the crop is degenerate.
      */
     fun classifierInput(frame: RgbFrame, size: Int, box: PixelBox? = null, pad: Double = 0.10): FloatArray? {
+        val out = FloatArray(tensorElements(size, size))
+        return if (classifierInputInto(frame, size, out, box, pad)) out else null
+    }
+
+    /**
+     * Same classifier contract, writing into caller-owned storage. A degenerate crop returns false
+     * without changing [destination]; successful calls overwrite the entire tensor.
+     */
+    fun classifierInputInto(
+        frame: RgbFrame, size: Int, destination: FloatArray, box: PixelBox? = null, pad: Double = 0.10,
+    ): Boolean {
+        require(destination.size == tensorElements(size, size)) { "destination must be size * size * 3" }
         var l = 0
         var t = 0
         var w = frame.width
@@ -175,17 +229,21 @@ object CanonicalImageOps {
         if (box != null) {
             val r = cropRect(frame.width, frame.height, box, pad)
             l = r[0]; t = r[1]; w = r[2] - r[0]; h = r[3] - r[1]
-            if (w < 2 || h < 2) return null
+            if (w < 2 || h < 2) return false
         }
         val side = min(w, h)
         val ox = l + (w - side) / 2
         val oy = t + (h - side) / 2
-        val rgb = resize(frame, ox, oy, side, side, size, size)
-        for (i in rgb.indices) {
-            val c = i % 3
-            rgb[i] = (rgb[i] / 255f - IMAGENET_MEAN[c]) / IMAGENET_STD[c]
+        resizeInto(frame, ox, oy, side, side, size, size, destination, 0, size * 3)
+        // Preserve division/subtraction order while avoiding a channel modulo per element.
+        val mean = IMAGENET_MEAN
+        val std = IMAGENET_STD
+        for (i in destination.indices step 3) {
+            destination[i] = (destination[i] / 255f - mean[0]) / std[0]
+            destination[i + 1] = (destination[i + 1] / 255f - mean[1]) / std[1]
+            destination[i + 2] = (destination[i + 2] / 255f - mean[2]) / std[2]
         }
-        return rgb
+        return true
     }
 
     /** Letterbox geometry: model px = frame px * scale + pad. */
@@ -197,17 +255,22 @@ object CanonicalImageOps {
 
     /** Detector input, NHWC float32 in 0..1 with 114-grey centred letterbox. */
     fun detectorInput(frame: RgbFrame, size: Int): Pair<FloatArray, Letterbox> {
+        val out = FloatArray(tensorElements(size, size))
+        return out to detectorInputInto(frame, size, out)
+    }
+
+    /** Same detector contract without allocating or copying a temporary resized image. */
+    fun detectorInputInto(frame: RgbFrame, size: Int, destination: FloatArray): Letterbox {
+        require(destination.size == tensorElements(size, size)) { "destination must be size * size * 3" }
         val k = min(size.toDouble() / frame.width, size.toDouble() / frame.height)
         val nw = Math.rint(frame.width * k).toInt().coerceIn(1, size)   // rint == Python round (half-even)
         val nh = Math.rint(frame.height * k).toInt().coerceIn(1, size)
         val padX = (size - nw) / 2
         val padY = (size - nh) / 2
-        val out = FloatArray(size * size * 3) { LETTERBOX_PAD }
-        val resized = resize(frame, 0, 0, frame.width, frame.height, nw, nh)
-        for (y in 0 until nh) {
-            System.arraycopy(resized, y * nw * 3, out, ((y + padY) * size + padX) * 3, nw * 3)
-        }
-        for (i in out.indices) out[i] = out[i] / 255f
-        return out to Letterbox(k, padX, padY, size)
+        java.util.Arrays.fill(destination, LETTERBOX_PAD)
+        resizeInto(frame, 0, 0, frame.width, frame.height, nw, nh,
+            destination, (padY * size + padX) * 3, size * 3)
+        for (i in destination.indices) destination[i] = destination[i] / 255f
+        return Letterbox(k, padX, padY, size)
     }
 }

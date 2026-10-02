@@ -56,3 +56,57 @@ Emulators on Apple silicon advertise SVE2 they cannot execute; the app detects e
 kernels there. Real phones use XNNPACK. Measure speed only on real phones.
 
 Use [FIELD_PILOT_RUNBOOK.md](FIELD_PILOT_RUNBOOK.md) for the physical-phone pilot.
+
+## Latency work and pending device checks (2026-10-02)
+
+The original merged app at `1b0ca6dc5c20a0651548880123557ea83431349c` measured 592.2, 625.0 and
+464.2 ms per `analyze()` on an RMX5101 / Android 16 / SM7750 phone (mean 560.47 ms, one classified
+leaf). These are the original app's measurements, not results for the optimization changes below.
+The preserved baseline checkout and reports are under `verification-20261002/agribot/`.
+
+The current checkout reduces camera and preprocessing allocations: direct RGBA plane reads with
+fixed rotation strides; reusable detector/classifier tensor storage; direct letterbox writes;
+bounded per-thread resize-weight caching; cached direct-buffer views; and one physical inference
+thread with serialized interpreter access. Every externally retained frame and inference output
+still owns its storage. Models, preprocessing arithmetic, camera resolution, leaf limits, consensus
+and thermal pacing are preserved.
+
+Production defaults remain CPU/XNNPACK with the original 2–4-thread policy. Independent detector
+and classifier CPU thread counts, exact-precision GPU delegates and NNAPI are available for the
+developer benchmark; no accelerated backend has been selected for production. GPU creation,
+invocation and cleanup require the same physical thread. Unsupported or inaccurate accelerator
+candidates are logged as `REJECTED`, rather than counted as speed improvements.
+
+Local validation: 34 ML JVM tests and 9 camera JVM tests passed. The phone was disconnected during
+the subsequent tuning run at the user's request, so final on-device parity, speed, camera behavior
+and sustained performance are **pending**. Do not infer a measured speedup or release readiness.
+
+When the USB phone is available again, use the existing JDK/SDK and run from `android/` (PowerShell
+requires the quotes around the dotted Gradle property):
+
+```powershell
+$env:JAVA_HOME = 'C:\Program Files\Eclipse Adoptium\jdk-17.0.16.8-hotspot'
+$env:ANDROID_HOME = "$env:LOCALAPPDATA\Android\Sdk"
+$env:ANDROID_SERIAL = '<serial from adb devices -l>'
+.\gradlew.bat :app:connectedDebugAndroidTest '-Pandroid.testInstrumentationRunnerArguments.class=com.sakshyam.agribot.AgribotRuntimeBenchmarkTest,com.sakshyam.agribot.AgribotCameraBenchmarkTest' --no-daemon --max-workers=1
+```
+
+The runtime benchmark validates golden logits, labels and detector boxes for each option; timed
+calls must retain the CPU reference's leaf count and crop labels. It reports ten warm samples with
+mean/median/p95 and component averages under `AgribotTune`. `AgribotCameraBench` separately compares
+the original and optimized 1280×960 RGBA conversion paths with identical output checks. Neither
+benchmark measures live-camera FPS or field accuracy. Save the per-test `logcat-*.txt` files from
+`app/build/outputs/androidTest-results/connected/` before another run overwrites them.
+
+Then compare the preserved baseline and optimized APK with the unchanged `AgribotModelGoldenTest`
+three times each under comparable charge, thermal and compilation conditions. Select thread/backend
+settings only after the measured candidate passes parity, and rerun the full device suite and both
+camera modes on the final APK. The full suite now includes the two developer benchmark tests, so
+the expected count is 16. The original 14-test release checks can be isolated with:
+
+```powershell
+.\gradlew.bat :app:connectedDebugAndroidTest '-Pandroid.testInstrumentationRunnerArguments.notClass=com.sakshyam.agribot.AgribotRuntimeBenchmarkTest,com.sakshyam.agribot.AgribotCameraBenchmarkTest' --no-daemon --max-workers=1
+```
+
+Host build evidence is under `dist/latency-20261002/`; final phone results remain pending. Release
+signing and human/Hindi/agronomy review are still separate requirements.

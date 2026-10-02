@@ -13,16 +13,16 @@ import com.sakshyam.agribot.domain.scan.VisionStatus
 import com.sakshyam.agribot.ml.di.InferenceDispatcher
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.FileInputStream
-import java.nio.ByteBuffer
-import java.nio.ByteOrder
 import java.nio.MappedByteBuffer
 import java.nio.channels.FileChannel
 import java.security.MessageDigest
 import javax.inject.Inject
 import javax.inject.Singleton
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -30,45 +30,28 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import org.tensorflow.lite.Interpreter
-
-/** One LiteRT interpreter with reusable direct input/output buffers. Not thread-safe. */
-internal class LiteRtRunner(model: MappedByteBuffer, threads: Int, useXnnpack: Boolean) : AutoCloseable {
-    private val interpreter = Interpreter(model, Interpreter.Options().setNumThreads(threads).setUseXNNPACK(useXnnpack))
-    val inputShape: IntArray = interpreter.getInputTensor(0).shape()
-    val outputShape: IntArray = interpreter.getOutputTensor(0).shape()
-    private val input = ByteBuffer.allocateDirect(inputShape.fold(4) { a, b -> a * b }).order(ByteOrder.nativeOrder())
-    private val output = ByteBuffer.allocateDirect(outputShape.fold(4) { a, b -> a * b }).order(ByteOrder.nativeOrder())
-    val outputSize: Int = outputShape.fold(1) { a, b -> a * b }
-
-    fun run(values: FloatArray): FloatArray {
-        require(values.size * 4 == input.capacity()) { "input ${values.size} floats != tensor ${input.capacity() / 4}" }
-        input.rewind(); input.asFloatBuffer().put(values)
-        output.rewind()
-        interpreter.run(input, output)
-        output.rewind()
-        val out = FloatArray(outputSize)
-        output.asFloatBuffer().get(out)
-        return out
-    }
-
-    override fun close() = interpreter.close()
-}
 
 /**
  * On-device leaf detector + disease classifier ensemble. Everything model-specific comes from
  * assets/model_manifest.json; preprocessing is [CanonicalImageOps], identical to training/export.
  */
 @Singleton
-class AgribotLeafVision @Inject constructor(
-    @ApplicationContext private val context: Context,
-    @InferenceDispatcher private val dispatcher: CoroutineDispatcher,
+class AgribotLeafVision(
+    private val context: Context,
+    private val dispatcher: CoroutineDispatcher,
+    private val options: InferenceOptions,
 ) : LeafVision {
+    @Inject constructor(
+        @ApplicationContext context: Context,
+        @InferenceDispatcher dispatcher: CoroutineDispatcher,
+    ) : this(context, dispatcher, InferenceOptions())
+
     private val _status = MutableStateFlow<VisionStatus>(VisionStatus.Loading)
     override val status: StateFlow<VisionStatus> = _status.asStateFlow()
 
     private val scope = CoroutineScope(SupervisorJob() + dispatcher)
     private val loadLock = Mutex()
+    private val workLock = Mutex()
     private var manifest: VisionManifest? = null
     private var detector: LiteRtRunner? = null
     private var members: List<LiteRtRunner> = emptyList()
@@ -85,13 +68,14 @@ class AgribotLeafVision @Inject constructor(
         runCatching {
             val m = VisionManifest.parse(context.assets.open(MANIFEST).bufferedReader().use { it.readText() })
             verifyOnce(m)
-            val threads = Runtime.getRuntime().availableProcessors().coerceIn(2, 4)
             val xnn = !isEmulator()
-            val det = LiteRtRunner(map(m.detector.file), threads, xnn)
+            val det = LiteRtRunner(map(m.detector.file), options.detectorThreads, xnn, options.detectorBackend)
+            detector = det
             check(det.inputShape.contentEquals(intArrayOf(1, m.detector.inputSize, m.detector.inputSize, 3))) { "detector input ${det.inputShape.toList()}" }
             check(det.outputSize == 5 * m.detector.candidates) { "detector output ${det.outputShape.toList()}" }
             val mem = m.members.map { mm ->
-                LiteRtRunner(map(mm.file), threads, xnn).also { r ->
+                LiteRtRunner(map(mm.file), options.classifierThreads, xnn, options.classifierBackend).also { r ->
+                    members = members + r
                     check(r.inputShape.contentEquals(intArrayOf(1, mm.inputSize, mm.inputSize, 3))) { "${mm.file} input ${r.inputShape.toList()}" }
                     check(r.outputSize == m.labels.size) { "${mm.file} output ${r.outputShape.toList()}" }
                 }
@@ -100,48 +84,79 @@ class AgribotLeafVision @Inject constructor(
             decision = EnsembleDecision(m.labels.size, m.otherIndex, m.otherLogitBias, m.temperature, m.energyRejectBelow)
             _status.value = VisionStatus.Ready(VisionModelInfo(m.bundleId, m.labels, m.healthyIndex, m.otherIndex, m.members.size))
         }.onFailure { e ->
-            close()
+            try { close() } catch (cleanup: Throwable) {
+                if (cleanup !== e) e.addSuppressed(cleanup)
+            }
+            if (e is CancellationException || e is VirtualMachineError || e is ThreadDeath || e is LinkageError) throw e
             _status.value = VisionStatus.Failed(e.message ?: e.javaClass.simpleName)
         }.isSuccess
     }
 
     override suspend fun analyze(frame: VisionFrame, maxLeaves: Int): FrameAnalysis = withContext(dispatcher) {
-        check(ensureLoaded()) { (status.value as? VisionStatus.Failed)?.reason ?: "models unavailable" }
+        workLock.withLock {
+            require(maxLeaves >= 0) { "maxLeaves must be non-negative" }
+            check(ensureLoaded()) { (status.value as? VisionStatus.Failed)?.reason ?: "models unavailable" }
+            analyzeLoaded(frame, maxLeaves)
+        }
+    }
+
+    private fun analyzeLoaded(frame: VisionFrame, maxLeaves: Int): FrameAnalysis {
         val m = manifest!!
         val rgb = RgbFrame(frame.width, frame.height, frame.argb)
         val t0 = SystemClock.elapsedRealtimeNanos()
-        val (detIn, lb) = CanonicalImageOps.detectorInput(rgb, m.detector.inputSize)
+        val detRunner = detector!!
+        val lb = CanonicalImageOps.detectorInputInto(rgb, m.detector.inputSize, detRunner.inputValues)
         val dets = LeafDetectionDecoder.decode(
-            detector!!.run(detIn), m.detector.candidates, lb, frame.width, frame.height,
+            detRunner.run(detRunner.inputValues), m.detector.candidates, lb, frame.width, frame.height,
             m.detector.scoreThreshold, m.detector.nmsIou, m.detector.maxDetections,
         )
         val t1 = SystemClock.elapsedRealtimeNanos()
         val leaves = dets.take(maxLeaves).mapNotNull { d ->
-            val logits = m.members.zip(members).map { (mm, runner) ->
-                runner.run(CanonicalImageOps.classifierInput(rgb, mm.inputSize, d.box) ?: return@mapNotNull null)
+            val logits = m.members.indices.map { index ->
+                val mm = m.members[index]
+                val runner = members[index]
+                if (!CanonicalImageOps.classifierInputInto(rgb, mm.inputSize, runner.inputValues, d.box)) return@mapNotNull null
+                runner.run(runner.inputValues)
             }
             val r = decision!!.combine(logits)
             AnalyzedLeaf(BoundingBox(d.box.left, d.box.top, d.box.right, d.box.bottom), d.score, r.probabilities, r.labelIndex)
         }
         val t2 = SystemClock.elapsedRealtimeNanos()
-        FrameAnalysis(frame.width, frame.height, leaves, dets.size, (t1 - t0) / 1e6, (t2 - t1) / 1e6)
+        return FrameAnalysis(frame.width, frame.height, leaves, dets.size, (t1 - t0) / 1e6, (t2 - t1) / 1e6)
     }
 
     /** Classify the whole image (no detector); used for golden tests and as a fallback. */
     suspend fun classifyWhole(frame: VisionFrame): Pair<List<FloatArray>, EnsembleDecision.Result> = withContext(dispatcher) {
-        check(ensureLoaded())
-        val m = manifest!!
-        val rgb = RgbFrame(frame.width, frame.height, frame.argb)
-        val logits = m.members.zip(members).map { (mm, r) -> r.run(CanonicalImageOps.classifierInput(rgb, mm.inputSize)!!) }
-        logits to decision!!.combine(logits)
+        workLock.withLock {
+            check(ensureLoaded())
+            val m = manifest!!
+            val rgb = RgbFrame(frame.width, frame.height, frame.argb)
+            val logits = m.members.indices.map { index ->
+                val runner = members[index]
+                check(CanonicalImageOps.classifierInputInto(rgb, m.members[index].inputSize, runner.inputValues))
+                runner.run(runner.inputValues)
+            }
+            logits to decision!!.combine(logits)
+        }
     }
 
     /** Raw detector output for golden tests. */
     @androidx.annotation.VisibleForTesting
     suspend fun detectRaw(frame: VisionFrame): Pair<FloatArray, CanonicalImageOps.Letterbox> = withContext(dispatcher) {
-        check(ensureLoaded())
-        val (inp, lb) = CanonicalImageOps.detectorInput(RgbFrame(frame.width, frame.height, frame.argb), manifest!!.detector.inputSize)
-        detector!!.run(inp) to lb
+        workLock.withLock {
+            check(ensureLoaded())
+            val runner = detector!!
+            val lb = CanonicalImageOps.detectorInputInto(
+                RgbFrame(frame.width, frame.height, frame.argb), manifest!!.detector.inputSize, runner.inputValues,
+            )
+            runner.run(runner.inputValues) to lb
+        }
+    }
+
+    /** Closes an explicitly owned benchmark runtime on its inference thread. */
+    @androidx.annotation.VisibleForTesting
+    suspend fun shutdown() = withContext(dispatcher) {
+        workLock.withLock { loadLock.withLock { close(); scope.cancel() } }
     }
 
     /**
@@ -180,8 +195,16 @@ class AgribotLeafVision @Inject constructor(
     }
 
     private fun close() {
-        detector?.close(); members.forEach { it.close() }
+        val runners = listOfNotNull(detector) + members
         detector = null; members = emptyList(); manifest = null; decision = null
+        var failure: Throwable? = null
+        for (runner in runners) {
+            try { runner.close() } catch (error: Throwable) {
+                val first = failure
+                if (first == null) failure = error else if (first !== error) first.addSuppressed(error)
+            }
+        }
+        failure?.let { throw it }
     }
 
     companion object {
