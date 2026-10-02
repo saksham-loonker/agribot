@@ -48,6 +48,7 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -102,7 +103,7 @@ fun ResultsScreen(onBack: () -> Unit, vm: ResultsViewModel = hiltViewModel()) {
                         }
                     } else {
                         item { SummaryRow(s) }
-                        s.walkedM?.let { m -> item { Text(stringResource(R.string.gps_trail, m.toInt())) } }
+                        s.walkedM?.takeIf { it >= 1.0 }?.let { m -> item { Text(stringResource(R.string.gps_trail, m.toInt())) } }
                         s.map?.let { map ->
                             item { Text(stringResource(R.string.field_map), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold) }
                             item { Legend() }
@@ -141,13 +142,13 @@ private fun SummaryRow(s: ResultsUiState) {
         StatTile(sum.ok.toString(), stringResource(R.string.summary_healthy), Tone.HEALTHY, Modifier.weight(1f))
         StatTile(sum.uncertain.toString(), stringResource(R.string.summary_unsure), Tone.UNSURE, Modifier.weight(1f))
     }
-    if (s.notSeen > 0) Text(stringResource(R.string.summary_not_seen, s.notSeen), style = MaterialTheme.typography.bodyMedium)
+    if (s.notSeen > 0) Text(pluralStringResource(R.plurals.summary_not_seen, s.notSeen, s.notSeen), style = MaterialTheme.typography.bodyMedium)
 }
 
 private fun cellTone(c: RunFieldMapCell): Tone = when (c.status) {
     "ok" -> Tone.HEALTHY
     "sick" -> Tone.ATTENTION
-    "uncertain", "skipped" -> Tone.UNSURE
+    "uncertain" -> Tone.UNSURE
     "manual" -> Tone.HEALTHY
     else -> Tone.NEUTRAL
 }
@@ -171,7 +172,8 @@ private fun MapRow(label: String, cells: List<RunFieldMapCell>) {
         Row(Modifier.horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(3.dp)) {
             cells.forEach { c ->
                 val t = cellTone(c)
-                Box(Modifier.size(width = 22.dp, height = 22.dp).background(if (c.status == "empty") t.color().copy(alpha = 0.3f) else t.color(), RoundedCornerShape(4.dp)), contentAlignment = Alignment.Center) {
+                val faded = c.status == "empty" || c.status == "skipped"   // not seen = not scanned
+                Box(Modifier.size(width = 22.dp, height = 22.dp).background(if (faded) t.color().copy(alpha = 0.3f) else t.color(), RoundedCornerShape(4.dp)), contentAlignment = Alignment.Center) {
                     Text(c.plantNumber.toString(), style = MaterialTheme.typography.labelSmall, color = androidx.compose.ui.graphics.Color.White)
                 }
             }

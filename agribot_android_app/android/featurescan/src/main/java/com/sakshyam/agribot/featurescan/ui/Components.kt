@@ -35,6 +35,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -180,7 +181,7 @@ fun VerdictCard(v: PlantVerdict, labels: List<String>, modifier: Modifier = Modi
                 when {
                     v.kind == VerdictKind.UNSURE || v.kind == VerdictKind.NEED_MORE_VIEWS ->
                         Text(stringResource(R.string.verdict_unsure_body, stringResource(Conditions.nameRes(key)), stringResource(Conditions.nameRes(runnerKey))))
-                    v.partial -> Text(stringResource(R.string.verdict_partial_body, v.leavesAgreeing))
+                    v.partial -> Text(pluralStringResource(R.plurals.verdict_partial_body, v.leavesAgreeing, v.leavesAgreeing))
                 }
                 val cond = Conditions.forKey(if (v.kind == VerdictKind.UNKNOWN_CONDITION) "Other" else key)
                 if (cond != null && v.kind != VerdictKind.UNSURE && v.kind != VerdictKind.NEED_MORE_VIEWS) {

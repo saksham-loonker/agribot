@@ -32,6 +32,27 @@ class ResourcesAndInputsTest {
         }
     }
 
+    @Test fun `plurals exist in both languages with the same arguments`() {
+        fun plurals(path: String): Map<String, List<String>> {
+            val doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(File(path))
+            val nodes = doc.getElementsByTagName("plurals")
+            return (0 until nodes.length).associate { i ->
+                val n = nodes.item(i)
+                val items = n.childNodes.let { c -> (0 until c.length).map { c.item(it) }.filter { it.nodeName == "item" }.map { it.textContent } }
+                n.attributes.getNamedItem("name").nodeValue to items
+            }
+        }
+        val pe = plurals("src/main/res/values/plurals.xml".let { if (File(it).exists()) it else "src/main/res/values/strings.xml" })
+        val ph = plurals("src/main/res/values-hi/strings.xml")
+        assertEquals(pe.keys, ph.keys)
+        for ((k, items) in pe) {
+            assertTrue("plural $k needs one and other", items.size >= 2)
+            val args = items.flatMap { formatArg.findAll(it).map { m -> m.value } }.toSet()
+            val hiArgs = ph.getValue(k).flatMap { formatArg.findAll(it).map { m -> m.value } }.toSet()
+            assertEquals("plural args differ for $k", args, hiArgs)
+        }
+    }
+
     @Test fun `every model label has localised condition text`() {
         val manifest = Json.parseToJsonElement(File("../app/src/main/assets/model_manifest.json").readText()).jsonObject
         val labels = manifest["classifier"]!!.jsonObject["labels"]!!.jsonArray.map { it.jsonPrimitive.content }

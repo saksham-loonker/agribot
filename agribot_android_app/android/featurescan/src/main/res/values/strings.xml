@@ -25,7 +25,7 @@
     <string name="model_failed">The disease models could not be loaded. Try again; if it keeps failing, reinstall the app. (Details: %1$s)</string>
     <string name="run_item_check">Plant check</string>
     <string name="run_item_walk">Field walk · %1$s</string>
-    <string name="run_item_plants">%1$d plants · %2$d need attention</string>
+    <string name="run_item_plants">Plants: %1$d · Need attention: %2$d</string>
 
     <!-- Camera permission -->
     <string name="perm_camera_title">Camera needed</string>
@@ -42,9 +42,9 @@
     <string name="check_hint_closer">Move closer — fill the screen with leaves</string>
     <string name="check_hint_hold">Hold steady…</string>
     <string name="check_hint_dark">Too dark — turn on the light or move to daylight</string>
-    <string name="check_progress">Looked at %1$d leaves in %2$d views</string>
+    <string name="check_progress">Leaves: %1$d · Views: %2$d</string>
     <string name="check_no_leaves">No tomato leaves found yet. Move closer, fill the frame with leaves and make sure there is enough light.</string>
-    <string name="leaves_seen">%1$d leaves seen</string>
+    <string name="leaves_seen">Leaves seen: %1$d</string>
     <string name="torch_on">Light on</string>
     <string name="torch_off">Light off</string>
     <string name="check_again">Check again</string>
@@ -59,11 +59,10 @@
     <string name="verdict_unknown">Problem not in our list</string>
     <string name="verdict_unsure">Not sure — look again</string>
     <string name="verdict_unsure_body">The leaves gave mixed signals (maybe %1$s or %2$s). Move closer, try other leaves or use better light.</string>
-    <string name="verdict_partial_body">Most leaves look healthy, but %1$d leaves clearly show signs of this. Check the whole plant.</string>
     <string name="confidence_high">High confidence</string>
     <string name="confidence_medium">Medium confidence</string>
     <string name="confidence_low">Low confidence</string>
-    <string name="leaves_agree">%1$d of %2$d leaves agree</string>
+    <string name="leaves_agree">Leaves agreeing: %1$d of %2$d</string>
     <string name="what_it_is">What this is</string>
     <string name="what_to_do">What to do now</string>
     <string name="disclaimer_short">This is an aid, not a final diagnosis. Confirm with your local agriculture officer or Krishi Vigyan Kendra (KVK) before using any spray.</string>
@@ -125,7 +124,6 @@
     <string name="gps_trail">Walked about %1$d m</string>
     <string name="result_time">%1$s</string>
     <string name="result_load_failed">This result could not be opened. Please try again.</string>
-    <string name="summary_not_seen">%1$d plants were passed without being seen. They are shown as “Not scanned” on the map.</string>
     <string name="result_missing">This result is no longer available.</string>
 
     <string name="report_col_row">Row</string>
@@ -219,4 +217,13 @@
     <string name="cond_other_do3">Do not spray anything until the problem is identified.</string>
 
     <string name="cond_unknown_label">Unknown</string>
+
+    <plurals name="summary_not_seen">
+        <item quantity="one">%1$d plant was passed without being seen. It is shown as “Not scanned” on the map.</item>
+        <item quantity="other">%1$d plants were passed without being seen. They are shown as “Not scanned” on the map.</item>
+    </plurals>
+    <plurals name="verdict_partial_body">
+        <item quantity="one">Most leaves look healthy, but %1$d leaf clearly shows signs of this. Check the whole plant.</item>
+        <item quantity="other">Most leaves look healthy, but %1$d leaves clearly show signs of this. Check the whole plant.</item>
+    </plurals>
 </resources>

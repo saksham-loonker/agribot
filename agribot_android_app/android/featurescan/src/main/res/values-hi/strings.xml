@@ -25,7 +25,7 @@
     <string name="model_failed">रोग पहचान मॉडल लोड नहीं हो सके। फिर से कोशिश करें; बार-बार ऐसा हो तो ऐप दोबारा इंस्टॉल करें। (विवरण: %1$s)</string>
     <string name="run_item_check">पौधे की जाँच</string>
     <string name="run_item_walk">खेत की जाँच · %1$s</string>
-    <string name="run_item_plants">%1$d पौधे · %2$d पर ध्यान दें</string>
+    <string name="run_item_plants">पौधे: %1$d · ध्यान दें: %2$d</string>
 
     <!-- कैमरा अनुमति -->
     <string name="perm_camera_title">कैमरा चाहिए</string>
@@ -42,9 +42,9 @@
     <string name="check_hint_closer">पास आएँ — स्क्रीन को पत्तियों से भर दें</string>
     <string name="check_hint_hold">फ़ोन स्थिर रखें…</string>
     <string name="check_hint_dark">बहुत अँधेरा है — लाइट चालू करें या धूप में जाएँ</string>
-    <string name="check_progress">%2$d बार में %1$d पत्तियाँ देखीं</string>
+    <string name="check_progress">पत्तियाँ: %1$d · बार: %2$d</string>
     <string name="check_no_leaves">अभी टमाटर की पत्तियाँ नहीं मिलीं। पास आएँ, फ़्रेम को पत्तियों से भरें और पर्याप्त रोशनी रखें।</string>
-    <string name="leaves_seen">%1$d पत्तियाँ देखीं</string>
+    <string name="leaves_seen">देखी गई पत्तियाँ: %1$d</string>
     <string name="torch_on">लाइट चालू</string>
     <string name="torch_off">लाइट बंद</string>
     <string name="check_again">फिर से जाँचें</string>
@@ -59,11 +59,10 @@
     <string name="verdict_unknown">समस्या हमारी सूची में नहीं है</string>
     <string name="verdict_unsure">पक्का नहीं — फिर से देखें</string>
     <string name="verdict_unsure_body">पत्तियों से मिले-जुले संकेत मिले (शायद %1$s या %2$s)। पास आएँ, दूसरी पत्तियाँ दिखाएँ या बेहतर रोशनी में जाँचें।</string>
-    <string name="verdict_partial_body">ज़्यादातर पत्तियाँ स्वस्थ दिखती हैं, पर %1$d पत्तियों पर इसके साफ़ लक्षण हैं। पूरा पौधा जाँचें।</string>
     <string name="confidence_high">अधिक भरोसा</string>
     <string name="confidence_medium">मध्यम भरोसा</string>
     <string name="confidence_low">कम भरोसा</string>
-    <string name="leaves_agree">%2$d में से %1$d पत्तियाँ सहमत</string>
+    <string name="leaves_agree">सहमत पत्तियाँ: %2$d में से %1$d</string>
     <string name="what_it_is">यह क्या है</string>
     <string name="what_to_do">अभी क्या करें</string>
     <string name="disclaimer_short">यह एक सहायता है, अंतिम निदान नहीं। कोई भी छिड़काव करने से पहले अपने कृषि अधिकारी या कृषि विज्ञान केंद्र (KVK) से पुष्टि करें।</string>
@@ -125,7 +124,6 @@
     <string name="gps_trail">लगभग %1$d मीटर चले</string>
     <string name="result_time">%1$s</string>
     <string name="result_load_failed">यह परिणाम खोला नहीं जा सका। कृपया फिर से कोशिश करें।</string>
-    <string name="summary_not_seen">%1$d पौधे बिना देखे निकल गए। नक्शे पर वे “नहीं जाँचा” दिखते हैं।</string>
     <string name="result_missing">यह परिणाम अब उपलब्ध नहीं है।</string>
 
     <string name="report_col_row">कतार</string>
@@ -219,4 +217,13 @@
     <string name="cond_other_do3">समस्या पहचानने से पहले कुछ भी न छिड़कें।</string>
 
     <string name="cond_unknown_label">अज्ञात</string>
+
+    <plurals name="summary_not_seen">
+        <item quantity="one">%1$d पौधा बिना देखे निकल गया। नक्शे पर वह “नहीं जाँचा” दिखता है।</item>
+        <item quantity="other">%1$d पौधे बिना देखे निकल गए। नक्शे पर वे “नहीं जाँचा” दिखते हैं।</item>
+    </plurals>
+    <plurals name="verdict_partial_body">
+        <item quantity="one">ज़्यादातर पत्तियाँ स्वस्थ दिखती हैं, पर %1$d पत्ती पर इसके साफ़ लक्षण हैं। पूरा पौधा जाँचें।</item>
+        <item quantity="other">ज़्यादातर पत्तियाँ स्वस्थ दिखती हैं, पर %1$d पत्तियों पर इसके साफ़ लक्षण हैं। पूरा पौधा जाँचें।</item>
+    </plurals>
 </resources>
