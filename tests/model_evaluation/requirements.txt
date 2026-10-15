@@ -1,0 +1,13 @@
+# In addition to the repository development/runtime environment.
+requests
+Pillow
+numpy
+scipy
+ImageHash
+ai-edge-litert
+pandas
+matplotlib
+nbformat
+nbclient
+nbconvert
+ipykernel
