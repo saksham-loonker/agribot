@@ -1,5 +1,18 @@
 # Agribot v3 — field Healthy retraining pipeline
 
+## Latest app and model decision — 24 October 2026
+
+The original classifier is still shipped. Further supervised head adaptation and
+reliable-teacher retention recovered Healthy results, but the exported adapter
+introduced three additional Leaf Miner false Healthy calls on the previously
+opened grouped regression set. It was rejected, including after numerical parity
+and phone parity passed: numerical correctness does not establish model quality.
+See [the app validation report](../../docs/training/APP_VALIDATION_20261024.md)
+and [machine-readable results](results/production_validation_20261024.json).
+`retention.py` and `export_head_blend.py` remain experimental tools; exporting a
+candidate does not approve it for deployment. No logit-based RL was required to
+repair the trainer, and none was used to justify this release.
+
 ## Current recovery status — 24 October 2026
 
 The original trainable `field_vits2` checkpoint was recovered on the owner's PC

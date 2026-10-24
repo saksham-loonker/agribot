@@ -72,12 +72,12 @@ class AgribotLeafVision(
             val det = LiteRtRunner(map(m.detector.file), options.detectorThreads, xnn, options.detectorBackend)
             detector = det
             check(det.inputShape.contentEquals(intArrayOf(1, m.detector.inputSize, m.detector.inputSize, 3))) { "detector input ${det.inputShape.toList()}" }
-            check(det.outputSize == 5 * m.detector.candidates) { "detector output ${det.outputShape.toList()}" }
+            check(det.outputShape.contentEquals(intArrayOf(1, 5, m.detector.candidates))) { "detector output ${det.outputShape.toList()}" }
             val mem = m.members.map { mm ->
                 LiteRtRunner(map(mm.file), options.classifierThreads, xnn, options.classifierBackend).also { r ->
                     members = members + r
                     check(r.inputShape.contentEquals(intArrayOf(1, mm.inputSize, mm.inputSize, 3))) { "${mm.file} input ${r.inputShape.toList()}" }
-                    check(r.outputSize == m.labels.size) { "${mm.file} output ${r.outputShape.toList()}" }
+                    check(r.outputShape.contentEquals(intArrayOf(1, m.labels.size))) { "${mm.file} output ${r.outputShape.toList()}" }
                 }
             }
             detector = det; members = mem; manifest = m

@@ -30,6 +30,7 @@ import com.sakshyam.agribot.domain.scan.VerdictRecords
 import com.sakshyam.agribot.domain.scan.VisionFrame
 import com.sakshyam.agribot.domain.scan.VisionModelInfo
 import com.sakshyam.agribot.domain.scan.VisionStatus
+import com.sakshyam.agribot.domain.scan.analyzeUsable
 import com.sakshyam.agribot.domain.scan.toVerdict
 import com.sakshyam.agribot.featurescan.scan.FrameTools
 import com.sakshyam.agribot.featurescan.scan.LocationFeed
@@ -42,6 +43,7 @@ import java.util.UUID
 import java.util.concurrent.atomic.AtomicBoolean
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -71,6 +73,7 @@ data class WalkUiState(
     val boxes: List<LeafBox> = emptyList(),
     val currentLeaves: Int = 0,
     val currentVerdict: PlantVerdict? = null,
+    val needsClearView: Boolean = false,
     /** Result per plant of the current row (index = plant - 1), null = not recorded yet. */
     val rowResults: List<VerdictKind?> = emptyList(),
     val lastSaved: Pair<Int, PlantVerdict>? = null,
@@ -197,12 +200,17 @@ class WalkRowsViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.Default) {
             try {
                 val i = info ?: return@launch
-                val q = FrameTools.quality(frame)
-                val a = vision.analyze(frame, MAX_LEAVES)
+                val checked = vision.analyzeUsable(frame, MAX_LEAVES)
+                val q = FrameTools.quality(checked.quality)
+                val a = checked.analysis
                 lock.withLock {
                     val w = walk ?: return@withLock
                     val ev = evidence ?: return@withLock
                     if (_state.value.paused || _state.value.finished || epoch != plantEpoch) return@withLock
+                    if (a == null) {
+                        publish { it.copy(needsClearView = true, boxes = emptyList(), error = null) }
+                        return@withLock
+                    }
                     frameIndex++
                     val here = w.rowIndex to w.plantNumber
                     val obs = a.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, q.weight) }
@@ -215,10 +223,11 @@ class WalkRowsViewModel @Inject constructor(
                     }
                     if (used >= bestLeaves && used > 0) { bestFrame = frame; bestLeaves = used }
                     val v = ev.verdict()
-                    publish { it.copy(error = null, boxes = a.leaves.map { l -> LeafBox.of(l, a.frameWidth, a.frameHeight, i) }, currentLeaves = ev.leavesSeen, currentVerdict = v.takeIf { x -> x.kind != VerdictKind.NEED_MORE_VIEWS }) }
+                    publish { it.copy(error = null, needsClearView = false, boxes = a.leaves.map { l -> LeafBox.of(l, a.frameWidth, a.frameHeight, i) }, currentLeaves = ev.leavesSeen, currentVerdict = v.takeIf { x -> x.kind != VerdictKind.NEED_MORE_VIEWS }) }
                 }
             } catch (e: Exception) {
-                _state.update { it.copy(error = WalkError.ANALYSIS_FAILED) }
+                if (e is CancellationException) throw e
+                if (epoch == plantEpoch) _state.update { it.copy(error = WalkError.ANALYSIS_FAILED) }
             } finally {
                 busy.set(false)
             }

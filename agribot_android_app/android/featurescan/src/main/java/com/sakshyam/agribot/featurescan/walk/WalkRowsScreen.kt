@@ -178,7 +178,8 @@ private fun WalkLive(s: WalkUiState, vm: WalkRowsViewModel) {
                 Text(stringResource(R.string.walk_row_plant, s.row, s.plant, s.plantsPerRow), color = Color.White, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, modifier = Modifier.testTag("row_plant"))
                 val v = s.currentVerdict
                 Text(
-                    if (v != null) stringResource(R.string.walk_current_plant) + ": " + verdictTitle(v, s.labels) else stringResource(R.string.leaves_seen, s.currentLeaves),
+                    if (s.needsClearView) stringResource(R.string.scan_quality_retry)
+                    else if (v != null) stringResource(R.string.walk_current_plant) + ": " + verdictTitle(v, s.labels) else stringResource(R.string.leaves_seen, s.currentLeaves),
                     color = Color.White, style = MaterialTheme.typography.bodyLarge,
                 )
                 if (!s.stepsAvailable) Text(stringResource(R.string.walk_steps_unavailable), color = Color(0xFFFFE066), style = MaterialTheme.typography.bodyMedium)

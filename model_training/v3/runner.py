@@ -16,6 +16,7 @@ import torch.nn.functional as F
 from train import LABELS, MEAN, STD, sampling_weights, gpu_augment, predict, metrics_from_logits, set_seed
 from training_support import (sha256, load_initial_weights, validate_cache, set_trainable,
     parameter_groups, capture_rng, restore_rng, assert_resume_compatible, retention_pass, atomic_save)
+from retention import reliable_retention
 
 
 def run(args):
@@ -23,6 +24,10 @@ def run(args):
         raise ValueError('Invalid batch/epoch/image/unfreeze configuration')
     if args.init_checkpoint and args.no_pretrained:
         raise ValueError('--init-checkpoint and --no-pretrained are mutually exclusive')
+    if args.healthy_weight <= 0 or args.retention_alpha < 0 or args.retention_temperature <= 0:
+        raise ValueError('Invalid supervised weighting/retention configuration')
+    if args.retention_alpha and not args.init_checkpoint:
+        raise ValueError('Retention requires a verified original --init-checkpoint')
     set_seed(args.seed)
     torch.set_num_threads(min(8, __import__('os').cpu_count() or 1))
     torch.backends.cuda.matmul.allow_tf32 = False
@@ -54,6 +59,11 @@ def run(args):
     initialization = dict(kind='pretrained-backbone retraining' if not args.no_pretrained else 'random initialization')
     if args.init_checkpoint and not args.resume:
         initialization = load_initial_weights(model, args.init_checkpoint, LABELS, args.model, args.img)
+    teacher = None
+    if args.retention_alpha:
+        teacher = timm.create_model(args.model, pretrained=False, num_classes=len(LABELS), img_size=args.img).to(device).eval()
+        load_initial_weights(teacher, args.init_checkpoint, LABELS, args.model, args.img)
+        teacher.requires_grad_(False)
     groups = parameter_groups(model, args.lr_head, args.lr_backbone, args.layer_decay, args.wd)
     optimizer = torch.optim.AdamW(groups, fused=True)
     total = args.epochs * steps
@@ -94,6 +104,9 @@ def run(args):
     cw = np.sqrt(len(train) / (len(LABELS) * np.maximum(counts, 1)))
     cw = np.clip(cw / cw.mean(), 1 / args.max_class_weight, args.max_class_weight)
     class_weights = torch.tensor(cw, dtype=torch.float32, device=device) if args.loss == 'weighted' else None
+    if args.healthy_weight != 1:
+        class_weights = class_weights if class_weights is not None else torch.ones(len(LABELS), device=device)
+        class_weights[LABELS.index('Healthy')] *= args.healthy_weight
     log_prior = torch.tensor(np.log(np.clip(prior, 1e-6, None)), dtype=torch.float32, device=device)
     forward = torch.compile(model) if args.compile else model
     meta_out = dict(model=args.model, img=args.img, num_classes=len(LABELS), classes=LABELS,
@@ -111,7 +124,7 @@ def run(args):
                     block.train()
         order = (torch.randperm(len(train), device=device) if args.sampling == 'uniform' else
                  torch.multinomial(weights, len(train), replacement=True))
-        running, seen, t0 = 0., 0, time.time()
+        running, ce_running, kd_running, seen, t0 = 0., 0., 0., 0, time.time()
         sampled = torch.zeros(len(LABELS), dtype=torch.int64, device=device)
         for step in range(steps):
             idx = train[order[step * args.bs:(step + 1) * args.bs]]
@@ -122,7 +135,12 @@ def run(args):
             with torch.autocast('cuda', dtype=torch.bfloat16, enabled=args.precision == 'bf16'):
                 logits = forward(xb).float()
                 adjusted = logits + args.logit_tau * log_prior if args.loss == 'logit_adjusted' else logits
-                loss = F.cross_entropy(adjusted, y, weight=class_weights, label_smoothing=args.label_smoothing)
+                supervised = F.cross_entropy(adjusted, y, weight=class_weights, label_smoothing=args.label_smoothing)
+                kd = logits.sum() * 0.0
+                if teacher is not None:
+                    with torch.no_grad(): teacher_logits = teacher(xb).float()
+                    kd = reliable_retention(logits, teacher_logits, y, LABELS.index('Healthy'), args.retention_temperature, args.retention_balance)
+                loss = supervised + args.retention_alpha * kd
             if not torch.isfinite(loss):
                 raise FloatingPointError('Nonfinite loss')
             optimizer.zero_grad(set_to_none=True)
@@ -133,6 +151,8 @@ def run(args):
             global_step += 1
             ema.update(model, step=global_step)
             running += float(loss.detach()) * len(idx)
+            ce_running += float(supervised.detach()) * len(idx)
+            kd_running += float(kd.detach()) * len(idx)
             seen += len(idx)
             sampled += torch.bincount(y, minlength=len(LABELS))
         online, _ = metrics_from_logits(predict(model, images, val_idx, args.img, precision=args.precision), labels[val_idx])
@@ -143,6 +163,7 @@ def run(args):
         score = metrics['macro_recall'] + .5 * metrics['healthy_recall'] - .5 * metrics['false_healthy_rate']
         row = dict(epoch=epoch, phase='warmup' if epoch < args.warmup_epochs else 'finetune',
                    seconds=round(time.time()-t0, 2), loss=running / max(1, seen), val_score=score,
+                   supervised_loss=ce_running/max(1,seen), retention_loss=kd_running/max(1,seen),
                    eligible=eligible, retention_failures=failures, online_metrics=online,
                    global_step=global_step, last_gradient_norm=float(grad), samples_seen=seen,
                    sampled_class_counts=dict(zip(LABELS, sampled.cpu().tolist())),

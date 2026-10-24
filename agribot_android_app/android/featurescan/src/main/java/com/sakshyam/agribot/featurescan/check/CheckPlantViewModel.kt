@@ -21,6 +21,7 @@ import com.sakshyam.agribot.domain.scan.VerdictRecords
 import com.sakshyam.agribot.domain.scan.VisionFrame
 import com.sakshyam.agribot.domain.scan.VisionModelInfo
 import com.sakshyam.agribot.domain.scan.VisionStatus
+import com.sakshyam.agribot.domain.scan.analyzeUsable
 import com.sakshyam.agribot.featurescan.scan.FrameTools
 import com.sakshyam.agribot.featurescan.ui.LeafBox
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -30,6 +31,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -39,7 +41,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
-enum class CheckHint { FIND_LEAVES, MOVE_CLOSER, HOLD_STEADY, TOO_DARK, NO_LEAVES }
+enum class CheckHint { FIND_LEAVES, MOVE_CLOSER, HOLD_STEADY, TOO_DARK, CLEAR_VIEW, NO_LEAVES }
 
 data class CheckUiState(
     val vision: VisionStatus = VisionStatus.Loading,
@@ -104,7 +106,8 @@ class CheckPlantViewModel @Inject constructor(
             try {
                 process(frame, gen)
             } catch (e: Exception) {
-                _state.update { it.copy(error = CheckError.ANALYSIS_FAILED) }
+                if (e is CancellationException) throw e
+                if (gen == generation.get()) _state.update { it.copy(error = CheckError.ANALYSIS_FAILED) }
             } finally {
                 busy.set(false)
             }
@@ -113,10 +116,16 @@ class CheckPlantViewModel @Inject constructor(
 
     private suspend fun process(frame: VisionFrame, gen: Int) {
         val i = info ?: return
-        val quality = FrameTools.quality(frame)
-        val analysis = vision.analyze(frame, MAX_LEAVES)
+        val checked = vision.analyzeUsable(frame, MAX_LEAVES)
+        val quality = FrameTools.quality(checked.quality)
+        val analysis = checked.analysis
         lock.withLock {
             if (gen != generation.get() || !_state.value.scanning) return
+            if (analysis == null) {
+                stableFrames = 0; lastKey = null
+                _state.update { it.copy(hint = if (quality.tooDark) CheckHint.TOO_DARK else CheckHint.CLEAR_VIEW, boxes = emptyList(), error = null) }
+                return
+            }
             val ev = evidence ?: PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex).also { evidence = it }
             val boxes = analysis.leaves.map { LeafBox.of(it, analysis.frameWidth, analysis.frameHeight, i) }
             if (analysis.leaves.isEmpty()) {
@@ -171,6 +180,8 @@ class CheckPlantViewModel @Inject constructor(
         val v = s.verdict ?: return
         val i = info ?: return
         if (s.saving || s.savedRunId != null) return
+        val gen = generation.get()
+        val frameToSave = bestFrame
         _state.update { it.copy(saving = true) }
         viewModelScope.launch(Dispatchers.IO) {
             runCatching {
@@ -178,15 +189,18 @@ class CheckPlantViewModel @Inject constructor(
                 runs.createRun(RunConfig(runId, RecordingMode.CHECK_PLANT, FieldId(QUICK_CHECK_FIELD), 0, i.bundleId))
                 val decisionId = DecisionId(UUID.randomUUID().toString())
                 val keepPhoto = settings.observeSettings().first().saveEvidenceFrames
-                val photo = if (keepPhoto) bestFrame?.let { f -> evidenceRepo.saveEvidence(runId, decisionId, FrameTools.toAnalysisFrame(f), "check").path } else null
+                val photo = if (keepPhoto) frameToSave?.let { f -> evidenceRepo.saveEvidence(runId, decisionId, FrameTools.toAnalysisFrame(f), "check").path } else null
                 runs.appendDecision(
                     VerdictRecords.toDecision(decisionId, runId, 1, RecordingMode.CHECK_PLANT, PlantPlace(QUICK_CHECK_FIELD, null, null),
                         v, i.labels, i.bundleId, Instant.now(), evidencePath = photo),
                 )
                 runs.markRunCompleted(runId)
                 runId.value
-            }.onSuccess { id -> _state.update { it.copy(saving = false, savedRunId = id) } }
-                .onFailure { _state.update { it.copy(saving = false, error = CheckError.SAVE_FAILED) } }
+            }.onSuccess { id -> if (gen == generation.get()) _state.update { it.copy(saving = false, savedRunId = id) } }
+                .onFailure {
+                    if (it is CancellationException) throw it
+                    if (gen == generation.get()) _state.update { it.copy(saving = false, error = CheckError.SAVE_FAILED) }
+                }
         }
     }
 

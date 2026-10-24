@@ -5,6 +5,7 @@ import java.nio.ByteOrder
 import java.nio.MappedByteBuffer
 import org.tensorflow.lite.Delegate
 import org.tensorflow.lite.Interpreter
+import org.tensorflow.lite.DataType
 import org.tensorflow.lite.gpu.GpuDelegate
 import org.tensorflow.lite.nnapi.NnApiDelegate
 
@@ -30,6 +31,16 @@ internal class LiteRtRunner(model: MappedByteBuffer, threads: Int, useXnnpack: B
     }
     val inputShape: IntArray = interpreter.getInputTensor(0).shape()
     val outputShape: IntArray = interpreter.getOutputTensor(0).shape()
+    init {
+        try {
+            require(interpreter.inputTensorCount == 1 && interpreter.outputTensorCount == 1) { "runtime requires one input and one output" }
+            require(interpreter.getInputTensor(0).dataType() == DataType.FLOAT32 && interpreter.getOutputTensor(0).dataType() == DataType.FLOAT32) { "runtime requires float32 input and output" }
+            require(inputShape.all { it > 0 } && outputShape.all { it > 0 }) { "runtime requires fixed positive tensor dimensions" }
+        } catch (error: Throwable) {
+            try { interpreter.close() } finally { delegate?.close() }
+            throw error
+        }
+    }
     val inputValues = FloatArray(inputShape.fold(1) { a, b -> a * b })
     private val input = ByteBuffer.allocateDirect(inputValues.size * 4).order(ByteOrder.nativeOrder())
     private val output = ByteBuffer.allocateDirect(outputShape.fold(4) { a, b -> a * b }).order(ByteOrder.nativeOrder())

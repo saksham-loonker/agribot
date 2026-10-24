@@ -133,6 +133,33 @@ class TrainingRecoveryTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'Duplicate'):
                 read(p)
 
+    def test_retention_does_not_anchor_teacher_healthy_mistakes(self):
+        from retention import reliable_retention
+        student=torch.tensor([[0.,3.,0.],[0.,0.,3.]],requires_grad=True)
+        teacher=torch.tensor([[3.,0.,0.],[0.,0.,3.]])
+        labels=torch.tensor([1,2])
+        loss=reliable_retention(student,teacher,labels,1,2.)
+        self.assertLess(abs(float(loss)),1e-6)
+        loss.backward()
+        torch.testing.assert_close(student.grad[0],torch.zeros(3))
+
+    def test_conservative_adapter_preserves_strong_disease_and_other(self):
+        from export_head_blend import conservative_mix
+        base=torch.full((2,9),.01);base[0,0]=.92;base[1,8]=.92
+        adapted=torch.full((2,9),.005);adapted[:,1]=.96
+        got=conservative_mix(base,adapted,.5,.4,torch.tensor([0.]*8+[.75]),.881470084)
+        torch.testing.assert_close(got,base)
+
+    def test_conservative_adapter_only_raises_uncertain_healthy_probability(self):
+        from export_head_blend import conservative_mix
+        base=torch.full((1,9),.25/7);base[0,1]=.45;base[0,3]=.3
+        adapted=torch.full((1,9),.0125);adapted[0,1]=.9
+        got=conservative_mix(base,adapted,.5,.4,torch.tensor([0.]*8+[.75]),.881470084)
+        self.assertGreater(float(got[0,1]),.6)
+        torch.testing.assert_close(got.sum(1),torch.ones(1))
+        unchanged=conservative_mix(adapted,base,.5,.4,torch.tensor([0.]*8+[.75]),.881470084)
+        torch.testing.assert_close(unchanged,adapted)
+
 
 if __name__ == '__main__':
     unittest.main()

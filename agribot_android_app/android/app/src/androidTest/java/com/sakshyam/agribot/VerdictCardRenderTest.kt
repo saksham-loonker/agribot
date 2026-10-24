@@ -38,8 +38,10 @@ import org.junit.runner.RunWith
 class VerdictCardRenderTest {
     @get:Rule val ui = createAndroidComposeRule<ComponentActivity>()
 
-    private val labels = listOf("Late_blight", "Healthy")
+    private val labels = listOf("Late_blight", "Healthy", "Other")
     private val cases = listOf(
+        "healthy" to PlantVerdict(VerdictKind.HEALTHY, 1, 0.86f, 0, 0.08f, 5, 4, 6, false),
+        "unknown" to PlantVerdict(VerdictKind.UNKNOWN_CONDITION, 2, 0.86f, 1, 0.08f, 5, 4, 6, false),
         "disease" to PlantVerdict(VerdictKind.DISEASE, 0, 0.86f, 1, 0.08f, 5, 4, 6, false),
         "partial" to PlantVerdict(VerdictKind.DISEASE, 0, 0.78f, 1, 0.70f, 6, 2, 6, true),
         "unsure" to PlantVerdict(VerdictKind.UNSURE, 0, 0.45f, 1, 0.40f, 3, 2, 8, false),

@@ -72,6 +72,10 @@ def parse_args():
     p.add_argument("--max-disease-drop", type=float, default=0.02)
     p.add_argument("--max-false-healthy-increase", type=float, default=0.005)
     p.add_argument("--stop-after-epoch", type=int, help="Clean checkpoint boundary for interruption/resume verification")
+    p.add_argument("--healthy-weight", type=float, default=1.0, help="Supervised Healthy-class weight; not an inference bonus")
+    p.add_argument("--retention-alpha", type=float, default=0.0, help="KL retention on reliable non-Healthy teacher examples")
+    p.add_argument("--retention-temperature", type=float, default=2.0)
+    p.add_argument("--retention-balance", choices=("sample", "class"), default="sample")
     return p.parse_args()
 
 

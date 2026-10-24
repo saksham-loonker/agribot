@@ -1,0 +1,151 @@
+{
+  "bundle_id": "agribot-v3-healthy-adapter-9d0cbd13",
+  "schema": 2,
+  "status": "REJECTED: additional Leaf Miner false Healthy calls on broader regression; original model retained",
+  "classifier": {
+    "members": [
+      {
+        "file": "disease_classifier_0.tflite",
+        "sha256": "9d0cbd131f04e549a8c55603ccf5208b2d4a98c7a124ee81787212c4f7e46807",
+        "arch": "vit_small_patch14_dinov2 shared-backbone conservative Healthy adapter",
+        "licence": "Apache-2.0",
+        "input": [
+          1,
+          224,
+          224,
+          3
+        ]
+      }
+    ],
+    "combine": "log(mean_i softmax(logits_i)); then add other_logit_bias to index 8; label = argmax; confidence = softmax(z / temperature)",
+    "layout": "NHWC",
+    "preprocess": "crop(box,+10% pad, floor/ceil) -> centred square of short side -> canonical resize -> /255 -> ImageNet mean/std",
+    "mean": [
+      0.48500001430511475,
+      0.4560000002384186,
+      0.4059999883174896
+    ],
+    "std": [
+      0.2290000021457672,
+      0.2240000069141388,
+      0.22499999403953552
+    ],
+    "labels": [
+      "Early_blight",
+      "Healthy",
+      "Late_blight",
+      "Leaf Miner",
+      "Magnesium Deficiency",
+      "Nitrogen Deficiency",
+      "Pottassium Deficiency",
+      "Spotted Wilt Virus",
+      "Other"
+    ],
+    "other_index": 8,
+    "other_logit_bias": 0.75,
+    "temperature": 0.8814700841903687,
+    "energy_gate": false,
+    "energy_reject_below": null,
+    "energy_definition": "T * logsumexp(z[0:8] / T) with z = logits + bias"
+  },
+  "detector": {
+    "file": "leaf_detector.tflite",
+    "sha256": "0a8c9128544726348a8400ec2f481b5985f47a778b601f4025be582eaa30a0d4",
+    "arch": "YOLOv9-T (LibreYOLO, MIT)",
+    "input": [
+      1,
+      320,
+      320,
+      3
+    ],
+    "layout": "NHWC",
+    "preprocess": "letterbox centred, pad 114, canonical resize, /255",
+    "output": [
+      1,
+      5,
+      2100
+    ],
+    "output_rows": [
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "score"
+    ],
+    "coordinate_space": "letterboxed_input_pixels",
+    "score_threshold": 0.35,
+    "nms_iou": 0.6,
+    "max_detections": 16,
+    "labels": [
+      "leaf"
+    ]
+  },
+  "resize_algorithm": "separable; scale>1 area-average, else bilinear half-pixel centres (see golden/canon_reference.py)",
+  "heldout_results": {
+    "development": {
+      "healthy_correct": [
+        23,
+        26
+      ],
+      "baseline_healthy_correct": [
+        20,
+        26
+      ],
+      "supported_disease_correct": [
+        446,
+        458
+      ],
+      "baseline_supported_disease_correct": [
+        446,
+        458
+      ]
+    },
+    "public_regression": {
+      "healthy_correct": [
+        67,
+        80
+      ],
+      "baseline_healthy_correct": [
+        64,
+        80
+      ],
+      "supported_disease_correct": [
+        521,
+        558
+      ],
+      "baseline_supported_disease_correct": [
+        521,
+        558
+      ]
+    },
+    "additional_taiwan_source": {
+      "healthy_correct": [
+        21,
+        22
+      ],
+      "baseline_healthy_correct": [
+        21,
+        22
+      ],
+      "late_blight_correct": [
+        11,
+        20
+      ],
+      "baseline_late_blight_correct": [
+        11,
+        20
+      ]
+    },
+    "limitations": "Public sources may be familiar to original weights; calibration selection data is not an independent field-accuracy test; no live-camera claim."
+  },
+  "training": {
+    "kind": "supervised Healthy adaptation with frozen original backbone and two shared heads",
+    "original_checkpoint_sha256": "659bd21eceb7ac2ba78abf20b449cb3462f3fb8439778e26f32c6d348e88e35f",
+    "adapted_run": "retention_h3_a2_b0_20261024",
+    "ratio": 0.5,
+    "max_reference_alternative": 0.4,
+    "reference_temperature": 0.8814700841903687,
+    "reference_other_bias": 0.75,
+    "policy": "Retain original distribution when an alternative has reference probability >=0.4 or adapted mixture does not increase Healthy probability. No blanket Healthy output reward."
+  }
+}

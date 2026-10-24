@@ -1,6 +1,6 @@
 {
   "name": "agribot-field-app",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "private": true,
   "description": "Native offline Android field app reference assets for Agribot",
   "scripts": {

@@ -30,7 +30,7 @@ def scope(row):
         return "supported_tomato"
     if row["label"] == "Other":
         names = [o.get("source_label", "") for o in row.get("objects", [])]
-        if row["source"] == "plantvillage" or (names and all(n.startswith("Tomato") for n in names)):
+        if row["source"] == "plantvillage" or row.get("species") == "tomato" or (names and all(n.startswith("Tomato") for n in names)):
             return "unsupported_tomato"
         if names:
             return "non_tomato"

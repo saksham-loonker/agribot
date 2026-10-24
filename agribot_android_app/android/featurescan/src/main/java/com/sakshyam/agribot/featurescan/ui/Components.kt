@@ -33,6 +33,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.pluralStringResource
@@ -165,12 +166,15 @@ fun VerdictCard(v: PlantVerdict, labels: List<String>, modifier: Modifier = Modi
         else -> Icons.Filled.Help
     }
     val title = verdictTitle(v, labels)
+    val headerColor = tone.color()
+    // Choose the higher-contrast foreground, including the light tones in dark mode.
+    val headerContent = if (headerColor.luminance() > 0.179f) Color.Black else Color.White
     Card(modifier.fillMaxWidth().semantics { contentDescription = title }, shape = RoundedCornerShape(20.dp)) {
         Column {
-            Row(Modifier.fillMaxWidth().background(tone.color()).padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
-                Icon(icon, contentDescription = null, tint = Color.White, modifier = Modifier.size(36.dp))
+            Row(Modifier.fillMaxWidth().background(headerColor).padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+                Icon(icon, contentDescription = null, tint = headerContent, modifier = Modifier.size(36.dp))
                 Spacer(Modifier.width(12.dp))
-                Text(title, style = MaterialTheme.typography.headlineSmall, color = Color.White, fontWeight = FontWeight.Bold)
+                Text(title, style = MaterialTheme.typography.headlineSmall, color = headerContent, fontWeight = FontWeight.Bold)
             }
             Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 if (v.kind != VerdictKind.UNSURE && v.kind != VerdictKind.NEED_MORE_VIEWS) {

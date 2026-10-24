@@ -193,6 +193,10 @@ def image_record(models, record):
     info["detections"] = detections
     info["leaves"] = leaves
     info["app_replay"] = replay(leaves, models.manifest, info["quality_weight"])
+    info["ungated_app_replay"] = info["app_replay"]
+    # The hardened scan flow never accumulates classifier evidence from rejected pixels.
+    if info["contrast"] < .015 and info["sharpness"] < .012:
+        info["app_replay"] = dict(kind="RETRY_QUALITY", label=None, confidence=None, frames=0, leaves=0, partial=False)
     info["host_elapsed_ms"] = None
     oracle = []
     for index, obj in enumerate(record.get("objects", [])):
@@ -238,7 +242,7 @@ def scope_of(record):
         # Several supported labels in a scene are not an unsupported disease.
         # Keep object diagnostics, but exclude ambiguous scene labels from scalar metrics.
         return "mixed"
-    if record["source"] == "plantvillage":
+    if record["source"] == "plantvillage" or record.get("species") == "tomato":
         return "unsupported_tomato"
     if names and all(n.startswith("Tomato") for n in names):
         return "unsupported_tomato"
