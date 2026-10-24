@@ -5,6 +5,34 @@ Repository: https://github.com/saksham-loonker/agribot.
 Audience: the originating assistant returning later over SSH to a PC with an
 NVIDIA RTX 5090, or an implementation agent continuing the same investigation.
 
+## Execution update - 24 October 2026
+
+Further supervised Healthy/retention experiments and a shared-backbone adapter
+were completed after the initial recovery. Broader grouped regression exposed
+three new disease-to-Healthy errors, so the adapter was rejected and the original
+classifier retained in app 2.0.1. Read
+[APP_VALIDATION_20261024.md](APP_VALIDATION_20261024.md) and its linked results
+before any further training. The former locked test has now been opened and
+must only be called regression data. Collect a fresh, adjudicated field set for
+the next acceptance decision; do not tune another confidence threshold on these
+same errors and describe it as independent validation.
+
+Also make colour decoding explicit. Some downloaded JPEGs carry an OPPO/Apple
+ICC profile. PIL's raw RGB conversion and Android BitmapFactory's colour-managed
+decode can produce different pixels even with identical normalization code.
+Phone parity fixtures must preserve the Python reference's RGB byte values in
+metadata-free PNGs; retain source identity separately. Test colour-managed photo
+import independently if that feature is added. The current camera pipeline does
+not decode these source JPEGs.
+
+The PC was inspected and the original trainable `field_vits2` checkpoint was
+recovered and verified against all 13 shipped golden fixtures. The v3 trainer
+was repaired, genuine head-only fine-tuning completed, and full development app
+replay performed. The candidate did not improve app Healthy recall, so production
+assets remain unchanged. Read the [recovery report](../../model_training/v3/RECOVERY_20261024.md)
+and its compact results before continuing; the unknown checkpoint/remote-state
+entries below describe the pre-investigation baseline, not current findings.
+
 ## Read first: the October 24 recovery mandate
 
 The owner reports that subsequent retraining achieves only approximately 30%

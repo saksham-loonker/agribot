@@ -1,0 +1,135 @@
+{
+ "bundle_id": "agribot-v2-12b9b171",
+ "schema": 2,
+ "status": "DRAFT: requires named human reviewer sign-off and licence review (Tomato-Village, FieldPlant, PlantDoc, Mendeley) before release",
+ "classifier": {
+  "members": [
+   {
+    "file": "disease_classifier_0.tflite",
+    "sha256": "12b9b17194ac5ba779126274d1a475016478e1b07ac6c2170fe51c2ef816af39",
+    "arch": "vit_small_patch14_dinov2.lvd142m",
+    "licence": "Apache-2.0",
+    "input": [
+     1,
+     224,
+     224,
+     3
+    ]
+   }
+  ],
+  "combine": "log(mean_i softmax(logits_i)); then add other_logit_bias to index 8; label = argmax; confidence = softmax(z / temperature)",
+  "layout": "NHWC",
+  "preprocess": "crop(box,+10% pad, floor/ceil) -> centred square of short side -> canonical resize -> /255 -> ImageNet mean/std",
+  "mean": [
+   0.48500001430511475,
+   0.4560000002384186,
+   0.4059999883174896
+  ],
+  "std": [
+   0.2290000021457672,
+   0.2240000069141388,
+   0.22499999403953552
+  ],
+  "labels": [
+   "Early_blight",
+   "Healthy",
+   "Late_blight",
+   "Leaf Miner",
+   "Magnesium Deficiency",
+   "Nitrogen Deficiency",
+   "Pottassium Deficiency",
+   "Spotted Wilt Virus",
+   "Other"
+  ],
+  "other_index": 8,
+  "other_logit_bias": 0.75,
+  "temperature": 0.8814700841903687,
+  "energy_gate": false,
+  "energy_reject_below": null,
+  "energy_definition": "T * logsumexp(z[0:8] / T) with z = logits + bias"
+ },
+ "detector": {
+  "file": "leaf_detector.tflite",
+  "sha256": "0a8c9128544726348a8400ec2f481b5985f47a778b601f4025be582eaa30a0d4",
+  "arch": "YOLOv9-T (LibreYOLO, MIT)",
+  "input": [
+   1,
+   320,
+   320,
+   3
+  ],
+  "layout": "NHWC",
+  "preprocess": "letterbox centred, pad 114, canonical resize, /255",
+  "output": [
+   1,
+   5,
+   2100
+  ],
+  "output_rows": [
+   "x1",
+   "y1",
+   "x2",
+   "y2",
+   "score"
+  ],
+  "coordinate_space": "letterboxed_input_pixels",
+  "score_threshold": 0.35,
+  "nms_iou": 0.6,
+  "max_detections": 16,
+  "labels": [
+   "leaf"
+  ]
+ },
+ "resize_algorithm": "separable; scale>1 area-average, else bilinear half-pixel centres (see golden/canon_reference.py)",
+ "heldout_results": {
+  "va_test_clean_full": [
+   0.924,
+   0.8902,
+   0.948,
+   329
+  ],
+  "va_test_clean_crop": [
+   0.9271,
+   0.8938,
+   0.9505,
+   329
+  ],
+  "pd_test_mapped": [
+   0.678,
+   0.551,
+   0.7831,
+   59
+  ],
+  "pd_test_other": [
+   0.8726,
+   0.8347,
+   0.9028,
+   369
+  ],
+  "tw_test_mapped": [
+   0.8095,
+   0.667,
+   0.9002,
+   42
+  ],
+  "tw_test_other": [
+   0.9647,
+   0.9013,
+   0.9879,
+   85
+  ],
+  "average_of_6": 0.8626,
+  "pd_test_photos_whole_image": [
+   0.5385,
+   0.3546,
+   0.7124,
+   26
+  ],
+  "pd_test_photos_check_a_plant_top4": [
+   0.7308,
+   0.5392,
+   0.863,
+   26
+  ]
+ }
+}

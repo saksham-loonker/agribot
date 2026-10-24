@@ -122,6 +122,13 @@ class EnsembleDecisionTest {
     @Test fun `wrong class count is rejected`() {
         assertThrows(IllegalArgumentException::class.java) { EnsembleDecision(3, 2, 0.0, 1.0, null).combine(listOf(floatArrayOf(1f))) }
     }
+
+    @Test fun `invalid calibration and non-finite logits fail instead of reporting a label`() {
+        assertThrows(IllegalArgumentException::class.java) { EnsembleDecision(3, 2, 0.0, Double.POSITIVE_INFINITY, null) }
+        assertThrows(IllegalArgumentException::class.java) { EnsembleDecision(3, 2, Double.NaN, 1.0, null) }
+        val d = EnsembleDecision(3, 2, 0.0, 1.0, null)
+        assertThrows(IllegalArgumentException::class.java) { d.combine(listOf(floatArrayOf(Float.NaN, 0f, 1f))) }
+    }
 }
 
 class VisionManifestTest {
@@ -141,5 +148,13 @@ class VisionManifestTest {
     @Test fun `unsupported schema or detector layout is rejected`() {
         assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("\"schema\": 2", "\"schema\": 1")) }
         assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("\"x1\"", "\"cx\"")) }
+    }
+
+    @Test fun `wrong Other mapping and enabled gate without threshold are rejected`() {
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("\"other_index\": 8", "\"other_index\": 1")) }
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("\"energy_gate\": false", "\"energy_gate\": true")) }
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("disease_classifier_0.tflite", "../disease_classifier_0.tflite")) }
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("NHWC", "NCHW")) }
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("0.48500001430511475", "123.675")) }
     }
 }

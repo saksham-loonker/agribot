@@ -112,6 +112,7 @@ private fun HintBanner(s: CheckUiState, modifier: Modifier) {
                 CheckHint.MOVE_CLOSER -> R.string.check_hint_closer
                 CheckHint.HOLD_STEADY -> R.string.check_hint_hold
                 CheckHint.TOO_DARK -> R.string.check_hint_dark
+                CheckHint.CLEAR_VIEW -> R.string.scan_quality_retry
                 CheckHint.NO_LEAVES -> R.string.check_no_leaves
             },
         )

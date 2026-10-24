@@ -17,6 +17,7 @@ import android.os.Looper
 import androidx.core.content.ContextCompat
 import com.sakshyam.agribot.domain.logic.FrameQualityAnalyzer
 import com.sakshyam.agribot.domain.logic.FrameQualityStatus
+import com.sakshyam.agribot.domain.logic.FrameQualityAssessment
 import com.sakshyam.agribot.domain.model.AnalysisFrame
 import com.sakshyam.agribot.domain.scan.GpsFix
 import com.sakshyam.agribot.domain.scan.VisionFrame
@@ -30,7 +31,10 @@ data class FrameQuality(val weight: Float, val tooDark: Boolean)
 
 object FrameTools {
     fun quality(frame: VisionFrame): FrameQuality {
-        val q = FrameQualityAnalyzer.evaluate(frame.width, frame.height, frame.argb)
+        return quality(FrameQualityAnalyzer.evaluate(frame.width, frame.height, frame.argb))
+    }
+
+    fun quality(q: FrameQualityAssessment): FrameQuality {
         val weight = if (q.status == FrameQualityStatus.ACCEPT) (0.4f + 12f * q.sharpness).coerceIn(0.4f, 1f) else 0.3f
         return FrameQuality(weight, q.brightness < 0.12f)
     }
