@@ -16,6 +16,7 @@ from ai_edge_litert.interpreter import Interpreter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from train import LABELS  # noqa: E402
+from training_support import checkpoint_weights
 
 timm.layers.set_fused_attn(False)
 
@@ -34,8 +35,7 @@ def load_checkpoint(path: Path, device="cpu"):
     args = state["args"]
     model = timm.create_model(args["model"], pretrained=False, num_classes=len(LABELS),
                               img_size=args["img"]).eval()
-    weights = state["model"]
-    weights = {k.replace("_orig_mod.", ""): v for k, v in weights.items()}
+    weights = checkpoint_weights(state, LABELS, args["model"], args["img"])
     model.load_state_dict(weights)
     model.to(device)
     return model, state
@@ -46,7 +46,7 @@ def main():
     parser.add_argument("--checkpoint", required=True)
     parser.add_argument("--out", required=True)
     parser.add_argument("--assets", default="agribot_android_app/android/app/src/main/assets")
-    parser.add_argument("--real-inputs", default=str(Path.home() / "agribot-data/work/test_cache_256.npy"))
+    parser.add_argument("--real-inputs", default=str(Path.home() / "agribot-data/work/cache_256.npy"))
     parser.add_argument("--n-real", type=int, default=16)
     parser.add_argument("--max-logit-error", type=float, default=1e-3)
     args = parser.parse_args()
@@ -55,7 +55,9 @@ def main():
     model, state = load_checkpoint(Path(args.checkpoint))
     img = int(state["args"]["img"])
     wrapper = NHWC(model).eval()
-    example = torch.rand(1, img, img, 3)
+    mean = torch.tensor([0.485, 0.456, 0.406])
+    std = torch.tensor([0.229, 0.224, 0.225])
+    example = (torch.rand(1, img, img, 3) - mean) / std
     edge = litert_torch.convert(wrapper, (example,))
     target = out / "models" / "disease_classifier_0.tflite"
     edge.export(str(target))
@@ -80,7 +82,7 @@ def main():
     from PIL import Image
     sys.path.insert(0, "model_training/v2/final")
     import canon
-    cases = [("random_uniform", np.random.default_rng(7).random((1, img, img, 3), dtype=np.float32))]
+    cases = [("random_standardized", example.numpy())]
     for index in indices:
         cases.append((f"cache_{int(index)}", canon.classifier_input(np.asarray(cache[int(index)]), img)))
     rows = []

@@ -1,5 +1,8 @@
 # Agribot v3 field-Healthy retraining — result
 
+Historical October 20 experiment. See [October 24 recovery](RECOVERY_20261024.md)
+for original-checkpoint recovery, training-loop repairs and controlled fine-tuning.
+
 **Outcome: candidate rejected; production model retained.** The retrained candidate
 improves Tomato-Village field Healthy recall on the locked test, but it also causes
 large supported-disease and unsupported-input regressions. It is not deployable and

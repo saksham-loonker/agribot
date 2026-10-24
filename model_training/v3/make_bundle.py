@@ -34,7 +34,8 @@ def main():
     digest = sha(candidate)
     bundle_id = args.bundle_id or f"agribot-v3-{digest[:8]}"
     target = out / "models" / "disease_classifier_0.tflite"
-    shutil.copy2(candidate, target)
+    if candidate.resolve() != target.resolve():
+        shutil.copy2(candidate, target)
     shutil.copy2(production / "models" / "leaf_detector.tflite", out / "models" / "leaf_detector.tflite")
     manifest["bundle_id"] = bundle_id
     manifest["status"] = ("DRAFT: candidate trained autonomously; requires named human reviewer sign-off, "
@@ -53,9 +54,9 @@ def main():
     manifest["classifier"]["combine"] = ("log(mean_i softmax(logits_i)); then add other_logit_bias to index 8; "
                                          "label = argmax; confidence = softmax(z / temperature)")
     manifest["training"] = {
-        "kind": "pretrained-backbone retraining (shipped TFLite is not trainable)",
+        "kind": run_meta.get("initialization", {}).get("kind", "pretrained-backbone retraining"),
         "backbone": run_meta["model"],
-        "initialization": "timm DINOv2 pretrained weights; fresh nine-class head",
+        "initialization": run_meta.get("initialization", {"kind": "timm DINOv2 pretrained weights; fresh nine-class head"}),
         "run": Path(args.run_dir).name,
         "run_args": run_meta.get("args"),
         "data_manifest_sha256": run_meta.get("data_manifest_sha256"),

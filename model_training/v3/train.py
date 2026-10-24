@@ -1,11 +1,12 @@
 """Fine-tune the shipped architecture (DINOv2 ViT-S/14, 224 px, nine logits).
 
-The shipped TFLite file is not trainable. This is a documented
-"pretrained-backbone retraining" initialized from timm DINOv2 weights.
+Use --init-checkpoint to preserve a verified existing nine-class classifier.
+Without it, initialization is explicitly pretrained-backbone retraining.
 
-Training uses the grouped split produced by prepare_data.py. No source-test
-image or PlantVillage diagnostic image is trainable. Checkpoints, logs and the
-uint8 cache stay outside git; compact metrics are committed by copy_results.py.
+Training uses the grouped split produced by prepare_data.py. Related source images are grouped before splitting. Historical source-test
+images can enter the new training split and are not independent test evidence.
+PlantVillage diagnostic images are never trainable. Checkpoints, logs and the
+uint8 cache stay outside git; compact metrics are retained in the run directory.
 """
 from __future__ import annotations
 
@@ -54,9 +55,9 @@ def parse_args():
     p.add_argument("--wd", type=float, default=0.03)
     p.add_argument("--layer-decay", type=float, default=0.80)
     p.add_argument("--drop-path", type=float, default=0.10)
-    p.add_argument("--loss", choices=("ce", "weighted", "logit_adjusted"), default="logit_adjusted")
-    p.add_argument("--sampling", choices=("uniform", "class", "class_source"), default="class_source")
-    p.add_argument("--label-smoothing", type=float, default=0.05)
+    p.add_argument("--loss", choices=("ce", "weighted", "logit_adjusted"), default="ce")
+    p.add_argument("--sampling", choices=("uniform", "class", "class_source"), default="uniform")
+    p.add_argument("--label-smoothing", type=float, default=0.0)
     p.add_argument("--logit-tau", type=float, default=0.5)
     p.add_argument("--max-class-weight", type=float, default=4.0)
     p.add_argument("--seed", type=int, default=17)
@@ -64,6 +65,13 @@ def parse_args():
     p.add_argument("--max-steps", type=int, default=0, help="debug/smoke cap per epoch")
     p.add_argument("--no-pretrained", action="store_true")
     p.add_argument("--compile", action="store_true")
+    p.add_argument("--init-checkpoint", help="Verified original checkpoint; preserve its existing head")
+    p.add_argument("--no-augment", action="store_true")
+    p.add_argument("--precision", choices=("fp32", "bf16"), default="fp32")
+    p.add_argument("--ema-decay", type=float, default=0.998)
+    p.add_argument("--max-disease-drop", type=float, default=0.02)
+    p.add_argument("--max-false-healthy-increase", type=float, default=0.005)
+    p.add_argument("--stop-after-epoch", type=int, help="Clean checkpoint boundary for interruption/resume verification")
     return p.parse_args()
 
 
@@ -93,7 +101,8 @@ def sampling_weights(meta, args):
         sw = np.array([math.sqrt(len(train) / (len(source_counts) * source_counts[sources[i]])) for i in train])
         weights *= np.clip(sw, 0.5, 2.0)
     group_counts = Counter(groups[i] for i in train)
-    weights /= np.array([group_counts[groups[i]] for i in train], np.float64)
+    if args.sampling != "uniform":
+        weights /= np.array([group_counts[groups[i]] for i in train], np.float64)
     weights /= weights.sum()
     prior = np.zeros(len(LABELS), np.float64)
     for w, i in zip(weights, train):
@@ -157,7 +166,7 @@ def gpu_augment(xb, size, seed_offset=0):
 
 
 @torch.no_grad()
-def predict(model, images, indices, img_size, bs=128):
+def predict(model, images, indices, img_size, bs=128, precision="bf16"):
     model.eval()
     outputs = []
     for start in range(0, len(indices), bs):
@@ -165,7 +174,7 @@ def predict(model, images, indices, img_size, bs=128):
         xb = images[idx].permute(0, 3, 1, 2).float() / 255.0
         xb = (F.interpolate(xb, size=(img_size, img_size), mode="bilinear", antialias=True, align_corners=False)
               - MEAN.to(xb.device)) / STD.to(xb.device)
-        with torch.autocast("cuda", dtype=torch.bfloat16):
+        with torch.autocast("cuda", dtype=torch.bfloat16, enabled=precision == "bf16"):
             outputs.append(model(xb).float())
     return torch.cat(outputs) if outputs else torch.zeros(0, len(LABELS), device=images.device)
 
@@ -181,179 +190,13 @@ def metrics_from_logits(logits, y):
     per_class = recall_score(truth, pred, labels=list(range(len(LABELS))), average=None, zero_division=0)
     return dict(macro_recall=macro, healthy_recall=healthy_recall, false_healthy_rate=false_healthy,
                 accuracy=float((pred == truth).mean()), per_class_recall={l: float(v) for l, v in zip(LABELS, per_class)},
+                class_counts={l: int((truth == i).sum()) for i, l in enumerate(LABELS)},
                 n=int(len(truth)), healthy_n=int(mask_h.sum())), pred
 
 
-def make_param_groups(model, args, unfreeze_blocks):
-    blocks = getattr(model, "blocks", None)
-    n_blocks = len(blocks) if blocks is not None else 0
-    groups = []
-    head_params = []
-    backbone_named = []
-    for name, param in model.named_parameters():
-        if not param.requires_grad:
-            continue
-        if name.startswith("head."):
-            head_params.append((name, param))
-        else:
-            backbone_named.append((name, param))
-    if head_params:
-        groups.append(dict(params=[p for _, p in head_params], lr=args.lr_head, weight_decay=args.wd, name="head"))
-    if backbone_named:
-        if unfreeze_blocks < 0:
-            depth = {name: n_blocks + 1 for name, _ in backbone_named}
-        else:
-            depth = {}
-            for name, _ in backbone_named:
-                d = n_blocks - 1
-                if name.startswith("blocks."):
-                    d = int(name.split(".")[1])
-                elif name.startswith(("norm.", "patch_embed.", "cls_token", "pos_embed")):
-                    d = 0
-                depth[name] = d
-        buckets = {}
-        for name, param in backbone_named:
-            if unfreeze_blocks < 0:
-                scale = 1.0
-            else:
-                first = n_blocks - unfreeze_blocks - 1
-                scale = args.layer_decay ** max(0, depth[name] - first) if depth[name] >= first else 0.0
-            lr = args.lr_backbone * scale
-            key = round(lr, 12)
-            buckets.setdefault(key, []).append(param)
-        for lr, params in sorted(buckets.items(), reverse=True):
-            if lr > 0:
-                groups.append(dict(params=params, lr=lr, weight_decay=args.wd, name=f"backbone_{lr:.2e}"))
-    return groups
-
-
 def main():
-    args = parse_args()
-    set_seed(args.seed)
-    work = Path(args.work)
-    run_dir = Path(args.runs) / args.run_name
-    run_dir.mkdir(parents=True, exist_ok=True)
-    (run_dir / "config.json").write_text(json.dumps(vars(args), indent=1))
-    raw_manifest = json.loads((work / "data_manifest.json").read_text())
-    meta_sha = __import__("hashlib").sha256((work / "data_manifest.json").read_bytes()).hexdigest()
-    dev = [row for row in raw_manifest if row["split"] in ("train", "val", "calib")]
-    assert all(row.get("cache_index") == i for i, row in enumerate(dev)), "cache index mismatch"
-    meta = dict(label=[row["label"] for row in dev], split=[row["split"] for row in dev],
-                source=[row["source"] for row in dev], group=[row["group"] for row in dev])
-    cache = np.load(work / "cache_256.npy", mmap_mode="r")
-    images = torch.from_numpy(np.array(cache)).cuda()
-    labels = torch.tensor([LABELS.index(x) for x in meta["label"]]).cuda()
-    splits = np.asarray(meta["split"])
-    train_all, weights, prior = sampling_weights(meta, args)
-    train_all = train_all.cuda()
-    weights = weights.cuda()
-    val_idx = torch.tensor(np.where(splits == "val")[0], device="cuda")
-    calib_idx = torch.tensor(np.where(splits == "calib")[0], device="cuda")
-    print(f"cache {tuple(images.shape)} train {len(train_all)} val {len(val_idx)} calib {len(calib_idx)}", flush=True)
-    print("effective prior", {l: round(float(p), 4) for l, p in zip(LABELS, prior)}, flush=True)
-
-    model = timm.create_model(args.model, pretrained=not args.no_pretrained, num_classes=len(LABELS),
-                              img_size=args.img, drop_path_rate=args.drop_path)
-    model = model.cuda()
-    model.set_grad_checkpointing(False)
-    if args.compile:
-        model = torch.compile(model)
-
-    start_epoch = 0
-    best_score = -1e9
-    if args.resume and (run_dir / "last.pt").exists():
-        state = torch.load(run_dir / "last.pt", map_location="cuda", weights_only=False)
-        model.load_state_dict(state["model"])
-        start_epoch = state["epoch"] + 1
-        best_score = state["best_score"]
-        print(f"resumed epoch {start_epoch}", flush=True)
-
-    for epoch in range(start_epoch, args.epochs):
-        phase_warmup = epoch < args.warmup_epochs
-        for name, param in model.named_parameters():
-            if phase_warmup:
-                param.requires_grad = name.startswith("head.")
-            else:
-                param.requires_grad = True
-        if not phase_warmup and args.unfreeze_blocks >= 0:
-            blocks = getattr(model, "blocks", [])
-            first = max(0, len(blocks) - args.unfreeze_blocks)
-            for name, param in model.named_parameters():
-                if name.startswith("blocks."):
-                    idx = int(name.split(".")[1])
-                    if idx < first:
-                        param.requires_grad = False
-                elif name.startswith(("patch_embed.", "pos_embed", "cls_token")):
-                    param.requires_grad = False
-        groups = make_param_groups(model, args, -1 if phase_warmup else args.unfreeze_blocks)
-        opt = torch.optim.AdamW(groups, weight_decay=args.wd, fused=True)
-        steps_per_epoch = len(train_all) // args.bs
-        if args.max_steps:
-            steps_per_epoch = min(steps_per_epoch, args.max_steps)
-        if phase_warmup:
-            remaining = args.warmup_epochs - epoch
-            sched = torch.optim.lr_scheduler.LambdaLR(opt, lambda s: min(1.0, (s + 1) / max(1, steps_per_epoch * 0.3)))
-        else:
-            total = max(1, (args.epochs - args.warmup_epochs) * steps_per_epoch)
-            done = (epoch - args.warmup_epochs) * steps_per_epoch
-            sched = torch.optim.lr_scheduler.LambdaLR(
-                opt, lambda s: 0.5 * (1 + math.cos(math.pi * min(1.0, (done + s) / total))))
-        ema = timm.utils.ModelEmaV3(model, decay=0.999, use_warmup=False)
-        loss_fn = nn.CrossEntropyLoss(label_smoothing=args.label_smoothing)
-        if args.loss == "weighted":
-            counts = np.bincount(labels[train_all].cpu().numpy(), minlength=len(LABELS))
-            cw = np.sqrt(len(train_all) / (len(LABELS) * np.maximum(counts, 1)))
-            cw = np.clip(cw / cw.mean(), 1 / args.max_class_weight, args.max_class_weight)
-            loss_fn = nn.CrossEntropyLoss(weight=torch.tensor(cw, dtype=torch.float32, device="cuda"),
-                                          label_smoothing=args.label_smoothing)
-        log_prior = torch.tensor(np.log(np.clip(prior, 1e-6, None)), dtype=torch.float32, device="cuda")
-        model.train()
-        t0 = time.time()
-        running = 0.0
-        order = torch.multinomial(weights, steps_per_epoch * args.bs, replacement=True)
-        for step in range(steps_per_epoch):
-            idx = train_all[order[step * args.bs:(step + 1) * args.bs]]
-            xb = gpu_augment(images[idx], args.img)
-            y = labels[idx]
-            with torch.autocast("cuda", dtype=torch.bfloat16):
-                logits = model(xb)
-                adjusted = logits.float() + args.logit_tau * log_prior if args.loss == "logit_adjusted" else logits.float()
-                loss = loss_fn(adjusted, y)
-            opt.zero_grad(set_to_none=True)
-            loss.backward()
-            nn.utils.clip_grad_norm_([p for p in model.parameters() if p.requires_grad], 1.0)
-            opt.step()
-            sched.step()
-            ema.update(model)
-            running += float(loss.detach())
-        eval_model = ema.module
-        val_logits = predict(eval_model, images, val_idx, args.img)
-        val_metrics, _ = metrics_from_logits(val_logits, labels[val_idx])
-        score = val_metrics["macro_recall"] + 0.5 * val_metrics["healthy_recall"] - 0.5 * val_metrics["false_healthy_rate"]
-        row = dict(epoch=epoch, phase="warmup" if phase_warmup else "finetune", seconds=round(time.time() - t0, 1),
-                   loss=running / max(1, steps_per_epoch), val_score=score, **val_metrics,
-                   peak_vram_gb=round(torch.cuda.max_memory_allocated() / 1e9, 2))
-        with (run_dir / "metrics.jsonl").open("a") as stream:
-            stream.write(json.dumps(row) + "\n")
-        print(json.dumps({k: row[k] for k in ("epoch", "phase", "seconds", "loss", "val_score", "macro_recall",
-                                              "healthy_recall", "false_healthy_rate", "peak_vram_gb")}), flush=True)
-        if score > best_score:
-            best_score = score
-            torch.save({"model": eval_model.state_dict(), "epoch": epoch, "score": score,
-                        "args": vars(args), "labels": LABELS, "data_manifest_sha256": meta_sha,
-                        "effective_prior": prior.tolist()}, run_dir / "best.pt")
-        torch.save({"model": eval_model.state_dict(), "epoch": epoch, "best_score": best_score,
-                    "optimizer": opt.state_dict(), "scheduler": sched.state_dict(),
-                    "args": vars(args), "labels": LABELS, "data_manifest_sha256": meta_sha,
-                    "effective_prior": prior.tolist()}, run_dir / "last.pt")
-        (run_dir / "meta.json").write_text(json.dumps(dict(
-            model=args.model, img=args.img, num_classes=len(LABELS), classes=LABELS,
-            best_epoch=int(torch.load(run_dir / "best.pt", map_location="cpu", weights_only=False)["epoch"]),
-            args=vars(args), data_manifest_sha256=meta_sha,
-            environment=dict(python=sys.version, torch=torch.__version__, cuda=torch.version.cuda,
-                             gpu=torch.cuda.get_device_name(0), timm=timm.__version__, platform=platform.platform()),
-        ), indent=1))
-    print("done", run_dir, "best", best_score, flush=True)
+    from runner import run
+    run(parse_args())
 
 
 if __name__ == "__main__":

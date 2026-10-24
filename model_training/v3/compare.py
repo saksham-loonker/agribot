@@ -16,7 +16,13 @@ LABELS = [
 
 
 def read(path):
-    return {row["id"]: row for row in (json.loads(line) for line in Path(path).read_text().splitlines())}
+    rows = {}
+    for line in Path(path).read_text().splitlines():
+        row = json.loads(line)
+        if row["id"] in rows or "error" in row:
+            raise ValueError("Duplicate or failed prediction in paired comparison")
+        rows[row["id"]] = row
+    return rows
 
 
 def scope(row):
@@ -77,6 +83,12 @@ def main():
     parser.add_argument("--include-ineligible", action="store_true")
     args = parser.parse_args()
     baseline, candidate = read(args.baseline), read(args.candidate)
+    if set(baseline) != set(candidate):
+        raise ValueError("Paired evaluation coverage differs; do not silently compare an intersection")
+    for identity in baseline:
+        for field in ("label", "group", "analysis_eligible"):
+            if baseline[identity].get(field) != candidate[identity].get(field):
+                raise ValueError(f"Reference mismatch for {identity}: {field}")
     ids = sorted(i for i in set(baseline) & set(candidate)
                  if args.include_ineligible or baseline[i].get("analysis_eligible", True))
     assert ids, "no overlapping predictions"

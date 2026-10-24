@@ -26,7 +26,7 @@ def ece(probs, labels, bins=15):
     total = 0.0
     rows = []
     for lo, hi in zip(edges[:-1], edges[1:]):
-        mask = (conf > lo) & (conf <= hi) if hi < 1 else (conf >= lo) & (conf <= hi)
+        mask = (conf >= lo) & (conf < hi) if hi < 1 else (conf >= lo) & (conf <= hi)
         if not mask.any():
             continue
         acc = correct[mask].mean()

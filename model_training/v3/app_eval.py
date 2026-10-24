@@ -28,12 +28,27 @@ CANON_PATH = ROOT / "model_training/v2/final/canon.py"
 spec = importlib.util.spec_from_file_location("agribot_canonical", CANON_PATH)
 canon = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(canon)
+sys.path.insert(0, str(ROOT / "tests/model_evaluation"))
+from canonical_runtime import install as install_sparse_resize
+install_sparse_resize(canon)
 LABELS = [
     "Early_blight", "Healthy", "Late_blight", "Leaf Miner", "Magnesium Deficiency",
     "Nitrogen Deficiency", "Pottassium Deficiency", "Spotted Wilt Virus", "Other",
 ]
 OTHER = LABELS.index("Other")
 HEALTHY = LABELS.index("Healthy")
+
+
+def evaluation_identity(assets, manifest, limit=None):
+    """Resume is valid only for identical models, inputs, policy and implementation."""
+    assets = Path(assets)
+    model_manifest = assets / "model_manifest.json"
+    bundle = json.loads(model_manifest.read_text())
+    files = [model_manifest, Path(manifest), Path(__file__), CANON_PATH,
+             ROOT / "tests/model_evaluation/canonical_runtime.py"]
+    files += [assets / "models" / m["file"] for m in bundle["classifier"]["members"]]
+    files += [assets / "models" / bundle["detector"]["file"]]
+    return dict(schema=1, limit=limit, files=[hashlib.sha256(p.read_bytes()).hexdigest() for p in files])
 
 
 def posterior(member_logits, manifest, bias=None, policy=None):
@@ -220,13 +235,9 @@ def scope_of(record):
     if record["label"] not in ("Other", "Mixed"):
         return "supported_tomato"
     if record["label"] == "Mixed":
-        # Multi-object author photo: species decides whether it is an
-        # out-of-scope tomato condition or a non-tomato nuisance input.
-        if names and all(n.startswith("Tomato") for n in names):
-            return "unsupported_tomato"
-        if names and all(not n.startswith("Tomato") for n in names):
-            return "non_tomato"
-        return "mixed_species_other"
+        # Several supported labels in a scene are not an unsupported disease.
+        # Keep object diagnostics, but exclude ambiguous scene labels from scalar metrics.
+        return "mixed"
     if record["source"] == "plantvillage":
         return "unsupported_tomato"
     if names and all(n.startswith("Tomato") for n in names):
@@ -238,7 +249,9 @@ def scope_of(record):
 
 def summarize(rows, eligible_only=True):
     rows = [r for r in rows if "error" not in r and (r.get("analysis_eligible", True) or not eligible_only)]
-    out = {}
+    mixed = [r for r in rows if r["label"] == "Mixed"]
+    rows = [r for r in rows if r["label"] != "Mixed"]
+    out = {"excluded_mixed_photos": len(mixed), "scalar_eligible_photos": len(rows)}
     groups = {
         "all": lambda r: True,
         "supported": lambda r: scope_of(r) == "supported_tomato",
@@ -282,7 +295,7 @@ def summarize(rows, eligible_only=True):
                             / max(1, sum(r["label"] == "Healthy" for r in subset))),
             false_healthy=sum(r["app_replay"]["kind"] == "HEALTHY" for r in subset if r["label"] != "Healthy"),
         )
-    oracle = [o for r in rows for o in r.get("oracle_objects", []) if o.get("valid")]
+    oracle = [o for r in rows + mixed for o in r.get("oracle_objects", []) if o.get("valid")]
     out["oracle_objects"] = dict(
         n=len(oracle),
         correct=sum(o["prediction"] == o["label"] for o in oracle),
@@ -315,9 +328,22 @@ def main():
     if args.limit:
         records = records[:args.limit]
     output = out / "predictions.jsonl"
+    identity_path = out / "evaluation_identity.json"
+    identity = evaluation_identity(args.assets, args.manifest, args.limit)
+    if output.exists():
+        if not args.resume:
+            raise ValueError("Output already exists: choose a new directory or --resume")
+        if not identity_path.exists() or json.loads(identity_path.read_text()) != identity:
+            raise ValueError("Resume model/data/implementation identity differs; use a new output directory")
+    identity_path.write_text(json.dumps(identity, indent=1))
     done = {}
     if args.resume and output.exists():
-        for line in output.read_text().splitlines():
+        snapshot = output.read_text()
+        # Recover only a final incomplete write; malformed complete records remain errors.
+        if snapshot and not snapshot.endswith("\n"):
+            snapshot = snapshot.rsplit("\n", 1)[0] + "\n" if "\n" in snapshot else ""
+            output.write_text(snapshot)
+        for line in snapshot.splitlines():
             row = json.loads(line)
             done[row.get("id")] = row
     pending = [r for r in records if r["id"] not in done]
@@ -355,6 +381,8 @@ def main():
     (out / "metrics.json").write_text(json.dumps(metrics, indent=1))
     (out / "errors.json").write_text(json.dumps(errors, indent=1))
     print(json.dumps(metrics, indent=1))
+    if errors or len(rows) != len(records):
+        raise RuntimeError("Evaluation incomplete; inspect errors.json before interpreting metrics")
 
 
 if __name__ == "__main__":

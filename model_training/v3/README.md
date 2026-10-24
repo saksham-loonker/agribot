@@ -1,8 +1,21 @@
 # Agribot v3 — field Healthy retraining pipeline
 
+## Current recovery status — 24 October 2026
+
+The original trainable `field_vits2` checkpoint was recovered on the owner's PC
+and verified against the shipped TFLite model. Use `--init-checkpoint` for genuine
+fine-tuning without resetting its head. The runner now preserves optimizer/EMA
+state, validates exact resume identity and rejects disease-retention regressions.
+Plain CE and natural sampling are the conservative defaults.
+
+Read [the recovery report](RECOVERY_20261024.md) for the fixes, measured results,
+commands and next steps. The recovered head-only candidate was not deployed:
+crop metrics improved but full app Healthy recall did not. The earlier fresh-head
+experiment below is historical context, not the current initialization requirement.
+
 This directory implements the retraining and deployment contract described in
 [`docs/training/RETRAINING_HANDOFF.md`](../../docs/training/RETRAINING_HANDOFF.md).
-It does **not** claim that the shipped TFLite file is fine-tunable. The candidate is
+It does **not** claim that the shipped TFLite file is fine-tunable. The historical October 20 candidate used
 a fresh nine-class head on timm's DINOv2 ViT-S/14 pretrained backbone, trained on
 grouped field data, then calibrated on a separate split and exported to the same
 Android I/O contract. Inputs are normalised as RGB `0..1` (not `0..255`) before
@@ -10,7 +23,7 @@ ImageNet mean/std, matching `canon.py` and the Android app exactly. See
 [`RESULTS.md`](RESULTS.md) for the measured outcome; the first candidate was
 rejected and the production baseline was retained.
 
-## Why the shipped weights were not fine-tuned
+## Historical October 20 run: why shipped weights were not fine-tuned then
 
 `field_vits2/best.pt` is absent from the repository, LFS objects and releases. The
 shipped `disease_classifier_0.tflite` is an inference graph, not a trainable
