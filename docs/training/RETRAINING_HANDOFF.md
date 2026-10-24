@@ -1,7 +1,627 @@
-# Agribot retraining and Android integration handoff
+# Agribot training failure investigation, recovery, and Android integration
 
-Prepared: 2026-10-15. Repository: https://github.com/saksham-loonker/agribot.
-Audience: an autonomous implementation agent with one local NVIDIA RTX 5090.
+Revision: 2026-10-24. Original handoff: 2026-10-15.
+Repository: https://github.com/saksham-loonker/agribot.
+Audience: the originating assistant returning later over SSH to a PC with an
+NVIDIA RTX 5090, or an implementation agent continuing the same investigation.
+
+## Read first: the October 24 recovery mandate
+
+The owner reports that subsequent retraining achieves only approximately 30%
+accuracy, and that restoring Healthy recognition causes recognition of diseased
+classes to deteriorate. They suspect a code bottleneck, possibly inconsistent
+0–1 versus 0–255 preprocessing, and ask whether logit-based RL is the next step.
+These are **reported symptoms, not reproduced measurements**. The remote training
+repository, commands, configuration, checkpoints, datasets, environment and logs
+have not yet been inspected by this assistant. The meaning and denominator of
+the reported 30% are unknown. Do not substitute the October 15 evaluation for
+evidence about that failed run.
+
+The next execution is an investigation and repair before another optimization
+campaign. First establish that images, labels, pretrained weights, gradients,
+metrics, saved checkpoints and exported runtime all mean the same thing. Then
+recover a joint Healthy-and-disease supervised baseline. Consider more elaborate
+losses only after that baseline works. A larger reward experiment cannot repair
+an image-scale mismatch, permuted labels or an incorrectly restored checkpoint.
+
+This revision adds the recovery protocol below and retains the original full
+dataset/training/export/app/PR specification later in this file. **The October 24
+protocol takes precedence wherever the original search plan would launch long
+training or weighted/logit experiments before correctness has been established.**
+Original deployment acceptance and offline Android contracts remain in force.
+
+This editing task does not initiate SSH, remote package installation or training.
+When the owner later instructs this assistant to connect, use their supplied
+host/user/authentication information and the existing authorized task scope.
+Do not invent connection details, claim remote access, or treat an absent PC
+artifact as proof that it does not exist on the PC.
+
+### A. Evidence status and the first decision
+
+| Statement | Status as of this revision | Consequence |
+| --- | --- | --- |
+| Retraining is around 30% accurate | Owner report; metric, split and runtime unknown | Recover raw outputs and independently recompute the metric. |
+| Healthy recovery coincides with diseased-class collapse | Owner report; intervention and timing unknown | Reconstruct the exact before/after checkpoint, config and per-class transition. |
+| A 0–1/0–255 normalization error is responsible | Hypothesis, not established | Trace and compare actual tensors; do not apply an extra division by 255 blindly. |
+| The checked-in field trainer uses 255-scaled means/stds | Verified source observation | This expression is valid for raw float pixels in 0–255. |
+| The Android classifier uses /255 then ImageNet normalization | Verified source observation | Equivalent normalization algebra; resize/crop and upstream data still need checking. |
+| The old field trainer already adjusts logits in supervised CE | Verified source observation | Establish plain-CE control before attributing a benefit to a new logit objective. |
+| The failed remote run used exactly this trainer/revision | Unknown | Diff the PC checkout and preserve local modifications before editing. |
+| The shipped Android model was globally about 30% accurate | Not established by the old diagnostic | Keep source-specific historical results separate from new runs. |
+| A trainable `field_vits2` checkpoint is unavailable everywhere | Not established | It is absent from this checkout; search documented remote artifact locations. |
+
+Decision at entry: **diagnose first; no PPO/GRPO/reward-model run and no blanket
+Healthy bonus.** Do not assume Healthy should become the majority prediction.
+The desired output is correct diagnosis with honest uncertainty and preserved
+recognition of diseased leaves.
+
+**Owner clarification: preserve the existing strong classifier; full retraining
+is not the default.** First recover and verify its matching trainable checkpoint
+on the PC. Establish frozen-model results, test calibration alone, and then
+fine-tune the existing head conservatively, unfreezing the last backbone blocks
+only if justified. Retain representative supported diseases and Other examples
+alongside reviewed Healthy failures. Preserve the existing trained head when
+compatible; do not reset it merely because a head warm-up recipe exists below.
+Use the verified original model as an optional retention teacher on reliable
+training examples, while allowing correction of its known mistakes.
+
+The preferred order is: verified existing weights -> calibration-only comparator
+-> targeted head fine-tuning -> limited backbone fine-tuning. A new pretrained
+backbone and broader retraining are fallbacks if matching trainable weights
+cannot be recovered or controlled evidence shows targeted adaptation inadequate.
+Explain the fallback trigger before spending its compute budget. Supported
+conditions incorrectly rejected as Other should improve; genuinely unsupported
+conditions must retain rejection. Do not optimize away the Other label itself.
+
+### B. Remote session entry, preservation and durable progress
+
+Before changing the PC, establish a durable `incident_<UTC timestamp>` directory
+outside tracked model assets. Use the actual remote OS/shell; commands below are
+examples for Linux and must not be pasted into Windows PowerShell unchanged.
+Record paths, invocation, timestamps and exit codes without tokens or secrets.
+
+1. Verify the intended SSH host identity using the owner's supplied/trusted host
+   information. Use existing authorized SSH credentials. Do not disable host-key
+   verification as a shortcut. If access details are missing, request only those
+   details when remote execution is actually requested.
+2. Record hostname, OS, current user, workspace path, free disk/RAM, GPU/driver,
+   GPU processes, virtualenv/conda/container identity and installed torch/timm/
+   torchvision/CUDA/export versions. Check other users' jobs before using the GPU.
+3. Record `git status --short`, branch, HEAD, remotes, tracked diff and names of
+   relevant untracked training files. Save local diffs before any synchronization.
+   Inspect new AGENTS.md instructions. A clean separate worktree is preferred;
+   never reset the failed training workspace to make it look reproducible.
+4. Copy or hash existing configs, manifests, result tables, selected logs, best/
+   last/EMA checkpoints and code used by the failed run. Keep originals immutable.
+   Do not move/delete multi-GB checkpoints or caches until their provenance and
+   usefulness are understood. Record symlink targets and actual file SHA-256s.
+5. Inventory active training commands from known job supervisors/process records.
+   Do not kill an unrelated GPU job. If replacing a run is necessary, stop only
+   the identified task after saving its checkpoint/logs and checking ownership.
+6. Use tmux or an equivalent existing job supervisor for long authorized jobs;
+   tee logs to the incident/run directory and persist PID, command, run ID and
+   resume location. An SSH disconnect must not silently erase the experiment.
+7. Maintain `STATUS.md` with current stage, completed checks, observed failure,
+   next command, active process, latest checkpoint and remaining gates. Update it
+   at each stage so a subsequent assistant can continue without chat history.
+
+Example read-only Linux inventory, executed only after connection is authorized:
+
+```bash
+pwd
+hostname
+uname -a
+git status --short
+git rev-parse HEAD
+git remote -v
+nvidia-smi
+df -h .
+python -V
+python -m pip show torch torchvision timm numpy
+```
+
+Avoid dumping environment variables, SSH private keys or credential-bearing URLs
+into the report. Install fixes in an isolated environment after collecting the
+old environment; do not overwrite the only known environment before comparison.
+
+### C. Reconstruct what “30%” and “Healthy resumes” mean
+
+Recover these answers from artifacts before asking the owner to reconstruct
+them from memory:
+
+- What exact command, code revision, config, seed, input size, architecture and
+  initialization checkpoint produced the run? Was it actual fine-tuning, a fresh
+  pretrained backbone, or a randomly initialized model mislabeled as pretrained?
+- Is 30% train accuracy, train minibatch accuracy with augmentation, validation,
+  test, macro recall, binary health classification, crop accuracy, whole-photo
+  accuracy, TFLite accuracy or the Android final verdict? Was class Other counted?
+- What class/source/group counts make up its denominator? What are the majority
+  class baseline, uniform nine-class baseline (11.1%), empirical class-prior
+  prediction baseline, and confusion matrix? A 30% score alone proves neither
+  underfitting nor a normalization defect.
+- Does “Healthy resumes” mean an epoch, a resumed checkpoint, a new Healthy-only
+  training stage, different sampling/weights, a threshold/bias, an ensemble member,
+  or restoring the original app model? Establish the observed event; do not choose
+  one interpretation and build a fix around it without evidence.
+- Did disease recognition fall in the raw PyTorch logits, after calibration,
+  after TFLite export, or only after app aggregation? Were examples actually the
+  same before/after? Report sample IDs and checkpoint hashes, not screenshots alone.
+- Were eight-class and nine-class models compared using the same label order?
+  Was Healthy moved to index 0 by ImageFolder/binary labels? Was Other added in
+  the middle, inferred from sorted folders or treated as a ninth disease?
+- Did the evaluation silently exclude rejected/unsure/no-leaf cases, fail to
+  restore eval mode, reuse stale predictions or choose a different best checkpoint?
+
+Deliver `failure_reproduction.json` with the recovered facts, missing evidence,
+an independently computed metric and representative failures. Repeat the failed
+evaluation on frozen weights before reproducing hours of failed training. Use
+development data for diagnosis; do not repeatedly probe a locked final test.
+
+### D. Numerical truth: exact image-range contracts
+
+The existing classifier expects standardized RGB pixels, not plain 0–1 values
+and not plain 0–255 values at its neural-network input. For raw pixel x:
+
+```text
+mu    = [0.485, 0.456, 0.406]
+sigma = [0.229, 0.224, 0.225]
+
+Valid form A: (x / 255 - mu) / sigma
+Valid form B: (x - 255 * mu) / (255 * sigma)
+
+The forms are mathematically equivalent when x means the same RGB pixels.
+```
+
+A local float32 sweep of all integer channel values 0..255 on 2026-10-24 found
+maximum absolute difference `2.384185791015625e-7` between these forms. This is
+an algebra check, not a remote-model validation or a full preprocessing parity
+test. It does not rule out a wrong remote cache, crop or double normalization.
+
+Correct standardized endpoint values for the three RGB channels are approximately:
+
+| Input channel value | R | G | B |
+| --- | ---: | ---: | ---: |
+| 0 | -2.117904 | -2.035714 | -1.804444 |
+| 255 | 2.248908 | 2.428571 | 2.640000 |
+
+For synthetic pixels set to `255*mu`, standardized channels should be approximately
+zero. Real float resize values may be nonintegers. After mean/std normalization,
+values below zero and above one are expected; a generic “must be 0–1” assertion
+at the network input would be wrong. Bounds above apply to valid unaugmented
+0–255 RGB input, not arbitrary augmented tensors or random erasing noise.
+
+The leaf **detector** has a different contract: RGB letterbox pad 114, division
+by 255, no ImageNet mean/std. Its pad becomes about 0.44706. Do not share a final
+classifier normalization transform with the detector just because both take NHWC.
+
+Common faults to deliberately detect with negative controls:
+
+| Fault | Observable effect / distinguishing check |
+| --- | --- |
+| Divide by 255 twice | White and black both normalize near negative mean/std; image contrast nearly disappears. |
+| Normalize 0–255 using unscaled 0–1 mean/std | Channel magnitudes can exceed 1,000. |
+| Normalize already standardized tensors again | Invalid second transform; hook immediately before forward reveals it. |
+| Normalize float 0–1 with 255-scaled constants | Nearly constant dark-image equivalent input. |
+| Cast float 0–1 cache to uint8 without multiplying first | Most image values become zero; check cache histogram and decode lineage. |
+| Let PIL/loader convert through a wrong color/alpha/range convention | RGB patches or input pixel hashes differ before normalization. |
+| Pass NHWC to timm or NCHW to the exported wrapper | Wrong axes/strides; square shapes can make some mistakes less obvious. |
+| Treat `channels_last` memory format as an NHWC shape conversion | PyTorch shape is still NCHW; only memory layout changed. |
+| Normalize in the export wrapper and also outside it | PyTorch/export graph contains an unintended duplicate transform. |
+
+One important local check: `torchvision.transforms.v2.ToDtype(float32, scale=True)`
+converted a uint8 tensor of 255 to 1.0, but left an already-float32 tensor of 255
+at 255.0. **Do not assume the word `scale=True` repairs an earlier `.float()`**.
+Audit actual dtype and transform dispatch in the installed remote version.
+The checked-in `train_clf.py` starts from PIL/ToImage, so this observation does
+not itself establish a bug in that script; it is a concrete risk for a modified
+cache/DataLoader path. Save remote version and reproduction output.
+
+Reproduce the algebra/sentinel check independently on the PC before testing its
+actual DataLoader. This snippet does not load a model or change training files:
+
+```python
+import numpy as np
+
+mean = np.array([0.485, 0.456, 0.406], dtype=np.float32)
+std = np.array([0.229, 0.224, 0.225], dtype=np.float32)
+pixels = np.arange(256, dtype=np.float32)[:, None]
+unit_form = (pixels / 255.0 - mean) / std
+byte_form = (pixels - 255.0 * mean) / (255.0 * std)
+np.testing.assert_allclose(unit_form, byte_form, rtol=0, atol=1e-6)
+print("formula_max_abs_error", np.abs(unit_form - byte_form).max())
+print("black_rgb", unit_form[0])
+print("white_rgb", unit_form[-1])
+
+# Negative controls: these MUST disagree with the valid normalization.
+double_scaled = (pixels / 255.0 / 255.0 - mean) / std
+not_scaled = (pixels - mean) / std
+assert np.abs(double_scaled[-1] - unit_form[-1]).max() > 1
+assert np.abs(not_scaled[-1] - unit_form[-1]).max() > 100
+```
+
+For production transforms use an explicit named input contract such as
+`uint8_rgb_0_255` or `float_rgb_0_1`; do not infer it from each batch's maximum.
+A valid dark image and an incorrectly scaled image can have overlapping numeric
+ranges. Validate dtype/range/lineage together and reject incompatible inputs.
+
+Primary references for these contracts:
+[torchvision Normalize](https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.Normalize.html),
+[torchvision ToDtype](https://docs.pytorch.org/vision/stable/generated/torchvision.transforms.v2.ToDtype.html),
+[PyTorch CrossEntropyLoss](https://docs.pytorch.org/docs/2.14/generated/torch.nn.CrossEntropyLoss.html),
+[checkpoint saving/loading](https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html).
+For integer class targets, CE consumes logits; do not add an unexplained softmax
+before CE. Custom soft-label losses need their own documented contract.
+
+### E. Source observations to investigate, not asserted root causes
+
+These observations refer to the local source at baseline commit `e67f2af` plus
+this documentation edit. Reconfirm paths/lines against the PC's actual revision.
+
+| Local code | Verified behavior | Investigation / required correction if relevant |
+| --- | --- | --- |
+| `train_field.py:35,57,64` | 255-scaled mean/std; training/eval assume raw 0–255 cached pixels | Verify cache dtype/range and every upstream conversion; no automatic /255 patch. |
+| `final/canon.py:classifier_input`, Android `CanonicalImageOps.kt:classifierInputInto` | Crop/resize then /255 and unscaled ImageNet mean/std | Compare identical decoded pixels/crops through full paths; normalization algebra alone is insufficient. |
+| `build_cache.py:base`, `train_field.py:gpu_eval` | Bicubic 448-base image, then bilinear antialiased resize | Different from direct canonical area resizing; quantify tensor and prediction differences. This difference exists, but its contribution to 30% is unmeasured. |
+| `train_field.py:68–74` | Defaults to MobileNet; initializes head to zero, loads backbone with strict=False, copies old head rows by position | Check actual architecture/weights/class-name row mapping; fail on unapproved missing/unexpected keys. |
+| `train_field.py:31–33,105` | Domain sampling and effective-prior logit adjustment plus smoothing | Compare ordinary CE with natural sampling first; log sampled priors and coefficient choices. |
+| `train_field.py:teacher/KD branch` | Teacher can have eight classes; student first k logits used for KD | Assert name-by-name class alignment, input contract, teacher correctness and loss contribution; disable initially. |
+| `train_field.py:gpu_aug` | Aggressive random crop, flips/rotation/color/blur/erasing | Inspect disease symptom retention; disable for the tiny-set and clean reference controls. |
+| `train_field.py:96,117` | Pools clean/leaky validation and selects weighted source accuracy | Exclude known leakage; add per-class disease/Healthy gates so a coarse average cannot conceal collapse. |
+| `train_field.py:114,119` | Samples loss every 16 iterations and rescales an approximation | Replace with sample-weighted full epoch loss for diagnostics; do not interpret that approximate logged number as exact loss. |
+| `train_field.py:118–120` | Saves best EMA state_dict; metadata written only at end; no complete resume state | Verify evaluated state is selected EMA; persist config from start and full resume state separately. |
+| Historical train/eval scripts at module top level | Argument parsing, cache reads, CUDA allocation and loops execute on import | Extract testable functions and add main guards in new tooling; do not import these scripts casually from a CPU parity test. |
+| `build_cache.py:group` | Some group values such as `va_full`, `tw_<class>`, `pv_<class>` are source/type/class tags | They are not physical-leaf IDs; recover real lineage before using “grouped split” claims. |
+| `eval_field.py`, `ens_eval.py`, `final/stage_a.py` | Different historical logit/energy/calibration conventions and pooled validation | Label representation explicitly; evaluate the actual current app combine/policy. |
+| `final/convert_litert.py` | NHWC wrapper permutes to NCHW; random input is 0–1 | Add representative standardized inputs and full output parity; random 0–1 alone is not coverage of deployed inputs. |
+| `AgribotLeafVision.kt:classifyWhole` comment | Mentions fallback; current analyzed-leaf flow has no whole-image fallback | Trace callers; do not treat a stale comment as app behavior. |
+
+Zero-initializing a new linear head is not proof that the whole pretrained model
+is random. It can make first-step backbone gradients zero until head weights
+move. A fresh head also has no reason to match old classifier accuracy at step
+zero. Distinguish legitimate initialization behavior from accidental head reset
+while resuming a trained checkpoint. Correct shapes do not prove correct classes.
+
+### F. Build a small diagnostic packet before long GPU work
+
+Implement tools under a new diagnostic/training directory, preserving historical
+v2 behavior for reproducibility. The following filenames are deliverables to
+create during remote execution, not files already implemented by this edit:
+
+```text
+incident_<timestamp>/
+  STATUS.md
+  inventory.json
+  failure_reproduction.json
+  source_revision_and_diff/
+  dataset_manifest.jsonl
+  diagnostic_sample_manifest.jsonl
+  preprocessing_contract.json
+  tensor_audit.jsonl
+  normalization_probes.json
+  label_audit.json
+  checkpoint_audit.json
+  sampler_audit.json
+  gradients_and_updates.jsonl
+  probe_results.csv
+  per_class_metrics.csv
+  prediction_transitions.csv
+  failure_gallery.html
+  decision_log.md
+```
+
+Build a fixed, source-stratified development packet with at least several
+verified examples of every available class, Healthy/disease lookalikes, supported
+and unsupported tomato leaves, non-tomato controls and crop edge cases. Aim for
+roughly 10–20 independent groups per class if accessible; record actual coverage
+and absent classes. Use the historical goldens as implementation controls, never
+as an independent accuracy benchmark. Keep diagnosis and final-test sets separate.
+
+Each diagnostic record must retain source/original ID, image hash, ground-truth
+label and review status, class index, crop box/padding, dimensions, orientation,
+decode backend, dtype/range, preprocessing version and split/group lineage.
+Capture full tensors only for the small packet; use summary statistics/hashes
+for bulk data so the audit does not fill disk or expose private images.
+
+### G. Trace one identical image through every boundary
+
+Capture arrays before and after: decode -> cache write -> cache read -> crop ->
+resize -> augmentation -> conversion to float -> normalization -> layout wrapper
+-> model input -> raw logits -> calibrated probabilities -> app plant verdict.
+For the deterministic parity run disable all random augmentation. Never compare
+randomly different crops and interpret their tensor difference as a scaling bug.
+
+For every boundary log shape, dtype, strides/layout, channel order, min/max,
+mean/std per channel, selected quantiles, fraction zero/saturated, finite status,
+pixel/tensor hash, selected sentinel pixel values and class ID. Install a model
+forward pre-hook for the diagnostic run so the final captured input is what the
+network actually received, not what a helper function intended to produce.
+Inspect model modules/export graph for embedded rescaling or normalization.
+
+Compare the following paths using the same predecoded RGB array and crop:
+
+1. Direct Python canonical preprocessing used for the shipped TFLite diagnostic.
+2. Actual training evaluation transform and training transform with randomness off.
+3. Cache-based path versus direct-from-original path, including the 448-base stage.
+4. PyTorch NCHW input versus exported NHWC wrapper input after the documented permute.
+5. Android golden/static input path when hardware/build tooling is available.
+
+For strictly equivalent FP32 normalization on the same already-resized pixels,
+start with `atol=1e-6` and inspect exact worst-case values; tolerate explained
+rounding, not a 255x discrepancy. Canonical input golden tolerance remains the
+declared contract. Interpolation/decode differences need separate comparisons,
+not an unjustified expectation of byte identity. Float64 and float32 paths must
+be labeled. Save tensor MAE/max error, correlations, logit errors and changed
+predictions; quantify whether the actual discrepancy explains the accuracy drop.
+
+Use synthetic black/white/gray, red/green/blue patches, a channel ramp, checkerboard,
+portrait/landscape crops and odd-sized boxes to test range, RGB/BGR, axes and
+rounding. For color metadata/EXIF, compare decoded pixels separately from the
+normalization transform; do not silently apply a different orientation on only
+one path. Detect double preprocessing with intentional invalid transforms in a
+diagnostic control, not by deploying them as automatic fallback hypotheses.
+
+Gate G passes when every boundary has a documented input contract, identical
+operations agree within stated tolerance, and real differences have been isolated
+and measured. Merely logging overall tensor min/max is insufficient.
+
+### H. Labels, data order, sampling and metric integrity
+
+Make one explicit class-name-to-index manifest authoritative across all loaders,
+checkpoints, teachers, exports and Android. The nine deployed keys/order later
+in this document remain the default. Persist each loader's `class_to_idx` and
+assert equality rather than relying on folder sort. Remap teacher/checkpoint head
+rows by exact canonical class name; require an explicit reviewed alias map for
+spelling differences. Never infer semantic alignment from head dimensions alone.
+
+Verify original photo/annotation, crop, sample ID, label tensor and final prediction
+remain paired after shuffling, multiprocessing, cache indexing, filtering,
+concatenation and sampler use. Use an immutable original index and batch lineage.
+Check cache metadata length, `n`, initialized rows, dtype, shape, file hash and
+cache producer revision/config; reject partial caches rather than learning from
+zero-filled trailing rows. Do not fix the schema by sorting images without
+sorting/rebuilding their labels identically.
+
+Audit raw/effective source and class counts, missing classes, mislabeled species,
+unsupported-to-Other mappings and mixed scenes. Review the largest errors and
+high-loss examples without automatically relabeling them. Keep corrupt or
+uncertain data in an exclusion ledger, not silently dropped from reported totals.
+
+For samplers, record actual drawn sample IDs and class/source histograms for at
+least one full epoch, unique groups visited, repeat counts and probability mass
+by subgroup. Compute the effective prior from actual selection probabilities.
+Check all probabilities/weights are finite/nonnegative, sum mass is nonzero,
+and all intended classes receive training draws. Compute optimizer steps per
+epoch; `per_epoch` is a sampling budget, not necessarily one complete dataset pass.
+Protect rare disease classes from disappearing while adding healthy samples.
+
+For metrics, save logits/labels/sample IDs together. Independently recompute
+top-1, per-class recall/precision, macro scores and full confusion with the fixed
+nine-class axis order. Undefined metrics for absent classes must be explicit,
+not replaced with 100% or silently omitted to inflate a macro average. Separate
+model argmax from app decided/unsure/Other/no-leaf outcomes. Plot predicted class
+frequencies and Healthy false positives by disease/source as well as accuracy.
+
+### I. Checkpoint, resume and optimizer audit
+
+Before training, save architecture and input resolution, pretrained source/hash,
+head dimensions/order, parameter count, selected checkpoint hash and load report.
+Use strict loading when resuming the same model. For intentional head replacement,
+whitelist only that change; abort on unexpected missing backbone keys. Account
+explicitly for wrapper prefixes (`module.`, `_orig_mod.`), checkpoint dictionaries
+versus bare state_dicts and EMA versus non-EMA weights. Load trusted checkpoints
+only; do not disable serialization safeguards merely to bypass an unknown file.
+
+Evaluate the checkpoint immediately after loading and before optimizer creation.
+Then save/reload in a new process and compare deterministic logits and the
+diagnostic confusion matrix. For a recovered original classifier, agreement with
+its known baseline on identical preprocessing is a prerequisite to calling it
+“resumed.” For a new pretrained backbone with a random head, report that distinct
+starting state without expecting nine-class classification competence yet.
+
+Log `requires_grad`, model train/eval mode, dropout/drop-path and BatchNorm behavior
+where applicable, optimizer groups and actual LRs, weight decay, scheduler step,
+global step, batch/accumulation size and EMA state. Add trainable parameters to
+the optimizer when unfreezing; changing requires_grad alone does not repair an
+optimizer built with a filtered frozen parameter list. If a head is replaced,
+do not retain stale optimizer tensors for old head rows.
+
+On the first several batches record raw loss components, per-group gradient norm,
+clipped norm and parameter update norm. Assert gradients/losses/updates finite;
+verify trainable weights actually change and frozen weights do not. Test eager
+FP32 first, then BF16 and compilation as separate speed changes. If the loaded
+model is correct but the first few updates destroy disease recall, inspect LR,
+sampler composition, head mapping, erroneous resume state and loss coefficients
+before running another 40 epochs. Compare EMA and online predictions separately.
+
+Full resume state must include online/EMA weights, optimizer, scheduler, scaler
+when used, RNG states, global step, config, class map, data/split hashes and
+preprocessing identity. An intentional weights-only new experiment must be named
+as such. Validate resume by comparing uninterrupted versus interrupted execution
+for a short deterministic sequence; define allowed numeric tolerance and sources
+of nondeterminism rather than claiming universal bitwise CUDA reproducibility.
+
+### J. Minimal supervised recovery ladder and go/no-go gates
+
+Do not start with every historical regularizer active. Each stage requires a
+written result and decision in `decision_log.md` before expanding scope.
+
+| Stage | Controlled experiment | Required evidence / response |
+| --- | --- | --- |
+| J0 | Reproduce frozen failed evaluation and shipped baseline on the same development packet | Know which runtime/representation first diverges; preserve both results. |
+| J1 | Numerical/data/checkpoint audits above; no optimizer steps | Fix proven defects and show a before/after regression case. No guessed normalization patch. |
+| J2 | Overfit 2–4 clean training examples per class, plain CE, no augmentation/KD/prior/bias, online weights | Near-perfect tiny-training-set fit is a debugging target, not a generalization claim. If ~95%+ cannot be reached after a reasonable finite diagnostic run, inspect labels/load/gradients/capacity before scale-up; allow explicit ambiguous-sample exceptions. |
+| J3 | Frozen-backbone feature extraction and linear-head baseline on grouped development splits | Assess whether inputs/features separate classes without representation drift; compare Healthy and diseases together. |
+| J4 | Joint nine-class training with ordinary CE, natural shuffled training distribution, clean deterministic validation | Establish stable train/validation curves and per-class outcomes before imbalance correction. |
+| J5 | Controlled single-change interventions: sampler OR class weights OR prior adjustment | Same initialization, development split, data budget and seed; measure Healthy benefit and disease cost. |
+| J6 | Head then last-block unfreezing; cautious backbone LR; add realistic augmentation gradually | Preserve disease recall while improving verified Healthy field cases. |
+| J7 | Calibration and exact exported/runtime/app evaluation | A working PyTorch model must survive export and policy unchanged before deployment consideration. |
+| J8 | Final selected candidate, seed confirmation and locked-test evaluation | Apply the original acceptance gates; no tuning on the opened final test. |
+
+For J2, freeze choices must still permit memorization. If a frozen feature head
+cannot fit ambiguous/identical-feature examples, try a carefully bounded unfrozen
+model before declaring the optimizer broken. Log the number of examples, steps,
+loss, raw accuracy and exceptions. Do not interpret “memorizes tiny set” as proof
+of good labels across the corpus or robust field accuracy.
+
+J4 starting control: recovered compatible classifier if available, otherwise the
+documented pretrained DINOv2 backbone plus a new nine-class head; no teacher,
+no class bias, no energy gate, no label smoothing, no balanced-softmax/log-prior
+term, no focal loss, no heavy random erasing, no mixup and no compile. Use raw
+logits for CE, FP32 for initial diagnostics, explicit seed and a conservative LR.
+Keep the deployed app's frozen calibration/policy evaluation as a separate
+comparator; disabling bias in the training control is not a production change.
+
+Learning rates, epoch counts and batch sizes later in the original handoff are
+search suggestions after these gates, not executable defaults for a resumed ViT.
+Train all relevant classes jointly; do not sequence Healthy-only optimization
+followed by disease-only repair and call the oscillation learning progress.
+
+### K. Explain the Healthy-versus-disease collapse with transitions
+
+Make a paired table for every relevant intervention/checkpoint on identical
+development samples. Record raw logits, calibrated probabilities, truth, old/new
+argmax and old/new final verdict. Summarize at least:
+
+- Healthy -> Healthy improvements versus disease -> Healthy false reassurances.
+- Previously correct disease -> different disease, Other, Unsure or no leaves.
+- Per-disease count/recall, disease macro recall, Other rejection and source mix.
+- True-class margin, Healthy margin, predicted class distribution, logit scales,
+  Healthy bias/head norm, feature norms and losses by class/source over time.
+- Online versus EMA, before/after restore, before/after calibration, and
+  PyTorch versus TFLite versus Kotlin transitions, separately.
+
+Interpretation must be tied to an intervention:
+
+| Observed signature | Leading checks, not automatic conclusions |
+| --- | --- |
+| Collapse already present at step zero after load | Class order, checkpoint provenance, missing keys, preprocessing and metric alignment. |
+| Tiny-set optimization fails even with trainable weights | Input/label pairing, gradients, loss contract, LR, finite values and optimizer membership. |
+| Train improves while source-held-out disease falls | Overfitting/domain shortcuts, split differences, sampling coverage and augmentation validity. |
+| Both Healthy/disease margins shift abruptly after a bias change, with fixed logits | Decision/calibration tradeoff; weights did not learn new features. |
+| Head-only probe works but full fine-tuning collapses | Representation drift, too-large backbone LR, update schedule, regularization or resume error. |
+| Adding Healthy data sharply changes predicted prevalence | Effective prior, class weight/sampler interaction and source background shortcuts. |
+| PyTorch good, TFLite poor on exactly the same normalized tensor | Export graph, dtype/layout, selected weights or operator parity. |
+| TFLite crop good, app verdict poor | Detector selection, multi-leaf tracking/evidence, partial-disease override, calibration or stop policy. |
+| Reported aggregate improves while disease macro recall drops | Metric/checkpoint objective hides the failure; use constrained selection. |
+
+If representation forgetting is evidenced, compare conservative unfreezing,
+smaller backbone LR and replay of diverse original diseased training examples.
+Distillation from a verified prior classifier or a penalty on departure from
+initial weights is conditional; log coefficients and supervised/retention terms.
+Do not anchor a student to teacher mistakes on the very Healthy cases being fixed.
+Do not maintain a “healthy model” and a “disease model” with ad hoc precedence
+rules without evaluating their combined false-Healthy behavior.
+
+### L. Loss, logit adjustment and RL: a precise decision protocol
+
+Terminology matters because the old trainer already uses logits in supervised
+learning. Label the tested method with its actual formula and implementation.
+
+| Method | What it does | Role in this recovery |
+| --- | --- | --- |
+| Ordinary CE | `-log softmax(z)[y]` | Required transparent joint-class control. |
+| Weighted CE | Weights labeled examples/classes | Conditional response to demonstrated imbalance/costs, not Healthy-only reward. |
+| Training logit adjustment / balanced-softmax variant | `CE(z + tau*log(pi_train), y)` with declared prior and sampling convention | Reintroduce only after plain CE works; sweep one small coefficient at a time. |
+| Inference class bias | `softmax((z + b)/T)` or bias at the app's combined log-probability stage | Decision boundary tuning on calibration data; cannot teach a visual distinction. |
+| Margin/contrastive/retention term | Changes supervised representation or pairwise separation | Optional if a concrete, measured remaining error motivates it. |
+| Label-based differentiable “reward” | Directly optimizes an expression of correct-class probability/logits | Usually testable as supervised loss; write its gradients/objective explicitly. |
+| Actual policy-gradient RL | Samples actions and estimates reward-weighted policy gradients | Not the next default step for a fully labeled nine-class classifier. |
+
+Adding a positive constant to Healthy at inference raises its decision preference;
+it does not improve the image evidence. A label-conditioned log-probability
+reward is simply negative CE when its formula matches `log p(y|x)`. Maximizing
+`p(y|x)` is a different differentiable objective; do not call all reward losses
+mathematically identical to CE. For a per-image known reward matrix R(y,a), its
+expected reward `sum_a p(a|x) R(y,a)` is directly differentiable: sampling actions
+with REINFORCE is not necessary just to estimate that sum over nine classes.
+
+Only propose an RL experiment after all correctness gates pass and a defensible
+objective remains that the supervised/cost-sensitive baselines do not address.
+For example, a future sequential scan policy involving view acquisition costs is
+a different task from a single-image label classifier and needs its own data and
+environment validation. It is not authorized as an unbounded detour here.
+
+If an actual RL comparison is scientifically justified within the authorized
+budget, predeclare state/action/reward, whether decisions are independent or
+sequential, ground-truth source, disease false-Healthy penalties, unsupported-input
+behavior, exploration/off-policy assumptions, supervised anchor/KL constraint,
+seed controls and stop criteria. Compare to ordinary and weighted CE on identical
+splits and total compute. Rewards based only on model confidence, avoiding Other
+or predicting Healthy are disallowed objectives. Report reward separately from
+real accuracy; reward going up while disease recall falls is a failure.
+
+Do not implement PPO/GRPO merely because training accuracy is low. A failure in
+normalization, labels, checkpoint restoration or class coverage must be fixed in
+all methods, and an RL run over that failure would obscure the diagnosis.
+
+### M. Concrete implementation boundaries after diagnosis
+
+Make each demonstrated defect reviewable with a minimal failing fixture, the
+repair, and a regression assertion on actual tensors/labels/predictions. Proposed
+new modules and schemas below are to implement as needed, not existing tooling:
+
+| Area | Required implementation if implicated | Android consequences |
+| --- | --- | --- |
+| Preprocessing | Shared explicit transform specification with input dtype/range/color/layout/crop/resize and a version/hash; deterministic CPU/GPU evaluation parity | Fix Android only if its contract is demonstrably wrong for the selected deployed model; otherwise correct training/evaluation to match it. |
+| Cache/loader | Validate producer config/hash, initialized length, dtype/range, per-image label lineage and split membership; reject stale incompatible cache | No app change for a training-only cache repair. |
+| Label mapping/head restore | Immutable canonical class list, named head-row mapping and strict permitted-key load report | Preserve nine labels/order; a true taxonomy change requires the explicit migration later in this handoff. |
+| Trainer | Flags for independent sampler/loss/regularizer/precision modes; full loss/gradient/update logging; full resume checkpoints | No runtime change until a model qualifies. |
+| Checkpoint selector | Reject candidates violating disease/Other guardrails; report Healthy and all disease classes plus source cohorts | No Healthy UI shortcut; preserve disease priority/partial-leaf logic. |
+| Evaluation | Bundle/config/split/preprocess hashes in resume keys; raw and calibrated metrics separately; real Kotlin parity | Policy changes, if justified, must be synchronized with replay and all consumers. |
+| Export | Verified selected state, NHWC wrapper, real standardized input parity and final byte hashes | Update assets/manifests/goldens together only after qualification. |
+
+Never let changing an experiment's preprocessor update a shared cached result
+under the old hash/name. Cache invalidation is based on content/config identity,
+not only modification time. A run with corrected inputs is a new experiment;
+preserve the failed run for comparison.
+
+### N. Resource use, stop conditions and deliverables for the SSH run
+
+Use the first session to recover facts and pass the deterministic audits. An
+initial few hours of GPU diagnostics may be appropriate, but do not spend the
+full original 24–48 GPU-hour search envelope before identifying the failing
+boundary. Treat resource numbers as caps, not targets; keep useful work moving
+without repeated approval requests for routine, authorized project-local fixes.
+
+Stop escalation to larger training when inputs/labels are invalid, checkpoint
+identity is unresolved, tiny-set fitting fails without explanation, loss/updates
+are nonfinite, repeated predicted-class collapse occurs, export parity fails,
+or validation repeatedly worsens disease concealment. Preserve evidence, address
+the cause, and resume at the relevant gate. Do not “fix” a gate by suppressing
+its warning or removing failing classes from metrics.
+
+At a minimum, return a root-cause report that distinguishes confirmed defects,
+contributing factors, hypotheses tested and remaining unknowns. A confirmed cause
+needs a reproducible example and a controlled correction showing the predicted
+effect. Multiple causes are possible; no claim that a plausible code smell alone
+explains the reported 30%.
+
+Then deliver the corrected diagnostic/training tools, versioned config and data
+split manifest, per-class before/after evidence, stable joint Healthy/disease
+baseline if attainable, final export/runtime/app results and the PR/artifact
+handback described below. If the training fix restores performance without any
+app code change, say so. If no acceptable candidate exists, preserve the shipped
+assets and return the best measured candidate with explicit failed/pending gates.
+
+### O. Recovery completion checklist
+
+- [ ] Remote failed run and reported metric identified or specific missing artifact recorded.
+- [ ] Existing code/config/checkpoints/logs preserved; active jobs respected.
+- [ ] Exact input-range/color/layout/crop/resize contracts traced with sentinel tensors.
+- [ ] Normalization hypothesis tested numerically without blindly adding /255.
+- [ ] Cache and image/label alignment verified; named class/head mapping asserted.
+- [ ] Frozen checkpoint load and save/reload predictions verified.
+- [ ] Actual gradients, parameter updates, sampler coverage and resume behavior checked.
+- [ ] Tiny-set control and joint-class ordinary-CE baseline completed or failure explained.
+- [ ] Healthy gains and per-disease losses explained with paired transitions.
+- [ ] Each loss/sampling/retention change isolated against a controlled baseline.
+- [ ] Calibration and exported-byte parity separated from representation learning.
+- [ ] Final test, statistical guardrails and target-device checks honestly labeled.
+- [ ] Status, evidence, reproducible commands and PR handback durable across SSH sessions.
+
+---
+
+## Original complete training and deployment specification, updated for recovery
 
 ## 1. Objective, authorization, and completion
 
@@ -338,8 +958,9 @@ distribution; combining strong resampling, weights and adjustment can overcorrec
 | Healthy inference bonus | Add a class-specific Healthy bias after combining member probabilities | New parsed manifest bias field/vector and matching `EnsembleDecision` behavior/tests; currently unsupported | Optional diagnostic comparator, validated against false Healthy; never unconditional reward for predicting Healthy. |
 | Linear probe/head warm-up | Freeze pretrained/backbone weights, train nine-class head on clean groups | Replacement classifier asset, hashes, calibration and goldens | Required when initializing a fresh head; useful conservative comparator with recovered weights. |
 | Targeted supervised fine-tuning | Unfreeze last ViT blocks, then more blocks only if validation supports it; field-balanced sampling | Same model contract; replace asset/calibration/goldens | Preferred main experiment. |
-| Class-weighted CE | Weight verified classes based on training prevalence/validation behavior; clipped weights | No new runtime logic | Required limited comparison against ordinary CE and current logit-adjusted CE. |
-| Logit-adjusted supervised CE | Train with prior-dependent adjustment and declared coefficient | Usually no runtime change beyond new weights/calibration; document whether adjustment is training-only or also applied at inference | Required limited comparison; not RL. |
+| Ordinary CE recovery baseline | Joint classes, explicit natural-distribution control, no prior/bias/KD and deterministic evaluation | No runtime change during diagnosis | Required before weighted/logit experiments; see recovery stages J0–J4. |
+| Class-weighted CE | Weight verified classes based on training prevalence/validation behavior; clipped weights | No new runtime logic | Conditional controlled comparison after ordinary CE works and imbalance/cost evidence motivates it. |
+| Logit-adjusted supervised CE | Train with prior-dependent adjustment and declared coefficient | Usually no runtime change beyond new weights/calibration; document whether adjustment is training-only or also applied at inference | Conditional controlled comparison after recovery; not RL. |
 | Focal loss / hard-example sampling | Focus on verified difficult samples, capped to avoid noise amplification | Same model contract | Conditional if ordinary/weighted CE fails; mine training errors only. |
 | Distillation | Label CE plus temperature-scaled teacher KL on appropriate training subsets | Only student asset if deployed; teacher not shipped | Conditional if catastrophic forgetting or smaller student is justified. Teacher agreement is not an accuracy metric. |
 | New field data / augmentation | Increase representative healthy examples and disease lookalikes, camera-relevant crop/blur/light/compression variation | Same contract unless preprocessing explicitly changes | Data quality and coverage work is required; extra sources conditional on access. |
