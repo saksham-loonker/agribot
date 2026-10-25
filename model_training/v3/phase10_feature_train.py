@@ -41,7 +41,7 @@ def main():
     )
     ap.add_argument(
         "--feature-family",
-        choices=["dino", "mobileclip", "mobileclip_dino"],
+        choices=["dino", "mobileclip", "mobileclip_dino", "siglip2"],
         default="dino",
     )
     a = ap.parse_args()
@@ -54,7 +54,7 @@ def main():
     out.mkdir(exist_ok=True)
     rows = json.loads((root / "cnn_inputs/rows.json").read_text())
     if a.task_scope == "primary_image":
-        assert a.feature_family == "mobileclip"
+        assert a.feature_family in ("mobileclip", "siglip2")
         assert all(r.get("box") is None and r["view"] == "full_scene" for r in rows)
     target = np.array([int(r["health_y"]) for r in rows])
     ev = json.loads((root / "eval_rows.json").read_text())
@@ -92,7 +92,10 @@ def main():
     torch.backends.cudnn.allow_tf32 = False
     timm.layers.set_fused_attn(False)
     if a.feature_family != "dino":
-        from mobileclip_features import extract
+        if a.feature_family == "siglip2":
+            from permissive_encoder import extract
+        else:
+            from mobileclip_features import extract
 
         features, identity = extract(root, out, ids, a.feature_family)
     else:

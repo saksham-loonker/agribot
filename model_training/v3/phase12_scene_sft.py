@@ -21,7 +21,6 @@ from torchvision import transforms
 from campaign_cnn_fusion import calibrate
 from campaign_pixels import open_pixels
 from leaf_feature_expert import LeafFeatureHead
-from mobileclip_scene import load
 from phase7_species_train import balanced
 from training_support import atomic_save, capture_rng, restore_rng
 
@@ -67,10 +66,18 @@ def teacher_logits(root, rows):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", required=True)
+    ap.add_argument("--family", choices=["mobileclip", "siglip2"], default="mobileclip")
     ap.add_argument("--loss", choices=["ce", "focal", "distill"], required=True)
     ap.add_argument("--epochs", type=int, default=16)
     ap.add_argument("--batch", type=int, default=128)
     a = ap.parse_args()
+    if a.family == "siglip2":
+        assert (
+            a.loss != "distill"
+        ), "Restricted MobileCLIP teachers must never train this model"
+        from permissive_scene import load
+    else:
+        from mobileclip_scene import load
     root = Path(a.root)
     out = root / ("sft_" + a.loss)
     out.mkdir(exist_ok=True)
@@ -81,7 +88,7 @@ def main():
     val = np.array([i for i, r in enumerate(rows) if r["split"] == "val"])
     assert not ({rows[i]["group"] for i in train} & {rows[i]["group"] for i in val})
     assert set(target[train]) == set(target[val]) == {0, 1}
-    warm = read(root / "mobileclip_feature_heads/ranked.json")[0]
+    warm = read(root / (a.family + "_feature_heads") / "ranked.json")[0]
     directory = Path(warm["checkpoint"]).parent
     config = dict(
         rows_sha256=digest(root / "cnn_inputs/rows.json"),
@@ -117,6 +124,10 @@ def main():
         config["teacher_candidate_sha256"] = digest(
             root.parent / "phase11_scene/fusion_selection/candidate.json"
         )
+    if a.family == "siglip2":
+        config["model_family"] = "siglip2"
+        config["restricted_teacher_used"] = False
+        assert read(root / "encoder_source.json")["license"] == "apache-2.0"
     protocol = out / "protocol.json"
     if protocol.exists():
         assert read(protocol) == config
@@ -288,7 +299,9 @@ def main():
         )
         score = auc + 0.1 * recall - 2 * fpr
         state = dict(
-            architecture="MobileClipSceneSft",
+            architecture=(
+                "PermissiveSceneSft" if a.family == "siglip2" else "MobileClipSceneSft"
+            ),
             spec=spec,
             configuration=config,
             model={k: v.detach().cpu().clone() for k, v in model.state_dict().items()},

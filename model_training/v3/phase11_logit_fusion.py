@@ -21,25 +21,42 @@ def digest(path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--campaign", required=True)
+    ap.add_argument("--model-root")
+    ap.add_argument(
+        "--head-family", choices=["mobileclip", "siglip2"], default="mobileclip"
+    )
     a = ap.parse_args()
     p = Path(a.campaign)
-    root = p / "phase11_scene"
+    root = Path(a.model_root) if a.model_root else p / "phase11_scene"
     out = root / "logit_fusion"
     out.mkdir(exist_ok=True)
     old = p / "phase6_roi/scene_sft_d12_focal_fusion"
     rows_path = root / "cnn_inputs/rows.json"
     rows = json.loads(rows_path.read_text())
     old_identity = json.loads((old / "input_identity.json").read_text())
-    assert digest(rows_path) == old_identity["scene_rows_sha256"]
-    selected = json.loads((root / "mobileclip_feature_heads/ranked.json").read_text())[
-        0
-    ]
+    old_rows_path = p / "phase6_roi/scene_inputs/cnn_inputs/rows.json"
+    if not old_rows_path.exists():
+        old_rows_path = p / "phase11_scene/cnn_inputs/rows.json"
+    old_rows = json.loads(old_rows_path.read_text())
+    assert digest(old_rows_path) == old_identity["scene_rows_sha256"]
+    assert rows[: len(old_rows)] == old_rows
+    # Calibrate on the original human corpus only. Newly admitted families
+    # remain available for the separate internal app validation.
+    rows = rows[: len(old_rows)]
+    selected = json.loads(
+        (root / (a.head_family + "_feature_heads") / "ranked.json").read_text()
+    )[0]
     directory = Path(selected["checkpoint"]).parent
     state = torch.load(directory / "best.pt", weights_only=True, map_location="cpu")
     assert state["protocol"]["task_scope"] == "primary_image"
-    model = LeafFeatureHead(state["kind"], 512).eval()
+    if a.head_family == "siglip2":
+        assert state["protocol"]["feature_identity"]["restricted_teacher_used"] is False
+    dimension = 768 if a.head_family == "siglip2" else 512
+    model = LeafFeatureHead(state["kind"], dimension).eval()
     model.load_state_dict(state["model"], strict=True)
-    features = np.load(root / "mobileclip_feature_heads/features.npy")
+    features = np.load(root / (a.head_family + "_feature_heads") / "features.npy")[
+        : len(rows)
+    ]
     torch.set_num_threads(4)
     with torch.inference_mode():
         mobile = model(torch.from_numpy(features)).numpy()
@@ -114,7 +131,7 @@ def main():
                 "DINO original/adapted MLP",
                 "copied DINO12 image Healthy",
                 "genus CNN",
-                "MobileCLIP image Healthy",
+                a.head_family + " image Healthy",
             ],
             input_identity=identity,
             calibration_n=len(cal),

@@ -1,5 +1,12 @@
 # Recognition repair campaign: 24 October 2026
 
+**Latest continuation, 26 October:**
+[Apache-only SigLIP2 investigation](SIGLIP2_CONTINUATION_20261026.md).
+The full Apple model license excludes product development, so the MobileCLIP
+branch is a research record and cannot supply app weights or replacement-model
+teachers. Human labels are reused independently. No new model is qualified;
+independent AD diagnostic predictions remain unopened.
+
 This record extends the recovery and app validation reports. The owner's request
 is to improve Healthy recognition and false rejection without sacrificing the
 existing disease recognizer, and to test supervised, logit and reward methods

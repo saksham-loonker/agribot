@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "status": "Incomplete: five-expert exact graph passes development but fails consumed field recall (51/95); phase12 explicitly retires consumed families into training/development; separate image encoder SFT is running; interim phone 2.0.2 retained; independent AD unopened",
+  "status": "Incomplete: MobileCLIP-dependent controls blocked from product use by full research license; independent Apache-2.0 SigLIP2 heads/fusion and supervised controls under verification; interim 2.0.2 unchanged; independent AD unopened",
   "installed_classifier_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
   "initial_trained_controls": {
     "heads": 29,
@@ -12612,5 +12612,6 @@
     },
     "next_step": "Acquire and audit FieldPlant explicit leaf annotations, then source/group-aware supervised training; preserve cold AD source for frozen evaluation."
   },
-  "latest_continuation_evidence": "leaf_scope_20261025.json"
+  "latest_continuation_evidence": "permissive_scope_20261026.json",
+  "latest_continuation_document": "../SIGLIP2_CONTINUATION_20261026.md"
 }

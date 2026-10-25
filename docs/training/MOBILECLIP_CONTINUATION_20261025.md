@@ -1,5 +1,21 @@
 # MobileCLIP, exact context verification, and the next data revision
 
+**Superseded on 26 October 2026: research record only.** The full
+[Apple model license](https://github.com/apple-aiml-research/ml-mobileclip/blob/main/LICENSE_MODELS)
+excludes product development and commercial products, including derivatives.
+None of this record's MobileCLIP heads, fusions, fine-tunes, union policies or
+distilled checkpoints is eligible for the app. No Apple weights were put in the
+APK or Git. Do not use their logits or parameters to train the replacement.
+The license should have been checked before pursuing this as an app candidate.
+See [the Apache-only replacement continuation](SIGLIP2_CONTINUATION_20261026.md).
+The human-labelled corpus can be reused independently of the restricted model.
+
+The original agreement is retained at
+[APPLE_AMLR_RESEARCH_ONLY.txt](licenses/APPLE_AMLR_RESEARCH_ONLY.txt).
+Apple Machine Learning Research Model is licensed under the Apple Machine Learning Research Model License Agreement.
+Research modifications comprised calibrated binary heads, optional DINO-feature
+concatenation, image-logit fusion and supervised/distilled image verifiers.
+
 Revision: 25 October 2026. Read this before older pending statements in the
 handoff. Recognition remains unresolved; the phone still uses interim 2.0.2.
 The unchanged original nine-class disease model is the reference throughout.
@@ -24,7 +40,7 @@ Repository revision: `577a2e992da2c7ba7cadc2a490bcfadfb2d69bce`.
 `model.safetensors` SHA-256:
 `70a995b7e7385126d0db94ee3d395d7fd3c251ce6d8dcd4f4c8d8fc7c29e3d04`.
 The model card declares `apple-amlr`; these weights are not redistributed in Git.
-Preserve that license/attribution in any eventual distributable model.
+The badge alone was insufficient: the full agreement blocks app deployment.
 
 Its checkpoint expects RGB in [0,1] at 256 pixels. Our explicit contract starts
 with the existing canonical ImageNet-normalized NHWC 224 tensor, reverses that

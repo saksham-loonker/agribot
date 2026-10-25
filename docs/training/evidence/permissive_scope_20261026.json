@@ -1,0 +1,5489 @@
+{
+  "schema": 1,
+  "status": "Incomplete recognition repair; no replacement model qualified or installed",
+  "model_source": {
+    "repository": "timm/vit_base_patch16_siglip_256.v2_webli",
+    "revision": "ac4cc431026674dcac29e34a00d3bd2048390eb3",
+    "file": "model.safetensors",
+    "file_sha256": "13ab9d238865f89b14005c5e92a099add04cbfab331a64245acab813509cb2b0",
+    "local_file": "/home/genesis/.cache/huggingface/hub/models--timm--vit_base_patch16_siglip_256.v2_webli/snapshots/ac4cc431026674dcac29e34a00d3bd2048390eb3/model.safetensors",
+    "model_name": "vit_base_patch16_siglip_256.v2_webli",
+    "pretrained_cfg": {
+      "url": "",
+      "file": "/home/genesis/.cache/huggingface/hub/models--timm--vit_base_patch16_siglip_256.v2_webli/snapshots/ac4cc431026674dcac29e34a00d3bd2048390eb3/model.safetensors",
+      "hf_hub_id": "timm/vit_base_patch16_siglip_256.v2_webli",
+      "architecture": "vit_base_patch16_siglip_256",
+      "tag": "v2_webli",
+      "custom_load": false,
+      "input_size": [
+        3,
+        256,
+        256
+      ],
+      "fixed_input_size": true,
+      "interpolation": "bicubic",
+      "crop_pct": 0.9,
+      "crop_mode": "center",
+      "mean": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "std": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "num_classes": 0,
+      "pool_size": null,
+      "first_conv": "patch_embed.proj",
+      "classifier": "head",
+      "license": "apache-2.0"
+    },
+    "license": "apache-2.0",
+    "feature_dimension": 768,
+    "restricted_teacher_used": false
+  },
+  "source_protocol": {
+    "human_label_revision": "/home/genesis/agribot-data/recognition_campaign_20261024/phase12_scene/complete.json",
+    "restricted_model_parameters_used": false,
+    "restricted_teacher_outputs_used": false,
+    "scope": "Independent Apache-2.0 SigLIP2 initialization and human publisher labels only; retired families remain training/internal development; cold AD stays unopened"
+  },
+  "canonical_input_parity": {
+    "passed": true,
+    "cases": 7,
+    "max_abs_feature_error": 4.887580871582031e-06,
+    "license": "apache-2.0",
+    "restricted_teacher_used": false
+  },
+  "restored_encoder_parity": {
+    "passed": true,
+    "cases": 54,
+    "max_abs_feature_error": 9.5367431640625e-06
+  },
+  "restricted_model_decision": {
+    "product_use_blocked": true,
+    "blocked_completed_controls": 22,
+    "license": "apple-amlr",
+    "source": "https://github.com/apple-aiml-research/ml-mobileclip/blob/main/LICENSE_MODELS",
+    "affected": "MobileCLIP leaf/image heads, fusions, all phase12 MobileCLIP SFT/union/distillation",
+    "restricted_weights_logits_or_teachers_used_in_siglip2": false,
+    "human_dataset_reuse_allowed": true
+  },
+  "phase12_apple_research_internal_app_validation": {
+    "checks": {
+      "original_eight_regressions_passed": true,
+      "original_field_healthy_targets_passed": true,
+      "new_family_app_healthy_min_70": false,
+      "new_family_relative_retention": true
+    },
+    "passed_preacceptance": false,
+    "baseline": {
+      "swtt5wy2pr": {
+        "excluded_mixed_photos": 0,
+        "scalar_eligible_photos": 55,
+        "all": {
+          "n": 55,
+          "correct": 11,
+          "correct_rate": 0.2,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 25,
+          "false_other_rate": 0.45454545454545453,
+          "false_known": 23,
+          "false_known_rate": 0.41818181818181815,
+          "kind_UNKNOWN_CONDITION": 26,
+          "kind_DISEASE": 23,
+          "kind_UNSURE": 6
+        },
+        "supported": {
+          "n": 50,
+          "correct": 11,
+          "correct_rate": 0.22,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 25,
+          "false_other_rate": 0.5,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 25,
+          "kind_DISEASE": 19,
+          "kind_UNSURE": 6
+        },
+        "healthy": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "supported_disease": {
+          "n": 50,
+          "correct": 11,
+          "correct_rate": 0.22,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 25,
+          "false_other_rate": 0.5,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 25,
+          "kind_DISEASE": 19,
+          "kind_UNSURE": 6
+        },
+        "coarse_diseased": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "unsupported_tomato": {
+          "n": 5,
+          "correct": 0,
+          "correct_rate": 0.0,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 0,
+          "false_other_rate": 0.0,
+          "false_known": 4,
+          "false_known_rate": 0.8,
+          "kind_DISEASE": 4,
+          "kind_UNKNOWN_CONDITION": 1
+        },
+        "non_tomato": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "healthy_precision": null,
+        "healthy_precision_n": 0,
+        "by_source": {
+          "swtt5wy2pr": {
+            "n": 55,
+            "healthy_recall": 0.0,
+            "false_healthy": 0
+          }
+        },
+        "oracle_objects": {
+          "n": 0,
+          "correct": 0,
+          "false_other": 0,
+          "healthy_n": 0,
+          "healthy_correct": 0,
+          "false_healthy": 0
+        },
+        "disease_classes": {
+          "Early_blight": {
+            "n": 25,
+            "correct": 0
+          },
+          "Late_blight": {
+            "n": 25,
+            "correct": 11
+          },
+          "Leaf Miner": {
+            "n": 0,
+            "correct": 0
+          },
+          "Magnesium Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Nitrogen Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Pottassium Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Spotted Wilt Virus": {
+            "n": 0,
+            "correct": 0
+          }
+        }
+      },
+      "tom2024": {
+        "excluded_mixed_photos": 0,
+        "scalar_eligible_photos": 125,
+        "all": {
+          "n": 125,
+          "correct": 6,
+          "correct_rate": 0.048,
+          "healthy_verdict": 8,
+          "healthy_recall": null,
+          "false_healthy": 2,
+          "false_healthy_rate": 0.016,
+          "false_other": 29,
+          "false_other_rate": 0.232,
+          "false_known": 14,
+          "false_known_rate": 0.112,
+          "kind_UNKNOWN_CONDITION": 66,
+          "kind_HEALTHY": 8,
+          "kind_NO_LEAVES": 39,
+          "kind_UNSURE": 6,
+          "kind_DISEASE": 6
+        },
+        "supported": {
+          "n": 53,
+          "correct": 6,
+          "correct_rate": 0.11320754716981132,
+          "healthy_verdict": 6,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 29,
+          "false_other_rate": 0.5471698113207547,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 29,
+          "kind_HEALTHY": 6,
+          "kind_NO_LEAVES": 14,
+          "kind_UNSURE": 4
+        },
+        "healthy": {
+          "n": 53,
+          "correct": 6,
+          "correct_rate": 0.11320754716981132,
+          "healthy_verdict": 6,
+          "healthy_recall": 0.11320754716981132,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 29,
+          "false_other_rate": 0.5471698113207547,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 29,
+          "kind_HEALTHY": 6,
+          "kind_NO_LEAVES": 14,
+          "kind_UNSURE": 4
+        },
+        "supported_disease": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "coarse_diseased": {
+          "n": 56,
+          "correct": 0,
+          "correct_rate": 0.0,
+          "healthy_verdict": 2,
+          "healthy_recall": null,
+          "false_healthy": 2,
+          "false_healthy_rate": 0.03571428571428571,
+          "false_other": 0,
+          "false_other_rate": 0.0,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_NO_LEAVES": 19,
+          "kind_UNKNOWN_CONDITION": 29,
+          "kind_UNSURE": 2,
+          "kind_DISEASE": 4,
+          "kind_HEALTHY": 2
+        },
+        "unsupported_tomato": {
+          "n": 16,
+          "correct": 0,
+          "correct_rate": 0.0,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 0,
+          "false_other_rate": 0.0,
+          "false_known": 2,
+          "false_known_rate": 0.125,
+          "kind_UNKNOWN_CONDITION": 8,
+          "kind_NO_LEAVES": 6,
+          "kind_DISEASE": 2
+        },
+        "non_tomato": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "healthy_precision": 0.75,
+        "healthy_precision_n": 8,
+        "by_source": {
+          "tom2024": {
+            "n": 125,
+            "healthy_recall": 0.11320754716981132,
+            "false_healthy": 2
+          }
+        },
+        "oracle_objects": {
+          "n": 0,
+          "correct": 0,
+          "false_other": 0,
+          "healthy_n": 0,
+          "healthy_correct": 0,
+          "false_healthy": 0
+        },
+        "disease_classes": {
+          "Early_blight": {
+            "n": 0,
+            "correct": 0
+          },
+          "Late_blight": {
+            "n": 0,
+            "correct": 0
+          },
+          "Leaf Miner": {
+            "n": 0,
+            "correct": 0
+          },
+          "Magnesium Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Nitrogen Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Pottassium Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Spotted Wilt Virus": {
+            "n": 0,
+            "correct": 0
+          }
+        }
+      }
+    },
+    "candidate": {
+      "swtt5wy2pr": {
+        "excluded_mixed_photos": 0,
+        "scalar_eligible_photos": 55,
+        "all": {
+          "n": 55,
+          "correct": 11,
+          "correct_rate": 0.2,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 25,
+          "false_other_rate": 0.45454545454545453,
+          "false_known": 23,
+          "false_known_rate": 0.41818181818181815,
+          "kind_UNKNOWN_CONDITION": 26,
+          "kind_DISEASE": 23,
+          "kind_UNSURE": 6
+        },
+        "supported": {
+          "n": 50,
+          "correct": 11,
+          "correct_rate": 0.22,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 25,
+          "false_other_rate": 0.5,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 25,
+          "kind_DISEASE": 19,
+          "kind_UNSURE": 6
+        },
+        "healthy": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "supported_disease": {
+          "n": 50,
+          "correct": 11,
+          "correct_rate": 0.22,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 25,
+          "false_other_rate": 0.5,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 25,
+          "kind_DISEASE": 19,
+          "kind_UNSURE": 6
+        },
+        "coarse_diseased": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "unsupported_tomato": {
+          "n": 5,
+          "correct": 0,
+          "correct_rate": 0.0,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 0,
+          "false_other_rate": 0.0,
+          "false_known": 4,
+          "false_known_rate": 0.8,
+          "kind_DISEASE": 4,
+          "kind_UNKNOWN_CONDITION": 1
+        },
+        "non_tomato": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "healthy_precision": null,
+        "healthy_precision_n": 0,
+        "by_source": {
+          "swtt5wy2pr": {
+            "n": 55,
+            "healthy_recall": 0.0,
+            "false_healthy": 0
+          }
+        },
+        "oracle_objects": {
+          "n": 0,
+          "correct": 0,
+          "false_other": 0,
+          "healthy_n": 0,
+          "healthy_correct": 0,
+          "false_healthy": 0
+        },
+        "disease_classes": {
+          "Early_blight": {
+            "n": 25,
+            "correct": 0
+          },
+          "Late_blight": {
+            "n": 25,
+            "correct": 11
+          },
+          "Leaf Miner": {
+            "n": 0,
+            "correct": 0
+          },
+          "Magnesium Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Nitrogen Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Pottassium Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Spotted Wilt Virus": {
+            "n": 0,
+            "correct": 0
+          }
+        }
+      },
+      "tom2024": {
+        "excluded_mixed_photos": 0,
+        "scalar_eligible_photos": 125,
+        "all": {
+          "n": 125,
+          "correct": 31,
+          "correct_rate": 0.248,
+          "healthy_verdict": 33,
+          "healthy_recall": null,
+          "false_healthy": 2,
+          "false_healthy_rate": 0.016,
+          "false_other": 11,
+          "false_other_rate": 0.088,
+          "false_known": 39,
+          "false_known_rate": 0.312,
+          "kind_UNKNOWN_CONDITION": 48,
+          "kind_HEALTHY": 33,
+          "kind_NO_LEAVES": 34,
+          "kind_UNSURE": 4,
+          "kind_DISEASE": 6
+        },
+        "supported": {
+          "n": 53,
+          "correct": 31,
+          "correct_rate": 0.5849056603773585,
+          "healthy_verdict": 31,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 11,
+          "false_other_rate": 0.20754716981132076,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 11,
+          "kind_HEALTHY": 31,
+          "kind_NO_LEAVES": 9,
+          "kind_UNSURE": 2
+        },
+        "healthy": {
+          "n": 53,
+          "correct": 31,
+          "correct_rate": 0.5849056603773585,
+          "healthy_verdict": 31,
+          "healthy_recall": 0.5849056603773585,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 11,
+          "false_other_rate": 0.20754716981132076,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 11,
+          "kind_HEALTHY": 31,
+          "kind_NO_LEAVES": 9,
+          "kind_UNSURE": 2
+        },
+        "supported_disease": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "coarse_diseased": {
+          "n": 56,
+          "correct": 0,
+          "correct_rate": 0.0,
+          "healthy_verdict": 2,
+          "healthy_recall": null,
+          "false_healthy": 2,
+          "false_healthy_rate": 0.03571428571428571,
+          "false_other": 0,
+          "false_other_rate": 0.0,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_NO_LEAVES": 19,
+          "kind_UNKNOWN_CONDITION": 29,
+          "kind_UNSURE": 2,
+          "kind_DISEASE": 4,
+          "kind_HEALTHY": 2
+        },
+        "unsupported_tomato": {
+          "n": 16,
+          "correct": 0,
+          "correct_rate": 0.0,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 0,
+          "false_other_rate": 0.0,
+          "false_known": 2,
+          "false_known_rate": 0.125,
+          "kind_UNKNOWN_CONDITION": 8,
+          "kind_NO_LEAVES": 6,
+          "kind_DISEASE": 2
+        },
+        "non_tomato": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "healthy_precision": 0.9393939393939394,
+        "healthy_precision_n": 33,
+        "by_source": {
+          "tom2024": {
+            "n": 125,
+            "healthy_recall": 0.5849056603773585,
+            "false_healthy": 2
+          }
+        },
+        "oracle_objects": {
+          "n": 0,
+          "correct": 0,
+          "false_other": 0,
+          "healthy_n": 0,
+          "healthy_correct": 0,
+          "false_healthy": 0
+        },
+        "disease_classes": {
+          "Early_blight": {
+            "n": 0,
+            "correct": 0
+          },
+          "Late_blight": {
+            "n": 0,
+            "correct": 0
+          },
+          "Leaf Miner": {
+            "n": 0,
+            "correct": 0
+          },
+          "Magnesium Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Nitrogen Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Pottassium Deficiency": {
+            "n": 0,
+            "correct": 0
+          },
+          "Spotted Wilt Virus": {
+            "n": 0,
+            "correct": 0
+          }
+        }
+      }
+    },
+    "healthy": {
+      "n": 53,
+      "correct": 31,
+      "correct_rate": 0.5849056603773585,
+      "healthy_verdict": 31,
+      "healthy_recall": 0.5849056603773585,
+      "false_healthy": 0,
+      "false_healthy_rate": 0.0,
+      "false_other": 11,
+      "false_other_rate": 0.20754716981132076,
+      "false_known": null,
+      "false_known_rate": null,
+      "kind_UNKNOWN_CONDITION": 11,
+      "kind_HEALTHY": 31,
+      "kind_NO_LEAVES": 9,
+      "kind_UNSURE": 2
+    },
+    "new_family_validation_photos": 180,
+    "independent": false,
+    "cold_ad_used": false,
+    "retired_cohort_is_benchmark": false,
+    "standalone_recovery_only_check_is_not_app_recall": true,
+    "next_step": "If passed, freeze an independent-source protocol for the exact candidate before opening AD. Prototype success still requires export and native/device parity."
+  },
+  "previous_valid_completed_research_controls": 292,
+  "trained_controls": {
+    "siglip2_head_linear_bce": {
+      "protocol": {
+        "feature_identity": {
+          "rows_sha256": "aa429d09e6800af20e27b0ee1158179984b2bb6795780451ee61e0268055cfb9",
+          "encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+          "source": {
+            "repository": "timm/vit_base_patch16_siglip_256.v2_webli",
+            "revision": "ac4cc431026674dcac29e34a00d3bd2048390eb3",
+            "file_sha256": "13ab9d238865f89b14005c5e92a099add04cbfab331a64245acab813509cb2b0",
+            "license": "apache-2.0"
+          },
+          "family": "siglip2",
+          "feature_scope": "ImageNet-normalized NHWC224 -> RGB01 -> bilinear256 -> native mean/std -> SigLIP2 -> L2/RMS normalization",
+          "ids_sha256": "dc3ce5fad9631e25de15198581e3e01595e58b4d97c7cdd304e3d73c0e0af853",
+          "encoder_weights_loaded_strictly": true,
+          "restricted_teacher_used": false
+        },
+        "kind": "linear",
+        "method": "bce",
+        "epochs": 100,
+        "negative_cost": 4.0,
+        "seed": 379,
+        "original_classifier_frozen": true,
+        "fresh_ad_used": false,
+        "task_scope": "primary_image",
+        "primary_source": "tom2024",
+        "supervision": "Image-level labels from the recorded scene corpus. Primary view evidence, not verified disease-free plant status; never broadcast onto individual leaves."
+      },
+      "checkpoint": "/home/genesis/agribot-data/recognition_campaign_20261024/phase13_siglip/siglip2_feature_heads/linear_bce/best.pt",
+      "checkpoint_sha256": "0f0e223f2e6a74646dd553f02cfc5fc7e823ce36d4bb5b9af736fb9c71769819",
+      "calibration": [
+        0.9966357620559045,
+        1.5690750884243998
+      ],
+      "score": 1.062362313412463,
+      "validation_n": 4104,
+      "field_auc": 0.9840427771462255,
+      "thresholds": {
+        "0.5": {
+          "healthy_recall": 0.9494310998735778,
+          "negative_false_positive": 0.08813763960156958,
+          "field_healthy_recall": 0.9505494505494505,
+          "field_negative_false_positive": 0.06704980842911877
+        },
+        "0.7": {
+          "healthy_recall": 0.9051833122629582,
+          "negative_false_positive": 0.06006640507093269,
+          "field_healthy_recall": 0.9010989010989011,
+          "field_negative_false_positive": 0.040229885057471264
+        },
+        "0.8": {
+          "healthy_recall": 0.8596713021491783,
+          "negative_false_positive": 0.04105040748566254,
+          "field_healthy_recall": 0.8681318681318682,
+          "field_negative_false_positive": 0.02681992337164751
+        },
+        "0.9": {
+          "healthy_recall": 0.729456384323641,
+          "negative_false_positive": 0.020827044974343494,
+          "field_healthy_recall": 0.7527472527472527,
+          "field_negative_false_positive": 0.013409961685823755
+        },
+        "0.95": {
+          "healthy_recall": 0.549936788874842,
+          "negative_false_positive": 0.010866284334440085,
+          "field_healthy_recall": 0.6098901098901099,
+          "field_negative_false_positive": 0.009578544061302681
+        },
+        "0.99": {
+          "healthy_recall": 0.23893805309734514,
+          "negative_false_positive": 0.0027165710836100213,
+          "field_healthy_recall": 0.3076923076923077,
+          "field_negative_false_positive": 0.0
+        }
+      },
+      "seconds": 1.300171136856079
+    },
+    "siglip2_head_linear_focal": {
+      "protocol": {
+        "feature_identity": {
+          "rows_sha256": "aa429d09e6800af20e27b0ee1158179984b2bb6795780451ee61e0268055cfb9",
+          "encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+          "source": {
+            "repository": "timm/vit_base_patch16_siglip_256.v2_webli",
+            "revision": "ac4cc431026674dcac29e34a00d3bd2048390eb3",
+            "file_sha256": "13ab9d238865f89b14005c5e92a099add04cbfab331a64245acab813509cb2b0",
+            "license": "apache-2.0"
+          },
+          "family": "siglip2",
+          "feature_scope": "ImageNet-normalized NHWC224 -> RGB01 -> bilinear256 -> native mean/std -> SigLIP2 -> L2/RMS normalization",
+          "ids_sha256": "dc3ce5fad9631e25de15198581e3e01595e58b4d97c7cdd304e3d73c0e0af853",
+          "encoder_weights_loaded_strictly": true,
+          "restricted_teacher_used": false
+        },
+        "kind": "linear",
+        "method": "focal",
+        "epochs": 100,
+        "negative_cost": 4.0,
+        "seed": 379,
+        "original_classifier_frozen": true,
+        "fresh_ad_used": false,
+        "task_scope": "primary_image",
+        "primary_source": "tom2024",
+        "supervision": "Image-level labels from the recorded scene corpus. Primary view evidence, not verified disease-free plant status; never broadcast onto individual leaves."
+      },
+      "checkpoint": "/home/genesis/agribot-data/recognition_campaign_20261024/phase13_siglip/siglip2_feature_heads/linear_focal/best.pt",
+      "checkpoint_sha256": "19922d7228c43467b033eb27dffc292d7a7599c966af0b70a88caf68a36717f5",
+      "calibration": [
+        2.60343634927598,
+        0.7583186961487152
+      ],
+      "score": 1.0725856001629537,
+      "validation_n": 4104,
+      "field_auc": 0.9844111826870448,
+      "thresholds": {
+        "0.5": {
+          "healthy_recall": 0.9494310998735778,
+          "negative_false_positive": 0.08662843344400845,
+          "field_healthy_recall": 0.9505494505494505,
+          "field_negative_false_positive": 0.0842911877394636
+        },
+        "0.7": {
+          "healthy_recall": 0.8988621997471555,
+          "negative_false_positive": 0.05704799275581044,
+          "field_healthy_recall": 0.9120879120879121,
+          "field_negative_false_positive": 0.05363984674329502
+        },
+        "0.8": {
+          "healthy_recall": 0.8520859671302149,
+          "negative_false_positive": 0.03893751886507697,
+          "field_healthy_recall": 0.8901098901098901,
+          "field_negative_false_positive": 0.034482758620689655
+        },
+        "0.9": {
+          "healthy_recall": 0.729456384323641,
+          "negative_false_positive": 0.020827044974343494,
+          "field_healthy_recall": 0.7967032967032966,
+          "field_negative_false_positive": 0.019157088122605363
+        },
+        "0.95": {
+          "healthy_recall": 0.5790139064475348,
+          "negative_false_positive": 0.00996076063990341,
+          "field_healthy_recall": 0.6978021978021978,
+          "field_negative_false_positive": 0.011494252873563218
+        },
+        "0.99": {
+          "healthy_recall": 0.27686472819216185,
+          "negative_false_positive": 0.002112888620585572,
+          "field_healthy_recall": 0.38461538461538464,
+          "field_negative_false_positive": 0.0
+        }
+      },
+      "seconds": 1.373058557510376
+    },
+    "siglip2_head_mlp_bce": {
+      "protocol": {
+        "feature_identity": {
+          "rows_sha256": "aa429d09e6800af20e27b0ee1158179984b2bb6795780451ee61e0268055cfb9",
+          "encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+          "source": {
+            "repository": "timm/vit_base_patch16_siglip_256.v2_webli",
+            "revision": "ac4cc431026674dcac29e34a00d3bd2048390eb3",
+            "file_sha256": "13ab9d238865f89b14005c5e92a099add04cbfab331a64245acab813509cb2b0",
+            "license": "apache-2.0"
+          },
+          "family": "siglip2",
+          "feature_scope": "ImageNet-normalized NHWC224 -> RGB01 -> bilinear256 -> native mean/std -> SigLIP2 -> L2/RMS normalization",
+          "ids_sha256": "dc3ce5fad9631e25de15198581e3e01595e58b4d97c7cdd304e3d73c0e0af853",
+          "encoder_weights_loaded_strictly": true,
+          "restricted_teacher_used": false
+        },
+        "kind": "mlp",
+        "method": "bce",
+        "epochs": 100,
+        "negative_cost": 4.0,
+        "seed": 379,
+        "original_classifier_frozen": true,
+        "fresh_ad_used": false,
+        "task_scope": "primary_image",
+        "primary_source": "tom2024",
+        "supervision": "Image-level labels from the recorded scene corpus. Primary view evidence, not verified disease-free plant status; never broadcast onto individual leaves."
+      },
+      "checkpoint": "/home/genesis/agribot-data/recognition_campaign_20261024/phase13_siglip/siglip2_feature_heads/mlp_bce/best.pt",
+      "checkpoint_sha256": "3b75db90207029d929e60ca4b72465b0038075bc5b57d0410e24be7a557631e2",
+      "calibration": [
+        1.0007844150149998,
+        1.3971660904840935
+      ],
+      "score": 1.0670638697083765,
+      "validation_n": 4104,
+      "field_auc": 0.9888109974316871,
+      "thresholds": {
+        "0.5": {
+          "healthy_recall": 0.9595448798988622,
+          "negative_false_positive": 0.07938424388771506,
+          "field_healthy_recall": 0.978021978021978,
+          "field_negative_false_positive": 0.07088122605363985
+        },
+        "0.7": {
+          "healthy_recall": 0.8963337547408344,
+          "negative_false_positive": 0.053124056746151525,
+          "field_healthy_recall": 0.9340659340659341,
+          "field_negative_false_positive": 0.04597701149425287
+        },
+        "0.8": {
+          "healthy_recall": 0.8407079646017699,
+          "negative_false_positive": 0.03652278901297917,
+          "field_healthy_recall": 0.8956043956043956,
+          "field_negative_false_positive": 0.03065134099616858
+        },
+        "0.9": {
+          "healthy_recall": 0.6877370417193426,
+          "negative_false_positive": 0.016601267733172352,
+          "field_healthy_recall": 0.8351648351648352,
+          "field_negative_false_positive": 0.017241379310344827
+        },
+        "0.95": {
+          "healthy_recall": 0.527180783817952,
+          "negative_false_positive": 0.009055236945366738,
+          "field_healthy_recall": 0.6978021978021978,
+          "field_negative_false_positive": 0.011494252873563218
+        },
+        "0.99": {
+          "healthy_recall": 0.26801517067003794,
+          "negative_false_positive": 0.001509206157561123,
+          "field_healthy_recall": 0.4010989010989011,
+          "field_negative_false_positive": 0.0
+        }
+      },
+      "seconds": 1.6095640659332275
+    },
+    "siglip2_head_mlp_focal": {
+      "protocol": {
+        "feature_identity": {
+          "rows_sha256": "aa429d09e6800af20e27b0ee1158179984b2bb6795780451ee61e0268055cfb9",
+          "encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+          "source": {
+            "repository": "timm/vit_base_patch16_siglip_256.v2_webli",
+            "revision": "ac4cc431026674dcac29e34a00d3bd2048390eb3",
+            "file_sha256": "13ab9d238865f89b14005c5e92a099add04cbfab331a64245acab813509cb2b0",
+            "license": "apache-2.0"
+          },
+          "family": "siglip2",
+          "feature_scope": "ImageNet-normalized NHWC224 -> RGB01 -> bilinear256 -> native mean/std -> SigLIP2 -> L2/RMS normalization",
+          "ids_sha256": "dc3ce5fad9631e25de15198581e3e01595e58b4d97c7cdd304e3d73c0e0af853",
+          "encoder_weights_loaded_strictly": true,
+          "restricted_teacher_used": false
+        },
+        "kind": "mlp",
+        "method": "focal",
+        "epochs": 100,
+        "negative_cost": 4.0,
+        "seed": 379,
+        "original_classifier_frozen": true,
+        "fresh_ad_used": false,
+        "task_scope": "primary_image",
+        "primary_source": "tom2024",
+        "supervision": "Image-level labels from the recorded scene corpus. Primary view evidence, not verified disease-free plant status; never broadcast onto individual leaves."
+      },
+      "checkpoint": "/home/genesis/agribot-data/recognition_campaign_20261024/phase13_siglip/siglip2_feature_heads/mlp_focal/best.pt",
+      "checkpoint_sha256": "1df878d0a40d026d0841679f2992f592d5432b57e3d50a65930bf0d1e2a4e2c4",
+      "calibration": [
+        1.7109627685454663,
+        1.065827512392607
+      ],
+      "score": 1.0831626258297458,
+      "validation_n": 4104,
+      "field_auc": 0.9924634752220959,
+      "thresholds": {
+        "0.5": {
+          "healthy_recall": 0.9671302149178256,
+          "negative_false_positive": 0.07787503773015395,
+          "field_healthy_recall": 0.9725274725274725,
+          "field_negative_false_positive": 0.06321839080459771
+        },
+        "0.7": {
+          "healthy_recall": 0.9393173198482933,
+          "negative_false_positive": 0.05010564443102928,
+          "field_healthy_recall": 0.9725274725274725,
+          "field_negative_false_positive": 0.04789272030651341
+        },
+        "0.8": {
+          "healthy_recall": 0.8950695322376738,
+          "negative_false_positive": 0.03591910654995473,
+          "field_healthy_recall": 0.9395604395604396,
+          "field_negative_false_positive": 0.03639846743295019
+        },
+        "0.9": {
+          "healthy_recall": 0.7357774968394437,
+          "negative_false_positive": 0.018412315122245698,
+          "field_healthy_recall": 0.8461538461538461,
+          "field_negative_false_positive": 0.017241379310344827
+        },
+        "0.95": {
+          "healthy_recall": 0.595448798988622,
+          "negative_false_positive": 0.008149713250830063,
+          "field_healthy_recall": 0.7802197802197802,
+          "field_negative_false_positive": 0.007662835249042145
+        },
+        "0.99": {
+          "healthy_recall": 0.34892541087231355,
+          "negative_false_positive": 0.0009055236945366737,
+          "field_healthy_recall": 0.5439560439560439,
+          "field_negative_false_positive": 0.0
+        }
+      },
+      "seconds": 1.7727160453796387
+    },
+    "siglip2_fusion_negative_cost_1.0": {
+      "negative_cost": 1.0,
+      "weights": [
+        0.04228591096000332,
+        0.20755327483447825,
+        0.18525621300271095,
+        5.09854608943139e-07,
+        0.727785606373876
+      ],
+      "bias": -0.11515159587770377,
+      "input_clip": 10.0,
+      "input_order": [
+        "DINO adapted linear",
+        "DINO original/adapted MLP",
+        "copied DINO12 image Healthy",
+        "genus CNN",
+        "siglip2 image Healthy"
+      ],
+      "input_identity": {
+        "legacy_input_identity": {
+          "scene_rows_sha256": "e063bafa83acc1c2fbd588a88042a5677c5dd7321b76fb007c07c361325e9dca",
+          "feature_model_sha256": "7ee70502933a49784b89b538b8da56cc5c9173116a6c8400c4e43a74a8e01e49",
+          "head_hashes": [
+            "e49ec90e0a6bf63e7bd9249795f87742bd8805f99660b74ac184877348d02b19",
+            "09fa26fba07c8f217e9ab7f5dc2c5189d815ecafcdb4552951ba2fe9d489a86a"
+          ],
+          "head_calibration_hashes": [
+            "71fb1ea361641779728805ed520041272c3573ab1492d60e322c25deb2108d5c",
+            "f1ec90f7145944c435cd8c46b6317c425c5a8c3da0318f79f8c62ead3e5c2055"
+          ],
+          "scene_cnn_sha256": "ff56f749e532f4b6d88d8b2eead1367de3ab14bc8c6a56dd025400d1e4977873",
+          "scene_cnn_calibration_sha256": "88bf930b6649da0abe7e4caa90d4574446cd851ee3227249762a85536790276e",
+          "species_cnn_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+          "species_cnn_calibration_sha256": "5fe18b62e24cbe28da72ae996fcf8a6fec693ac9bd7257493438d04bbd90510d"
+        },
+        "legacy_logits_sha256": "1983ee9f506ced5783b4d6395598d1d40932d95e617d77838d5a81744e124c72",
+        "mobile_head_sha256": "1df878d0a40d026d0841679f2992f592d5432b57e3d50a65930bf0d1e2a4e2c4",
+        "mobile_calibration_sha256": "8a9076222b8a63e3977d8dccda18f23c32223d97338d04d6c11836bb66abf651",
+        "mobile_encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+        "rows_sha256": "aa429d09e6800af20e27b0ee1158179984b2bb6795780451ee61e0268055cfb9"
+      },
+      "calibration_n": 2644,
+      "selection_n": 1280,
+      "selection_auc": 0.9900336497324425,
+      "selection_field_auc": 0.9904092071611253,
+      "fresh_ad_used": false,
+      "note": "Internal grouped development; base checkpoints used broader validation. Not independent acceptance."
+    },
+    "siglip2_fusion_negative_cost_2.0": {
+      "negative_cost": 2.0,
+      "weights": [
+        0.006679921233236924,
+        0.23617866197942516,
+        0.1815721097951585,
+        0.0060999730318513036,
+        0.7561479169069584
+      ],
+      "bias": -0.8398018778113527,
+      "input_clip": 10.0,
+      "input_order": [
+        "DINO adapted linear",
+        "DINO original/adapted MLP",
+        "copied DINO12 image Healthy",
+        "genus CNN",
+        "siglip2 image Healthy"
+      ],
+      "input_identity": {
+        "legacy_input_identity": {
+          "scene_rows_sha256": "e063bafa83acc1c2fbd588a88042a5677c5dd7321b76fb007c07c361325e9dca",
+          "feature_model_sha256": "7ee70502933a49784b89b538b8da56cc5c9173116a6c8400c4e43a74a8e01e49",
+          "head_hashes": [
+            "e49ec90e0a6bf63e7bd9249795f87742bd8805f99660b74ac184877348d02b19",
+            "09fa26fba07c8f217e9ab7f5dc2c5189d815ecafcdb4552951ba2fe9d489a86a"
+          ],
+          "head_calibration_hashes": [
+            "71fb1ea361641779728805ed520041272c3573ab1492d60e322c25deb2108d5c",
+            "f1ec90f7145944c435cd8c46b6317c425c5a8c3da0318f79f8c62ead3e5c2055"
+          ],
+          "scene_cnn_sha256": "ff56f749e532f4b6d88d8b2eead1367de3ab14bc8c6a56dd025400d1e4977873",
+          "scene_cnn_calibration_sha256": "88bf930b6649da0abe7e4caa90d4574446cd851ee3227249762a85536790276e",
+          "species_cnn_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+          "species_cnn_calibration_sha256": "5fe18b62e24cbe28da72ae996fcf8a6fec693ac9bd7257493438d04bbd90510d"
+        },
+        "legacy_logits_sha256": "1983ee9f506ced5783b4d6395598d1d40932d95e617d77838d5a81744e124c72",
+        "mobile_head_sha256": "1df878d0a40d026d0841679f2992f592d5432b57e3d50a65930bf0d1e2a4e2c4",
+        "mobile_calibration_sha256": "8a9076222b8a63e3977d8dccda18f23c32223d97338d04d6c11836bb66abf651",
+        "mobile_encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+        "rows_sha256": "aa429d09e6800af20e27b0ee1158179984b2bb6795780451ee61e0268055cfb9"
+      },
+      "calibration_n": 2644,
+      "selection_n": 1280,
+      "selection_auc": 0.9899006468374129,
+      "selection_field_auc": 0.9904092071611253,
+      "fresh_ad_used": false,
+      "note": "Internal grouped development; base checkpoints used broader validation. Not independent acceptance."
+    },
+    "siglip2_fusion_negative_cost_4.0": {
+      "negative_cost": 4.0,
+      "weights": [
+        6.006373196824811e-07,
+        0.24876808615450488,
+        0.17180154157326788,
+        0.009075486606298918,
+        0.7774352660758879
+      ],
+      "bias": -1.5533656442110575,
+      "input_clip": 10.0,
+      "input_order": [
+        "DINO adapted linear",
+        "DINO original/adapted MLP",
+        "copied DINO12 image Healthy",
+        "genus CNN",
+        "siglip2 image Healthy"
+      ],
+      "input_identity": {
+        "legacy_input_identity": {
+          "scene_rows_sha256": "e063bafa83acc1c2fbd588a88042a5677c5dd7321b76fb007c07c361325e9dca",
+          "feature_model_sha256": "7ee70502933a49784b89b538b8da56cc5c9173116a6c8400c4e43a74a8e01e49",
+          "head_hashes": [
+            "e49ec90e0a6bf63e7bd9249795f87742bd8805f99660b74ac184877348d02b19",
+            "09fa26fba07c8f217e9ab7f5dc2c5189d815ecafcdb4552951ba2fe9d489a86a"
+          ],
+          "head_calibration_hashes": [
+            "71fb1ea361641779728805ed520041272c3573ab1492d60e322c25deb2108d5c",
+            "f1ec90f7145944c435cd8c46b6317c425c5a8c3da0318f79f8c62ead3e5c2055"
+          ],
+          "scene_cnn_sha256": "ff56f749e532f4b6d88d8b2eead1367de3ab14bc8c6a56dd025400d1e4977873",
+          "scene_cnn_calibration_sha256": "88bf930b6649da0abe7e4caa90d4574446cd851ee3227249762a85536790276e",
+          "species_cnn_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+          "species_cnn_calibration_sha256": "5fe18b62e24cbe28da72ae996fcf8a6fec693ac9bd7257493438d04bbd90510d"
+        },
+        "legacy_logits_sha256": "1983ee9f506ced5783b4d6395598d1d40932d95e617d77838d5a81744e124c72",
+        "mobile_head_sha256": "1df878d0a40d026d0841679f2992f592d5432b57e3d50a65930bf0d1e2a4e2c4",
+        "mobile_calibration_sha256": "8a9076222b8a63e3977d8dccda18f23c32223d97338d04d6c11836bb66abf651",
+        "mobile_encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+        "rows_sha256": "aa429d09e6800af20e27b0ee1158179984b2bb6795780451ee61e0268055cfb9"
+      },
+      "calibration_n": 2644,
+      "selection_n": 1280,
+      "selection_auc": 0.9898297119600636,
+      "selection_field_auc": 0.9904092071611255,
+      "fresh_ad_used": false,
+      "note": "Internal grouped development; base checkpoints used broader validation. Not independent acceptance."
+    }
+  },
+  "completed_trained_research_controls": 299,
+  "quarantined_invalid_controls_excluded": 8,
+  "policy_replays": {
+    "selection": {
+      "id": 28,
+      "policy": {
+        "healthy_min": 0.8,
+        "genus_min": 0.8,
+        "two_view_agreement": false,
+        "named_leaf_veto": false
+      },
+      "metrics": {
+        "development": {
+          "excluded_mixed_photos": 1,
+          "scalar_eligible_photos": 692,
+          "all": {
+            "n": 692,
+            "correct": 469,
+            "correct_rate": 0.6777456647398844,
+            "healthy_verdict": 29,
+            "healthy_recall": null,
+            "false_healthy": 6,
+            "false_healthy_rate": 0.008670520231213872,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 497,
+            "false_known_rate": 0.7182080924855492,
+            "kind_DISEASE": 468,
+            "kind_HEALTHY": 29,
+            "kind_UNSURE": 13,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 181
+          },
+          "supported": {
+            "n": 484,
+            "correct": 469,
+            "correct_rate": 0.96900826446281,
+            "healthy_verdict": 26,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.006198347107438017,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 455,
+            "kind_HEALTHY": 26,
+            "kind_UNSURE": 2,
+            "kind_NO_LEAVES": 1
+          },
+          "healthy": {
+            "n": 26,
+            "correct": 23,
+            "correct_rate": 0.8846153846153846,
+            "healthy_verdict": 23,
+            "healthy_recall": 0.8846153846153846,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 23,
+            "kind_DISEASE": 2,
+            "kind_UNSURE": 1
+          },
+          "supported_disease": {
+            "n": 458,
+            "correct": 446,
+            "correct_rate": 0.9737991266375546,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.006550218340611353,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 453,
+            "kind_HEALTHY": 3,
+            "kind_NO_LEAVES": 1,
+            "kind_UNSURE": 1
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 39,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 33,
+            "kind_UNSURE": 3,
+            "kind_DISEASE": 3
+          },
+          "non_tomato": {
+            "n": 169,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.01775147928994083,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 148,
+            "kind_UNSURE": 8,
+            "kind_DISEASE": 10,
+            "kind_HEALTHY": 3
+          },
+          "healthy_precision": 0.7931034482758621,
+          "healthy_precision_n": 29,
+          "by_source": {
+            "plantdoc": {
+              "n": 231,
+              "healthy_recall": 1.0,
+              "false_healthy": 3
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.8421052631578947,
+              "false_healthy": 3
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 49,
+              "correct": 48
+            },
+            "Late_blight": {
+              "n": 119,
+              "correct": 116
+            },
+            "Leaf Miner": {
+              "n": 102,
+              "correct": 94
+            },
+            "Magnesium Deficiency": {
+              "n": 96,
+              "correct": 96
+            },
+            "Nitrogen Deficiency": {
+              "n": 32,
+              "correct": 32
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 8
+            },
+            "Spotted Wilt Virus": {
+              "n": 52,
+              "correct": 52
+            }
+          }
+        },
+        "public": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 941,
+          "all": {
+            "n": 941,
+            "correct": 589,
+            "correct_rate": 0.6259298618490967,
+            "healthy_verdict": 75,
+            "healthy_recall": null,
+            "false_healthy": 7,
+            "false_healthy_rate": 0.007438894792773645,
+            "false_other": 6,
+            "false_other_rate": 0.006376195536663124,
+            "false_known": 641,
+            "false_known_rate": 0.6811902231668437,
+            "kind_DISEASE": 566,
+            "kind_HEALTHY": 75,
+            "kind_UNSURE": 24,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 275
+          },
+          "supported": {
+            "n": 638,
+            "correct": 589,
+            "correct_rate": 0.9231974921630094,
+            "healthy_verdict": 70,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.003134796238244514,
+            "false_other": 6,
+            "false_other_rate": 0.009404388714733543,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 549,
+            "kind_HEALTHY": 70,
+            "kind_UNSURE": 12,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "healthy": {
+            "n": 80,
+            "correct": 68,
+            "correct_rate": 0.85,
+            "healthy_verdict": 68,
+            "healthy_recall": 0.85,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 2,
+            "false_other_rate": 0.025,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 7,
+            "kind_HEALTHY": 68,
+            "kind_UNKNOWN_CONDITION": 2,
+            "kind_UNSURE": 3
+          },
+          "supported_disease": {
+            "n": 558,
+            "correct": 521,
+            "correct_rate": 0.9336917562724014,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.0035842293906810036,
+            "false_other": 4,
+            "false_other_rate": 0.007168458781362007,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 542,
+            "kind_HEALTHY": 2,
+            "kind_UNSURE": 9,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.020833333333333332,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 9,
+            "false_known_rate": 0.0625,
+            "kind_UNKNOWN_CONDITION": 133,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 3
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 136,
+            "kind_UNSURE": 10,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "healthy_precision": 0.9066666666666666,
+          "healthy_precision_n": 75,
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 4
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 1
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.6818181818181818,
+              "false_healthy": 2
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 109,
+              "correct": 104
+            },
+            "Late_blight": {
+              "n": 152,
+              "correct": 140
+            },
+            "Leaf Miner": {
+              "n": 104,
+              "correct": 96
+            },
+            "Magnesium Deficiency": {
+              "n": 95,
+              "correct": 93
+            },
+            "Nitrogen Deficiency": {
+              "n": 37,
+              "correct": 36
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 7
+            },
+            "Spotted Wilt Virus": {
+              "n": 53,
+              "correct": 45
+            }
+          }
+        },
+        "prior_test": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 969,
+          "all": {
+            "n": 969,
+            "correct": 627,
+            "correct_rate": 0.6470588235294118,
+            "healthy_verdict": 78,
+            "healthy_recall": null,
+            "false_healthy": 9,
+            "false_healthy_rate": 0.009287925696594427,
+            "false_other": 6,
+            "false_other_rate": 0.006191950464396285,
+            "false_known": 668,
+            "false_known_rate": 0.6893704850361198,
+            "kind_DISEASE": 590,
+            "kind_HEALTHY": 78,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 22,
+            "kind_UNKNOWN_CONDITION": 275
+          },
+          "supported": {
+            "n": 666,
+            "correct": 627,
+            "correct_rate": 0.9414414414414415,
+            "healthy_verdict": 73,
+            "healthy_recall": null,
+            "false_healthy": 4,
+            "false_healthy_rate": 0.006006006006006006,
+            "false_other": 6,
+            "false_other_rate": 0.009009009009009009,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 573,
+            "kind_HEALTHY": 73,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 10,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "healthy": {
+            "n": 81,
+            "correct": 69,
+            "correct_rate": 0.8518518518518519,
+            "healthy_verdict": 69,
+            "healthy_recall": 0.8518518518518519,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 2,
+            "false_other_rate": 0.024691358024691357,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 5,
+            "kind_HEALTHY": 69,
+            "kind_UNSURE": 5,
+            "kind_UNKNOWN_CONDITION": 2
+          },
+          "supported_disease": {
+            "n": 585,
+            "correct": 558,
+            "correct_rate": 0.9538461538461539,
+            "healthy_verdict": 4,
+            "healthy_recall": null,
+            "false_healthy": 4,
+            "false_healthy_rate": 0.006837606837606838,
+            "false_other": 4,
+            "false_other_rate": 0.006837606837606838,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 568,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 5,
+            "kind_HEALTHY": 4,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.020833333333333332,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 9,
+            "false_known_rate": 0.0625,
+            "kind_UNKNOWN_CONDITION": 133,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 3
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 136,
+            "kind_UNSURE": 10,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "healthy_precision": 0.8846153846153846,
+          "healthy_precision_n": 78,
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 4
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 1
+            },
+            "tomatovillage": {
+              "n": 489,
+              "healthy_recall": 0.6956521739130435,
+              "false_healthy": 4
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 139,
+              "correct": 134
+            },
+            "Late_blight": {
+              "n": 148,
+              "correct": 140
+            },
+            "Leaf Miner": {
+              "n": 103,
+              "correct": 99
+            },
+            "Magnesium Deficiency": {
+              "n": 88,
+              "correct": 88
+            },
+            "Nitrogen Deficiency": {
+              "n": 48,
+              "correct": 44
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 8
+            },
+            "Spotted Wilt Virus": {
+              "n": 51,
+              "correct": 45
+            }
+          }
+        },
+        "taiwan": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 127,
+          "all": {
+            "n": 127,
+            "correct": 32,
+            "correct_rate": 0.25196850393700787,
+            "healthy_verdict": 21,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 7,
+            "false_other_rate": 0.05511811023622047,
+            "false_known": 35,
+            "false_known_rate": 0.2755905511811024,
+            "kind_UNKNOWN_CONDITION": 86,
+            "kind_UNSURE": 5,
+            "kind_DISEASE": 14,
+            "kind_NO_LEAVES": 1,
+            "kind_HEALTHY": 21
+          },
+          "supported": {
+            "n": 42,
+            "correct": 32,
+            "correct_rate": 0.7619047619047619,
+            "healthy_verdict": 21,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 7,
+            "false_other_rate": 0.16666666666666666,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 11,
+            "kind_UNSURE": 3,
+            "kind_UNKNOWN_CONDITION": 7,
+            "kind_HEALTHY": 21
+          },
+          "healthy": {
+            "n": 22,
+            "correct": 21,
+            "correct_rate": 0.9545454545454546,
+            "healthy_verdict": 21,
+            "healthy_recall": 0.9545454545454546,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 1,
+            "false_other_rate": 0.045454545454545456,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 21,
+            "kind_UNKNOWN_CONDITION": 1
+          },
+          "supported_disease": {
+            "n": 20,
+            "correct": 11,
+            "correct_rate": 0.55,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 6,
+            "false_other_rate": 0.3,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 11,
+            "kind_UNSURE": 3,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 85,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.03529411764705882,
+            "kind_UNKNOWN_CONDITION": 79,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 3,
+            "kind_NO_LEAVES": 1
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 1.0,
+          "healthy_precision_n": 21,
+          "by_source": {
+            "taiwan": {
+              "n": 127,
+              "healthy_recall": 0.9545454545454546,
+              "false_healthy": 0
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 0,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 20,
+              "correct": 11
+            },
+            "Leaf Miner": {
+              "n": 0,
+              "correct": 0
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "phase2_selection": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 459,
+          "all": {
+            "n": 459,
+            "correct": 151,
+            "correct_rate": 0.3289760348583878,
+            "healthy_verdict": 31,
+            "healthy_recall": null,
+            "false_healthy": 9,
+            "false_healthy_rate": 0.0196078431372549,
+            "false_other": 62,
+            "false_other_rate": 0.13507625272331156,
+            "false_known": 313,
+            "false_known_rate": 0.681917211328976,
+            "kind_DISEASE": 282,
+            "kind_UNSURE": 79,
+            "kind_UNKNOWN_CONDITION": 67,
+            "kind_HEALTHY": 31
+          },
+          "supported": {
+            "n": 414,
+            "correct": 151,
+            "correct_rate": 0.3647342995169082,
+            "healthy_verdict": 29,
+            "healthy_recall": null,
+            "false_healthy": 7,
+            "false_healthy_rate": 0.016908212560386472,
+            "false_other": 62,
+            "false_other_rate": 0.1497584541062802,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 250,
+            "kind_UNKNOWN_CONDITION": 62,
+            "kind_UNSURE": 73,
+            "kind_HEALTHY": 29
+          },
+          "healthy": {
+            "n": 39,
+            "correct": 22,
+            "correct_rate": 0.5641025641025641,
+            "healthy_verdict": 22,
+            "healthy_recall": 0.5641025641025641,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 3,
+            "false_other_rate": 0.07692307692307693,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 13,
+            "kind_HEALTHY": 22,
+            "kind_UNKNOWN_CONDITION": 3,
+            "kind_UNSURE": 1
+          },
+          "supported_disease": {
+            "n": 375,
+            "correct": 129,
+            "correct_rate": 0.344,
+            "healthy_verdict": 7,
+            "healthy_recall": null,
+            "false_healthy": 7,
+            "false_healthy_rate": 0.018666666666666668,
+            "false_other": 59,
+            "false_other_rate": 0.15733333333333333,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 237,
+            "kind_UNKNOWN_CONDITION": 59,
+            "kind_UNSURE": 72,
+            "kind_HEALTHY": 7
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.044444444444444446,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 34,
+            "false_known_rate": 0.7555555555555555,
+            "kind_DISEASE": 32,
+            "kind_UNSURE": 6,
+            "kind_UNKNOWN_CONDITION": 5,
+            "kind_HEALTHY": 2
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 0.7096774193548387,
+          "healthy_precision_n": 31,
+          "by_source": {
+            "bangladesh_classification": {
+              "n": 459,
+              "healthy_recall": 0.5641025641025641,
+              "false_healthy": 9
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 40,
+              "correct": 3
+            },
+            "Late_blight": {
+              "n": 7,
+              "correct": 1
+            },
+            "Leaf Miner": {
+              "n": 176,
+              "correct": 38
+            },
+            "Magnesium Deficiency": {
+              "n": 152,
+              "correct": 87
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "phase5_selection": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 1039,
+          "all": {
+            "n": 1039,
+            "correct": 258,
+            "correct_rate": 0.24831568816169394,
+            "healthy_verdict": 254,
+            "healthy_recall": null,
+            "false_healthy": 25,
+            "false_healthy_rate": 0.02406159769008662,
+            "false_other": 99,
+            "false_other_rate": 0.09528392685274302,
+            "false_known": 426,
+            "false_known_rate": 0.41000962463907603,
+            "kind_HEALTHY": 254,
+            "kind_UNKNOWN_CONDITION": 341,
+            "kind_NO_LEAVES": 177,
+            "kind_UNSURE": 95,
+            "kind_DISEASE": 172
+          },
+          "supported": {
+            "n": 403,
+            "correct": 258,
+            "correct_rate": 0.6401985111662531,
+            "healthy_verdict": 229,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 99,
+            "false_other_rate": 0.2456575682382134,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 229,
+            "kind_UNKNOWN_CONDITION": 99,
+            "kind_NO_LEAVES": 5,
+            "kind_UNSURE": 20,
+            "kind_DISEASE": 50
+          },
+          "healthy": {
+            "n": 248,
+            "correct": 229,
+            "correct_rate": 0.9233870967741935,
+            "healthy_verdict": 229,
+            "healthy_recall": 0.9233870967741935,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 11,
+            "false_other_rate": 0.04435483870967742,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 229,
+            "kind_UNKNOWN_CONDITION": 11,
+            "kind_NO_LEAVES": 2,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 4
+          },
+          "supported_disease": {
+            "n": 155,
+            "correct": 29,
+            "correct_rate": 0.1870967741935484,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 88,
+            "false_other_rate": 0.567741935483871,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNSURE": 18,
+            "kind_DISEASE": 46,
+            "kind_UNKNOWN_CONDITION": 88,
+            "kind_NO_LEAVES": 3
+          },
+          "coarse_diseased": {
+            "n": 368,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 19,
+            "healthy_recall": null,
+            "false_healthy": 19,
+            "false_healthy_rate": 0.051630434782608696,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNKNOWN_CONDITION": 170,
+            "kind_HEALTHY": 19,
+            "kind_NO_LEAVES": 150,
+            "kind_DISEASE": 18,
+            "kind_UNSURE": 11
+          },
+          "unsupported_tomato": {
+            "n": 268,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 6,
+            "healthy_recall": null,
+            "false_healthy": 6,
+            "false_healthy_rate": 0.022388059701492536,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 110,
+            "false_known_rate": 0.41044776119402987,
+            "kind_UNKNOWN_CONDITION": 72,
+            "kind_NO_LEAVES": 22,
+            "kind_DISEASE": 104,
+            "kind_HEALTHY": 6,
+            "kind_UNSURE": 64
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 0.9015748031496063,
+          "healthy_precision_n": 254,
+          "by_source": {
+            "swtt5wy2pr": {
+              "n": 460,
+              "healthy_recall": 0.9495798319327731,
+              "false_healthy": 4
+            },
+            "tom2024": {
+              "n": 579,
+              "healthy_recall": 0.8992248062015504,
+              "false_healthy": 21
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 106,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 49,
+              "correct": 29
+            },
+            "Leaf Miner": {
+              "n": 0,
+              "correct": 0
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "original": {
+          "excluded_mixed_photos": 2,
+          "scalar_eligible_photos": 683,
+          "all": {
+            "n": 683,
+            "correct": 457,
+            "correct_rate": 0.6691068814055637,
+            "healthy_verdict": 29,
+            "healthy_recall": null,
+            "false_healthy": 7,
+            "false_healthy_rate": 0.010248901903367497,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 496,
+            "false_known_rate": 0.726207906295754,
+            "kind_DISEASE": 467,
+            "kind_HEALTHY": 29,
+            "kind_UNSURE": 9,
+            "kind_UNKNOWN_CONDITION": 178
+          },
+          "supported": {
+            "n": 475,
+            "correct": 457,
+            "correct_rate": 0.9621052631578947,
+            "healthy_verdict": 27,
+            "healthy_recall": null,
+            "false_healthy": 5,
+            "false_healthy_rate": 0.010526315789473684,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 446,
+            "kind_HEALTHY": 27,
+            "kind_UNSURE": 2
+          },
+          "healthy": {
+            "n": 26,
+            "correct": 22,
+            "correct_rate": 0.8461538461538461,
+            "healthy_verdict": 22,
+            "healthy_recall": 0.8461538461538461,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 22,
+            "kind_DISEASE": 4
+          },
+          "supported_disease": {
+            "n": 449,
+            "correct": 435,
+            "correct_rate": 0.9688195991091314,
+            "healthy_verdict": 5,
+            "healthy_recall": null,
+            "false_healthy": 5,
+            "false_healthy_rate": 0.011135857461024499,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 442,
+            "kind_HEALTHY": 5,
+            "kind_UNSURE": 2
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.022222222222222223,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.15555555555555556,
+            "kind_UNKNOWN_CONDITION": 35,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 3,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 163,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006134969325153374,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 16,
+            "false_known_rate": 0.09815950920245399,
+            "kind_UNKNOWN_CONDITION": 143,
+            "kind_HEALTHY": 1,
+            "kind_DISEASE": 15,
+            "kind_UNSURE": 4
+          },
+          "healthy_precision": 0.7586206896551724,
+          "healthy_precision_n": 29,
+          "by_source": {
+            "plantdoc": {
+              "n": 226,
+              "healthy_recall": 1.0,
+              "false_healthy": 2
+            },
+            "tomatovillage": {
+              "n": 457,
+              "healthy_recall": 0.8260869565217391,
+              "false_healthy": 5
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 69,
+              "correct": 69
+            },
+            "Late_blight": {
+              "n": 90,
+              "correct": 90
+            },
+            "Leaf Miner": {
+              "n": 102,
+              "correct": 93
+            },
+            "Magnesium Deficiency": {
+              "n": 96,
+              "correct": 96
+            },
+            "Nitrogen Deficiency": {
+              "n": 32,
+              "correct": 32
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 8
+            },
+            "Spotted Wilt Virus": {
+              "n": 52,
+              "correct": 47
+            }
+          }
+        },
+        "expanded": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 1533,
+          "all": {
+            "n": 1533,
+            "correct": 494,
+            "correct_rate": 0.3222439660795825,
+            "healthy_verdict": 615,
+            "healthy_recall": null,
+            "false_healthy": 259,
+            "false_healthy_rate": 0.1689497716894977,
+            "false_other": 42,
+            "false_other_rate": 0.0273972602739726,
+            "false_known": 921,
+            "false_known_rate": 0.6007827788649707,
+            "kind_HEALTHY": 615,
+            "kind_UNKNOWN_CONDITION": 456,
+            "kind_UNSURE": 156,
+            "kind_DISEASE": 306
+          },
+          "supported": {
+            "n": 715,
+            "correct": 494,
+            "correct_rate": 0.6909090909090909,
+            "healthy_verdict": 486,
+            "healthy_recall": null,
+            "false_healthy": 130,
+            "false_healthy_rate": 0.18181818181818182,
+            "false_other": 42,
+            "false_other_rate": 0.05874125874125874,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 486,
+            "kind_UNKNOWN_CONDITION": 42,
+            "kind_UNSURE": 36,
+            "kind_DISEASE": 151
+          },
+          "healthy": {
+            "n": 380,
+            "correct": 356,
+            "correct_rate": 0.9368421052631579,
+            "healthy_verdict": 356,
+            "healthy_recall": 0.9368421052631579,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 8,
+            "false_other_rate": 0.021052631578947368,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 356,
+            "kind_UNKNOWN_CONDITION": 8,
+            "kind_UNSURE": 11,
+            "kind_DISEASE": 5
+          },
+          "supported_disease": {
+            "n": 335,
+            "correct": 138,
+            "correct_rate": 0.41194029850746267,
+            "healthy_verdict": 130,
+            "healthy_recall": null,
+            "false_healthy": 130,
+            "false_healthy_rate": 0.3880597014925373,
+            "false_other": 34,
+            "false_other_rate": 0.10149253731343283,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 130,
+            "kind_UNKNOWN_CONDITION": 34,
+            "kind_DISEASE": 146,
+            "kind_UNSURE": 25
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 818,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 129,
+            "healthy_recall": null,
+            "false_healthy": 129,
+            "false_healthy_rate": 0.15770171149144255,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 284,
+            "false_known_rate": 0.3471882640586797,
+            "kind_HEALTHY": 129,
+            "kind_UNKNOWN_CONDITION": 414,
+            "kind_UNSURE": 120,
+            "kind_DISEASE": 155
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 0.5788617886178862,
+          "healthy_precision_n": 615,
+          "by_source": {
+            "pakistan": {
+              "n": 70,
+              "healthy_recall": 0.8181818181818182,
+              "false_healthy": 1
+            },
+            "tlid": {
+              "n": 1463,
+              "healthy_recall": 0.940379403794038,
+              "false_healthy": 258
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 7,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 9,
+              "correct": 3
+            },
+            "Leaf Miner": {
+              "n": 319,
+              "correct": 135
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        }
+      },
+      "retained": false,
+      "field_healthy_passed": true,
+      "score": 0.9472458730728032,
+      "input_identity": {
+        "head_sha256": "1df878d0a40d026d0841679f2992f592d5432b57e3d50a65930bf0d1e2a4e2c4",
+        "calibration_sha256": "8a9076222b8a63e3977d8dccda18f23c32223d97338d04d6c11836bb66abf651",
+        "encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+        "paths_sha256": "605331cf059a207a210b554f421bab98741670f1a2ac66110cc4c642bd3ccace",
+        "rows_sha256": "5019534db15e84ccef7ceed0bc9efb40f17ab2a849219559deb6c0e3db4dc10c",
+        "evaluation_rows_sha256": "f35279ddb3927fbeb099b23f8ac77bb011d896773e523127da34922ffaf42cde",
+        "genus_checkpoint_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+        "genus_calibration_sha256": "5fe18b62e24cbe28da72ae996fcf8a6fec693ac9bd7257493438d04bbd90510d",
+        "selection_rule": "Top training-validation score selected before app replay",
+        "fresh_ad_used": false
+      },
+      "native_context_runtime_implemented": false,
+      "fresh_ad_used": false,
+      "scope": "Image-level Healthy primary view; no fake leaf geometry"
+    },
+    "fusion_selection": {
+      "id": 144,
+      "policy": {
+        "healthy_min": 0.97,
+        "genus_min": 0.0,
+        "two_view_agreement": false,
+        "named_leaf_veto": false,
+        "center_agreement_model": "MobileCLIP-only; primary score is fused"
+      },
+      "metrics": {
+        "development": {
+          "excluded_mixed_photos": 1,
+          "scalar_eligible_photos": 692,
+          "all": {
+            "n": 692,
+            "correct": 467,
+            "correct_rate": 0.6748554913294798,
+            "healthy_verdict": 25,
+            "healthy_recall": null,
+            "false_healthy": 4,
+            "false_healthy_rate": 0.005780346820809248,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 493,
+            "false_known_rate": 0.7124277456647399,
+            "kind_DISEASE": 468,
+            "kind_HEALTHY": 25,
+            "kind_UNSURE": 17,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 181
+          },
+          "supported": {
+            "n": 484,
+            "correct": 467,
+            "correct_rate": 0.9648760330578512,
+            "healthy_verdict": 22,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.002066115702479339,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 455,
+            "kind_HEALTHY": 22,
+            "kind_UNSURE": 6,
+            "kind_NO_LEAVES": 1
+          },
+          "healthy": {
+            "n": 26,
+            "correct": 21,
+            "correct_rate": 0.8076923076923077,
+            "healthy_verdict": 21,
+            "healthy_recall": 0.8076923076923077,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 21,
+            "kind_UNSURE": 3,
+            "kind_DISEASE": 2
+          },
+          "supported_disease": {
+            "n": 458,
+            "correct": 446,
+            "correct_rate": 0.9737991266375546,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.002183406113537118,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 453,
+            "kind_UNSURE": 3,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 39,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 33,
+            "kind_UNSURE": 3,
+            "kind_DISEASE": 3
+          },
+          "non_tomato": {
+            "n": 169,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.01775147928994083,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 148,
+            "kind_UNSURE": 8,
+            "kind_DISEASE": 10,
+            "kind_HEALTHY": 3
+          },
+          "healthy_precision": 0.84,
+          "healthy_precision_n": 25,
+          "by_source": {
+            "plantdoc": {
+              "n": 231,
+              "healthy_recall": 1.0,
+              "false_healthy": 3
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.7368421052631579,
+              "false_healthy": 1
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 49,
+              "correct": 48
+            },
+            "Late_blight": {
+              "n": 119,
+              "correct": 116
+            },
+            "Leaf Miner": {
+              "n": 102,
+              "correct": 94
+            },
+            "Magnesium Deficiency": {
+              "n": 96,
+              "correct": 96
+            },
+            "Nitrogen Deficiency": {
+              "n": 32,
+              "correct": 32
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 8
+            },
+            "Spotted Wilt Virus": {
+              "n": 52,
+              "correct": 52
+            }
+          }
+        },
+        "public": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 941,
+          "all": {
+            "n": 941,
+            "correct": 588,
+            "correct_rate": 0.6248671625929861,
+            "healthy_verdict": 71,
+            "healthy_recall": null,
+            "false_healthy": 4,
+            "false_healthy_rate": 0.004250797024442083,
+            "false_other": 6,
+            "false_other_rate": 0.006376195536663124,
+            "false_known": 637,
+            "false_known_rate": 0.6769394261424017,
+            "kind_DISEASE": 566,
+            "kind_HEALTHY": 71,
+            "kind_UNSURE": 26,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 277
+          },
+          "supported": {
+            "n": 638,
+            "correct": 588,
+            "correct_rate": 0.9216300940438872,
+            "healthy_verdict": 68,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.001567398119122257,
+            "false_other": 6,
+            "false_other_rate": 0.009404388714733543,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 549,
+            "kind_HEALTHY": 68,
+            "kind_UNSURE": 14,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "healthy": {
+            "n": 80,
+            "correct": 67,
+            "correct_rate": 0.8375,
+            "healthy_verdict": 67,
+            "healthy_recall": 0.8375,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 2,
+            "false_other_rate": 0.025,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 7,
+            "kind_HEALTHY": 67,
+            "kind_UNSURE": 4,
+            "kind_UNKNOWN_CONDITION": 2
+          },
+          "supported_disease": {
+            "n": 558,
+            "correct": 521,
+            "correct_rate": 0.9336917562724014,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0017921146953405018,
+            "false_other": 4,
+            "false_other_rate": 0.007168458781362007,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 542,
+            "kind_UNSURE": 10,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006944444444444444,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.04861111111111111,
+            "kind_UNKNOWN_CONDITION": 135,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 136,
+            "kind_UNSURE": 10,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "healthy_precision": 0.9436619718309859,
+          "healthy_precision_n": 71,
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 3
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 0
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.6363636363636364,
+              "false_healthy": 1
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 109,
+              "correct": 104
+            },
+            "Late_blight": {
+              "n": 152,
+              "correct": 140
+            },
+            "Leaf Miner": {
+              "n": 104,
+              "correct": 96
+            },
+            "Magnesium Deficiency": {
+              "n": 95,
+              "correct": 93
+            },
+            "Nitrogen Deficiency": {
+              "n": 37,
+              "correct": 36
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 7
+            },
+            "Spotted Wilt Virus": {
+              "n": 53,
+              "correct": 45
+            }
+          }
+        },
+        "prior_test": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 969,
+          "all": {
+            "n": 969,
+            "correct": 622,
+            "correct_rate": 0.6418988648090815,
+            "healthy_verdict": 69,
+            "healthy_recall": null,
+            "false_healthy": 5,
+            "false_healthy_rate": 0.005159958720330237,
+            "false_other": 6,
+            "false_other_rate": 0.006191950464396285,
+            "false_known": 659,
+            "false_known_rate": 0.6800825593395253,
+            "kind_DISEASE": 590,
+            "kind_HEALTHY": 69,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 29,
+            "kind_UNKNOWN_CONDITION": 277
+          },
+          "supported": {
+            "n": 666,
+            "correct": 622,
+            "correct_rate": 0.933933933933934,
+            "healthy_verdict": 66,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.003003003003003003,
+            "false_other": 6,
+            "false_other_rate": 0.009009009009009009,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 573,
+            "kind_HEALTHY": 66,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 17,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "healthy": {
+            "n": 81,
+            "correct": 64,
+            "correct_rate": 0.7901234567901234,
+            "healthy_verdict": 64,
+            "healthy_recall": 0.7901234567901234,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 2,
+            "false_other_rate": 0.024691358024691357,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 5,
+            "kind_HEALTHY": 64,
+            "kind_UNSURE": 10,
+            "kind_UNKNOWN_CONDITION": 2
+          },
+          "supported_disease": {
+            "n": 585,
+            "correct": 558,
+            "correct_rate": 0.9538461538461539,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.003418803418803419,
+            "false_other": 4,
+            "false_other_rate": 0.006837606837606838,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 568,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 7,
+            "kind_HEALTHY": 2,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006944444444444444,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.04861111111111111,
+            "kind_UNKNOWN_CONDITION": 135,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 136,
+            "kind_UNSURE": 10,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "healthy_precision": 0.927536231884058,
+          "healthy_precision_n": 69,
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 3
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 0
+            },
+            "tomatovillage": {
+              "n": 489,
+              "healthy_recall": 0.4782608695652174,
+              "false_healthy": 2
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 139,
+              "correct": 134
+            },
+            "Late_blight": {
+              "n": 148,
+              "correct": 140
+            },
+            "Leaf Miner": {
+              "n": 103,
+              "correct": 99
+            },
+            "Magnesium Deficiency": {
+              "n": 88,
+              "correct": 88
+            },
+            "Nitrogen Deficiency": {
+              "n": 48,
+              "correct": 44
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 8
+            },
+            "Spotted Wilt Virus": {
+              "n": 51,
+              "correct": 45
+            }
+          }
+        },
+        "taiwan": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 127,
+          "all": {
+            "n": 127,
+            "correct": 32,
+            "correct_rate": 0.25196850393700787,
+            "healthy_verdict": 21,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 7,
+            "false_other_rate": 0.05511811023622047,
+            "false_known": 35,
+            "false_known_rate": 0.2755905511811024,
+            "kind_UNKNOWN_CONDITION": 86,
+            "kind_UNSURE": 5,
+            "kind_DISEASE": 14,
+            "kind_NO_LEAVES": 1,
+            "kind_HEALTHY": 21
+          },
+          "supported": {
+            "n": 42,
+            "correct": 32,
+            "correct_rate": 0.7619047619047619,
+            "healthy_verdict": 21,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 7,
+            "false_other_rate": 0.16666666666666666,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 11,
+            "kind_UNSURE": 3,
+            "kind_UNKNOWN_CONDITION": 7,
+            "kind_HEALTHY": 21
+          },
+          "healthy": {
+            "n": 22,
+            "correct": 21,
+            "correct_rate": 0.9545454545454546,
+            "healthy_verdict": 21,
+            "healthy_recall": 0.9545454545454546,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 1,
+            "false_other_rate": 0.045454545454545456,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 21,
+            "kind_UNKNOWN_CONDITION": 1
+          },
+          "supported_disease": {
+            "n": 20,
+            "correct": 11,
+            "correct_rate": 0.55,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 6,
+            "false_other_rate": 0.3,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 11,
+            "kind_UNSURE": 3,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 85,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.03529411764705882,
+            "kind_UNKNOWN_CONDITION": 79,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 3,
+            "kind_NO_LEAVES": 1
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 1.0,
+          "healthy_precision_n": 21,
+          "by_source": {
+            "taiwan": {
+              "n": 127,
+              "healthy_recall": 0.9545454545454546,
+              "false_healthy": 0
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 0,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 20,
+              "correct": 11
+            },
+            "Leaf Miner": {
+              "n": 0,
+              "correct": 0
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "phase2_selection": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 459,
+          "all": {
+            "n": 459,
+            "correct": 141,
+            "correct_rate": 0.30718954248366015,
+            "healthy_verdict": 14,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.004357298474945534,
+            "false_other": 69,
+            "false_other_rate": 0.1503267973856209,
+            "false_known": 296,
+            "false_known_rate": 0.644880174291939,
+            "kind_DISEASE": 282,
+            "kind_UNSURE": 87,
+            "kind_UNKNOWN_CONDITION": 75,
+            "kind_HEALTHY": 14,
+            "kind_NO_LEAVES": 1
+          },
+          "supported": {
+            "n": 414,
+            "correct": 141,
+            "correct_rate": 0.34057971014492755,
+            "healthy_verdict": 13,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0024154589371980675,
+            "false_other": 69,
+            "false_other_rate": 0.16666666666666666,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 250,
+            "kind_UNKNOWN_CONDITION": 69,
+            "kind_UNSURE": 81,
+            "kind_HEALTHY": 13,
+            "kind_NO_LEAVES": 1
+          },
+          "healthy": {
+            "n": 39,
+            "correct": 12,
+            "correct_rate": 0.3076923076923077,
+            "healthy_verdict": 12,
+            "healthy_recall": 0.3076923076923077,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 7,
+            "false_other_rate": 0.1794871794871795,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 13,
+            "kind_HEALTHY": 12,
+            "kind_UNKNOWN_CONDITION": 7,
+            "kind_UNSURE": 7
+          },
+          "supported_disease": {
+            "n": 375,
+            "correct": 129,
+            "correct_rate": 0.344,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0026666666666666666,
+            "false_other": 62,
+            "false_other_rate": 0.16533333333333333,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 237,
+            "kind_UNKNOWN_CONDITION": 62,
+            "kind_UNSURE": 74,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.022222222222222223,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 33,
+            "false_known_rate": 0.7333333333333333,
+            "kind_DISEASE": 32,
+            "kind_UNSURE": 6,
+            "kind_UNKNOWN_CONDITION": 6,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 0.8571428571428571,
+          "healthy_precision_n": 14,
+          "by_source": {
+            "bangladesh_classification": {
+              "n": 459,
+              "healthy_recall": 0.3076923076923077,
+              "false_healthy": 2
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 40,
+              "correct": 3
+            },
+            "Late_blight": {
+              "n": 7,
+              "correct": 1
+            },
+            "Leaf Miner": {
+              "n": 176,
+              "correct": 38
+            },
+            "Magnesium Deficiency": {
+              "n": 152,
+              "correct": 87
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "phase5_selection": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 1039,
+          "all": {
+            "n": 1039,
+            "correct": 230,
+            "correct_rate": 0.22136669874879691,
+            "healthy_verdict": 212,
+            "healthy_recall": null,
+            "false_healthy": 11,
+            "false_healthy_rate": 0.010587102983638113,
+            "false_other": 120,
+            "false_other_rate": 0.11549566891241578,
+            "false_known": 384,
+            "false_known_rate": 0.3695861405197305,
+            "kind_HEALTHY": 212,
+            "kind_UNKNOWN_CONDITION": 371,
+            "kind_UNSURE": 97,
+            "kind_NO_LEAVES": 187,
+            "kind_DISEASE": 172
+          },
+          "supported": {
+            "n": 403,
+            "correct": 230,
+            "correct_rate": 0.5707196029776674,
+            "healthy_verdict": 201,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 120,
+            "false_other_rate": 0.2977667493796526,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 201,
+            "kind_UNKNOWN_CONDITION": 120,
+            "kind_UNSURE": 21,
+            "kind_NO_LEAVES": 11,
+            "kind_DISEASE": 50
+          },
+          "healthy": {
+            "n": 248,
+            "correct": 201,
+            "correct_rate": 0.8104838709677419,
+            "healthy_verdict": 201,
+            "healthy_recall": 0.8104838709677419,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 32,
+            "false_other_rate": 0.12903225806451613,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 201,
+            "kind_UNKNOWN_CONDITION": 32,
+            "kind_UNSURE": 3,
+            "kind_NO_LEAVES": 8,
+            "kind_DISEASE": 4
+          },
+          "supported_disease": {
+            "n": 155,
+            "correct": 29,
+            "correct_rate": 0.1870967741935484,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 88,
+            "false_other_rate": 0.567741935483871,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNSURE": 18,
+            "kind_DISEASE": 46,
+            "kind_UNKNOWN_CONDITION": 88,
+            "kind_NO_LEAVES": 3
+          },
+          "coarse_diseased": {
+            "n": 368,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 5,
+            "healthy_recall": null,
+            "false_healthy": 5,
+            "false_healthy_rate": 0.01358695652173913,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNKNOWN_CONDITION": 179,
+            "kind_NO_LEAVES": 154,
+            "kind_DISEASE": 18,
+            "kind_HEALTHY": 5,
+            "kind_UNSURE": 12
+          },
+          "unsupported_tomato": {
+            "n": 268,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 6,
+            "healthy_recall": null,
+            "false_healthy": 6,
+            "false_healthy_rate": 0.022388059701492536,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 110,
+            "false_known_rate": 0.41044776119402987,
+            "kind_UNKNOWN_CONDITION": 72,
+            "kind_NO_LEAVES": 22,
+            "kind_DISEASE": 104,
+            "kind_HEALTHY": 6,
+            "kind_UNSURE": 64
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 0.9481132075471698,
+          "healthy_precision_n": 212,
+          "by_source": {
+            "swtt5wy2pr": {
+              "n": 460,
+              "healthy_recall": 0.9411764705882353,
+              "false_healthy": 4
+            },
+            "tom2024": {
+              "n": 579,
+              "healthy_recall": 0.689922480620155,
+              "false_healthy": 7
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 106,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 49,
+              "correct": 29
+            },
+            "Leaf Miner": {
+              "n": 0,
+              "correct": 0
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "original": {
+          "excluded_mixed_photos": 2,
+          "scalar_eligible_photos": 683,
+          "all": {
+            "n": 683,
+            "correct": 454,
+            "correct_rate": 0.664714494875549,
+            "healthy_verdict": 22,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.004392386530014641,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 489,
+            "false_known_rate": 0.7159590043923866,
+            "kind_DISEASE": 467,
+            "kind_HEALTHY": 22,
+            "kind_UNSURE": 16,
+            "kind_UNKNOWN_CONDITION": 178
+          },
+          "supported": {
+            "n": 475,
+            "correct": 454,
+            "correct_rate": 0.9557894736842105,
+            "healthy_verdict": 20,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.002105263157894737,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 446,
+            "kind_HEALTHY": 20,
+            "kind_UNSURE": 9
+          },
+          "healthy": {
+            "n": 26,
+            "correct": 19,
+            "correct_rate": 0.7307692307692307,
+            "healthy_verdict": 19,
+            "healthy_recall": 0.7307692307692307,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 19,
+            "kind_DISEASE": 4,
+            "kind_UNSURE": 3
+          },
+          "supported_disease": {
+            "n": 449,
+            "correct": 435,
+            "correct_rate": 0.9688195991091314,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0022271714922048997,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 442,
+            "kind_HEALTHY": 1,
+            "kind_UNSURE": 6
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.022222222222222223,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.15555555555555556,
+            "kind_UNKNOWN_CONDITION": 35,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 3,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 163,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006134969325153374,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 16,
+            "false_known_rate": 0.09815950920245399,
+            "kind_UNKNOWN_CONDITION": 143,
+            "kind_HEALTHY": 1,
+            "kind_DISEASE": 15,
+            "kind_UNSURE": 4
+          },
+          "healthy_precision": 0.8636363636363636,
+          "healthy_precision_n": 22,
+          "by_source": {
+            "plantdoc": {
+              "n": 226,
+              "healthy_recall": 1.0,
+              "false_healthy": 2
+            },
+            "tomatovillage": {
+              "n": 457,
+              "healthy_recall": 0.6956521739130435,
+              "false_healthy": 1
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 69,
+              "correct": 69
+            },
+            "Late_blight": {
+              "n": 90,
+              "correct": 90
+            },
+            "Leaf Miner": {
+              "n": 102,
+              "correct": 93
+            },
+            "Magnesium Deficiency": {
+              "n": 96,
+              "correct": 96
+            },
+            "Nitrogen Deficiency": {
+              "n": 32,
+              "correct": 32
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 8
+            },
+            "Spotted Wilt Virus": {
+              "n": 52,
+              "correct": 47
+            }
+          }
+        },
+        "expanded": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 1533,
+          "all": {
+            "n": 1533,
+            "correct": 444,
+            "correct_rate": 0.2896281800391389,
+            "healthy_verdict": 560,
+            "healthy_recall": null,
+            "false_healthy": 254,
+            "false_healthy_rate": 0.16568819308545335,
+            "false_other": 75,
+            "false_other_rate": 0.04892367906066536,
+            "false_known": 866,
+            "false_known_rate": 0.5649054142204827,
+            "kind_HEALTHY": 560,
+            "kind_UNKNOWN_CONDITION": 493,
+            "kind_UNSURE": 174,
+            "kind_DISEASE": 306
+          },
+          "supported": {
+            "n": 715,
+            "correct": 444,
+            "correct_rate": 0.620979020979021,
+            "healthy_verdict": 437,
+            "healthy_recall": null,
+            "false_healthy": 131,
+            "false_healthy_rate": 0.18321678321678322,
+            "false_other": 75,
+            "false_other_rate": 0.1048951048951049,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 437,
+            "kind_UNKNOWN_CONDITION": 75,
+            "kind_UNSURE": 52,
+            "kind_DISEASE": 151
+          },
+          "healthy": {
+            "n": 380,
+            "correct": 306,
+            "correct_rate": 0.8052631578947368,
+            "healthy_verdict": 306,
+            "healthy_recall": 0.8052631578947368,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 41,
+            "false_other_rate": 0.10789473684210527,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 306,
+            "kind_UNKNOWN_CONDITION": 41,
+            "kind_UNSURE": 28,
+            "kind_DISEASE": 5
+          },
+          "supported_disease": {
+            "n": 335,
+            "correct": 138,
+            "correct_rate": 0.41194029850746267,
+            "healthy_verdict": 131,
+            "healthy_recall": null,
+            "false_healthy": 131,
+            "false_healthy_rate": 0.39104477611940297,
+            "false_other": 34,
+            "false_other_rate": 0.10149253731343283,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 131,
+            "kind_UNKNOWN_CONDITION": 34,
+            "kind_DISEASE": 146,
+            "kind_UNSURE": 24
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 818,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 123,
+            "healthy_recall": null,
+            "false_healthy": 123,
+            "false_healthy_rate": 0.15036674816625917,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 278,
+            "false_known_rate": 0.33985330073349634,
+            "kind_HEALTHY": 123,
+            "kind_UNKNOWN_CONDITION": 418,
+            "kind_UNSURE": 122,
+            "kind_DISEASE": 155
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 0.5464285714285714,
+          "healthy_precision_n": 560,
+          "by_source": {
+            "pakistan": {
+              "n": 70,
+              "healthy_recall": 0.9090909090909091,
+              "false_healthy": 2
+            },
+            "tlid": {
+              "n": 1463,
+              "healthy_recall": 0.8021680216802168,
+              "false_healthy": 252
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 7,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 9,
+              "correct": 3
+            },
+            "Leaf Miner": {
+              "n": 319,
+              "correct": 135
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        }
+      },
+      "retained": true,
+      "field_healthy_passed": false,
+      "score": 0.8836695635977138,
+      "input_identity": {
+        "head_sha256": "1df878d0a40d026d0841679f2992f592d5432b57e3d50a65930bf0d1e2a4e2c4",
+        "calibration_sha256": "8a9076222b8a63e3977d8dccda18f23c32223d97338d04d6c11836bb66abf651",
+        "encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+        "paths_sha256": "605331cf059a207a210b554f421bab98741670f1a2ac66110cc4c642bd3ccace",
+        "rows_sha256": "5019534db15e84ccef7ceed0bc9efb40f17ab2a849219559deb6c0e3db4dc10c",
+        "evaluation_rows_sha256": "f35279ddb3927fbeb099b23f8ac77bb011d896773e523127da34922ffaf42cde",
+        "genus_checkpoint_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+        "genus_calibration_sha256": "5fe18b62e24cbe28da72ae996fcf8a6fec693ac9bd7257493438d04bbd90510d",
+        "selection_rule": "Top training-validation score selected before app replay",
+        "fresh_ad_used": false,
+        "fusion_candidates_sha256": "7629127e7d4cc47e8c921e9f848642beae512f7abfa28645785b8ef26d4c2a10"
+      },
+      "native_context_runtime_implemented": false,
+      "fresh_ad_used": false,
+      "scope": "Image-level Healthy primary view; no fake leaf geometry",
+      "fusion": {
+        "negative_cost": 2.0,
+        "weights": [
+          0.006679921233236924,
+          0.23617866197942516,
+          0.1815721097951585,
+          0.0060999730318513036,
+          0.7561479169069584
+        ],
+        "bias": -0.8398018778113527,
+        "input_clip": 10.0,
+        "input_order": [
+          "DINO adapted linear",
+          "DINO original/adapted MLP",
+          "copied DINO12 image Healthy",
+          "genus CNN",
+          "siglip2 image Healthy"
+        ],
+        "input_identity": {
+          "legacy_input_identity": {
+            "scene_rows_sha256": "e063bafa83acc1c2fbd588a88042a5677c5dd7321b76fb007c07c361325e9dca",
+            "feature_model_sha256": "7ee70502933a49784b89b538b8da56cc5c9173116a6c8400c4e43a74a8e01e49",
+            "head_hashes": [
+              "e49ec90e0a6bf63e7bd9249795f87742bd8805f99660b74ac184877348d02b19",
+              "09fa26fba07c8f217e9ab7f5dc2c5189d815ecafcdb4552951ba2fe9d489a86a"
+            ],
+            "head_calibration_hashes": [
+              "71fb1ea361641779728805ed520041272c3573ab1492d60e322c25deb2108d5c",
+              "f1ec90f7145944c435cd8c46b6317c425c5a8c3da0318f79f8c62ead3e5c2055"
+            ],
+            "scene_cnn_sha256": "ff56f749e532f4b6d88d8b2eead1367de3ab14bc8c6a56dd025400d1e4977873",
+            "scene_cnn_calibration_sha256": "88bf930b6649da0abe7e4caa90d4574446cd851ee3227249762a85536790276e",
+            "species_cnn_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+            "species_cnn_calibration_sha256": "5fe18b62e24cbe28da72ae996fcf8a6fec693ac9bd7257493438d04bbd90510d"
+          },
+          "legacy_logits_sha256": "1983ee9f506ced5783b4d6395598d1d40932d95e617d77838d5a81744e124c72",
+          "mobile_head_sha256": "1df878d0a40d026d0841679f2992f592d5432b57e3d50a65930bf0d1e2a4e2c4",
+          "mobile_calibration_sha256": "8a9076222b8a63e3977d8dccda18f23c32223d97338d04d6c11836bb66abf651",
+          "mobile_encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+          "rows_sha256": "aa429d09e6800af20e27b0ee1158179984b2bb6795780451ee61e0268055cfb9"
+        },
+        "calibration_n": 2644,
+        "selection_n": 1280,
+        "selection_auc": 0.9899006468374129,
+        "selection_field_auc": 0.9904092071611253,
+        "fresh_ad_used": false,
+        "note": "Internal grouped development; base checkpoints used broader validation. Not independent acceptance."
+      },
+      "evaluation_note": "Mobile logit reconstructed from cached float32 probability and clipped to +/-10; exact graph replay remains mandatory before acceptance."
+    },
+    "fusion_refined_selection": {
+      "id": 72,
+      "policy": {
+        "healthy_min": 0.98,
+        "genus_min": 0.0,
+        "two_view_agreement": false,
+        "named_leaf_veto": false,
+        "center_agreement_model": "siglip2-only; primary score is fused"
+      },
+      "metrics": {
+        "development": {
+          "excluded_mixed_photos": 1,
+          "scalar_eligible_photos": 692,
+          "all": {
+            "n": 692,
+            "correct": 467,
+            "correct_rate": 0.6748554913294798,
+            "healthy_verdict": 25,
+            "healthy_recall": null,
+            "false_healthy": 4,
+            "false_healthy_rate": 0.005780346820809248,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 493,
+            "false_known_rate": 0.7124277456647399,
+            "kind_DISEASE": 468,
+            "kind_HEALTHY": 25,
+            "kind_UNSURE": 17,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 181
+          },
+          "supported": {
+            "n": 484,
+            "correct": 467,
+            "correct_rate": 0.9648760330578512,
+            "healthy_verdict": 22,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.002066115702479339,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 455,
+            "kind_HEALTHY": 22,
+            "kind_UNSURE": 6,
+            "kind_NO_LEAVES": 1
+          },
+          "healthy": {
+            "n": 26,
+            "correct": 21,
+            "correct_rate": 0.8076923076923077,
+            "healthy_verdict": 21,
+            "healthy_recall": 0.8076923076923077,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 21,
+            "kind_UNSURE": 3,
+            "kind_DISEASE": 2
+          },
+          "supported_disease": {
+            "n": 458,
+            "correct": 446,
+            "correct_rate": 0.9737991266375546,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.002183406113537118,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 453,
+            "kind_UNSURE": 3,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 39,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 33,
+            "kind_UNSURE": 3,
+            "kind_DISEASE": 3
+          },
+          "non_tomato": {
+            "n": 169,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.01775147928994083,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 148,
+            "kind_UNSURE": 8,
+            "kind_DISEASE": 10,
+            "kind_HEALTHY": 3
+          },
+          "healthy_precision": 0.84,
+          "healthy_precision_n": 25,
+          "by_source": {
+            "plantdoc": {
+              "n": 231,
+              "healthy_recall": 1.0,
+              "false_healthy": 3
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.7368421052631579,
+              "false_healthy": 1
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 49,
+              "correct": 48
+            },
+            "Late_blight": {
+              "n": 119,
+              "correct": 116
+            },
+            "Leaf Miner": {
+              "n": 102,
+              "correct": 94
+            },
+            "Magnesium Deficiency": {
+              "n": 96,
+              "correct": 96
+            },
+            "Nitrogen Deficiency": {
+              "n": 32,
+              "correct": 32
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 8
+            },
+            "Spotted Wilt Virus": {
+              "n": 52,
+              "correct": 52
+            }
+          }
+        },
+        "public": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 941,
+          "all": {
+            "n": 941,
+            "correct": 588,
+            "correct_rate": 0.6248671625929861,
+            "healthy_verdict": 71,
+            "healthy_recall": null,
+            "false_healthy": 4,
+            "false_healthy_rate": 0.004250797024442083,
+            "false_other": 6,
+            "false_other_rate": 0.006376195536663124,
+            "false_known": 637,
+            "false_known_rate": 0.6769394261424017,
+            "kind_DISEASE": 566,
+            "kind_HEALTHY": 71,
+            "kind_UNSURE": 26,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 277
+          },
+          "supported": {
+            "n": 638,
+            "correct": 588,
+            "correct_rate": 0.9216300940438872,
+            "healthy_verdict": 68,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.001567398119122257,
+            "false_other": 6,
+            "false_other_rate": 0.009404388714733543,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 549,
+            "kind_HEALTHY": 68,
+            "kind_UNSURE": 14,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "healthy": {
+            "n": 80,
+            "correct": 67,
+            "correct_rate": 0.8375,
+            "healthy_verdict": 67,
+            "healthy_recall": 0.8375,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 2,
+            "false_other_rate": 0.025,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 7,
+            "kind_HEALTHY": 67,
+            "kind_UNSURE": 4,
+            "kind_UNKNOWN_CONDITION": 2
+          },
+          "supported_disease": {
+            "n": 558,
+            "correct": 521,
+            "correct_rate": 0.9336917562724014,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0017921146953405018,
+            "false_other": 4,
+            "false_other_rate": 0.007168458781362007,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 542,
+            "kind_UNSURE": 10,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006944444444444444,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.04861111111111111,
+            "kind_UNKNOWN_CONDITION": 135,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 136,
+            "kind_UNSURE": 10,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "healthy_precision": 0.9436619718309859,
+          "healthy_precision_n": 71,
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 3
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 0
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.6363636363636364,
+              "false_healthy": 1
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 109,
+              "correct": 104
+            },
+            "Late_blight": {
+              "n": 152,
+              "correct": 140
+            },
+            "Leaf Miner": {
+              "n": 104,
+              "correct": 96
+            },
+            "Magnesium Deficiency": {
+              "n": 95,
+              "correct": 93
+            },
+            "Nitrogen Deficiency": {
+              "n": 37,
+              "correct": 36
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 7
+            },
+            "Spotted Wilt Virus": {
+              "n": 53,
+              "correct": 45
+            }
+          }
+        },
+        "prior_test": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 969,
+          "all": {
+            "n": 969,
+            "correct": 623,
+            "correct_rate": 0.6429308565531475,
+            "healthy_verdict": 70,
+            "healthy_recall": null,
+            "false_healthy": 5,
+            "false_healthy_rate": 0.005159958720330237,
+            "false_other": 6,
+            "false_other_rate": 0.006191950464396285,
+            "false_known": 660,
+            "false_known_rate": 0.6811145510835913,
+            "kind_DISEASE": 590,
+            "kind_HEALTHY": 70,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 28,
+            "kind_UNKNOWN_CONDITION": 277
+          },
+          "supported": {
+            "n": 666,
+            "correct": 623,
+            "correct_rate": 0.9354354354354354,
+            "healthy_verdict": 67,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.003003003003003003,
+            "false_other": 6,
+            "false_other_rate": 0.009009009009009009,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 573,
+            "kind_HEALTHY": 67,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 16,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "healthy": {
+            "n": 81,
+            "correct": 65,
+            "correct_rate": 0.8024691358024691,
+            "healthy_verdict": 65,
+            "healthy_recall": 0.8024691358024691,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 2,
+            "false_other_rate": 0.024691358024691357,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 5,
+            "kind_HEALTHY": 65,
+            "kind_UNSURE": 9,
+            "kind_UNKNOWN_CONDITION": 2
+          },
+          "supported_disease": {
+            "n": 585,
+            "correct": 558,
+            "correct_rate": 0.9538461538461539,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.003418803418803419,
+            "false_other": 4,
+            "false_other_rate": 0.006837606837606838,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 568,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 7,
+            "kind_HEALTHY": 2,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006944444444444444,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.04861111111111111,
+            "kind_UNKNOWN_CONDITION": 135,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 136,
+            "kind_UNSURE": 10,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "healthy_precision": 0.9285714285714286,
+          "healthy_precision_n": 70,
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 3
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 0
+            },
+            "tomatovillage": {
+              "n": 489,
+              "healthy_recall": 0.5217391304347826,
+              "false_healthy": 2
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 139,
+              "correct": 134
+            },
+            "Late_blight": {
+              "n": 148,
+              "correct": 140
+            },
+            "Leaf Miner": {
+              "n": 103,
+              "correct": 99
+            },
+            "Magnesium Deficiency": {
+              "n": 88,
+              "correct": 88
+            },
+            "Nitrogen Deficiency": {
+              "n": 48,
+              "correct": 44
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 8
+            },
+            "Spotted Wilt Virus": {
+              "n": 51,
+              "correct": 45
+            }
+          }
+        },
+        "taiwan": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 127,
+          "all": {
+            "n": 127,
+            "correct": 32,
+            "correct_rate": 0.25196850393700787,
+            "healthy_verdict": 21,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 7,
+            "false_other_rate": 0.05511811023622047,
+            "false_known": 35,
+            "false_known_rate": 0.2755905511811024,
+            "kind_UNKNOWN_CONDITION": 86,
+            "kind_UNSURE": 5,
+            "kind_DISEASE": 14,
+            "kind_NO_LEAVES": 1,
+            "kind_HEALTHY": 21
+          },
+          "supported": {
+            "n": 42,
+            "correct": 32,
+            "correct_rate": 0.7619047619047619,
+            "healthy_verdict": 21,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 7,
+            "false_other_rate": 0.16666666666666666,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 11,
+            "kind_UNSURE": 3,
+            "kind_UNKNOWN_CONDITION": 7,
+            "kind_HEALTHY": 21
+          },
+          "healthy": {
+            "n": 22,
+            "correct": 21,
+            "correct_rate": 0.9545454545454546,
+            "healthy_verdict": 21,
+            "healthy_recall": 0.9545454545454546,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 1,
+            "false_other_rate": 0.045454545454545456,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 21,
+            "kind_UNKNOWN_CONDITION": 1
+          },
+          "supported_disease": {
+            "n": 20,
+            "correct": 11,
+            "correct_rate": 0.55,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 6,
+            "false_other_rate": 0.3,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 11,
+            "kind_UNSURE": 3,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 85,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.03529411764705882,
+            "kind_UNKNOWN_CONDITION": 79,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 3,
+            "kind_NO_LEAVES": 1
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 1.0,
+          "healthy_precision_n": 21,
+          "by_source": {
+            "taiwan": {
+              "n": 127,
+              "healthy_recall": 0.9545454545454546,
+              "false_healthy": 0
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 0,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 20,
+              "correct": 11
+            },
+            "Leaf Miner": {
+              "n": 0,
+              "correct": 0
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "phase2_selection": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 459,
+          "all": {
+            "n": 459,
+            "correct": 142,
+            "correct_rate": 0.3093681917211329,
+            "healthy_verdict": 16,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.006535947712418301,
+            "false_other": 69,
+            "false_other_rate": 0.1503267973856209,
+            "false_known": 298,
+            "false_known_rate": 0.6492374727668845,
+            "kind_DISEASE": 282,
+            "kind_UNSURE": 86,
+            "kind_UNKNOWN_CONDITION": 75,
+            "kind_HEALTHY": 16
+          },
+          "supported": {
+            "n": 414,
+            "correct": 142,
+            "correct_rate": 0.34299516908212563,
+            "healthy_verdict": 15,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.004830917874396135,
+            "false_other": 69,
+            "false_other_rate": 0.16666666666666666,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 250,
+            "kind_UNKNOWN_CONDITION": 69,
+            "kind_UNSURE": 80,
+            "kind_HEALTHY": 15
+          },
+          "healthy": {
+            "n": 39,
+            "correct": 13,
+            "correct_rate": 0.3333333333333333,
+            "healthy_verdict": 13,
+            "healthy_recall": 0.3333333333333333,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 7,
+            "false_other_rate": 0.1794871794871795,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 13,
+            "kind_HEALTHY": 13,
+            "kind_UNKNOWN_CONDITION": 7,
+            "kind_UNSURE": 6
+          },
+          "supported_disease": {
+            "n": 375,
+            "correct": 129,
+            "correct_rate": 0.344,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.005333333333333333,
+            "false_other": 62,
+            "false_other_rate": 0.16533333333333333,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 237,
+            "kind_UNKNOWN_CONDITION": 62,
+            "kind_UNSURE": 74,
+            "kind_HEALTHY": 2
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.022222222222222223,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 33,
+            "false_known_rate": 0.7333333333333333,
+            "kind_DISEASE": 32,
+            "kind_UNSURE": 6,
+            "kind_UNKNOWN_CONDITION": 6,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 0.8125,
+          "healthy_precision_n": 16,
+          "by_source": {
+            "bangladesh_classification": {
+              "n": 459,
+              "healthy_recall": 0.3333333333333333,
+              "false_healthy": 3
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 40,
+              "correct": 3
+            },
+            "Late_blight": {
+              "n": 7,
+              "correct": 1
+            },
+            "Leaf Miner": {
+              "n": 176,
+              "correct": 38
+            },
+            "Magnesium Deficiency": {
+              "n": 152,
+              "correct": 87
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "phase5_selection": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 1039,
+          "all": {
+            "n": 1039,
+            "correct": 235,
+            "correct_rate": 0.22617901828681425,
+            "healthy_verdict": 217,
+            "healthy_recall": null,
+            "false_healthy": 11,
+            "false_healthy_rate": 0.010587102983638113,
+            "false_other": 118,
+            "false_other_rate": 0.11357074109720885,
+            "false_known": 389,
+            "false_known_rate": 0.37439846005774785,
+            "kind_HEALTHY": 217,
+            "kind_UNKNOWN_CONDITION": 369,
+            "kind_UNSURE": 97,
+            "kind_NO_LEAVES": 184,
+            "kind_DISEASE": 172
+          },
+          "supported": {
+            "n": 403,
+            "correct": 235,
+            "correct_rate": 0.5831265508684863,
+            "healthy_verdict": 206,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 118,
+            "false_other_rate": 0.29280397022332505,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 206,
+            "kind_UNKNOWN_CONDITION": 118,
+            "kind_UNSURE": 21,
+            "kind_NO_LEAVES": 8,
+            "kind_DISEASE": 50
+          },
+          "healthy": {
+            "n": 248,
+            "correct": 206,
+            "correct_rate": 0.8306451612903226,
+            "healthy_verdict": 206,
+            "healthy_recall": 0.8306451612903226,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 30,
+            "false_other_rate": 0.12096774193548387,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 206,
+            "kind_UNKNOWN_CONDITION": 30,
+            "kind_UNSURE": 3,
+            "kind_NO_LEAVES": 5,
+            "kind_DISEASE": 4
+          },
+          "supported_disease": {
+            "n": 155,
+            "correct": 29,
+            "correct_rate": 0.1870967741935484,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 88,
+            "false_other_rate": 0.567741935483871,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNSURE": 18,
+            "kind_DISEASE": 46,
+            "kind_UNKNOWN_CONDITION": 88,
+            "kind_NO_LEAVES": 3
+          },
+          "coarse_diseased": {
+            "n": 368,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 5,
+            "healthy_recall": null,
+            "false_healthy": 5,
+            "false_healthy_rate": 0.01358695652173913,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNKNOWN_CONDITION": 179,
+            "kind_NO_LEAVES": 154,
+            "kind_DISEASE": 18,
+            "kind_HEALTHY": 5,
+            "kind_UNSURE": 12
+          },
+          "unsupported_tomato": {
+            "n": 268,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 6,
+            "healthy_recall": null,
+            "false_healthy": 6,
+            "false_healthy_rate": 0.022388059701492536,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 110,
+            "false_known_rate": 0.41044776119402987,
+            "kind_UNKNOWN_CONDITION": 72,
+            "kind_NO_LEAVES": 22,
+            "kind_DISEASE": 104,
+            "kind_HEALTHY": 6,
+            "kind_UNSURE": 64
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 0.9493087557603687,
+          "healthy_precision_n": 217,
+          "by_source": {
+            "swtt5wy2pr": {
+              "n": 460,
+              "healthy_recall": 0.9411764705882353,
+              "false_healthy": 4
+            },
+            "tom2024": {
+              "n": 579,
+              "healthy_recall": 0.7286821705426356,
+              "false_healthy": 7
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 106,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 49,
+              "correct": 29
+            },
+            "Leaf Miner": {
+              "n": 0,
+              "correct": 0
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "original": {
+          "excluded_mixed_photos": 2,
+          "scalar_eligible_photos": 683,
+          "all": {
+            "n": 683,
+            "correct": 454,
+            "correct_rate": 0.664714494875549,
+            "healthy_verdict": 22,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.004392386530014641,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 489,
+            "false_known_rate": 0.7159590043923866,
+            "kind_DISEASE": 467,
+            "kind_HEALTHY": 22,
+            "kind_UNSURE": 16,
+            "kind_UNKNOWN_CONDITION": 178
+          },
+          "supported": {
+            "n": 475,
+            "correct": 454,
+            "correct_rate": 0.9557894736842105,
+            "healthy_verdict": 20,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.002105263157894737,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 446,
+            "kind_HEALTHY": 20,
+            "kind_UNSURE": 9
+          },
+          "healthy": {
+            "n": 26,
+            "correct": 19,
+            "correct_rate": 0.7307692307692307,
+            "healthy_verdict": 19,
+            "healthy_recall": 0.7307692307692307,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 19,
+            "kind_DISEASE": 4,
+            "kind_UNSURE": 3
+          },
+          "supported_disease": {
+            "n": 449,
+            "correct": 435,
+            "correct_rate": 0.9688195991091314,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0022271714922048997,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 442,
+            "kind_HEALTHY": 1,
+            "kind_UNSURE": 6
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.022222222222222223,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.15555555555555556,
+            "kind_UNKNOWN_CONDITION": 35,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 3,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 163,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006134969325153374,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 16,
+            "false_known_rate": 0.09815950920245399,
+            "kind_UNKNOWN_CONDITION": 143,
+            "kind_HEALTHY": 1,
+            "kind_DISEASE": 15,
+            "kind_UNSURE": 4
+          },
+          "healthy_precision": 0.8636363636363636,
+          "healthy_precision_n": 22,
+          "by_source": {
+            "plantdoc": {
+              "n": 226,
+              "healthy_recall": 1.0,
+              "false_healthy": 2
+            },
+            "tomatovillage": {
+              "n": 457,
+              "healthy_recall": 0.6956521739130435,
+              "false_healthy": 1
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 69,
+              "correct": 69
+            },
+            "Late_blight": {
+              "n": 90,
+              "correct": 90
+            },
+            "Leaf Miner": {
+              "n": 102,
+              "correct": 93
+            },
+            "Magnesium Deficiency": {
+              "n": 96,
+              "correct": 96
+            },
+            "Nitrogen Deficiency": {
+              "n": 32,
+              "correct": 32
+            },
+            "Pottassium Deficiency": {
+              "n": 8,
+              "correct": 8
+            },
+            "Spotted Wilt Virus": {
+              "n": 52,
+              "correct": 47
+            }
+          }
+        },
+        "expanded": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 1533,
+          "all": {
+            "n": 1533,
+            "correct": 445,
+            "correct_rate": 0.2902804957599478,
+            "healthy_verdict": 561,
+            "healthy_recall": null,
+            "false_healthy": 254,
+            "false_healthy_rate": 0.16568819308545335,
+            "false_other": 75,
+            "false_other_rate": 0.04892367906066536,
+            "false_known": 867,
+            "false_known_rate": 0.5655577299412916,
+            "kind_HEALTHY": 561,
+            "kind_UNKNOWN_CONDITION": 493,
+            "kind_UNSURE": 173,
+            "kind_DISEASE": 306
+          },
+          "supported": {
+            "n": 715,
+            "correct": 445,
+            "correct_rate": 0.6223776223776224,
+            "healthy_verdict": 438,
+            "healthy_recall": null,
+            "false_healthy": 131,
+            "false_healthy_rate": 0.18321678321678322,
+            "false_other": 75,
+            "false_other_rate": 0.1048951048951049,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 438,
+            "kind_UNKNOWN_CONDITION": 75,
+            "kind_UNSURE": 51,
+            "kind_DISEASE": 151
+          },
+          "healthy": {
+            "n": 380,
+            "correct": 307,
+            "correct_rate": 0.8078947368421052,
+            "healthy_verdict": 307,
+            "healthy_recall": 0.8078947368421052,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 41,
+            "false_other_rate": 0.10789473684210527,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 307,
+            "kind_UNKNOWN_CONDITION": 41,
+            "kind_UNSURE": 27,
+            "kind_DISEASE": 5
+          },
+          "supported_disease": {
+            "n": 335,
+            "correct": 138,
+            "correct_rate": 0.41194029850746267,
+            "healthy_verdict": 131,
+            "healthy_recall": null,
+            "false_healthy": 131,
+            "false_healthy_rate": 0.39104477611940297,
+            "false_other": 34,
+            "false_other_rate": 0.10149253731343283,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 131,
+            "kind_UNKNOWN_CONDITION": 34,
+            "kind_DISEASE": 146,
+            "kind_UNSURE": 24
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 818,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 123,
+            "healthy_recall": null,
+            "false_healthy": 123,
+            "false_healthy_rate": 0.15036674816625917,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 278,
+            "false_known_rate": 0.33985330073349634,
+            "kind_HEALTHY": 123,
+            "kind_UNKNOWN_CONDITION": 418,
+            "kind_UNSURE": 122,
+            "kind_DISEASE": 155
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 0.5472370766488414,
+          "healthy_precision_n": 561,
+          "by_source": {
+            "pakistan": {
+              "n": 70,
+              "healthy_recall": 0.9090909090909091,
+              "false_healthy": 2
+            },
+            "tlid": {
+              "n": 1463,
+              "healthy_recall": 0.8048780487804879,
+              "false_healthy": 252
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 7,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 9,
+              "correct": 3
+            },
+            "Leaf Miner": {
+              "n": 319,
+              "correct": 135
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        }
+      },
+      "retained": true,
+      "field_healthy_passed": true,
+      "score": 0.8904500168740765,
+      "input_identity": {
+        "head_sha256": "1df878d0a40d026d0841679f2992f592d5432b57e3d50a65930bf0d1e2a4e2c4",
+        "calibration_sha256": "8a9076222b8a63e3977d8dccda18f23c32223d97338d04d6c11836bb66abf651",
+        "encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+        "paths_sha256": "605331cf059a207a210b554f421bab98741670f1a2ac66110cc4c642bd3ccace",
+        "rows_sha256": "5019534db15e84ccef7ceed0bc9efb40f17ab2a849219559deb6c0e3db4dc10c",
+        "evaluation_rows_sha256": "f35279ddb3927fbeb099b23f8ac77bb011d896773e523127da34922ffaf42cde",
+        "genus_checkpoint_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+        "genus_calibration_sha256": "5fe18b62e24cbe28da72ae996fcf8a6fec693ac9bd7257493438d04bbd90510d",
+        "selection_rule": "Top training-validation score selected before app replay",
+        "fresh_ad_used": false,
+        "fusion_candidates_sha256": "7629127e7d4cc47e8c921e9f848642beae512f7abfa28645785b8ef26d4c2a10"
+      },
+      "native_context_runtime_implemented": false,
+      "fresh_ad_used": false,
+      "scope": "Image-level Healthy primary view; no fake leaf geometry",
+      "fusion": {
+        "negative_cost": 1.0,
+        "weights": [
+          0.04228591096000332,
+          0.20755327483447825,
+          0.18525621300271095,
+          5.09854608943139e-07,
+          0.727785606373876
+        ],
+        "bias": -0.11515159587770377,
+        "input_clip": 10.0,
+        "input_order": [
+          "DINO adapted linear",
+          "DINO original/adapted MLP",
+          "copied DINO12 image Healthy",
+          "genus CNN",
+          "siglip2 image Healthy"
+        ],
+        "input_identity": {
+          "legacy_input_identity": {
+            "scene_rows_sha256": "e063bafa83acc1c2fbd588a88042a5677c5dd7321b76fb007c07c361325e9dca",
+            "feature_model_sha256": "7ee70502933a49784b89b538b8da56cc5c9173116a6c8400c4e43a74a8e01e49",
+            "head_hashes": [
+              "e49ec90e0a6bf63e7bd9249795f87742bd8805f99660b74ac184877348d02b19",
+              "09fa26fba07c8f217e9ab7f5dc2c5189d815ecafcdb4552951ba2fe9d489a86a"
+            ],
+            "head_calibration_hashes": [
+              "71fb1ea361641779728805ed520041272c3573ab1492d60e322c25deb2108d5c",
+              "f1ec90f7145944c435cd8c46b6317c425c5a8c3da0318f79f8c62ead3e5c2055"
+            ],
+            "scene_cnn_sha256": "ff56f749e532f4b6d88d8b2eead1367de3ab14bc8c6a56dd025400d1e4977873",
+            "scene_cnn_calibration_sha256": "88bf930b6649da0abe7e4caa90d4574446cd851ee3227249762a85536790276e",
+            "species_cnn_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+            "species_cnn_calibration_sha256": "5fe18b62e24cbe28da72ae996fcf8a6fec693ac9bd7257493438d04bbd90510d"
+          },
+          "legacy_logits_sha256": "1983ee9f506ced5783b4d6395598d1d40932d95e617d77838d5a81744e124c72",
+          "mobile_head_sha256": "1df878d0a40d026d0841679f2992f592d5432b57e3d50a65930bf0d1e2a4e2c4",
+          "mobile_calibration_sha256": "8a9076222b8a63e3977d8dccda18f23c32223d97338d04d6c11836bb66abf651",
+          "mobile_encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+          "rows_sha256": "aa429d09e6800af20e27b0ee1158179984b2bb6795780451ee61e0268055cfb9"
+        },
+        "calibration_n": 2644,
+        "selection_n": 1280,
+        "selection_auc": 0.9900336497324425,
+        "selection_field_auc": 0.9904092071611253,
+        "fresh_ad_used": false,
+        "note": "Internal grouped development; base checkpoints used broader validation. Not independent acceptance."
+      },
+      "evaluation_note": "Mobile logit reconstructed from cached float32 probability and clipped to +/-10; exact graph replay remains mandatory before acceptance."
+    }
+  },
+  "exact_graph_internal_validations": {},
+  "pending": [
+    "focal supervised training/restore validation",
+    "ce supervised training/restore validation"
+  ],
+  "cold_ad_diagnostic_predictions_opened": false,
+  "retired_246_and_related_families_are_benchmarks": false,
+  "native_context_runtime_implemented": false,
+  "new_model_installed": false,
+  "android_ci": {
+    "commit": "c955fba9664753663ec016bebbaa8f210a128bf1",
+    "run": 40219608964,
+    "conclusion": "success"
+  }
+}

@@ -1,11 +1,21 @@
 # Agribot training failure investigation, recovery, and Android integration
 
-Revision: 2026-10-25. Original handoff: 2026-10-15.
+Revision: 2026-10-26. Original handoff: 2026-10-15.
 Repository: https://github.com/saksham-loonker/agribot.
 Audience: the originating assistant returning later over SSH to a PC with an
 NVIDIA RTX 5090, or an implementation agent continuing the same investigation.
 
 ## Current continuation - 25 October 2026
+
+**26 October takes precedence:** read
+[SIGLIP2_CONTINUATION_20261026.md](SIGLIP2_CONTINUATION_20261026.md).
+All MobileCLIP-dependent app candidates are blocked by the full Apple research
+license. The human-only phase-twelve data is now used for an independent
+Apache-2.0 SigLIP2 encoder; no restricted teacher parameters or logits are used.
+The corrected MobileCLIP union app replay reaches only 31/53 Healthy on new
+internal families, despite passing the older development cohorts. It remains a
+research result. The consumed 246 and all related families remain retired from
+benchmarking. The independent AD source is still unopened. The app is not fixed.
 
 **Newest work:** read [the MobileCLIP/data-revision continuation](MOBILECLIP_CONTINUATION_20261025.md).
 There are 285 valid completed controls before the next revision; eight invalid

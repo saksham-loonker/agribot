@@ -1,4 +1,4 @@
-"""Opened-only image-scoped MobileCLIP ablation; no fresh AD or promotion."""
+"""Opened-only image-scoped verifier ablation; no fresh AD or promotion."""
 
 from pathlib import Path
 import argparse
@@ -16,7 +16,6 @@ from app_eval import canon, classifier_letterbox_input, posterior
 from campaign_heads import app_evaluate
 from campaign_reference import safe_logits
 from context_abstention import route_context
-from mobileclip_scene import load
 from phase2_select import retain
 from phase5_scene_ablation import grouped
 from phase7_verifier import restore as restore_genus
@@ -30,6 +29,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--campaign", required=True)
     ap.add_argument(
+        "--head-family", choices=["mobileclip", "siglip2"], default="mobileclip"
+    )
+    ap.add_argument(
         "--healthy-directory", help="Use a separately trained image verifier"
     )
     ap.add_argument(
@@ -37,7 +39,13 @@ def main():
     )
     ap.add_argument("--fusion-run")
     ap.add_argument("--out-name", default="selection")
+    ap.add_argument("--healthy-thresholds", default="0.6,0.7,0.8,0.9,0.95,0.97,0.99")
+    ap.add_argument(
+        "--probabilities-from", help="Reuse identity-checked whole-image probabilities"
+    )
     a = ap.parse_args()
+    thresholds = [float(x) for x in a.healthy_thresholds.split(",")]
+    assert thresholds and all(0.0 < x < 1.0 for x in thresholds)
     p = Path(a.campaign)
     root = Path(a.model_root) if a.model_root else p / "phase11_scene"
     leaf = p / "phase10_leaf"
@@ -46,7 +54,9 @@ def main():
     if a.healthy_directory:
         directory = Path(a.healthy_directory)
     else:
-        fits = json.loads((root / "mobileclip_feature_heads/ranked.json").read_text())
+        fits = json.loads(
+            (root / (a.head_family + "_feature_heads") / "ranked.json").read_text()
+        )
         directory = Path(fits[0]["checkpoint"]).parent
     rows = json.loads((leaf / "cnn_inputs/rows.json").read_text())
     ev = json.loads((leaf / "eval_rows.json").read_text())
@@ -88,20 +98,26 @@ def main():
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
     timm.layers.set_fused_attn(False)
-    cache = (
-        root / "selection/probabilities.npz"
-        if a.fusion_run
-        else out / "probabilities.npz"
+    cache_root = (
+        Path(a.probabilities_from)
+        if a.probabilities_from
+        else (root / "selection" if a.fusion_run else out)
     )
-    if a.fusion_run:
+    cache = cache_root / "probabilities.npz"
+    if a.fusion_run or a.probabilities_from:
         assert (
-            json.loads((root / "selection/input_identity.json").read_text())
+            json.loads((cache_root / "input_identity.json").read_text())
             == base_identity
         )
+        assert cache.exists()
     if cache.exists():
         z = np.load(cache)
         healthy, genus = z["healthy"], z["genus"]
     else:
+        if a.head_family == "siglip2":
+            from permissive_scene import load
+        else:
+            from mobileclip_scene import load
         _, model = load(directory)
         model = model.cuda().eval()
         species = restore_genus(p / "phase6_roi/species").cuda().eval()
@@ -165,7 +181,7 @@ def main():
     ranks = []
     for variant, hmin, gmin, agreement, veto in itertools.product(
         range(len(variants)),
-        [0.6, 0.7, 0.8, 0.9, 0.95, 0.97, 0.99],
+        thresholds,
         [0.0, 0.8, 0.9],
         [False, True],
         [False, True],
@@ -229,9 +245,9 @@ def main():
         )
         if fit is not None:
             c["fusion"] = fit
-            c["policy"][
-                "center_agreement_model"
-            ] = "MobileCLIP-only; primary score is fused"
+            c["policy"]["center_agreement_model"] = (
+                a.head_family + "-only; primary score is fused"
+            )
             c["evaluation_note"] = (
                 "Mobile logit reconstructed from cached float32 probability and clipped to +/-10; exact graph replay remains mandatory before acceptance."
             )
