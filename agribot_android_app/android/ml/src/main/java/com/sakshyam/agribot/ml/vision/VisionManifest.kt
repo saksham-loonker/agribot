@@ -24,6 +24,7 @@ data class VisionManifest(
     val energyRejectBelow: Double?,
     val detector: Detector,
     val fullRoiConfirmation: Boolean = false,
+    val confirmUnknownChanges: Boolean = false,
 ) {
     data class Member(val file: String, val sha256: String, val inputSize: Int)
     data class Detector(
@@ -62,7 +63,7 @@ data class VisionManifest(
             val confirmation = c["view_confirmation"]?.jsonObject
             require((schema == 3) == (confirmation != null)) { "schema 3 requires full-ROI confirmation" }
             if (confirmation != null) {
-                require(members.size == 1 && confirmation.str("policy") == "changed_positive_full_roi" &&
+                require(members.size == 1 && confirmation.str("policy") in setOf("changed_positive_full_roi", "changed_decision_full_roi") &&
                     confirmation.int("reference_logit_offset") == labels.size &&
                     confirmation["padding_value"]!!.jsonPrimitive.double == 114.0) { "unsupported view confirmation contract" }
                 val output = c["members"]!!.jsonArray[0].jsonObject["output"]!!.jsonArray.map { it.jsonPrimitive.int }
@@ -100,6 +101,7 @@ data class VisionManifest(
                     maxDetections = d.int("max_detections"),
                 ),
                 fullRoiConfirmation = confirmation != null,
+                confirmUnknownChanges = confirmation?.str("policy") == "changed_decision_full_roi",
             )
         }
 

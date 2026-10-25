@@ -145,7 +145,7 @@ class AgribotLeafVision(
         if (!m.fullRoiConfirmation) return raw
         val candidate = raw.copyOfRange(0, m.labels.size)
         val reference = raw.copyOfRange(m.labels.size, m.labels.size * 2)
-        val guard = ViewConfirmation(decision!!, m.healthyIndex, m.otherIndex)
+        val guard = ViewConfirmation(decision!!, m.healthyIndex, m.otherIndex, m.confirmUnknownChanges)
         if (!guard.needsConfirmation(reference, candidate)) return candidate
         if (!CanonicalImageOps.classifierLetterboxInputInto(rgb, size, runner.inputValues, box)) return reference
         val fullRoi = runner.run(runner.inputValues).copyOfRange(0, m.labels.size)

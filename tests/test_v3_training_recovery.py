@@ -213,7 +213,7 @@ class TrainingRecoveryTest(unittest.TestCase):
         teacher = torch.tensor([[3.0, 0.0, 0.0], [0.0, 0.0, 3.0]])
         labels = torch.tensor([1, 2])
         loss = reliable_retention(student, teacher, labels, 1, 2.0)
-        self.assertLess(abs(float(loss)), 1e-6)
+        self.assertLess(abs(float(loss.detach())), 1e-6)
         loss.backward()
         torch.testing.assert_close(student.grad[0], torch.zeros(3))
 

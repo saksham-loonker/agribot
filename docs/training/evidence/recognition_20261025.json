@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "status": "Incomplete: interim 2.0.2 installed; phase-four acceptance rejected; broader phase-five supervised training complete; validation-only integration ablations underway; reservation unopened",
+  "status": "Incomplete: frozen focal context prototype failed prospective Healthy recall (44/95 vs 8/95 baseline); retention passed; no newer model installed; reservation now opened regression",
   "installed_classifier_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
   "initial_trained_controls": {
     "heads": 29,
@@ -4053,5 +4053,3775 @@
     "fallback_crops": 120
   },
   "phase5_reservation_predictions_opened": false,
-  "metric_scope_correction": "Diseased_unspecified is coarse_diseased. Named disease correct/false Other denominators exclude it; false Healthy includes it. Historical reports retain their original structure."
+  "metric_scope_correction": "Diseased_unspecified is coarse_diseased. Named disease correct/false Other denominators exclude it; false Healthy includes it. Historical reports retain their original structure.",
+  "latest_continuation": {
+    "teacher_roi": {
+      "schema": 1,
+      "input_identity": {
+        "base_rows_sha256": "b95227351e39b3f58a68b29437dd8744e17fee6c8422cfa96d7387dd74e970c1",
+        "proposals_sha256": "b744bbecb87aef8c641d40f46348f5943a9da395fd7a7e11332fb2c4599d5ae3",
+        "min_short_side_pixels": 24,
+        "min_area_pixels": 1024,
+        "views": [
+          "center",
+          "full_roi"
+        ]
+      },
+      "rows": 63265,
+      "base_rows": 60865,
+      "new_views": 2400,
+      "new_training_photos": 319,
+      "rows_sha256": "687829881aff3317ef996a6265012c5e3a39b687343ff47bf85ce14ecdd196eb",
+      "reserved_manifest_sha256": "ca91cf80b05eab1c733a54746542e8fe37bee503c7c0fe03a97022bcdd0f5dd1",
+      "reserved_predictions_opened": false,
+      "evaluation": "Exact phase-five photo cohorts and original-detector ROI geometry unchanged; all added rows are training only.",
+      "supervision": "Healthy from publisher image labels; leaf geometry is weak model output. No new per-leaf diseased/Other targets inferred.",
+      "original_reference_assets": "/home/genesis/agribot-data/recognition_campaign_20261024/original_reference",
+      "seconds": 6.444436073303223
+    },
+    "detector_training": {
+      "result": {
+        "final_loss": 3.2206658746442223,
+        "epoch_losses": [
+          3.804768603072207,
+          3.5924306343763304,
+          3.5432784801874404,
+          3.5017949393671803,
+          3.4850031840495572,
+          3.467871077040322,
+          3.4519836209778094,
+          3.4244354504805345,
+          3.4103193894410744,
+          3.2442383215977597,
+          3.233251496257945,
+          3.2206658746442223
+        ],
+        "epoch_lrs": [
+          {
+            "group0": 5e-05,
+            "group1": 5e-05,
+            "group2": 5e-05
+          },
+          {
+            "group0": 5e-05,
+            "group1": 5e-05,
+            "group2": 5e-05
+          },
+          {
+            "group0": 5e-05,
+            "group1": 5e-05,
+            "group2": 5e-05
+          },
+          {
+            "group0": 4.4500000000000004e-05,
+            "group1": 4.4500000000000004e-05,
+            "group2": 4.4500000000000004e-05
+          },
+          {
+            "group0": 3.9e-05,
+            "group1": 3.9e-05,
+            "group2": 3.9e-05
+          },
+          {
+            "group0": 3.35e-05,
+            "group1": 3.35e-05,
+            "group2": 3.35e-05
+          },
+          {
+            "group0": 2.8000000000000003e-05,
+            "group1": 2.8000000000000003e-05,
+            "group2": 2.8000000000000003e-05
+          },
+          {
+            "group0": 2.2499999999999998e-05,
+            "group1": 2.2499999999999998e-05,
+            "group2": 2.2499999999999998e-05
+          },
+          {
+            "group0": 1.7e-05,
+            "group1": 1.7e-05,
+            "group2": 1.7e-05
+          },
+          {
+            "group0": 1.1500000000000002e-05,
+            "group1": 1.1500000000000002e-05,
+            "group2": 1.1500000000000002e-05
+          },
+          {
+            "group0": 6.0000000000000035e-06,
+            "group1": 6.0000000000000035e-06,
+            "group2": 6.0000000000000035e-06
+          },
+          {
+            "group0": 4.999999999999986e-07,
+            "group1": 4.999999999999986e-07,
+            "group2": 4.999999999999986e-07
+          }
+        ],
+        "epoch_loss_items": [
+          {
+            "box": 1.1654002146843152,
+            "cls": 1.0849630975315714,
+            "dfl": 1.5544052602898362
+          },
+          {
+            "box": 1.1075202404943287,
+            "cls": 0.9664000675209568,
+            "dfl": 1.5185103345121074
+          },
+          {
+            "box": 1.0970081055266225,
+            "cls": 0.9396551969723824,
+            "dfl": 1.506615166990166
+          },
+          {
+            "box": 1.0807295854275043,
+            "cls": 0.9244574542738434,
+            "dfl": 1.4966079017035983
+          },
+          {
+            "box": 1.0768412524818356,
+            "cls": 0.9176462735885229,
+            "dfl": 1.4905156732624412
+          },
+          {
+            "box": 1.0695352564510117,
+            "cls": 0.9107629682263757,
+            "dfl": 1.4875728462496374
+          },
+          {
+            "box": 1.0657373325437562,
+            "cls": 0.8987799368352971,
+            "dfl": 1.4874663750330608
+          },
+          {
+            "box": 1.0478071886250095,
+            "cls": 0.8975455990204444,
+            "dfl": 1.4790826699672601
+          },
+          {
+            "box": 1.0492495257630308,
+            "cls": 0.8824399454980834,
+            "dfl": 1.4786299395764995
+          },
+          {
+            "box": 0.9838926924599541,
+            "cls": 0.8140988731995608,
+            "dfl": 1.4462467696931627
+          },
+          {
+            "box": 0.9789174937794352,
+            "cls": 0.8113897621122181,
+            "dfl": 1.4429442474984715
+          },
+          {
+            "box": 0.9742452665271922,
+            "cls": 0.8065041869114606,
+            "dfl": 1.4399163987901475
+          }
+        ],
+        "val_metrics": [
+          {},
+          {
+            "metrics/precision": 0.6074975618955599,
+            "metrics/recall": 0.7399603698811097,
+            "metrics/mAP50-95": 0.6074975618955599,
+            "metrics/mAP50": 0.8218015578681654,
+            "metrics/mAP75": 0.6745395295474006,
+            "metrics/precision(B)": 0.6074975618955599,
+            "metrics/recall(B)": 0.7399603698811097,
+            "metrics/mAP50(B)": 0.8218015578681654,
+            "metrics/mAP50-95(B)": 0.6074975618955599,
+            "metrics/mAP_small": 0.06984698469846984,
+            "metrics/mAP_medium": 0.16004958676879835,
+            "metrics/mAP_large": 0.6455550188167598,
+            "metrics/AR1": 0.3862615587846764,
+            "metrics/AR10": 0.6891017173051519,
+            "metrics/AR100": 0.7399603698811097,
+            "metrics/AR_max_det": 0.7399603698811097,
+            "metrics/max_det": 100.0,
+            "metrics/AR_small": 0.22000000000000003,
+            "metrics/AR_medium": 0.45396825396825397,
+            "metrics/AR_large": 0.7678958785249458,
+            "metrics/best_conf": 0.408203125,
+            "metrics/best_conf_f1": 0.7552933009371746,
+            "speed/preprocess_ms": 0.04862745602925619,
+            "speed/inference_ms": 0.2640796604976859,
+            "speed/postprocess_ms": 0.515381815612957,
+            "speed/total_ms": 1.9488536542461765,
+            "speed/total_s": 1.4499471187591553,
+            "speed/images_seen": 744.0
+          },
+          {},
+          {
+            "metrics/precision": 0.6105397771752658,
+            "metrics/recall": 0.7440554821664465,
+            "metrics/mAP50-95": 0.6105397771752658,
+            "metrics/mAP50": 0.8227569126682209,
+            "metrics/mAP75": 0.6815146889474349,
+            "metrics/precision(B)": 0.6105397771752658,
+            "metrics/recall(B)": 0.7440554821664465,
+            "metrics/mAP50(B)": 0.8227569126682209,
+            "metrics/mAP50-95(B)": 0.6105397771752658,
+            "metrics/mAP_small": 0.0766288167278266,
+            "metrics/mAP_medium": 0.1605214143404429,
+            "metrics/mAP_large": 0.6480543091390163,
+            "metrics/AR1": 0.3868560105680317,
+            "metrics/AR10": 0.6895640686922061,
+            "metrics/AR100": 0.7440554821664465,
+            "metrics/AR_max_det": 0.7440554821664465,
+            "metrics/max_det": 100.0,
+            "metrics/AR_small": 0.24000000000000005,
+            "metrics/AR_medium": 0.47698412698412695,
+            "metrics/AR_large": 0.7702096890817065,
+            "metrics/best_conf": 0.392578125,
+            "metrics/best_conf_f1": 0.7568493150684932,
+            "speed/preprocess_ms": 0.05589826132661553,
+            "speed/inference_ms": 0.24282291371335266,
+            "speed/postprocess_ms": 0.5911297054700955,
+            "speed/total_ms": 1.7580332294587167,
+            "speed/total_s": 1.3079767227172852,
+            "speed/images_seen": 744.0
+          },
+          {},
+          {
+            "metrics/precision": 0.6108903832442637,
+            "metrics/recall": 0.7466314398943197,
+            "metrics/mAP50-95": 0.6108903832442637,
+            "metrics/mAP50": 0.8228026460512246,
+            "metrics/mAP75": 0.6790846050148283,
+            "metrics/precision(B)": 0.6108903832442637,
+            "metrics/recall(B)": 0.7466314398943197,
+            "metrics/mAP50(B)": 0.8228026460512246,
+            "metrics/mAP50-95(B)": 0.6108903832442637,
+            "metrics/mAP_small": 0.07602704714915937,
+            "metrics/mAP_medium": 0.16180746019611522,
+            "metrics/mAP_large": 0.6491293821380545,
+            "metrics/AR1": 0.385667107001321,
+            "metrics/AR10": 0.6909511228533686,
+            "metrics/AR100": 0.7466314398943197,
+            "metrics/AR_max_det": 0.7466314398943197,
+            "metrics/max_det": 100.0,
+            "metrics/AR_small": 0.24000000000000005,
+            "metrics/AR_medium": 0.47619047619047616,
+            "metrics/AR_large": 0.7731019522776572,
+            "metrics/best_conf": 0.392578125,
+            "metrics/best_conf_f1": 0.7614490772385509,
+            "speed/preprocess_ms": 0.05440782475215132,
+            "speed/inference_ms": 0.22597146290604786,
+            "speed/postprocess_ms": 0.5594979050338909,
+            "speed/total_ms": 1.6478851277341124,
+            "speed/total_s": 1.2260265350341797,
+            "speed/images_seen": 744.0
+          },
+          {},
+          {
+            "metrics/precision": 0.6122784788950593,
+            "metrics/recall": 0.7463672391017173,
+            "metrics/mAP50-95": 0.6122784788950593,
+            "metrics/mAP50": 0.8231026091412913,
+            "metrics/mAP75": 0.6764347844091659,
+            "metrics/precision(B)": 0.6122784788950593,
+            "metrics/recall(B)": 0.7463672391017173,
+            "metrics/mAP50(B)": 0.8231026091412913,
+            "metrics/mAP50-95(B)": 0.6122784788950593,
+            "metrics/mAP_small": 0.056220290464059665,
+            "metrics/mAP_medium": 0.1591562880674471,
+            "metrics/mAP_large": 0.6505976478899835,
+            "metrics/AR1": 0.3867899603698811,
+            "metrics/AR10": 0.6916116248348745,
+            "metrics/AR100": 0.7463672391017173,
+            "metrics/AR_max_det": 0.7463672391017173,
+            "metrics/max_det": 100.0,
+            "metrics/AR_small": 0.2,
+            "metrics/AR_medium": 0.46984126984126984,
+            "metrics/AR_large": 0.7735357917570499,
+            "metrics/best_conf": 0.392578125,
+            "metrics/best_conf_f1": 0.7604095563139932,
+            "speed/preprocess_ms": 0.058055564921389344,
+            "speed/inference_ms": 0.243144650613108,
+            "speed/postprocess_ms": 0.5805200787000759,
+            "speed/total_ms": 1.5637057442818918,
+            "speed/total_s": 1.1633970737457275,
+            "speed/images_seen": 744.0
+          },
+          {},
+          {
+            "metrics/precision": 0.6136243766370951,
+            "metrics/recall": 0.7476882430647291,
+            "metrics/mAP50-95": 0.6136243766370951,
+            "metrics/mAP50": 0.8258072768396382,
+            "metrics/mAP75": 0.6796099374047766,
+            "metrics/precision(B)": 0.6136243766370951,
+            "metrics/recall(B)": 0.7476882430647291,
+            "metrics/mAP50(B)": 0.8258072768396382,
+            "metrics/mAP50-95(B)": 0.6136243766370951,
+            "metrics/mAP_small": 0.03894389438943894,
+            "metrics/mAP_medium": 0.15774853203369224,
+            "metrics/mAP_large": 0.6520817337724727,
+            "metrics/AR1": 0.388110964332893,
+            "metrics/AR10": 0.6926684280052842,
+            "metrics/AR100": 0.7476882430647291,
+            "metrics/AR_max_det": 0.7476882430647291,
+            "metrics/max_det": 100.0,
+            "metrics/AR_small": 0.13999999999999999,
+            "metrics/AR_medium": 0.4738095238095238,
+            "metrics/AR_large": 0.7748373101952277,
+            "metrics/best_conf": 0.421875,
+            "metrics/best_conf_f1": 0.7621359223300971,
+            "speed/preprocess_ms": 0.061434122823899796,
+            "speed/inference_ms": 0.2514723167624525,
+            "speed/postprocess_ms": 0.6106345243351434,
+            "speed/total_ms": 1.5870944787097234,
+            "speed/total_s": 1.1807982921600342,
+            "speed/images_seen": 744.0
+          },
+          {},
+          {
+            "metrics/precision": 0.6122530872401328,
+            "metrics/recall": 0.7462351387054161,
+            "metrics/mAP50-95": 0.6122530872401328,
+            "metrics/mAP50": 0.8252070451048217,
+            "metrics/mAP75": 0.6746083772878352,
+            "metrics/precision(B)": 0.6122530872401328,
+            "metrics/recall(B)": 0.7462351387054161,
+            "metrics/mAP50(B)": 0.8252070451048217,
+            "metrics/mAP50-95(B)": 0.6122530872401328,
+            "metrics/mAP_small": 0.04757310895924757,
+            "metrics/mAP_medium": 0.16196229555430214,
+            "metrics/mAP_large": 0.6505850969614281,
+            "metrics/AR1": 0.38725231175693525,
+            "metrics/AR10": 0.6905548216644649,
+            "metrics/AR100": 0.7462351387054161,
+            "metrics/AR_max_det": 0.7462351387054161,
+            "metrics/max_det": 100.0,
+            "metrics/AR_small": 0.22000000000000003,
+            "metrics/AR_medium": 0.4722222222222222,
+            "metrics/AR_large": 0.7731019522776572,
+            "metrics/best_conf": 0.453125,
+            "metrics/best_conf_f1": 0.7610993657505285,
+            "speed/preprocess_ms": 0.06034713919444751,
+            "speed/inference_ms": 0.2352832466043452,
+            "speed/postprocess_ms": 0.5734521214680005,
+            "speed/total_ms": 1.8262267112731934,
+            "speed/total_s": 1.3587126731872559,
+            "speed/images_seen": 744.0
+          }
+        ],
+        "epoch_metrics": [
+          {
+            "epoch": 1,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.804768603072207,
+            "train_loss_items": {
+              "box": 1.1654002146843152,
+              "cls": 1.0849630975315714,
+              "dfl": 1.5544052602898362
+            },
+            "lr": {
+              "group0": 5e-05,
+              "group1": 5e-05,
+              "group2": 5e-05
+            },
+            "val_metrics": {},
+            "validated": false,
+            "is_best": false,
+            "current_metric": null,
+            "current_metric_name": null,
+            "best_metric": null,
+            "best_metric_name": null,
+            "best_epoch": null,
+            "epoch_seconds": 17.408802032470703
+          },
+          {
+            "epoch": 2,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.5924306343763304,
+            "train_loss_items": {
+              "box": 1.1075202404943287,
+              "cls": 0.9664000675209568,
+              "dfl": 1.5185103345121074
+            },
+            "lr": {
+              "group0": 5e-05,
+              "group1": 5e-05,
+              "group2": 5e-05
+            },
+            "val_metrics": {
+              "metrics/precision": 0.6074975618955599,
+              "metrics/recall": 0.7399603698811097,
+              "metrics/mAP50-95": 0.6074975618955599,
+              "metrics/mAP50": 0.8218015578681654,
+              "metrics/mAP75": 0.6745395295474006,
+              "metrics/precision(B)": 0.6074975618955599,
+              "metrics/recall(B)": 0.7399603698811097,
+              "metrics/mAP50(B)": 0.8218015578681654,
+              "metrics/mAP50-95(B)": 0.6074975618955599,
+              "metrics/mAP_small": 0.06984698469846984,
+              "metrics/mAP_medium": 0.16004958676879835,
+              "metrics/mAP_large": 0.6455550188167598,
+              "metrics/AR1": 0.3862615587846764,
+              "metrics/AR10": 0.6891017173051519,
+              "metrics/AR100": 0.7399603698811097,
+              "metrics/AR_max_det": 0.7399603698811097,
+              "metrics/max_det": 100.0,
+              "metrics/AR_small": 0.22000000000000003,
+              "metrics/AR_medium": 0.45396825396825397,
+              "metrics/AR_large": 0.7678958785249458,
+              "metrics/best_conf": 0.408203125,
+              "metrics/best_conf_f1": 0.7552933009371746,
+              "speed/preprocess_ms": 0.04862745602925619,
+              "speed/inference_ms": 0.2640796604976859,
+              "speed/postprocess_ms": 0.515381815612957,
+              "speed/total_ms": 1.9488536542461765,
+              "speed/total_s": 1.4499471187591553,
+              "speed/images_seen": 744.0
+            },
+            "validated": true,
+            "is_best": true,
+            "current_metric": 0.6074975618955599,
+            "current_metric_name": "metrics/mAP50-95",
+            "best_metric": 0.6074975618955599,
+            "best_metric_name": "metrics/mAP50-95",
+            "best_epoch": 2,
+            "epoch_seconds": 18.836426973342896
+          },
+          {
+            "epoch": 3,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.5432784801874404,
+            "train_loss_items": {
+              "box": 1.0970081055266225,
+              "cls": 0.9396551969723824,
+              "dfl": 1.506615166990166
+            },
+            "lr": {
+              "group0": 5e-05,
+              "group1": 5e-05,
+              "group2": 5e-05
+            },
+            "val_metrics": {},
+            "validated": false,
+            "is_best": false,
+            "current_metric": null,
+            "current_metric_name": null,
+            "best_metric": 0.6074975618955599,
+            "best_metric_name": "metrics/mAP50-95",
+            "best_epoch": 2,
+            "epoch_seconds": 16.376851081848145
+          },
+          {
+            "epoch": 4,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.5017949393671803,
+            "train_loss_items": {
+              "box": 1.0807295854275043,
+              "cls": 0.9244574542738434,
+              "dfl": 1.4966079017035983
+            },
+            "lr": {
+              "group0": 4.4500000000000004e-05,
+              "group1": 4.4500000000000004e-05,
+              "group2": 4.4500000000000004e-05
+            },
+            "val_metrics": {
+              "metrics/precision": 0.6105397771752658,
+              "metrics/recall": 0.7440554821664465,
+              "metrics/mAP50-95": 0.6105397771752658,
+              "metrics/mAP50": 0.8227569126682209,
+              "metrics/mAP75": 0.6815146889474349,
+              "metrics/precision(B)": 0.6105397771752658,
+              "metrics/recall(B)": 0.7440554821664465,
+              "metrics/mAP50(B)": 0.8227569126682209,
+              "metrics/mAP50-95(B)": 0.6105397771752658,
+              "metrics/mAP_small": 0.0766288167278266,
+              "metrics/mAP_medium": 0.1605214143404429,
+              "metrics/mAP_large": 0.6480543091390163,
+              "metrics/AR1": 0.3868560105680317,
+              "metrics/AR10": 0.6895640686922061,
+              "metrics/AR100": 0.7440554821664465,
+              "metrics/AR_max_det": 0.7440554821664465,
+              "metrics/max_det": 100.0,
+              "metrics/AR_small": 0.24000000000000005,
+              "metrics/AR_medium": 0.47698412698412695,
+              "metrics/AR_large": 0.7702096890817065,
+              "metrics/best_conf": 0.392578125,
+              "metrics/best_conf_f1": 0.7568493150684932,
+              "speed/preprocess_ms": 0.05589826132661553,
+              "speed/inference_ms": 0.24282291371335266,
+              "speed/postprocess_ms": 0.5911297054700955,
+              "speed/total_ms": 1.7580332294587167,
+              "speed/total_s": 1.3079767227172852,
+              "speed/images_seen": 744.0
+            },
+            "validated": true,
+            "is_best": true,
+            "current_metric": 0.6105397771752658,
+            "current_metric_name": "metrics/mAP50-95",
+            "best_metric": 0.6105397771752658,
+            "best_metric_name": "metrics/mAP50-95",
+            "best_epoch": 4,
+            "epoch_seconds": 18.353190422058105
+          },
+          {
+            "epoch": 5,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.4850031840495572,
+            "train_loss_items": {
+              "box": 1.0768412524818356,
+              "cls": 0.9176462735885229,
+              "dfl": 1.4905156732624412
+            },
+            "lr": {
+              "group0": 3.9e-05,
+              "group1": 3.9e-05,
+              "group2": 3.9e-05
+            },
+            "val_metrics": {},
+            "validated": false,
+            "is_best": false,
+            "current_metric": null,
+            "current_metric_name": null,
+            "best_metric": 0.6105397771752658,
+            "best_metric_name": "metrics/mAP50-95",
+            "best_epoch": 4,
+            "epoch_seconds": 16.200150728225708
+          },
+          {
+            "epoch": 6,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.467871077040322,
+            "train_loss_items": {
+              "box": 1.0695352564510117,
+              "cls": 0.9107629682263757,
+              "dfl": 1.4875728462496374
+            },
+            "lr": {
+              "group0": 3.35e-05,
+              "group1": 3.35e-05,
+              "group2": 3.35e-05
+            },
+            "val_metrics": {
+              "metrics/precision": 0.6108903832442637,
+              "metrics/recall": 0.7466314398943197,
+              "metrics/mAP50-95": 0.6108903832442637,
+              "metrics/mAP50": 0.8228026460512246,
+              "metrics/mAP75": 0.6790846050148283,
+              "metrics/precision(B)": 0.6108903832442637,
+              "metrics/recall(B)": 0.7466314398943197,
+              "metrics/mAP50(B)": 0.8228026460512246,
+              "metrics/mAP50-95(B)": 0.6108903832442637,
+              "metrics/mAP_small": 0.07602704714915937,
+              "metrics/mAP_medium": 0.16180746019611522,
+              "metrics/mAP_large": 0.6491293821380545,
+              "metrics/AR1": 0.385667107001321,
+              "metrics/AR10": 0.6909511228533686,
+              "metrics/AR100": 0.7466314398943197,
+              "metrics/AR_max_det": 0.7466314398943197,
+              "metrics/max_det": 100.0,
+              "metrics/AR_small": 0.24000000000000005,
+              "metrics/AR_medium": 0.47619047619047616,
+              "metrics/AR_large": 0.7731019522776572,
+              "metrics/best_conf": 0.392578125,
+              "metrics/best_conf_f1": 0.7614490772385509,
+              "speed/preprocess_ms": 0.05440782475215132,
+              "speed/inference_ms": 0.22597146290604786,
+              "speed/postprocess_ms": 0.5594979050338909,
+              "speed/total_ms": 1.6478851277341124,
+              "speed/total_s": 1.2260265350341797,
+              "speed/images_seen": 744.0
+            },
+            "validated": true,
+            "is_best": true,
+            "current_metric": 0.6108903832442637,
+            "current_metric_name": "metrics/mAP50-95",
+            "best_metric": 0.6108903832442637,
+            "best_metric_name": "metrics/mAP50-95",
+            "best_epoch": 6,
+            "epoch_seconds": 18.05557894706726
+          },
+          {
+            "epoch": 7,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.4519836209778094,
+            "train_loss_items": {
+              "box": 1.0657373325437562,
+              "cls": 0.8987799368352971,
+              "dfl": 1.4874663750330608
+            },
+            "lr": {
+              "group0": 2.8000000000000003e-05,
+              "group1": 2.8000000000000003e-05,
+              "group2": 2.8000000000000003e-05
+            },
+            "val_metrics": {},
+            "validated": false,
+            "is_best": false,
+            "current_metric": null,
+            "current_metric_name": null,
+            "best_metric": 0.6108903832442637,
+            "best_metric_name": "metrics/mAP50-95",
+            "best_epoch": 6,
+            "epoch_seconds": 15.773544788360596
+          },
+          {
+            "epoch": 8,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.4244354504805345,
+            "train_loss_items": {
+              "box": 1.0478071886250095,
+              "cls": 0.8975455990204444,
+              "dfl": 1.4790826699672601
+            },
+            "lr": {
+              "group0": 2.2499999999999998e-05,
+              "group1": 2.2499999999999998e-05,
+              "group2": 2.2499999999999998e-05
+            },
+            "val_metrics": {
+              "metrics/precision": 0.6122784788950593,
+              "metrics/recall": 0.7463672391017173,
+              "metrics/mAP50-95": 0.6122784788950593,
+              "metrics/mAP50": 0.8231026091412913,
+              "metrics/mAP75": 0.6764347844091659,
+              "metrics/precision(B)": 0.6122784788950593,
+              "metrics/recall(B)": 0.7463672391017173,
+              "metrics/mAP50(B)": 0.8231026091412913,
+              "metrics/mAP50-95(B)": 0.6122784788950593,
+              "metrics/mAP_small": 0.056220290464059665,
+              "metrics/mAP_medium": 0.1591562880674471,
+              "metrics/mAP_large": 0.6505976478899835,
+              "metrics/AR1": 0.3867899603698811,
+              "metrics/AR10": 0.6916116248348745,
+              "metrics/AR100": 0.7463672391017173,
+              "metrics/AR_max_det": 0.7463672391017173,
+              "metrics/max_det": 100.0,
+              "metrics/AR_small": 0.2,
+              "metrics/AR_medium": 0.46984126984126984,
+              "metrics/AR_large": 0.7735357917570499,
+              "metrics/best_conf": 0.392578125,
+              "metrics/best_conf_f1": 0.7604095563139932,
+              "speed/preprocess_ms": 0.058055564921389344,
+              "speed/inference_ms": 0.243144650613108,
+              "speed/postprocess_ms": 0.5805200787000759,
+              "speed/total_ms": 1.5637057442818918,
+              "speed/total_s": 1.1633970737457275,
+              "speed/images_seen": 744.0
+            },
+            "validated": true,
+            "is_best": true,
+            "current_metric": 0.6122784788950593,
+            "current_metric_name": "metrics/mAP50-95",
+            "best_metric": 0.6122784788950593,
+            "best_metric_name": "metrics/mAP50-95",
+            "best_epoch": 8,
+            "epoch_seconds": 17.918986558914185
+          },
+          {
+            "epoch": 9,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.4103193894410744,
+            "train_loss_items": {
+              "box": 1.0492495257630308,
+              "cls": 0.8824399454980834,
+              "dfl": 1.4786299395764995
+            },
+            "lr": {
+              "group0": 1.7e-05,
+              "group1": 1.7e-05,
+              "group2": 1.7e-05
+            },
+            "val_metrics": {},
+            "validated": false,
+            "is_best": false,
+            "current_metric": null,
+            "current_metric_name": null,
+            "best_metric": 0.6122784788950593,
+            "best_metric_name": "metrics/mAP50-95",
+            "best_epoch": 8,
+            "epoch_seconds": 16.255497694015503
+          },
+          {
+            "epoch": 10,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.2442383215977597,
+            "train_loss_items": {
+              "box": 0.9838926924599541,
+              "cls": 0.8140988731995608,
+              "dfl": 1.4462467696931627
+            },
+            "lr": {
+              "group0": 1.1500000000000002e-05,
+              "group1": 1.1500000000000002e-05,
+              "group2": 1.1500000000000002e-05
+            },
+            "val_metrics": {
+              "metrics/precision": 0.6136243766370951,
+              "metrics/recall": 0.7476882430647291,
+              "metrics/mAP50-95": 0.6136243766370951,
+              "metrics/mAP50": 0.8258072768396382,
+              "metrics/mAP75": 0.6796099374047766,
+              "metrics/precision(B)": 0.6136243766370951,
+              "metrics/recall(B)": 0.7476882430647291,
+              "metrics/mAP50(B)": 0.8258072768396382,
+              "metrics/mAP50-95(B)": 0.6136243766370951,
+              "metrics/mAP_small": 0.03894389438943894,
+              "metrics/mAP_medium": 0.15774853203369224,
+              "metrics/mAP_large": 0.6520817337724727,
+              "metrics/AR1": 0.388110964332893,
+              "metrics/AR10": 0.6926684280052842,
+              "metrics/AR100": 0.7476882430647291,
+              "metrics/AR_max_det": 0.7476882430647291,
+              "metrics/max_det": 100.0,
+              "metrics/AR_small": 0.13999999999999999,
+              "metrics/AR_medium": 0.4738095238095238,
+              "metrics/AR_large": 0.7748373101952277,
+              "metrics/best_conf": 0.421875,
+              "metrics/best_conf_f1": 0.7621359223300971,
+              "speed/preprocess_ms": 0.061434122823899796,
+              "speed/inference_ms": 0.2514723167624525,
+              "speed/postprocess_ms": 0.6106345243351434,
+              "speed/total_ms": 1.5870944787097234,
+              "speed/total_s": 1.1807982921600342,
+              "speed/images_seen": 744.0
+            },
+            "validated": true,
+            "is_best": true,
+            "current_metric": 0.6136243766370951,
+            "current_metric_name": "metrics/mAP50-95",
+            "best_metric": 0.6136243766370951,
+            "best_metric_name": "metrics/mAP50-95",
+            "best_epoch": 10,
+            "epoch_seconds": 17.336018562316895
+          },
+          {
+            "epoch": 11,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.233251496257945,
+            "train_loss_items": {
+              "box": 0.9789174937794352,
+              "cls": 0.8113897621122181,
+              "dfl": 1.4429442474984715
+            },
+            "lr": {
+              "group0": 6.0000000000000035e-06,
+              "group1": 6.0000000000000035e-06,
+              "group2": 6.0000000000000035e-06
+            },
+            "val_metrics": {},
+            "validated": false,
+            "is_best": false,
+            "current_metric": null,
+            "current_metric_name": null,
+            "best_metric": 0.6136243766370951,
+            "best_metric_name": "metrics/mAP50-95",
+            "best_epoch": 10,
+            "epoch_seconds": 15.58741807937622
+          },
+          {
+            "epoch": 12,
+            "total_epochs": 12,
+            "model_family": "yolo9",
+            "model_size": "t",
+            "task": "detect",
+            "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+            "train_loss": 3.2206658746442223,
+            "train_loss_items": {
+              "box": 0.9742452665271922,
+              "cls": 0.8065041869114606,
+              "dfl": 1.4399163987901475
+            },
+            "lr": {
+              "group0": 4.999999999999986e-07,
+              "group1": 4.999999999999986e-07,
+              "group2": 4.999999999999986e-07
+            },
+            "val_metrics": {
+              "metrics/precision": 0.6122530872401328,
+              "metrics/recall": 0.7462351387054161,
+              "metrics/mAP50-95": 0.6122530872401328,
+              "metrics/mAP50": 0.8252070451048217,
+              "metrics/mAP75": 0.6746083772878352,
+              "metrics/precision(B)": 0.6122530872401328,
+              "metrics/recall(B)": 0.7462351387054161,
+              "metrics/mAP50(B)": 0.8252070451048217,
+              "metrics/mAP50-95(B)": 0.6122530872401328,
+              "metrics/mAP_small": 0.04757310895924757,
+              "metrics/mAP_medium": 0.16196229555430214,
+              "metrics/mAP_large": 0.6505850969614281,
+              "metrics/AR1": 0.38725231175693525,
+              "metrics/AR10": 0.6905548216644649,
+              "metrics/AR100": 0.7462351387054161,
+              "metrics/AR_max_det": 0.7462351387054161,
+              "metrics/max_det": 100.0,
+              "metrics/AR_small": 0.22000000000000003,
+              "metrics/AR_medium": 0.4722222222222222,
+              "metrics/AR_large": 0.7731019522776572,
+              "metrics/best_conf": 0.453125,
+              "metrics/best_conf_f1": 0.7610993657505285,
+              "speed/preprocess_ms": 0.06034713919444751,
+              "speed/inference_ms": 0.2352832466043452,
+              "speed/postprocess_ms": 0.5734521214680005,
+              "speed/total_ms": 1.8262267112731934,
+              "speed/total_s": 1.3587126731872559,
+              "speed/images_seen": 744.0
+            },
+            "validated": true,
+            "is_best": false,
+            "current_metric": 0.6122530872401328,
+            "current_metric_name": "metrics/mAP50-95",
+            "best_metric": 0.6136243766370951,
+            "best_metric_name": "metrics/mAP50-95",
+            "best_epoch": 10,
+            "epoch_seconds": 17.91686201095581
+          }
+        ],
+        "best_mAP50": 0.8258072768396382,
+        "best_mAP50_95": 0.6136243766370951,
+        "best_epoch": 10,
+        "save_dir": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320",
+        "best_checkpoint": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320/weights/best.pt",
+        "last_checkpoint": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_detector/runs/y9t_pseudo_leaf_320/weights/last.pt",
+        "average_checkpoint": null,
+        "average_metrics": null
+      },
+      "seconds": 213.81437754631042,
+      "protocol": {
+        "checkpoint_sha256": "13e4236cdffa0b250a48e38b94bcdf871f382995d679ce84697a1af04fe2803b",
+        "data_sha256": "667293023c05c8b6834e170fbf3bd65019f2238ce97cf1503ab16b327c725092",
+        "epochs": 12,
+        "size": 320,
+        "seed": 137,
+        "learning_rate": 5e-05,
+        "pseudo_repeat": 4,
+        "checkpoint_selection": "Original held-out leaf boxes only; no teacher pseudo-label validation score.",
+        "original_mAP50_95_max_loss": 0.02,
+        "promotion": "Requires actual-byte app regression gates and untouched photo acceptance; training completion alone never permits installation."
+      }
+    },
+    "species": {
+      "configuration": {
+        "rows_sha256": "687829881aff3317ef996a6265012c5e3a39b687343ff47bf85ce14ecdd196eb",
+        "source_taxonomy_sha256": "b57608cfab9fd23c3deab9050df19ed6176125f2e2ec532c637392fee6676bcf",
+        "warmstart_sha256": "d0171c7eeb968ec76f60580bfbd0f8bb3794811b4a174c1923f369e136c7a0e3",
+        "epochs": 8,
+        "batch": 256,
+        "seed": 163,
+        "negative_cost": 2.0,
+        "lr": 0.0001,
+        "supervision": "Explicit PlantDoc leaf taxonomy; unambiguous tomato-only sources; whole TOM2024 tomato presence. Mixed whole scenes and unverified-genus field ROIs masked.",
+        "training_pixels": "float16 cache, training augmentation only; validation/deployment use original canonical float32 pixels",
+        "reserved_used": false
+      },
+      "best_checkpoint_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+      "calibration": [
+        0.29720518333482704,
+        -0.3951266134667354
+      ],
+      "calibration_scope": "Grouped validation only; balanced class/source/group weights",
+      "validation_n": 8054,
+      "thresholds": {
+        "0.8": {
+          "tomato_recall": 0.9254323787921747,
+          "non_tomato_false_positive": 0.012
+        },
+        "0.9": {
+          "tomato_recall": 0.8695775446555146,
+          "non_tomato_false_positive": 0.009
+        },
+        "0.95": {
+          "tomato_recall": 0.7642472356110008,
+          "non_tomato_false_positive": 0.004
+        },
+        "0.99": {
+          "tomato_recall": 0.5060958321519705,
+          "non_tomato_false_positive": 0.002
+        }
+      },
+      "training_targets": {
+        "1": 35055,
+        "0": 6634
+      },
+      "seconds": 65.68420433998108
+    },
+    "scene_healthy": {
+      "configuration": {
+        "rows_sha256": "e063bafa83acc1c2fbd588a88042a5677c5dd7321b76fb007c07c361325e9dca",
+        "source_taxonomy_sha256": "b57608cfab9fd23c3deab9050df19ed6176125f2e2ec532c637392fee6676bcf",
+        "warmstart_sha256": "d0171c7eeb968ec76f60580bfbd0f8bb3794811b4a174c1923f369e136c7a0e3",
+        "epochs": 8,
+        "batch": 256,
+        "seed": 163,
+        "negative_cost": 2.0,
+        "lr": 0.0001,
+        "supervision": "Image-level labels only; any unhealthy annotated instance is a negative whole scene. No crop label is used as a scene-positive shortcut.",
+        "training_pixels": "float16 cache, training augmentation only; validation/deployment use original canonical float32 pixels",
+        "reserved_used": false,
+        "task": "whole_image_healthy_tomato"
+      },
+      "best_checkpoint_sha256": "61cfc9057cea5ea577a1f338b93ae745756cd870a62abad0e19e53164777d414",
+      "calibration": [
+        0.278334656314862,
+        1.3108510489618348
+      ],
+      "calibration_scope": "Grouped validation only; balanced class/source/group weights",
+      "validation_n": 3924,
+      "positive_label": "healthy_tomato",
+      "thresholds": {
+        "0.8": {
+          "tomato_recall": 0.8997289972899729,
+          "non_tomato_false_positive": 0.03672316384180791
+        },
+        "0.9": {
+          "tomato_recall": 0.5582655826558266,
+          "non_tomato_false_positive": 0.014124293785310734
+        },
+        "0.95": {
+          "tomato_recall": 0.37533875338753386,
+          "non_tomato_false_positive": 0.006905210295040804
+        },
+        "0.99": {
+          "tomato_recall": 0.27235772357723576,
+          "non_tomato_false_positive": 0.0009416195856873823
+        }
+      },
+      "training_targets": {
+        "0": 15050,
+        "1": 3498
+      },
+      "seconds": 30.193275690078735
+    },
+    "fusion": {
+      "id": 386,
+      "fusion": {
+        "negative_cost": 2.0,
+        "weights": [
+          0.1220665850426722,
+          0.3490608384688431,
+          0.6061582637289987,
+          0.061011304917688046
+        ],
+        "bias": -0.8286518072543786,
+        "input_clip": 10.0,
+        "input_order": [
+          "healthy_linear_adapted",
+          "healthy_mlp_both",
+          "healthy_scene_cnn",
+          "tomato_species_cnn"
+        ],
+        "input_identity": {
+          "scene_rows_sha256": "e063bafa83acc1c2fbd588a88042a5677c5dd7321b76fb007c07c361325e9dca",
+          "feature_model_sha256": "7ee70502933a49784b89b538b8da56cc5c9173116a6c8400c4e43a74a8e01e49",
+          "head_hashes": [
+            "e49ec90e0a6bf63e7bd9249795f87742bd8805f99660b74ac184877348d02b19",
+            "09fa26fba07c8f217e9ab7f5dc2c5189d815ecafcdb4552951ba2fe9d489a86a"
+          ],
+          "head_calibration_hashes": [
+            "71fb1ea361641779728805ed520041272c3573ab1492d60e322c25deb2108d5c",
+            "f1ec90f7145944c435cd8c46b6317c425c5a8c3da0318f79f8c62ead3e5c2055"
+          ],
+          "scene_cnn_sha256": "61cfc9057cea5ea577a1f338b93ae745756cd870a62abad0e19e53164777d414",
+          "scene_cnn_calibration_sha256": "dfc781c48a63d2fa5ae08bad32fd3a46dfea4c1d61f34c35b637e53f73abed59",
+          "species_cnn_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+          "species_cnn_calibration_sha256": "5fe18b62e24cbe28da72ae996fcf8a6fec693ac9bd7257493438d04bbd90510d"
+        },
+        "calibration_group_rule": "sha256(calibration211:group) modulo 100 below 65, validation groups only",
+        "calibration_n": 2644,
+        "selection_n": 1280,
+        "calibration_used_for_fusion_fit": true,
+        "selection_group_auc": 0.9883312126760626,
+        "selection_field_auc": 0.9926470588235294,
+        "note": "Selection groups are internal development, not independent acceptance; base predictor checkpoint selection used broader validation.",
+        "reserved_used": false
+      },
+      "healthy_min": 0.95,
+      "species_min": 0.5,
+      "negative_healthy_max": 0.001,
+      "retained": true,
+      "field_healthy_passed": false,
+      "score": 1.0171996230222402,
+      "cohorts": {
+        "development": {
+          "healthy": {
+            "n": 26,
+            "correct": 21,
+            "correct_rate": 0.8076923076923077,
+            "healthy_verdict": 21,
+            "healthy_recall": 0.8076923076923077,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 21,
+            "kind_UNSURE": 3,
+            "kind_DISEASE": 2
+          },
+          "disease": {
+            "n": 458,
+            "correct": 446,
+            "correct_rate": 0.9737991266375546,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.002183406113537118,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 453,
+            "kind_UNSURE": 3,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1
+          },
+          "false_healthy": 4,
+          "unsupported": {
+            "n": 39,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 34,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 3
+          },
+          "non_tomato": {
+            "n": 169,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.01775147928994083,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 150,
+            "kind_UNSURE": 6,
+            "kind_DISEASE": 10,
+            "kind_HEALTHY": 3
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 231,
+              "healthy_recall": 1.0,
+              "false_healthy": 3
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.7368421052631579,
+              "false_healthy": 1
+            }
+          }
+        },
+        "public": {
+          "healthy": {
+            "n": 80,
+            "correct": 73,
+            "correct_rate": 0.9125,
+            "healthy_verdict": 73,
+            "healthy_recall": 0.9125,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 3,
+            "false_other_rate": 0.0375,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 73,
+            "kind_DISEASE": 2,
+            "kind_UNKNOWN_CONDITION": 3,
+            "kind_UNSURE": 2
+          },
+          "disease": {
+            "n": 558,
+            "correct": 521,
+            "correct_rate": 0.9336917562724014,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0017921146953405018,
+            "false_other": 4,
+            "false_other_rate": 0.007168458781362007,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 542,
+            "kind_UNSURE": 10,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "false_healthy": 4,
+          "unsupported": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006944444444444444,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.04861111111111111,
+            "kind_UNKNOWN_CONDITION": 135,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 137,
+            "kind_UNSURE": 9,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 3
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 0
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.9090909090909091,
+              "false_healthy": 1
+            }
+          }
+        },
+        "prior_test": {
+          "healthy": {
+            "n": 81,
+            "correct": 66,
+            "correct_rate": 0.8148148148148148,
+            "healthy_verdict": 66,
+            "healthy_recall": 0.8148148148148148,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 3,
+            "false_other_rate": 0.037037037037037035,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 5,
+            "kind_HEALTHY": 66,
+            "kind_UNSURE": 7,
+            "kind_UNKNOWN_CONDITION": 3
+          },
+          "disease": {
+            "n": 585,
+            "correct": 558,
+            "correct_rate": 0.9538461538461539,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0017094017094017094,
+            "false_other": 4,
+            "false_other_rate": 0.006837606837606838,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 568,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 8,
+            "kind_HEALTHY": 1,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "false_healthy": 4,
+          "unsupported": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006944444444444444,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.04861111111111111,
+            "kind_UNKNOWN_CONDITION": 135,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 137,
+            "kind_UNSURE": 9,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 3
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 0
+            },
+            "tomatovillage": {
+              "n": 489,
+              "healthy_recall": 0.5652173913043478,
+              "false_healthy": 1
+            }
+          }
+        },
+        "taiwan": {
+          "healthy": {
+            "n": 22,
+            "correct": 21,
+            "correct_rate": 0.9545454545454546,
+            "healthy_verdict": 21,
+            "healthy_recall": 0.9545454545454546,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 1,
+            "false_other_rate": 0.045454545454545456,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 21,
+            "kind_UNKNOWN_CONDITION": 1
+          },
+          "disease": {
+            "n": 20,
+            "correct": 11,
+            "correct_rate": 0.55,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 6,
+            "false_other_rate": 0.3,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 11,
+            "kind_UNSURE": 3,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "false_healthy": 0,
+          "unsupported": {
+            "n": 85,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.03529411764705882,
+            "kind_UNKNOWN_CONDITION": 79,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 3,
+            "kind_NO_LEAVES": 1
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "taiwan": {
+              "n": 127,
+              "healthy_recall": 0.9545454545454546,
+              "false_healthy": 0
+            }
+          }
+        },
+        "phase2_selection": {
+          "healthy": {
+            "n": 39,
+            "correct": 20,
+            "correct_rate": 0.5128205128205128,
+            "healthy_verdict": 20,
+            "healthy_recall": 0.5128205128205128,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 6,
+            "false_other_rate": 0.15384615384615385,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 8,
+            "kind_HEALTHY": 20,
+            "kind_UNKNOWN_CONDITION": 6,
+            "kind_UNSURE": 5
+          },
+          "disease": {
+            "n": 375,
+            "correct": 156,
+            "correct_rate": 0.416,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0026666666666666666,
+            "false_other": 38,
+            "false_other_rate": 0.10133333333333333,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 269,
+            "kind_UNKNOWN_CONDITION": 38,
+            "kind_UNSURE": 66,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1
+          },
+          "false_healthy": 2,
+          "unsupported": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.022222222222222223,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 33,
+            "false_known_rate": 0.7333333333333333,
+            "kind_DISEASE": 32,
+            "kind_UNSURE": 5,
+            "kind_UNKNOWN_CONDITION": 7,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "bangladesh_classification": {
+              "n": 459,
+              "healthy_recall": 0.5128205128205128,
+              "false_healthy": 2
+            }
+          }
+        },
+        "phase5_selection": {
+          "healthy": {
+            "n": 248,
+            "correct": 203,
+            "correct_rate": 0.8185483870967742,
+            "healthy_verdict": 203,
+            "healthy_recall": 0.8185483870967742,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 30,
+            "false_other_rate": 0.12096774193548387,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNSURE": 7,
+            "kind_HEALTHY": 203,
+            "kind_UNKNOWN_CONDITION": 30,
+            "kind_NO_LEAVES": 7,
+            "kind_DISEASE": 1
+          },
+          "disease": {
+            "n": 155,
+            "correct": 79,
+            "correct_rate": 0.5096774193548387,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 42,
+            "false_other_rate": 0.2709677419354839,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNSURE": 14,
+            "kind_DISEASE": 96,
+            "kind_UNKNOWN_CONDITION": 42,
+            "kind_NO_LEAVES": 3
+          },
+          "false_healthy": 9,
+          "unsupported": {
+            "n": 268,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.007462686567164179,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 106,
+            "false_known_rate": 0.39552238805970147,
+            "kind_UNKNOWN_CONDITION": 111,
+            "kind_NO_LEAVES": 22,
+            "kind_DISEASE": 104,
+            "kind_HEALTHY": 2,
+            "kind_UNSURE": 29
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "swtt5wy2pr": {
+              "n": 460,
+              "healthy_recall": 0.9747899159663865,
+              "false_healthy": 0
+            },
+            "tom2024": {
+              "n": 579,
+              "healthy_recall": 0.6744186046511628,
+              "false_healthy": 9
+            }
+          }
+        },
+        "original": {
+          "healthy": {
+            "n": 26,
+            "correct": 20,
+            "correct_rate": 0.7692307692307693,
+            "healthy_verdict": 20,
+            "healthy_recall": 0.7692307692307693,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 20,
+            "kind_DISEASE": 4,
+            "kind_UNSURE": 2
+          },
+          "disease": {
+            "n": 449,
+            "correct": 435,
+            "correct_rate": 0.9688195991091314,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0022271714922048997,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 442,
+            "kind_UNSURE": 6,
+            "kind_HEALTHY": 1
+          },
+          "false_healthy": 3,
+          "unsupported": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.022222222222222223,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 6,
+            "false_known_rate": 0.13333333333333333,
+            "kind_UNKNOWN_CONDITION": 36,
+            "kind_UNSURE": 3,
+            "kind_DISEASE": 5,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 163,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006134969325153374,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 16,
+            "false_known_rate": 0.09815950920245399,
+            "kind_UNKNOWN_CONDITION": 144,
+            "kind_HEALTHY": 1,
+            "kind_DISEASE": 15,
+            "kind_UNSURE": 3
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 226,
+              "healthy_recall": 1.0,
+              "false_healthy": 2
+            },
+            "tomatovillage": {
+              "n": 457,
+              "healthy_recall": 0.7391304347826086,
+              "false_healthy": 1
+            }
+          }
+        },
+        "expanded": {
+          "healthy": {
+            "n": 380,
+            "correct": 302,
+            "correct_rate": 0.7947368421052632,
+            "healthy_verdict": 302,
+            "healthy_recall": 0.7947368421052632,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 42,
+            "false_other_rate": 0.11052631578947368,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 302,
+            "kind_UNKNOWN_CONDITION": 42,
+            "kind_UNSURE": 31,
+            "kind_DISEASE": 5
+          },
+          "disease": {
+            "n": 335,
+            "correct": 181,
+            "correct_rate": 0.5402985074626866,
+            "healthy_verdict": 97,
+            "healthy_recall": null,
+            "false_healthy": 97,
+            "false_healthy_rate": 0.28955223880597014,
+            "false_other": 29,
+            "false_other_rate": 0.08656716417910448,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 97,
+            "kind_UNKNOWN_CONDITION": 29,
+            "kind_DISEASE": 189,
+            "kind_UNSURE": 20
+          },
+          "false_healthy": 207,
+          "unsupported": {
+            "n": 818,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 110,
+            "healthy_recall": null,
+            "false_healthy": 110,
+            "false_healthy_rate": 0.13447432762836187,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 266,
+            "false_known_rate": 0.3251833740831296,
+            "kind_HEALTHY": 110,
+            "kind_UNKNOWN_CONDITION": 480,
+            "kind_UNSURE": 72,
+            "kind_DISEASE": 156
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "pakistan": {
+              "n": 70,
+              "healthy_recall": 0.7272727272727273,
+              "false_healthy": 1
+            },
+            "tlid": {
+              "n": 1463,
+              "healthy_recall": 0.7967479674796748,
+              "false_healthy": 206
+            }
+          }
+        }
+      }
+    },
+    "leaf_corroboration": {
+      "id": 72,
+      "fusion": {
+        "negative_cost": 2.0,
+        "weights": [
+          0.1220665850426722,
+          0.3490608384688431,
+          0.6061582637289987,
+          0.061011304917688046
+        ],
+        "bias": -0.8286518072543786,
+        "input_clip": 10.0,
+        "input_order": [
+          "healthy_linear_adapted",
+          "healthy_mlp_both",
+          "healthy_scene_cnn",
+          "tomato_species_cnn"
+        ],
+        "input_identity": {
+          "scene_rows_sha256": "e063bafa83acc1c2fbd588a88042a5677c5dd7321b76fb007c07c361325e9dca",
+          "feature_model_sha256": "7ee70502933a49784b89b538b8da56cc5c9173116a6c8400c4e43a74a8e01e49",
+          "head_hashes": [
+            "e49ec90e0a6bf63e7bd9249795f87742bd8805f99660b74ac184877348d02b19",
+            "09fa26fba07c8f217e9ab7f5dc2c5189d815ecafcdb4552951ba2fe9d489a86a"
+          ],
+          "head_calibration_hashes": [
+            "71fb1ea361641779728805ed520041272c3573ab1492d60e322c25deb2108d5c",
+            "f1ec90f7145944c435cd8c46b6317c425c5a8c3da0318f79f8c62ead3e5c2055"
+          ],
+          "scene_cnn_sha256": "61cfc9057cea5ea577a1f338b93ae745756cd870a62abad0e19e53164777d414",
+          "scene_cnn_calibration_sha256": "dfc781c48a63d2fa5ae08bad32fd3a46dfea4c1d61f34c35b637e53f73abed59",
+          "species_cnn_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+          "species_cnn_calibration_sha256": "5fe18b62e24cbe28da72ae996fcf8a6fec693ac9bd7257493438d04bbd90510d"
+        },
+        "calibration_group_rule": "sha256(calibration211:group) modulo 100 below 65, validation groups only",
+        "calibration_n": 2644,
+        "selection_n": 1280,
+        "calibration_used_for_fusion_fit": true,
+        "selection_group_auc": 0.9883312126760626,
+        "selection_field_auc": 0.9926470588235294,
+        "note": "Selection groups are internal development, not independent acceptance; base predictor checkpoint selection used broader validation.",
+        "reserved_used": false
+      },
+      "healthy_min": 0.92,
+      "species_min": 0.5,
+      "negative_healthy_max": 0.001,
+      "leaf_healthy_min": 0.5,
+      "retained": true,
+      "field_healthy_passed": false,
+      "score": 1.0149097856927733,
+      "cohorts": {
+        "development": {
+          "healthy": {
+            "n": 26,
+            "correct": 22,
+            "correct_rate": 0.8461538461538461,
+            "healthy_verdict": 22,
+            "healthy_recall": 0.8461538461538461,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 22,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 2
+          },
+          "disease": {
+            "n": 458,
+            "correct": 446,
+            "correct_rate": 0.9737991266375546,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 453,
+            "kind_UNSURE": 4,
+            "kind_NO_LEAVES": 1
+          },
+          "false_healthy": 3,
+          "unsupported": {
+            "n": 39,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 34,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 3
+          },
+          "non_tomato": {
+            "n": 169,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.01775147928994083,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 150,
+            "kind_UNSURE": 6,
+            "kind_DISEASE": 10,
+            "kind_HEALTHY": 3
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 231,
+              "healthy_recall": 1.0,
+              "false_healthy": 3
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.7894736842105263,
+              "false_healthy": 0
+            }
+          }
+        },
+        "public": {
+          "healthy": {
+            "n": 80,
+            "correct": 73,
+            "correct_rate": 0.9125,
+            "healthy_verdict": 73,
+            "healthy_recall": 0.9125,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 3,
+            "false_other_rate": 0.0375,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 73,
+            "kind_DISEASE": 2,
+            "kind_UNKNOWN_CONDITION": 3,
+            "kind_UNSURE": 2
+          },
+          "disease": {
+            "n": 558,
+            "correct": 521,
+            "correct_rate": 0.9336917562724014,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0017921146953405018,
+            "false_other": 4,
+            "false_other_rate": 0.007168458781362007,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 542,
+            "kind_UNSURE": 10,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "false_healthy": 4,
+          "unsupported": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006944444444444444,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.04861111111111111,
+            "kind_UNKNOWN_CONDITION": 135,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 137,
+            "kind_UNSURE": 9,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 3
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 0
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.9090909090909091,
+              "false_healthy": 1
+            }
+          }
+        },
+        "prior_test": {
+          "healthy": {
+            "n": 81,
+            "correct": 69,
+            "correct_rate": 0.8518518518518519,
+            "healthy_verdict": 69,
+            "healthy_recall": 0.8518518518518519,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 3,
+            "false_other_rate": 0.037037037037037035,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 5,
+            "kind_HEALTHY": 69,
+            "kind_UNSURE": 4,
+            "kind_UNKNOWN_CONDITION": 3
+          },
+          "disease": {
+            "n": 585,
+            "correct": 557,
+            "correct_rate": 0.9521367521367521,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.003418803418803419,
+            "false_other": 4,
+            "false_other_rate": 0.006837606837606838,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 567,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 8,
+            "kind_HEALTHY": 2,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "false_healthy": 5,
+          "unsupported": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006944444444444444,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.04861111111111111,
+            "kind_UNKNOWN_CONDITION": 135,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 137,
+            "kind_UNSURE": 9,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 3
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 0
+            },
+            "tomatovillage": {
+              "n": 489,
+              "healthy_recall": 0.6956521739130435,
+              "false_healthy": 2
+            }
+          }
+        },
+        "taiwan": {
+          "healthy": {
+            "n": 22,
+            "correct": 21,
+            "correct_rate": 0.9545454545454546,
+            "healthy_verdict": 21,
+            "healthy_recall": 0.9545454545454546,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 1,
+            "false_other_rate": 0.045454545454545456,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 21,
+            "kind_UNKNOWN_CONDITION": 1
+          },
+          "disease": {
+            "n": 20,
+            "correct": 11,
+            "correct_rate": 0.55,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 6,
+            "false_other_rate": 0.3,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 11,
+            "kind_UNSURE": 3,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "false_healthy": 0,
+          "unsupported": {
+            "n": 85,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.03529411764705882,
+            "kind_UNKNOWN_CONDITION": 79,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 3,
+            "kind_NO_LEAVES": 1
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "taiwan": {
+              "n": 127,
+              "healthy_recall": 0.9545454545454546,
+              "false_healthy": 0
+            }
+          }
+        },
+        "phase2_selection": {
+          "healthy": {
+            "n": 39,
+            "correct": 18,
+            "correct_rate": 0.46153846153846156,
+            "healthy_verdict": 18,
+            "healthy_recall": 0.46153846153846156,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 7,
+            "false_other_rate": 0.1794871794871795,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 8,
+            "kind_HEALTHY": 18,
+            "kind_UNKNOWN_CONDITION": 7,
+            "kind_UNSURE": 6
+          },
+          "disease": {
+            "n": 375,
+            "correct": 156,
+            "correct_rate": 0.416,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0026666666666666666,
+            "false_other": 38,
+            "false_other_rate": 0.10133333333333333,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 269,
+            "kind_UNKNOWN_CONDITION": 38,
+            "kind_UNSURE": 66,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1
+          },
+          "false_healthy": 2,
+          "unsupported": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.022222222222222223,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 33,
+            "false_known_rate": 0.7333333333333333,
+            "kind_DISEASE": 32,
+            "kind_UNSURE": 5,
+            "kind_UNKNOWN_CONDITION": 7,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "bangladesh_classification": {
+              "n": 459,
+              "healthy_recall": 0.46153846153846156,
+              "false_healthy": 2
+            }
+          }
+        },
+        "phase5_selection": {
+          "healthy": {
+            "n": 248,
+            "correct": 194,
+            "correct_rate": 0.782258064516129,
+            "healthy_verdict": 194,
+            "healthy_recall": 0.782258064516129,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 25,
+            "false_other_rate": 0.10080645161290322,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 194,
+            "kind_UNKNOWN_CONDITION": 25,
+            "kind_NO_LEAVES": 23,
+            "kind_UNSURE": 5,
+            "kind_DISEASE": 1
+          },
+          "disease": {
+            "n": 155,
+            "correct": 79,
+            "correct_rate": 0.5096774193548387,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 42,
+            "false_other_rate": 0.2709677419354839,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNSURE": 14,
+            "kind_DISEASE": 96,
+            "kind_UNKNOWN_CONDITION": 42,
+            "kind_NO_LEAVES": 3
+          },
+          "false_healthy": 11,
+          "unsupported": {
+            "n": 268,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.007462686567164179,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 106,
+            "false_known_rate": 0.39552238805970147,
+            "kind_UNKNOWN_CONDITION": 111,
+            "kind_NO_LEAVES": 22,
+            "kind_DISEASE": 104,
+            "kind_HEALTHY": 2,
+            "kind_UNSURE": 29
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "swtt5wy2pr": {
+              "n": 460,
+              "healthy_recall": 0.9747899159663865,
+              "false_healthy": 0
+            },
+            "tom2024": {
+              "n": 579,
+              "healthy_recall": 0.6046511627906976,
+              "false_healthy": 11
+            }
+          }
+        },
+        "original": {
+          "healthy": {
+            "n": 26,
+            "correct": 20,
+            "correct_rate": 0.7692307692307693,
+            "healthy_verdict": 20,
+            "healthy_recall": 0.7692307692307693,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 20,
+            "kind_DISEASE": 4,
+            "kind_UNSURE": 2
+          },
+          "disease": {
+            "n": 449,
+            "correct": 435,
+            "correct_rate": 0.9688195991091314,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0022271714922048997,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 442,
+            "kind_UNSURE": 6,
+            "kind_HEALTHY": 1
+          },
+          "false_healthy": 3,
+          "unsupported": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.022222222222222223,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 6,
+            "false_known_rate": 0.13333333333333333,
+            "kind_UNKNOWN_CONDITION": 36,
+            "kind_UNSURE": 3,
+            "kind_DISEASE": 5,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 163,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006134969325153374,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 16,
+            "false_known_rate": 0.09815950920245399,
+            "kind_UNKNOWN_CONDITION": 144,
+            "kind_HEALTHY": 1,
+            "kind_DISEASE": 15,
+            "kind_UNSURE": 3
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 226,
+              "healthy_recall": 1.0,
+              "false_healthy": 2
+            },
+            "tomatovillage": {
+              "n": 457,
+              "healthy_recall": 0.7391304347826086,
+              "false_healthy": 1
+            }
+          }
+        },
+        "expanded": {
+          "healthy": {
+            "n": 380,
+            "correct": 302,
+            "correct_rate": 0.7947368421052632,
+            "healthy_verdict": 302,
+            "healthy_recall": 0.7947368421052632,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 42,
+            "false_other_rate": 0.11052631578947368,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 302,
+            "kind_UNKNOWN_CONDITION": 42,
+            "kind_UNSURE": 31,
+            "kind_DISEASE": 5
+          },
+          "disease": {
+            "n": 335,
+            "correct": 181,
+            "correct_rate": 0.5402985074626866,
+            "healthy_verdict": 97,
+            "healthy_recall": null,
+            "false_healthy": 97,
+            "false_healthy_rate": 0.28955223880597014,
+            "false_other": 29,
+            "false_other_rate": 0.08656716417910448,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 97,
+            "kind_UNKNOWN_CONDITION": 29,
+            "kind_DISEASE": 189,
+            "kind_UNSURE": 20
+          },
+          "false_healthy": 207,
+          "unsupported": {
+            "n": 818,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 110,
+            "healthy_recall": null,
+            "false_healthy": 110,
+            "false_healthy_rate": 0.13447432762836187,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 266,
+            "false_known_rate": 0.3251833740831296,
+            "kind_HEALTHY": 110,
+            "kind_UNKNOWN_CONDITION": 480,
+            "kind_UNSURE": 72,
+            "kind_DISEASE": 156
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "pakistan": {
+              "n": 70,
+              "healthy_recall": 0.7272727272727273,
+              "false_healthy": 1
+            },
+            "tlid": {
+              "n": 1463,
+              "healthy_recall": 0.7967479674796748,
+              "false_healthy": 206
+            }
+          }
+        }
+      }
+    },
+    "open_set": {
+      "id": 72,
+      "student_checkpoint": "/home/genesis/agribot-data/recognition_campaign_20261024/phase5/multiclass/lora_d12/best.pt",
+      "cnn_checkpoint": "/home/genesis/agribot-data/recognition_campaign_20261024/phase5/cnn_inputs/runs/mobilenetv3_small_100.lamb_in1k_center_focal_n2/best.pt",
+      "policy": {
+        "alpha": 1.0,
+        "student_temperature": 0.8,
+        "student_min": 0.8,
+        "healthy_min": 0.95,
+        "known_min": 0.5,
+        "reference_disease_min": 0.0,
+        "reference_disease_max": 1.0,
+        "cnn_calibration": [
+          [
+            0.6006541392276189,
+            1.269276027266982
+          ],
+          [
+            0.28779217777943544,
+            -0.4252154608275748
+          ]
+        ],
+        "allow_unknown": true,
+        "healthy_reference_classes": [
+          1,
+          3,
+          8
+        ]
+      },
+      "retained": true,
+      "strict_retained": false,
+      "score": 0.9110769496172544,
+      "view_confirmation": true,
+      "full_roi_proposals": false,
+      "confirm_unknown": true,
+      "fallback_crops": 148,
+      "cohorts": {
+        "development": {
+          "healthy": {
+            "n": 26,
+            "correct": 21,
+            "correct_rate": 0.8076923076923077,
+            "healthy_verdict": 21,
+            "healthy_recall": 0.8076923076923077,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 21,
+            "kind_UNSURE": 3,
+            "kind_DISEASE": 2
+          },
+          "disease": {
+            "n": 458,
+            "correct": 446,
+            "correct_rate": 0.9737991266375546,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 453,
+            "kind_UNSURE": 4,
+            "kind_NO_LEAVES": 1
+          },
+          "false_healthy": 3,
+          "unsupported": {
+            "n": 39,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 34,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 3
+          },
+          "non_tomato": {
+            "n": 169,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.01775147928994083,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.07692307692307693,
+            "kind_UNKNOWN_CONDITION": 150,
+            "kind_UNSURE": 6,
+            "kind_DISEASE": 10,
+            "kind_HEALTHY": 3
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 231,
+              "healthy_recall": 1.0,
+              "false_healthy": 3
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.7368421052631579,
+              "false_healthy": 0
+            }
+          }
+        },
+        "public": {
+          "healthy": {
+            "n": 80,
+            "correct": 70,
+            "correct_rate": 0.875,
+            "healthy_verdict": 70,
+            "healthy_recall": 0.875,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 3,
+            "false_other_rate": 0.0375,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 4,
+            "kind_HEALTHY": 70,
+            "kind_UNSURE": 3,
+            "kind_UNKNOWN_CONDITION": 3
+          },
+          "disease": {
+            "n": 558,
+            "correct": 521,
+            "correct_rate": 0.9336917562724014,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0017921146953405018,
+            "false_other": 4,
+            "false_other_rate": 0.007168458781362007,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 542,
+            "kind_UNSURE": 10,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "false_healthy": 4,
+          "unsupported": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006944444444444444,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.04861111111111111,
+            "kind_UNKNOWN_CONDITION": 135,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 138,
+            "kind_UNSURE": 8,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 3
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 0
+            },
+            "tomatovillage": {
+              "n": 461,
+              "healthy_recall": 0.7727272727272727,
+              "false_healthy": 1
+            }
+          }
+        },
+        "prior_test": {
+          "healthy": {
+            "n": 81,
+            "correct": 61,
+            "correct_rate": 0.7530864197530864,
+            "healthy_verdict": 61,
+            "healthy_recall": 0.7530864197530864,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 3,
+            "false_other_rate": 0.037037037037037035,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 5,
+            "kind_HEALTHY": 61,
+            "kind_UNSURE": 12,
+            "kind_UNKNOWN_CONDITION": 3
+          },
+          "disease": {
+            "n": 585,
+            "correct": 558,
+            "correct_rate": 0.9538461538461539,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0017094017094017094,
+            "false_other": 4,
+            "false_other_rate": 0.006837606837606838,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 568,
+            "kind_NO_LEAVES": 4,
+            "kind_UNSURE": 8,
+            "kind_HEALTHY": 1,
+            "kind_UNKNOWN_CONDITION": 4
+          },
+          "false_healthy": 4,
+          "unsupported": {
+            "n": 144,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006944444444444444,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 7,
+            "false_known_rate": 0.04861111111111111,
+            "kind_UNKNOWN_CONDITION": 135,
+            "kind_DISEASE": 6,
+            "kind_UNSURE": 2,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 159,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 2,
+            "healthy_recall": null,
+            "false_healthy": 2,
+            "false_healthy_rate": 0.012578616352201259,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 13,
+            "false_known_rate": 0.08176100628930817,
+            "kind_UNKNOWN_CONDITION": 138,
+            "kind_UNSURE": 8,
+            "kind_HEALTHY": 2,
+            "kind_DISEASE": 11
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 225,
+              "healthy_recall": 0.375,
+              "false_healthy": 3
+            },
+            "plantvillage": {
+              "n": 255,
+              "healthy_recall": 1.0,
+              "false_healthy": 0
+            },
+            "tomatovillage": {
+              "n": 489,
+              "healthy_recall": 0.34782608695652173,
+              "false_healthy": 1
+            }
+          }
+        },
+        "taiwan": {
+          "healthy": {
+            "n": 22,
+            "correct": 21,
+            "correct_rate": 0.9545454545454546,
+            "healthy_verdict": 21,
+            "healthy_recall": 0.9545454545454546,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 1,
+            "false_other_rate": 0.045454545454545456,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 21,
+            "kind_UNKNOWN_CONDITION": 1
+          },
+          "disease": {
+            "n": 20,
+            "correct": 11,
+            "correct_rate": 0.55,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 6,
+            "false_other_rate": 0.3,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 11,
+            "kind_UNSURE": 3,
+            "kind_UNKNOWN_CONDITION": 6
+          },
+          "false_healthy": 0,
+          "unsupported": {
+            "n": 85,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.03529411764705882,
+            "kind_UNKNOWN_CONDITION": 79,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 3,
+            "kind_NO_LEAVES": 1
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "taiwan": {
+              "n": 127,
+              "healthy_recall": 0.9545454545454546,
+              "false_healthy": 0
+            }
+          }
+        },
+        "phase2_selection": {
+          "healthy": {
+            "n": 39,
+            "correct": 12,
+            "correct_rate": 0.3076923076923077,
+            "healthy_verdict": 12,
+            "healthy_recall": 0.3076923076923077,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 9,
+            "false_other_rate": 0.23076923076923078,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 11,
+            "kind_HEALTHY": 12,
+            "kind_UNKNOWN_CONDITION": 9,
+            "kind_UNSURE": 7
+          },
+          "disease": {
+            "n": 375,
+            "correct": 152,
+            "correct_rate": 0.4053333333333333,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.0026666666666666666,
+            "false_other": 42,
+            "false_other_rate": 0.112,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 265,
+            "kind_UNKNOWN_CONDITION": 42,
+            "kind_UNSURE": 66,
+            "kind_HEALTHY": 1,
+            "kind_NO_LEAVES": 1
+          },
+          "false_healthy": 2,
+          "unsupported": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.022222222222222223,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 33,
+            "false_known_rate": 0.7333333333333333,
+            "kind_DISEASE": 32,
+            "kind_UNSURE": 5,
+            "kind_UNKNOWN_CONDITION": 7,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "bangladesh_classification": {
+              "n": 459,
+              "healthy_recall": 0.3076923076923077,
+              "false_healthy": 2
+            }
+          }
+        },
+        "phase5_selection": {
+          "healthy": {
+            "n": 248,
+            "correct": 149,
+            "correct_rate": 0.6008064516129032,
+            "healthy_verdict": 149,
+            "healthy_recall": 0.6008064516129032,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 53,
+            "false_other_rate": 0.21370967741935484,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNSURE": 22,
+            "kind_HEALTHY": 149,
+            "kind_UNKNOWN_CONDITION": 53,
+            "kind_NO_LEAVES": 23,
+            "kind_DISEASE": 1
+          },
+          "disease": {
+            "n": 155,
+            "correct": 69,
+            "correct_rate": 0.44516129032258067,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 52,
+            "false_other_rate": 0.33548387096774196,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNSURE": 14,
+            "kind_DISEASE": 86,
+            "kind_UNKNOWN_CONDITION": 52,
+            "kind_NO_LEAVES": 3
+          },
+          "false_healthy": 8,
+          "unsupported": {
+            "n": 268,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.011194029850746268,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 107,
+            "false_known_rate": 0.39925373134328357,
+            "kind_UNKNOWN_CONDITION": 105,
+            "kind_NO_LEAVES": 22,
+            "kind_DISEASE": 104,
+            "kind_HEALTHY": 3,
+            "kind_UNSURE": 34
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "swtt5wy2pr": {
+              "n": 460,
+              "healthy_recall": 0.907563025210084,
+              "false_healthy": 1
+            },
+            "tom2024": {
+              "n": 579,
+              "healthy_recall": 0.3178294573643411,
+              "false_healthy": 7
+            }
+          }
+        },
+        "original": {
+          "healthy": {
+            "n": 26,
+            "correct": 19,
+            "correct_rate": 0.7307692307692307,
+            "healthy_verdict": 19,
+            "healthy_recall": 0.7307692307692307,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 19,
+            "kind_DISEASE": 4,
+            "kind_UNSURE": 3
+          },
+          "disease": {
+            "n": 449,
+            "correct": 435,
+            "correct_rate": 0.9688195991091314,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 442,
+            "kind_UNSURE": 7
+          },
+          "false_healthy": 2,
+          "unsupported": {
+            "n": 45,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.022222222222222223,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 6,
+            "false_known_rate": 0.13333333333333333,
+            "kind_UNKNOWN_CONDITION": 36,
+            "kind_UNSURE": 3,
+            "kind_DISEASE": 5,
+            "kind_HEALTHY": 1
+          },
+          "non_tomato": {
+            "n": 163,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 1,
+            "healthy_recall": null,
+            "false_healthy": 1,
+            "false_healthy_rate": 0.006134969325153374,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 16,
+            "false_known_rate": 0.09815950920245399,
+            "kind_UNKNOWN_CONDITION": 143,
+            "kind_HEALTHY": 1,
+            "kind_DISEASE": 15,
+            "kind_UNSURE": 4
+          },
+          "by_source": {
+            "plantdoc": {
+              "n": 226,
+              "healthy_recall": 1.0,
+              "false_healthy": 2
+            },
+            "tomatovillage": {
+              "n": 457,
+              "healthy_recall": 0.6956521739130435,
+              "false_healthy": 0
+            }
+          }
+        },
+        "expanded": {
+          "healthy": {
+            "n": 380,
+            "correct": 303,
+            "correct_rate": 0.7973684210526316,
+            "healthy_verdict": 303,
+            "healthy_recall": 0.7973684210526316,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 42,
+            "false_other_rate": 0.11052631578947368,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 303,
+            "kind_UNKNOWN_CONDITION": 42,
+            "kind_UNSURE": 30,
+            "kind_DISEASE": 5
+          },
+          "disease": {
+            "n": 335,
+            "correct": 144,
+            "correct_rate": 0.4298507462686567,
+            "healthy_verdict": 126,
+            "healthy_recall": null,
+            "false_healthy": 126,
+            "false_healthy_rate": 0.3761194029850746,
+            "false_other": 34,
+            "false_other_rate": 0.10149253731343283,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 126,
+            "kind_UNKNOWN_CONDITION": 34,
+            "kind_DISEASE": 152,
+            "kind_UNSURE": 23
+          },
+          "false_healthy": 248,
+          "unsupported": {
+            "n": 818,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 122,
+            "healthy_recall": null,
+            "false_healthy": 122,
+            "false_healthy_rate": 0.1491442542787286,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 278,
+            "false_known_rate": 0.33985330073349634,
+            "kind_HEALTHY": 122,
+            "kind_UNKNOWN_CONDITION": 462,
+            "kind_UNSURE": 78,
+            "kind_DISEASE": 156
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "by_source": {
+            "pakistan": {
+              "n": 70,
+              "healthy_recall": 0.8181818181818182,
+              "false_healthy": 1
+            },
+            "tlid": {
+              "n": 1463,
+              "healthy_recall": 0.7967479674796748,
+              "false_healthy": 247
+            }
+          }
+        }
+      }
+    },
+    "prospective_reservation": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase6_roi/reserved_manifest.json",
+      "sha256": "ca91cf80b05eab1c733a54746542e8fe37bee503c7c0fe03a97022bcdd0f5dd1",
+      "predictions_opened": true
+    },
+    "completed_trained_controls_before_active_runs": 238,
+    "active_controller": null,
+    "scope": "Development/regression only; no native whole-frame context pipeline or installed newer model",
+    "completed_trained_controls": 246,
+    "prospective_acceptance": {
+      "protocol": {
+        "stage": "PyTorch prototype, before exported-byte/native verification",
+        "candidate_sha256": "d70723d8b3b45319a4dbf607782877587e0ccfa25507fbb7dd8846f768da1945",
+        "candidate_id": 421,
+        "input_identity": {
+          "scene_rows_sha256": "e063bafa83acc1c2fbd588a88042a5677c5dd7321b76fb007c07c361325e9dca",
+          "feature_model_sha256": "7ee70502933a49784b89b538b8da56cc5c9173116a6c8400c4e43a74a8e01e49",
+          "head_hashes": [
+            "e49ec90e0a6bf63e7bd9249795f87742bd8805f99660b74ac184877348d02b19",
+            "09fa26fba07c8f217e9ab7f5dc2c5189d815ecafcdb4552951ba2fe9d489a86a"
+          ],
+          "head_calibration_hashes": [
+            "71fb1ea361641779728805ed520041272c3573ab1492d60e322c25deb2108d5c",
+            "f1ec90f7145944c435cd8c46b6317c425c5a8c3da0318f79f8c62ead3e5c2055"
+          ],
+          "scene_cnn_sha256": "1952c34cb8dbb15093d1e73775fc5708db4674a662ec7e7ab3766a182e0d5d30",
+          "scene_cnn_calibration_sha256": "47599a7ec48bd44a40c7c8d8694f8b9c4343645955cdbfb4c7bcf4449e9dd903",
+          "species_cnn_sha256": "34e6ce593e8c4e08141f831f8fccc0fd3e55bfa5326442e4b6b98c9dec217693",
+          "species_cnn_calibration_sha256": "5fe18b62e24cbe28da72ae996fcf8a6fec693ac9bd7257493438d04bbd90510d"
+        },
+        "reserved_manifest_sha256": "ca91cf80b05eab1c733a54746542e8fe37bee503c7c0fe03a97022bcdd0f5dd1",
+        "reserved_n": 246,
+        "healthy_recall_min": 0.7,
+        "healthy_gain_min": 0.05,
+        "paired_capture_group_healthy_gain_bootstrap_lower_95_min_exclusive": 0.0,
+        "bootstrap_seed": 239,
+        "bootstrap_samples": 5000,
+        "per_source_relative_retention": "phase2_select.retain unchanged: integer-floor allowances, no Healthy decrease, <=1pp named disease loss, <=0.5pp false Healthy/Other/known increases",
+        "field_scope": "Same-source prospectively reserved inferred capture families, not independently adjudicated whole-plant diagnoses",
+        "rule": "One opening; failure blocks promotion. Never tune on these predictions and call the reservation independent again.",
+        "baseline_classifier_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39"
+      },
+      "baseline": {
+        "swtt5wy2pr": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 52,
+          "all": {
+            "n": 52,
+            "correct": 7,
+            "correct_rate": 0.1346153846153846,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 15,
+            "false_other_rate": 0.28846153846153844,
+            "false_known": 17,
+            "false_known_rate": 0.3269230769230769,
+            "kind_DISEASE": 17,
+            "kind_UNKNOWN_CONDITION": 22,
+            "kind_UNSURE": 13
+          },
+          "supported": {
+            "n": 28,
+            "correct": 7,
+            "correct_rate": 0.25,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 15,
+            "false_other_rate": 0.5357142857142857,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 9,
+            "kind_UNKNOWN_CONDITION": 15,
+            "kind_UNSURE": 4
+          },
+          "healthy": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "supported_disease": {
+            "n": 28,
+            "correct": 7,
+            "correct_rate": 0.25,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 15,
+            "false_other_rate": 0.5357142857142857,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 9,
+            "kind_UNKNOWN_CONDITION": 15,
+            "kind_UNSURE": 4
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 24,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 8,
+            "false_known_rate": 0.3333333333333333,
+            "kind_DISEASE": 8,
+            "kind_UNKNOWN_CONDITION": 7,
+            "kind_UNSURE": 9
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": null,
+          "healthy_precision_n": 0,
+          "by_source": {
+            "swtt5wy2pr": {
+              "n": 52,
+              "healthy_recall": 0.0,
+              "false_healthy": 0
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 16,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 12,
+              "correct": 7
+            },
+            "Leaf Miner": {
+              "n": 0,
+              "correct": 0
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "tom2024": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 194,
+          "all": {
+            "n": 194,
+            "correct": 8,
+            "correct_rate": 0.041237113402061855,
+            "healthy_verdict": 11,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.015463917525773196,
+            "false_other": 55,
+            "false_other_rate": 0.28350515463917525,
+            "false_known": 23,
+            "false_known_rate": 0.11855670103092783,
+            "kind_UNKNOWN_CONDITION": 106,
+            "kind_UNSURE": 18,
+            "kind_NO_LEAVES": 47,
+            "kind_HEALTHY": 11,
+            "kind_DISEASE": 12
+          },
+          "supported": {
+            "n": 95,
+            "correct": 8,
+            "correct_rate": 0.08421052631578947,
+            "healthy_verdict": 8,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 55,
+            "false_other_rate": 0.5789473684210527,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNKNOWN_CONDITION": 55,
+            "kind_UNSURE": 14,
+            "kind_NO_LEAVES": 17,
+            "kind_HEALTHY": 8,
+            "kind_DISEASE": 1
+          },
+          "healthy": {
+            "n": 95,
+            "correct": 8,
+            "correct_rate": 0.08421052631578947,
+            "healthy_verdict": 8,
+            "healthy_recall": 0.08421052631578947,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 55,
+            "false_other_rate": 0.5789473684210527,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_UNKNOWN_CONDITION": 55,
+            "kind_UNSURE": 14,
+            "kind_NO_LEAVES": 17,
+            "kind_HEALTHY": 8,
+            "kind_DISEASE": 1
+          },
+          "supported_disease": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "coarse_diseased": {
+            "n": 74,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.04054054054054054,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_NO_LEAVES": 27,
+            "kind_UNKNOWN_CONDITION": 34,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 8,
+            "kind_HEALTHY": 3
+          },
+          "unsupported_tomato": {
+            "n": 25,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.12,
+            "kind_UNKNOWN_CONDITION": 17,
+            "kind_NO_LEAVES": 3,
+            "kind_DISEASE": 3,
+            "kind_UNSURE": 2
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 0.7272727272727273,
+          "healthy_precision_n": 11,
+          "by_source": {
+            "tom2024": {
+              "n": 194,
+              "healthy_recall": 0.08421052631578947,
+              "false_healthy": 3
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 0,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 0,
+              "correct": 0
+            },
+            "Leaf Miner": {
+              "n": 0,
+              "correct": 0
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        }
+      },
+      "candidate": {
+        "swtt5wy2pr": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 52,
+          "all": {
+            "n": 52,
+            "correct": 12,
+            "correct_rate": 0.23076923076923078,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 10,
+            "false_other_rate": 0.19230769230769232,
+            "false_known": 22,
+            "false_known_rate": 0.4230769230769231,
+            "kind_DISEASE": 22,
+            "kind_UNKNOWN_CONDITION": 21,
+            "kind_UNSURE": 9
+          },
+          "supported": {
+            "n": 28,
+            "correct": 12,
+            "correct_rate": 0.42857142857142855,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 10,
+            "false_other_rate": 0.35714285714285715,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 14,
+            "kind_UNKNOWN_CONDITION": 10,
+            "kind_UNSURE": 4
+          },
+          "healthy": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "supported_disease": {
+            "n": 28,
+            "correct": 12,
+            "correct_rate": 0.42857142857142855,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 10,
+            "false_other_rate": 0.35714285714285715,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_DISEASE": 14,
+            "kind_UNKNOWN_CONDITION": 10,
+            "kind_UNSURE": 4
+          },
+          "coarse_diseased": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "unsupported_tomato": {
+            "n": 24,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 8,
+            "false_known_rate": 0.3333333333333333,
+            "kind_DISEASE": 8,
+            "kind_UNKNOWN_CONDITION": 11,
+            "kind_UNSURE": 5
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": null,
+          "healthy_precision_n": 0,
+          "by_source": {
+            "swtt5wy2pr": {
+              "n": 52,
+              "healthy_recall": 0.0,
+              "false_healthy": 0
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 16,
+              "correct": 5
+            },
+            "Late_blight": {
+              "n": 12,
+              "correct": 7
+            },
+            "Leaf Miner": {
+              "n": 0,
+              "correct": 0
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        },
+        "tom2024": {
+          "excluded_mixed_photos": 0,
+          "scalar_eligible_photos": 194,
+          "all": {
+            "n": 194,
+            "correct": 44,
+            "correct_rate": 0.2268041237113402,
+            "healthy_verdict": 47,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.015463917525773196,
+            "false_other": 34,
+            "false_other_rate": 0.17525773195876287,
+            "false_known": 59,
+            "false_known_rate": 0.30412371134020616,
+            "kind_HEALTHY": 47,
+            "kind_UNKNOWN_CONDITION": 85,
+            "kind_NO_LEAVES": 38,
+            "kind_UNSURE": 12,
+            "kind_DISEASE": 12
+          },
+          "supported": {
+            "n": 95,
+            "correct": 44,
+            "correct_rate": 0.4631578947368421,
+            "healthy_verdict": 44,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 34,
+            "false_other_rate": 0.35789473684210527,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 44,
+            "kind_UNKNOWN_CONDITION": 34,
+            "kind_NO_LEAVES": 8,
+            "kind_UNSURE": 8,
+            "kind_DISEASE": 1
+          },
+          "healthy": {
+            "n": 95,
+            "correct": 44,
+            "correct_rate": 0.4631578947368421,
+            "healthy_verdict": 44,
+            "healthy_recall": 0.4631578947368421,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 34,
+            "false_other_rate": 0.35789473684210527,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_HEALTHY": 44,
+            "kind_UNKNOWN_CONDITION": 34,
+            "kind_NO_LEAVES": 8,
+            "kind_UNSURE": 8,
+            "kind_DISEASE": 1
+          },
+          "supported_disease": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "coarse_diseased": {
+            "n": 74,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 3,
+            "healthy_recall": null,
+            "false_healthy": 3,
+            "false_healthy_rate": 0.04054054054054054,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": null,
+            "false_known_rate": null,
+            "kind_NO_LEAVES": 27,
+            "kind_UNKNOWN_CONDITION": 34,
+            "kind_UNSURE": 2,
+            "kind_DISEASE": 8,
+            "kind_HEALTHY": 3
+          },
+          "unsupported_tomato": {
+            "n": 25,
+            "correct": 0,
+            "correct_rate": 0.0,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": 0.0,
+            "false_other": 0,
+            "false_other_rate": 0.0,
+            "false_known": 3,
+            "false_known_rate": 0.12,
+            "kind_UNKNOWN_CONDITION": 17,
+            "kind_NO_LEAVES": 3,
+            "kind_DISEASE": 3,
+            "kind_UNSURE": 2
+          },
+          "non_tomato": {
+            "n": 0,
+            "correct": 0,
+            "correct_rate": null,
+            "healthy_verdict": 0,
+            "healthy_recall": null,
+            "false_healthy": 0,
+            "false_healthy_rate": null,
+            "false_other": 0,
+            "false_other_rate": null,
+            "false_known": null,
+            "false_known_rate": null
+          },
+          "healthy_precision": 0.9361702127659575,
+          "healthy_precision_n": 47,
+          "by_source": {
+            "tom2024": {
+              "n": 194,
+              "healthy_recall": 0.4631578947368421,
+              "false_healthy": 3
+            }
+          },
+          "oracle_objects": {
+            "n": 0,
+            "correct": 0,
+            "false_other": 0,
+            "healthy_n": 0,
+            "healthy_correct": 0,
+            "false_healthy": 0
+          },
+          "disease_classes": {
+            "Early_blight": {
+              "n": 0,
+              "correct": 0
+            },
+            "Late_blight": {
+              "n": 0,
+              "correct": 0
+            },
+            "Leaf Miner": {
+              "n": 0,
+              "correct": 0
+            },
+            "Magnesium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Nitrogen Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Pottassium Deficiency": {
+              "n": 0,
+              "correct": 0
+            },
+            "Spotted Wilt Virus": {
+              "n": 0,
+              "correct": 0
+            }
+          }
+        }
+      },
+      "checks": {
+        "retained_per_source": true,
+        "healthy_min_70_percent": false,
+        "healthy_gain_min_5pp": true,
+        "paired_capture_group_bootstrap_lower_positive": true
+      },
+      "passed": false,
+      "paired_healthy_gain": 0.37894736842105264,
+      "paired_healthy_capture_group_bootstrap_95": [
+        0.28421052631578947,
+        0.4739473684210488
+      ],
+      "healthy_wilson_95": {
+        "swtt5wy2pr": null,
+        "tom2024": [
+          0.3662764282064395,
+          0.5629030873175216
+        ]
+      },
+      "reserved_now_opened": true,
+      "next_step": "Exported-byte replay and native implementation still required if passed; otherwise reject and do not retune on this reservation."
+    },
+    "historical_comparisons_note": "Other latest_continuation metrics describe earlier phase-seven selection before the final focal candidate; prospectively frozen results take precedence."
+  }
 }

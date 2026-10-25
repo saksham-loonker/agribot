@@ -8,6 +8,7 @@ internal class ViewConfirmation(
     private val decision: EnsembleDecision,
     private val healthyIndex: Int,
     private val otherIndex: Int,
+    private val confirmUnknown: Boolean = false,
 ) {
     private val policy = VerdictPolicy()
 
@@ -27,7 +28,8 @@ internal class ViewConfirmation(
 
     fun needsConfirmation(reference: FloatArray, candidate: FloatArray): Boolean {
         val proposed = key(candidate)
-        return proposed.first in listOf(VerdictKind.HEALTHY, VerdictKind.DISEASE) && proposed != key(reference)
+        return (proposed.first in listOf(VerdictKind.HEALTHY, VerdictKind.DISEASE) ||
+            (confirmUnknown && proposed.first == VerdictKind.UNKNOWN_CONDITION)) && proposed != key(reference)
     }
 
     fun confirms(candidate: FloatArray, fullRoi: FloatArray): Boolean = key(candidate) == key(fullRoi)

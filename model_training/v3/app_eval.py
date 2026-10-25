@@ -274,22 +274,24 @@ class Models:
             return [z.tolist() for z in outputs]
         from view_guard_policy import decision_key, needs_confirmation
 
+        policy = confirmation.get('policy')
         assert (
             self.manifest["schema"] == 3
             and len(outputs) == 1
             and confirmation
             == dict(
-                policy="changed_positive_full_roi",
+                policy=policy,
                 reference_logit_offset=len(LABELS),
                 padding_value=114,
             )
+            and policy in ('changed_positive_full_roi', 'changed_decision_full_roi')
         )
         raw = outputs[0]
         assert raw.shape == (2 * len(LABELS),)
         candidate, reference = raw[: len(LABELS)], raw[len(LABELS) :]
         cp = posterior([candidate], self.manifest)
         rp = posterior([reference], self.manifest)
-        if needs_confirmation(rp, cp):
+        if needs_confirmation(rp, cp, confirm_unknown=policy=='changed_decision_full_roi'):
             interpreter, size = self.members[0]
             full = self.invoke(interpreter, alternative_input(size)).ravel()[
                 : len(LABELS)

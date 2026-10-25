@@ -53,11 +53,12 @@ class MulticlassExpert(nn.Module):
             raise ValueError(mode)
 
     def forward(self, tokens):
-        return self.head(
-            self.norm(self.block(tokens) if self.depth == 1 else self.tail(tokens))[
-                :, 0
-            ]
-        )
+        return self.head(self.features(tokens))
+
+    def features(self, tokens):
+        return self.norm(self.block(tokens) if self.depth == 1 else self.tail(tokens))[
+            :, 0
+        ]
 
 
 def adaptation_loss(

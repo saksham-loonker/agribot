@@ -51,6 +51,15 @@ class ViewConfirmationTest {
         assertFalse(guard.confirms(confident(0), confident(2)))
     }
 
+    @Test fun `an unrecognized correction also needs agreement when configured`() {
+        val allDecisions = ViewConfirmation(EnsembleDecision(4, 3, 0.0, 1.0, null), 1, 3, true)
+        assertFalse(guard.needsConfirmation(confident(1), confident(3)))
+        assertTrue(allDecisions.needsConfirmation(confident(1), confident(3)))
+        assertFalse(allDecisions.confirms(confident(3), confident(1)))
+        assertTrue(allDecisions.confirms(confident(3), confident(3)))
+        assertFalse(allDecisions.needsConfirmation(confident(3), confident(3)))
+    }
+
     @Test fun `the second view preserves tips cropped from a wide leaf`() {
         val frame = RgbFrame(8, 4, IntArray(32) { i ->
             (0xFF shl 24) or (if (i % 8 < 2 || i % 8 >= 6) 0xFF0000 else 0x0000FF)

@@ -42,7 +42,13 @@ def extend_lora(model, state):
 
 
 def supervised_loss(
-    logits, target, health, teacher, binary_weight=0.5, retention_weight=3.0
+    logits,
+    target,
+    health,
+    teacher,
+    binary_weight=0.5,
+    retention_weight=3.0,
+    negative_cost=2.0,
 ):
     known = target >= 0
     loss = (
@@ -57,7 +63,7 @@ def supervised_loss(
         + binary_weight
         * (
             F.binary_cross_entropy_with_logits(healthy_logit, health, reduction="none")
-            * torch.where(health > 0, 1.0, 2.0)
+            * torch.where(health > 0, 1.0, negative_cost)
         ).mean()
     )
     reliable = (teacher.argmax(1) == target) & (target != 1) & known
@@ -87,13 +93,19 @@ def main():
     ap.add_argument("--depth", type=int, default=12)
     ap.add_argument("--epochs", type=int, default=24)
     ap.add_argument("--batch", type=int, default=64)
+    ap.add_argument("--run-name")
+    ap.add_argument("--negative-cost", type=float, default=2.0)
+    ap.add_argument("--binary-weight", type=float, default=0.5)
+    ap.add_argument("--learning-rate", type=float, default=0.0001)
     a = ap.parse_args()
+    assert a.negative_cost > 0 and a.binary_weight >= 0 and a.learning_rate > 0
+    assert a.epochs > 0 and a.batch > 0
     root = Path(a.root)
     work = root / "cnn_inputs"
-    out = root / "multiclass" / f"lora_d{a.depth}"
+    run_name = a.run_name or f"lora_d{a.depth}"
+    assert Path(run_name).name == run_name and run_name not in (".", "..")
+    out = root / "multiclass" / run_name
     out.mkdir(parents=True, exist_ok=True)
-    if (out / "result.json").exists():
-        return
     torch.set_num_threads(4)
     torch.manual_seed(107)
     torch.backends.cuda.matmul.allow_tf32 = False
@@ -149,7 +161,7 @@ def main():
     model = MulticlassExpert(backbone, "lora", initial["rank"], a.depth).cuda()
     extend_lora(model, initial)
     parameters = [p for p in model.parameters() if p.requires_grad]
-    optimizer = torch.optim.AdamW(parameters, lr=0.0001, weight_decay=0.001)
+    optimizer = torch.optim.AdamW(parameters, lr=a.learning_rate, weight_decay=0.001)
     pixels = open_pixels(work)
     truth = torch.tensor(
         [LABELS.index(r["label"]) if r["label"] in LABELS else -1 for r in rows],
@@ -169,10 +181,16 @@ def main():
         batch=a.batch,
         amp="bfloat16 training only",
         seed=107,
-        binary_weight=0.5,
-        negative_binary_cost=2.0,
+        binary_weight=a.binary_weight,
+        negative_binary_cost=a.negative_cost,
         retention_weight=3.0,
     )
+    if a.learning_rate != 0.0001:
+        config["learning_rate"] = a.learning_rate
+    if (out / "result.json").exists():
+        saved = torch.load(out / "best.pt", weights_only=True, map_location="cpu")
+        assert saved["training_config"] == config, "Completed run identity changed"
+        return
     reference = torch.from_numpy(np.load(root / "reference_logits.npy")).cuda()
     baseline = classification_metrics(reference[oldval], truth[oldval])
     history = []
@@ -260,14 +278,21 @@ def main():
                 teacher = backbone.head(backbone.norm(teacher_tokens)[:, 0])
             with torch.autocast(device_type="cuda", dtype=torch.bfloat16):
                 logits = model(tokens)
-            loss = supervised_loss(logits.float(), truth[ids], health[ids], teacher)
+            loss = supervised_loss(
+                logits.float(),
+                truth[ids],
+                health[ids],
+                teacher,
+                binary_weight=a.binary_weight,
+                negative_cost=a.negative_cost,
+            )
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
             nn.utils.clip_grad_norm_(parameters, 1.0, error_if_nonfinite=True)
             optimizer.step()
             running += float(loss.detach())
             batches += 1
-        optimizer.param_groups[0]["lr"] = 0.0001 * (
+        optimizer.param_groups[0]["lr"] = a.learning_rate * (
             0.1 + 0.9 * 0.5 * (1 + math.cos(math.pi * (epoch + 1) / a.epochs))
         )
         old = classification_metrics(evaluate(oldval), truth[oldval])

@@ -28,7 +28,12 @@ def decision_key(probabilities, healthy=1, other=8):
     )
 
 
-def needs_confirmation(reference, candidate, healthy=1, other=8):
+def needs_confirmation(reference, candidate, healthy=1, other=8, confirm_unknown=False):
     old = decision_key(reference, healthy, other)
     new = decision_key(candidate, healthy, other)
-    return new[0] in ("HEALTHY", "DISEASE") and old != new
+    kinds = (
+        ("HEALTHY", "DISEASE", "UNKNOWN_CONDITION")
+        if confirm_unknown
+        else ("HEALTHY", "DISEASE")
+    )
+    return new[0] in kinds and old != new

@@ -21,6 +21,133 @@ if READY:
 
 @unittest.skipUnless(READY, "full training/evaluation dependencies are optional")
 class CampaignLossTests(unittest.TestCase):
+    def test_whole_image_evidence_cannot_replace_disease_or_fabricate_a_leaf(self):
+        from context_abstention import route_context
+
+        disease = dict(kind="DISEASE", label="Early_blight")
+        row = dict(contrast=0.2, sharpness=0.1, leaves=[], app_replay=disease)
+        result = route_context(row, row, {}, True, False, 0.99, False, False)
+        self.assertEqual(result["app_replay"], disease)
+        self.assertNotIn("whole_frame_evidence", result)
+        unknown = dict(row, app_replay=dict(kind="UNKNOWN_CONDITION", label="Other"))
+        blocked = route_context(unknown, unknown, {}, True, False, 0.99, True, True)
+        self.assertEqual(blocked["app_replay"], unknown["app_replay"])
+        accepted = route_context(unknown, unknown, {}, True, False, 0.99, False, False)
+        self.assertEqual(accepted["app_replay"]["kind"], "HEALTHY")
+        self.assertEqual(accepted["app_replay"]["scope"], "whole_frame")
+        self.assertEqual(accepted["app_replay"]["leaves"], 0)
+        self.assertEqual(accepted["leaves"], [])
+        self.assertEqual(unknown["app_replay"]["kind"], "UNKNOWN_CONDITION")
+
+    def test_new_healthy_leaf_verdict_requires_context_agreement(self):
+        from context_abstention import route_context
+
+        reference = dict(
+            contrast=0.2,
+            sharpness=0.1,
+            leaves=[],
+            app_replay=dict(kind="UNSURE", label="Other"),
+        )
+        row = dict(reference, app_replay=dict(kind="HEALTHY", label="Healthy"))
+        result = route_context(row, reference, {}, False, False, 0.8, False, False)
+        self.assertEqual(result["app_replay"], reference["app_replay"])
+        low_detail = dict(row, contrast=0.0, sharpness=0.0)
+        self.assertEqual(
+            route_context(low_detail, reference, {}, True, False, 0.99, False, False)[
+                "app_replay"
+            ],
+            row["app_replay"],
+        )
+
+    def test_strong_healthy_contradiction_abstains_without_naming_a_disease(self):
+        import numpy as np
+        from app_eval import replay, posterior
+        from context_abstention import abstain_healthy
+
+        manifest = dict(
+            classifier=dict(
+                labels=campaign.LABELS,
+                other_index=8,
+                other_logit_bias=0.75,
+                temperature=0.8814700841903687,
+            )
+        )
+        neutral = np.zeros(9, np.float32)
+        neutral[8] = -0.75
+        np.testing.assert_allclose(
+            posterior([neutral], manifest), np.full(9, 1 / 9), atol=1e-7
+        )
+        rng = np.random.default_rng(307)
+        checked = 0
+        for _ in range(250):
+            leaves = []
+            for i in range(4):
+                z = rng.normal(0, 0.8, 9)
+                z[1] += 5 if i < 3 else 0
+                leaves.append(
+                    dict(member_logits=[z.tolist()], score=float(rng.uniform(0.4, 1.0)))
+                )
+            verdict = replay(leaves, manifest)
+            if verdict["kind"] != "HEALTHY":
+                continue
+            row = dict(leaves=leaves, quality_weight=1.0, app_replay=verdict)
+            after = abstain_healthy(row, manifest)
+            self.assertNotIn(
+                after["app_replay"]["kind"], ("HEALTHY", "DISEASE", "UNKNOWN_CONDITION")
+            )
+            self.assertEqual(row["app_replay"]["kind"], "HEALTHY")
+            checked += 1
+        self.assertGreater(checked, 100)
+
+    def test_species_targets_mask_mixed_scenes_and_unverified_field_rois(self):
+        from phase7_species_train import species_targets
+
+        original = [
+            dict(
+                id="tomato",
+                source="plantdoc",
+                path="mixed.jpg",
+                raw_label="Tomato leaf",
+            ),
+            dict(
+                id="apple", source="plantdoc", path="mixed.jpg", raw_label="Apple leaf"
+            ),
+        ]
+        rows = [
+            dict(id="tomato", source="plantdoc", path="mixed.jpg", box=[0, 0, 8, 8]),
+            dict(id="apple", source="plantdoc", path="mixed.jpg", box=[8, 8, 16, 16]),
+            dict(id="scene", source="plantdoc", path="mixed.jpg", box=None),
+            dict(id="field", source="tom2024", path="field.jpg", box=None),
+            dict(id="field_roi", source="tom2024", path="field.jpg", box=[0, 0, 8, 8]),
+        ]
+        self.assertEqual(species_targets(rows, original).tolist(), [1, 0, -1, 1, -1])
+
+    def test_optional_unknown_guard_preserves_the_old_policy_default(self):
+        import numpy as np
+        from view_guard_policy import needs_confirmation
+
+        healthy = np.eye(9, dtype=np.float32)[1]
+        unknown = np.eye(9, dtype=np.float32)[8]
+        self.assertFalse(needs_confirmation(healthy, unknown))
+        self.assertTrue(needs_confirmation(healthy, unknown, confirm_unknown=True))
+        self.assertFalse(needs_confirmation(unknown, unknown, confirm_unknown=True))
+
+    def test_coarse_negative_cost_changes_the_healthy_gradient(self):
+        from phase5_train import supervised_loss
+
+        target = torch.tensor([-1])
+        health = torch.zeros(1)
+        reference = torch.zeros(1, 9)
+        gradients = []
+        for cost in (2.0, 8.0):
+            logits = torch.zeros(1, 9, requires_grad=True)
+            supervised_loss(
+                logits, target, health, reference, negative_cost=cost
+            ).backward()
+            gradients.append(logits.grad.clone())
+        torch.testing.assert_close(gradients[1], 4 * gradients[0])
+        self.assertGreater(float(gradients[1][0, 1]), 0.0)
+
     def test_batched_guard_keys_match_canonical_app_calibration(self):
         import numpy as np
         from app_eval import posterior
@@ -30,13 +157,20 @@ class CampaignLossTests(unittest.TestCase):
         rng = np.random.default_rng(211)
         logits = rng.normal(0, 10, (400, 9)).astype(np.float32)
         logits[0] = 0.0
-        manifest = dict(classifier=dict(other_index=8, other_logit_bias=.75,
-                                       temperature=.8814700841903687))
+        manifest = dict(
+            classifier=dict(
+                other_index=8, other_logit_bias=0.75, temperature=0.8814700841903687
+            )
+        )
         observed, positive = keys(logits)
         kinds = dict(UNSURE=0, HEALTHY=1, DISEASE=2, UNKNOWN_CONDITION=3)
         expected = [decision_key(posterior([z], manifest)) for z in logits]
-        self.assertEqual(observed.tolist(), [kinds[k]*9+label for k,label in expected])
-        self.assertEqual(positive.tolist(), [k in ('HEALTHY','DISEASE') for k,_ in expected])
+        self.assertEqual(
+            observed.tolist(), [kinds[k] * 9 + label for k, label in expected]
+        )
+        self.assertEqual(
+            positive.tolist(), [k in ("HEALTHY", "DISEASE") for k, _ in expected]
+        )
 
     def test_deeper_adapter_warmstart_preserves_the_trained_tail(self):
         from timm.models.vision_transformer import VisionTransformer

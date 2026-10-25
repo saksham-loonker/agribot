@@ -7,6 +7,17 @@ NVIDIA RTX 5090, or an implementation agent continuing the same investigation.
 
 ## Current continuation - 25 October 2026
 
+**Latest decision:** 246 trained controls completed. The focal image-context
+candidate passed development gates, but failed the one-time prospective
+reservation: Healthy 44/95 versus interim 8/95, below the frozen 70% target.
+False Healthy remained 3; per-source disease/unsupported retention passed. It is
+rejected for deployment. The reservation is now opened regression data, including
+related capture families; do not reuse it as fresh acceptance after further
+tuning. The next experiment is broader supervised image-context backbone
+adaptation with the original nine-class branch frozen; later promotion needs
+new independent field evidence. Phase-seven controllers are complete. Phone
+2.0.2 remains installed. This decision supersedes the older progress notes below.
+
 Read [the current campaign record](RECOGNITION_CAMPAIGN_20261024.md) first.
 App 2.0.2 is installed and its phone parity checks pass, but field generalization
 is unresolved. Earlier adapted candidates failed SLIF and fresh TOM2024/paper-leaf
@@ -27,10 +38,28 @@ classification data, with 246 previously unopened photos reserved before fitting
 SSH alias: `agribot-5090`. Remote repository: `/home/genesis/agribot`.
 Python: `/home/genesis/.venvs/agribot-train/bin/python`. Artifact root:
 `/home/genesis/agribot-data/recognition_campaign_20261024`.
-Inspect `phase5_student.log`, `phase5_selection.log`, `phase5/` and
-`tmux list-windows -t agribot`. The phase-five controller is
-`phase5_training.sh`; training completed, and model selection is underway.
-Avoid duplicate runs. `phase5/reserved_manifest.json` has not been inferred yet.
+Inspect `tmux list-windows -t agribot` and the campaign record's current checkpoint.
+The teacher audit, detector control, ROI adaptation, separate species/Healthy
+CNNs, five frozen-feature heads and monotone logit fusion have completed.
+There were 238 completed trained controls before the two current scene-negative
+continuations; policy threshold grids are not additional training runs.
+The best relative-safe ensemble reaches TOM2024 Healthy 87/129 (67.44%), below
+the 70% development target. A 97/129 alternative adds one unsupported-condition
+false Healthy call and is rejected under the unchanged gates. No new candidate
+has been installed. Do not infer that a more complex loss fixed recognition.
+
+Current controller: `phase7_negative_controls.py` under the artifact root;
+tmux window `scene-negatives`; log `phase7_negative_controls.log`. It trains
+16-epoch CE-negative-cost-8 and focal-gamma-2-negative-cost-4 image-level CNN
+continuations, then fits calibration-only logit fusion and replays opened app
+cohorts. Research outputs are in `phase6_roi/scene_*_selection/` and
+`phase6_roi/fusion_selection/`. Check completion files before restarting.
+All inference remains development-only. Whole-image image-label evidence is
+not a verified disease-free-plant diagnosis. Native schema-three full-ROI
+confirmation is implemented, including optional Unknown confirmation; the newer
+whole-frame ensemble has no native runtime/export implementation yet.
+`phase5/reserved_manifest.json` has not been inferred yet. The work is saved in
+draft PR #6, whose initial Android Native CI passed.
 `phase3_pipeline.sh` is stopped; its dataset is quarantined and new guards reject
 resumption/export. Full app replay and independent field acceptance remain
 mandatory before installation. The stable original comparator is under

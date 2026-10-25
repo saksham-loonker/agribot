@@ -7,7 +7,16 @@ import numpy as np
 
 class CompositePixels:
     def __init__(self, paths):
-        self.parts = [np.load(path, mmap_mode="r") for path in paths]
+        self.parts = []
+        self.closed = False
+        try:
+            self.parts = [np.load(path, mmap_mode="r") for path in paths]
+            self._validate()
+        except Exception:
+            self.close()
+            raise
+
+    def _validate(self):
         if not self.parts or any(
             p.shape[1:] != self.parts[0].shape[1:] for p in self.parts
         ):
@@ -18,7 +27,25 @@ class CompositePixels:
         self.shape = (int(self.offsets[-1]),) + self.parts[0].shape[1:]
         self.dtype = np.dtype("float32")
 
+    def close(self):
+        for part in self.parts:
+            mapping = getattr(part, "_mmap", None)
+            if mapping is not None:
+                mapping.close()
+        self.parts = []
+        self.closed = True
+
+    def __enter__(self):
+        if self.closed:
+            raise ValueError("Pixel cache is closed")
+        return self
+
+    def __exit__(self, *exc):
+        self.close()
+
     def __getitem__(self, index):
+        if self.closed:
+            raise ValueError("Pixel cache is closed")
         scalar = np.isscalar(index)
         ids = (
             np.arange(self.shape[0])[index]

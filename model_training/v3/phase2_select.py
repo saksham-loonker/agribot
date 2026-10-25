@@ -122,8 +122,8 @@ def main():
         unsupported_false_known_increase_max=0.005,
         healthy_correct_must_not_decrease=True,
         counts_rounding="floor; zero exceptions for small cohorts",
-        independent_cohort="SLIF v1 338 photos still unopened",
-        source_history="All other sources already opened and used as development/regressions",
+        independent_cohort="Not asserted by selection. Freeze a separate unopened acceptance cohort before evaluating it.",
+        source_history="Input cohorts are opened development/regressions; selection never evaluates a reserved manifest.",
     )
     (out / "protocol.json").write_text(json.dumps(protocol, indent=2))
     rank = []

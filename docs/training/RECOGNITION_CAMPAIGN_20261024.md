@@ -10,7 +10,171 @@ per-photo predictions and full logs remain under
 `~/agribot-data/recognition_campaign_20261024/`. They are not committed to Git.
 The original trainable classifier is retained as the reference and rollback.
 
-## Latest continuation: broader supervised adaptation
+## Current checkpoint: detector, ROI and image-context diagnosis
+
+### Latest decision: prospective acceptance failed
+
+Both scene-negative continuations completed. There are now **246 trained
+controls**, including six new fitted stackers; policy grids and the 144-way
+union ablation are not additional training. The focal continuation's selected
+policy (candidate 421) passed every development retention check and reached
+91/129 TOM2024 Healthy and 117/119 paper Healthy, with false Healthy 10 versus
+11. The executable PyTorch prototype reproduced 111 frozen development checks;
+maximum context-logit discrepancy was 0.00003338. Its policy, model/calibration
+identities and acceptance requirements were frozen before reserved inference.
+
+The 246-photo prospective reservation was then opened **once**. It failed the
+70% Healthy recall target:
+
+| Reserved source/task | Interim 2.0.2 | Frozen prototype |
+|---|---:|---:|
+| TOM2024 Healthy | 8/95 (8.42%) | 44/95 (46.32%) |
+| TOM2024 false Healthy | 3 | 3 |
+| Paper-leaf named disease correct | 12/28 | 12/28 |
+| Paper-leaf false Healthy | 0 | 0 |
+
+Per-source relative retention passed. Paired Healthy improvement is 37.89
+percentage points; the inferred-capture-group bootstrap 95% interval is
+[28.42, 47.39] points. Candidate Healthy recall Wilson 95% interval is
+[36.63%, 56.29%]. The improvement is substantial but insufficient. **Reject for
+deployment.** The phone remains on 2.0.2; there is no new native model or APK.
+This reservation is now opened regression data. Never tune on its outputs and
+call a subsequent result independent acceptance. Other photos in the same
+reserved capture families do not constitute fresh independent groups.
+
+Post-opening diagnosis attributes 49 of the 51 missed Healthy photos to the
+image-context model not agreeing Healthy, and two to species rejection. None is
+explained by the protected named-disease routing rule. This points to learned
+field generalization rather than a simple app threshold or normalization fix.
+The old benchmark disease results and the 12/28 cross-source disease result
+also demonstrate the limits of benchmark transfer.
+
+Audit files: `phase6_roi/phase8_acceptance/{frozen_protocol.json,
+opened_identity.json,development_prototype_parity.json,predictions.jsonl,
+result.json,failure_breakdown.json}`. The next justified model experiment is
+supervised image-context adaptation with more trainable backbone capacity while
+keeping the original nine-class disease branch frozen. A new independently
+reserved, correctly scoped field source is required before any later promotion.
+No training is currently running from `phase7_negative_controls.py`.
+
+The material below records the preceding checkpoints and their then-unopened
+reservation. The latest decision above takes precedence.
+
+This checkpoint supersedes the historical progress notes below. Field recognition
+is **not resolved**. The phone still has interim 2.0.2, classifier SHA-256
+`d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39`.
+No phase-five, six or seven candidate has been installed or merged into main.
+Draft PR: https://github.com/saksham-loonker/agribot/pull/6.
+
+The campaign has completed 238 trained controls before the two image-context
+continuations described below. Threshold grids are policy comparisons, not
+additional trained models. The methods include supervised heads, partial and
+LoRA adaptation, CNNs, boosted trees, logit adjustment, monotone logit fusion,
+label-derived expected reward, REINFORCE, PPO and DPO controls. The latter use
+label-derived one-step rewards; they are not RLHF. No result establishes a
+0–255 versus 0–1 normalization bug: canonical preprocessing and exported-byte
+parity have been checked. Both matmul and cuDNN TF32 must be disabled for strict
+FP32 comparisons.
+
+### What the additional experiments established
+
+| Experiment | Opened development result | Decision |
+|---|---|---|
+| Guarded 12-block LoRA plus Healthy/knownness CNN, including Unknown confirmation | Healthy 65/248 to 149/248; false Healthy 11 to 8; relative regression gates pass, but TOM2024 Healthy remains 41/129 | Insufficient field recall; research export only |
+| Original leaf detector adapted with weak Healthy leaf proposals | Original-target detector validation retained; complete app replay Healthy falls from 65 to 62/248 | Reject; better box recall did not improve recognition |
+| New detector plus guarded classifier | Healthy 137/248 versus classifier-only 149/248 | Reject detector change |
+| Teacher ROI augmentation plus deeper supervised adaptation | Guarded Healthy 174/248; false Healthy 19 versus 11 | Reject as deployment policy |
+| Whole-image logit ensemble and strong-negative abstention | Best relative-safe policy: Healthy 203/248, false Healthy 9 versus 11; TOM2024 87/129 (67.44%), paper leaves 116/119 (97.48%) | Below 70% field Healthy development target |
+| Less restrictive ensemble, candidate 216 | Healthy 214/248; TOM2024 97/129 (75.19%); paper leaves 117/119; total false Healthy 11 | Fails one unsupported-condition regression: 33 to 34 false known calls in phase-two cohort |
+| Require detected-leaf Healthy agreement in both crop variants | Rejects the new unsupported error, but field Healthy recovery collapses | Reject; do not impose this rule on the app |
+
+These are repeatedly inspected **development/regression** comparisons. They are
+not independent acceptance accuracy. The 246-photo prospective reservation is
+still unopened. Neither selecting a threshold nor completing training qualifies
+a candidate for installation.
+
+The unsupported regression is an image labeled bacterial spot whose focused
+leaf classifier remains ambiguous while the whole-image ensemble is confidently
+Healthy. It stays in evaluation; do not relabel, exclude, whitelist or identify
+it by filename in runtime code. A source-label mismatch is possible in public
+data but has not been established by expert adjudication. The next controls
+address hard negatives generally rather than treating that image as training.
+
+### Data and annotation scope
+
+Grounding DINO tiny (`IDEA-Research/grounding-dino-tiny`, pinned revision
+`a2bb814dd30d776dcf7e30523b00659f4f141c71`) was audited on training images only.
+The prompt `a leaf.` was approved for limited weak geometry proposals, not ground
+truth. It found proposals on 327 of 365 Healthy TOM2024 training photos; 1,200
+usable ROIs across 319 photos add 2,400 center/full-ROI training views. Rows now
+total 63,265, SHA-256
+`687829881aff3317ef996a6265012c5e3a39b687343ff47bf85ce14ecdd196eb`.
+The image label supplies Healthy supervision; the teacher only supplies geometry.
+Unverified field ROI genus is masked in species training.
+
+A separate source (`10.17632/bpfd9cns5g.1`) remains forbidden for detector
+training: its class mapping is missing and inspected boxes mix spot regions and
+whole leaves. The older SLIF detector trial also remains quarantined. Never
+compare detector mAP across those incompatible annotation targets.
+
+Whole-image training has 22,472 photos, row SHA-256
+`e063bafa83acc1c2fbd588a88042a5677c5dd7321b76fb007c07c361325e9dca`.
+Healthy versus non-Healthy image labels are weak scene supervision. Any annotated
+unhealthy instance makes the scene negative. An image labeled Healthy does not
+prove every visible leaf, or the entire plant, is disease-free. Whole-frame
+evidence must never be presented as fabricated leaf detections or leaf agreement.
+
+Separate MobileNet Healthy-image and tomato-species models, five frozen-feature
+binary heads and three monotone logit stackers completed. Stackers combine two
+DINO Healthy heads, a scene Healthy CNN and a species CNN. They fit 2,644 named
+calibration groups' photos and select on 1,280 other development photos; base
+checkpoint selection used broader validation, so this is not an independent
+split. All model identities, calibration hashes and input order are saved.
+
+### Exact continuation and deployment requirements
+
+Current controller on the PC:
+`~/agribot-data/recognition_campaign_20261024/phase7_negative_controls.py`.
+Its tmux window is `scene-negatives` in session `agribot`; controller log is
+`phase7_negative_controls.log`. It sequentially trains `scene_ce_n8` (CE, negative
+cost 8) and `scene_focal_n4` (focal gamma 2, negative cost 4), each for 16 epochs
+at learning rate 0.00003 from the existing scene model. It then recalibrates,
+fits separate monotone stackers and replays the opened app cohorts. Check logs
+and completion files before launching anything again. These runs do not open
+the reserved photos.
+
+Research root:
+`~/agribot-data/recognition_campaign_20261024/phase6_roi/`.
+Inspect `fusion_selection/`, `fusion_leaf_selection/`, and the controller's
+`scene_*_selection/` directories. Source scripts live in `model_training/v3/`.
+`phase7_fusion_select.py --inspect-candidate ID` records changed predictions for
+audit without overwriting the policy ranking. Match its `--run-name` and
+`--fusion-run` when inspecting a nondefault control.
+
+The native optional schema-three path is implemented and unit-tested: 18 raw
+logits preserve the nine-label proposal and frozen reference. The additional
+`changed_decision_full_roi` policy confirms changed Unknown decisions too.
+Actual-byte replay of the phase-five open-set export passed 7,793 crop checks
+(maximum prototype/reference discrepancy about 0.000337). That is numerical
+parity, not sufficient recognition quality. The newer whole-frame context
+policies are **research Python only**; there is no schema-four export or native
+whole-frame evidence implementation. Do not ship their weights or claim the
+phone already runs them.
+
+Before promoting a context candidate: freeze its policy and acceptance protocol;
+implement explicit image evidence without fake leaf counts; preserve named
+disease decisions and abstain on contradiction; export and replay actual bytes;
+open the prospective reservation once; report denominators and source scope;
+then build and run parity, navigation and latency checks on the connected phone.
+Keep the current app data and rollback artifacts. Passing development gates
+alone is insufficient.
+
+The latest GPU Python suite passed 115 tests with one skip; the corresponding
+laptop rerun is recorded separately. Native ML unit checks pass for the optional
+Unknown confirmation changes. Earlier full release lint/build checks passed for
+the interim assets. Tests verify implementation, not field generalization.
+
+## Earlier continuation: broader supervised adaptation
 
 The phase-four confirmed prototype was rejected on its first opening of two new
 classification sources. TOM2024 Healthy remained 9/100; paper-background Healthy
@@ -65,9 +229,55 @@ observed center-crop sensitivity; it is not evidence that normalization was wron
 The runtime source is implemented and unit tested, but this candidate has not
 been installed. The phone still runs the tested interim 2.0.2 model.
 
-The latest Python suite passes 110 tests (one skipped). Test results establish
+The latest Python suite passes 112 tests (one skipped) on the laptop's project
+virtual environment. A Windows-only pixel-cache cleanup failure was corrected
+by explicitly closing memory maps; the GPU checkout's earlier 111-test suite
+also passed, including the exact published interim assets. Test results establish
 implementation behavior, not field recognition quality. Historical sections below
 retain their original cohort-opening chronology; the status above takes priority.
+
+### Subsequent phase-five validation and next detector audit
+
+The deeper student alone still fails old disease retention. The guarded policy
+recovers up to 165/248 Healthy validation photos from the interim baseline's
+65/248, but adds ten false Healthy calls (11 to 21), so it is rejected. Stricter
+verifier settings reduce the added errors while giving up Healthy recovery;
+none passes the existing gate. Full-ROI-primary and whole-image-context ablations
+also fail safety checks. These are development comparisons, not acceptance.
+
+The context audit separates an important pipeline effect: the raw adapted model
+recognizes 115/129 TOM2024 Healthy validation photographs from the full image,
+while the guarded leaf-crop pipeline recognizes 57/129 in the corresponding
+candidate. There are 23 no-leaf results. This supports further investigation of
+crop selection, missing detections and aggregation; it does not prove that the
+detector alone causes every rejection. Whole-image agreement is not deployed.
+
+A further eight-epoch supervised continuation raises the negative Healthy loss
+cost from 2 to 8, raises binary-loss weight from 0.5 to 1, and uses learning rate
+0.00003. It completed in 482 seconds. It also fails the guarded validation gate.
+This brings the completed, valid trained controls to 225. The wrong-target
+detector trials are excluded from that count. RL controls remain separate
+historical experiments; no human-feedback reward signal exists in this campaign.
+
+A twelve-image annotation overlay audit of the additional public source
+`10.17632/bpfd9cns5g.1` finds mixed geometry: some annotations cover whole leaves,
+while others mark small spots/regions. Its class-ID disease mapping is absent.
+Do not remap all IDs to generic leaf boxes. This source is not admitted to
+classifier or detector training. Publisher attribution: Ahmed Imtiaz, Fahad Bin
+Islam Swapnil, Syed Rayhan Masud and Debajoyti Karmaker; CC BY 4.0.
+
+The next controlled audit uses the original research authors' Apache-2.0
+`IDEA-Research/grounding-dino-tiny` model, pinned to revision
+`a2bb814dd30d776dcf7e30523b00659f4f141c71`, to propose whole-object leaf boxes.
+`phase6_teacher.py` first selects 16 development/train images and renders boxes
+for visual target verification. No pseudo labels enter fitting before that audit
+passes. They remain model predictions, not human ground truth. The script never
+reads reserved pixels or promotes a phone model. Source and usage documentation:
+https://huggingface.co/IDEA-Research/grounding-dino-tiny .
+
+The work is pushed as draft PR #6:
+https://github.com/saksham-loonker/agribot/pull/6 . Its initial Android Native CI
+run passed. It is intentionally unmerged while recognition acceptance is unresolved.
 
 ## Continuation on 25 October: installed baseline and further adaptation
 

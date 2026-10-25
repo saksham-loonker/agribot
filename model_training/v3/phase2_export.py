@@ -57,13 +57,14 @@ class DomainClassifier(nn.Module):
         ]:
             self.register_buffer(name, torch.tensor(values).view(1, 3, 1, 1))
 
-    def components(self, nhwc):
+    def components(self, nhwc, return_features=False):
         image = nhwc.permute(0, 3, 1, 2)
         tokens = prefix(self.backbone, image, self.depth)
         original = tokens
         for block in self.backbone.blocks[-self.depth :]:
             original = block(original)
-        reference = self.backbone.head(self.backbone.norm(original)[:, 0])
+        original_features = self.backbone.norm(original)[:, 0]
+        reference = self.backbone.head(original_features)
         if self.safe is not None:
             safe_cnn = self.safe.cnn(
                 (image * self.canonical_std + self.canonical_mean - self.safe.cnn_mean)
@@ -74,7 +75,11 @@ class DomainClassifier(nn.Module):
             (image * self.canonical_std + self.canonical_mean - self.cnn_mean)
             / self.cnn_std
         )
-        return reference, self.expert(tokens), cnn
+        adapted_features = self.expert.features(tokens)
+        parts = (reference, self.expert.head(adapted_features), cnn)
+        return (
+            (*parts, original_features, adapted_features) if return_features else parts
+        )
 
     def forward(self, nhwc):
         reference, student, cnn = self.components(nhwc)
@@ -105,11 +110,13 @@ def main():
     p.add_argument("--candidate", required=True)
     p.add_argument("--out", required=True)
     p.add_argument("--reference-logits", action="store_true")
+    p.add_argument("--confirm-unknown", action="store_true")
     p.add_argument(
         "--encoder",
         default="/home/genesis/sakshyam-agribot/v2/runs/field_vits2/best.pt",
     )
     a = p.parse_args()
+    assert not a.confirm_unknown or a.reference_logits
     root = Path(a.root)
     out = Path(a.out)
     (out / "models").mkdir(parents=True, exist_ok=True)
@@ -281,7 +288,11 @@ def main():
         manifest["schema"] = 3
         manifest["classifier"]["members"][0]["output"] = [1, 18]
         manifest["classifier"]["view_confirmation"] = dict(
-            policy="changed_positive_full_roi",
+            policy=(
+                "changed_decision_full_roi"
+                if a.confirm_unknown
+                else "changed_positive_full_roi"
+            ),
             reference_logit_offset=9,
             padding_value=114,
         )

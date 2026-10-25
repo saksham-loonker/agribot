@@ -24,15 +24,17 @@ class CanonicalPixelShardTests(unittest.TestCase):
             ).reshape(5, 2, 2, 3)
             np.save(root / "a.npy", expected[:3])
             np.save(root / "b.npy", expected[3:])
-            pixels = CompositePixels([root / "a.npy", root / "b.npy"])
-            np.testing.assert_array_equal(
-                pixels[[4, 0, 3, 2, -1]], expected[[4, 0, 3, 2, -1]]
-            )
-            np.testing.assert_array_equal(pixels[2:5], expected[2:5])
-            np.testing.assert_array_equal(pixels[-1], expected[-1])
-            self.assertEqual(pixels[[]].shape, (0, 2, 2, 3))
-            with self.assertRaises(IndexError):
-                pixels[5]
+            with CompositePixels([root / "a.npy", root / "b.npy"]) as pixels:
+                np.testing.assert_array_equal(
+                    pixels[[4, 0, 3, 2, -1]], expected[[4, 0, 3, 2, -1]]
+                )
+                np.testing.assert_array_equal(pixels[2:5], expected[2:5])
+                np.testing.assert_array_equal(pixels[-1], expected[-1])
+                self.assertEqual(pixels[[]].shape, (0, 2, 2, 3))
+                with self.assertRaises(IndexError):
+                    pixels[5]
+            with self.assertRaises(ValueError):
+                pixels[0]
 
     def test_shards_reject_silent_dtype_conversion(self):
         with tempfile.TemporaryDirectory() as folder:
