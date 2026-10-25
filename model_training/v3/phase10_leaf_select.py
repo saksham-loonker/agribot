@@ -40,6 +40,19 @@ def main():
         "--tail-directory", help="Use a copied DINO tail fitted on annotated leaves"
     )
     ap.add_argument("--out-name", default="leaf_selection")
+    ap.add_argument(
+        "--allow-leaf-disease-override",
+        action="store_true",
+        help="Research override requiring aggregate reference disease priority",
+    )
+    ap.add_argument(
+        "--components-from", help="Reuse identity-checked center components"
+    )
+    ap.add_argument(
+        "--full-roi-recovery",
+        action="store_true",
+        help="Research full-ROI Healthy recovery; requires a separately implemented runtime policy",
+    )
     a = ap.parse_args()
     assert not (a.head_directory and a.tail_directory)
     shared_verifier = bool(a.head_directory or a.tail_directory)
@@ -106,7 +119,13 @@ def main():
         if a.tail_directory:
             from leaf_tail_repair import spec_and_weights as feature_spec
         else:
-            from leaf_feature_repair import spec_and_weights as feature_spec
+            family = json.loads((head_directory / "result.json").read_text())[
+                "protocol"
+            ]["feature_identity"].get("family", "dino")
+            if family.startswith("mobileclip"):
+                from mobileclip_repair import spec_and_weights as feature_spec
+            else:
+                from leaf_feature_repair import spec_and_weights as feature_spec
 
         spec, model = feature_spec(
             root,
@@ -119,8 +138,9 @@ def main():
         )
     model = model.cuda().eval()
     pixels = open_pixels(root / "cnn_inputs")
-    cache = out / "components.npz"
-    meta = out / "input_identity.json"
+    center_cache = Path(a.components_from) if a.components_from else out
+    cache = center_cache / "components.npz"
+    meta = center_cache / "input_identity.json"
     if cache.exists():
         assert json.loads(meta.read_text()) == identity
         saved = np.load(cache)
@@ -129,6 +149,13 @@ def main():
     else:
         healthy = np.full(len(rows), np.nan, np.float32)
         genus = healthy.copy()
+        trained_features = (
+            np.load(head_directory.parent / "features.npy", mmap_mode="r")
+            if a.head_directory
+            else None
+        )
+        binary_error = 0.0
+        reference_error = 0.0
         with torch.inference_mode():
             for part in np.array_split(ids, max(1, int(np.ceil(len(ids) / 256)))):
                 x = torch.from_numpy(np.array(pixels[part], copy=True)).cuda()
@@ -136,6 +163,23 @@ def main():
                     ref, h, g = model.components(x)
                     error = float(np.max(np.abs(ref.cpu().numpy() - reference[part])))
                     assert error < 0.002, ("Shared reference parity failed", error)
+                    reference_error = max(reference_error, error)
+                    if trained_features is not None:
+                        expected = (
+                            model.head(
+                                torch.from_numpy(
+                                    np.array(trained_features[part], copy=True)
+                                ).cuda()
+                            )
+                            * model.calibration[0]
+                            + model.calibration[1]
+                        )
+                        error = float((expected.ravel() - h.ravel()).abs().max())
+                        assert error < 0.002, (
+                            "Head cache/runtime alignment failed",
+                            error,
+                        )
+                        binary_error = max(binary_error, error)
                     healthy[part] = h.ravel().cpu().numpy()
                     genus[part] = g.ravel().cpu().numpy()
                 else:
@@ -143,6 +187,20 @@ def main():
                     genus[part] = model.species(x).ravel().cpu().numpy()
         np.savez(cache, healthy=healthy, species=genus)
         meta.write_text(json.dumps(identity, indent=2))
+        if shared_verifier:
+            (out / "component_parity.json").write_text(
+                json.dumps(
+                    dict(
+                        passed=True,
+                        cases=len(ids),
+                        max_reference_error=reference_error,
+                        max_binary_head_error=(
+                            binary_error if a.head_directory else None
+                        ),
+                    ),
+                    indent=2,
+                )
+            )
     baseline_photos = {
         k: v["rows"]
         for k, v in app_evaluate(reference, rows, ev, manifest, True).items()
@@ -153,7 +211,9 @@ def main():
     potential = (1 / (1 + np.exp(-np.clip(healthy[ids], -80, 80))) >= 0.5) & (
         np.max(rp[:, [0, 2, 3, 4, 5, 6, 7]], axis=1) <= 0.4
     )
-    full_ids = ids[potential]
+    if a.allow_leaf_disease_override:
+        potential = 1 / (1 + np.exp(-np.clip(healthy[ids], -80, 80))) >= 0.5
+    full_ids = ids if a.full_roi_recovery else ids[potential]
     full_path = out / "full_components.npz"
     full_meta = out / "full_identity.json"
     full_identity = dict(
@@ -196,13 +256,13 @@ def main():
     with torch.inference_mode():
         for hmin, dmax, gmin, guard in itertools.product(
             [0.5, 0.7, 0.8, 0.9, 0.95, 0.97, 0.99, 0.995],
-            [0.2, 0.3, 0.4],
+            [0.4, 0.7, 1.0] if a.allow_leaf_disease_override else [0.2, 0.3, 0.4],
             [0.0] if shared_verifier else [0.0, 0.5, 0.8, 0.9],
             [False, True],
         ):
             from leaf_healthy_repair import fusion
 
-            model.fusion = fusion(hmin, dmax).cuda()
+            model.fusion = fusion(hmin, dmax, a.allow_leaf_disease_override).cuda()
             model.species_min = gmin
             final = reference.copy()
             final[ids] = (
@@ -214,7 +274,7 @@ def main():
                 .cpu()
                 .numpy()
             )
-            if guard:
+            if guard or a.full_roi_recovery:
                 fp = (
                     model.propose(
                         torch.from_numpy(full_reference[full_ids]).cuda(),
@@ -227,6 +287,17 @@ def main():
                 for k, i in enumerate(full_ids):
                     candidate = decision_key(posterior([final[i]], manifest))
                     old = decision_key(posterior([reference[i]], manifest))
+                    full_candidate = decision_key(posterior([fp[k]], manifest))
+                    if a.full_roi_recovery:
+                        if (
+                            old[0] not in ("HEALTHY", "DISEASE")
+                            and full_candidate[0] == "HEALTHY"
+                            and (not guard or candidate[0] == "HEALTHY")
+                        ):
+                            final[i] = fp[k]
+                        else:
+                            final[i] = reference[i]
+                        continue
                     if (
                         candidate[0] == "HEALTHY"
                         and candidate != old
@@ -281,6 +352,11 @@ def main():
                 policy=dict(healthy_min=hmin, disease_max=dmax, species_min=gmin),
                 full_roi_confirmation=guard,
                 reference_disease_priority=True,
+                input_policy=(
+                    "full_roi_recovery"
+                    if a.full_roi_recovery
+                    else "center_with_optional_full_roi_confirmation"
+                ),
                 metrics=metrics,
                 field_leaf_oracle=oracle,
                 retained=retain(metrics, baseline),
@@ -289,6 +365,8 @@ def main():
                 input_identity=identity,
                 fresh_ad_used=False,
             )
+            if a.allow_leaf_disease_override:
+                c["policy"]["allow_leaf_disease_override"] = True
             rank.append(c)
             print(
                 json.dumps(

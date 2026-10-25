@@ -33,11 +33,29 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", required=True)
     ap.add_argument("--epochs", type=int, default=100)
+    ap.add_argument("--primary-source", default="fieldplant")
+    ap.add_argument(
+        "--task-scope",
+        choices=["annotated_leaf", "primary_image"],
+        default="annotated_leaf",
+    )
+    ap.add_argument(
+        "--feature-family",
+        choices=["dino", "mobileclip", "mobileclip_dino"],
+        default="dino",
+    )
     a = ap.parse_args()
     root = Path(a.root)
-    out = root / "leaf_feature_heads"
+    out = root / (
+        "leaf_feature_heads"
+        if a.feature_family == "dino"
+        else a.feature_family + "_feature_heads"
+    )
     out.mkdir(exist_ok=True)
     rows = json.loads((root / "cnn_inputs/rows.json").read_text())
+    if a.task_scope == "primary_image":
+        assert a.feature_family == "mobileclip"
+        assert all(r.get("box") is None and r["view"] == "full_scene" for r in rows)
     target = np.array([int(r["health_y"]) for r in rows])
     ev = json.loads((root / "eval_rows.json").read_text())
     for r, y in zip(rows, target):
@@ -73,70 +91,77 @@ def main():
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
     timm.layers.set_fused_attn(False)
-    identity = dict(
-        rows_sha256=digest(root / "cnn_inputs/rows.json"),
-        reference_bundle_sha256=digest(
-            root.parent / "export_cnn_safe/pytorch_bundle.pt"
-        ),
-        ids_sha256=hashlib.sha256(ids.tobytes()).hexdigest(),
-        feature_scope="Original trained DINO normalized CLS/pre-logit features, strict FP32, no classifier update",
-    )
-    cache = out / "features.npy"
-    meta = out / "feature_identity.json"
-    if cache.exists():
-        assert json.loads(meta.read_text()) == identity
-        features = np.load(cache)
+    if a.feature_family != "dino":
+        from mobileclip_features import extract
+
+        features, identity = extract(root, out, ids, a.feature_family)
     else:
-        reference = (
-            restore(root.parent / "export_cnn_safe/pytorch_bundle.pt").cuda().eval()
+        identity = dict(
+            rows_sha256=digest(root / "cnn_inputs/rows.json"),
+            reference_bundle_sha256=digest(
+                root.parent / "export_cnn_safe/pytorch_bundle.pt"
+            ),
+            ids_sha256=hashlib.sha256(ids.tobytes()).hexdigest(),
+            feature_scope="Original trained DINO normalized CLS/pre-logit features, strict FP32, no classifier update",
         )
-        reference.requires_grad_(False)
-        pixels = open_pixels(root / "cnn_inputs")
-        features = np.zeros((len(rows), 384), np.float32)
-        original = np.load(root / "reference_logits.npy")
-        errors = []
-        with torch.inference_mode():
-            for start in range(0, len(ids), 128):
-                part = ids[start : start + 128]
-                x = (
-                    torch.from_numpy(np.array(pixels[part], copy=True))
-                    .cuda()
-                    .permute(0, 3, 1, 2)
-                )
-                tokens = reference.backbone.forward_features(x)
-                f = reference.backbone.forward_head(tokens, pre_logits=True)
-                features[part] = f.cpu().numpy()
-                error = float(
-                    abs(reference.backbone.head(f).cpu().numpy() - original[part]).max()
-                )
-                errors.append(error)
-                if start % 8192 == 0:
-                    print(
-                        json.dumps(
-                            dict(
-                                stage="features",
-                                rows=start,
-                                total=len(ids),
-                                raw_reference_logit_error=error,
-                            )
-                        ),
-                        flush=True,
-                    )
-        assert max(errors) < 0.002, "Original feature/reference alignment failed"
-        np.save(cache, features)
-        meta.write_text(json.dumps(identity, indent=2))
-        (out / "reference_parity.json").write_text(
-            json.dumps(
-                dict(passed=True, max_abs_logit_error=max(errors), cases=len(ids)),
-                indent=2,
+        cache = out / "features.npy"
+        meta = out / "feature_identity.json"
+        if cache.exists():
+            assert json.loads(meta.read_text()) == identity
+            features = np.load(cache)
+        else:
+            reference = (
+                restore(root.parent / "export_cnn_safe/pytorch_bundle.pt").cuda().eval()
             )
-        )
-        del reference
+            reference.requires_grad_(False)
+            pixels = open_pixels(root / "cnn_inputs")
+            features = np.zeros((len(rows), 384), np.float32)
+            original = np.load(root / "reference_logits.npy")
+            errors = []
+            with torch.inference_mode():
+                for start in range(0, len(ids), 128):
+                    part = ids[start : start + 128]
+                    x = (
+                        torch.from_numpy(np.array(pixels[part], copy=True))
+                        .cuda()
+                        .permute(0, 3, 1, 2)
+                    )
+                    tokens = reference.backbone.forward_features(x)
+                    f = reference.backbone.forward_head(tokens, pre_logits=True)
+                    features[part] = f.cpu().numpy()
+                    error = float(
+                        abs(
+                            reference.backbone.head(f).cpu().numpy() - original[part]
+                        ).max()
+                    )
+                    errors.append(error)
+                    if start % 8192 == 0:
+                        print(
+                            json.dumps(
+                                dict(
+                                    stage="features",
+                                    rows=start,
+                                    total=len(ids),
+                                    raw_reference_logit_error=error,
+                                )
+                            ),
+                            flush=True,
+                        )
+            assert max(errors) < 0.002, "Original feature/reference alignment failed"
+            np.save(cache, features)
+            meta.write_text(json.dumps(identity, indent=2))
+            (out / "reference_parity.json").write_text(
+                json.dumps(
+                    dict(passed=True, max_abs_logit_error=max(errors), cases=len(ids)),
+                    indent=2,
+                )
+            )
+            del reference
     values = torch.from_numpy(features).cuda()
     truth = torch.tensor(target, device="cuda", dtype=torch.float32)
     sampling = torch.tensor(balanced(rows, train), dtype=torch.float64)
     val_weights = balanced(rows, val)
-    field = np.array([rows[i]["source"] == "fieldplant" for i in val])
+    field = np.array([rows[i]["source"] == a.primary_source for i in val])
     ranks = []
     for kind, method in itertools.product(["linear", "mlp"], ["bce", "focal"]):
         name = kind + "_" + method
@@ -152,13 +177,19 @@ def main():
             original_classifier_frozen=True,
             fresh_ad_used=False,
         )
+        if a.task_scope != "annotated_leaf" or a.primary_source != "fieldplant":
+            protocol["task_scope"] = a.task_scope
+            protocol["primary_source"] = a.primary_source
+            protocol["supervision"] = (
+                "Image-level labels from the recorded scene corpus. Primary view evidence, not verified disease-free plant status; never broadcast onto individual leaves."
+            )
         if (run / "result.json").exists():
             result = json.loads((run / "result.json").read_text())
             assert result["protocol"] == protocol
             ranks.append(result)
             continue
         torch.manual_seed(379)
-        model = LeafFeatureHead(kind).cuda()
+        model = LeafFeatureHead(kind, features.shape[1]).cuda()
         optimizer = torch.optim.AdamW(model.parameters(), lr=0.001, weight_decay=0.01)
         history = []
         best = -float("inf")

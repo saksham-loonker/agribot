@@ -12,6 +12,23 @@ The original trainable classifier is retained as the reference and rollback.
 
 ## Current checkpoint: detector, ROI and image-context diagnosis
 
+### Newest continuation: alternate features and explicit benchmark retirement
+
+Read [the MobileCLIP continuation](MOBILECLIP_CONTINUATION_20261025.md) first.
+The 285 valid controls include a five-expert image prototype that passes
+development with 94/129 TOM Healthy and 112/119 paper Healthy, then reproduces
+all 6,468 exact-graph verdicts. It still fails the consumed field cohort at
+51/95 Healthy, with false Healthy unchanged at 3. The separate AD source remains
+unopened diagnostically. Eight invalid new MobileCLIP fits were caught by
+cache/runtime parity, quarantined and retrained; they are excluded from the count.
+
+Phase twelve admits the consumed cohort's 787 related photos/235 families to a
+new grouped image-scoped training/development revision, preserving all 200 old
+quarantines and original development membership. Those families are retired as
+benchmarks for this and later revisions. New controls run against the original
+eight regression cohorts, with independent AD acceptance still pending. Both
+APK builds pass and retain interim weights; no failed candidate is installed.
+
 ### Newest continuation: verified leaf supervision and aggregate disease priority
 
 Read [the leaf-scope continuation](LEAF_SCOPE_CONTINUATION_20261025.md) for the

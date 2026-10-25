@@ -17,13 +17,15 @@ from phase7_verifier import CanonicalVerifier
 from train import LABELS
 
 
-def fusion(healthy_min, disease_max):
+def fusion(healthy_min, disease_max, allow_leaf_disease_override=False):
     return ExpertFusion(
         positive=1.0,
         negative=0.0,
         known=0.0,
         calibration=[[1.0, 0.0], [1.0, 0.0]],
-        positive_scope="legacy",
+        positive_scope=(
+            "aggregate_reference" if allow_leaf_disease_override else "legacy"
+        ),
         protect_healthy=True,
         known_scope="healthy",
         healthy_min=healthy_min,
@@ -43,10 +45,16 @@ class LeafHealthyRepair(nn.Module):
         self.healthy = CanonicalVerifier(spec["healthy"], spec["healthy_calibration"])
         self.species = CanonicalVerifier(spec["species"], spec["species_calibration"])
         self.fusion = fusion(
-            spec["policy"]["healthy_min"], spec["policy"]["disease_max"]
+            spec["policy"]["healthy_min"],
+            spec["policy"]["disease_max"],
+            spec["policy"].get("allow_leaf_disease_override", False),
         )
         self.species_min = spec["policy"]["species_min"]
         self.reference_logits = spec.get("reference_logits", True)
+        assert (
+            not spec["policy"].get("allow_leaf_disease_override", False)
+            or self.reference_logits
+        )
 
     def components(self, nhwc):
         return (

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "status": "Incomplete: 269 completed controls; audited leaf-supervised CNN/features/full-depth adaptation fail field recall; degradation control running; reference disease-priority native tests pass; phone stays 2.0.2; cold AD unopened",
+  "status": "Incomplete: five-expert exact graph passes development but fails consumed field recall (51/95); phase12 explicitly retires consumed families into training/development; separate image encoder SFT is running; interim phone 2.0.2 retained; independent AD unopened",
   "installed_classifier_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
   "initial_trained_controls": {
     "heads": 29,

@@ -24,9 +24,15 @@ class LeafTailRepair(nn.Module):
             "calibration", torch.tensor(spec["calibration"], dtype=torch.float32)
         )
         self.fusion = fusion(
-            spec["policy"]["healthy_min"], spec["policy"]["disease_max"]
+            spec["policy"]["healthy_min"],
+            spec["policy"]["disease_max"],
+            spec["policy"].get("allow_leaf_disease_override", False),
         )
         self.reference_logits = spec.get("reference_logits", True)
+        assert (
+            not spec["policy"].get("allow_leaf_disease_override", False)
+            or self.reference_logits
+        )
         self.species_min = 0.0
 
     def components(self, nhwc):

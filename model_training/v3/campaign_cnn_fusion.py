@@ -112,6 +112,10 @@ class ExpertFusion(nn.Module):
             )
         elif self.positive_scope == "legacy":
             eligible = ~disease
+        elif self.positive_scope == "aggregate_reference":
+            # Requires an 18-output bundle and aggregate reference disease
+            # priority. Unsafe as a standalone nine-logit inference policy.
+            eligible = torch.ones_like(disease)
         elif self.positive_scope != "healthy":
             raise ValueError(self.positive_scope)
         positive = (

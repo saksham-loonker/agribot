@@ -1,0 +1,135 @@
+"""Fit monotone five-input calibration, adding MobileCLIP image evidence."""
+
+from pathlib import Path
+import argparse
+import hashlib
+import json
+
+import numpy as np
+import torch
+from torch.nn import functional as F
+from sklearn.metrics import roc_auc_score
+
+from leaf_feature_expert import LeafFeatureHead
+from phase7_species_train import balanced
+
+
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--campaign", required=True)
+    a = ap.parse_args()
+    p = Path(a.campaign)
+    root = p / "phase11_scene"
+    out = root / "logit_fusion"
+    out.mkdir(exist_ok=True)
+    old = p / "phase6_roi/scene_sft_d12_focal_fusion"
+    rows_path = root / "cnn_inputs/rows.json"
+    rows = json.loads(rows_path.read_text())
+    old_identity = json.loads((old / "input_identity.json").read_text())
+    assert digest(rows_path) == old_identity["scene_rows_sha256"]
+    selected = json.loads((root / "mobileclip_feature_heads/ranked.json").read_text())[
+        0
+    ]
+    directory = Path(selected["checkpoint"]).parent
+    state = torch.load(directory / "best.pt", weights_only=True, map_location="cpu")
+    assert state["protocol"]["task_scope"] == "primary_image"
+    model = LeafFeatureHead(state["kind"], 512).eval()
+    model.load_state_dict(state["model"], strict=True)
+    features = np.load(root / "mobileclip_feature_heads/features.npy")
+    torch.set_num_threads(4)
+    with torch.inference_mode():
+        mobile = model(torch.from_numpy(features)).numpy()
+    mobile = mobile * selected["calibration"][0] + selected["calibration"][1]
+    logits = np.concatenate(
+        [np.load(old / "calibrated_logits.npy"), mobile[:, None]], 1
+    )
+    identity = dict(
+        legacy_input_identity=old_identity,
+        legacy_logits_sha256=digest(old / "calibrated_logits.npy"),
+        mobile_head_sha256=digest(directory / "best.pt"),
+        mobile_calibration_sha256=digest(directory / "result.json"),
+        mobile_encoder_sha256=state["protocol"]["feature_identity"]["encoder_sha256"],
+        rows_sha256=digest(rows_path),
+    )
+    labels = np.array([int(r["health_y"]) for r in rows])
+    val = np.array([i for i, r in enumerate(rows) if r["split"] == "val"])
+    cal = np.array(
+        [
+            i
+            for i in val
+            if int(
+                hashlib.sha256(
+                    ("calibration211:" + rows[i]["group"]).encode()
+                ).hexdigest()[:8],
+                16,
+            )
+            % 100
+            < 65
+        ]
+    )
+    chosen = set(cal)
+    selection = np.array([i for i in val if i not in chosen])
+    assert not ({rows[i]["group"] for i in cal} & {rows[i]["group"] for i in selection})
+    for r, y in zip(rows, labels):
+        r["species_y"] = int(y)
+    x = torch.tensor(np.clip(logits[cal], -10, 10), dtype=torch.float64)
+    y = torch.tensor(labels[cal], dtype=torch.float64)
+    weight = torch.tensor(balanced(rows, cal), dtype=torch.float64)
+    results = []
+    for negative_cost in [1.0, 2.0, 4.0]:
+        raw = torch.zeros(5, dtype=torch.float64, requires_grad=True)
+        bias = torch.zeros((), dtype=torch.float64, requires_grad=True)
+        optimizer = torch.optim.LBFGS(
+            [raw, bias], max_iter=200, line_search_fn="strong_wolfe"
+        )
+
+        def closure():
+            optimizer.zero_grad()
+            w = F.softplus(raw)
+            loss = (
+                F.binary_cross_entropy_with_logits(x @ w + bias, y, reduction="none")
+                * weight
+                * torch.where(y > 0, 1.0, negative_cost)
+            ).sum() + 0.01 * w.square().sum()
+            loss.backward()
+            return loss
+
+        optimizer.step(closure)
+        weights = F.softplus(raw).detach().numpy()
+        b = float(bias.detach())
+        z = np.clip(logits, -10, 10) @ weights + b
+        probability = 1 / (1 + np.exp(-np.clip(z, -80, 80)))
+        field = [i for i in selection if rows[i]["source"] == "tom2024"]
+        r = dict(
+            negative_cost=negative_cost,
+            weights=weights.tolist(),
+            bias=b,
+            input_clip=10.0,
+            input_order=[
+                "DINO adapted linear",
+                "DINO original/adapted MLP",
+                "copied DINO12 image Healthy",
+                "genus CNN",
+                "MobileCLIP image Healthy",
+            ],
+            input_identity=identity,
+            calibration_n=len(cal),
+            selection_n=len(selection),
+            selection_auc=float(
+                roc_auc_score(labels[selection], probability[selection])
+            ),
+            selection_field_auc=float(roc_auc_score(labels[field], probability[field])),
+            fresh_ad_used=False,
+            note="Internal grouped development; base checkpoints used broader validation. Not independent acceptance.",
+        )
+        results.append(r)
+        print(json.dumps(r), flush=True)
+    (out / "candidates.json").write_text(json.dumps(results, indent=2))
+
+
+if __name__ == "__main__":
+    main()

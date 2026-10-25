@@ -766,6 +766,20 @@ class CampaignLossTests(unittest.TestCase):
         self.assertEqual(int(actual[0].argmax()), 1)
         torch.testing.assert_close(actual[1], reference[1], rtol=0, atol=0)
 
+    def test_leaf_override_needs_explicit_aggregate_protected_scope(self):
+        from leaf_healthy_repair import fusion
+
+        reference = torch.zeros(1, 9)
+        reference[:, 2] = 8.0
+        healthy = torch.full((1, 2), 100.0)
+        torch.testing.assert_close(
+            fusion(0.9, 1.0)(reference, healthy), reference, rtol=0, atol=0
+        )
+        recovered = fusion(0.9, 1.0, allow_leaf_disease_override=True)(
+            reference, healthy
+        )
+        self.assertEqual(int(recovered.argmax(1)[0]), 1)
+
     def test_external_gate_does_not_round_small_sample_allowances_up(self):
         import copy
         from phase2_select import retain

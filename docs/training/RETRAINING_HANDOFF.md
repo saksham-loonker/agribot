@@ -7,6 +7,19 @@ NVIDIA RTX 5090, or an implementation agent continuing the same investigation.
 
 ## Current continuation - 25 October 2026
 
+**Newest work:** read [the MobileCLIP/data-revision continuation](MOBILECLIP_CONTINUATION_20261025.md).
+There are 285 valid completed controls before the next revision; eight invalid
+new-experiment fits are quarantined and excluded. A five-expert image prototype
+passes every development gate (94/129 field Healthy, 112/119 paper Healthy) and
+all 6,468 exact-graph verdict checks, but reaches only 51/95 on the consumed
+field cohort. It is not qualified. Phase twelve now retires that cohort and its
+787 related photos into grouped training/development; the old 246 must never be
+used as a benchmark for phase twelve. Original eight regression cohorts and the
+untouched independent AD source remain gates. New-data controls are running.
+Both APK variants rebuilt successfully with the unchanged interim model; no
+new model was installed. Python: 122 run, 121 passed, one skipped. Native CI
+passed `ed72afd`. Older reservation-exclusion statements describe earlier revisions.
+
 **Read the newest [leaf-scope continuation](LEAF_SCOPE_CONTINUATION_20261025.md)
 before the chronological notes below.** FieldPlant download and role/family audits
 are complete. There are 269 completed controls; the first copied-tail leaf control
