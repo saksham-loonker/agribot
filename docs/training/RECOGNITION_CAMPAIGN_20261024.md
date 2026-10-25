@@ -12,6 +12,88 @@ The original trainable classifier is retained as the reference and rollback.
 
 ## Current checkpoint: detector, ROI and image-context diagnosis
 
+### Latest continuation: stronger supervised controls and better scoped data
+
+There are now **262 completed trained controls**. This includes four additional
+supervised scene experiments and their twelve separately fitted stackers, beyond
+the preceding 246. Threshold comparisons are not training runs. The original
+nine-class disease branch remains frozen in these experiments.
+
+| Scene adaptation | Opened TOM2024 Healthy | False Healthy on that cohort | Decision |
+|---|---:|---:|---|
+| Interim 2.0.2 | 8/95 | 3 | Installed comparator |
+| Earlier focal CNN prototype | 44/95 | 3 | Failed prospective recall requirement |
+| Four copied DINO blocks, focal | 51/95 | 4 | Fails opened-regression retention |
+| Twelve copied DINO blocks, focal | 55/95 | 4 | Fails opened-regression retention |
+
+The four-block learner has 7,102,081 trainable parameters; the twelve-block
+learner has 21,303,937. Both start from the owner's trained DINO weights, not a
+random model. Full-image letterbox and horizontal-flip prefix caches preserve
+alignment. Training uses FP16 token storage/BF16 computation; validation remains
+FP32. The full-depth experiment adds dropout 0.1 and weight decay 0.05. A further
+full-depth mixup control uses image-equivalent mixing at the zero-transformer
+prefix; it fails the development field-recall target (72/129, 55.81%). It was not
+opened on new acceptance data. The raw leaf-policy probe recognizes only 37/95
+Healthy photos before context routing, so relaxing that routing alone is not a
+sufficient explanation or fix.
+
+All those runs and replays are complete. `phase9_scene_sft.py` supports exact
+optimizer/RNG recovery and independently named runs; `phase9_pipeline.py` fits
+development calibration/fusion and replays the consumed reservation without
+opening fresh data or promoting a model. The latest local suite passes 119 tests
+with one skip, including gradient isolation of the disease reference and the
+image/token mixup equivalence. Android Native CI passed commit `8f6fe18`.
+
+Two source investigations follow from the generalization failures:
+
+* The Abu Dhabi greenhouse source, DOI `10.6084/m9.figshare.31145998.v2`, was
+  downloaded and verified against publisher MD5. Its ZIP SHA-256 is
+  `21a60dc473ae3e072a8542a0e53b1e1b56cd7245481ba5db25ba6ad4ccbe2a62`.
+  It contains 502 primary-leaf images: 104 Healthy, 11 Early Blight, 96 Bacterial
+  Spot and 291 Mosaic Virus. License: CC BY 4.0; publisher: Muhammad Shafay.
+  Standard fingerprints alone miss overlapping crops. SIFT/RANSAC found 68
+  geometric overlap links, merging filename families into 68 conservative
+  capture families, including 20 Healthy families. These are not verified plant
+  IDs. Partial crop overlap does not prove incompatible primary-leaf labels.
+  Prior-overlap checking uses 30,781 file hashes and 34,896 perceptual hashes
+  from full audits, not only the fingerprints retained in compact training rows.
+  Sealed geometric manifest SHA-256:
+  `5cf37861dfe835c918643b2753a05c229e9327cd750524435006384bdcfae6b6`.
+  **No diagnostic predictions or fitting have used this source.** Preserve it
+  for a later frozen, family-aware evaluation; it is not an adjudicated
+  whole-plant-health dataset.
+* A publisher-linked SFLD original-tomato Healthy folder exposes only 14 files
+  through the Drive listing. Its raw-image count is insufficient to serve as a
+  substantial new Healthy acceptance cohort. No pixels were downloaded or fitted.
+  M-TLD's public repository instead asks readers to contact its authors for data;
+  no such message was sent.
+
+The current acquisition is **FieldPlant**, whose original publisher describes
+pathologist-supervised annotations of individual leaves. The public mirror's
+embedded README identifies
+https://universe.roboflow.com/plant-disease-detection/fieldplant and CC BY 4.0;
+the export records auto-orientation and no augmentation. Its tomato subset has
+1,403 photos and 2,786 annotated leaves, including 279 Healthy instances. The
+remaining categories are broad symptom/condition names such as `Tomato blight
+leaf` and `Tomato Brown Spots`. Do not infer Early versus Late Blight, or map
+every diseased label to nine-class Other. Correctly scoped binary negatives can
+be admitted only after annotation-role and overlap audits.
+
+`phase10_fieldplant.py --campaign <artifact-root> --download` retrieves just the
+tomato ZIP members with HTTP Range, checking each member's CRC. The pinned
+5,912,207,630-byte archive's full SHA-256 is not computed; source export metadata,
+catalog identity, CSV SHA-256 and per-member checks record the subset's lineage.
+The raw CSV SHA-256 is
+`1b069168e3a982d98020fdf0e121305c84dc84880ebce543077a67d2cd83b433`.
+Acquisition log: `phase10_fieldplant.log`; root: `phase10_fieldplant/`. Download
+completion does not authorize training: first inspect actual boxes, quarantine
+prior overlaps, and keep capture families together. Healthy image labels must
+not be applied to every proposed background leaf. Explicit Healthy leaf boxes
+are stronger supervision than the earlier weak all-proposal positives.
+
+The phone remains on 2.0.2. No failing prototype has been installed, and the new
+whole-frame policies still have no native export/runtime implementation.
+
 ### Latest decision: prospective acceptance failed
 
 Both scene-negative continuations completed. There are now **246 trained

@@ -7,6 +7,25 @@ NVIDIA RTX 5090, or an implementation agent continuing the same investigation.
 
 ## Current continuation - 25 October 2026
 
+**Newer continuation:** 262 trained controls are complete. Stronger supervised
+four-block and twelve-block Healthy branches reach 51/95 and 55/95 on the opened
+field regression, but false Healthy rises from 3 to 4; neither qualifies. A
+full-depth mixup control also fails development recall. The original disease
+branch remains frozen. Local Python tests: 119 passed, one skipped; Native CI
+passed `8f6fe18`. Phone remains 2.0.2.
+
+The next work is data scope rather than another blind loss sweep. FieldPlant's
+1,403-photo/2,786-leaf tomato subset is being acquired by
+`phase10_fieldplant.py`; check `phase10_fieldplant.log` and
+`phase10_fieldplant/download_complete.json`. Confirm actual whole-leaf box roles
+and audit overlaps/families before fitting. Broad blight/spot labels must not
+be invented named classes. The separate 502-image Abu Dhabi source is downloaded
+and family-audited but remains **unopened for diagnostic inference and fitting**;
+its 104 Healthy images span only 20 inferred families. Preserve that source for
+a future frozen evaluation. Read the campaign record's latest continuation and
+machine evidence before acting; older pending-job/reservation statements below
+are chronological history.
+
 **Latest decision:** 246 trained controls completed. The focal image-context
 candidate passed development gates, but failed the one-time prospective
 reservation: Healthy 44/95 versus interim 8/95, below the frozen 70% target.

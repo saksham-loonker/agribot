@@ -40,4 +40,8 @@ def restore(directory):
     directory = Path(directory)
     state = torch.load(directory / "best.pt", weights_only=True, map_location="cpu")
     result = json.loads((directory / "result.json").read_text())
+    if state["architecture"] == "DinoSceneExpert":
+        from phase9_scene_sft import SceneVerifier
+
+        return SceneVerifier(state, result["calibration"]).eval()
     return CanonicalVerifier(state, result["calibration"]).eval()

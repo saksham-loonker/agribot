@@ -21,6 +21,61 @@ if READY:
 
 @unittest.skipUnless(READY, "full training/evaluation dependencies are optional")
 class CampaignLossTests(unittest.TestCase):
+    def test_zero_block_prefix_mixup_matches_mixing_images(self):
+        from timm.models.vision_transformer import VisionTransformer
+
+        model = VisionTransformer(
+            img_size=28,
+            patch_size=14,
+            embed_dim=32,
+            depth=3,
+            num_heads=4,
+            num_classes=9,
+        ).eval()
+        first, second = torch.randn(2, 3, 28, 28), torch.randn(2, 3, 28, 28)
+        weight = 0.37
+        with torch.no_grad():
+            direct = prefix(model, first * weight + second * (1 - weight), 3)
+            mixed = prefix(model, first, 3) * weight + prefix(model, second, 3) * (
+                1 - weight
+            )
+        torch.testing.assert_close(direct, mixed, rtol=1e-5, atol=1e-6)
+
+    def test_scene_backbone_adaptation_leaves_original_disease_weights_unchanged(self):
+        from timm.models.vision_transformer import VisionTransformer
+        from phase9_scene_sft import SceneExpert
+
+        original = VisionTransformer(
+            img_size=28,
+            patch_size=14,
+            embed_dim=32,
+            depth=5,
+            num_heads=4,
+            num_classes=9,
+        ).eval()
+        original.requires_grad_(False)
+        expert = SceneExpert(original, 4)
+        snapshot = {k: v.clone() for k, v in original.state_dict().items()}
+        with torch.no_grad():
+            tokens = prefix(original, torch.randn(3, 3, 28, 28), 4)
+        optimizer = torch.optim.AdamW(expert.parameters(), lr=0.01)
+        loss = torch.nn.functional.binary_cross_entropy_with_logits(
+            expert(tokens), torch.tensor([0.0, 1.0, 0.0])
+        )
+        loss.backward()
+        self.assertGreater(
+            sum(
+                float(p.grad.abs().sum())
+                for p in expert.tail.parameters()
+                if p.grad is not None
+            ),
+            0.0,
+        )
+        optimizer.step()
+        for key, value in original.state_dict().items():
+            torch.testing.assert_close(value, snapshot[key], rtol=0, atol=0)
+        self.assertTrue(all(p.grad is None for p in original.parameters()))
+
     def test_whole_image_evidence_cannot_replace_disease_or_fabricate_a_leaf(self):
         from context_abstention import route_context
 
