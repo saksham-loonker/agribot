@@ -31,6 +31,7 @@ def run(args):
     set_seed(args.seed)
     torch.set_num_threads(min(8, __import__('os').cpu_count() or 1))
     torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
     timm.layers.set_fused_attn(False)
     work = Path(args.work)
     run_dir = Path(args.runs) / args.run_name

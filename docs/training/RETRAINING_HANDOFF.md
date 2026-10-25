@@ -1,11 +1,55 @@
 # Agribot training failure investigation, recovery, and Android integration
 
-Revision: 2026-10-24. Original handoff: 2026-10-15.
+Revision: 2026-10-25. Original handoff: 2026-10-15.
 Repository: https://github.com/saksham-loonker/agribot.
 Audience: the originating assistant returning later over SSH to a PC with an
 NVIDIA RTX 5090, or an implementation agent continuing the same investigation.
 
+## Current continuation - 25 October 2026
+
+Read [the current campaign record](RECOGNITION_CAMPAIGN_20261024.md) first.
+App 2.0.2 is installed and its phone parity checks pass, but field generalization
+is unresolved. Earlier adapted candidates failed SLIF and fresh TOM2024/paper-leaf
+acceptance. They were not installed. Those cohorts are now opened development
+data; do not call them independent again. See the campaign record's phase-five
+continuation for the current supervised training and untouched reservation.
+
+The attempted generic detector trial was stopped and quarantined. Its SLIF boxes
+describe disease/healthy regions, not whole-leaf boundaries, so the apparent
+0.61176 versus 0.01238 mAP gap compares different annotation targets and is invalid
+evidence of a detector failure. Do not resume those detector checkpoints. Separate
+logit-adjustment, expected-reward-plus-CE and PPO controls completed and failed
+retention when used alone. The full-ROI confirmation prototype improves their
+safety, but its fresh acceptance improvement was insufficient for promotion.
+Broader supervised adaptation now uses correctly scoped TOM2024 and paper-leaf
+classification data, with 246 previously unopened photos reserved before fitting.
+
+SSH alias: `agribot-5090`. Remote repository: `/home/genesis/agribot`.
+Python: `/home/genesis/.venvs/agribot-train/bin/python`. Artifact root:
+`/home/genesis/agribot-data/recognition_campaign_20261024`.
+Inspect `phase5_student.log`, `phase5_selection.log`, `phase5/` and
+`tmux list-windows -t agribot`. The phase-five controller is
+`phase5_training.sh`; training completed, and model selection is underway.
+Avoid duplicate runs. `phase5/reserved_manifest.json` has not been inferred yet.
+`phase3_pipeline.sh` is stopped; its dataset is quarantined and new guards reject
+resumption/export. Full app replay and independent field acceptance remain
+mandatory before installation. The stable original comparator is under
+`original_reference/`; repository Android assets now contain the 2.0.2 interim
+model and must not be mistaken for the original classifier.
+
+Local authoring checkout: `.toolchains/recognition-work` on branch
+`research/recognition-campaign-20261024`. Cached native build checkout:
+`.toolchains/production-work`. The phone has the maintained package
+`com.sakshyam.agribot`; the obsolete `.field` package is disabled with data kept.
+Never clear either package's user data to install a candidate.
+
 ## Execution update - 24 October 2026
+
+The subsequent exhaustive supervised, logit, reward, CNN, tree and isolated DINO
+adapter campaign is documented in
+[RECOGNITION_CAMPAIGN_20261024.md](RECOGNITION_CAMPAIGN_20261024.md). Read its
+candidate decisions and acceptance accounting before reusing any newly opened
+cohort. Earlier rejected candidates below remain historical context.
 
 Further supervised Healthy/retention experiments and a shared-backbone adapter
 were completed after the initial recovery. Broader grouped regression exposed

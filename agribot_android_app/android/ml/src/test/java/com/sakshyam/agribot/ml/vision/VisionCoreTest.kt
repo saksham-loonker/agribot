@@ -146,7 +146,7 @@ class VisionManifestTest {
     }
 
     @Test fun `unsupported schema or detector layout is rejected`() {
-        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("\"schema\": 2", "\"schema\": 1")) }
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace(Regex("\"schema\"\\s*:\\s*[23]"), "\"schema\": 1")) }
         assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("\"x1\"", "\"cx\"")) }
     }
 

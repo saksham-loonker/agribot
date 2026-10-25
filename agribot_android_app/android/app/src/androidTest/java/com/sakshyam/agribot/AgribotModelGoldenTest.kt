@@ -3,6 +3,7 @@ package com.sakshyam.agribot
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.SystemClock
+import android.os.Bundle
 import android.util.Log
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -111,6 +112,9 @@ class AgribotModelGoldenTest {
         var last = vision.analyze(f, 4)
         repeat(n - 1) { last = vision.analyze(f, 4) }
         val ms = (SystemClock.elapsedRealtime() - t0) / n.toDouble()
+        InstrumentationRegistry.getInstrumentation().sendStatus(0, Bundle().apply {
+            putString("agribot_latency", "average_ms=$ms detect_ms=${last.detectMs} classify_ms=${last.classifyMs} leaves=${last.leaves.size}")
+        })
         Log.i("AgribotBench", "analyze() avg ${"%.1f".format(ms)} ms (detect ${"%.1f".format(last.detectMs)} ms, classify ${"%.1f".format(last.classifyMs)} ms, ${last.leaves.size} leaves)")
         assertTrue(last.leaves.isNotEmpty())
         val top = e["top_crop"] as? JsonObject

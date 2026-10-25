@@ -18,11 +18,16 @@ class AndroidModelContractTest(unittest.TestCase):
 
     def test_manifest_schema_and_labels(self):
         m = self.manifest
-        self.assertEqual(m["schema"], 2)
+        self.assertIn(m["schema"], (2,3))
         c = m["classifier"]
         self.assertEqual(c["labels"][c["other_index"]], "Other")
         self.assertIn("Healthy", c["labels"])
         self.assertEqual(len(c["labels"]), 9)
+        if m['schema']==3:
+            self.assertEqual(len(c['members']),1)
+            self.assertEqual(c['members'][0]['output'],[1,18])
+            self.assertEqual(c['view_confirmation'],dict(policy='changed_positive_full_roi',reference_logit_offset=9,padding_value=114))
+        else:self.assertNotIn('view_confirmation',c)
         self.assertGreater(c["temperature"], 0)
         d = m["detector"]
         self.assertEqual(d["output_rows"], ["x1", "y1", "x2", "y2", "score"])

@@ -77,7 +77,7 @@ class AgribotLeafVision(
                 LiteRtRunner(map(mm.file), options.classifierThreads, xnn, options.classifierBackend).also { r ->
                     members = members + r
                     check(r.inputShape.contentEquals(intArrayOf(1, mm.inputSize, mm.inputSize, 3))) { "${mm.file} input ${r.inputShape.toList()}" }
-                    check(r.outputShape.contentEquals(intArrayOf(1, m.labels.size))) { "${mm.file} output ${r.outputShape.toList()}" }
+                    check(r.outputShape.contentEquals(intArrayOf(1, m.labels.size * if (m.fullRoiConfirmation) 2 else 1))) { "${mm.file} output ${r.outputShape.toList()}" }
                 }
             }
             detector = det; members = mem; manifest = m
@@ -116,7 +116,7 @@ class AgribotLeafVision(
                 val mm = m.members[index]
                 val runner = members[index]
                 if (!CanonicalImageOps.classifierInputInto(rgb, mm.inputSize, runner.inputValues, d.box)) return@mapNotNull null
-                runner.run(runner.inputValues)
+                classifyPrepared(rgb, d.box, mm.inputSize, runner, m)
             }
             val r = decision!!.combine(logits)
             AnalyzedLeaf(BoundingBox(d.box.left, d.box.top, d.box.right, d.box.bottom), d.score, r.probabilities, r.labelIndex)
@@ -134,10 +134,22 @@ class AgribotLeafVision(
             val logits = m.members.indices.map { index ->
                 val runner = members[index]
                 check(CanonicalImageOps.classifierInputInto(rgb, m.members[index].inputSize, runner.inputValues))
-                runner.run(runner.inputValues)
+                classifyPrepared(rgb, null, m.members[index].inputSize, runner, m)
             }
             logits to decision!!.combine(logits)
         }
+    }
+
+    private fun classifyPrepared(rgb: RgbFrame, box: PixelBox?, size: Int, runner: LiteRtRunner, m: VisionManifest): FloatArray {
+        val raw = runner.run(runner.inputValues)
+        if (!m.fullRoiConfirmation) return raw
+        val candidate = raw.copyOfRange(0, m.labels.size)
+        val reference = raw.copyOfRange(m.labels.size, m.labels.size * 2)
+        val guard = ViewConfirmation(decision!!, m.healthyIndex, m.otherIndex)
+        if (!guard.needsConfirmation(reference, candidate)) return candidate
+        if (!CanonicalImageOps.classifierLetterboxInputInto(rgb, size, runner.inputValues, box)) return reference
+        val fullRoi = runner.run(runner.inputValues).copyOfRange(0, m.labels.size)
+        return if (guard.confirms(candidate, fullRoi)) candidate else reference
     }
 
     /** Raw detector output for golden tests. */

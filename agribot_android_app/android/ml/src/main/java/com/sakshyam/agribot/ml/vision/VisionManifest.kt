@@ -11,7 +11,7 @@ import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 
 /**
- * Parsed `model_manifest.json` (schema 2). Every runtime constant (sizes, thresholds, calibration)
+ * Parsed `model_manifest.json` (schemas 2 and 3). Every runtime constant (sizes, thresholds, calibration)
  * comes from here; nothing about the model contract is hard-coded in the app.
  */
 data class VisionManifest(
@@ -23,6 +23,7 @@ data class VisionManifest(
     val temperature: Double,
     val energyRejectBelow: Double?,
     val detector: Detector,
+    val fullRoiConfirmation: Boolean = false,
 ) {
     data class Member(val file: String, val sha256: String, val inputSize: Int)
     data class Detector(
@@ -40,7 +41,8 @@ data class VisionManifest(
     companion object {
         fun parse(text: String): VisionManifest {
             val root = Json.parseToJsonElement(text).jsonObject
-            require(root.int("schema") == 2) { "unsupported model manifest schema" }
+            val schema = root.int("schema")
+            require(schema in 2..3) { "unsupported model manifest schema" }
             val c = root.obj("classifier")
             require(c.str("layout") == "NHWC") { "classifier must use NHWC" }
             for ((key, expected) in listOf("mean" to CanonicalImageOps.IMAGENET_MEAN, "std" to CanonicalImageOps.IMAGENET_STD)) {
@@ -57,6 +59,15 @@ data class VisionManifest(
                 Member(o.str("file"), o.str("sha256"), shape[1])
             }
             require(members.isNotEmpty()) { "no classifier members" }
+            val confirmation = c["view_confirmation"]?.jsonObject
+            require((schema == 3) == (confirmation != null)) { "schema 3 requires full-ROI confirmation" }
+            if (confirmation != null) {
+                require(members.size == 1 && confirmation.str("policy") == "changed_positive_full_roi" &&
+                    confirmation.int("reference_logit_offset") == labels.size &&
+                    confirmation["padding_value"]!!.jsonPrimitive.double == 114.0) { "unsupported view confirmation contract" }
+                val output = c["members"]!!.jsonArray[0].jsonObject["output"]!!.jsonArray.map { it.jsonPrimitive.int }
+                require(output == listOf(1, labels.size * 2)) { "classifier needs candidate and baseline logits" }
+            }
             val d = root.obj("detector")
             require(d.str("layout") == "NHWC") { "detector must use NHWC" }
             val dIn = d["input"]!!.jsonArray.map { it.jsonPrimitive.int }
@@ -88,6 +99,7 @@ data class VisionManifest(
                     nmsIou = d["nms_iou"]!!.jsonPrimitive.double,
                     maxDetections = d.int("max_detections"),
                 ),
+                fullRoiConfirmation = confirmation != null,
             )
         }
 
