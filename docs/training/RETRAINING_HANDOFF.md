@@ -7,6 +7,20 @@ NVIDIA RTX 5090, or an implementation agent continuing the same investigation.
 
 ## Current continuation - 25 October 2026
 
+**Read the newest [leaf-scope continuation](LEAF_SCOPE_CONTINUATION_20261025.md)
+before the chronological notes below.** FieldPlant download and role/family audits
+are complete. There are 269 completed controls; the first copied-tail leaf control
+fails recall and a separate augmented control is running through
+`phase10_leaf_pipeline.py`. Weak TOM fitting
+targets are masked; regression labels are retained. The cold Abu Dhabi source
+remains unopened diagnostically. Leaf CNN/genus and four original-feature heads
+still fail end-to-end recall. An opt-in schema-four native/host contract protects
+the frozen reference's aggregate named disease verdict on the same observations.
+Its native unit tests, release lint and test-APK build pass; the Python suite ran
+121 tests (120 passed, one skipped). Phone remains on interim 2.0.2 and was absent
+from ADB at the latest check. Do not confuse a completed experiment or successful
+build with a qualified recognition improvement.
+
 **Newer continuation:** 262 trained controls are complete. Stronger supervised
 four-block and twelve-block Healthy branches reach 51/95 and 55/95 on the opened
 field regression, but false Healthy rises from 3 to 4; neither qualifies. A

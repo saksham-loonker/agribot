@@ -82,7 +82,7 @@ class AgribotLeafVision(
             }
             detector = det; members = mem; manifest = m
             decision = EnsembleDecision(m.labels.size, m.otherIndex, m.otherLogitBias, m.temperature, m.energyRejectBelow)
-            _status.value = VisionStatus.Ready(VisionModelInfo(m.bundleId, m.labels, m.healthyIndex, m.otherIndex, m.members.size))
+            _status.value = VisionStatus.Ready(VisionModelInfo(m.bundleId, m.labels, m.healthyIndex, m.otherIndex, m.members.size, m.referenceDiseasePriority))
         }.onFailure { e ->
             try { close() } catch (cleanup: Throwable) {
                 if (cleanup !== e) e.addSuppressed(cleanup)
@@ -118,8 +118,9 @@ class AgribotLeafVision(
                 if (!CanonicalImageOps.classifierInputInto(rgb, mm.inputSize, runner.inputValues, d.box)) return@mapNotNull null
                 classifyPrepared(rgb, d.box, mm.inputSize, runner, m)
             }
-            val r = decision!!.combine(logits)
-            AnalyzedLeaf(BoundingBox(d.box.left, d.box.top, d.box.right, d.box.bottom), d.score, r.probabilities, r.labelIndex)
+            val r = decision!!.combine(logits.map { it.selected })
+            val reference = if (m.referenceDiseasePriority) decision!!.combine(logits.map { requireNotNull(it.reference) }).probabilities else null
+            AnalyzedLeaf(BoundingBox(d.box.left, d.box.top, d.box.right, d.box.bottom), d.score, r.probabilities, r.labelIndex, reference)
         }
         val t2 = SystemClock.elapsedRealtimeNanos()
         return FrameAnalysis(frame.width, frame.height, leaves, dets.size, (t1 - t0) / 1e6, (t2 - t1) / 1e6)
@@ -134,22 +135,25 @@ class AgribotLeafVision(
             val logits = m.members.indices.map { index ->
                 val runner = members[index]
                 check(CanonicalImageOps.classifierInputInto(rgb, m.members[index].inputSize, runner.inputValues))
-                classifyPrepared(rgb, null, m.members[index].inputSize, runner, m)
+                classifyPrepared(rgb, null, m.members[index].inputSize, runner, m).selected
             }
             logits to decision!!.combine(logits)
         }
     }
 
-    private fun classifyPrepared(rgb: RgbFrame, box: PixelBox?, size: Int, runner: LiteRtRunner, m: VisionManifest): FloatArray {
+    private data class PreparedLogits(val selected: FloatArray, val reference: FloatArray? = null)
+
+    private fun classifyPrepared(rgb: RgbFrame, box: PixelBox?, size: Int, runner: LiteRtRunner, m: VisionManifest): PreparedLogits {
         val raw = runner.run(runner.inputValues)
-        if (!m.fullRoiConfirmation) return raw
+        if (!m.fullRoiConfirmation) return PreparedLogits(raw)
         val candidate = raw.copyOfRange(0, m.labels.size)
         val reference = raw.copyOfRange(m.labels.size, m.labels.size * 2)
         val guard = ViewConfirmation(decision!!, m.healthyIndex, m.otherIndex, m.confirmUnknownChanges)
-        if (!guard.needsConfirmation(reference, candidate)) return candidate
-        if (!CanonicalImageOps.classifierLetterboxInputInto(rgb, size, runner.inputValues, box)) return reference
+        val retained = reference.takeIf { m.referenceDiseasePriority }
+        if (!guard.needsConfirmation(reference, candidate)) return PreparedLogits(candidate, retained)
+        if (!CanonicalImageOps.classifierLetterboxInputInto(rgb, size, runner.inputValues, box)) return PreparedLogits(reference, retained)
         val fullRoi = runner.run(runner.inputValues).copyOfRange(0, m.labels.size)
-        return if (guard.confirms(candidate, fullRoi)) candidate else reference
+        return PreparedLogits(if (guard.confirms(candidate, fullRoi)) candidate else reference, retained)
     }
 
     /** Raw detector output for golden tests. */

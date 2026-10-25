@@ -101,11 +101,12 @@ class SceneVerifier(nn.Module):
         return self.logits(nhwc).sigmoid()
 
 
-def token_cache(root, backbone, encoder, depth, train, val):
-    directory = root / f"scene_tokens_d{depth}"
+def token_cache(root, backbone, encoder, depth, train, val, inputs_name="scene_inputs"):
+    leaf_scope = inputs_name != "scene_inputs"
+    directory = root / f"{'leaf' if leaf_scope else 'scene'}_tokens_d{depth}"
     directory.mkdir(exist_ok=True)
     identity = dict(
-        rows_sha256=digest(root / "scene_inputs/rows.json"),
+        rows_sha256=digest(root / inputs_name / "rows.json"),
         encoder_sha256=digest(encoder),
         depth=depth,
         train_rows=train.tolist(),
@@ -114,6 +115,9 @@ def token_cache(root, backbone, encoder, depth, train, val):
         validation_dtype="float32",
         training_views=["full_image_letterbox", "horizontal_flip_after_letterbox"],
     )
+    if leaf_scope:
+        identity["training_views"] = ["canonical_annotated_leaf", "horizontal_flip"]
+        identity["inputs_name"] = inputs_name
     metadata = directory / "identity.json"
     if metadata.exists():
         assert json.loads(metadata.read_text()) == identity
@@ -123,7 +127,7 @@ def token_cache(root, backbone, encoder, depth, train, val):
     done = (
         json.loads(progress.read_text()) if progress.exists() else dict(train=0, val=0)
     )
-    pixels = open_pixels(root / "scene_inputs")
+    pixels = open_pixels(root / inputs_name)
     caches = {}
     with torch.inference_mode():
         for split, ids, views, dtype in [
@@ -186,7 +190,11 @@ def main():
     ap.add_argument("--weight-decay", type=float, default=0.01)
     ap.add_argument("--dropout", type=float, default=0.0)
     ap.add_argument("--mixup-alpha", type=float, default=0.0)
+    ap.add_argument("--photo-augmentation", action="store_true")
     ap.add_argument("--run-name")
+    ap.add_argument(
+        "--task-scope", choices=["scene", "annotated_leaf"], default="scene"
+    )
     ap.add_argument(
         "--encoder",
         default="/home/genesis/sakshyam-agribot/v2/runs/field_vits2/best.pt",
@@ -196,19 +204,28 @@ def main():
     root = Path(a.root)
     out = root / (a.run_name or f"scene_sft_d{a.depth}_{a.loss}")
     out.mkdir(exist_ok=True)
-    rows = json.loads((root / "scene_inputs/rows.json").read_text())
+    inputs_name = "cnn_inputs" if a.task_scope == "annotated_leaf" else "scene_inputs"
+    rows = json.loads((root / inputs_name / "rows.json").read_text())
     target = np.array([int(r["health_y"]) for r in rows])
     for r, y in zip(rows, target):
         r["species_y"] = int(y)
-    train = np.array([i for i, r in enumerate(rows) if r["split"] == "train"])
-    val = np.array([i for i, r in enumerate(rows) if r["split"] == "val"])
+
+    def eligible(i, row):
+        return a.task_scope == "scene" or (row["set"] == "training" and target[i] >= 0)
+
+    train = np.array(
+        [i for i, r in enumerate(rows) if r["split"] == "train" and eligible(i, r)]
+    )
+    val = np.array(
+        [i for i, r in enumerate(rows) if r["split"] == "val" and eligible(i, r)]
+    )
     assert set(target[train]) == set(target[val]) == {0, 1}
     assert not ({rows[i]["group"] for i in train} & {rows[i]["group"] for i in val})
     held = json.loads((root / "reserved_manifest.json").read_text())
     assert not ({r["path"] for r in rows} & {r["path"] for r in held})
     assert not ({r["group"] for r in rows} & {r["group"] for r in held})
     config = dict(
-        rows_sha256=digest(root / "scene_inputs/rows.json"),
+        rows_sha256=digest(root / inputs_name / "rows.json"),
         encoder_sha256=digest(a.encoder),
         depth=a.depth,
         loss=a.loss,
@@ -223,6 +240,26 @@ def main():
         scope="Image-level weak Healthy supervision, not verified whole-plant diagnosis; original nine-class branch frozen.",
         reservation="Former phase-eight reservation is consumed regression; excluded from fitting and checkpoint selection, not fresh acceptance.",
     )
+    if a.task_scope == "annotated_leaf":
+        config["scope"] = (
+            "Binary annotated-leaf Healthy supervision; broad diseases are binary negatives, "
+            "TOM weak fitting targets masked, original nine-class branch frozen."
+        )
+        config["task_scope"] = a.task_scope
+        config["primary_source"] = "fieldplant"
+    if a.photo_augmentation:
+        assert a.task_scope == "annotated_leaf" and a.depth == 12 and not a.mixup_alpha
+        config["photo_augmentation"] = dict(
+            brightness=0.2,
+            contrast=0.2,
+            saturation=0.15,
+            hue=0.02,
+            blur_probability=0.25,
+            blur_kernel=3,
+            downsample_sides=[112, 160, 224],
+            horizontal_flip=True,
+            scope="Training only; validation keeps exact canonical FP32 tensors",
+        )
     assert (
         a.backbone_lr > 0
         and a.head_lr > 0
@@ -254,10 +291,40 @@ def main():
     if a.mixup_alpha:
         assert isinstance(backbone.norm_pre, nn.Identity)
     model = SceneExpert(backbone, a.depth, a.dropout).cuda()
-    caches = token_cache(root, backbone, a.encoder, a.depth, train, val)
-    train_tokens = torch.from_numpy(np.array(caches["train"])).cuda()
-    val_tokens = torch.from_numpy(np.array(caches["val"])).cuda()
-    del backbone
+    if a.photo_augmentation:
+        from torchvision import transforms
+
+        pixels = open_pixels(root / inputs_name)
+        augmentation = transforms.Compose(
+            [
+                transforms.ColorJitter(
+                    brightness=0.2, contrast=0.2, saturation=0.15, hue=0.02
+                ),
+                transforms.RandomApply(
+                    [transforms.GaussianBlur(3, sigma=(0.1, 1.0))], p=0.25
+                ),
+            ]
+        )
+        mean = torch.tensor([0.485, 0.456, 0.406], device="cuda").view(1, 3, 1, 1)
+        std = torch.tensor([0.229, 0.224, 0.225], device="cuda").view(1, 3, 1, 1)
+        with torch.inference_mode():
+            val_parts = []
+            for part in np.array_split(val, max(1, int(np.ceil(len(val) / a.batch)))):
+                x = (
+                    torch.from_numpy(np.array(pixels[part], copy=True))
+                    .cuda()
+                    .permute(0, 3, 1, 2)
+                )
+                val_parts.append(prefix(backbone, x, a.depth))
+            val_tokens = torch.cat(val_parts)
+            del val_parts
+    else:
+        caches = token_cache(
+            root, backbone, a.encoder, a.depth, train, val, inputs_name
+        )
+        train_tokens = torch.from_numpy(np.array(caches["train"])).cuda()
+        val_tokens = torch.from_numpy(np.array(caches["val"])).cuda()
+        del backbone
     weights = torch.tensor(balanced(rows, train), dtype=torch.float64)
     truth = torch.tensor(target, device="cuda", dtype=torch.float32)
     optimizer = torch.optim.AdamW(
@@ -282,7 +349,9 @@ def main():
         start_epoch = state["epoch"] + 1
         best = state["best_score"]
         history = json.loads((out / "history.json").read_text())
-    primary = np.array([rows[i]["source"] == "tom2024" for i in val])
+    primary = np.array(
+        [rows[i]["source"] == config.get("primary_source", "tom2024") for i in val]
+    )
     started = time.time()
 
     def evaluate():
@@ -303,8 +372,37 @@ def main():
         total = 0.0
         batches = 0
         for positions in order.split(a.batch):
-            flip = torch.randint(0, 2, (len(positions),), device="cuda")
-            tokens = train_tokens[positions.cuda() * 2 + flip].float()
+            if a.photo_augmentation:
+                with torch.no_grad():
+                    x = (
+                        torch.from_numpy(
+                            np.array(pixels[train[positions.numpy()]], copy=True)
+                        )
+                        .cuda()
+                        .permute(0, 3, 1, 2)
+                    )
+                    rgb = augmentation((x * std + mean).clamp(0, 1))
+                    side = [112, 160, 224][int(torch.randint(0, 3, ()).item())]
+                    if side != 224:
+                        rgb = F.interpolate(
+                            F.interpolate(
+                                rgb,
+                                size=(side, side),
+                                mode="bilinear",
+                                align_corners=False,
+                                antialias=True,
+                            ),
+                            size=(224, 224),
+                            mode="bilinear",
+                            align_corners=False,
+                            antialias=True,
+                        )
+                    flip = torch.rand(len(rgb), device="cuda") < 0.5
+                    rgb = torch.where(flip[:, None, None, None], rgb.flip(-1), rgb)
+                    tokens = prefix(backbone, (rgb - mean) / std, a.depth)
+            else:
+                flip = torch.randint(0, 2, (len(positions),), device="cuda")
+                tokens = train_tokens[positions.cuda() * 2 + flip].float()
             y = truth[train[positions.numpy()]]
             mix = None
             if a.mixup_alpha:

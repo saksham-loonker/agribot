@@ -12,6 +12,27 @@ The original trainable classifier is retained as the reference and rollback.
 
 ## Current checkpoint: detector, ROI and image-context diagnosis
 
+### Newest continuation: verified leaf supervision and aggregate disease priority
+
+Read [the leaf-scope continuation](LEAF_SCOPE_CONTINUATION_20261025.md) for the
+complete protocol and reproduction commands. FieldPlant's 1,403-photo download
+and 2,786-leaf annotation audit are complete. Of 141 photos with a Healthy leaf,
+128 also contain unhealthy leaves; whole-photo labels cannot be broadcast to
+every detected leaf. The new leaf cache masks all 2,858 TOM weak fitting targets
+and excludes the later teacher-derived positives, while preserving app regression
+images/labels. There are 269 completed controls; the first leaf-supervised copied
+tail also fails end-to-end recall. A separate photo degradation control is
+running. The six leaf CNN/genus/frozen-feature additions also fail field recall.
+
+An opt-in schema-four, 18-output native/host contract accumulates proposal and
+frozen reference evidence on the same real observations. A reference aggregate
+named disease takes priority, preventing recovered Healthy votes on other leaves
+from outvoting it. Existing installed assets do not enable this contract. Native
+unit tests (105), release lint and test-APK assembly pass. The Python suite ran
+121 tests: 120 passed, one skipped. The cold Abu Dhabi source remains unopened
+diagnostically, and the phone remains on 2.0.2. Older pending statements below
+are historical; consult the newest evidence and continuation first.
+
 ### Latest continuation: stronger supervised controls and better scoped data
 
 There are now **262 completed trained controls**. This includes four additional

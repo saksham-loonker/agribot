@@ -17,6 +17,8 @@ class AnalyzedLeaf(
     /** Calibrated class probabilities in label order. */
     val probabilities: FloatArray,
     val labelIndex: Int,
+    /** Frozen recognizer posterior when the bundle requires disease-priority voting. */
+    val referenceProbabilities: FloatArray? = null,
 )
 
 class FrameAnalysis(
@@ -37,6 +39,7 @@ data class VisionModelInfo(
     val healthyIndex: Int,
     val otherIndex: Int,
     val classifierMembers: Int,
+    val referenceDiseasePriority: Boolean = false,
 )
 
 sealed interface VisionStatus {

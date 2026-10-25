@@ -21,12 +21,15 @@ class AndroidModelContractTest(unittest.TestCase):
 
     def test_manifest_schema_and_labels(self):
         m = self.manifest
-        self.assertIn(m["schema"], (2, 3))
+        self.assertIn(m["schema"], (2, 3, 4))
         c = m["classifier"]
         self.assertEqual(c["labels"][c["other_index"]], "Other")
         self.assertIn("Healthy", c["labels"])
         self.assertEqual(len(c["labels"]), 9)
-        if m["schema"] == 3:
+        self.assertEqual(
+            m["schema"] == 4, bool(c.get("reference_disease_priority", False))
+        )
+        if m["schema"] in (3, 4):
             self.assertEqual(len(c["members"]), 1)
             self.assertEqual(c["members"][0]["output"], [1, 18])
             confirmation = c["view_confirmation"]

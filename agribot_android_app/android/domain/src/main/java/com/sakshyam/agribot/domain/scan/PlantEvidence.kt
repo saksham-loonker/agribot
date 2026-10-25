@@ -55,7 +55,9 @@ class PlantEvidence(
     private val numClasses: Int,
     private val healthyIndex: Int,
     private val otherIndex: Int,
+    referenceDiseasePriority: Boolean = false,
 ) {
+    private val referenceEvidence: PlantEvidence? = if (referenceDiseasePriority) PlantEvidence(numClasses, healthyIndex, otherIndex) else null
     private class LeafAcc(n: Int) {
         val sumP = DoubleArray(n)
         var sumW = 0.0
@@ -69,6 +71,11 @@ class PlantEvidence(
 
     fun add(trackId: Long, frameIndex: Long, obs: LeafObservation) {
         require(obs.probabilities.size == numClasses)
+        referenceEvidence?.let { reference ->
+            val probabilities = requireNotNull(obs.referenceProbabilities) { "disease-priority bundle needs reference probabilities" }
+            require(probabilities.size == numClasses)
+            reference.add(trackId, frameIndex, LeafObservation(obs.box, obs.detectorScore, probabilities, obs.frameQuality))
+        }
         val w = (obs.detectorScore * obs.frameQuality).toDouble().coerceIn(0.05, 1.0)
         val acc = leaves.getOrPut(trackId) { LeafAcc(numClasses) }
         for (k in 0 until numClasses) acc.sumP[k] += w * obs.probabilities[k]
@@ -80,12 +87,16 @@ class PlantEvidence(
 
     fun clear() {
         leaves.clear(); frames.clear(); observations = 0
+        referenceEvidence?.clear()
     }
 
     val framesUsed: Int get() = frames.size
     val leavesSeen: Int get() = leaves.size
 
     fun verdict(policy: VerdictPolicy = VerdictPolicy()): PlantVerdict {
+        // Healthy recovery must not displace a named disease supported by the
+        // frozen recognizer on these same tracks, observations and frames.
+        referenceEvidence?.verdict(policy)?.takeIf { it.kind == VerdictKind.DISEASE }?.let { return it }
         if (leaves.isEmpty()) return empty()
         val means = leaves.values.map { a -> DoubleArray(numClasses) { a.sumP[it] / a.sumW } }
         val weights = leaves.values.map { minOf(it.sumW, policy.maxLeafWeight) }

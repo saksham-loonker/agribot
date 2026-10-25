@@ -5,13 +5,14 @@ import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.double
 import kotlinx.serialization.json.doubleOrNull
+import kotlinx.serialization.json.booleanOrNull
 import kotlinx.serialization.json.int
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 
 /**
- * Parsed `model_manifest.json` (schemas 2 and 3). Every runtime constant (sizes, thresholds, calibration)
+ * Parsed `model_manifest.json` (schemas 2–4). Every runtime constant (sizes, thresholds, calibration)
  * comes from here; nothing about the model contract is hard-coded in the app.
  */
 data class VisionManifest(
@@ -25,6 +26,7 @@ data class VisionManifest(
     val detector: Detector,
     val fullRoiConfirmation: Boolean = false,
     val confirmUnknownChanges: Boolean = false,
+    val referenceDiseasePriority: Boolean = false,
 ) {
     data class Member(val file: String, val sha256: String, val inputSize: Int)
     data class Detector(
@@ -43,7 +45,7 @@ data class VisionManifest(
         fun parse(text: String): VisionManifest {
             val root = Json.parseToJsonElement(text).jsonObject
             val schema = root.int("schema")
-            require(schema in 2..3) { "unsupported model manifest schema" }
+            require(schema in 2..4) { "unsupported model manifest schema" }
             val c = root.obj("classifier")
             require(c.str("layout") == "NHWC") { "classifier must use NHWC" }
             for ((key, expected) in listOf("mean" to CanonicalImageOps.IMAGENET_MEAN, "std" to CanonicalImageOps.IMAGENET_STD)) {
@@ -61,7 +63,9 @@ data class VisionManifest(
             }
             require(members.isNotEmpty()) { "no classifier members" }
             val confirmation = c["view_confirmation"]?.jsonObject
-            require((schema == 3) == (confirmation != null)) { "schema 3 requires full-ROI confirmation" }
+            require((schema >= 3) == (confirmation != null)) { "paired models require full-ROI confirmation" }
+            val referencePriority = c["reference_disease_priority"]?.jsonPrimitive?.booleanOrNull == true
+            require((schema == 4) == referencePriority) { "schema 4 requires reference disease priority" }
             if (confirmation != null) {
                 require(members.size == 1 && confirmation.str("policy") in setOf("changed_positive_full_roi", "changed_decision_full_roi") &&
                     confirmation.int("reference_logit_offset") == labels.size &&
@@ -102,6 +106,7 @@ data class VisionManifest(
                 ),
                 fullRoiConfirmation = confirmation != null,
                 confirmUnknownChanges = confirmation?.str("policy") == "changed_decision_full_roi",
+                referenceDiseasePriority = referencePriority,
             )
         }
 

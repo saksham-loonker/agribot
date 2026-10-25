@@ -64,6 +64,14 @@ def species_targets(rows, original):
             # Presence of the publisher's primary tomato plant in a whole scene.
             # A generic teacher's individual leaf proposal does not verify genus.
             value = 1
+        elif (
+            r["source"] == "fieldplant"
+            and r.get("box") is not None
+            and r.get("label") == "Healthy"
+        ):
+            # Admit only publisher-annotated Healthy tomato leaf instances.
+            # Suspected genus errors among negative annotations remain masked.
+            value = 1
         result.append(value)
     return np.asarray(result, np.int64)
 
@@ -84,6 +92,14 @@ def main():
     ap.add_argument("--epochs", type=int, default=8)
     ap.add_argument("--batch", type=int, default=256)
     ap.add_argument("--scene-work")
+    ap.add_argument(
+        "--task-scope", choices=["whole_image", "annotated_leaf"], default="whole_image"
+    )
+    ap.add_argument("--primary-source")
+    ap.add_argument(
+        "--positive-source",
+        help="Optional positive-only source recall term for genus adaptation",
+    )
     ap.add_argument("--run-name")
     ap.add_argument("--warmstart")
     ap.add_argument("--negative-cost", type=float, default=2.0)
@@ -98,6 +114,7 @@ def main():
         and a.batch > 0
     )
     scene = bool(a.scene_work)
+    assert scene or a.task_scope == "whole_image"
     root = Path(a.root)
     out = root / (a.run_name or ("scene_healthy" if scene else "species"))
     out.mkdir(exist_ok=True)
@@ -158,6 +175,21 @@ def main():
         config["supervision"] = (
             "Image-level labels only; any unhealthy annotated instance is a negative whole scene. No crop label is used as a scene-positive shortcut."
         )
+        if a.task_scope == "annotated_leaf":
+            config["task"] = "visible_leaf_healthy_tomato"
+            config["supervision"] = (
+                "Explicit leaf-instance Healthy targets and binary non-Healthy targets. Mixed scenes are not broadcast Healthy; unverified TOM image/derived labels are masked in this cache. No nine-class disease head is updated."
+            )
+    primary_source = a.primary_source or ("tom2024" if scene else "plantdoc")
+    if a.primary_source:
+        config["primary_source"] = a.primary_source
+    if a.positive_source:
+        assert not scene
+        config["positive_source"] = a.positive_source
+        config["positive_source_recall_weight"] = 0.2
+        config[
+            "supervision"
+        ] += " FieldPlant positive genus targets require an explicit Healthy leaf annotation; negative FieldPlant genus stays masked."
     if a.focal_gamma:
         config["focal_gamma"] = a.focal_gamma
     protocol = out / "protocol.json"
@@ -281,13 +313,19 @@ def main():
         logits = evaluate(val)
         prob = 1 / (1 + np.exp(-np.clip(logits, -80, 80)))
         y = target[val]
-        pd = np.array(
-            [rows[i]["source"] == ("tom2024" if scene else "plantdoc") for i in val]
-        )
+        pd = np.array([rows[i]["source"] == primary_source for i in val])
         auc = float(roc_auc_score(y[pd], prob[pd]))
         fpr = float((prob[y == 0] >= 0.9).mean())
         recall = float((prob[y == 1] >= 0.5).mean())
         score = auc + 0.1 * recall - 2 * fpr
+        source_recall = None
+        if a.positive_source:
+            positive_mask = np.array(
+                [rows[i]["source"] == a.positive_source and target[i] == 1 for i in val]
+            )
+            assert positive_mask.any()
+            source_recall = float((prob[positive_mask] >= 0.5).mean())
+            score += 0.2 * source_recall
         state = dict(
             architecture=initial["architecture"],
             model={k: v.detach().cpu().clone() for k, v in model.state_dict().items()},
@@ -323,6 +361,8 @@ def main():
             tomato_recall_at_05=recall,
             seconds=time.time() - started,
         )
+        if source_recall is not None:
+            record["positive_source_recall_at_05"] = source_recall
         history.append(record)
         (out / "history.json").write_text(json.dumps(history, indent=2))
         print(json.dumps(record), flush=True)

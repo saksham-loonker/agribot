@@ -13,7 +13,8 @@ class CanonicalVerifier(nn.Module):
         self.network = timm.create_model(
             state["architecture"], pretrained=False, num_classes=1
         )
-        self.network.load_state_dict(state["model"], strict=True)
+        if "model" in state:
+            self.network.load_state_dict(state["model"], strict=True)
         for name, values in [
             ("canonical_mean", [0.485, 0.456, 0.406]),
             ("canonical_std", [0.229, 0.224, 0.225]),

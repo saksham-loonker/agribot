@@ -12,6 +12,7 @@ class ViewConfirmationTest {
     @Test fun `paired model output requires the new manifest contract`() {
         val root = Json.parseToJsonElement(File("../app/src/main/assets/model_manifest.json").readText()).jsonObject.toMutableMap()
         val classifier = root["classifier"]!!.jsonObject.toMutableMap()
+        classifier.remove("reference_disease_priority")
         val member = classifier["members"]!!.jsonArray[0].jsonObject.toMutableMap()
         member["output"] = JsonArray(listOf(JsonPrimitive(1), JsonPrimitive(18)))
         classifier["members"] = JsonArray(listOf(JsonObject(member)))
@@ -79,5 +80,27 @@ class ViewConfirmationTest {
         assertTrue(CanonicalImageOps.classifierLetterboxInputInto(frame, 4, output))
         val actual = FloatArray(4) { x -> (output[(4 + x) * 3] * CanonicalImageOps.IMAGENET_STD[0] + CanonicalImageOps.IMAGENET_MEAN[0]) * 255f }
         assertArrayEquals(floatArrayOf(10f, 50f, 100f, 140f), actual, 0.0001f)
+    }
+
+    @Test fun `schema four requires both reference outputs and disease priority`() {
+        val root = Json.parseToJsonElement(File("../app/src/main/assets/model_manifest.json").readText()).jsonObject.toMutableMap()
+        val classifier = root["classifier"]!!.jsonObject.toMutableMap()
+        val member = classifier["members"]!!.jsonArray[0].jsonObject.toMutableMap()
+        member["output"] = JsonArray(listOf(JsonPrimitive(1), JsonPrimitive(18)))
+        classifier["members"] = JsonArray(listOf(JsonObject(member)))
+        classifier["view_confirmation"] = JsonObject(mapOf(
+            "policy" to JsonPrimitive("changed_positive_full_roi"),
+            "reference_logit_offset" to JsonPrimitive(9),
+            "padding_value" to JsonPrimitive(114),
+        ))
+        root["schema"] = JsonPrimitive(4)
+        classifier.remove("reference_disease_priority")
+        root["classifier"] = JsonObject(classifier)
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(JsonObject(root).toString()) }
+        classifier["reference_disease_priority"] = JsonPrimitive(true)
+        root["classifier"] = JsonObject(classifier)
+        assertTrue(VisionManifest.parse(JsonObject(root).toString()).referenceDiseasePriority)
+        root["schema"] = JsonPrimitive(3)
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(JsonObject(root).toString()) }
     }
 }

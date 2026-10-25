@@ -129,10 +129,10 @@ class AgribotModelGoldenTest {
             val expected = top["label"]!!.jsonPrimitive.content
             val f = frame(e["file"]!!.jsonPrimitive.content)
             val tracker = LeafTracker()
-            val ev = PlantEvidence(manifest.labels.size, manifest.healthyIndex, manifest.otherIndex)
+            val ev = PlantEvidence(manifest.labels.size, manifest.healthyIndex, manifest.otherIndex, manifest.referenceDiseasePriority)
             repeat(6) { i ->
                 val a = vision.analyze(f, 6)
-                val obs = a.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, 1f) }
+                val obs = a.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, 1f, it.referenceProbabilities) }
                 val ids = tracker.update(i.toLong(), obs)
                 obs.forEachIndexed { k, o -> ev.add(ids[k], i.toLong(), o) }
             }

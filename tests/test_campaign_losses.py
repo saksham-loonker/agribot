@@ -21,6 +21,84 @@ if READY:
 
 @unittest.skipUnless(READY, "full training/evaluation dependencies are optional")
 class CampaignLossTests(unittest.TestCase):
+    def test_reference_disease_voting_matches_the_legacy_reference_replay(self):
+        import numpy as np
+        from app_eval import replay
+
+        manifest = dict(
+            schema=4,
+            classifier=dict(
+                labels=campaign.LABELS,
+                other_index=8,
+                other_logit_bias=0.75,
+                temperature=factorized.T,
+                reference_disease_priority=True,
+            ),
+        )
+
+        def logit(d, h, other):
+            p = np.full(9, 1e-9, np.float32)
+            p[[0, 1, 8]] = [d, h, other]
+            return (np.log(p) * factorized.T - np.array([0.0] * 8 + [0.75])).tolist()
+
+        leaves = []
+        for i in range(3):
+            reference = logit(0.99, 0.005, 0.005) if i == 0 else logit(0.4, 0.25, 0.35)
+            proposed = reference if i == 0 else logit(0.005, 0.99, 0.005)
+            leaves.append(
+                dict(
+                    score=0.9,
+                    member_logits=[proposed],
+                    reference_member_logits=[reference],
+                )
+            )
+        legacy = dict(
+            manifest,
+            classifier=dict(manifest["classifier"], reference_disease_priority=False),
+        )
+        self.assertEqual(replay(leaves, legacy)["kind"], "HEALTHY")
+        expected = replay(
+            [dict(x, member_logits=x["reference_member_logits"]) for x in leaves],
+            legacy,
+        )
+        actual = replay(leaves, manifest)
+        self.assertTrue(actual.pop("reference_disease_priority"))
+        self.assertEqual(expected, actual)
+        with self.assertRaises(AssertionError):
+            replay(
+                [dict(score=0.9, member_logits=[logit(0.005, 0.99, 0.005)])], manifest
+            )
+
+    def test_leaf_healthy_specialist_can_recover_other_without_inventing_a_disease(
+        self,
+    ):
+        from leaf_healthy_repair import fusion
+
+        probabilities = torch.tensor(
+            [[0.15, 0.005, 0.15, 0.015, 0.015, 0.015, 0.015, 0.015, 0.62]]
+        )
+        probabilities /= probabilities.sum(1, keepdim=True)
+        reference = probabilities.log() * factorized.T - torch.tensor(
+            [0.0] * 8 + [0.75]
+        )
+        actual = fusion(0.9, 0.3)(reference, torch.tensor([[6.0, 20.0]]))
+        after = torch.softmax(
+            (actual + torch.tensor([0.0] * 8 + [0.75])) / factorized.T, 1
+        )
+        self.assertEqual(int(after.argmax()), 1)
+        self.assertGreater(float(after[0, 1]), 0.99)
+        for index in [0, 2, 3, 4, 5, 6, 7]:
+            self.assertLessEqual(float(after[0, index]), float(probabilities[0, index]))
+        named = torch.zeros(7, 9)
+        for row, index in enumerate([0, 2, 3, 4, 5, 6, 7]):
+            named[row, index] = 10
+        torch.testing.assert_close(
+            fusion(0.9, 0.4)(named, torch.tensor([[10.0, 20.0]]).repeat(7, 1)),
+            named,
+            rtol=0,
+            atol=0,
+        )
+
     def test_zero_block_prefix_mixup_matches_mixing_images(self):
         from timm.models.vision_transformer import VisionTransformer
 
@@ -174,8 +252,31 @@ class CampaignLossTests(unittest.TestCase):
             dict(id="scene", source="plantdoc", path="mixed.jpg", box=None),
             dict(id="field", source="tom2024", path="field.jpg", box=None),
             dict(id="field_roi", source="tom2024", path="field.jpg", box=[0, 0, 8, 8]),
+            dict(
+                id="annotated_healthy",
+                source="fieldplant",
+                path="healthy.jpg",
+                box=[0, 0, 8, 8],
+                label="Healthy",
+            ),
+            dict(
+                id="uncertain_genus_negative",
+                source="fieldplant",
+                path="other.jpg",
+                box=[0, 0, 8, 8],
+                label="Diseased_unspecified",
+            ),
+            dict(
+                id="whole_healthy_photo",
+                source="fieldplant",
+                path="healthy.jpg",
+                box=None,
+                label="Healthy",
+            ),
         ]
-        self.assertEqual(species_targets(rows, original).tolist(), [1, 0, -1, 1, -1])
+        self.assertEqual(
+            species_targets(rows, original).tolist(), [1, 0, -1, 1, -1, 1, -1, -1]
+        )
 
     def test_optional_unknown_guard_preserves_the_old_policy_default(self):
         import numpy as np

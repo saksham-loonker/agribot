@@ -17,7 +17,7 @@ def sampling(rows, indices, target="health_y"):
         r = rows[i]
         domain = (
             r["source"]
-            if r["source"] in ("tom2024", "swtt5wy2pr")
+            if r["source"] in ("tom2024", "swtt5wy2pr", "fieldplant")
             else (
                 "classification"
                 if r["source"] == "bangladesh_classification"

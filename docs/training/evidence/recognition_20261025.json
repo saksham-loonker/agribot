@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "status": "Incomplete: 262 completed trained controls; deeper supervised Healthy branches still fail opened field regression; interim phone 2.0.2 retained; cold Abu Dhabi source untouched; FieldPlant tomato subset acquisition/annotation audit underway",
+  "status": "Incomplete: 269 completed controls; audited leaf-supervised CNN/features/full-depth adaptation fail field recall; degradation control running; reference disease-priority native tests pass; phone stays 2.0.2; cold AD unopened",
   "installed_classifier_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
   "initial_trained_controls": {
     "heads": 29,
@@ -12611,5 +12611,6 @@
       "conclusion": "success"
     },
     "next_step": "Acquire and audit FieldPlant explicit leaf annotations, then source/group-aware supervised training; preserve cold AD source for frozen evaluation."
-  }
+  },
+  "latest_continuation_evidence": "leaf_scope_20261025.json"
 }

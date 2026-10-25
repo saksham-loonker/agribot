@@ -153,7 +153,7 @@ class WalkRowsViewModel @Inject constructor(
                 lock.withLock {
                     runId = rid; fieldId = fid.value
                     walk = RowWalkTracker(setup.rows, setup.plantsPerRow, setup.plantSpacingM, setup.strideM)
-                    evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex)
+                    evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority)
                     saved[K_SETUP] = arrayListOf(setup.fieldName, setup.rows.toString(), setup.plantsPerRow.toString(), setup.plantSpacingM.toString(), setup.strideM.toString())
                     saved[K_RUN] = rid.value; saved[K_FIELD] = fid.value
                     publish { it.copy(started = true, runId = rid.value, rows = setup.rows, plantsPerRow = setup.plantsPerRow, stepsAvailable = stepsUsable) }
@@ -213,7 +213,7 @@ class WalkRowsViewModel @Inject constructor(
                     }
                     frameIndex++
                     val here = w.rowIndex to w.plantNumber
-                    val obs = a.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, q.weight) }
+                    val obs = a.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, q.weight, it.referenceProbabilities) }
                     val ids = leafTracker.update(frameIndex, obs)
                     var used = 0
                     obs.forEachIndexed { k, o ->
@@ -294,7 +294,7 @@ class WalkRowsViewModel @Inject constructor(
     private suspend fun finalizeAndMoveLocked(row: Int, plant: Int) {
         finalizeLocked(row, plant)
         val i = info ?: return
-        evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex)
+        evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority)
         bestFrame = null; bestLeaves = 0
         plantEpoch++
         publish { it.copy(currentLeaves = 0, currentVerdict = null) }
@@ -366,7 +366,7 @@ class WalkRowsViewModel @Inject constructor(
                     decisions.groupBy { (it.rowIndex ?: 0) to (it.plantNumber ?: 0) }.forEach { (k, d) ->
                         results[k] = d.maxBy { it.sequence }.toVerdict().first.kind
                     }
-                    evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex)
+                    evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority)
                     publish { it.copy(started = true, runId = rid, rows = setup[1].toInt(), plantsPerRow = setup[2].toInt(), stepsAvailable = stepsUsable) }
                 }
                 runs.markRunRecording(RunId(rid))

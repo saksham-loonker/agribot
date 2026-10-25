@@ -51,11 +51,11 @@ class DownloadedLeafRegressionTest {
                 val frame = VisionFrame(bitmap.width, bitmap.height, pixels, 1)
                 bitmap.recycle()
                 val tracker = LeafTracker()
-                val evidence = PlantEvidence(info.labels.size, info.healthyIndex, info.otherIndex)
+                val evidence = PlantEvidence(info.labels.size, info.healthyIndex, info.otherIndex, info.referenceDiseasePriority)
                 repeat(7) { n ->
                     val checked = vision.analyzeUsable(frame, 6)
                     val a = checked.analysis ?: error("Regression fixture has no usable detail")
-                    val observations = a.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, 1f) }
+                    val observations = a.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, 1f, it.referenceProbabilities) }
                     val ids = tracker.update(n.toLong(), observations)
                     observations.forEachIndexed { k, o -> evidence.add(ids[k], n.toLong(), o) }
                 }

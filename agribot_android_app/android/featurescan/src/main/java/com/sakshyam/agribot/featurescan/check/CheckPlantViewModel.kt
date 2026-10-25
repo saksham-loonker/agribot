@@ -126,7 +126,7 @@ class CheckPlantViewModel @Inject constructor(
                 _state.update { it.copy(hint = if (quality.tooDark) CheckHint.TOO_DARK else CheckHint.CLEAR_VIEW, boxes = emptyList(), error = null) }
                 return
             }
-            val ev = evidence ?: PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex).also { evidence = it }
+            val ev = evidence ?: PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority).also { evidence = it }
             val boxes = analysis.leaves.map { LeafBox.of(it, analysis.frameWidth, analysis.frameHeight, i) }
             if (analysis.leaves.isEmpty()) {
                 framesWithoutLeaves++
@@ -140,7 +140,7 @@ class CheckPlantViewModel @Inject constructor(
             }
             framesWithoutLeaves = 0
             frameIndex++
-            val obs = analysis.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, quality.weight) }
+            val obs = analysis.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, quality.weight, it.referenceProbabilities) }
             val ids = tracker.update(frameIndex, obs)
             obs.forEachIndexed { k, o -> ev.add(ids[k], frameIndex, o) }
             if (analysis.leaves.size >= bestFrameLeaves) { bestFrame = frame; bestFrameLeaves = analysis.leaves.size }

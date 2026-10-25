@@ -62,7 +62,7 @@ def evaluation_identity(assets, manifest, limit=None):
     ]
     files += [assets / "models" / m["file"] for m in bundle["classifier"]["members"]]
     files += [assets / "models" / bundle["detector"]["file"]]
-    if bundle.get("schema") == 3:
+    if bundle.get("schema") in (3, 4):
         files.append(Path(__file__).with_name("view_guard_policy.py"))
     return dict(
         schema=1,
@@ -135,6 +135,21 @@ def quality(image):
 
 
 def replay(leaves, manifest, weight=1.0, bias=None, other_min_prob=0.5):
+    if leaves and manifest["classifier"].get("reference_disease_priority", False):
+        reference = []
+        for leaf in leaves:
+            assert (
+                leaf.get("reference_member_logits") is not None
+            ), "Disease-priority replay needs reference logits"
+            reference.append(dict(leaf, member_logits=leaf["reference_member_logits"]))
+        reference_manifest = dict(
+            manifest,
+            classifier=dict(manifest["classifier"], reference_disease_priority=False),
+        )
+        retained = replay(reference, reference_manifest, weight, bias, other_min_prob)
+        if retained["kind"] == "DISEASE":
+            retained["reference_disease_priority"] = True
+            return retained
     if not leaves:
         return dict(
             kind="NO_LEAVES",
@@ -227,6 +242,9 @@ class Models:
     def __init__(self, assets: Path, threads: int = 4):
         self.assets = assets
         self.manifest = json.loads((assets / "model_manifest.json").read_text())
+        assert (self.manifest.get("schema") == 4) == bool(
+            self.manifest["classifier"].get("reference_disease_priority", False)
+        ), "Schema 4 requires reference disease priority"
         self.manifest["_energy_reject_below"] = (
             self.manifest["classifier"].get("energy_reject_below")
             if self.manifest["classifier"].get("energy_gate")
@@ -264,6 +282,11 @@ class Models:
             self.invoke(interpreter, canon.classifier_input(image, size, box)).ravel()
             for interpreter, size in self.members
         ]
+        self.last_reference_logits = (
+            [outputs[0][len(LABELS) : 2 * len(LABELS)].tolist()]
+            if self.manifest["classifier"].get("reference_disease_priority", False)
+            else None
+        )
         return self.select_view_logits(
             outputs, lambda size: classifier_letterbox_input(image, size, box)
         )
@@ -274,9 +297,9 @@ class Models:
             return [z.tolist() for z in outputs]
         from view_guard_policy import decision_key, needs_confirmation
 
-        policy = confirmation.get('policy')
+        policy = confirmation.get("policy")
         assert (
-            self.manifest["schema"] == 3
+            self.manifest["schema"] in (3, 4)
             and len(outputs) == 1
             and confirmation
             == dict(
@@ -284,14 +307,16 @@ class Models:
                 reference_logit_offset=len(LABELS),
                 padding_value=114,
             )
-            and policy in ('changed_positive_full_roi', 'changed_decision_full_roi')
+            and policy in ("changed_positive_full_roi", "changed_decision_full_roi")
         )
         raw = outputs[0]
         assert raw.shape == (2 * len(LABELS),)
         candidate, reference = raw[: len(LABELS)], raw[len(LABELS) :]
         cp = posterior([candidate], self.manifest)
         rp = posterior([reference], self.manifest)
-        if needs_confirmation(rp, cp, confirm_unknown=policy=='changed_decision_full_roi'):
+        if needs_confirmation(
+            rp, cp, confirm_unknown=policy == "changed_decision_full_roi"
+        ):
             interpreter, size = self.members[0]
             full = self.invoke(interpreter, alternative_input(size)).ravel()[
                 : len(LABELS)
@@ -329,15 +354,16 @@ def image_record(models, record):
     for box in detections[:6]:
         logits = models.classify(image, box[:4])
         p = posterior(logits, models.manifest)
-        leaves.append(
-            dict(
-                box=box[:4],
-                score=box[4],
-                member_logits=logits,
-                probabilities=p.tolist(),
-                label=LABELS[int(p.argmax())],
-            )
+        leaf = dict(
+            box=box[:4],
+            score=box[4],
+            member_logits=logits,
+            probabilities=p.tolist(),
+            label=LABELS[int(p.argmax())],
         )
+        if models.manifest["classifier"].get("reference_disease_priority", False):
+            leaf["reference_member_logits"] = models.last_reference_logits
+        leaves.append(leaf)
     info["detections"] = detections
     info["leaves"] = leaves
     info["app_replay"] = replay(leaves, models.manifest, info["quality_weight"])
