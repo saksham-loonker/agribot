@@ -31,8 +31,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--campaign", required=True)
     ap.add_argument("--epochs", type=int, default=100)
+    ap.add_argument("--model-root")
+    ap.add_argument("--field-sources")
     a = ap.parse_args()
-    root = Path(a.campaign) / "phase13_siglip"
+    root = Path(a.model_root) if a.model_root else Path(a.campaign) / "phase13_siglip"
     out = root / "risk_heads"
     out.mkdir(exist_ok=True)
     source = root / "siglip2_feature_heads"
@@ -54,7 +56,8 @@ def main():
         r["species_y"] = int(target)
     sampling = torch.tensor(balanced(rows, train), dtype=torch.float64)
     weights = balanced(rows, val)
-    field = np.array([rows[i]["source"] == "tom2024" for i in val])
+    field_sources = a.field_sources.split(",") if a.field_sources else ["tom2024"]
+    field = np.array([rows[i]["source"] in field_sources for i in val])
     torch.set_num_threads(4)
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
@@ -98,8 +101,14 @@ def main():
             ),
             reward_type="One-step human-label-derived binary reward; no RLHF or sequential environment",
             checkpoint_selection="Grouped internal validation recall at weighted FPR<=0.005; no app or cold-source fitting",
-            fresh_ad_used=False,
+            fresh_ad_used=(root / "AD_ADMISSION.json").exists(),
         )
+        if a.field_sources:
+            protocol["field_sources"] = field_sources
+        if protocol["fresh_ad_used"]:
+            protocol["ad_role"] = (
+                "Consumed grouped training/internal validation; no independent acceptance"
+            )
         if (run / "result.json").exists():
             result = read(run / "result.json")
             assert result["protocol"] == protocol

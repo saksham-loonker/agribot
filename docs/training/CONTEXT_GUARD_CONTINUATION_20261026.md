@@ -1,5 +1,7 @@
 # Bounded Healthy recovery: current implementation handoff
 
+**Latest checkpoint:** [cache-first optimization and stopping decision](TRAINING_OPTIMIZATION_20261026.md). The frozen AD opening failed and AD is now consumed development data. Current supervised/hybrid policies fail the unchanged app gates, so full verification, export and Android integration are deferred. OLID remains sealed; the disconnected phone and installed model are unchanged.
+
 26 October 2026. This checkpoint supersedes the pending-training status in
 SIGLIP2_CONTINUATION_20261026.md. Recognition is not yet qualified for release.
 The user has disconnected the phone; continue offline without requesting USB.

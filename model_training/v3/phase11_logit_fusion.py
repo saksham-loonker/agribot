@@ -173,9 +173,13 @@ def main():
                 roc_auc_score(labels[selection], probability[selection])
             ),
             selection_field_auc=float(roc_auc_score(labels[field], probability[field])),
-            fresh_ad_used=False,
+            fresh_ad_used=(root / "AD_ADMISSION.json").exists(),
             note="Internal grouped development; base checkpoints used broader validation. Not independent acceptance.",
         )
+        if r["fresh_ad_used"]:
+            r["ad_role"] = (
+                "Consumed grouped human-label training/internal validation; no independent acceptance"
+            )
         results.append(r)
         print(json.dumps(r), flush=True)
     (out / "candidates.json").write_text(json.dumps(results, indent=2))

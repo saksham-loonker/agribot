@@ -1,0 +1,25 @@
+{
+  "protocol": {
+    "base_rows_sha256": "aa429d09e6800af20e27b0ee1158179984b2bb6795780451ee61e0268055cfb9",
+    "admission_source_sha256": "5cf37861dfe835c918643b2753a05c229e9327cd750524435006384bdcfae6b6",
+    "failed_external_result_sha256": "b0dbd944a82acdfd367d5b1390c9739c5fc9217a623bacaa9fda6caae084aa30",
+    "split_rule": "SHA256 ad-admit677:group modulo100 <20 is internal val; no rerolled seed",
+    "source_photos": 502,
+    "human_labels_only": true,
+    "original_classifier_frozen": true,
+    "restricted_teacher_used": false,
+    "consumed_ad_now_used_for_training": true,
+    "independent": false,
+    "counts": {
+      "train:Other": 322,
+      "val:Other": 65,
+      "train:Early_blight": 11,
+      "train:Healthy": 75,
+      "val:Healthy": 29
+    }
+  },
+  "rows": 23761,
+  "rows_sha256": "928f6bd167d0370f9e598dc4193c05942f58a81a4e8707a2bcf47ddc2a4652f2",
+  "internal_photos": 274,
+  "independent": false
+}

@@ -41,11 +41,14 @@ class PermissiveContextGuard(nn.Module):
 
 
 def build(campaign, candidate):
-    root = Path(campaign) / "phase13_siglip"
     identity = candidate["guard_identity"]
-    assert (
-        identity["positive_source"] == "fusion"
-        and identity["negative_source"] == "cvar_bce"
+    root = Path(identity.get("model_root", Path(campaign) / "phase13_siglip"))
+    assert identity["positive_source"] == "fusion" and identity["negative_source"] in (
+        "cvar_bce",
+        "partial_auc",
+        "reinforce_label_reward",
+        "expected_logit_reward",
+        "siglip2",
     )
     directory = Path(identity["negative_directory"])
     for name, key in [
@@ -54,7 +57,8 @@ def build(campaign, candidate):
     ]:
         assert digest(directory / name) == identity[key]
     state = torch.load(directory / "best.pt", weights_only=True, map_location="cpu")
-    assert state["protocol"]["restricted_teacher_used"] is False
+    assert state["protocol"].get("restricted_teacher_used", False) is False
+    assert state["protocol"]["feature_identity"]["restricted_teacher_used"] is False
     assert (
         state["protocol"]["feature_identity"]["encoder_sha256"]
         == candidate["input_identity"]["encoder_sha256"]

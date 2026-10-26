@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "status": "Bounded Apache-only context prototype passed development/internal preacceptance; independent acceptance and native/export/device qualification pending; installed model unchanged",
+  "status": "Cache-first fixed screen rejects current supervised/hybrid policies; original safety gates unchanged; AD permanently consumed; fresh OLID sealed; no export/native/model installation",
   "installed_classifier_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
   "initial_trained_controls": {
     "heads": 29,
@@ -3280,7 +3280,7 @@
     "seconds": 69.22042226791382,
     "preinference_revision": "Visual audit found fruit-focused Late blight photos: the entire ambiguous class was excluded from this leaf cohort. Generic virosis is binary diseased, not a known supported diagnosis and not a confirmed unsupported disease. No model predictions have been opened."
   },
-  "valid_trained_controls_completed": 318,
+  "valid_trained_controls_completed": 338,
   "phase2_additional_loss_controls_completed": [
     "logit adjustment",
     "supervised expected reward plus CE",
@@ -12612,6 +12612,17 @@
     },
     "next_step": "Acquire and audit FieldPlant explicit leaf annotations, then source/group-aware supervised training; preserve cold AD source for frozen evaluation."
   },
-  "latest_continuation_evidence": "context_guard_20261026.json",
-  "latest_continuation_document": "CONTEXT_GUARD_CONTINUATION_20261026.md"
+  "latest_continuation_evidence": "cache_first_screen_20261026.json",
+  "latest_continuation_document": "TRAINING_OPTIMIZATION_20261026.md",
+  "optimization_20261026": {
+    "feature_reuse_evidence": "feature_reuse_20261026.json",
+    "frozen_ad_opening": "context_guard_external_20261026.json",
+    "ad_independent": false,
+    "olid_diagnostic_predictions_opened": false,
+    "olid_sealed_manifest_sha256": "b6462bb09b960b4bc02591ed7299bc932d09866550b60f8e5b3fc6e2507d5db6",
+    "recognition_gates_passed": false,
+    "export_started": false,
+    "android_integration_started": false,
+    "new_model_installed": false
+  }
 }

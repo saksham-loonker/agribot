@@ -44,6 +44,27 @@ def main():
         ):
             trained[family + "_" + path.parent.name] = read(path)
     pending = []
+    multisource_validations = {}
+    for directory, family in [
+        ("phase23_siglip", "siglip2"),
+        ("phase23_dino", "dinov2_large"),
+        ("phase23_hybrid", "hybrid_field"),
+    ]:
+        fresh = p / directory
+        for path in sorted((fresh / (family + "_feature_heads")).glob("*/result.json")):
+            trained[directory + "_" + path.parent.name] = read(path)
+        for path in sorted((fresh / "risk_heads").glob("*/result.json")):
+            parity = path.parent / "restored_head_parity.json"
+            if parity.exists() and read(parity)["passed"]:
+                trained[directory + "_risk_" + path.parent.name] = read(path)
+        fits = fresh / "logit_fusion_admitted/candidates.json"
+        if fits.exists():
+            for fit in read(fits):
+                trained[directory + "_fusion_" + str(fit["negative_cost"])] = fit
+        for path in sorted(fresh.glob("*_validation/result.json")):
+            value = read(path)
+            value.pop("old_development", None)
+            multisource_validations[directory + "/" + path.parent.name] = value
     for loss in ["focal", "ce", "pool_focal", "tail2_focal"]:
         directory = root / ("sft_" + loss)
         result, parity = (
@@ -56,6 +77,33 @@ def main():
             )
         else:
             pending.append(loss + " supervised training/restore validation")
+    new_sft = p / "phase23_siglip/sft_ad_tail2_focal_lowfpr"
+    if (new_sft / "restored_model_parity.json").exists() and read(
+        new_sft / "restored_model_parity.json"
+    )["passed"]:
+        trained["consumed_ad_sft_tail2_focal_lowfpr"] = dict(
+            result=read(new_sft / "result.json"),
+            restored_parity=read(new_sft / "restored_model_parity.json"),
+        )
+    elif new_sft.exists():
+        pending.append(
+            "Consumed-AD small-step supervised SigLIP2 tail adaptation/restore"
+        )
+    screening_path = p / "phase27_screen_diagnostics/result.json"
+    screening = read(screening_path) if screening_path.exists() else None
+    if (
+        new_sft.exists()
+        and not screening
+        and not (
+            p
+            / "phase23_siglip/sft_ad_tail2_focal_lowfpr_selection_validation/result.json"
+        ).exists()
+    ):
+        pending.append("Consumed-AD supervised model fresh app replay")
+    if not (p / "phase24_olid_source/membership_audit.json").exists():
+        pending.append(
+            "New OLID source overlap/label/family audit; no diagnostic predictions"
+        )
     policies, validations = {}, {}
     reselections = {}
     for path in sorted(root.glob("reselected_sft_*/result.json")):
@@ -145,7 +193,53 @@ def main():
             if (root / "canonical_pixel_cache_audit_verified.json").exists()
             else None
         ),
-        cold_ad_diagnostic_predictions_opened=False,
+        cold_ad_diagnostic_predictions_opened=(
+            p / "phase22_external_acceptance/opened_identity.json"
+        ).exists(),
+        frozen_external_opening=(
+            read(p / "phase22_external_acceptance/result.json")
+            if (p / "phase22_external_acceptance/result.json").exists()
+            else None
+        ),
+        ad_training_admission=(
+            read(p / "phase23_data/complete.json")
+            if (p / "phase23_data/complete.json").exists()
+            else None
+        ),
+        multisource_internal_validations=multisource_validations,
+        multisource_bounded_context=(
+            read(p / "phase25_verified/result.json")
+            if (p / "phase25_verified/result.json").exists()
+            else None
+        ),
+        new_cold_olid_source=dict(
+            download=(
+                read(p / "phase24_olid_source/download_audit.json")
+                if (p / "phase24_olid_source/download_audit.json").exists()
+                else None
+            ),
+            membership=(
+                read(p / "phase24_olid_source/membership_audit.json")
+                if (p / "phase24_olid_source/membership_audit.json").exists()
+                else None
+            ),
+            diagnostic_predictions_opened=False,
+            training_used=False,
+        ),
+        additional_scene_cache_reclamation=(
+            read(p / "scene_cache_reclamation_20261026.json")
+            if (p / "scene_cache_reclamation_20261026.json").exists()
+            else None
+        ),
+        cache_first_app_screening=screening,
+        stopped_failed_checkpoint_after_cheap_checks=bool(
+            screening and screening["passing_cheap_checks"] == 0
+        ),
+        incremental_frozen_feature_reuse=(
+            read(p / "phase27_feature_reuse_audit_v2.json")
+            if (p / "phase27_feature_reuse_audit_v2.json").exists()
+            else None
+        ),
         retired_246_and_related_families_are_benchmarks=False,
         native_context_runtime_implemented=False,
         new_model_installed=False,
@@ -182,8 +276,8 @@ def main():
             else None
         ),
         android_ci=dict(
-            commit="4927110961794368085773615b96af493b728fdf",
-            run=40226237366,
+            commit="07146ba8e194e02ffbaa927384373f0b7ece130f",
+            run=40272535806,
             conclusion="success",
         ),
     )

@@ -78,6 +78,7 @@ def main():
     ap.add_argument("--adaptation", choices=["full", "pool", "tail2"], default="full")
     ap.add_argument("--backbone-lr", type=float)
     ap.add_argument("--run-name")
+    ap.add_argument("--field-sources")
     ap.add_argument(
         "--selection-metric", choices=["legacy", "low_fpr"], default="legacy"
     )
@@ -108,7 +109,14 @@ def main():
     directory = Path(warm["checkpoint"]).parent
     config = dict(
         rows_sha256=digest(root / "cnn_inputs/rows.json"),
-        admission_sha256=digest(root / "complete.json"),
+        admission_sha256=digest(
+            root
+            / (
+                "complete.json"
+                if (root / "complete.json").exists()
+                else "AD_ADMISSION.json"
+            )
+        ),
         warm_head_sha256=digest(directory / "best.pt"),
         warm_encoder_sha256=digest(directory.parent / "encoder.pt"),
         warm_calibration_sha256=digest(directory / "result.json"),
@@ -139,6 +147,13 @@ def main():
     if a.loss == "distill":
         config["teacher_candidate_sha256"] = digest(
             root.parent / "phase11_scene/fusion_selection/candidate.json"
+        )
+    if a.field_sources:
+        config["field_sources"] = a.field_sources.split(",")
+    if (root / "AD_ADMISSION.json").exists():
+        config["consumed_ad_used_for_training"] = True
+        config["ad_role"] = (
+            "Grouped human-label training/internal development; independent status permanently consumed"
         )
     if a.family == "siglip2":
         config["model_family"] = "siglip2"
@@ -241,7 +256,8 @@ def main():
         start_epoch = state["epoch"] + 1
         best = state["best_score"]
         history = read(out / "history.json")
-    primary = np.array([rows[i]["source"] == "tom2024" for i in val])
+    field_sources = a.field_sources.split(",") if a.field_sources else ["tom2024"]
+    primary = np.array([rows[i]["source"] in field_sources for i in val])
     started = time.time()
 
     def evaluate():

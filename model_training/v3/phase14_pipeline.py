@@ -10,9 +10,11 @@ import sys
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--campaign", required=True)
+    ap.add_argument("--model-root")
+    ap.add_argument("--internal-baseline")
     a = ap.parse_args()
     p = Path(a.campaign)
-    root = p / "phase13_siglip"
+    root = Path(a.model_root) if a.model_root else p / "phase13_siglip"
     code = Path(__file__).resolve().parent
     ranked = json.loads((root / "risk_heads/ranked.json").read_text())
     for index, fit in enumerate(ranked):
@@ -60,9 +62,16 @@ def main():
                         str(p),
                         "--selection",
                         name,
+                        "--model-root",
+                        str(root),
                         "--healthy-directory",
                         str(directory),
-                    ],
+                    ]
+                    + (
+                        ["--internal-baseline", a.internal_baseline]
+                        if a.internal_baseline
+                        else []
+                    ),
                     stdout=log,
                     stderr=subprocess.STDOUT,
                     check=True,

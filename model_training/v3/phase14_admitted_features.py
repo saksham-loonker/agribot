@@ -22,6 +22,11 @@ def extract(campaign, root):
     p, root = Path(campaign), Path(root)
     records = json.loads((root / "admission_manifest.json").read_text())
     verified = root / "fusion_refined_selection_validation"
+    if (root / "AD_ADMISSION.json").exists():
+        # The first four components are immutable pre-Apple DINO/CNN experts.
+        # Reuse that verified graph only to compute those four features; its
+        # old SigLIP2 output is discarded, never a target for the new head.
+        verified = p / "phase13_siglip/fusion_refined_selection_validation"
     result = json.loads((verified / "result.json").read_text())
     assert result["checks"]["development_graph_matches"]
     assert result["restricted_teacher_used"] is False

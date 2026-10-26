@@ -42,6 +42,7 @@ def main():
     )
     ap.add_argument("--selection", default="fusion_selection")
     ap.add_argument("--healthy-directory")
+    ap.add_argument("--internal-baseline")
     a = ap.parse_args()
     p = Path(a.campaign)
     root = Path(a.model_root) if a.model_root else p / "phase13_siglip"
@@ -73,6 +74,9 @@ def main():
         restricted_teacher_used=False,
         cold_ad_used=False,
     )
+    if (root / "AD_ADMISSION.json").exists():
+        protocol["consumed_ad_used_for_training"] = True
+        protocol["ad_admission_sha256"] = digest(root / "AD_ADMISSION.json")
     meta = out / "protocol.json"
     if meta.exists():
         assert (
@@ -250,7 +254,11 @@ def main():
     assert (
         observed == c["metrics"]
     ), "Fresh standalone graph changed selected app metrics"
-    internal = p / "phase12_scene/union_app_validation/baseline_predictions.jsonl"
+    internal = (
+        Path(a.internal_baseline)
+        if a.internal_baseline
+        else p / "phase12_scene/union_app_validation/baseline_predictions.jsonl"
+    )
     records = [json.loads(line) for line in internal.read_text().splitlines()]
     admitted = {
         r["id"]: r
@@ -283,6 +291,12 @@ def main():
         internal_retained=retain(after_metrics, before_metrics),
         internal_healthy_target=healthy["correct"] / healthy["n"] >= 0.7,
     )
+    if (root / "AD_ADMISSION.json").exists():
+        checks["internal_healthy_target_each_source"] = all(
+            v["healthy"]["correct_rate"] >= 0.7
+            for v in after_metrics.values()
+            if v["healthy"]["n"]
+        )
     result = dict(
         checks=checks,
         passed_preacceptance=all(checks.values()),
@@ -305,6 +319,11 @@ def main():
         native_context_runtime_implemented=False,
         retired_cohort_is_benchmark=False,
     )
+    if (root / "AD_ADMISSION.json").exists():
+        result["consumed_ad_used_for_training"] = True
+        result["ad_role"] = (
+            "Grouped training/internal development only; failed independent source permanently consumed"
+        )
     (out / "result.json").write_text(json.dumps(result, indent=2))
     print(
         json.dumps(

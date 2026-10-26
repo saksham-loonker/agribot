@@ -84,8 +84,12 @@ def main():
         genus_checkpoint_sha256=digest(p / "phase6_roi/species/best.pt"),
         genus_calibration_sha256=digest(p / "phase6_roi/species/result.json"),
         selection_rule="Top training-validation score selected before app replay",
-        fresh_ad_used=False,
+        fresh_ad_used=(root / "AD_ADMISSION.json").exists(),
     )
+    if identity["fresh_ad_used"]:
+        identity["ad_role"] = (
+            "Consumed grouped training/internal validation; never independent acceptance"
+        )
     base_identity = dict(identity)
     if a.fusion_run:
         identity["fusion_candidates_sha256"] = digest(

@@ -42,6 +42,9 @@ def coarse_counts(photos):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--campaign", required=True)
+    ap.add_argument("--model-root")
+    ap.add_argument("--fusion-selection", default="fusion_refined_selection")
+    ap.add_argument("--whole-reference")
     ap.add_argument(
         "--negative-source",
         choices=[
@@ -84,26 +87,23 @@ def main():
     ap.add_argument("--genus-thresholds", default="0,.8")
     a = ap.parse_args()
     p = Path(a.campaign)
-    root = p / "phase13_siglip"
+    root = Path(a.model_root) if a.model_root else p / "phase13_siglip"
     assert Path(a.out_name).name == a.out_name and a.out_name not in (".", "..")
     out = p / a.out_name
     out.mkdir(exist_ok=True)
-    teacher_path = root / "fusion_refined_selection/candidate.json"
+    teacher_path = root / a.fusion_selection / "candidate.json"
     teacher = read(teacher_path)
-    verified = read(root / "fusion_refined_selection_validation/result.json")
+    validation_directory = root / (a.fusion_selection + "_validation")
+    verified = read(validation_directory / "result.json")
     assert (
         verified["checks"]["development_graph_matches"]
         and verified["restricted_teacher_used"] is False
     )
-    teacher_arrays = np.load(
-        root / "fusion_refined_selection_validation/development_probabilities.npz"
-    )
+    teacher_arrays = np.load(validation_directory / "development_probabilities.npz")
     healthy, genus = teacher_arrays["healthy"][:, 0], teacher_arrays["genus"]
     positive_meta = teacher["input_identity"]
     positive_directory = None
-    positive_path = (
-        root / "fusion_refined_selection_validation/development_probabilities.npz"
-    )
+    positive_path = validation_directory / "development_probabilities.npz"
     if a.positive_source != "fusion":
         if a.positive_source in ("dinov2_large", "hybrid_field"):
             extra = p / (
@@ -193,7 +193,11 @@ def main():
             True,
         ).items()
     }
-    whole_path = p / "phase20_whole_reference/predictions.jsonl"
+    whole_path = (
+        Path(a.whole_reference)
+        if a.whole_reference
+        else p / "phase20_whole_reference/predictions.jsonl"
+    )
     if a.closedset_guard:
         whole = {
             r["path"]: r
@@ -217,7 +221,7 @@ def main():
         teacher_candidate_sha256=digest(teacher_path),
         teacher_bundle_sha256=verified["bundle_sha256"],
         teacher_probabilities_sha256=digest(
-            root / "fusion_refined_selection_validation/development_probabilities.npz"
+            validation_directory / "development_probabilities.npz"
         ),
         negative_probabilities_sha256=digest(negative_path),
         negative_probabilities_path=str(negative_path),
@@ -239,6 +243,9 @@ def main():
         additional_coarse_and_paired_checks_are_diagnostic=a.original_gates_only,
         original_retention_rules_unchanged=True,
         cold_ad_used=False,
+        model_root=str(root),
+        consumed_ad_used_for_training=(root / "AD_ADMISSION.json").exists(),
+        whole_reference_path=str(whole_path),
         whole_reference_sha256=digest(whole_path) if a.closedset_guard else None,
         threshold_grid=dict(
             healthy=a.healthy_thresholds,

@@ -32,8 +32,11 @@ def main():
     ap.add_argument("--selection", default="phase21_bounded_cvar_bce")
     ap.add_argument("--out-name", default="phase21_verified")
     ap.add_argument("--coarse-priority", action="store_true")
+    ap.add_argument("--model-root")
+    ap.add_argument("--internal-baseline")
     a = ap.parse_args()
     p = Path(a.campaign)
+    root = Path(a.model_root) if a.model_root else p / "phase13_siglip"
     out = p / a.out_name
     out.mkdir(exist_ok=True)
     torch.set_num_threads(4)
@@ -75,7 +78,11 @@ def main():
         hashlib.sha256(json.dumps(paths).encode()).hexdigest()
         == identity["paths_sha256"]
     )
-    whole_path = p / "phase20_whole_reference/predictions.jsonl"
+    whole_path = Path(
+        identity.get(
+            "whole_reference_path", p / "phase20_whole_reference/predictions.jsonl"
+        )
+    )
     assert digest(whole_path) == identity["whole_reference_sha256"]
     whole = {r["path"]: r for r in map(json.loads, whole_path.read_text().splitlines())}
 
@@ -127,7 +134,11 @@ def main():
         assert read(selected_path) == selected, "Candidate changed; version output"
     else:
         selected_path.write_text(json.dumps(selected, indent=2))
-    internal = p / "phase12_scene/union_app_validation/baseline_predictions.jsonl"
+    internal = (
+        Path(a.internal_baseline)
+        if a.internal_baseline
+        else p / "phase12_scene/union_app_validation/baseline_predictions.jsonl"
+    )
     protocol = dict(
         candidate_sha256=digest(selected_path),
         selection_rank_sha256=digest(p / a.selection / "ranked.json"),
@@ -230,7 +241,7 @@ def main():
     records = [attach(json.loads(line)) for line in internal.read_text().splitlines()]
     admitted = {
         r["id"]: r
-        for r in read(p / "phase13_siglip/admission_manifest.json")
+        for r in read(root / "admission_manifest.json")
         if r["split"] == "val"
     }
     assert set(admitted) == {r["id"] for r in records}
@@ -280,6 +291,12 @@ def main():
         ]
     else:
         checks["zero_lost_original_correct_healthy"] = lost == 0
+    if (root / "AD_ADMISSION.json").exists():
+        checks["internal_healthy_each_source"] = all(
+            v["healthy"]["correct_rate"] >= 0.7
+            for v in after_metrics.values()
+            if v["healthy"]["n"]
+        )
     result = dict(
         checks=checks,
         passed_preacceptance=all(checks.values()),
@@ -306,6 +323,7 @@ def main():
         restricted_teacher_used=False,
         native_context_runtime_implemented=False,
         retired_cohort_is_benchmark=False,
+        consumed_ad_used_for_training=(root / "AD_ADMISSION.json").exists(),
     )
     (out / "result.json").write_text(json.dumps(result, indent=2))
     for name, rows in [

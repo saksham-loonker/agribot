@@ -146,12 +146,12 @@ def extract(root, out, ids, family):
     encoder = DinoLargeEncoder(spec).cuda().eval().requires_grad_(False)
     encoder.load_state_dict(state["model"], strict=True)
     pixels = open_pixels(root / "cnn_inputs")
-    features = np.zeros(
-        (len(json.loads((root / "cnn_inputs/rows.json").read_text())), 1024), np.float32
-    )
+    from feature_cache_reuse import seed_features
+
+    features, missing_ids = seed_features(root, out, ids, 1024, family)
     with torch.inference_mode():
-        for start in range(0, len(ids), 64):
-            part = ids[start : start + 64]
+        for start in range(0, len(missing_ids), 64):
+            part = missing_ids[start : start + 64]
             x = torch.from_numpy(np.array(pixels[part], copy=True)).cuda()
             z = encoder(x)
             assert torch.isfinite(z).all()
@@ -162,7 +162,8 @@ def extract(root, out, ids, family):
                         dict(
                             stage="dino_large_features",
                             complete=start + len(part),
-                            total=len(ids),
+                            total=len(missing_ids),
+                            reused=len(ids) - len(missing_ids),
                         )
                     ),
                     flush=True,

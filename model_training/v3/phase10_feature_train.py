@@ -39,6 +39,10 @@ def main():
     )
     ap.add_argument("--primary-source", default="fieldplant")
     ap.add_argument(
+        "--field-sources",
+        help="Comma-separated sources for the combined field checkpoint score",
+    )
+    ap.add_argument(
         "--task-scope",
         choices=["annotated_leaf", "primary_image"],
         default="annotated_leaf",
@@ -189,7 +193,10 @@ def main():
     truth = torch.tensor(target, device="cuda", dtype=torch.float32)
     sampling = torch.tensor(balanced(rows, train), dtype=torch.float64)
     val_weights = balanced(rows, val)
-    field = np.array([rows[i]["source"] == a.primary_source for i in val])
+    field_sources = (
+        a.field_sources.split(",") if a.field_sources else [a.primary_source]
+    )
+    field = np.array([rows[i]["source"] in field_sources for i in val])
     ranks = []
     for kind, method in itertools.product(["linear", "mlp"], ["bce", "focal"]):
         name = kind + "_" + method
@@ -203,8 +210,14 @@ def main():
             negative_cost=4.0,
             seed=379,
             original_classifier_frozen=True,
-            fresh_ad_used=False,
+            fresh_ad_used=any(r["source"] == "ad_greenhouse" for r in rows),
         )
+        if a.field_sources:
+            protocol["field_sources"] = field_sources
+        if protocol["fresh_ad_used"]:
+            protocol["ad_role"] = (
+                "Consumed source admitted to grouped training/internal validation; no independent claim"
+            )
         if a.task_scope != "annotated_leaf" or a.primary_source != "fieldplant":
             protocol["task_scope"] = a.task_scope
             protocol["primary_source"] = a.primary_source
