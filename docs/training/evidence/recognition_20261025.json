@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "status": "PR 6 review integrity fixes implemented; compact and source-balanced supervised controls failed unchanged app gates; no qualified replacement; AD consumed; OLID sealed",
+  "status": "PR 6 useful engineering retained and integrity defects repaired; bounded supervised/spatial/routing/region controls stopped after failed gates; no qualified replacement; AD consumed; OLID sealed",
   "installed_classifier_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
   "initial_trained_controls": {
     "heads": 29,
@@ -12643,5 +12643,46 @@
     "phone_connected": false,
     "olid_diagnostic_opened": false,
     "ad_independent": false
+  },
+  "pr6_bounded_continuation_20261026": {
+    "review": "docs/training/PR6_CODE_REVIEW_20261026.md",
+    "evidence": "docs/training/evidence/pr6_continuation_checkpoint_20261026.json",
+    "region_validation": "docs/training/evidence/region_validation_20261026.json",
+    "ci": {
+      "commit": "399418fc9a1dbd35a9d7a77d0e747c42638d40de",
+      "run": 40295487690,
+      "training_contracts": "success",
+      "native_android": "success"
+    },
+    "final_fixed_cached_route": {
+      "passed": false,
+      "tom_internal_healthy": "39/53",
+      "ad_consumed_internal_healthy": "22/29",
+      "old_paper_healthy": "51/119",
+      "old_unsupported_false_known": {
+        "observed": 8,
+        "maximum": 7
+      },
+      "new_encoder_inputs": 0,
+      "new_fits": 0
+    },
+    "region_screen": {
+      "passed": false,
+      "images": 148,
+      "seconds": 1.1334539109957404,
+      "diseased_photo_veto_at_075": "1/137",
+      "diseased_photo_veto_at_09": "0/137"
+    },
+    "deployed_assets_changed": false,
+    "cold_olid_used": false,
+    "ad_independent": false,
+    "active_gpu_training_jobs": 0,
+    "monitor": {
+      "task_name": "Agribot-PR6-Review-4Hourly",
+      "interval_hours": 4,
+      "queue_test_succeeded": true,
+      "requires": "Laptop powered on, logged in and connected",
+      "stop": "PR closed or user cancels"
+    }
   }
 }

@@ -1,9 +1,14 @@
 # Cache-first training and recognition decision handoff
 
 **Resumed work and code review:** [PR 6 review and supervised continuation](PR6_CODE_REVIEW_20261026.md)
-supersedes the earlier checkpoint below. Compact controls and the justified
-source-balanced supervised tail adaptation have completed and failed their gates.
-Recognition, export and independent acceptance gates remain unchanged.
+supersedes the earlier checkpoint below. Compact, source-balanced supervised,
+spatial, scoped routing and symptom-region controls have completed and stopped
+after failing their gates. New shared caches avoid repeated encoder inference;
+the final fixed route uses zero new encoder inputs. No GPU job remains active
+at this checkpoint. Recognition, export and independent acceptance gates remain
+unchanged. PR 6 is reviewed every four hours through the existing conversation
+while the laptop is on, logged in and connected; adoption requires useful,
+validated changes, never an automatic merge.
 
 26 October 2026. This is the current checkpoint and supersedes the pending
 acceptance/training statements in the earlier continuations. **Recognition is

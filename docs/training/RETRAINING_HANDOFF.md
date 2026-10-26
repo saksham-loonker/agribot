@@ -1,6 +1,6 @@
 # Agribot training failure investigation, recovery, and Android integration
 
-**Latest checkpoint:** [PR 6 code review and source-balanced supervised continuation](PR6_CODE_REVIEW_20261026.md). Cache integrity findings are repaired and useful training/native safeguards retained. Compact controls and the separately versioned source-balanced tail adaptation completed but failed the unchanged gates. AD is consumed development, OLID stays sealed, and export/Android integration remain deferred. The disconnected phone and installed model are unchanged.
+**Latest checkpoint:** [PR 6 code review and bounded continuation](PR6_CODE_REVIEW_20261026.md). Useful cache, training and native safeguards are retained; image/cache integrity findings are repaired, and both CI jobs passed at `399418f`. The subsequent cached/spatial/routing and symptom-region controls have completed and stopped without qualifying recognition. Read the final section for measured results, unchanged gates and the four-hour PR review schedule. AD is consumed development, OLID stays sealed, and export/Android integration remain deferred. The disconnected phone and installed model are unchanged. Historical statements below about AD being unopened are superseded.
 
 Revision: 2026-10-26. Original handoff: 2026-10-15.
 Repository: https://github.com/saksham-loonker/agribot.
