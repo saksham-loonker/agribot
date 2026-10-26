@@ -23,6 +23,7 @@ from pathlib import Path
 import numpy as np
 from ai_edge_litert.interpreter import Interpreter
 from PIL import Image
+from evaluation_inputs import input_identity
 
 ROOT = Path(__file__).resolve().parents[2]
 CANON_PATH = ROOT / "model_training/v2/final/canon.py"
@@ -64,10 +65,15 @@ def evaluation_identity(assets, manifest, limit=None):
     files += [assets / "models" / bundle["detector"]["file"]]
     if bundle.get("schema") in (3, 4):
         files.append(Path(__file__).with_name("view_guard_policy.py"))
+    files.append(Path(__file__).with_name("evaluation_inputs.py"))
+    records = json.loads(Path(manifest).read_text())
+    if limit:
+        records = records[:limit]
     return dict(
-        schema=1,
+        schema=2,
         limit=limit,
         files=[hashlib.sha256(p.read_bytes()).hexdigest() for p in files],
+        inputs=input_identity(records),
     )
 
 

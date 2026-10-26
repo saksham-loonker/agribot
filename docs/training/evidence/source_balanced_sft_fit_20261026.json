@@ -1,0 +1,99 @@
+{
+  "configuration": {
+    "rows_sha256": "928f6bd167d0370f9e598dc4193c05942f58a81a4e8707a2bcf47ddc2a4652f2",
+    "admission_sha256": "dae436680ddb936e9d3eac4b64454df9060709b0873dab0e4e50c8f5dd9162a3",
+    "warm_head_sha256": "cd42e56478d1ddb588d0ead53611d6783da9e52fe0156cf07829e8fe0ff13620",
+    "warm_encoder_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+    "warm_calibration_sha256": "adea2ffe951cca6431eaa4ee727b36750a54d3622da007cb49653d88845ea4b0",
+    "loss": "focal",
+    "epochs": 16,
+    "batch": 128,
+    "seed": 557,
+    "backbone_lr": 1e-06,
+    "head_lr": 0.0001,
+    "weight_decay": 0.01,
+    "negative_cost": 4.0,
+    "focal_gamma": 2.0,
+    "distillation_weight": 0.0,
+    "distillation_temperature": 2.0,
+    "supervision": "Image/primary-view labels; consumed families are training/internal validation, not benchmarks. No disease model update.",
+    "augmentation": {
+      "horizontal_flip": true,
+      "brightness": 0.2,
+      "contrast": 0.2,
+      "saturation": 0.15,
+      "hue": 0.02,
+      "blur_probability": 0.25,
+      "downsample_sides": [
+        112,
+        160,
+        224
+      ]
+    },
+    "training_storage": "FP16 canonical tensors; BF16 compute; exact FP32 validation",
+    "cold_ad_used": false,
+    "field_sources": [
+      "tom2024",
+      "ad_greenhouse"
+    ],
+    "consumed_ad_used_for_training": true,
+    "ad_role": "Grouped human-label training/internal development; independent status permanently consumed",
+    "model_family": "siglip2",
+    "restricted_teacher_used": false,
+    "adaptation": "tail2",
+    "warm_checkpoint_in_selection": true,
+    "selection_metric": "Scale-invariant recall at weighted FPR<=.005 plus standardized partial AUC; internal validation only",
+    "sampling": "equal class/publisher source/family",
+    "sampling_source_sha256": "1bfc1a41f90d33b8ec177955ba8da670c8186b9f38e1e1817333848be9ec2608"
+  },
+  "checkpoint_sha256": "e7781747baf0634460b2ec73e01140c9e8820742ff8475f49bb4e33754705049",
+  "calibration": [
+    0.8459743196453408,
+    1.3041274478367977
+  ],
+  "validation_n": 4198,
+  "field_auc": 0.9863633060707105,
+  "trainable_parameters": 21364481,
+  "thresholds": {
+    "0.5": {
+      "healthy_recall": 0.9682926829268292,
+      "negative_false_positive": 0.08732978093546477,
+      "field_healthy_recall": 0.943127962085308,
+      "field_negative_false_positive": 0.07666098807495741
+    },
+    "0.7": {
+      "healthy_recall": 0.9451219512195121,
+      "negative_false_positive": 0.05328596802841918,
+      "field_healthy_recall": 0.9146919431279621,
+      "field_negative_false_positive": 0.04088586030664395
+    },
+    "0.8": {
+      "healthy_recall": 0.8939024390243903,
+      "negative_false_positive": 0.03197158081705151,
+      "field_healthy_recall": 0.8815165876777251,
+      "field_negative_false_positive": 0.030664395229982964
+    },
+    "0.9": {
+      "healthy_recall": 0.7207317073170731,
+      "negative_false_positive": 0.013913558318531676,
+      "field_healthy_recall": 0.7962085308056872,
+      "field_negative_false_positive": 0.015332197614991482
+    },
+    "0.95": {
+      "healthy_recall": 0.525609756097561,
+      "negative_false_positive": 0.006808762581409118,
+      "field_healthy_recall": 0.6682464454976303,
+      "field_negative_false_positive": 0.0034071550255536627
+    },
+    "0.99": {
+      "healthy_recall": 0.31097560975609756,
+      "negative_false_positive": 0.0008880994671403197,
+      "field_healthy_recall": 0.4597156398104265,
+      "field_negative_false_positive": 0.0
+    }
+  },
+  "teacher_agreement_training_cases": 0,
+  "cold_ad_used": false,
+  "consumed_cohort_is_benchmark": false,
+  "seconds": 352.7149863243103
+}

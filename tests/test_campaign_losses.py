@@ -21,6 +21,34 @@ if READY:
 
 @unittest.skipUnless(READY, "full training/evaluation dependencies are optional")
 class CampaignLossTests(unittest.TestCase):
+    def test_compact_healthy_repair_keeps_named_and_confident_healthy_logits_exact(
+        self,
+    ):
+        from compact_healthy_model import propose
+
+        reference = torch.full((8, 9), -5.0)
+        for row, label in enumerate([0, 1, 2, 3, 4, 5, 6, 7]):
+            reference[row, label] = 7.0
+        torch.testing.assert_close(
+            propose(reference, torch.ones(8), 0.8), reference, atol=0, rtol=0
+        )
+
+    def test_compact_healthy_repair_raises_only_healthy_and_keeps_other_class_ratios(
+        self,
+    ):
+        from compact_healthy_model import propose, calibrated_probabilities
+
+        reference = torch.tensor([[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 3.0]])
+        before = calibrated_probabilities(reference)
+        after = calibrated_probabilities(propose(reference, torch.tensor([0.95]), 0.8))
+        self.assertEqual(int(after.argmax()), 1)
+        self.assertAlmostEqual(float(after[0, 1]), 0.95, places=5)
+        indices = [0, 2, 3, 4, 5, 6, 7, 8]
+        torch.testing.assert_close(
+            after[:, indices] / after[:, 8:9], before[:, indices] / before[:, 8:9]
+        )
+        torch.testing.assert_close(after.sum(1), torch.ones(1))
+
     def test_reference_disease_voting_matches_the_legacy_reference_replay(self):
         import numpy as np
         from app_eval import replay

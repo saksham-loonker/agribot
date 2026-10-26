@@ -1,5 +1,10 @@
 # Cache-first training and recognition decision handoff
 
+**Resumed work and code review:** [PR 6 review and supervised continuation](PR6_CODE_REVIEW_20261026.md)
+supersedes the earlier checkpoint below. Compact controls and the justified
+source-balanced supervised tail adaptation have completed and failed their gates.
+Recognition, export and independent acceptance gates remain unchanged.
+
 26 October 2026. This is the current checkpoint and supersedes the pending
 acceptance/training statements in the earlier continuations. **Recognition is
 not fixed and no replacement model is qualified.** The phone is disconnected;

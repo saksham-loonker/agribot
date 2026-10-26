@@ -1,0 +1,134 @@
+# PR 6 code review and continued recognition work
+
+Reviewed PR head `69ac2434f8e4e3f69764f3e2f5f84dd7f012df7b` and its working
+continuation on 26 October 2026. The review focused on the high-risk training,
+cache, evaluation and native verdict paths; it is not a claim of line-by-line
+review of all 210 changed files and 144,073 added lines, much of which is JSON
+evidence. **Useful engineering foundations; recognition repair remains unqualified.**
+
+## Findings and repairs
+
+1. **Evaluation resume did not pin image bytes.** `evaluation_identity` hashed
+   the manifest, code and models, but a source JPEG could change at the same path
+   while an old prediction remained eligible for resume. The schema-two identity
+   now hashes each unique source file, checks publisher hashes when available,
+   preserves row ordering and rejects duplicate IDs. Missing/changed files fail
+   before cached results or inference are admitted. Schema-one resumes require
+   a new output directory; historical evidence is not overwritten. The new
+   supervised screen also pins all opened source image identities, including
+   validation inputs reused by path. Tests cover changed bytes with identical
+   file size/mtime, missing sources, duplicate IDs and hash disagreement.
+2. **New hybrid assembly checked component metadata without checking each
+   completed component contract.** A modified feature array could be combined
+   under its old identity. Both component caches now validate their feature
+   bytes, encoder, rows, runtime, preprocessing and pixel-shard contract before
+   assembly. A regression test corrupts a component and verifies rejection
+   before any encoder is loaded. Completed, independently verified hybrid
+   caches retain their fast return path.
+3. **The green Android CI did not establish that optional ML tests executed.**
+   Its lightweight Python environment can skip training tests. A separate CPU
+   job now installs the tested ML dependencies and fails on unexpected skips.
+   The optional downloaded-media test may remain skipped. This is a source and
+   invariant check, not GPU training, model acceptance or device validation.
+
+These changes are used in the continued work. Existing frozen experiment source
+snapshots and their identities remain unchanged.
+
+## Parts retained and used
+
+- Original-checkpoint initialization, explicit label ordering, persistent
+  optimizer/EMA state, resume identity checks and reliable-teacher retention.
+- Canonical preprocessing and actual app-verdict replay, integer-floor safety
+  gates, per-condition accounting and explicit consumed-source lineage.
+- Cache-first screening and verified feature reuse. Adapted encoder features
+  cannot reuse the frozen encoder's feature cache.
+- Native frame-quality admission, strict tensor/normalization contracts,
+  full-ROI confirmation and aggregate reference-disease priority on the same
+  real observations. The optional expanded model schema stays inactive in the
+  current assets.
+
+The many experimental heads and reward arms are research history, not production
+defaults. Failed model weights are not adopted. `context_abstention.route_context`
+uses simulated static-frame evidence for host research; its literal seven-frame
+result must not be copied into a live-camera flow. Any future image-context
+integration must accumulate actual admitted frames and preserve real leaf counts.
+
+## Resumed supervised investigation
+
+After inspecting completed jobs, the continued work tested a finite actual-ROI
+agreement hypothesis, then one compact Healthy head sharing the deployed DINO
+and MobileNet features. Both original encoders and all nine-class disease
+weights stay frozen. Proper leaf annotations and primary-image labels are used
+within their scopes; weak TOM targets and detector-propagated fitting labels are
+excluded. AD detected leaves are not assigned AD's primary-image label.
+
+Preparation reused **35,474 original DINO vectors**. Only **7,641 new input
+tensors** needed DINO extraction; the combined cache has 43,115 unique tensors
+and 29,211 fitting rows. Every stored old evaluation crop's canonical tensor
+hash matched its source crop. Reference composition error stayed below 0.002
+logits and original verdicts were unchanged. This provides no evidence of a
+0–1/0–255 mismatch in that evaluated path.
+
+The first compact fit completed in **24.69 seconds**. Safe policies recovered
+too little Healthy. A twelve-policy combination with the stronger field
+specialist recovered 41/53 TOM and 22/29 AD Healthy photos but failed safety.
+The detector also supplies no leaf on 14/53 internal TOM Healthy photos, limiting
+a leaf-only repair; whole-image routing is still only a research prototype.
+
+The measured sampling audit found that AD negatives received **0.1519%** of the
+compact fitting draw probability. The historical sampler puts AD inside the
+large `original` domain bucket. This is a weighting limitation, not proof that
+all earlier experiments were invalid. A separate source-balanced control keeps
+the same model, seed, loss and learning rate, assigning each present binary
+class/publisher pair 6.25% of total mass, with equal family mass within the pair.
+Its fit took **24.38 seconds**. Named-disease false Healthy fell from five to two
+in `phase2_selection` for a comparable veto policy, but other gates still failed.
+
+Eight already-trained source-balanced checkpoints were then evaluated with four
+fixed policies each, without executing either encoder. None of those 32 checks
+passed every original and internal gate. The compact/veto branch is stopped;
+its head checkpoints, predictions, features and protocols remain available.
+
+The next isolated control applied this source-balancing change to the existing
+supervised SigLIP2 tail adaptation, keeping the same architecture, 16 epochs,
+focal loss, seed and learning rates. This is a new fit, not a restart of the
+completed experiment. It completed in **352.71 seconds**, with frozen
+source at `P/phase33_sft_balance_source` and output at
+`P/phase23_siglip/sft_ad_tail2_focal_source_balanced`.
+`P=/home/genesis/agribot-data/recognition_campaign_20261024`.
+
+Its cheap screen used eight fixed supervised/CVaR policies: Healthy
+thresholds 0.8/0.9/0.95/0.99 and negative cutoffs 0.001/0.01, preserving original
+Healthy and named disease verdicts. It reused that exact checkpoint's validation
+logits for 3,990 old/internal inputs and inferred only 2,104 missing images, in
+6.95 seconds. The eight-policy screen took 0.16 seconds (12.42 seconds including
+identities, loading and inference). **None passed.** Its safest tested policy
+retained original and internal safety but recovered only 24/53 TOM Healthy and
+11/29 AD Healthy. At a lower cutoff it reached 49/53 and 21/29 while failing
+safety. This checkpoint is stopped; no further threshold expansion or full
+restored-model replay is authorized by these results.
+
+AD is permanently consumed development. All 730 audited OLID images remain
+diagnostically sealed, including 223 Healthy. There is no new independent
+acceptance claim. The phone remains disconnected and Android assets unchanged.
+
+## Evidence and verification
+
+Local full suite: **153 tests, 152 passed, one optional media skip**. Compile
+checks and `git diff --check` pass. The new CPU CI job still requires an actual
+GitHub run; previous Android CI `40278589468` passed for reviewed head `69ac243`.
+
+- [Canonical feature preparation](evidence/compact_features_20261026.json)
+- [Source balance and completed-head diagnosis](evidence/compact_diagnosis_20261026.json)
+- [Rejected actual-ROI agreement](evidence/roi_agreement_20261026.json)
+- [Rejected source-balanced veto](evidence/source_balanced_veto_20261026.json)
+- [All eight cached checkpoints](evidence/compact_cached_checkpoints_20261026.json)
+- [Completed source-balanced supervised fit](evidence/source_balanced_sft_fit_20261026.json)
+- [Rejected eight-policy supervised screen](evidence/source_balanced_sft_screen_20261026.json)
+- [Final cache-only identity verification](evidence/source_balanced_sft_final_cache_20261026.json): same rejected outcome in 3.76 seconds, zero new encoder inputs
+
+Measured planning: tiny cached-feature fits about 25 seconds, cached policy
+screens about 2–3 seconds each, comparable 16-epoch tail adaptation about six
+minutes. These estimate operations, not successful recognition or a release
+date. Keep PR 6 draft until recognition, exported-byte and native/device gates
+pass; do not merge solely because infrastructure checks are green.

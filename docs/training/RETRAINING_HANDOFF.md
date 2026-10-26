@@ -1,6 +1,6 @@
 # Agribot training failure investigation, recovery, and Android integration
 
-**Latest checkpoint:** [cache-first optimization and stopping decision](TRAINING_OPTIMIZATION_20261026.md). The frozen AD opening failed and AD is now consumed development data. Current supervised/hybrid policies fail the unchanged app gates, so full verification, export and Android integration are deferred. OLID remains sealed; the disconnected phone and installed model are unchanged.
+**Latest checkpoint:** [PR 6 code review and source-balanced supervised continuation](PR6_CODE_REVIEW_20261026.md). Cache integrity findings are repaired and useful training/native safeguards retained. Compact controls and the separately versioned source-balanced tail adaptation completed but failed the unchanged gates. AD is consumed development, OLID stays sealed, and export/Android integration remain deferred. The disconnected phone and installed model are unchanged.
 
 Revision: 2026-10-26. Original handoff: 2026-10-15.
 Repository: https://github.com/saksham-loonker/agribot.

@@ -26,6 +26,8 @@ from campaign_heads import app_evaluate
 from campaign_reference import safe_logits
 from campaign_pixels import open_pixels
 from context_guard import route_guard
+from evaluation_inputs import input_identity
+from feature_cache_reuse import validate_completed_contract
 from leaf_feature_expert import LeafFeatureHead
 from permissive_encoder import digest
 from permissive_scene import load
@@ -133,11 +135,18 @@ def main():
     ap.add_argument("--campaign", required=True)
     ap.add_argument("--out-name", default="phase27_cache_screen")
     ap.add_argument("--scores-from")
+    ap.add_argument("--run-name", default="sft_ad_tail2_focal_lowfpr")
+    ap.add_argument(
+        "--bounded",
+        action="store_true",
+        help="Eight supervised/CVaR policies, preserve all original Healthy verdicts; no hybrid/reward sweep",
+    )
     a = ap.parse_args()
     started = time.monotonic()
     p = Path(a.campaign)
     root = p / "phase23_siglip"
-    run = root / "sft_ad_tail2_focal_lowfpr"
+    assert Path(a.run_name).name == a.run_name and a.run_name not in (".", "..")
+    run = root / a.run_name
     assert Path(a.out_name).name == a.out_name
     out = p / a.out_name
     out.mkdir(exist_ok=True)
@@ -164,6 +173,23 @@ def main():
     internal = [json.loads(line) for line in internal_file.read_text().splitlines()]
     inputs = sorted(set(paths) | {r["path"] for r in internal})
     assert not any("phase24_olid_source" in path for path in inputs)
+    photos = {
+        r["path"]: r for values in list(base.values()) + [internal] for r in values
+    }
+    source_inputs = input_identity(
+        [
+            dict(
+                id=path,
+                path=path,
+                **(
+                    {"file_sha256": photos[path]["file_sha256"]}
+                    if photos[path].get("file_sha256")
+                    else {}
+                )
+            )
+            for path in inputs
+        ]
+    )
     whole_file = p / "phase23_data/whole_reference.jsonl"
     whole = {r["path"]: r for r in map(json.loads, whole_file.read_text().splitlines())}
     for values in list(base.values()) + [internal]:
@@ -192,6 +218,9 @@ def main():
         validation_logits_sha256=digest(run / "validation_logits.npz"),
         rows_sha256=digest(root / "cnn_inputs/rows.json"),
         full_input_paths_sha256=hashlib.sha256(json.dumps(inputs).encode()).hexdigest(),
+        source_inputs_sha256=hashlib.sha256(
+            json.dumps(source_inputs).encode()
+        ).hexdigest(),
         input_scope="Existing development and consumed grouped internal only, full_roi NHWC224 canonical ImageNet",
         preprocessing_sha256=digest(Path(__file__).with_name("app_eval.py")),
         internal_baseline_sha256=digest(internal_file),
@@ -207,9 +236,15 @@ def main():
         optional_center_views_computed=0,
         original_recognition_and_safety_gates_unchanged=True,
         fixed_policy_grid=dict(
-            healthy=[0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.97, 0.99, 0.995, 0.999],
-            rejection=[0.0, 0.001, 0.005, 0.01, 0.02],
+            healthy=(
+                [0.8, 0.9, 0.95, 0.99]
+                if a.bounded
+                else [0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.97, 0.99, 0.995, 0.999]
+            ),
+            rejection=[0.001, 0.01] if a.bounded else [0.0, 0.001, 0.005, 0.01, 0.02],
         ),
+        supervised_run=a.run_name,
+        bounded_supervised_only=a.bounded,
         prior_missing_logits_sha256=(
             digest(Path(a.scores_from) / "supervised_missing_logits.json")
             if a.scores_from
@@ -231,6 +266,7 @@ def main():
             "validation_logits_sha256",
             "rows_sha256",
             "full_input_paths_sha256",
+            "source_inputs_sha256",
             "preprocessing_sha256",
             "internal_baseline_sha256",
         ]:
@@ -281,30 +317,32 @@ def main():
     paths_index = {path: i for i, path in enumerate(paths)}
     internal_index = {r["path"]: i for i, r in enumerate(internal)}
     positives = {"supervised_tail2": supervised}
-    hybrid = p / "phase23_hybrid"
-    hybrid_directory = Path(
-        read(hybrid / "hybrid_field_feature_heads/ranked.json")[0]["checkpoint"]
-    ).parent
-    cached_score_identity(hybrid_directory, hybrid / "selection", paths)
-    hp = np.load(hybrid / "selection/probabilities.npz")["healthy"][:, 0]
-    hi = np.load(hybrid / "selection_validation/internal_probabilities.npz")["healthy"][
-        :, 0
-    ]
-    hybrid_verification = read(hybrid / "selection_validation/result.json")
-    assert hybrid_verification["candidate_sha256"] == digest(
-        hybrid / "selection/candidate.json"
-    )
-    assert hybrid_verification["internal_baseline_sha256"] == digest(internal_file)
-    positives["cached_hybrid"] = {
-        path: (
-            float(hp[paths_index[path]])
-            if path in paths_index
-            else float(hi[internal_index[path]])
+    if not a.bounded:
+        hybrid = p / "phase23_hybrid"
+        hybrid_directory = Path(
+            read(hybrid / "hybrid_field_feature_heads/ranked.json")[0]["checkpoint"]
+        ).parent
+        cached_score_identity(hybrid_directory, hybrid / "selection", paths)
+        hp = np.load(hybrid / "selection/probabilities.npz")["healthy"][:, 0]
+        hi = np.load(hybrid / "selection_validation/internal_probabilities.npz")[
+            "healthy"
+        ][:, 0]
+        hybrid_verification = read(hybrid / "selection_validation/result.json")
+        assert hybrid_verification["candidate_sha256"] == digest(
+            hybrid / "selection/candidate.json"
         )
-        for path in inputs
-    }
+        assert hybrid_verification["internal_baseline_sha256"] == digest(internal_file)
+        positives["cached_hybrid"] = {
+            path: (
+                float(hp[paths_index[path]])
+                if path in paths_index
+                else float(hi[internal_index[path]])
+            )
+            for path in inputs
+        }
     negatives = {}
     feature_directory = root / "siglip2_feature_heads"
+    validate_completed_contract(root, feature_directory, "siglip2")
     feature_identity = read(feature_directory / "feature_identity.json")
     assert feature_identity["encoder_sha256"] == digest(
         feature_directory / "encoder.pt"
@@ -356,12 +394,17 @@ def main():
         )
         for path in inputs
     }
-    for mode in [
-        "cvar_bce",
-        "partial_auc",
-        "reinforce_label_reward",
-        "expected_logit_reward",
-    ]:
+    modes = (
+        ["cvar_bce"]
+        if a.bounded
+        else [
+            "cvar_bce",
+            "partial_auc",
+            "reinforce_label_reward",
+            "expected_logit_reward",
+        ]
+    )
+    for mode in modes:
         directory = root / "risk_heads" / mode
         cached_score_identity(directory, root / ("risk_" + mode + "_selection"), paths)
         state = torch.load(directory / "best.pt", weights_only=True, map_location="cpu")
@@ -394,8 +437,8 @@ def main():
     for positive_name, negative_name, high, low in itertools.product(
         positives,
         negatives,
-        [0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.97, 0.99, 0.995, 0.999],
-        [0.0, 0.001, 0.005, 0.01, 0.02],
+        protocol["fixed_policy_grid"]["healthy"],
+        protocol["fixed_policy_grid"]["rejection"],
     ):
         evaluated += 1
         h, n = positives[positive_name], negatives[negative_name]
@@ -407,6 +450,8 @@ def main():
             in_domain_other_max=0.1,
             in_domain_disease_mass_min=0.6,
         )
+        if a.bounded:
+            policy["preserve_original_healthy"] = True
 
         def route(r):
             return route_guard(
@@ -511,7 +556,11 @@ def main():
         sealed_olid_used=False,
         consumed_ad_is_independent=False,
         full_verification_required=bool(ranks and ranks[0]["passed_cheap_checks"]),
-        stop_rule="If no policy passes all original, coarse-condition and per-source internal app gates, stop this checkpoint and the cached hybrid; no new reward/head sweeps, export or acceptance opening.",
+        stop_rule=(
+            "If none of the eight fixed policies passes every unchanged app gate, stop this checkpoint; no threshold expansion, full replay, export or acceptance opening."
+            if a.bounded
+            else "If no policy passes all original, coarse-condition and per-source internal app gates, stop this checkpoint and the cached hybrid; no new reward/head sweeps, export or acceptance opening."
+        ),
     )
     (out / "ranked.json").write_text(json.dumps(ranks, indent=2))
     (out / "result.json").write_text(json.dumps(result, indent=2))

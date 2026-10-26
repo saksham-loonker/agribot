@@ -22,6 +22,7 @@ from campaign_cnn_fusion import calibrate
 from campaign_pixels import open_pixels
 from leaf_feature_expert import LeafFeatureHead
 from phase7_species_train import balanced
+from source_balance import source_class_group_weights
 from training_support import (
     atomic_save,
     capture_rng,
@@ -79,6 +80,11 @@ def main():
     ap.add_argument("--backbone-lr", type=float)
     ap.add_argument("--run-name")
     ap.add_argument("--field-sources")
+    ap.add_argument(
+        "--source-balanced",
+        action="store_true",
+        help="Equal class/publisher/family weights; version separately from historical domain sampling",
+    )
     ap.add_argument(
         "--selection-metric", choices=["legacy", "low_fpr"], default="legacy"
     )
@@ -167,6 +173,14 @@ def main():
         config["selection_metric"] = (
             "Scale-invariant recall at weighted FPR<=.005 plus standardized partial AUC; internal validation only"
         )
+    if a.source_balanced:
+        assert a.family == "siglip2" and a.run_name
+        config.update(
+            sampling="equal class/publisher source/family",
+            sampling_source_sha256=digest(
+                Path(__file__).with_name("source_balance.py")
+            ),
+        )
     protocol = out / "protocol.json"
     if protocol.exists():
         assert read(protocol) == config
@@ -195,8 +209,21 @@ def main():
                 block.requires_grad_(True)
     for r, y in zip(rows, target):
         r["species_y"] = int(y)
-    sampling = torch.tensor(balanced(rows, train), dtype=torch.float64)
-    val_weights = balanced(rows, val)
+
+    def weights(ids):
+        return (
+            source_class_group_weights(rows, ids, target="health_y")
+            if a.source_balanced
+            else balanced(rows, ids)
+        )
+
+    sampling = torch.tensor(weights(train), dtype=torch.float64)
+    val_weights = weights(val)
+    sampling_mass = {}
+    for i, weight in zip(train, sampling.numpy()):
+        key = rows[i]["source"] + ":" + str(int(target[i]))
+        sampling_mass[key] = sampling_mass.get(key, 0.0) + float(weight)
+    (out / "sampling_mass.json").write_text(json.dumps(sampling_mass, indent=2))
     truth = torch.tensor(target, device="cuda", dtype=torch.float32)
     pixels = open_pixels(root / "cnn_inputs")
     images = {}

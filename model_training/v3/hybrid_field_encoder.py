@@ -68,6 +68,12 @@ def extract(root, out, ids, family):
         assert json.loads((out / "input_contract_parity.json").read_text())["passed"]
         validate_completed_contract(root, out, family)
         return np.load(cache), identity
+    # Feature identities alone do not pin the component arrays or input shards.
+    # Validate both completed caches before constructing a new representation.
+    from feature_cache_reuse import validate_completed_contract
+
+    for directory, component in zip(directories, ("siglip2", "dinov2_large")):
+        validate_completed_contract(directory.parent, directory, component)
     source_states = [
         torch.load(d / "encoder.pt", weights_only=True, map_location="cpu")
         for d in directories

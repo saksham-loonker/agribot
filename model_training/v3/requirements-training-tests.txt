@@ -1,0 +1,9 @@
+# Install torch==2.11.0 and torchvision==0.26.0 from the CPU index first.
+# Exporters, dataset downloaders and GPU detector trainers are not test imports.
+timm==1.0.30
+numpy==2.5.2
+Pillow==12.3.0
+scipy==1.18.1
+scikit-learn==1.9.1
+ai-edge-litert==2.3.0
+opencv-python==5.0.0.93

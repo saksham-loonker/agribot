@@ -1,0 +1,1260 @@
+{
+  "stage": "Source-balanced compact head, cached checkpoint selection",
+  "completed_checkpoints": 8,
+  "total_policies": 32,
+  "passing": 0,
+  "total_screen_seconds": 17.65232986502815,
+  "new_encoder_inference": 0,
+  "new_fitting": 0,
+  "cold_olid_used": false,
+  "ad_independent": false,
+  "next_step": "Stop compact/veto hypothesis; no promotion or further threshold expansion",
+  "checkpoints": [
+    {
+      "epoch": 0,
+      "result_sha256": "d0565c3c62bf95770fa55b1786a2a037c248309ab554540d2a279c797874581f",
+      "policies": 4,
+      "passing": 0,
+      "seconds": 2.2063549690064974,
+      "checks": {
+        "old_retention": false,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_verdicts_preserved": true
+      },
+      "policy": {
+        "healthy_min": 0.85,
+        "negative_healthy_max": 0.001,
+        "genus_min": 0.0,
+        "protect_suspected_disease": true,
+        "preserve_original_healthy": true,
+        "in_domain_other_max": 0.1,
+        "in_domain_disease_mass_min": 0.6,
+        "leaf_veto_below": 0.1
+      },
+      "old_failures": [
+        {
+          "cohort": "public",
+          "metric": "all_false_healthy",
+          "observed": 10,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "named_disease_false_healthy",
+          "observed": 3,
+          "required": 2,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "all_false_healthy",
+          "observed": 5,
+          "required": 3,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 34,
+          "required": 33,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase5_selection",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 11,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "all_false_healthy",
+          "observed": 263,
+          "required": 254,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 288,
+          "required": 282,
+          "direction": "maximum"
+        }
+      ],
+      "internal_failures": [],
+      "internal_healthy": {
+        "ad_greenhouse": {
+          "n": 29,
+          "correct": 22,
+          "correct_rate": 0.7586206896551724,
+          "healthy_verdict": 22,
+          "healthy_recall": 0.7586206896551724,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 4,
+          "false_other_rate": 0.13793103448275862,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_HEALTHY": 22,
+          "kind_UNKNOWN_CONDITION": 4,
+          "kind_DISEASE": 2,
+          "kind_UNSURE": 1
+        },
+        "swtt5wy2pr": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "tom2024": {
+          "n": 53,
+          "correct": 39,
+          "correct_rate": 0.7358490566037735,
+          "healthy_verdict": 39,
+          "healthy_recall": 0.7358490566037735,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 11,
+          "false_other_rate": 0.20754716981132076,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 11,
+          "kind_HEALTHY": 39,
+          "kind_NO_LEAVES": 1,
+          "kind_UNSURE": 2
+        }
+      }
+    },
+    {
+      "epoch": 4,
+      "result_sha256": "3e87306de239e6ea685c067da2e002a6b0c52ffefd5b83907d86a70742b111d6",
+      "policies": 4,
+      "passing": 0,
+      "seconds": 2.2201599859981798,
+      "checks": {
+        "old_retention": false,
+        "old_field_healthy": false,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_verdicts_preserved": true
+      },
+      "policy": {
+        "healthy_min": 0.85,
+        "negative_healthy_max": 0.001,
+        "genus_min": 0.0,
+        "protect_suspected_disease": true,
+        "preserve_original_healthy": true,
+        "in_domain_other_max": 0.1,
+        "in_domain_disease_mass_min": 0.6,
+        "leaf_veto_below": 0.1
+      },
+      "old_failures": [
+        {
+          "cohort": "public",
+          "metric": "all_false_healthy",
+          "observed": 10,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "named_disease_false_healthy",
+          "observed": 3,
+          "required": 2,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "all_false_healthy",
+          "observed": 5,
+          "required": 3,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 34,
+          "required": 33,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase5_selection",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 11,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "all_false_healthy",
+          "observed": 262,
+          "required": 254,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 287,
+          "required": 282,
+          "direction": "maximum"
+        }
+      ],
+      "internal_failures": [],
+      "internal_healthy": {
+        "ad_greenhouse": {
+          "n": 29,
+          "correct": 22,
+          "correct_rate": 0.7586206896551724,
+          "healthy_verdict": 22,
+          "healthy_recall": 0.7586206896551724,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 4,
+          "false_other_rate": 0.13793103448275862,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_HEALTHY": 22,
+          "kind_UNKNOWN_CONDITION": 4,
+          "kind_DISEASE": 2,
+          "kind_UNSURE": 1
+        },
+        "swtt5wy2pr": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "tom2024": {
+          "n": 53,
+          "correct": 39,
+          "correct_rate": 0.7358490566037735,
+          "healthy_verdict": 39,
+          "healthy_recall": 0.7358490566037735,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 11,
+          "false_other_rate": 0.20754716981132076,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 11,
+          "kind_HEALTHY": 39,
+          "kind_NO_LEAVES": 1,
+          "kind_UNSURE": 2
+        }
+      }
+    },
+    {
+      "epoch": 9,
+      "result_sha256": "6da15e82ca0080b122bbcc9f5f6c44d28c3983cc39ac4a660ca2c33ddac7de73",
+      "policies": 4,
+      "passing": 0,
+      "seconds": 2.1883352379663847,
+      "checks": {
+        "old_retention": false,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_verdicts_preserved": true
+      },
+      "policy": {
+        "healthy_min": 0.85,
+        "negative_healthy_max": 0.001,
+        "genus_min": 0.0,
+        "protect_suspected_disease": true,
+        "preserve_original_healthy": true,
+        "in_domain_other_max": 0.1,
+        "in_domain_disease_mass_min": 0.6,
+        "leaf_veto_below": 0.1
+      },
+      "old_failures": [
+        {
+          "cohort": "public",
+          "metric": "all_false_healthy",
+          "observed": 10,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "all_false_healthy",
+          "observed": 4,
+          "required": 3,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 34,
+          "required": 33,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase5_selection",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 11,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "all_false_healthy",
+          "observed": 263,
+          "required": 254,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 288,
+          "required": 282,
+          "direction": "maximum"
+        }
+      ],
+      "internal_failures": [],
+      "internal_healthy": {
+        "ad_greenhouse": {
+          "n": 29,
+          "correct": 22,
+          "correct_rate": 0.7586206896551724,
+          "healthy_verdict": 22,
+          "healthy_recall": 0.7586206896551724,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 4,
+          "false_other_rate": 0.13793103448275862,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_HEALTHY": 22,
+          "kind_UNKNOWN_CONDITION": 4,
+          "kind_DISEASE": 2,
+          "kind_UNSURE": 1
+        },
+        "swtt5wy2pr": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "tom2024": {
+          "n": 53,
+          "correct": 40,
+          "correct_rate": 0.7547169811320755,
+          "healthy_verdict": 40,
+          "healthy_recall": 0.7547169811320755,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 10,
+          "false_other_rate": 0.18867924528301888,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 10,
+          "kind_HEALTHY": 40,
+          "kind_NO_LEAVES": 1,
+          "kind_UNSURE": 2
+        }
+      }
+    },
+    {
+      "epoch": 19,
+      "result_sha256": "283f5fca2ec04a1ead95b21a12c0ed32a139e901c8c38b7a4b9c3fac4d5d9260",
+      "policies": 4,
+      "passing": 0,
+      "seconds": 2.2042146540479735,
+      "checks": {
+        "old_retention": false,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_verdicts_preserved": true
+      },
+      "policy": {
+        "healthy_min": 0.85,
+        "negative_healthy_max": 0.001,
+        "genus_min": 0.0,
+        "protect_suspected_disease": true,
+        "preserve_original_healthy": true,
+        "in_domain_other_max": 0.1,
+        "in_domain_disease_mass_min": 0.6,
+        "leaf_veto_below": 0.1
+      },
+      "old_failures": [
+        {
+          "cohort": "public",
+          "metric": "all_false_healthy",
+          "observed": 9,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 11,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "all_false_healthy",
+          "observed": 11,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 11,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "all_false_healthy",
+          "observed": 4,
+          "required": 3,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 34,
+          "required": 33,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase5_selection",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 11,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "all_false_healthy",
+          "observed": 263,
+          "required": 254,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 288,
+          "required": 282,
+          "direction": "maximum"
+        }
+      ],
+      "internal_failures": [],
+      "internal_healthy": {
+        "ad_greenhouse": {
+          "n": 29,
+          "correct": 22,
+          "correct_rate": 0.7586206896551724,
+          "healthy_verdict": 22,
+          "healthy_recall": 0.7586206896551724,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 4,
+          "false_other_rate": 0.13793103448275862,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_HEALTHY": 22,
+          "kind_UNKNOWN_CONDITION": 4,
+          "kind_DISEASE": 2,
+          "kind_UNSURE": 1
+        },
+        "swtt5wy2pr": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "tom2024": {
+          "n": 53,
+          "correct": 41,
+          "correct_rate": 0.7735849056603774,
+          "healthy_verdict": 41,
+          "healthy_recall": 0.7735849056603774,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 9,
+          "false_other_rate": 0.16981132075471697,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 9,
+          "kind_HEALTHY": 41,
+          "kind_NO_LEAVES": 1,
+          "kind_UNSURE": 2
+        }
+      }
+    },
+    {
+      "epoch": 39,
+      "result_sha256": "2a57229635bbc3ba6c79e12e75db8a746f9cb48f465246ab19f43606af47aca6",
+      "policies": 4,
+      "passing": 0,
+      "seconds": 2.198489904985763,
+      "checks": {
+        "old_retention": false,
+        "old_field_healthy": false,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_verdicts_preserved": true
+      },
+      "policy": {
+        "healthy_min": 0.85,
+        "negative_healthy_max": 0.001,
+        "genus_min": 0.0,
+        "protect_suspected_disease": true,
+        "preserve_original_healthy": true,
+        "in_domain_other_max": 0.1,
+        "in_domain_disease_mass_min": 0.6,
+        "leaf_veto_below": 0.1
+      },
+      "old_failures": [
+        {
+          "cohort": "public",
+          "metric": "all_false_healthy",
+          "observed": 9,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 11,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "all_false_healthy",
+          "observed": 11,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 11,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "all_false_healthy",
+          "observed": 4,
+          "required": 3,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 34,
+          "required": 33,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase5_selection",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 11,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "all_false_healthy",
+          "observed": 263,
+          "required": 254,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 288,
+          "required": 282,
+          "direction": "maximum"
+        }
+      ],
+      "internal_failures": [],
+      "internal_healthy": {
+        "ad_greenhouse": {
+          "n": 29,
+          "correct": 22,
+          "correct_rate": 0.7586206896551724,
+          "healthy_verdict": 22,
+          "healthy_recall": 0.7586206896551724,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 4,
+          "false_other_rate": 0.13793103448275862,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_HEALTHY": 22,
+          "kind_UNKNOWN_CONDITION": 4,
+          "kind_DISEASE": 2,
+          "kind_UNSURE": 1
+        },
+        "swtt5wy2pr": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "tom2024": {
+          "n": 53,
+          "correct": 41,
+          "correct_rate": 0.7735849056603774,
+          "healthy_verdict": 41,
+          "healthy_recall": 0.7735849056603774,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 9,
+          "false_other_rate": 0.16981132075471697,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 9,
+          "kind_HEALTHY": 41,
+          "kind_NO_LEAVES": 1,
+          "kind_UNSURE": 2
+        }
+      }
+    },
+    {
+      "epoch": 59,
+      "result_sha256": "de07bd3b40936a21ff18080f40e1b625404ea91c73f6466ecda8d8ab4f2b1b63",
+      "policies": 4,
+      "passing": 0,
+      "seconds": 2.2107838530209847,
+      "checks": {
+        "old_retention": false,
+        "old_field_healthy": false,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_verdicts_preserved": true
+      },
+      "policy": {
+        "healthy_min": 0.85,
+        "negative_healthy_max": 0.001,
+        "genus_min": 0.0,
+        "protect_suspected_disease": true,
+        "preserve_original_healthy": true,
+        "in_domain_other_max": 0.1,
+        "in_domain_disease_mass_min": 0.6,
+        "leaf_veto_below": 0.1
+      },
+      "old_failures": [
+        {
+          "cohort": "public",
+          "metric": "all_false_healthy",
+          "observed": 10,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "all_false_healthy",
+          "observed": 4,
+          "required": 3,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 34,
+          "required": 33,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase5_selection",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 11,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "all_false_healthy",
+          "observed": 262,
+          "required": 254,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 287,
+          "required": 282,
+          "direction": "maximum"
+        }
+      ],
+      "internal_failures": [],
+      "internal_healthy": {
+        "ad_greenhouse": {
+          "n": 29,
+          "correct": 22,
+          "correct_rate": 0.7586206896551724,
+          "healthy_verdict": 22,
+          "healthy_recall": 0.7586206896551724,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 4,
+          "false_other_rate": 0.13793103448275862,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_HEALTHY": 22,
+          "kind_UNKNOWN_CONDITION": 4,
+          "kind_DISEASE": 2,
+          "kind_UNSURE": 1
+        },
+        "swtt5wy2pr": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "tom2024": {
+          "n": 53,
+          "correct": 41,
+          "correct_rate": 0.7735849056603774,
+          "healthy_verdict": 41,
+          "healthy_recall": 0.7735849056603774,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 9,
+          "false_other_rate": 0.16981132075471697,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 9,
+          "kind_HEALTHY": 41,
+          "kind_NO_LEAVES": 1,
+          "kind_UNSURE": 2
+        }
+      }
+    },
+    {
+      "epoch": 79,
+      "result_sha256": "d194f83739b8d8d1e1ca1075934c046bf984ed29440092eca3484640e65467c0",
+      "policies": 4,
+      "passing": 0,
+      "seconds": 2.207196653005667,
+      "checks": {
+        "old_retention": false,
+        "old_field_healthy": false,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_verdicts_preserved": true
+      },
+      "policy": {
+        "healthy_min": 0.85,
+        "negative_healthy_max": 0.001,
+        "genus_min": 0.0,
+        "protect_suspected_disease": true,
+        "preserve_original_healthy": true,
+        "in_domain_other_max": 0.1,
+        "in_domain_disease_mass_min": 0.6,
+        "leaf_veto_below": 0.1
+      },
+      "old_failures": [
+        {
+          "cohort": "public",
+          "metric": "all_false_healthy",
+          "observed": 10,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "all_false_healthy",
+          "observed": 4,
+          "required": 3,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 34,
+          "required": 33,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase5_selection",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 11,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "all_false_healthy",
+          "observed": 262,
+          "required": 254,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 287,
+          "required": 282,
+          "direction": "maximum"
+        }
+      ],
+      "internal_failures": [],
+      "internal_healthy": {
+        "ad_greenhouse": {
+          "n": 29,
+          "correct": 22,
+          "correct_rate": 0.7586206896551724,
+          "healthy_verdict": 22,
+          "healthy_recall": 0.7586206896551724,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 4,
+          "false_other_rate": 0.13793103448275862,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_HEALTHY": 22,
+          "kind_UNKNOWN_CONDITION": 4,
+          "kind_DISEASE": 2,
+          "kind_UNSURE": 1
+        },
+        "swtt5wy2pr": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "tom2024": {
+          "n": 53,
+          "correct": 41,
+          "correct_rate": 0.7735849056603774,
+          "healthy_verdict": 41,
+          "healthy_recall": 0.7735849056603774,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 9,
+          "false_other_rate": 0.16981132075471697,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 9,
+          "kind_HEALTHY": 41,
+          "kind_NO_LEAVES": 1,
+          "kind_UNSURE": 2
+        }
+      }
+    },
+    {
+      "epoch": 99,
+      "result_sha256": "d256040fa42d38efff70c7b863c1b627fd5c0e4059535a36334cbe78e179606f",
+      "policies": 4,
+      "passing": 0,
+      "seconds": 2.2167946069967,
+      "checks": {
+        "old_retention": false,
+        "old_field_healthy": false,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_verdicts_preserved": true
+      },
+      "policy": {
+        "healthy_min": 0.85,
+        "negative_healthy_max": 0.001,
+        "genus_min": 0.0,
+        "protect_suspected_disease": true,
+        "preserve_original_healthy": true,
+        "in_domain_other_max": 0.1,
+        "in_domain_disease_mass_min": 0.6,
+        "leaf_veto_below": 0.1
+      },
+      "old_failures": [
+        {
+          "cohort": "public",
+          "metric": "all_false_healthy",
+          "observed": 10,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "public",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 6,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 12,
+          "required": 7,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "prior_test",
+          "metric": "non_tomato_false_known",
+          "observed": 14,
+          "required": 13,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "all_false_healthy",
+          "observed": 4,
+          "required": 3,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase2_selection",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 34,
+          "required": 33,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "phase5_selection",
+          "metric": "all_false_healthy",
+          "observed": 12,
+          "required": 11,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "all_false_healthy",
+          "observed": 262,
+          "required": 254,
+          "direction": "maximum"
+        },
+        {
+          "cohort": "expanded",
+          "metric": "unsupported_tomato_false_known",
+          "observed": 287,
+          "required": 282,
+          "direction": "maximum"
+        }
+      ],
+      "internal_failures": [],
+      "internal_healthy": {
+        "ad_greenhouse": {
+          "n": 29,
+          "correct": 22,
+          "correct_rate": 0.7586206896551724,
+          "healthy_verdict": 22,
+          "healthy_recall": 0.7586206896551724,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 4,
+          "false_other_rate": 0.13793103448275862,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_HEALTHY": 22,
+          "kind_UNKNOWN_CONDITION": 4,
+          "kind_DISEASE": 2,
+          "kind_UNSURE": 1
+        },
+        "swtt5wy2pr": {
+          "n": 0,
+          "correct": 0,
+          "correct_rate": null,
+          "healthy_verdict": 0,
+          "healthy_recall": null,
+          "false_healthy": 0,
+          "false_healthy_rate": null,
+          "false_other": 0,
+          "false_other_rate": null,
+          "false_known": null,
+          "false_known_rate": null
+        },
+        "tom2024": {
+          "n": 53,
+          "correct": 41,
+          "correct_rate": 0.7735849056603774,
+          "healthy_verdict": 41,
+          "healthy_recall": 0.7735849056603774,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 9,
+          "false_other_rate": 0.16981132075471697,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 9,
+          "kind_HEALTHY": 41,
+          "kind_NO_LEAVES": 1,
+          "kind_UNSURE": 2
+        }
+      }
+    }
+  ]
+}

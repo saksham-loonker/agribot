@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "status": "Cache-first fixed screen rejects current supervised/hybrid policies; original safety gates unchanged; AD permanently consumed; fresh OLID sealed; no export/native/model installation",
+  "status": "PR 6 review integrity fixes implemented; compact and source-balanced supervised controls failed unchanged app gates; no qualified replacement; AD consumed; OLID sealed",
   "installed_classifier_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
   "initial_trained_controls": {
     "heads": 29,
@@ -12612,8 +12612,8 @@
     },
     "next_step": "Acquire and audit FieldPlant explicit leaf annotations, then source/group-aware supervised training; preserve cold AD source for frozen evaluation."
   },
-  "latest_continuation_evidence": "cache_first_screen_20261026.json",
-  "latest_continuation_document": "TRAINING_OPTIMIZATION_20261026.md",
+  "latest_continuation_evidence": "source_balanced_sft_screen_20261026.json",
+  "latest_continuation_document": "PR6_CODE_REVIEW_20261026.md",
   "optimization_20261026": {
     "feature_reuse_evidence": "feature_reuse_20261026.json",
     "frozen_ad_opening": "context_guard_external_20261026.json",
@@ -12624,5 +12624,24 @@
     "export_started": false,
     "android_integration_started": false,
     "new_model_installed": false
+  },
+  "code_review_20261026": {
+    "reviewed_head": "69ac2434f8e4e3f69764f3e2f5f84dd7f012df7b",
+    "source_input_hash_resume_fixed": true,
+    "hybrid_component_contract_validation_fixed": true,
+    "full_ml_cpu_ci_added": true,
+    "tests_run": 153,
+    "tests_passed": 152,
+    "optional_media_skip": 1,
+    "reused_dino_vectors": 35474,
+    "new_dino_tensors": 7641,
+    "added_trained_controls": 3,
+    "cached_compact_checkpoint_policies": 32,
+    "source_balanced_supervised_policies": 8,
+    "recognition_qualified": false,
+    "model_exported": false,
+    "phone_connected": false,
+    "olid_diagnostic_opened": false,
+    "ad_independent": false
   }
 }

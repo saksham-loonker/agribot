@@ -14,6 +14,11 @@ def route_guard(
     # A named reference disease always keeps its original verdict and evidence.
     if row["app_replay"]["kind"] == "DISEASE":
         return row
+    if (
+        policy.get("preserve_original_healthy", False)
+        and row["app_replay"]["kind"] == "HEALTHY"
+    ):
+        return row
     if row["contrast"] < 0.015 and row["sharpness"] < 0.012:
         return row
     cutoff = policy["negative_healthy_max"]

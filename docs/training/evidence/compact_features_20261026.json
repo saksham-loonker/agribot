@@ -1,0 +1,14 @@
+{
+  "protocol_sha256": "86003386277bafae5283847dbcd59a10f17162c595d08d9d3dc4a446705a5384",
+  "inputs": 43115,
+  "old_dino_vectors_reused": 35474,
+  "new_dino_inputs": 7641,
+  "fitting_rows": 29211,
+  "fitting_quarantines": 0,
+  "primary_max_abs_logit_error": 0.0008574724197387695,
+  "features_sha256": "1715786514c2c6778b85e43079b66fc50bbb646b5e2b1687af7348be52d1a297",
+  "fitting_rows_sha256": "c3f0bfaa53cc2cd055c21222926f7bbdbc7db19a4b56bf4320aa3f550bafb9b6",
+  "elapsed_seconds": 86.09178338502534,
+  "original_classifier_frozen": true,
+  "cold_olid_used": false
+}
