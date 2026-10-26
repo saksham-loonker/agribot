@@ -1,6 +1,8 @@
 """Regression checks for recovery defects, optional ML dependencies required."""
 
 import importlib.util
+import random
+from copy import deepcopy
 import sys
 import tempfile
 import unittest
@@ -27,12 +29,15 @@ from training_support import (
     set_trainable,
     capture_rng,
     restore_rng,
+    load_training_checkpoint,
     assert_resume_compatible,
     retention_pass,
 )
 from train import LABELS, sampling_weights
 from runner import normalized_cache_input
 from calibrate import ece
+from phase14_reselect import ranking_score
+from context_guard import route_guard
 
 
 class TinyClassifier(torch.nn.Module):
@@ -122,12 +127,185 @@ class TrainingRecoveryTest(unittest.TestCase):
         torch.testing.assert_close(torch.rand(3), a)
         np.testing.assert_array_equal(np.random.rand(3), b)
 
+    def test_serialized_rng_uses_weights_only_safe_values(self):
+        state = capture_rng()
+        expected = (random.random(), np.random.rand(3), torch.rand(3))
+        cuda_expected = (
+            torch.rand(3, device="cuda") if torch.cuda.is_available() else None
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "last.pt"
+            torch.save({"rng": state}, path)
+            restored = torch.load(path, map_location="cpu", weights_only=True)
+        restore_rng(restored["rng"])
+        self.assertEqual(random.random(), expected[0])
+        np.testing.assert_array_equal(np.random.rand(3), expected[1])
+        torch.testing.assert_close(torch.rand(3), expected[2])
+        if cuda_expected is not None:
+            torch.testing.assert_close(torch.rand(3, device="cuda"), cuda_expected)
+
+    def test_legacy_numpy_rng_resume_remains_loadable(self):
+        state = capture_rng()
+        state["numpy"] = np.random.get_state()
+        expected = np.random.rand(3)
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "legacy-last.pt"
+            torch.save({"rng": state}, path)
+            restored = load_training_checkpoint(path)
+        restore_rng(restored["rng"])
+        np.testing.assert_array_equal(np.random.rand(3), expected)
+
+    def test_low_fpr_checkpoint_score_is_invariant_to_logit_scale_and_offset(self):
+        z = np.array([2.0, 0.0, 1.0, -1.0, -2.0, -3.0], dtype=np.float32)
+        y = np.array([1, 1, 0, 0, 0, 0])
+        w = np.ones(6)
+        field = np.ones(6, dtype=bool)
+        a = ranking_score(z, y, w, field)
+        b = ranking_score(z * 17.0 + 100.0, y, w, field)
+        self.assertEqual(a, b)
+        self.assertEqual(a["field_recall_at_weighted_fpr_005"], 0.5)
+
+    def test_low_fpr_score_excludes_ties_with_first_disallowed_negative(self):
+        z = np.array([1.0, 0.0, 1.0, -1.0], dtype=np.float32)
+        y = np.array([1, 1, 0, 0])
+        score = ranking_score(z, y, np.ones(4), np.ones(4, dtype=bool))
+        self.assertEqual(score["field_recall_at_weighted_fpr_005"], 0.0)
+
+    @staticmethod
+    def guard_row(kind="HEALTHY"):
+        probabilities = [0.0125] * 9
+        probabilities[1] = 0.9
+        return dict(
+            contrast=0.2,
+            sharpness=0.1,
+            leaves=[dict(probabilities=probabilities, member_logits=[[0.0] * 9])],
+            app_replay=dict(
+                kind=kind,
+                label="Early_blight" if kind == "DISEASE" else "Healthy",
+                confidence=0.9,
+                probabilities=probabilities,
+                frames=5,
+                leaves=2,
+            ),
+        )
+
+    def test_context_rejection_preserves_raw_probabilities_and_real_counts(self):
+        row = self.guard_row()
+        original = deepcopy(row)
+        policy = dict(healthy_min=0.95, negative_healthy_max=0.001, genus_min=0.0)
+        result = route_guard(row, {}, 0.4, 0.0001, 0.99, policy)
+        self.assertEqual(result["app_replay"]["kind"], "UNSURE")
+        self.assertEqual(
+            result["app_replay"]["probabilities"],
+            original["app_replay"]["probabilities"],
+        )
+        self.assertEqual(result["app_replay"]["frames"], 5)
+        self.assertEqual(result["app_replay"]["leaves"], 2)
+        self.assertEqual(result["leaves"], original["leaves"])
+        self.assertEqual(row, original)
+
+    def test_context_guard_keeps_original_named_disease(self):
+        row = self.guard_row("DISEASE")
+        policy = dict(healthy_min=0.95, negative_healthy_max=0.001, genus_min=0.0)
+        self.assertIs(route_guard(row, {}, 1.0, 0.0, 1.0, policy), row)
+
+    def test_context_conflict_cannot_trigger_positive_recovery(self):
+        row = self.guard_row("UNKNOWN_CONDITION")
+        policy = dict(healthy_min=0.95, negative_healthy_max=0.001, genus_min=0.0)
+        result = route_guard(row, {}, 0.99, 0.0001, 0.99, policy)
+        self.assertEqual(result["app_replay"], row["app_replay"])
+
+    def test_zero_context_rejection_cutoff_disables_negative_guard(self):
+        row = self.guard_row()
+        policy = dict(healthy_min=0.95, negative_healthy_max=0.0, genus_min=0.0)
+        result = route_guard(row, {}, 0.1, 0.0, 0.99, policy)
+        self.assertEqual(result, row)
+
+    def test_suspected_named_disease_is_not_erased_by_image_recovery(self):
+        policy = dict(
+            healthy_min=0.95,
+            negative_healthy_max=0.001,
+            genus_min=0.0,
+            protect_suspected_disease=True,
+        )
+        for label in LABELS:
+            if label in ("Healthy", "Other"):
+                continue
+            with self.subTest(label=label):
+                row = self.guard_row("UNSURE")
+                row["app_replay"]["label"] = label
+                result = route_guard(row, {}, 0.999, 0.9, 0.99, policy)
+                self.assertEqual(result["app_replay"], row["app_replay"])
+                self.assertNotIn("whole_frame_evidence", result)
+
+    def test_suspect_protection_keeps_benign_unknown_recovery_available(self):
+        policy = dict(
+            healthy_min=0.95,
+            negative_healthy_max=0.001,
+            genus_min=0.0,
+            protect_suspected_disease=True,
+        )
+        for label in ("Healthy", "Other", None):
+            with self.subTest(label=label):
+                row = self.guard_row("UNSURE")
+                row["app_replay"]["label"] = label
+                result = route_guard(row, {}, 0.999, 0.9, 0.99, policy)
+                self.assertEqual(result["app_replay"]["kind"], "HEALTHY")
+
     def test_resume_rejects_legacy_or_changed_data(self):
         with self.assertRaisesRegex(ValueError, "Legacy"):
             assert_resume_compatible({}, {}, "manifest", "cache")
         state = dict(schema=2, data_manifest_sha256="old", cache_sha256="cache")
         with self.assertRaisesRegex(ValueError, "identity"):
             assert_resume_compatible(state, {}, "manifest", "cache")
+
+    def test_closedset_disease_mass_blocks_recovery_with_and_without_leaves(self):
+        policy = dict(
+            healthy_min=0.95,
+            negative_healthy_max=0.001,
+            genus_min=0.0,
+            in_domain_other_max=0.1,
+            in_domain_disease_mass_min=0.6,
+        )
+        probabilities = [0.65, 0.3, 0.01, 0.01, 0.01, 0.005, 0.005, 0.005, 0.005]
+        for leaf_present in [True, False]:
+            row = self.guard_row("UNSURE" if leaf_present else "NO_LEAVES")
+            row["app_replay"]["label"] = "Other"
+            row["app_replay"]["probabilities"] = probabilities if leaf_present else None
+            if not leaf_present:
+                row["leaves"] = []
+                row["context_whole_reference_probabilities"] = probabilities
+            result = route_guard(row, {}, 0.999, 0.9, 0.99, policy)
+            self.assertEqual(result["app_replay"], row["app_replay"])
+
+    def test_closedset_guard_requires_current_reference_but_can_recover_other(self):
+        policy = dict(
+            healthy_min=0.95,
+            negative_healthy_max=0.001,
+            genus_min=0.0,
+            in_domain_other_max=0.1,
+            in_domain_disease_mass_min=0.6,
+        )
+        row = self.guard_row("NO_LEAVES")
+        row["leaves"] = []
+        row["app_replay"]["probabilities"] = None
+        row["whole_probabilities"] = [0.0, 1.0] + [0.0] * 7
+        result = route_guard(row, {}, 0.999, 0.9, 0.99, policy)
+        self.assertEqual(result["app_replay"], row["app_replay"])
+        row["context_whole_reference_probabilities"] = [0.01] * 8 + [0.92]
+        result = route_guard(row, {}, 0.999, 0.9, 0.99, policy)
+        self.assertEqual(result["app_replay"]["kind"], "HEALTHY")
+
+    def test_all_uncertainty_policy_preserves_unsure_healthy(self):
+        row = self.guard_row("UNSURE")
+        policy = dict(
+            healthy_min=0.95,
+            negative_healthy_max=0.001,
+            genus_min=0.0,
+            preserve_all_uncertainty=True,
+        )
+        result = route_guard(row, {}, 0.999, 0.9, 0.99, policy)
+        self.assertEqual(result["app_replay"], row["app_replay"])
 
     def test_resume_rejects_loss_change(self):
         state = dict(

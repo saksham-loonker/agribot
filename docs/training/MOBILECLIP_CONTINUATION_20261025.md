@@ -1,5 +1,7 @@
 # MobileCLIP, exact context verification, and the next data revision
 
+**Latest checkpoint:** [bounded recovery and safety audit](CONTEXT_GUARD_CONTINUATION_20261026.md) takes precedence over pending-control statements below. There are 318 completed distinct research controls. The stricter Apache-only image-context candidate passes fresh development/internal replay (38/53 Healthy); independent acceptance, exported-byte and native/device verification remain outstanding. The phone is disconnected and its model is unchanged.
+
 **Superseded on 26 October 2026: research record only.** The full
 [Apple model license](https://github.com/apple-aiml-research/ml-mobileclip/blob/main/LICENSE_MODELS)
 excludes product development and commercial products, including derivatives.

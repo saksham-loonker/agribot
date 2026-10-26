@@ -1,5 +1,7 @@
 # Recognition repair campaign: 24 October 2026
 
+**Latest checkpoint:** [bounded recovery and safety audit](CONTEXT_GUARD_CONTINUATION_20261026.md) takes precedence over pending-control statements below. There are 318 completed distinct research controls. The stricter Apache-only image-context candidate passes fresh development/internal replay (38/53 Healthy); independent acceptance, exported-byte and native/device verification remain outstanding. The phone is disconnected and its model is unchanged.
+
 **Latest continuation, 26 October:**
 [Apache-only SigLIP2 investigation](SIGLIP2_CONTINUATION_20261026.md).
 The full Apple model license excludes product development, so the MobileCLIP

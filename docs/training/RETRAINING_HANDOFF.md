@@ -1,5 +1,7 @@
 # Agribot training failure investigation, recovery, and Android integration
 
+**Latest checkpoint:** [bounded recovery and safety audit](CONTEXT_GUARD_CONTINUATION_20261026.md) takes precedence over pending-control statements below. There are 318 completed distinct research controls. The stricter Apache-only image-context candidate passes fresh development/internal replay (38/53 Healthy); independent acceptance, exported-byte and native/device verification remain outstanding. The phone is disconnected and its model is unchanged.
+
 Revision: 2026-10-26. Original handoff: 2026-10-15.
 Repository: https://github.com/saksham-loonker/agribot.
 Audience: the originating assistant returning later over SSH to a PC with an

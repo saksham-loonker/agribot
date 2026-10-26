@@ -22,13 +22,20 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--campaign", required=True)
     ap.add_argument("--model-root")
+    ap.add_argument("--include-admitted-training", action="store_true")
     ap.add_argument(
         "--head-family", choices=["mobileclip", "siglip2"], default="mobileclip"
     )
     a = ap.parse_args()
     p = Path(a.campaign)
     root = Path(a.model_root) if a.model_root else p / "phase11_scene"
-    out = root / "logit_fusion"
+    if a.include_admitted_training:
+        assert (
+            a.head_family == "siglip2"
+        ), "Admitted training is only supported for the permitted encoder"
+    out = root / (
+        "logit_fusion_admitted" if a.include_admitted_training else "logit_fusion"
+    )
     out.mkdir(exist_ok=True)
     old = p / "phase6_roi/scene_sft_d12_focal_fusion"
     rows_path = root / "cnn_inputs/rows.json"
@@ -42,7 +49,8 @@ def main():
     assert rows[: len(old_rows)] == old_rows
     # Calibrate on the original human corpus only. Newly admitted families
     # remain available for the separate internal app validation.
-    rows = rows[: len(old_rows)]
+    if not a.include_admitted_training:
+        rows = rows[: len(old_rows)]
     selected = json.loads(
         (root / (a.head_family + "_feature_heads") / "ranked.json").read_text()
     )[0]
@@ -61,9 +69,12 @@ def main():
     with torch.inference_mode():
         mobile = model(torch.from_numpy(features)).numpy()
     mobile = mobile * selected["calibration"][0] + selected["calibration"][1]
-    logits = np.concatenate(
-        [np.load(old / "calibrated_logits.npy"), mobile[:, None]], 1
-    )
+    legacy = np.load(old / "calibrated_logits.npy")
+    if a.include_admitted_training:
+        from phase14_admitted_features import extract
+
+        legacy = np.concatenate([legacy, extract(p, root)], 0)
+    logits = np.concatenate([legacy, mobile[:, None]], 1)
     identity = dict(
         legacy_input_identity=old_identity,
         legacy_logits_sha256=digest(old / "calibrated_logits.npy"),
@@ -90,6 +101,28 @@ def main():
     )
     chosen = set(cal)
     selection = np.array([i for i in val if i not in chosen])
+    if a.include_admitted_training:
+        # Never use the new 180 validation photos to fit these coefficients.
+        cal = np.concatenate(
+            [
+                cal[cal < len(old_rows)],
+                np.array(
+                    [
+                        i
+                        for i, r in enumerate(rows)
+                        if i >= len(old_rows) and r["split"] == "train"
+                    ]
+                ),
+            ]
+        )
+        selection = np.array(
+            [i for i in val if i < len(old_rows) and i not in set(cal)]
+        )
+        identity["admitted_training_n"] = int(np.sum(cal >= len(old_rows)))
+        identity["admitted_validation_fitted"] = False
+        identity["admitted_legacy_features_sha256"] = digest(
+            root / "admitted_legacy_features/calibrated_logits.npy"
+        )
     assert not ({rows[i]["group"] for i in cal} & {rows[i]["group"] for i in selection})
     for r, y in zip(rows, labels):
         r["species_y"] = int(y)

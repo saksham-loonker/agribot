@@ -1,5 +1,7 @@
 # Apache-only recognition repair continuation
 
+**Latest checkpoint:** [bounded recovery and safety audit](CONTEXT_GUARD_CONTINUATION_20261026.md) takes precedence over pending-control statements below. There are 318 completed distinct research controls. The stricter Apache-only image-context candidate passes fresh development/internal replay (38/53 Healthy); independent acceptance, exported-byte and native/device verification remain outstanding. The phone is disconnected and its model is unchanged.
+
 Revision: 26 October 2026. This record supersedes deployment suggestions in the
 MobileCLIP continuation. Recognition remains unresolved. The installed interim
 2.0.2 classifier is unchanged, and no replacement model has been installed.

@@ -34,11 +34,17 @@ def read(path):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--campaign", required=True)
+    ap.add_argument("--model-root")
+    ap.add_argument(
+        "--head-family",
+        choices=["siglip2", "dinov2_large", "hybrid_field"],
+        default="siglip2",
+    )
     ap.add_argument("--selection", default="fusion_selection")
     ap.add_argument("--healthy-directory")
     a = ap.parse_args()
     p = Path(a.campaign)
-    root = p / "phase13_siglip"
+    root = Path(a.model_root) if a.model_root else p / "phase13_siglip"
     selected = root / a.selection / "candidate.json"
     c = read(selected)
     policy = c["policy"]
@@ -53,7 +59,7 @@ def main():
         Path(a.healthy_directory)
         if a.healthy_directory
         else Path(
-            read(root / "siglip2_feature_heads/ranked.json")[0]["checkpoint"]
+            read(root / (a.head_family + "_feature_heads/ranked.json"))[0]["checkpoint"]
         ).parent
     )
     identity = c["input_identity"]
@@ -74,7 +80,12 @@ def main():
         ), "Validation identity changed; use a versioned directory"
     else:
         meta.write_text(json.dumps(protocol, indent=2))
-    if c.get("fusion"):
+    if c.get("union"):
+        from phase14_union_model import build as build_union, restore as restore_union
+
+        spec, model = build_union(p, c, root)
+        restoring = restore_union
+    elif c.get("fusion"):
         spec, model = build(p, c, root)
         restoring = restore
     else:
@@ -111,7 +122,12 @@ def main():
                 x = torch.from_numpy(
                     np.concatenate(list(pool.map(prepare, part)), 0)
                 ).cuda()
-                if c.get("fusion"):
+                if c.get("union"):
+                    values = model(x[::2]).sigmoid().cpu().numpy()
+                    h[start : start + len(part)] = values[:, [0, 2]]
+                    genus[start : start + len(part)] = values[:, 1]
+                    continue
+                elif c.get("fusion"):
                     components, pair = model.components(x)
                     values = pair[:, 0].sigmoid().cpu().numpy().reshape(-1, 2)
                     # Selector's optional center agreement is the standalone
@@ -137,6 +153,23 @@ def main():
             for leaf in row["leaves"]
         )
         positive = h[0] >= policy["healthy_min"] and genus >= policy["genus_min"]
+        if c.get("union"):
+            assert not policy["two_view_agreement"] and not policy["named_leaf_veto"]
+            student_positive = (
+                h[1] >= policy["union_student_healthy_min"]
+                and genus >= policy["union_student_genus_min"]
+            )
+            probability = float(h[0] if positive else h[1])
+            return route_context(
+                row,
+                row,
+                manifest,
+                bool(positive or student_positive),
+                False,
+                probability,
+                False,
+                False,
+            )
         if policy["two_view_agreement"]:
             positive = positive and h[1] >= policy["healthy_min"]
         probability = float(h.min() if policy["two_view_agreement"] else h[0])
@@ -175,6 +208,17 @@ def main():
         fit = c["fusion"]
         z = np.clip(joined, -10, 10) @ np.asarray(fit["weights"]) + fit["bias"]
         expected_h[:, 0] = 1 / (1 + np.exp(-np.clip(z, -80, 80)))
+    if c.get("union"):
+        source = (
+            root / "fusion_refined_selection_validation/development_probabilities.npz"
+        )
+        assert digest(source) == c["union"]["teacher_probabilities_sha256"]
+        expected_h[:, 0] = np.load(source)["healthy"][:, 0]
+        source = root / (
+            "risk_" + c["union"]["student_mode"] + "_selection/probabilities.npz"
+        )
+        assert digest(source) == c["union"]["student_probabilities_sha256"]
+        expected_h[:, 1] = np.load(source)["healthy"][:, 0]
     probability_error = float(np.max(np.abs(h - expected_h)))
     genus_error = float(np.max(np.abs(genus - cached["genus"])))
     assert (

@@ -96,8 +96,20 @@ def parameter_groups(model, head_lr, backbone_lr, decay, weight_decay):
 
 
 def capture_rng():
-    return dict(python=random.getstate(), numpy=np.random.get_state(), torch=torch.get_rng_state(),
+    numpy_state = np.random.get_state()
+    # Plain primitives keep new checkpoints compatible with weights_only=True.
+    numpy_state = (numpy_state[0], numpy_state[1].tolist(), *numpy_state[2:])
+    return dict(python=random.getstate(), numpy=numpy_state, torch=torch.get_rng_state(),
                 cuda=torch.cuda.get_rng_state_all() if torch.cuda.is_available() else None)
+
+
+def load_training_checkpoint(path):
+    """Read local resume state, including legacy NumPy MT19937 keys, safely."""
+    numpy_core = np._core if hasattr(np, '_core') else np.core
+    allowed = [numpy_core.multiarray._reconstruct, np.ndarray, np.dtype,
+               type(np.dtype(np.uint32))]
+    with torch.serialization.safe_globals(allowed):
+        return torch.load(path, map_location='cpu', weights_only=True)
 
 
 def restore_rng(state):

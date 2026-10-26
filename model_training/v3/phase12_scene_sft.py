@@ -22,7 +22,12 @@ from campaign_cnn_fusion import calibrate
 from campaign_pixels import open_pixels
 from leaf_feature_expert import LeafFeatureHead
 from phase7_species_train import balanced
-from training_support import atomic_save, capture_rng, restore_rng
+from training_support import (
+    atomic_save,
+    capture_rng,
+    restore_rng,
+    load_training_checkpoint,
+)
 
 
 def read(path):
@@ -70,6 +75,12 @@ def main():
     ap.add_argument("--loss", choices=["ce", "focal", "distill"], required=True)
     ap.add_argument("--epochs", type=int, default=16)
     ap.add_argument("--batch", type=int, default=128)
+    ap.add_argument("--adaptation", choices=["full", "pool", "tail2"], default="full")
+    ap.add_argument("--backbone-lr", type=float)
+    ap.add_argument("--run-name")
+    ap.add_argument(
+        "--selection-metric", choices=["legacy", "low_fpr"], default="legacy"
+    )
     a = ap.parse_args()
     if a.family == "siglip2":
         assert (
@@ -79,7 +90,12 @@ def main():
     else:
         from mobileclip_scene import load
     root = Path(a.root)
-    out = root / ("sft_" + a.loss)
+    if a.adaptation != "full":
+        assert a.family == "siglip2" and a.loss != "distill"
+        assert a.run_name, "Version partial-adaptation outputs separately"
+    if a.run_name:
+        assert Path(a.run_name).name == a.run_name and a.run_name not in (".", "..")
+    out = root / (a.run_name or "sft_" + a.loss)
     out.mkdir(exist_ok=True)
     assert (root / "RETIRED_BENCHMARK.json").exists()
     rows = read(root / "cnn_inputs/rows.json")
@@ -100,7 +116,7 @@ def main():
         epochs=a.epochs,
         batch=a.batch,
         seed=557,
-        backbone_lr=2e-5,
+        backbone_lr=a.backbone_lr if a.backbone_lr is not None else 2e-5,
         head_lr=1e-4,
         weight_decay=0.01,
         negative_cost=4.0,
@@ -128,6 +144,14 @@ def main():
         config["model_family"] = "siglip2"
         config["restricted_teacher_used"] = False
         assert read(root / "encoder_source.json")["license"] == "apache-2.0"
+    if a.adaptation != "full":
+        config["adaptation"] = a.adaptation
+        config["warm_checkpoint_in_selection"] = True
+    if a.selection_metric != "legacy":
+        assert a.family == "siglip2"
+        config["selection_metric"] = (
+            "Scale-invariant recall at weighted FPR<=.005 plus standardized partial AUC; internal validation only"
+        )
     protocol = out / "protocol.json"
     if protocol.exists():
         assert read(protocol) == config
@@ -146,6 +170,14 @@ def main():
     spec = dict(spec, calibration=[1.0, 0.0])
     model.calibration.copy_(torch.tensor([1.0, 0.0]))
     model = model.cuda().requires_grad_(True)
+    if a.adaptation != "full":
+        model.encoder.requires_grad_(False)
+        network = model.encoder.network
+        network.attn_pool.requires_grad_(True)
+        network.norm.requires_grad_(True)
+        if a.adaptation == "tail2":
+            for block in network.blocks[-2:]:
+                block.requires_grad_(True)
     for r, y in zip(rows, target):
         r["species_y"] = int(y)
     sampling = torch.tensor(balanced(rows, train), dtype=torch.float64)
@@ -177,7 +209,10 @@ def main():
     )
     optimizer = torch.optim.AdamW(
         [
-            dict(params=model.encoder.parameters(), lr=config["backbone_lr"]),
+            dict(
+                params=[p for p in model.encoder.parameters() if p.requires_grad],
+                lr=config["backbone_lr"],
+            ),
             dict(params=model.head.parameters(), lr=config["head_lr"]),
         ],
         weight_decay=config["weight_decay"],
@@ -198,7 +233,7 @@ def main():
     start_epoch = 0
     history = []
     if (out / "last.pt").exists():
-        state = torch.load(out / "last.pt", weights_only=True, map_location="cpu")
+        state = load_training_checkpoint(out / "last.pt")
         assert state["configuration"] == config
         model.load_state_dict(state["model"], strict=True)
         optimizer.load_state_dict(state["optimizer"])
@@ -217,6 +252,38 @@ def main():
                 .cpu()
                 .numpy()
             )
+
+    if a.adaptation != "full" and start_epoch == 0 and not (out / "best.pt").exists():
+        warm_logits = evaluate()
+        probability = 1 / (1 + np.exp(-np.clip(warm_logits, -80, 80)))
+        labels = target[val]
+        auc = float(roc_auc_score(labels[primary], probability[primary]))
+        recall = float(
+            np.sum(val_weights * (labels == 1) * (probability >= 0.5))
+            / np.sum(val_weights * (labels == 1))
+        )
+        fpr = float(
+            np.sum(val_weights * (labels == 0) * (probability >= 0.9))
+            / np.sum(val_weights * (labels == 0))
+        )
+        best = auc + 0.1 * recall - 2 * fpr
+        if a.selection_metric == "low_fpr":
+            from phase14_reselect import ranking_score
+
+            best = ranking_score(warm_logits, labels, val_weights, primary)["score"]
+        atomic_save(
+            dict(
+                architecture="PermissiveSceneSft",
+                spec=spec,
+                configuration=config,
+                model={
+                    k: v.detach().cpu().clone() for k, v in model.state_dict().items()
+                },
+                epoch=-1,
+                score=best,
+            ),
+            out / "best.pt",
+        )
 
     for epoch in range(start_epoch, a.epochs):
         model.train()
@@ -298,6 +365,10 @@ def main():
             / np.sum(val_weights * (y == 0))
         )
         score = auc + 0.1 * recall - 2 * fpr
+        if a.selection_metric == "low_fpr":
+            from phase14_reselect import ranking_score
+
+            score = ranking_score(z, y, val_weights, primary)["score"]
         state = dict(
             architecture=(
                 "PermissiveSceneSft" if a.family == "siglip2" else "MobileClipSceneSft"

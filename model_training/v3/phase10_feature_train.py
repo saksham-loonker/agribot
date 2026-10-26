@@ -33,6 +33,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", required=True)
     ap.add_argument("--epochs", type=int, default=100)
+    ap.add_argument("--out-name")
+    ap.add_argument(
+        "--selection-metric", choices=["legacy", "low_fpr"], default="legacy"
+    )
     ap.add_argument("--primary-source", default="fieldplant")
     ap.add_argument(
         "--task-scope",
@@ -41,20 +45,37 @@ def main():
     )
     ap.add_argument(
         "--feature-family",
-        choices=["dino", "mobileclip", "mobileclip_dino", "siglip2"],
+        choices=[
+            "dino",
+            "mobileclip",
+            "mobileclip_dino",
+            "siglip2",
+            "dinov2_large",
+            "hybrid_field",
+        ],
         default="dino",
     )
     a = ap.parse_args()
     root = Path(a.root)
+    if a.out_name:
+        assert Path(a.out_name).name == a.out_name and a.out_name not in (".", "..")
     out = root / (
-        "leaf_feature_heads"
-        if a.feature_family == "dino"
-        else a.feature_family + "_feature_heads"
+        a.out_name
+        or (
+            "leaf_feature_heads"
+            if a.feature_family == "dino"
+            else a.feature_family + "_feature_heads"
+        )
     )
     out.mkdir(exist_ok=True)
     rows = json.loads((root / "cnn_inputs/rows.json").read_text())
     if a.task_scope == "primary_image":
-        assert a.feature_family in ("mobileclip", "siglip2")
+        assert a.feature_family in (
+            "mobileclip",
+            "siglip2",
+            "dinov2_large",
+            "hybrid_field",
+        )
         assert all(r.get("box") is None and r["view"] == "full_scene" for r in rows)
     target = np.array([int(r["health_y"]) for r in rows])
     ev = json.loads((root / "eval_rows.json").read_text())
@@ -94,6 +115,10 @@ def main():
     if a.feature_family != "dino":
         if a.feature_family == "siglip2":
             from permissive_encoder import extract
+        elif a.feature_family == "dinov2_large":
+            from dino_large_encoder import extract
+        elif a.feature_family == "hybrid_field":
+            from hybrid_field_encoder import extract
         else:
             from mobileclip_features import extract
 
@@ -186,6 +211,10 @@ def main():
             protocol["supervision"] = (
                 "Image-level labels from the recorded scene corpus. Primary view evidence, not verified disease-free plant status; never broadcast onto individual leaves."
             )
+        if a.selection_metric != "legacy":
+            protocol["selection_metric"] = (
+                "Scale-invariant recall at weighted FPR<=.005 plus standardized partial AUC; internal validation only"
+            )
         if (run / "result.json").exists():
             result = json.loads((run / "result.json").read_text())
             assert result["protocol"] == protocol
@@ -237,6 +266,10 @@ def main():
             fpr = float(np.average(prob[y == 0] >= 0.9, weights=val_weights[y == 0]))
             recall = float(np.average(prob[y == 1] >= 0.5, weights=val_weights[y == 1]))
             score = 0.5 * auc + 0.5 * field_auc + 0.1 * recall - 2 * fpr
+            if a.selection_metric == "low_fpr":
+                from phase14_reselect import ranking_score
+
+                score = ranking_score(z, y, val_weights, field)["score"]
             if score > best:
                 best = score
                 atomic_save(

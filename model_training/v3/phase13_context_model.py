@@ -40,7 +40,7 @@ class PermissiveContextFusion(nn.Module):
         )
         self.input_clip = spec["fit"]["input_clip"]
 
-    def calibrated_logits(self, nhwc):
+    def calibrated_logits(self, nhwc, permissive_features=None):
         image = nhwc.permute(0, 3, 1, 2)
         tokens = prefix(self.domain.backbone, image, self.domain.depth)
         original = tokens
@@ -62,7 +62,13 @@ class PermissiveContextFusion(nn.Module):
             self.scene(scene_tokens) * self.scene_calibration[0]
             + self.scene_calibration[1],
             self.species.logits(nhwc).ravel(),
-            self.permissive(nhwc).ravel(),
+            (
+                self.permissive(nhwc).ravel()
+                if permissive_features is None
+                else self.permissive.head(permissive_features)
+                * self.permissive.calibration[0]
+                + self.permissive.calibration[1]
+            ),
         ]
         return torch.stack(z, 1)
 

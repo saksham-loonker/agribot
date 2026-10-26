@@ -22,7 +22,7 @@ from sklearn.metrics import roc_auc_score
 from campaign_cnn_train import sampling
 from campaign_cnn_fusion import calibrate
 from campaign_pixels import open_pixels
-from training_support import atomic_save, capture_rng, restore_rng
+from training_support import atomic_save, capture_rng, restore_rng, load_training_checkpoint
 
 
 def digest(path):
@@ -232,7 +232,7 @@ def main():
     start_epoch = 0
     last = out / "last.pt"
     if last.exists():
-        saved = torch.load(last, weights_only=True, map_location="cpu")
+        saved = load_training_checkpoint(last)
         assert saved["configuration"] == config
         model.load_state_dict(saved["model"])
         optimizer.load_state_dict(saved["optimizer"])

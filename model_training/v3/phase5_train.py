@@ -17,7 +17,7 @@ from campaign_cnn_train import sampling
 from campaign_pixels import open_pixels
 from campaign_heads import classification_metrics
 from phase2_multiclass import MulticlassExpert
-from training_support import atomic_save, load_initial_weights, capture_rng, restore_rng
+from training_support import atomic_save, load_initial_weights, capture_rng, restore_rng, load_training_checkpoint
 from train import LABELS
 
 
@@ -199,7 +199,7 @@ def main():
     retained_best = -float("inf")
     last = out / "last.pt"
     if last.exists():
-        saved = torch.load(last, weights_only=True, map_location="cpu")
+        saved = load_training_checkpoint(last)
         assert saved["training_config"] == config
         model.load_state_dict(saved["model"])
         optimizer.load_state_dict(saved["optimizer"])

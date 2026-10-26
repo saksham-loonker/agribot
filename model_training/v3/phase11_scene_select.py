@@ -29,7 +29,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--campaign", required=True)
     ap.add_argument(
-        "--head-family", choices=["mobileclip", "siglip2"], default="mobileclip"
+        "--head-family",
+        choices=["mobileclip", "siglip2", "dinov2_large", "hybrid_field"],
+        default="mobileclip",
     )
     ap.add_argument(
         "--healthy-directory", help="Use a separately trained image verifier"
@@ -114,7 +116,7 @@ def main():
         z = np.load(cache)
         healthy, genus = z["healthy"], z["genus"]
     else:
-        if a.head_family == "siglip2":
+        if a.head_family in ("siglip2", "dinov2_large", "hybrid_field"):
             from permissive_scene import load
         else:
             from mobileclip_scene import load

@@ -25,7 +25,7 @@ from campaign_adapter import prefix
 from campaign_cnn_fusion import calibrate
 from campaign_pixels import open_pixels
 from phase7_species_train import balanced
-from training_support import atomic_save, capture_rng, load_initial_weights, restore_rng
+from training_support import atomic_save, capture_rng, load_initial_weights, restore_rng, load_training_checkpoint
 from train import LABELS
 
 
@@ -341,7 +341,7 @@ def main():
     best = -float("inf")
     history = []
     if (out / "last.pt").exists():
-        state = torch.load(out / "last.pt", weights_only=True, map_location="cpu")
+        state = load_training_checkpoint(out / "last.pt")
         assert state["configuration"] == config
         model.load_state_dict(state["model"])
         optimizer.load_state_dict(state["optimizer"])

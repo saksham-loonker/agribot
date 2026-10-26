@@ -14,7 +14,16 @@ class PermissiveScene(nn.Module):
     def __init__(self, spec):
         super().__init__()
         assert spec["encoder"]["license"] == "apache-2.0"
-        self.encoder = CanonicalPermissiveEncoder(spec["encoder"])
+        if spec["encoder"].get("family") == "hybrid_field":
+            from hybrid_field_encoder import HybridFieldEncoder
+
+            self.encoder = HybridFieldEncoder(spec["encoder"])
+        elif spec["encoder"].get("family") == "dinov2_large":
+            from dino_large_encoder import DinoLargeEncoder
+
+            self.encoder = DinoLargeEncoder(spec["encoder"])
+        else:
+            self.encoder = CanonicalPermissiveEncoder(spec["encoder"])
         self.head = LeafFeatureHead(spec["head_kind"], spec["encoder"]["dimension"])
         self.register_buffer(
             "calibration", torch.tensor(spec["calibration"], dtype=torch.float32)
@@ -40,7 +49,8 @@ def load(directory):
     assert state["protocol"]["task_scope"] == "primary_image"
     identity = state["protocol"]["feature_identity"]
     assert (
-        identity["family"] == "siglip2" and identity["restricted_teacher_used"] is False
+        identity["family"] in ("siglip2", "dinov2_large", "hybrid_field")
+        and identity["restricted_teacher_used"] is False
     )
     encoder_path = directory.parent / "encoder.pt"
     assert digest(encoder_path) == identity["encoder_sha256"]
