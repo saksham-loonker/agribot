@@ -1,0 +1,82 @@
+{
+ "n": 969,
+ "groups": 696,
+ "baseline": {
+  "healthy_recall": 0.7530864197530864,
+  "false_healthy_rate": 0.0045045045045045045,
+  "supported_correct_rate": 0.9294294294294294,
+  "unsupported_false_known_rate": 0.066006600660066,
+  "unsupported_other_rate": 0.8943894389438944
+ },
+ "candidate": {
+  "healthy_recall": 0.691358024691358,
+  "false_healthy_rate": 0.04954954954954955,
+  "supported_correct_rate": 0.6351351351351351,
+  "unsupported_false_known_rate": 0.1716171617161716,
+  "unsupported_other_rate": 0.66996699669967
+ },
+ "delta": {
+  "healthy_recall": -0.06172839506172845,
+  "false_healthy_rate": 0.04504504504504504,
+  "supported_correct_rate": -0.2942942942942943,
+  "unsupported_false_known_rate": 0.10561056105610561,
+  "unsupported_other_rate": -0.22442244224422447
+ },
+ "bootstraps": [
+  {
+   "metric": "healthy_recall",
+   "n": 4000,
+   "mean": -0.06331611621345708,
+   "ci95": [
+    -0.21918643501503507,
+    0.09411764705882353
+   ],
+   "one_sided_upper95": 0.06946059431524547,
+   "probability_gain": 0.1925
+  },
+  {
+   "metric": "false_healthy_rate",
+   "n": 4000,
+   "mean": 0.045193089813945375,
+   "ci95": [
+    0.03094928979304426,
+    0.06027245832803156
+   ],
+   "one_sided_upper95": 0.05771814233382303,
+   "probability_gain": 1.0
+  },
+  {
+   "metric": "supported_correct_rate",
+   "n": 4000,
+   "mean": -0.2934570782787596,
+   "ci95": [
+    -0.3682755259732348,
+    -0.22162056341344752
+   ],
+   "one_sided_upper95": -0.23266210430847853,
+   "probability_gain": 0.0
+  },
+  {
+   "metric": "unsupported_false_known_rate",
+   "n": 4000,
+   "mean": 0.10558359628637135,
+   "ci95": [
+    0.0571383363471971,
+    0.15336063605420872
+   ],
+   "one_sided_upper95": 0.14649681528662423,
+   "probability_gain": 1.0
+  },
+  {
+   "metric": "unsupported_other_rate",
+   "n": 4000,
+   "mean": -0.2238811318940255,
+   "ci95": [
+    -0.2885245901639344,
+    -0.1593145182190432
+   ],
+   "one_sided_upper95": -0.16987179487179493,
+   "probability_gain": 0.0
+  }
+ ]
+}
