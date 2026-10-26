@@ -60,6 +60,15 @@ missing IDs; hybrid features concatenate the matching component caches. Existing
 complete caches return immediately. The original 54-image restored-encoder
 checks remain in place. New sidecars do not rewrite old experimental identities.
 
+Completed caches also validate their own full contract, including the entire
+feature-array SHA and all canonical pixel shards. Legacy caches without that
+contract require explicit registration after a source/restore audit; the reader
+does not silently create provenance. A completed hybrid cache now returns before
+loading encoder states or repeating its GPU probes. Real cache-hit checks over
+all 23,761 rows took 0.81 seconds for SigLIP2, 2.57 seconds for DINO-L and 2.60
+seconds for the hybrid, with CUDA never initialized. See
+[completed cache-hit evidence](evidence/completed_cache_hits_20261026.json).
+
 **Do not reuse frozen SigLIP2 embeddings for the adapted supervised encoder.**
 Its weights changed. Only the selected supervised checkpoint's own validation
 logits were reused; its 2,104 missing inputs were actually inferred. Frozen

@@ -1,0 +1,26 @@
+[
+  {
+    "family": "siglip2",
+    "completed_cache_hit": true,
+    "rows": 23761,
+    "elapsed_seconds": 0.8053009079885669,
+    "cuda_initialized": false,
+    "encoder_executions": 0
+  },
+  {
+    "family": "dinov2_large",
+    "completed_cache_hit": true,
+    "rows": 23761,
+    "elapsed_seconds": 2.5713065860327333,
+    "cuda_initialized": false,
+    "encoder_executions": 0
+  },
+  {
+    "family": "hybrid_field",
+    "completed_cache_hit": true,
+    "rows": 23761,
+    "elapsed_seconds": 2.60257329599699,
+    "cuda_initialized": false,
+    "encoder_executions": 0
+  }
+]

@@ -140,6 +140,9 @@ def extract(root, out, ids, family):
     )
     cache, meta = out / "features.npy", out / "feature_identity.json"
     if cache.exists():
+        from feature_cache_reuse import validate_completed_contract
+
+        validate_completed_contract(root, out, family)
         assert json.loads(meta.read_text()) == identity
         assert json.loads((out / "restored_encoder_parity.json").read_text())["passed"]
         return np.load(cache), identity
@@ -187,4 +190,7 @@ def extract(root, out, ids, family):
     )
     np.save(cache, features)
     meta.write_text(json.dumps(identity, indent=2))
+    from feature_cache_reuse import record_completed_contract
+
+    record_completed_contract(root, out, family)
     return features, identity

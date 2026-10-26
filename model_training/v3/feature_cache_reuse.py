@@ -37,6 +37,50 @@ def runtime_identity():
     return result
 
 
+def completed_contract(root, out, family, repo=None):
+    root, out = Path(root), Path(out)
+    repo = Path(repo) if repo else Path(__file__).resolve().parents[2]
+    shards = read(root / "cnn_inputs/pixels.json")["center"]
+    return dict(
+        encoder_sha256=digest(out / "encoder.pt"),
+        rows_sha256=digest(root / "cnn_inputs/rows.json"),
+        feature_identity_sha256=digest(out / "feature_identity.json"),
+        feature_array_sha256=digest(out / "features.npy"),
+        preprocessing_contract=preprocessing_contract(repo, family),
+        runtime_identity=runtime_identity(),
+        pixel_shards=[
+            dict(
+                path=str(Path(f).resolve()),
+                bytes=Path(f).stat().st_size,
+                mtime_ns=Path(f).stat().st_mtime_ns,
+            )
+            for f in shards
+        ],
+    )
+
+
+def record_completed_contract(root, out, family, repo=None):
+    out = Path(out)
+    assert read(out / "restored_encoder_parity.json")["passed"]
+    assert read(out / "input_contract_parity.json")["passed"]
+    path = out / "cache_contract.json"
+    contract = completed_contract(root, out, family, repo)
+    if path.exists():
+        assert read(path) == contract, "Completed cache identity changed"
+    else:
+        path.write_text(json.dumps(contract, indent=2))
+
+
+def validate_completed_contract(root, out, family, repo=None):
+    path = Path(out) / "cache_contract.json"
+    assert (
+        path.exists()
+    ), "Legacy completed cache needs explicit contract registration after source/restore audit"
+    assert read(path) == completed_contract(
+        root, out, family, repo
+    ), "Completed cache identity changed"
+
+
 def preprocessing_contract(repo, family):
     repo = Path(repo)
     sources = [
@@ -80,6 +124,7 @@ def make_plan(source_root, target_root, family, source_snapshot, current_repo):
     assert expected == preprocessing_contract(
         current_repo, family
     ), "Preprocessing or encoder implementation changed"
+    record_completed_contract(source_root, directory, family, current_repo)
     shards = read(source_root / "cnn_inputs/pixels.json")["center"]
     plan = dict(
         source_root=str(source_root),
@@ -90,6 +135,7 @@ def make_plan(source_root, target_root, family, source_snapshot, current_repo):
         preprocessing_contract=expected,
         source_snapshot=str(source_snapshot),
         runtime_identity=runtime_identity(),
+        source_cache_contract_sha256=digest(directory / "cache_contract.json"),
         pixel_shards=[
             dict(
                 path=str(Path(f).resolve()),
@@ -128,6 +174,8 @@ def seed_features(root, out, ids, dimension, family, current_repo=None):
     ), "Preprocessing or encoder implementation changed"
     source = Path(plan["source_root"])
     old = source / (family + "_feature_heads")
+    assert digest(old / "cache_contract.json") == plan["source_cache_contract_sha256"]
+    validate_completed_contract(source, old, family, current_repo)
     assert (
         digest(out / "encoder.pt") == plan["encoder_sha256"]
     ), "Encoder weights changed"

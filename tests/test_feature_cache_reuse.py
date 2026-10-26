@@ -132,7 +132,9 @@ class FeatureReuseTest(unittest.TestCase):
                 stream.seek(-4, 2)
                 stream.write(np.float32(255.0).tobytes())
             os.utime(pixels, ns=(before.st_atime_ns, before.st_mtime_ns + 1000000000))
-            with self.assertRaisesRegex(AssertionError, "pixel shard modified"):
+            with self.assertRaisesRegex(
+                AssertionError, "Completed cache identity changed"
+            ):
                 seed_features(
                     target, out, np.array([0, 1, 2], np.int64), 3, "siglip2", repo
                 )

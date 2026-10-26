@@ -55,6 +55,19 @@ def extract(root, out, ids, family):
     )
     for d, identity in zip(directories, identities):
         assert digest(d / "encoder.pt") == identity["encoder_sha256"]
+    cache, meta = out / "features.npy", out / "feature_identity.json"
+    if cache.exists():
+        from feature_cache_reuse import validate_completed_contract
+
+        identity = json.loads(meta.read_text())
+        assert identity["rows_sha256"] == rows_sha
+        assert identity["ids_sha256"] == identities[0]["ids_sha256"]
+        assert identity["source_identities"] == identities
+        assert identity["encoder_sha256"] == digest(out / "encoder.pt")
+        assert json.loads((out / "restored_encoder_parity.json").read_text())["passed"]
+        assert json.loads((out / "input_contract_parity.json").read_text())["passed"]
+        validate_completed_contract(root, out, family)
+        return np.load(cache), identity
     source_states = [
         torch.load(d / "encoder.pt", weights_only=True, map_location="cpu")
         for d in directories
@@ -130,4 +143,7 @@ def extract(root, out, ids, family):
             indent=2,
         )
     )
+    from feature_cache_reuse import record_completed_contract
+
+    record_completed_contract(root, out, family)
     return features, identity
