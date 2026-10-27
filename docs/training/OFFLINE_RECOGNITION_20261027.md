@@ -1,5 +1,9 @@
 # Offline recognition continuation: corrected cache joins and stopped controls
 
+**23:00 app update:** [the normal 2.0.4 app is built and verified](NORMAL_APP_DELIVERY_20261027.md)
+with the original release-baseline model. Its source is now publishable with
+that baseline; rejected replacement assets stay outside the normal app bundle.
+
 27 October 2026, 20:30 IST. **Recognition is still not qualified. PR #6 remains
 draft.** No new model was exported, integrated or installed during this
 continuation. The phone is disconnected. Preserve unrelated app edits and all
@@ -189,8 +193,8 @@ individual PC measurements, not a model-delivery estimate. A reliable completion
 ETA is not available while recognition and fresh-source suitability still fail.
 There is no useful training job to leave running merely to occupy the GPU.
 
-Publish research source and evidence only. Keep the rejected local model assets
-and app edits preserved for research, with the published original-model app as
-the release baseline. PR #6 may leave draft only after all remaining gates pass;
+Publish research source/evidence and the verified normal app source with its
+original model. Keep rejected replacement assets preserved separately for
+research. PR #6 may leave draft only after all remaining gates pass;
 never auto-merge it. Continue the existing four-hour PR monitoring task until
 the PR closes or the user cancels it.

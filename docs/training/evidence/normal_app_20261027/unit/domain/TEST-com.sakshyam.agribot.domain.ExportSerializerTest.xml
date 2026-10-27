@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.domain.ExportSerializerTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-27T17:17:16" hostname="vewmet" time="0.053">
+  <properties/>
+  <testcase name="jsonlUsesPortableEvidenceFramePath" classname="com.sakshyam.agribot.domain.ExportSerializerTest" time="0.038"/>
+  <testcase name="runEventJsonlExportsStructuredAppLogRecords" classname="com.sakshyam.agribot.domain.ExportSerializerTest" time="0.002"/>
+  <testcase name="diagnosticsExportPreservesMeasurementAndDecisionProvenance" classname="com.sakshyam.agribot.domain.ExportSerializerTest" time="0.001"/>
+  <testcase name="csvAppendsFrontOverviewGeometryWithoutMovingPiColumns" classname="com.sakshyam.agribot.domain.ExportSerializerTest" time="0.007"/>
+  <testcase name="jsonlPreservesPiCompatibleDecisionKeys" classname="com.sakshyam.agribot.domain.ExportSerializerTest" time="0.0"/>
+  <testcase name="csvUsesPiEventHeaderOrder" classname="com.sakshyam.agribot.domain.ExportSerializerTest" time="0.001"/>
+  <testcase name="runBundleJsonContainsPiCompatibleFilesPayloads" classname="com.sakshyam.agribot.domain.ExportSerializerTest" time="0.004"/>
+  <testcase name="jsonlPreservesMeasurementProvenanceWithoutInventingSize" classname="com.sakshyam.agribot.domain.ExportSerializerTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

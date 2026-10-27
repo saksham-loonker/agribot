@@ -29,6 +29,7 @@ class FrameAnalysis(
     val detectedLeaves: Int,
     val detectMs: Double,
     val classifyMs: Double,
+    val primaryEvidence: PrimaryFrameEvidence? = null,
 )
 
 /** What the loaded model bundle can recognise. */
@@ -40,6 +41,7 @@ data class VisionModelInfo(
     val otherIndex: Int,
     val classifierMembers: Int,
     val referenceDiseasePriority: Boolean = false,
+    val primaryPolicy: PrimaryImagePolicy? = null,
 )
 
 sealed interface VisionStatus {

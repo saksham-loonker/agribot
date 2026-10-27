@@ -181,7 +181,7 @@ class WalkRowsViewModel @Inject constructor(
                 lock.withLock {
                     runId = rid; fieldId = fid.value
                     walk = proposedWalk
-                    evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority)
+                    evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority, i.primaryPolicy)
                     saved[K_SETUP] = arrayListOf(setup.fieldName, setup.rows.toString(), setup.plantsPerRow.toString(), setup.plantSpacingM.toString(), setup.strideM.toString())
                     saved[K_RUN] = rid.value; saved[K_FIELD] = fid.value
                     publish { it.copy(started = true, paused = !screenActive.get(), runId = rid.value, rows = setup.rows, plantsPerRow = setup.plantsPerRow, stepsAvailable = stepsUsable) }
@@ -240,7 +240,7 @@ class WalkRowsViewModel @Inject constructor(
             try {
                 if (!screenActive.get() || epoch != plantEpoch.get() || _state.value.paused) return@launch
                 val i = info ?: return@launch
-                val checked = vision.analyzeUsable(frame, MAX_LEAVES)
+                val checked = vision.analyzeUsable(frame, i.primaryPolicy?.maximumLeaves ?: MAX_LEAVES)
                 val q = FrameTools.quality(checked.quality)
                 val a = checked.analysis
                 lock.withLock {
@@ -259,8 +259,10 @@ class WalkRowsViewModel @Inject constructor(
                     obs.forEachIndexed { k, o ->
                         // A leaf belongs to the plant where it first appeared, so leaves of the previous plant
                         // still in view are not counted for the next one.
-                        if (trackPlant.getOrPut(ids[k]) { here } == here) { ev.add(ids[k], frameIndex, o); used++ }
+                        if (trackPlant.getOrPut(ids[k]) { here } == here) { ev.add(ids[k], if (i.primaryPolicy != null) frame.timestampNanos else frameIndex, o); used++ }
                     }
+                    if (used > 0 && used == obs.size) a.primaryEvidence?.let { ev.addPrimaryFrame(frame.timestampNanos, it) }
+                    else ev.clearPrimaryFrames()
                     if (used > 0) evidenceRevision++
                     if (used >= bestLeaves && used > 0) { bestFrame = frame; bestLeaves = used }
                     val v = ev.verdict()
@@ -363,7 +365,7 @@ class WalkRowsViewModel @Inject constructor(
 
     private fun resetEvidenceLocked() {
         val i = info ?: return
-        evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority)
+        evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority, i.primaryPolicy)
         bestFrame = null; bestLeaves = 0
         evidenceRevision++
         plantEpoch.incrementAndGet()
@@ -377,7 +379,7 @@ class WalkRowsViewModel @Inject constructor(
         val pending = mutableListOf<Pair<RecordedDecision, PlantVerdict>>()
         for ((index, key) in positions.withIndex()) {
             val (row, plant) = key
-            val v = if (index == 0) ev.verdict() else PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority).verdict()
+            val v = if (index == 0) ev.verdict() else PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority, i.primaryPolicy).verdict()
             // Passing back over a plant must not replace a real verdict with "not seen" / "too few views".
             if (v.kind == VerdictKind.NEED_MORE_VIEWS && results.containsKey(key)) continue
             if (index == 0 && savedEvidenceRevision[key] == evidenceRevision) continue
@@ -481,7 +483,7 @@ class WalkRowsViewModel @Inject constructor(
                     decisions.groupBy { (it.rowIndex ?: 0) to (it.plantNumber ?: 0) }.forEach { (k, d) ->
                         results[k] = d.maxBy { it.sequence }.toVerdict().first.kind
                     }
-                    evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority)
+                    evidence = PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority, i.primaryPolicy)
                     runs.markRunPaused(RunId(rid))
                     publish { it.copy(started = true, paused = true, runId = rid, rows = setup[1].toInt(), plantsPerRow = setup[2].toInt(), stepsAvailable = stepsUsable) }
                 }

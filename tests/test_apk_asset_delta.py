@@ -76,6 +76,15 @@ class ApkAssetDeltaTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "Invalid transfer"):
                 module.reconstruct(recipe, assets, root / "restored.apk")
 
+    def test_stale_research_model_in_apk_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            apk, manifest, _ = self.fixture(root)
+            with zipfile.ZipFile(apk, "a") as archive:
+                archive.writestr("assets/models/rejected_context.tflite", b"stale model")
+            with self.assertRaisesRegex(ValueError, "undeclared"):
+                module.prepare(apk, manifest, root / "recipe")
+
 
 if __name__ == "__main__":
     unittest.main()

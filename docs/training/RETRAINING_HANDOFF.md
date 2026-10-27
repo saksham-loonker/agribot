@@ -1,5 +1,8 @@
 # Agribot training failure investigation, recovery, and Android integration
 
+**Normal app 2.0.4 is built:** [delivery and verification](NORMAL_APP_DELIVERY_20261027.md).
+The original release-baseline model is retained; no failed replacement is bundled.
+
 **Latest offline evidence:** [corrected cache joins and bounded supervised/reward
 controls](OFFLINE_RECOGNITION_20261027.md). Phase 89/91 are explicitly invalidated;
 their corrected successors and later CNN/reward controls still fail recognition.

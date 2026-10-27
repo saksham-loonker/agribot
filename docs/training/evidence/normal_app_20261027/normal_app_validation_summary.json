@@ -1,0 +1,124 @@
+{
+  "passed": true,
+  "tests": 22,
+  "failed": 0,
+  "skipped": 0,
+  "failures": [],
+  "elapsed_seconds": 23.866835068911314,
+  "exit_code": 0,
+  "build_source_sha256": "59a776af3cb024e83a14cce3fded42a1a92a1e68c2cf344ff32b3b1f84c257b2",
+  "model_manifest_sha256": "b9ecdf557015e847bb4a4d76b622ab66100c036effa86e5a63c151e32de15f4f",
+  "case_names": [
+    {
+      "name": "failedMoveKeepsTheCurrentPlantAndAllowsASafeRetry",
+      "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+      "time": "0.125"
+    },
+    {
+      "name": "checkRejectsAnInferenceThatSpansABackgroundTransition",
+      "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+      "time": "0.001"
+    },
+    {
+      "name": "quickCheckWaitsForPrimaryWindowInsteadOfFinalizingOtherEarly",
+      "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+      "time": "0.124"
+    },
+    {
+      "name": "failedModelsDoNotLeaveWalkStartWaitingForever",
+      "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+      "time": "0.0"
+    },
+    {
+      "name": "failedCheckSaveKeepsTheVerdictAndRetriesWithoutAnOrphanRun",
+      "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+      "time": "0.076"
+    },
+    {
+      "name": "multiPlantTransactionRollsBackEarlierWritesInTheSameMovement",
+      "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+      "time": "0.001"
+    },
+    {
+      "name": "walkThatFinishesStartingInTheBackgroundRemainsPaused",
+      "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+      "time": "0.026"
+    },
+    {
+      "name": "quickCheckTransactionRollsBackTheRunWhenDecisionInsertFails",
+      "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+      "time": "0.0"
+    },
+    {
+      "name": "finishRetryDoesNotDuplicateTheAlreadyCommittedPlant",
+      "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+      "time": "0.101"
+    },
+    {
+      "name": "pauseAndResumeRejectThePreviousInFlightFrame",
+      "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+      "time": "0.026"
+    },
+    {
+      "name": "restoredCompletedWalkIsNeverReopenedAsRecording",
+      "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+      "time": "0.027"
+    },
+    {
+      "name": "homeShowsBothModesAndRecentSection",
+      "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
+      "time": "0.981"
+    },
+    {
+      "name": "checkPlantOpensCameraWithGuidance",
+      "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
+      "time": "0.554"
+    },
+    {
+      "name": "walkSetupRejectsInvalidNumbers",
+      "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
+      "time": "0.625"
+    },
+    {
+      "name": "settingsSwitchesLanguageToHindiAndBack",
+      "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
+      "time": "0.75"
+    },
+    {
+      "name": "runPersistenceSupportsReplacementRetakeAndPiCompatibleExports",
+      "classname": "com.sakshyam.agribot.AgribotRoomExportIntegrationTest",
+      "time": "0.052"
+    },
+    {
+      "name": "renderEnglishAndHindiCards",
+      "classname": "com.sakshyam.agribot.VerdictCardRenderTest",
+      "time": "1.13"
+    },
+    {
+      "name": "primaryScoresAndProtectedDiseaseVerdictsMatchMobileReference",
+      "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
+      "time": "1.53"
+    },
+    {
+      "name": "checkAPlantVerdictOnStaticImagesAgreesWithReference",
+      "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
+      "time": "1.479"
+    },
+    {
+      "name": "wholeImageLogitsAndLabelsMatchReference",
+      "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
+      "time": "1.228"
+    },
+    {
+      "name": "fullAnalysisRunsAndReportsLatency",
+      "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
+      "time": "0.778"
+    },
+    {
+      "name": "detectionsMatchReference",
+      "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
+      "time": "0.276"
+    }
+  ],
+  "physical_phone": false
+}

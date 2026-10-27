@@ -1,5 +1,10 @@
 # Field acceptance failure and continuing recognition repair
 
+**Normal app build completed:** [2.0.4 baseline app delivery](NORMAL_APP_DELIVERY_20261027.md)
+publishes the app repairs with the original model, 133 native unit checks and
+22 emulator checks. Rejected replacement assets are preserved outside the
+normal bundle; recognition remains unqualified.
+
 **Latest offline continuation:** [corrected cache joins, supervised/reward
 controls and stopping evidence](OFFLINE_RECOGNITION_20261027.md). No replacement
 passes recognition. The new prospective source remains provisional and sealed.

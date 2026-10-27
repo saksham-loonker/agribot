@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="com.sakshyam.agribot.ScanPersistenceLifecycleTest" tests="22" failures="0" errors="0" skipped="0" time="10.372" timestamp="2026-10-27T17:25:18" hostname="localhost">
+  <properties>
+    <property name="device" value="agribot_field_api35(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="failedMoveKeepsTheCurrentPlantAndAllowsASafeRetry" classname="com.sakshyam.agribot.ScanPersistenceLifecycleTest" time="0.125" />
+  <testcase name="checkRejectsAnInferenceThatSpansABackgroundTransition" classname="com.sakshyam.agribot.ScanPersistenceLifecycleTest" time="0.001" />
+  <testcase name="quickCheckWaitsForPrimaryWindowInsteadOfFinalizingOtherEarly" classname="com.sakshyam.agribot.ScanPersistenceLifecycleTest" time="0.124" />
+  <testcase name="failedModelsDoNotLeaveWalkStartWaitingForever" classname="com.sakshyam.agribot.ScanPersistenceLifecycleTest" time="0.0" />
+  <testcase name="failedCheckSaveKeepsTheVerdictAndRetriesWithoutAnOrphanRun" classname="com.sakshyam.agribot.ScanPersistenceLifecycleTest" time="0.076" />
+  <testcase name="multiPlantTransactionRollsBackEarlierWritesInTheSameMovement" classname="com.sakshyam.agribot.ScanPersistenceLifecycleTest" time="0.001" />
+  <testcase name="walkThatFinishesStartingInTheBackgroundRemainsPaused" classname="com.sakshyam.agribot.ScanPersistenceLifecycleTest" time="0.026" />
+  <testcase name="quickCheckTransactionRollsBackTheRunWhenDecisionInsertFails" classname="com.sakshyam.agribot.ScanPersistenceLifecycleTest" time="0.0" />
+  <testcase name="finishRetryDoesNotDuplicateTheAlreadyCommittedPlant" classname="com.sakshyam.agribot.ScanPersistenceLifecycleTest" time="0.101" />
+  <testcase name="pauseAndResumeRejectThePreviousInFlightFrame" classname="com.sakshyam.agribot.ScanPersistenceLifecycleTest" time="0.026" />
+  <testcase name="restoredCompletedWalkIsNeverReopenedAsRecording" classname="com.sakshyam.agribot.ScanPersistenceLifecycleTest" time="0.027" />
+  <testcase name="homeShowsBothModesAndRecentSection" classname="com.sakshyam.agribot.AgribotLaunchUiTest" time="0.981" />
+  <testcase name="checkPlantOpensCameraWithGuidance" classname="com.sakshyam.agribot.AgribotLaunchUiTest" time="0.554" />
+  <testcase name="walkSetupRejectsInvalidNumbers" classname="com.sakshyam.agribot.AgribotLaunchUiTest" time="0.625" />
+  <testcase name="settingsSwitchesLanguageToHindiAndBack" classname="com.sakshyam.agribot.AgribotLaunchUiTest" time="0.75" />
+  <testcase name="runPersistenceSupportsReplacementRetakeAndPiCompatibleExports" classname="com.sakshyam.agribot.AgribotRoomExportIntegrationTest" time="0.052" />
+  <testcase name="renderEnglishAndHindiCards" classname="com.sakshyam.agribot.VerdictCardRenderTest" time="1.13" />
+  <testcase name="primaryScoresAndProtectedDiseaseVerdictsMatchMobileReference" classname="com.sakshyam.agribot.AgribotModelGoldenTest" time="1.53" />
+  <testcase name="checkAPlantVerdictOnStaticImagesAgreesWithReference" classname="com.sakshyam.agribot.AgribotModelGoldenTest" time="1.479" />
+  <testcase name="wholeImageLogitsAndLabelsMatchReference" classname="com.sakshyam.agribot.AgribotModelGoldenTest" time="1.228" />
+  <testcase name="fullAnalysisRunsAndReportsLatency" classname="com.sakshyam.agribot.AgribotModelGoldenTest" time="0.778" />
+  <testcase name="detectionsMatchReference" classname="com.sakshyam.agribot.AgribotModelGoldenTest" time="0.276" />
+</testsuite>

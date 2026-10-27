@@ -266,6 +266,32 @@ class ScanPersistenceLifecycleTest {
         assertFalse(vm.state.value.started)
     }
 
+    @Test fun quickCheckWaitsForPrimaryWindowInsteadOfFinalizingOtherEarly() = runBlocking {
+        vision.primaryRecovery = true
+        vision.status.value = VisionStatus.Ready(VisionModelInfo("test-primary", labels, 1, 8, 1, primaryPolicy = PrimaryImagePolicy()))
+        val vm = checkVm()
+        repeat(6) {
+            until { vm.isReady() }
+            val before = vm.state.value.framesUsed
+            ui { vm.onFrame(frame()) }
+            until { vm.state.value.framesUsed > before }
+            assertNull("Other must not stop the seven-frame recovery window", vm.state.value.verdict)
+            assertTrue(vm.state.value.scanning)
+        }
+        diagnose(vm)
+        val verdict = requireNotNull(vm.state.value.verdict)
+        assertEquals(VerdictKind.HEALTHY, verdict.kind)
+        assertTrue(verdict.primaryView)
+        assertTrue(verdict.framesUsed >= 7)
+        assertEquals(1, verdict.leavesSeen)
+        assertEquals(0, verdict.leavesAgreeing)
+        ui { vm.save() }
+        until { vm.state.value.savedRunId != null }
+        val saved = room.decisionsForRun(RunId(vm.state.value.savedRunId!!)).single().toVerdict().first
+        assertTrue(saved.primaryView)
+        assertEquals(verdict.framesUsed, saved.framesUsed)
+    }
+
     private fun config(id: RunId) = RunConfig(id, RecordingMode.CHECK_PLANT, FieldId("test-field"), 0, "test-bundle")
     private fun decision(id: RunId, key: String) = VerdictRecords.toDecision(
         DecisionId(key), id, 1, RecordingMode.CHECK_PLANT, PlantPlace("test-field", null, null),
@@ -303,6 +329,7 @@ class ScanPersistenceLifecycleTest {
         override val status = MutableStateFlow<VisionStatus>(VisionStatus.Ready(VisionModelInfo("test-bundle", labels, 1, 8, 1)))
         val entered = CompletableDeferred<Unit>()
         val calls = AtomicInteger()
+        @Volatile var primaryRecovery = false
         private var gate: CompletableDeferred<Unit>? = null
         fun blockNext() = CompletableDeferred<Unit>().also { gate = it }
         override fun warmUp() = Unit
@@ -310,8 +337,11 @@ class ScanPersistenceLifecycleTest {
             calls.incrementAndGet()
             val wait = gate.also { gate = null }
             if (wait != null) { entered.complete(Unit); wait.await() }
-            val probabilities = FloatArray(9) { if (it == 1) 0.99f else 0.01f / 8 }
-            return FrameAnalysis(64, 64, listOf(AnalyzedLeaf(BoundingBox(2f, 2f, 62f, 62f), 0.99f, probabilities, 1)), 1, 1.0, 1.0)
+            val label = if (primaryRecovery) 8 else 1
+            val probabilities = FloatArray(9) { if (it == label) 0.99f else 0.01f / 8 }
+            val auxiliary = AuxiliaryLeafScores(.99, .99, .99)
+            val primary = if (primaryRecovery) PrimaryFrameEvidence(.99, .99, .99, .99, listOf(AuxiliaryLeafViews(auxiliary, auxiliary))) else null
+            return FrameAnalysis(64, 64, listOf(AnalyzedLeaf(BoundingBox(2f, 2f, 62f, 62f), 0.99f, probabilities, label)), 1, 1.0, 1.0, primary)
         }
     }
 }

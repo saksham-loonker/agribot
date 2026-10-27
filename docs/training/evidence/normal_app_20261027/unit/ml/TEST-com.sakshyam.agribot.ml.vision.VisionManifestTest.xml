@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.ml.vision.VisionManifestTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:36:15" hostname="vewmet" time="0.003">
+  <properties/>
+  <testcase name="wrong Other mapping and enabled gate without threshold are rejected" classname="com.sakshyam.agribot.ml.vision.VisionManifestTest" time="0.001"/>
+  <testcase name="bundled manifest parses into a complete contract" classname="com.sakshyam.agribot.ml.vision.VisionManifestTest" time="0.0"/>
+  <testcase name="unsupported schema or detector layout is rejected" classname="com.sakshyam.agribot.ml.vision.VisionManifestTest" time="0.0"/>
+  <testcase name="primary recovery rejects changed thresholds scope and preprocessing" classname="com.sakshyam.agribot.ml.vision.VisionManifestTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

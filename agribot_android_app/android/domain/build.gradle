@@ -17,3 +17,14 @@ dependencies {
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion"
     testImplementation "junit:junit:$junitVersion"
 }
+
+// Research runner uses the exact production domain and stopping policy. It is
+// not packaged into the Android app and runs only with explicit input/output.
+tasks.register('replayRecognition', JavaExec) {
+    dependsOn testClasses
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.sakshyam.agribot.domain.scan.RecognitionAcceptanceReplay'
+    doFirst {
+        args project.property('recognitionReplayInput'), project.property('recognitionReplayOutput')
+    }
+}

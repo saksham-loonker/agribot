@@ -55,6 +55,7 @@
 
     <!-- Verdicts -->
     <string name="verdict_healthy">Looks healthy</string>
+    <string name="verdict_primary_healthy">Looks healthy in this view</string>
     <string name="verdict_disease_partial">%1$s on some leaves</string>
     <string name="verdict_unknown">Condition not recognized</string>
     <string name="scan_quality_retry">The view is not clear enough. Hold steady, move closer and avoid glare or deep shade.</string>

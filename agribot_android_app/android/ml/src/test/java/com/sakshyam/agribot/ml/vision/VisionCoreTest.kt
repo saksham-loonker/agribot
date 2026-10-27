@@ -146,7 +146,7 @@ class VisionManifestTest {
     }
 
     @Test fun `unsupported schema or detector layout is rejected`() {
-        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace(Regex("\"schema\"\\s*:\\s*[23]"), "\"schema\": 1")) }
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace(Regex("\"schema\"\\s*:\\s*[2-5]"), "\"schema\": 1")) }
         assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("\"x1\"", "\"cx\"")) }
     }
 
@@ -156,5 +156,22 @@ class VisionManifestTest {
         assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("disease_classifier_0.tflite", "../disease_classifier_0.tflite")) }
         assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("NHWC", "NCHW")) }
         assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("0.48500001430511475", "123.675")) }
+    }
+
+    @Test fun `primary recovery rejects changed thresholds scope and preprocessing`() {
+        val m = VisionManifest.parse(text)
+        assertEquals(com.sakshyam.agribot.domain.scan.PrimaryImagePolicy(), m.primaryPolicy)
+        assertEquals(224, m.contextModel!!.inputSize)
+        for ((before, after) in listOf(
+            "primary_visible_view" to "whole_plant",
+            "\"minimum_frames\": 7" to "\"minimum_frames\": 3",
+            "\"healthy_min\": 0.85" to "\"healthy_min\": 0.5",
+            "canonical_whole_letterbox_gray114" to "center_crop",
+            "canonical_full_roi_letterbox_pad10_gray114" to "unpadded_roi",
+            "compact_negative_H" to "adapted_dino_H",
+        )) {
+            assertTrue("fixture must modify $before", text.contains(before))
+            assertThrows("changed contract $before", IllegalArgumentException::class.java) { VisionManifest.parse(text.replace(before, after)) }
+        }
     }
 }

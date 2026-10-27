@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.ml.vision.CanonicalImageOpsTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:36:14" hostname="vewmet" time="0.004">
+  <properties/>
+  <testcase name="constant images stay constant when shrinking and enlarging" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsTest" time="0.001"/>
+  <testcase name="classifier input is normalised with imagenet statistics" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsTest" time="0.0"/>
+  <testcase name="letterbox geometry for a 4 by 3 frame" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsTest" time="0.002"/>
+  <testcase name="downscale averages areas" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsTest" time="0.0"/>
+  <testcase name="crop rect pads and clamps and degenerate crops are rejected" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsTest" time="0.0"/>
+  <testcase name="letterbox rounding matches python round half even" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsTest" time="0.001"/>
+  <testcase name="identity resize is exact" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,8 @@
+{
+  "tests": 189,
+  "failures": 0,
+  "skipped": 1,
+  "log_sha256": "dab3a939d8002057b66ac8999fa9e143d2e73b8e2a41053329a1dd7a8dd335c9",
+  "log_path": "C:\\Users\\Manisha\\agribot\\.toolchains\\normal-app-final-python-tests.log",
+  "note": "One optional downloaded-media case skipped; training, cache and APK tests executed"
+}

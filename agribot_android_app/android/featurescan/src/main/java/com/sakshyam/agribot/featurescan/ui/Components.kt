@@ -147,7 +147,7 @@ fun confidenceText(p: Float): String = stringResource(
 fun verdictTitle(v: PlantVerdict, labels: List<String>): String {
     val key = v.labelIndex?.let { labels.getOrNull(it) }
     return when (v.kind) {
-        VerdictKind.HEALTHY -> stringResource(R.string.verdict_healthy)
+        VerdictKind.HEALTHY -> stringResource(if (v.primaryView) R.string.verdict_primary_healthy else R.string.verdict_healthy)
         VerdictKind.DISEASE -> if (v.partial) stringResource(R.string.verdict_disease_partial, stringResource(Conditions.nameRes(key))) else stringResource(Conditions.nameRes(key))
         VerdictKind.UNKNOWN_CONDITION -> stringResource(R.string.verdict_unknown)
         VerdictKind.UNSURE, VerdictKind.NEED_MORE_VIEWS -> stringResource(R.string.verdict_unsure)
@@ -181,7 +181,7 @@ fun VerdictCard(v: PlantVerdict, labels: List<String>, modifier: Modifier = Modi
                     Text("${confidenceText(v.confidence)} · ${stringResource(R.string.percent, (v.confidence * 100).toInt())}", style = MaterialTheme.typography.titleMedium)
                     LinearProgressIndicator(progress = { v.confidence.coerceIn(0f, 1f) }, modifier = Modifier.fillMaxWidth().height(8.dp), color = tone.color())
                 }
-                if (v.leavesSeen > 0) Text(stringResource(R.string.leaves_agree, v.leavesAgreeing, v.leavesSeen), style = MaterialTheme.typography.bodyMedium)
+                if (v.leavesSeen > 0 && !v.primaryView) Text(stringResource(R.string.leaves_agree, v.leavesAgreeing, v.leavesSeen), style = MaterialTheme.typography.bodyMedium)
                 when {
                     v.kind == VerdictKind.UNSURE || v.kind == VerdictKind.NEED_MORE_VIEWS ->
                         Text(stringResource(R.string.verdict_unsure_body, stringResource(Conditions.nameRes(key)), stringResource(Conditions.nameRes(runnerKey))))

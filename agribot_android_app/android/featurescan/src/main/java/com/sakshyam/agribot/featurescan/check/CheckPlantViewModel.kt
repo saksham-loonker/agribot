@@ -147,9 +147,11 @@ class CheckPlantViewModel @Inject constructor(
                 _state.update { it.copy(hint = if (quality.tooDark) CheckHint.TOO_DARK else CheckHint.CLEAR_VIEW, boxes = emptyList(), error = null) }
                 return
             }
-            val ev = evidence ?: PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority).also { evidence = it }
+            val ev = evidence ?: PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority, i.primaryPolicy).also { evidence = it }
             val boxes = analysis.leaves.map { LeafBox.of(it, analysis.frameWidth, analysis.frameHeight, i) }
-            if (analysis.leaves.isEmpty()) {
+            frameIndex++
+            analysis.primaryEvidence?.let { ev.addPrimaryFrame(frame.timestampNanos, it) }
+            if (analysis.leaves.isEmpty() && analysis.primaryEvidence == null) {
                 framesWithoutLeaves++
                 val hint = when {
                     quality.tooDark -> CheckHint.TOO_DARK
@@ -160,10 +162,9 @@ class CheckPlantViewModel @Inject constructor(
                 return
             }
             framesWithoutLeaves = 0
-            frameIndex++
             val obs = analysis.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, quality.weight, it.referenceProbabilities) }
             val ids = tracker.update(frameIndex, obs)
-            obs.forEachIndexed { k, o -> ev.add(ids[k], frameIndex, o) }
+            obs.forEachIndexed { k, o -> ev.add(ids[k], if (i.primaryPolicy != null) frame.timestampNanos else frameIndex, o) }
             if (analysis.leaves.size >= bestFrameLeaves) { bestFrame = frame; bestFrameLeaves = analysis.leaves.size }
 
             val v = ev.verdict()
@@ -171,8 +172,10 @@ class CheckPlantViewModel @Inject constructor(
             stableFrames = if (key == lastKey) stableFrames + 1 else 0
             lastKey = key
             val smallLeaves = analysis.leaves.all { (it.box.width * it.box.height) / (analysis.frameWidth.toFloat() * analysis.frameHeight) < 0.01f }
-            val decided = v.kind != VerdictKind.NEED_MORE_VIEWS &&
-                ((v.kind != VerdictKind.UNSURE && stableFrames >= STABLE_FRAMES) || ev.framesUsed >= MAX_FRAMES)
+            // A confident original Other verdict can stabilize before the primary
+            // recovery window is ready. Keep observing through that real-frame
+            // window; named disease still has its original early exit.
+            val decided = com.sakshyam.agribot.domain.scan.QuickCheckCompletion.isReady(v, ev.framesUsed, stableFrames, i.primaryPolicy)
             val progress = (ev.framesUsed.toFloat() / MIN_FRAMES_FOR_PROGRESS).coerceAtMost(0.95f)
             _state.update {
                 it.copy(
@@ -237,8 +240,6 @@ class CheckPlantViewModel @Inject constructor(
     companion object {
         const val QUICK_CHECK_FIELD = "quick-check"
         private const val MAX_LEAVES = 6
-        private const val STABLE_FRAMES = 2
-        private const val MAX_FRAMES = 14
         private const val MIN_FRAMES_FOR_PROGRESS = 6f
         private const val NO_LEAF_FRAMES_BEFORE_HELP = 15
     }

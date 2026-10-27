@@ -28,8 +28,10 @@ import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.BeforeClass
+import org.junit.AfterClass
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -70,6 +72,8 @@ class AgribotModelGoldenTest {
         }
 
         private fun floats(o: JsonObject, key: String) = o[key]!!.jsonArray.map { z -> z.jsonArray.map { it.jsonPrimitive.float } }
+
+        @AfterClass @JvmStatic fun close() = runBlocking { vision.shutdown() }
     }
 
     @Test fun wholeImageLogitsAndLabelsMatchReference() = runBlocking {
@@ -103,6 +107,60 @@ class AgribotModelGoldenTest {
         }
     }
 
+    @Test fun primaryScoresAndProtectedDiseaseVerdictsMatchMobileReference() = runBlocking {
+        val target = InstrumentationRegistry.getInstrumentation().targetContext
+        val expectedModels = (manifest.members.map { it.file } + manifest.detector.file + listOfNotNull(manifest.contextModel?.file)).toSet()
+        assertEquals("APK must contain exactly its declared models", expectedModels, target.assets.list("models")!!.toSet())
+        // The normal app retains the original release-baseline model. It must
+        // not fabricate research-only primary evidence from its nine logits.
+        if (manifest.primaryPolicy == null) {
+            assertEquals("unrecognized baseline model", "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39", manifest.members.single().sha256)
+            for (entry in entries) {
+                val name = entry["file"]!!.jsonPrimitive.content
+                assertNull("$name baseline fabricated primary evidence", vision.analyze(frame(name), 6).primaryEvidence)
+            }
+            return@runBlocking
+        }
+        val ctx = InstrumentationRegistry.getInstrumentation().context
+        val reference = Json.parseToJsonElement(ctx.assets.open("golden/primary_expected.json").bufferedReader().use { it.readText() }).jsonObject
+        val manifestBytes = target.assets.open(AgribotLeafVision.MANIFEST).use { it.readBytes() }
+        val manifestSha = java.security.MessageDigest.getInstance("SHA-256").digest(manifestBytes).joinToString("") { "%02x".format(it) }
+        assertEquals("research fixture must match the exact model manifest", reference["manifest_sha256"]!!.jsonPrimitive.content, manifestSha)
+        for (entry in reference["entries"]!!.jsonArray.map { it.jsonObject }) {
+            val name = entry["file"]!!.jsonPrimitive.content
+            val a = vision.analyze(frame(name), 6)
+            val primary = requireNotNull(a.primaryEvidence) { "$name missing primary scores" }
+            val expectedWhole = entry["context"]!!.jsonArray.map { it.jsonPrimitive.float.toDouble() }
+            val actualWhole = listOf(primary.positive, primary.negative, primary.genus, primary.natural)
+            for (k in actualWhole.indices) assertEquals("$name context[$k]", expectedWhole[k], actualWhole[k], .002)
+            val expectedLeaves = entry["leaves"]!!.jsonArray
+            assertEquals("$name real leaf coverage", expectedLeaves.size, primary.leaves.size)
+            for (leaf in primary.leaves.indices) {
+                val actualViews = listOf(primary.leaves[leaf].center, primary.leaves[leaf].full)
+                for (view in 0..1) {
+                    val actual = actualViews[view].let { listOf(it.positive, it.negative, it.adapted) }
+                    val expected = expectedLeaves[leaf].jsonArray[view].jsonArray
+                    for (k in 0..2) assertEquals("$name leaf[$leaf][$view][$k]", expected[k].jsonPrimitive.float.toDouble(), actual[k], .002)
+                }
+            }
+            val ev = PlantEvidence(manifest.labels.size, manifest.healthyIndex, manifest.otherIndex, manifest.referenceDiseasePriority, manifest.primaryPolicy)
+            // One inference result is reused for a static consensus probe; frame IDs are distinct,
+            // while the independent sample remains this one PNG.
+            repeat(7) { i ->
+                a.leaves.forEachIndexed { index, leaf ->
+                    ev.add(index.toLong(), i.toLong(), LeafObservation(leaf.box, leaf.detectorScore, leaf.probabilities, 1f, leaf.referenceProbabilities))
+                }
+                ev.addPrimaryFrame(i.toLong(), primary)
+            }
+            val verdict = ev.verdict()
+            val expectedVerdict = entry["candidate"]!!.jsonObject
+            assertEquals("$name final verdict", expectedVerdict["kind"]!!.jsonPrimitive.content, verdict.kind.name)
+            assertEquals("$name final label", expectedVerdict["label"]!!.jsonPrimitive.content, manifest.labels[verdict.labelIndex!!])
+            assertEquals("$name actual distinct frames", 7, verdict.framesUsed)
+            assertEquals("$name actual leaves", a.leaves.size, verdict.leavesSeen)
+        }
+    }
+
     @Test fun fullAnalysisRunsAndReportsLatency() = runBlocking {
         val e = entries.first { (it["detections"]!!.jsonArray.size) > 0 }
         val f = frame(e["file"]!!.jsonPrimitive.content)
@@ -130,8 +188,8 @@ class AgribotModelGoldenTest {
             val f = frame(e["file"]!!.jsonPrimitive.content)
             val tracker = LeafTracker()
             val ev = PlantEvidence(manifest.labels.size, manifest.healthyIndex, manifest.otherIndex, manifest.referenceDiseasePriority)
+            val a = vision.analyze(f, 6)
             repeat(6) { i ->
-                val a = vision.analyze(f, 6)
                 val obs = a.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, 1f, it.referenceProbabilities) }
                 val ids = tracker.update(i.toLong(), obs)
                 obs.forEachIndexed { k, o -> ev.add(ids[k], i.toLong(), o) }

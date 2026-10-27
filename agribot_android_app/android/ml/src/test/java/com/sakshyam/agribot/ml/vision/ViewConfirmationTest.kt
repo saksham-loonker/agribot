@@ -11,6 +11,7 @@ class ViewConfirmationTest {
 
     @Test fun `paired model output requires the new manifest contract`() {
         val root = Json.parseToJsonElement(File("../app/src/main/assets/model_manifest.json").readText()).jsonObject.toMutableMap()
+        root.remove("primary_recovery")
         val classifier = root["classifier"]!!.jsonObject.toMutableMap()
         classifier.remove("reference_disease_priority")
         val member = classifier["members"]!!.jsonArray[0].jsonObject.toMutableMap()
@@ -84,6 +85,7 @@ class ViewConfirmationTest {
 
     @Test fun `schema four requires both reference outputs and disease priority`() {
         val root = Json.parseToJsonElement(File("../app/src/main/assets/model_manifest.json").readText()).jsonObject.toMutableMap()
+        root.remove("primary_recovery")
         val classifier = root["classifier"]!!.jsonObject.toMutableMap()
         val member = classifier["members"]!!.jsonArray[0].jsonObject.toMutableMap()
         member["output"] = JsonArray(listOf(JsonPrimitive(1), JsonPrimitive(18)))

@@ -38,7 +38,7 @@ object VerdictRecords {
         }
         val reason = when (verdict.kind) {
             VerdictKind.NEED_MORE_VIEWS -> if (verdict.leavesSeen == 0) "not_seen" else "too_few_views"
-            else -> verdict.kind.name.lowercase()
+            else -> if (verdict.primaryView) "healthy_primary_view" else verdict.kind.name.lowercase()
         }
         return RecordedDecision(
             id = id, runId = runId, sequence = sequence, timestamp = now, epochTime = now.toEpochMilli() / 1000.0,
@@ -76,5 +76,6 @@ fun RecordedDecision.toVerdict(): Pair<PlantVerdict, List<String>> {
         kind = kind, labelIndex = if (label.isEmpty()) null else 0, confidence = confidence,
         runnerUpIndex = if (runnerUpLabel.isNullOrEmpty()) null else 1, runnerUpConfidence = runnerUpConfidence ?: 0f,
         leavesSeen = leavesSeen ?: 0, leavesAgreeing = leavesAgreeing ?: 0, framesUsed = framesUsed, partial = partialFinding == true,
+        primaryView = reason == "healthy_primary_view",
     ) to labels
 }

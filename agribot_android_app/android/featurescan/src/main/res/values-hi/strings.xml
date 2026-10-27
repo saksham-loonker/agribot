@@ -55,6 +55,7 @@
 
     <!-- परिणाम -->
     <string name="verdict_healthy">स्वस्थ दिखता है</string>
+    <string name="verdict_primary_healthy">इस दृश्य में स्वस्थ दिखता है</string>
     <string name="verdict_disease_partial">कुछ पत्तियों पर %1$s</string>
     <string name="verdict_unknown">स्थिति पहचानी नहीं गई</string>
     <string name="verdict_unsure">पक्का नहीं — फिर से देखें</string>

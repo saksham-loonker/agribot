@@ -40,6 +40,11 @@ def prepare(apk, manifest, output):
         contracts += [metadata["primary_recovery"]["model"]]
     ranges = []
     with apk.open("rb") as stream, zipfile.ZipFile(apk) as archive:
+        expected = {"assets/models/" + contract["file"] for contract in contracts}
+        packaged = [info.filename for info in archive.infolist()
+                    if info.filename.startswith("assets/models/") and not info.is_dir()]
+        if set(packaged) != expected or len(packaged) != len(expected):
+            raise ValueError("APK contains undeclared, duplicate or missing model assets")
         for contract in contracts:
             name = contract["file"]
             if Path(name).name != name or "/" in name or "\\" in name:

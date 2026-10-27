@@ -58,4 +58,17 @@ class VerdictRecordsTest {
         assertEquals(2, s.ok)
         assertEquals(0, s.sick)
     }
+
+    @Test fun `primary view scope survives saving without inventing leaf votes`() {
+        val v = verdict(VerdictKind.HEALTHY, 1, leaves = 0).copy(
+            leavesAgreeing = 0, framesUsed = 7, primaryView = true,
+        )
+        val saved = record(v)
+        val restored = saved.toVerdict().first
+        assertTrue(restored.primaryView)
+        assertEquals(0, restored.leavesSeen)
+        assertEquals(0, restored.leavesAgreeing)
+        assertEquals(7, restored.framesUsed)
+        assertEquals(VerdictKind.HEALTHY, restored.kind)
+    }
 }

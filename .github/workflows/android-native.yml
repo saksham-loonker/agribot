@@ -168,7 +168,7 @@ jobs:
           target: google_apis
           arch: x86_64
           profile: pixel_6
-          ram-size: 2048M
+          ram-size: 4096M
           disable-animations: true
           working-directory: agribot_android_app/android
           script: ./gradlew :app:connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.sakshyam.agribot.ScanPersistenceLifecycleTest,com.sakshyam.agribot.AgribotLaunchUiTest,com.sakshyam.agribot.AgribotRoomExportIntegrationTest,com.sakshyam.agribot.VerdictCardRenderTest,com.sakshyam.agribot.AgribotModelGoldenTest --no-daemon --max-workers=1
@@ -182,7 +182,7 @@ jobs:
           cases = [case for path in root.rglob("*.xml") for case in ET.parse(path).getroot().iter("testcase")]
           expected = {"ScanPersistenceLifecycleTest", "AgribotLaunchUiTest", "AgribotRoomExportIntegrationTest", "VerdictCardRenderTest", "AgribotModelGoldenTest"}
           present = {case.attrib.get("classname", "").rsplit(".", 1)[-1] for case in cases}
-          assert len(cases) >= 20, f"Expected at least 20 selected checks, got {len(cases)}"
+          assert len(cases) >= 22, f"Expected at least 22 selected checks, got {len(cases)}"
           assert expected <= present, f"Device suites missing: {expected - present}"
           assert not [case.attrib for case in cases if any(case.find(tag) is not None for tag in ("failure", "error", "skipped"))], "Device checks failed or skipped"
           print(f"All {len(cases)} selected emulator checks executed and passed")
