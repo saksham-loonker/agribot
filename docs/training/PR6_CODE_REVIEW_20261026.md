@@ -1,5 +1,13 @@
 # PR 6 code review and continued recognition work
 
+**27 October checkpoint:** [app and recognition continuation](APP_RECOGNITION_CHECKPOINT_20261027.md).
+The scheduled GitHub check finds no remote changes at `187c87d`; both published
+CI checks pass. Completed copied-tail and whole-image controls remain rejected.
+App persistence/lifecycle fixes pass final debug/release builds, lint and all
+20 selected emulator checks. Python: 168 passed, one optional-media skip.
+AD is consumed,
+OLID stays sealed, and no model export or integration is authorized by these results.
+
 Reviewed PR heads `69ac2434f8e4e3f69764f3e2f5f84dd7f012df7b`,
 `399418fc9a1dbd35a9d7a77d0e747c42638d40de` and their working
 continuation on 26 October 2026. The review focused on the high-risk training,

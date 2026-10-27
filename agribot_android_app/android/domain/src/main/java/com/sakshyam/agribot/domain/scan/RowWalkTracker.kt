@@ -16,7 +16,8 @@ class RowWalkTracker(
 ) {
     init {
         require(rowCount >= 1 && plantsPerRow >= 1)
-        require(plantSpacingM > 0.0)
+        require(plantSpacingM.isFinite() && plantSpacingM > 0.0)
+        require(strideM in 0.2..2.0) { "stride out of range" }
     }
 
     var strideM: Double = strideM
@@ -63,8 +64,13 @@ class RowWalkTracker(
     /** Restores a saved position (process death). */
     fun restore(row: Int, distance: Double, stepCount: Int) {
         rowIndex = row.coerceIn(1, rowCount)
-        distanceM = distance.coerceAtLeast(0.0)
-        steps = stepCount
+        distanceM = if (distance.isFinite()) distance.coerceAtLeast(0.0) else 0.0
+        steps = stepCount.coerceAtLeast(0)
+    }
+
+    /** Propose movement without changing the live position before persistence succeeds. */
+    fun copy(): RowWalkTracker = RowWalkTracker(rowCount, plantsPerRow, plantSpacingM, strideM).also {
+        it.restore(rowIndex, distanceM, steps)
     }
 
     /** Starts the next row; returns false if this was the last row. */

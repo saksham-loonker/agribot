@@ -12,6 +12,7 @@ from torch import nn
 from torch.nn import functional as F
 
 from campaign_pixels import open_pixels
+from feature_cache_reuse import digest as streaming_digest
 from training_support import atomic_save
 
 REPOSITORY = "timm/vit_base_patch16_siglip_256.v2_webli"
@@ -20,7 +21,7 @@ SOURCE_SHA256 = "13ab9d238865f89b14005c5e92a099add04cbfab331a64245acab813509cb2b
 
 
 def digest(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    return streaming_digest(path)
 
 
 class CanonicalPermissiveEncoder(nn.Module):

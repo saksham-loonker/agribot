@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "version": "2.0.3",
+  "version_code": 5,
+  "build": {
+    "success": true,
+    "elapsed": "43m 44s",
+    "tasks": [
+      ":app:lintRelease",
+      ":app:assembleDebug",
+      ":app:assembleRelease",
+      ":app:connectedDebugAndroidTest"
+    ]
+  },
+  "emulator": {
+    "device": "agribot_api35",
+    "api": 35,
+    "abi": "x86_64",
+    "tests": 20,
+    "failures": 0,
+    "skipped": 0,
+    "classes": [
+      "AgribotLaunchUiTest",
+      "AgribotModelGoldenTest",
+      "AgribotRoomExportIntegrationTest",
+      "ScanPersistenceLifecycleTest",
+      "VerdictCardRenderTest"
+    ]
+  },
+  "native_unit_tests": {
+    "app": 1,
+    "camera": 9,
+    "data": 8,
+    "domain": 58,
+    "featurescan": 4,
+    "ml": 44
+  },
+  "native_unit_tests_total": 124,
+  "python": {
+    "tests": 169,
+    "passed": 168,
+    "skipped": 1,
+    "skip": "optional downloaded-media test; no training-contract skips",
+    "elapsed_seconds": 149.077
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 7,
+    "ids": [
+      "ChromeOsAbiSupport",
+      "GradleDependency",
+      "UnusedAttribute"
+    ],
+    "obsolete_custom_checks": 0
+  },
+  "apks": {
+    "debug": {
+      "path": "agribot_android_app/android/app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 138060122,
+      "sha256": "f6051903fcd8078ca538eacf6f06ff92db5730c408abc754817266f12d7c6bad",
+      "assets_match_source": true
+    },
+    "release_unsigned": {
+      "path": "agribot_android_app/android/app/build/outputs/apk/release/app-release-unsigned.apk",
+      "bytes": 111042493,
+      "sha256": "eeffa8ca082a92ea48b8c180c0ed97b95797dc6e677b44338025cc11cb7558ed",
+      "assets_match_source": true
+    }
+  },
+  "asset_sha256": {
+    "model_manifest.json": "b9ecdf557015e847bb4a4d76b622ab66100c036effa86e5a63c151e32de15f4f",
+    "models/disease_classifier_0.tflite": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
+    "models/leaf_detector.tflite": "0a8c9128544726348a8400ec2f481b5985f47a778b601f4025be582eaa30a0d4"
+  },
+  "recognition_qualified": false,
+  "cold_olid_used": false,
+  "ad_independent": false,
+  "debug_package": {
+    "application_id": "com.sakshyam.agribot",
+    "min_sdk": 26,
+    "target_sdk": 35,
+    "abi": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "internet_permission": false,
+    "signing_certificate_sha256": "8567362c2737a9ff86771051894a8d6b67fd1d17eb32756dc5738328595f77b3"
+  },
+  "limits": [
+    "Release APK is unsigned",
+    "Phone disconnected; no new physical-device installation or latency evidence",
+    "Interim model unchanged; replacement recognition gates have not passed"
+  ]
+}

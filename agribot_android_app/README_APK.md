@@ -1,4 +1,4 @@
-# Agribot Android app (2.0.1)
+# Agribot Android app (2.0.3 candidate)
 
 Offline tomato-leaf checking for farmers. Two modes:
 
@@ -13,15 +13,17 @@ No internet permission, no cloud inference. All results, photos and exports stay
 | File | Model | Licence | Input |
 |---|---|---|---|
 | `models/leaf_detector.tflite` | YOLOv9-T leaf detector (LibreYOLO) | MIT | 1x320x320x3, letterbox, /255 |
-| `models/disease_classifier_0.tflite` | DINOv2 ViT-S/14 classifier, 9 classes (8 conditions + Other) | Apache-2.0 | 1x224x224x3, ImageNet mean/std |
+| `models/disease_classifier_0.tflite` | DINOv2 ViT-S/14 plus MobileNetV3-Small specialist, 9 classes | Apache-2.0 | 1x224x224x3, ImageNet mean/std |
 | `model_manifest.json` | Contract: shapes, labels, thresholds, calibration, SHA-256 | | |
 
 The app reads model shapes, hashes, labels and calibration from `model_manifest.json`.
 Canonical preprocessing and plant evidence policy are implemented in Kotlin and
 checked against the reference; unsupported normalization is rejected explicitly.
-The shipped classifier remains the verified original DINOv2 model. Supervised
-Healthy adapters were trained and exported, but rejected after broader regression
-tests exposed additional Leaf Miner false Healthy calls.
+The retained interim classifier combines the original DINOv2 recognizer with a
+MobileNetV3-Small specialist. Its SHA-256 starts `d7013580`; the model manifest
+pins its complete identity. The 2.0.3 app candidate fixes persistence and scan
+lifecycle behavior while retaining that model. Recognition replacement is still
+in development; see [the current review and training checkpoint](../docs/training/PR6_CODE_REVIEW_20261026.md).
 
 The training and export code lives in [`../model_training/v3`](../model_training/v3).
 The recorded results distinguish development selection, public-source regression
@@ -57,6 +59,13 @@ Release signing reads `AGRIBOT_RELEASE_STORE_FILE`, `AGRIBOT_RELEASE_STORE_PASSW
 ./gradlew :app:connectedDebugAndroidTest      # needs a device or emulator
 python3 -m unittest discover -s tests -p "test_*.py"   # from the repository root
 ```
+
+Debug builds include `arm64-v8a` and `x86_64`, so lifecycle, database, export and
+UI checks can run on a hardware-accelerated Android emulator while the phone is
+disconnected. Release builds remain `arm64-v8a`. Emulator evidence does not
+replace physical-phone latency, camera or field validation. The injected-failure
+suite `ScanPersistenceLifecycleTest` checks atomic quick-check/movement saves,
+retry behavior and rejection of in-flight results across lifecycle transitions.
 
 - `ml` golden parity tests: Kotlin preprocessing and decision maths against the Python reference
   (`model_training/v2/final/canon.py`).

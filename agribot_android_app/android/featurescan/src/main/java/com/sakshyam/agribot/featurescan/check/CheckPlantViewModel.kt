@@ -75,6 +75,8 @@ class CheckPlantViewModel @Inject constructor(
     private val busy = AtomicBoolean(false)
     private val pacer = com.sakshyam.agribot.featurescan.scan.FramePacer(context)
     private val generation = AtomicInteger(0)
+    private val screenActive = AtomicBoolean(false)
+    private val resetPending = AtomicBoolean(false)
     private val lock = Mutex()
     @Volatile private var info: VisionModelInfo? = null
     private var tracker = LeafTracker()
@@ -97,9 +99,26 @@ class CheckPlantViewModel @Inject constructor(
     }
 
     /** Camera thread: only accept a frame when nothing is in flight and we are still scanning. */
-    fun isReady(): Boolean = _state.value.scanning && _state.value.vision is VisionStatus.Ready && !busy.get() && pacer.tryAcquire()
+    fun isReady(): Boolean = screenActive.get() && _state.value.scanning && _state.value.vision is VisionStatus.Ready && !busy.get() && pacer.tryAcquire()
+
+    fun setScreenActive(active: Boolean) {
+        if (screenActive.getAndSet(active) == active) return
+        generation.incrementAndGet()
+        if (!active) {
+            resetPending.set(true)
+            viewModelScope.launch { lock.withLock { resetPendingEvidence() } }
+        }
+    }
+
+    private fun resetPendingEvidence() {
+        if (resetPending.compareAndSet(true, false) && _state.value.verdict == null) {
+            resetEvidence()
+            _state.update { it.copy(boxes = emptyList(), leavesSeen = 0, framesUsed = 0, progress = 0f) }
+        }
+    }
 
     fun onFrame(frame: VisionFrame) {
+        if (!screenActive.get() || _state.value.vision !is VisionStatus.Ready || !_state.value.scanning) return
         if (!busy.compareAndSet(false, true)) return
         val gen = generation.get()
         viewModelScope.launch(Dispatchers.Default) {
@@ -115,12 +134,14 @@ class CheckPlantViewModel @Inject constructor(
     }
 
     private suspend fun process(frame: VisionFrame, gen: Int) {
+        if (!screenActive.get() || gen != generation.get()) return
         val i = info ?: return
         val checked = vision.analyzeUsable(frame, MAX_LEAVES)
         val quality = FrameTools.quality(checked.quality)
         val analysis = checked.analysis
         lock.withLock {
-            if (gen != generation.get() || !_state.value.scanning) return
+            if (gen != generation.get() || !screenActive.get() || !_state.value.scanning) return
+            resetPendingEvidence()
             if (analysis == null) {
                 stableFrames = 0; lastKey = null
                 _state.update { it.copy(hint = if (quality.tooDark) CheckHint.TOO_DARK else CheckHint.CLEAR_VIEW, boxes = emptyList(), error = null) }
@@ -165,14 +186,21 @@ class CheckPlantViewModel @Inject constructor(
     }
 
     fun checkAgain() {
+        if (_state.value.saving) return
         viewModelScope.launch {
             lock.withLock {
+                if (_state.value.saving) return@withLock
                 generation.incrementAndGet()
-                tracker = LeafTracker(); evidence = null; frameIndex = 0; framesWithoutLeaves = 0
-                stableFrames = 0; lastKey = null; bestFrame = null; bestFrameLeaves = 0
+                resetPending.set(false)
+                resetEvidence()
                 _state.update { CheckUiState(vision = it.vision, labels = it.labels) }
             }
         }
+    }
+
+    private fun resetEvidence() {
+        tracker = LeafTracker(); evidence = null; frameIndex = 0; framesWithoutLeaves = 0
+        stableFrames = 0; lastKey = null; bestFrame = null; bestFrameLeaves = 0
     }
 
     fun save() {
@@ -180,26 +208,25 @@ class CheckPlantViewModel @Inject constructor(
         val v = s.verdict ?: return
         val i = info ?: return
         if (s.saving || s.savedRunId != null) return
-        val gen = generation.get()
         val frameToSave = bestFrame
         _state.update { it.copy(saving = true) }
         viewModelScope.launch(Dispatchers.IO) {
+            val runId = RunId(UUID.randomUUID().toString())
+            val decisionId = DecisionId(UUID.randomUUID().toString())
             runCatching {
-                val runId = RunId(UUID.randomUUID().toString())
-                runs.createRun(RunConfig(runId, RecordingMode.CHECK_PLANT, FieldId(QUICK_CHECK_FIELD), 0, i.bundleId))
-                val decisionId = DecisionId(UUID.randomUUID().toString())
                 val keepPhoto = settings.observeSettings().first().saveEvidenceFrames
                 val photo = if (keepPhoto) frameToSave?.let { f -> evidenceRepo.saveEvidence(runId, decisionId, FrameTools.toAnalysisFrame(f), "check").path } else null
-                runs.appendDecision(
+                runs.saveCompletedRun(
+                    RunConfig(runId, RecordingMode.CHECK_PLANT, FieldId(QUICK_CHECK_FIELD), 0, i.bundleId),
                     VerdictRecords.toDecision(decisionId, runId, 1, RecordingMode.CHECK_PLANT, PlantPlace(QUICK_CHECK_FIELD, null, null),
                         v, i.labels, i.bundleId, Instant.now(), evidencePath = photo),
                 )
-                runs.markRunCompleted(runId)
                 runId.value
-            }.onSuccess { id -> if (gen == generation.get()) _state.update { it.copy(saving = false, savedRunId = id) } }
+            }.onSuccess { id -> _state.update { it.copy(saving = false, savedRunId = id) } }
                 .onFailure {
                     if (it is CancellationException) throw it
-                    if (gen == generation.get()) _state.update { it.copy(saving = false, error = CheckError.SAVE_FAILED) }
+                    runCatching { evidenceRepo.deleteEvidence(runId, decisionId) }
+                    _state.update { it.copy(saving = false, error = CheckError.SAVE_FAILED) }
                 }
         }
     }

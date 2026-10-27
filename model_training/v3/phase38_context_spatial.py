@@ -18,7 +18,7 @@ from app_eval import classifier_letterbox_input
 from campaign_pixels import open_pixels
 from compact_healthy_model import primary
 from feature_cache_reuse import validate_completed_contract
-from opened_context_data import read
+from opened_context_data import load, read
 from permissive_encoder import digest
 from phase28_roi_confirmation import pixel_key
 from spatial_cache import validate
@@ -27,11 +27,14 @@ from spatial_cache import validate
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--campaign", required=True)
+    ap.add_argument("--paper-primary", action="store_true")
     args = ap.parse_args()
     p = Path(args.campaign)
     old = p / "phase29_compact"
     base = p / "phase37_spatial"
-    out = p / "phase38_context_spatial"
+    out = p / (
+        "phase46_paper_primary" if args.paper_primary else "phase38_context_spatial"
+    )
     out.mkdir(exist_ok=True)
     contract = validate(p)
     source = p / "phase23_siglip"
@@ -40,17 +43,30 @@ def main():
     selected = [
         i
         for i, r in enumerate(rows)
-        if r["source"] == "tom2024"
+        if r["source"] == ("swtt5wy2pr" if args.paper_primary else "tom2024")
         and r["split"] in ("train", "val")
         and r["health_y"] in (0, 1)
     ]
     assert selected and all(rows[i].get("box") is None for i in selected)
+    if args.paper_primary:
+        opened = load(p)
+        train = [rows[i] for i in selected if rows[i]["split"] == "train"]
+        assert not (
+            {r["path"] for r in train} & set(opened["photos"])
+        ), "Primary paper fitting overlaps an original/internal app gate"
+        protected_groups = {
+            r.get("group", r.get("capture_group")) for r in opened["photos"].values()
+        } - {None}
+        assert not (
+            {r["group"] for r in train} & protected_groups
+        ), "Primary paper fitting families overlap an app gate"
     protocol = dict(
         old_maps_contract=contract,
         source_rows_sha256=digest(source / "cnn_inputs/rows.json"),
         old_inputs_sha256=digest(old / "inputs.json"),
         old_fitting_rows_sha256=digest(old / "fitting_rows.json"),
-        added_source="TOM2024 publisher primary whole-image binary targets only; no labels copied onto detected ROIs or local patches",
+        added_source=("Mendeley swtt5wy2pr" if args.paper_primary else "TOM2024")
+        + " publisher primary whole-image binary targets only; no labels copied onto detected ROIs or local patches",
         input_scope="Exact full-scene canonical letterbox224 already used by the human-only scene corpus",
         source_verification="All fresh canonical inputs must equal the immutable cache; check recorded file hashes where present and record actual hashes for all source files",
         new_dino_inference=0,
@@ -58,6 +74,15 @@ def main():
         cold_olid_used=False,
         script_sha256=digest(__file__),
     )
+    context = p / "phase38_context_spatial"
+    if args.paper_primary:
+        prior = read(context / "complete.json")
+        assert prior["base_maps_sha256"] == contract["maps_sha256"]
+        assert prior["new_maps_sha256"] == digest(context / "maps.npy")
+        assert prior["fitting_rows_sha256"] == digest(context / "fitting_rows.json")
+        assert prior["new_inputs_sha256"] == digest(context / "new_inputs.json")
+        protocol["reused_context_cache_sha256"] = digest(context / "complete.json")
+        protocol["reused_context_maps_sha256"] = prior["new_maps_sha256"]
     frozen = out / "protocol.json"
     if frozen.exists():
         assert read(frozen) == protocol
@@ -69,6 +94,8 @@ def main():
     started = time.monotonic()
     pixels = open_pixels(source / "cnn_inputs")
     previous = read(old / "inputs.json")
+    if args.paper_primary:
+        previous += read(context / "new_inputs.json")
     lookup = {r["input_sha256"]: i for i, r in enumerate(previous)}
     offset = len(previous)
     additions = []
@@ -113,7 +140,9 @@ def main():
                     role="primary_whole_scene",
                 )
             )
-    combined = read(old / "fitting_rows.json") + additions
+    combined = (
+        read((context if args.paper_primary else old) / "fitting_rows.json") + additions
+    )
     classes = {}
     for r in combined:
         classes.setdefault(r["table"], set()).add(r["y"])
@@ -191,6 +220,9 @@ def main():
         elapsed_seconds=time.monotonic() - started,
         cold_olid_used=False,
     )
+    if args.paper_primary:
+        report["context_cache_sha256"] = digest(context / "complete.json")
+        report["context_maps_sha256"] = digest(context / "maps.npy")
     (out / "complete.json").write_text(json.dumps(report, indent=2))
     print(json.dumps(report), flush=True)
 

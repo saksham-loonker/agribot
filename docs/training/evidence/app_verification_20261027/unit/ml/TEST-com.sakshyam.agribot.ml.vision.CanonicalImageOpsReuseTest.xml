@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:48:30" hostname="LAPTOP-QCI1PSIL" time="0.432">
+  <properties/>
+  <testcase name="classifier crop padding clipping reversed coordinates and centred square match reference" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.044"/>
+  <testcase name="detector padding and half even letterbox geometry retain the contract" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.002"/>
+  <testcase name="detector reusable input overwrites image and every padding area on each call" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.004"/>
+  <testcase name="allocation APIs keep independently owned outputs across subsequent calls" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.001"/>
+  <testcase name="concurrent callers keep resampling scratch and cached dimensions isolated" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.019"/>
+  <testcase name="reusable tensors reject invalid size and incorrectly sized storage" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.005"/>
+  <testcase name="reusable APIs are bit exact against the preserved reference on bundled golden images" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.346"/>
+  <testcase name="resize remains bit exact for random identity downscale upscale and cropped frames" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.003"/>
+  <testcase name="classifier RGB normalization retains channel order and exact divisions" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.0"/>
+  <testcase name="classifier destination is completely overwritten when source and crop change" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.002"/>
+  <testcase name="classifier reusable input matches reference at identity downscale and upscale sizes" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.001"/>
+  <testcase name="changing many dimensions cannot reuse incorrect resampling weights" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.003"/>
+  <testcase name="degenerate classifier crop is rejected without modifying destination" classname="com.sakshyam.agribot.ml.vision.CanonicalImageOpsReuseTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

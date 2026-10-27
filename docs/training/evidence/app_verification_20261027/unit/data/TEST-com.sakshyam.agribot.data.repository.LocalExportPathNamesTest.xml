@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.data.repository.LocalExportPathNamesTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:48:49" hostname="LAPTOP-QCI1PSIL" time="0.095">
+  <properties/>
+  <testcase name="sanitizesDecisionAndEvidenceKindBeforeUsingThemAsFileNames" classname="com.sakshyam.agribot.data.repository.LocalExportPathNamesTest" time="0.092"/>
+  <testcase name="sanitizesImportedRunIdsBeforeUsingThemAsDirectories" classname="com.sakshyam.agribot.data.repository.LocalExportPathNamesTest" time="0.003"/>
+  <testcase name="preservesNormalAndroidRunAndDecisionNames" classname="com.sakshyam.agribot.data.repository.LocalExportPathNamesTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

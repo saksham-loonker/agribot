@@ -25,6 +25,10 @@ interface RunRepository {
     suspend fun markRunPaused(runId: RunId)
     suspend fun markRunCompleted(runId: RunId)
     suspend fun appendDecision(decision: RecordedDecision)
+    /** Commit all observations from one movement together; a failure must save none. */
+    suspend fun appendDecisions(decisions: List<RecordedDecision>)
+    /** Save a quick check and its completed run in one database transaction. */
+    suspend fun saveCompletedRun(config: RunConfig, decision: RecordedDecision)
     suspend fun replaceDecision(decision: RecordedDecision)
     /** Persist operator treatment state for the latest decision belonging to a tracked plant. */
     suspend fun updateDecisionTreatment(runId: RunId, trackId: String, status: TreatmentStatus, note: String?)

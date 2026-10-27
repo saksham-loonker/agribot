@@ -39,6 +39,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.compose.LifecycleStartEffect
 import com.sakshyam.agribot.camera.LeafCamera
 import com.sakshyam.agribot.domain.scan.VisionStatus
 import com.sakshyam.agribot.featurescan.R
@@ -50,6 +51,10 @@ import com.sakshyam.agribot.featurescan.ui.VerdictCard
 @Composable
 fun CheckPlantScreen(onBack: () -> Unit, onOpenResult: (String) -> Unit, vm: CheckPlantViewModel = hiltViewModel()) {
     val s by vm.state.collectAsStateWithLifecycle()
+    LifecycleStartEffect(vm) {
+        vm.setScreenActive(true)
+        onStopOrDispose { vm.setScreenActive(false) }
+    }
     var torch by remember { mutableStateOf(false) }
     Scaffold(
         topBar = {
@@ -78,7 +83,7 @@ fun CheckPlantScreen(onBack: () -> Unit, onOpenResult: (String) -> Unit, vm: Che
                     } else {
                         Button(onClick = { onOpenResult(s.savedRunId!!) }, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.saved) + " ✓") }
                     }
-                    OutlinedButton(onClick = vm::checkAgain, modifier = Modifier.fillMaxWidth()) {
+                    OutlinedButton(onClick = vm::checkAgain, enabled = !s.saving, modifier = Modifier.fillMaxWidth()) {
                         Text(stringResource(if (s.savedRunId == null) R.string.check_again else R.string.check_another))
                     }
                 }

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "status": "PR 6 useful engineering retained and integrity defects repaired; bounded supervised/spatial/routing/region controls stopped after failed gates; no qualified replacement; AD consumed; OLID sealed",
+  "status": "Copied DINO-tail control meets Healthy minima but fails unsupported retention; whole-image confirmation fails Healthy minima; controls stopped; local app verification passed; phone disconnected; no qualified replacement; AD consumed; OLID sealed",
   "installed_classifier_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
   "initial_trained_controls": {
     "heads": 29,
@@ -12684,5 +12684,19 @@
       "requires": "Laptop powered on, logged in and connected",
       "stop": "PR closed or user cancels"
     }
+  },
+  "checkpoint_20261027": {
+    "date": "2026-10-27",
+    "report": "docs/training/APP_RECOGNITION_CHECKPOINT_20261027.md",
+    "evidence": "docs/training/evidence/app_recognition_closure_20261027.json",
+    "remote_head": "187c87d19f075f8c184696cdfaf172d5e6d986b1",
+    "remote_material_changes": false,
+    "active_gpu_training_jobs": 0,
+    "recognition_qualified": false,
+    "cold_olid_used": false,
+    "ad_independent": false,
+    "model_exported": false,
+    "final_app_verification": "passed: debug/release/lint and 20 emulator checks",
+    "app_evidence": "docs/training/evidence/app_verification_20261027/summary.json"
   }
 }

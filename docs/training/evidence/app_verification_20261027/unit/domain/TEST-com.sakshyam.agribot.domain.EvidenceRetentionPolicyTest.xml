@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.domain.EvidenceRetentionPolicyTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:24:10" hostname="LAPTOP-QCI1PSIL" time="0.299">
+  <properties/>
+  <testcase name="stopsCapturingAtStorageCaps" classname="com.sakshyam.agribot.domain.EvidenceRetentionPolicyTest" time="0.284"/>
+  <testcase name="manualSnapshotUsesSameEvidenceCapsAndToggle" classname="com.sakshyam.agribot.domain.EvidenceRetentionPolicyTest" time="0.001"/>
+  <testcase name="skipsHealthyDecisionAndDisabledEvidence" classname="com.sakshyam.agribot.domain.EvidenceRetentionPolicyTest" time="0.002"/>
+  <testcase name="capturesSickUncertainAndManualDecisions" classname="com.sakshyam.agribot.domain.EvidenceRetentionPolicyTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

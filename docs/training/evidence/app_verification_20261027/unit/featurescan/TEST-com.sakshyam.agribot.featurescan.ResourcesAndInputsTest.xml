@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.featurescan.ResourcesAndInputsTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:49:52" hostname="LAPTOP-QCI1PSIL" time="0.386">
+  <properties/>
+  <testcase name="every English string has a Hindi translation with the same format arguments" classname="com.sakshyam.agribot.featurescan.ResourcesAndInputsTest" time="0.17"/>
+  <testcase name="numeric field parsing accepts commas and enforces ranges" classname="com.sakshyam.agribot.featurescan.ResourcesAndInputsTest" time="0.046"/>
+  <testcase name="plurals exist in both languages with the same arguments" classname="com.sakshyam.agribot.featurescan.ResourcesAndInputsTest" time="0.032"/>
+  <testcase name="every model label has localised condition text" classname="com.sakshyam.agribot.featurescan.ResourcesAndInputsTest" time="0.137"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

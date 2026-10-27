@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.domain.scan.RowWalkTrackerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:24:12" hostname="LAPTOP-QCI1PSIL" time="0.02">
+  <properties/>
+  <testcase name="restore puts the tracker back where the walk was" classname="com.sakshyam.agribot.domain.scan.RowWalkTrackerTest" time="0.004"/>
+  <testcase name="steps advance plants by spacing and clamp at row end" classname="com.sakshyam.agribot.domain.scan.RowWalkTrackerTest" time="0.0"/>
+  <testcase name="manual next and previous re-anchor distance" classname="com.sakshyam.agribot.domain.scan.RowWalkTrackerTest" time="0.0"/>
+  <testcase name="a proposed move cannot change the live position before commit" classname="com.sakshyam.agribot.domain.scan.RowWalkTrackerTest" time="0.001"/>
+  <testcase name="next row resets distance and stops after last row" classname="com.sakshyam.agribot.domain.scan.RowWalkTrackerTest" time="0.001"/>
+  <testcase name="malformed restored counters and distances do not corrupt a walk" classname="com.sakshyam.agribot.domain.scan.RowWalkTrackerTest" time="0.001"/>
+  <testcase name="a stride longer than the spacing can jump a plant (the app records it as not seen)" classname="com.sakshyam.agribot.domain.scan.RowWalkTrackerTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

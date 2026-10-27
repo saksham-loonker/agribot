@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.camera.RgbaFrameConverterTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:47:36" hostname="LAPTOP-QCI1PSIL" time="0.1">
+  <properties/>
+  <testcase name="180 and 270 degrees" classname="com.sakshyam.agribot.camera.RgbaFrameConverterTest" time="0.068"/>
+  <testcase name="buffer conversion ignores cursor and preserves source cursor limit and byte order" classname="com.sakshyam.agribot.camera.RgbaFrameConverterTest" time="0.0"/>
+  <testcase name="each conversion owns pixels after source or next frame changes" classname="com.sakshyam.agribot.camera.RgbaFrameConverterTest" time="0.006"/>
+  <testcase name="no rotation keeps order and opaque alpha" classname="com.sakshyam.agribot.camera.RgbaFrameConverterTest" time="0.0"/>
+  <testcase name="invalid crop stride rotation or truncated buffer fails before reading" classname="com.sakshyam.agribot.camera.RgbaFrameConverterTest" time="0.011"/>
+  <testcase name="direct RGBA buffer preserves channels crop row padding and each rotation" classname="com.sakshyam.agribot.camera.RgbaFrameConverterTest" time="0.01"/>
+  <testcase name="90 degrees clockwise" classname="com.sakshyam.agribot.camera.RgbaFrameConverterTest" time="0.0"/>
+  <testcase name="crop is applied before rotation" classname="com.sakshyam.agribot.camera.RgbaFrameConverterTest" time="0.0"/>
+  <testcase name="read only sliced buffer treats its slice origin as frame origin" classname="com.sakshyam.agribot.camera.RgbaFrameConverterTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

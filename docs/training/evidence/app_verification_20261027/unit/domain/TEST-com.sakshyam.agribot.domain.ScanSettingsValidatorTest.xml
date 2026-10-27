@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.domain.ScanSettingsValidatorTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:24:12" hostname="LAPTOP-QCI1PSIL" time="0.033">
+  <properties/>
+  <testcase name="defaultsPreservePiCompatibleSideScanProfile" classname="com.sakshyam.agribot.domain.ScanSettingsValidatorTest" time="0.014"/>
+  <testcase name="clampsOperatorPerformanceSettingsToNativeBounds" classname="com.sakshyam.agribot.domain.ScanSettingsValidatorTest" time="0.0"/>
+  <testcase name="sanitizesOperatorDisplayNameForAuditPayloads" classname="com.sakshyam.agribot.domain.ScanSettingsValidatorTest" time="0.005"/>
+  <testcase name="invalidOrUncalibratedStepLengthFallsBackToConservativeDefault" classname="com.sakshyam.agribot.domain.ScanSettingsValidatorTest" time="0.005"/>
+  <testcase name="preservesOnlyAValidatedCalibratedStepLength" classname="com.sakshyam.agribot.domain.ScanSettingsValidatorTest" time="0.001"/>
+  <testcase name="migratesThePreviousSingleThresholdDefaultToTheStablePolicy" classname="com.sakshyam.agribot.domain.ScanSettingsValidatorTest" time="0.001"/>
+  <testcase name="preservesEvidenceToggle" classname="com.sakshyam.agribot.domain.ScanSettingsValidatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

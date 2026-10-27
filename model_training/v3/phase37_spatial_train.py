@@ -30,20 +30,35 @@ def main():
         action="store_true",
         help="Isolated data-coverage control adding TOM primary-scene bags; no per-ROI label propagation",
     )
+    ap.add_argument(
+        "--paper-primary",
+        action="store_true",
+        help="Isolated primary-paper coverage control; reuse completed leaf and TOM maps",
+    )
     args = ap.parse_args()
+    assert not (args.context_primary and args.paper_primary)
     p = Path(args.campaign)
     root = p / (
-        "phase38_context_spatial" if args.context_primary else "phase37_spatial"
+        "phase46_paper_primary"
+        if args.paper_primary
+        else "phase38_context_spatial" if args.context_primary else "phase37_spatial"
     )
     out = root / "head"
     out.mkdir(exist_ok=True)
     contract = validate(p, args.audit_map_cache)
     extra = None
-    if args.context_primary:
+    if args.context_primary or args.paper_primary:
         extra = read(root / "complete.json")
         assert extra["base_maps_sha256"] == contract["maps_sha256"]
         assert extra["new_maps_sha256"] == digest(root / "maps.npy")
         assert extra["fitting_rows_sha256"] == digest(root / "fitting_rows.json")
+        if args.paper_primary:
+            assert extra["context_cache_sha256"] == digest(
+                p / "phase38_context_spatial/complete.json"
+            )
+            assert extra["context_maps_sha256"] == digest(
+                p / "phase38_context_spatial/maps.npy"
+            )
     data = load(p)
     protocol = dict(
         hypothesis="Spatial evidence before global average pooling retains small unhealthy regions",
@@ -86,13 +101,22 @@ def main():
     maps = torch.from_numpy(
         np.load(p / "phase37_spatial/maps.npy", mmap_mode="r")
     ).cuda()
-    if args.context_primary:
+    if args.context_primary or args.paper_primary:
+        if args.paper_primary:
+            maps = torch.cat(
+                [
+                    maps,
+                    torch.from_numpy(
+                        np.load(p / "phase38_context_spatial/maps.npy", mmap_mode="r")
+                    ).cuda(),
+                ]
+            )
         maps = torch.cat(
             [maps, torch.from_numpy(np.load(root / "maps.npy", mmap_mode="r")).cuda()]
         )
     rows = read(
         root / "fitting_rows.json"
-        if args.context_primary
+        if args.context_primary or args.paper_primary
         else p / "phase29_compact/fitting_rows.json"
     )
     train = np.array([i for i, r in enumerate(rows) if r["split"] == "train"])

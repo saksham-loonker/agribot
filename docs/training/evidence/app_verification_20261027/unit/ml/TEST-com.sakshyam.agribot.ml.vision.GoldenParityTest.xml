@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.ml.vision.GoldenParityTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:48:31" hostname="LAPTOP-QCI1PSIL" time="0.415">
+  <properties/>
+  <testcase name="crop rectangle and decoder agree with the reference on golden detections" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.161"/>
+  <testcase name="decision maths reproduces reference probabilities and labels" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.02"/>
+  <testcase name="golden set is present and matches the bundled manifest" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.002"/>
+  <testcase name="detector letterbox and input match the reference" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.12"/>
+  <testcase name="classifier preprocessing matches the reference for every golden image" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.112"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

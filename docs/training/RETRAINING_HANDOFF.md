@@ -1,5 +1,13 @@
 # Agribot training failure investigation, recovery, and Android integration
 
+**27 October takes precedence:** read the
+[app and recognition checkpoint](APP_RECOGNITION_CHECKPOINT_20261027.md).
+Copied DINO-tail adaptation meets Healthy minima but fails unsupported retention;
+whole-image confirmation restores safety but fails Healthy minima. Both are
+stopped. The large-cache hash OOM is repaired and cached prefixes audited.
+Native app repairs pass final local builds, lint and 20 emulator checks. AD is consumed, OLID is
+sealed, the phone is disconnected, and model export/integration remain deferred.
+
 **Latest checkpoint:** [PR 6 code review and bounded continuation](PR6_CODE_REVIEW_20261026.md). Useful cache, training and native safeguards are retained; image/cache integrity findings are repaired, and both CI jobs passed at `399418f`. The subsequent cached/spatial/routing and symptom-region controls have completed and stopped without qualifying recognition. Read the final section for measured results, unchanged gates and the four-hour PR review schedule. AD is consumed development, OLID stays sealed, and export/Android integration remain deferred. The disconnected phone and installed model are unchanged. Historical statements below about AD being unopened are superseded.
 
 Revision: 2026-10-26. Original handoff: 2026-10-15.

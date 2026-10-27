@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.domain.scan.VerdictRecordsTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:24:12" hostname="LAPTOP-QCI1PSIL" time="0.043">
+  <properties/>
+  <testcase name="verdict kinds map to status and action" classname="com.sakshyam.agribot.domain.scan.VerdictRecordsTest" time="0.034"/>
+  <testcase name="summary counts a re-checked plant once using its latest decision" classname="com.sakshyam.agribot.domain.scan.VerdictRecordsTest" time="0.002"/>
+  <testcase name="place, evidence and runner up are stored and round trip to a verdict" classname="com.sakshyam.agribot.domain.scan.VerdictRecordsTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
