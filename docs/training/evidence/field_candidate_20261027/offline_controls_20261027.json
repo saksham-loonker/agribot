@@ -1,0 +1,863 @@
+{
+  "ad_independent": false,
+  "olid_independent": false,
+  "release_promotion": false,
+  "app_native_tests_unchanged": true,
+  "sources": {
+    "phase87_diagnostic_bag_features": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase87_diagnostic_bag_features/complete.json",
+      "sha256": "e4b623374ef0b5accf979d7e53a6a085dd72cc071563df55faf7865e87bd68a8",
+      "protocol_sha256": "f316cd13815d8ffe60d7231e1e5a4733b5a06ae3d7b6ea53e2f02abf1d5f29c6",
+      "new_encoder_inputs": 854,
+      "old_encoder_inputs_reused": 43115,
+      "original_mobile_max_logit_error": 3.409385681152344e-05,
+      "old_disease_weights_changed": false
+    },
+    "phase88_diagnostic_bag_head/linear": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase88_diagnostic_bag_head/linear/result.json",
+      "sha256": "058aaaa6d34145e828da63fec04299d86b2a713cd43762298d845dc4f3a9323a",
+      "passed": false,
+      "checks": {
+        "old_retention": true,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_disease_exact": true,
+        "consumed_validation_healthy": false,
+        "consumed_validation_safety": true,
+        "consumed_all_safety": true,
+        "consumed_all_retention": true
+      },
+      "selected_epoch": 1,
+      "threshold": 0.95,
+      "calibration": [
+        1.089129964762316,
+        2.3369877504701972
+      ],
+      "protocol_sha256": "23de42bd4b58b89b7a986bd9873096ef315b270cb034a777f279df92e0b2ef11",
+      "consumed_validation": {
+        "healthy": {
+          "n": 40,
+          "correct": 13,
+          "correct_rate": 0.325,
+          "healthy_verdict": 13,
+          "healthy_recall": 0.325,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 20,
+          "false_other_rate": 0.5,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 20,
+          "kind_UNSURE": 7,
+          "kind_HEALTHY": 13
+        },
+        "false_healthy": 3
+      },
+      "consumed_all": {
+        "healthy": {
+          "n": 223,
+          "correct": 87,
+          "correct_rate": 0.3901345291479821,
+          "healthy_verdict": 87,
+          "healthy_recall": 0.3901345291479821,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 105,
+          "false_other_rate": 0.47085201793721976,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 105,
+          "kind_HEALTHY": 87,
+          "kind_UNSURE": 31
+        },
+        "false_healthy": 16
+      }
+    },
+    "phase88_diagnostic_bag_head/mlp": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase88_diagnostic_bag_head/mlp/result.json",
+      "sha256": "b517af81f6cde83e776bdf91cae279fd18656cce2e4515554553e6e397c439fa",
+      "passed": false,
+      "checks": {
+        "old_retention": true,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_disease_exact": true,
+        "consumed_validation_healthy": false,
+        "consumed_validation_safety": true,
+        "consumed_all_safety": true,
+        "consumed_all_retention": true
+      },
+      "selected_epoch": 1,
+      "threshold": 0.95,
+      "calibration": [
+        1.5967854309058274,
+        2.542799527954181
+      ],
+      "protocol_sha256": "23de42bd4b58b89b7a986bd9873096ef315b270cb034a777f279df92e0b2ef11",
+      "consumed_validation": {
+        "healthy": {
+          "n": 40,
+          "correct": 13,
+          "correct_rate": 0.325,
+          "healthy_verdict": 13,
+          "healthy_recall": 0.325,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 20,
+          "false_other_rate": 0.5,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 20,
+          "kind_UNSURE": 7,
+          "kind_HEALTHY": 13
+        },
+        "false_healthy": 3
+      },
+      "consumed_all": {
+        "healthy": {
+          "n": 223,
+          "correct": 87,
+          "correct_rate": 0.3901345291479821,
+          "healthy_verdict": 87,
+          "healthy_recall": 0.3901345291479821,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 105,
+          "false_other_rate": 0.47085201793721976,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 105,
+          "kind_HEALTHY": 87,
+          "kind_UNSURE": 31
+        },
+        "false_healthy": 16
+      }
+    },
+    "phase89_diagnostic_bag_sft": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase89_diagnostic_bag_sft/result.json",
+      "sha256": "05e2d96ed241906239c201e2aeabc9f1530f9d4f7123fc83b2266c899db07315",
+      "passed": false,
+      "checks": {
+        "old_retention": true,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_disease_exact": true,
+        "consumed_validation_healthy": false,
+        "consumed_validation_safety": true,
+        "consumed_all_safety": true,
+        "consumed_all_retention": true
+      },
+      "selected_epoch": 1,
+      "threshold": 0.95,
+      "calibration": [
+        1.0244406147246345,
+        1.3548878430244728
+      ],
+      "protocol_sha256": "7fd4b3e5356603dcbed0748d76f3833d9036ba80a3cb274d36c1e0e32a3af7c5",
+      "source_sha256": "bf406dc7b053b411090ec1943499c802d5e35bfb248c97b850bc38c636f8fc23",
+      "elapsed_seconds": 32.2367899119854,
+      "consumed_validation": {
+        "healthy": {
+          "n": 40,
+          "correct": 13,
+          "correct_rate": 0.325,
+          "healthy_verdict": 13,
+          "healthy_recall": 0.325,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 20,
+          "false_other_rate": 0.5,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 20,
+          "kind_UNSURE": 7,
+          "kind_HEALTHY": 13
+        },
+        "false_healthy": 3
+      },
+      "consumed_all": {
+        "healthy": {
+          "n": 223,
+          "correct": 87,
+          "correct_rate": 0.3901345291479821,
+          "healthy_verdict": 87,
+          "healthy_recall": 0.3901345291479821,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 105,
+          "false_other_rate": 0.47085201793721976,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 105,
+          "kind_HEALTHY": 87,
+          "kind_UNSURE": 31
+        },
+        "false_healthy": 16
+      },
+      "invalidation": {
+        "valid": false,
+        "result_sha256": "05e2d96ed241906239c201e2aeabc9f1530f9d4f7123fc83b2266c899db07315",
+        "reason": "Input cache namespaces collided: new ROI feature indices appended after 43115 were incorrectly joined to old extended-scene token indices. These training and routing results cannot support conclusions. Preserve original evidence; corrected controls join canonical input hashes and reconstruct every selected embedding.",
+        "superseded_by": [
+          "phase94_corrected_diagnostic_sft",
+          "phase95_corrected_continued_expert"
+        ]
+      }
+    },
+    "phase91_continued_diagnostic_expert": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase91_continued_diagnostic_expert/result.json",
+      "sha256": "c1df5b82da8b0f4a6a20ccaa6dfa1b8c54f41e71438bf010b0e96b5cd8bbab6a",
+      "passed": false,
+      "checks": {
+        "old_retention": true,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_disease_exact": true,
+        "consumed_validation_healthy": false,
+        "consumed_validation_safety": true,
+        "consumed_all_safety": true,
+        "consumed_all_retention": true
+      },
+      "selected_epoch": 7,
+      "threshold": 0.95,
+      "calibration": [
+        0.7674187142596203,
+        1.0432257202649171
+      ],
+      "protocol_sha256": "7f22870dcb7cf8da6968c60d9aca4b2fc99831061c68875bc454102e73fb1b87",
+      "source_sha256": "02c777a2181e3ab5d921d93f2ae42572bdab73d0ddcf931523f088cb2e98f89a",
+      "elapsed_seconds": 22.52590946701821,
+      "consumed_validation": {
+        "healthy": {
+          "n": 40,
+          "correct": 13,
+          "correct_rate": 0.325,
+          "healthy_verdict": 13,
+          "healthy_recall": 0.325,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 20,
+          "false_other_rate": 0.5,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 20,
+          "kind_UNSURE": 7,
+          "kind_HEALTHY": 13
+        },
+        "false_healthy": 3
+      },
+      "consumed_all": {
+        "healthy": {
+          "n": 223,
+          "correct": 87,
+          "correct_rate": 0.3901345291479821,
+          "healthy_verdict": 87,
+          "healthy_recall": 0.3901345291479821,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 105,
+          "false_other_rate": 0.47085201793721976,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 105,
+          "kind_HEALTHY": 87,
+          "kind_UNSURE": 31
+        },
+        "false_healthy": 16
+      },
+      "invalidation": {
+        "valid": false,
+        "result_sha256": "c1df5b82da8b0f4a6a20ccaa6dfa1b8c54f41e71438bf010b0e96b5cd8bbab6a",
+        "reason": "Input cache namespaces collided: new ROI feature indices appended after 43115 were incorrectly joined to old extended-scene token indices. These training and routing results cannot support conclusions. Preserve original evidence; corrected controls join canonical input hashes and reconstruct every selected embedding.",
+        "superseded_by": [
+          "phase94_corrected_diagnostic_sft",
+          "phase95_corrected_continued_expert"
+        ]
+      }
+    },
+    "phase94_corrected_diagnostic_sft": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase94_corrected_diagnostic_sft/result.json",
+      "sha256": "62239cc9dc8d189aa9b97673a59056eb3b2650fe2c16f4ae3250420de0848d83",
+      "passed": false,
+      "checks": {
+        "old_retention": true,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_disease_exact": true,
+        "consumed_validation_healthy": false,
+        "consumed_validation_safety": true,
+        "consumed_all_safety": true,
+        "consumed_all_retention": true
+      },
+      "selected_epoch": 1,
+      "threshold": 0.95,
+      "calibration": [
+        1.3035745818515965,
+        1.8320736073487494
+      ],
+      "protocol_sha256": "2eec576b123e28ddeee92a0ee3ec27e4a390f2b489f98c0a166bbce9e765a493",
+      "source_sha256": "dbdab8870e36c20076c7d2ead39c994b5c98c50330b765c73c1f27b5297d76a3",
+      "elapsed_seconds": 54.72136700700503,
+      "consumed_validation": {
+        "healthy": {
+          "n": 40,
+          "correct": 13,
+          "correct_rate": 0.325,
+          "healthy_verdict": 13,
+          "healthy_recall": 0.325,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 20,
+          "false_other_rate": 0.5,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 20,
+          "kind_UNSURE": 7,
+          "kind_HEALTHY": 13
+        },
+        "false_healthy": 3
+      },
+      "consumed_all": {
+        "healthy": {
+          "n": 223,
+          "correct": 87,
+          "correct_rate": 0.3901345291479821,
+          "healthy_verdict": 87,
+          "healthy_recall": 0.3901345291479821,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 105,
+          "false_other_rate": 0.47085201793721976,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 105,
+          "kind_HEALTHY": 87,
+          "kind_UNSURE": 31
+        },
+        "false_healthy": 16
+      }
+    },
+    "phase95_corrected_continued_expert": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase95_corrected_continued_expert/result.json",
+      "sha256": "cf311e338b23a807c7d29d53b5609a99d740b9ee9de2a61db96d6b03095ad463",
+      "passed": false,
+      "checks": {
+        "old_retention": true,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_disease_exact": true,
+        "consumed_validation_healthy": false,
+        "consumed_validation_safety": true,
+        "consumed_all_safety": true,
+        "consumed_all_retention": true
+      },
+      "selected_epoch": 11,
+      "threshold": 0.95,
+      "calibration": [
+        0.7674187142596203,
+        1.0432257202649171
+      ],
+      "protocol_sha256": "4e5546703f3266a52d72c57dc025b85182918c9ff621edfffb1408a5f48b4f11",
+      "source_sha256": "9c84601cfbdf712d1b8543848e53380199d04ce17cf26faebc3792f9171547d5",
+      "elapsed_seconds": 21.939504446985666,
+      "consumed_validation": {
+        "healthy": {
+          "n": 40,
+          "correct": 17,
+          "correct_rate": 0.425,
+          "healthy_verdict": 17,
+          "healthy_recall": 0.425,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 19,
+          "false_other_rate": 0.475,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 19,
+          "kind_UNSURE": 4,
+          "kind_HEALTHY": 17
+        },
+        "false_healthy": 3
+      },
+      "consumed_all": {
+        "healthy": {
+          "n": 223,
+          "correct": 104,
+          "correct_rate": 0.4663677130044843,
+          "healthy_verdict": 104,
+          "healthy_recall": 0.4663677130044843,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 102,
+          "false_other_rate": 0.45739910313901344,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 102,
+          "kind_HEALTHY": 104,
+          "kind_UNSURE": 17
+        },
+        "false_healthy": 16
+      }
+    },
+    "phase97_continued_verified_expert": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase97_continued_verified_expert/result.json",
+      "sha256": "bf15cf36ffce959ba27f87f1cd8051142a55897f5d7c823af706ebfafcedebfd",
+      "passed": false,
+      "checks": {
+        "old_retention": true,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_disease_exact": true,
+        "consumed_validation_healthy": false,
+        "consumed_validation_safety": true,
+        "consumed_all_safety": false,
+        "consumed_all_retention": true
+      },
+      "selected_epoch": 16,
+      "threshold": 0.95,
+      "calibration": [
+        0.7674187142596203,
+        1.0432257202649171
+      ],
+      "protocol_sha256": "7809faa141dbffadac630ba280eb2cf953514ba673c1fb47f17a07e34265aa56",
+      "source_sha256": "9927157f8ced476683f45123a8a601bfec7c937870dbc109f99ba08c36b95b81",
+      "elapsed_seconds": 19.66336413199315,
+      "consumed_validation": {
+        "healthy": {
+          "n": 40,
+          "correct": 21,
+          "correct_rate": 0.525,
+          "healthy_verdict": 21,
+          "healthy_recall": 0.525,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 17,
+          "false_other_rate": 0.425,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 17,
+          "kind_HEALTHY": 21,
+          "kind_UNSURE": 2
+        },
+        "false_healthy": 3
+      },
+      "consumed_all": {
+        "healthy": {
+          "n": 223,
+          "correct": 115,
+          "correct_rate": 0.515695067264574,
+          "healthy_verdict": 115,
+          "healthy_recall": 0.515695067264574,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 99,
+          "false_other_rate": 0.4439461883408072,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 99,
+          "kind_HEALTHY": 115,
+          "kind_UNSURE": 9
+        },
+        "false_healthy": 17
+      }
+    },
+    "phase92_cached_cnn_direction": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase92_cached_cnn_direction/result.json",
+      "sha256": "9f57c15a1a9e25d35b93031fa9c25a0004e6438facbe3c8d86eb5dd6678079d9",
+      "protocol_sha256": "ca7db83b4dd57ee41512e734b3b3abb499db2747cfbaf899d73fd7c4502c73fd",
+      "new_encoder_inputs": 0
+    },
+    "phase93_cached_kernel_expert": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase93_cached_kernel_expert/result.json",
+      "sha256": "09112d3bcac562de796754a9cda1a95ad029676b0fe16dd1b13d08e97ee2e371",
+      "calibration": [
+        4.715819657412928,
+        -1.0636393044962733
+      ],
+      "protocol_sha256": "d037e9a8c6050d8a9d3b5903a92381248b7970b5bbe84d007141e729dd13f2ac",
+      "elapsed_seconds": 40.44202335498994,
+      "new_encoder_inputs": 0
+    },
+    "phase96_cached_routing_bound": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase96_cached_routing_bound/result.json",
+      "sha256": "d0a4b2e66e2a6a029fe63f67c3f6ad81f2a441e37fd20fd5e7a50349f2297b2d",
+      "protocol_sha256": "66e0239257f0911e34d38f7569d2b8f24d00d7cfe3dded25ee180db81fcc5bbf",
+      "new_encoder_inputs": 0,
+      "passing_optimistic_bound": 0,
+      "candidate_policy_selected": false
+    },
+    "phase99_cached_verdict_reward": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase99_cached_verdict_reward/result.json",
+      "sha256": "34f568207171fb2a4cb0b45e4ae300b5e965863d66dc316ef25a4147df7577a2",
+      "passed": false,
+      "checks": {
+        "old_retention": true,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_disease_exact": true,
+        "consumed_validation_healthy": false,
+        "consumed_validation_safety": true,
+        "consumed_all_safety": false,
+        "consumed_all_retention": false
+      },
+      "selected_step": 50,
+      "protocol_sha256": "76f753b2304b681622b9dccee4aaaf26703dfe878c19eb6cc6dd224c4dd709eb",
+      "source_sha256": "1f9505d2bf3b23cad2cb48cda9a1284eb72c83eaac9eae4bfa10e7cb36789c4a",
+      "elapsed_seconds": 10.214480786002241,
+      "new_encoder_inputs": 0,
+      "consumed_validation": {
+        "healthy": {
+          "n": 40,
+          "correct": 16,
+          "correct_rate": 0.4,
+          "healthy_verdict": 16,
+          "healthy_recall": 0.4,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 19,
+          "false_other_rate": 0.475,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 19,
+          "kind_UNSURE": 5,
+          "kind_HEALTHY": 16
+        },
+        "false_healthy": 3
+      },
+      "consumed_all": {
+        "healthy": {
+          "n": 223,
+          "correct": 110,
+          "correct_rate": 0.49327354260089684,
+          "healthy_verdict": 110,
+          "healthy_recall": 0.49327354260089684,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 99,
+          "false_other_rate": 0.4439461883408072,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 99,
+          "kind_HEALTHY": 110,
+          "kind_UNSURE": 14
+        },
+        "false_healthy": 18
+      }
+    },
+    "phase101_cnn_bag_adaptation": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase101_cnn_bag_adaptation/result.json",
+      "sha256": "ec5fb20a175aa430e4f231c3b5b634926e7c29e843629dea35eac3a8004fefac",
+      "passed": false,
+      "checks": {
+        "old_retention": true,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_disease_exact": true,
+        "consumed_validation_healthy": false,
+        "consumed_validation_safety": false,
+        "consumed_all_safety": true,
+        "consumed_all_retention": true
+      },
+      "selected_epoch": 6,
+      "threshold": 0.95,
+      "calibration": [
+        1.0,
+        0.0
+      ],
+      "protocol_sha256": "bed3013aaf8dd36d613732f4b5d24385c54647de5eb15358b6d5cb73f1e25159",
+      "source_sha256": "2b081625351090c7edee8fac235ee47115858fe9af13938787bbf8f6a490d389",
+      "elapsed_seconds": 48.87315881403629,
+      "consumed_validation": {
+        "healthy": {
+          "n": 40,
+          "correct": 17,
+          "correct_rate": 0.425,
+          "healthy_verdict": 17,
+          "healthy_recall": 0.425,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 19,
+          "false_other_rate": 0.475,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 19,
+          "kind_HEALTHY": 17,
+          "kind_UNSURE": 4
+        },
+        "false_healthy": 3
+      },
+      "consumed_all": {
+        "healthy": {
+          "n": 223,
+          "correct": 118,
+          "correct_rate": 0.5291479820627802,
+          "healthy_verdict": 118,
+          "healthy_recall": 0.5291479820627802,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 94,
+          "false_other_rate": 0.42152466367713004,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 94,
+          "kind_HEALTHY": 118,
+          "kind_UNSURE": 11
+        },
+        "false_healthy": 15
+      }
+    },
+    "phase102_cached_fusion_bound": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase102_cached_fusion_bound/result.json",
+      "sha256": "71afde3a9b820ccf11efe981246ef419f0740cc0ea5015dc02dfb80048b27547",
+      "protocol_sha256": "6458fc5ba5fa1fca1deebcd80f56be39c69a79396b93f934a7ab9d2ceaa2b863",
+      "new_encoder_inputs": 0,
+      "passing_optimistic_bound": 0,
+      "candidate_policy_selected": false
+    },
+    "phase94_corrected_diagnostic_sft/prefix/complete.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase94_corrected_diagnostic_sft/prefix/complete.json",
+      "sha256": "3b64743f41bd869bba4a1197bdd644b32f10b27811251313a81c4b8cfedf7564",
+      "report": {
+        "completed": 854,
+        "maximum_error": 0.0,
+        "protocol_sha256": "7d6e8d19b89b3285405cfa7c8a09975c38d972b232044ae4917fc82208c08f65",
+        "all_selected_inputs_audited": 2626,
+        "all_selected_maximum_error": 4.76837158203125e-06,
+        "missing_tokens_sha256": "66161d9b9ae7a55280af64e9c4487a2ca85d2ec72c2588263ac61606387dfb51"
+      }
+    },
+    "phase94_corrected_diagnostic_sft/prefix/protocol.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase94_corrected_diagnostic_sft/prefix/protocol.json",
+      "sha256": "7d6e8d19b89b3285405cfa7c8a09975c38d972b232044ae4917fc82208c08f65",
+      "report": {
+        "old_inputs_reused": 1772,
+        "newly_computed_inputs": 854,
+        "positional_index_reuse_forbidden": true,
+        "prefix_state_sha256": "2ef89470703a8b8c030d13261a14d12b000ca490f3cfbc507d0e4761967fcbe2"
+      }
+    },
+    "phase86_tcp_source/membership_audit.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase86_tcp_source/membership_audit.json",
+      "sha256": "adf0484903354319d52da65776a14f31afc07f05849b7447321d5639d5cc4fa5",
+      "report": {
+        "raw_n": 3668,
+        "provisional_n": 2527,
+        "healthy_n": 811,
+        "nonhealthy_n": 1716,
+        "healthy_families": 588,
+        "nonhealthy_families": 1500,
+        "counts_sufficient": true,
+        "independence_established": false,
+        "acceptance_ready": false,
+        "reason": "Mixed publisher provenance requires visual/source adjudication; overlap screening alone cannot establish fresh capture independence",
+        "prior_manifests": {
+          "original_quality_profile.json": "0c41472b64de07a98c448e4f31778552789e469453451ffdf859ee8e48c1c34c",
+          "new_development_manifest.json": "49c654a9ecb29f3eaf0933ac57e97a8b49d6964fff63f85939cc52f48bc1d956",
+          "locked_new_source_manifest.json": "e5fae09ea59d1d6458c1d0fab1967cc9d7ace094295097b835ff24a257d72519",
+          "locked_binary_manifest.json": "a685fc09fba2d8c73238abe79a65774819fce0fcd41c1b57c4e24ef81c556d42",
+          "mixed_stress_manifest.json": "892ef23cf48dbedef243f368d02d85495a87fd905422b1a6b71f735b5f95c7d2",
+          "phase2_source_manifest.json": "f10fae17bb7f4f42b4929589c13d5a4f0c04f34855dfc413f4a23e083a364bc4",
+          "phase6_roi/cnn_inputs/rows.json": "687829881aff3317ef996a6265012c5e3a39b687343ff47bf85ce14ecdd196eb",
+          "phase6_roi/reserved_manifest.json": "ca91cf80b05eab1c733a54746542e8fe37bee503c7c0fe03a97022bcdd0f5dd1",
+          "phase13_siglip/admission_manifest.json": "6a75dcf74f6db59358dd9a2768e4b861f02c49167716009870ce3132f2b57ca0",
+          "phase9_ad_source/sealed_geometric_manifest.json": "5cf37861dfe835c918643b2753a05c229e9327cd750524435006384bdcfae6b6",
+          "phase24_olid_source/sealed_manifest.json": "b6462bb09b960b4bc02591ed7299bc932d09866550b60f8e5b3fc6e2507d5db6",
+          "phase84_population_head/fitting_rows.json": "4fb762cea4c798541f9d1a012159afed9c7d2ca14dad5b87cbc9742a6ccc9a49",
+          "phase29_compact/source_files.json": "2e4da8ef6d72d40758c2809e59b1ff40d7937a2b6335e2dd53e74ecedd68f96d",
+          "phase29_compact/inputs.json": "393ae4b6e8ed72c7330096c5842828ce8f18c49dd3b883cf23ec700d031312c8",
+          "phase38_context_spatial/new_inputs.json": "4425c9cdb725ddde635d71656a28cef81a79c66f2205d5514eb00fb9cabdb2c3",
+          "phase46_paper_primary/new_inputs.json": "7c27b7843b61d76877e6cdf5064c94f2808f08ddaf1e5203c32d6ef57c4e515d",
+          "phase87_diagnostic_bag_features/new_inputs.json": "14ad617c9a6022ded4d1b7a4a9fadb310fdd9f72047c6f4c0358331639626605"
+        },
+        "prior_file_identities": 33135,
+        "prior_phashes": 36658,
+        "source_sha256": "4a81ff725a0577539360ad218390a6156fe3808a2103c1c703147526b5b5cfb7",
+        "profiles_sha256": "a735dc5c82f842f596d8507fac376cec92ac94e1429ecec44bc1e74bb4a9cd90",
+        "geometry_sha256": "36ea2e3cbabeb74c92b2f80ead030abfc82a94c3be88ec7422ab184d45822df1",
+        "provisional_manifest_sha256": "ab2745bc6864616f5a0889b538c709a066551c3f59dd8438b5982ffe99aeb1a2",
+        "diagnostic_predictions_opened": false,
+        "training_used": false,
+        "limitations": "Inferred geometric families are not verified plant IDs. No exhaustive cross-source SIFT search. Source has only unsupported-disease classes; it cannot replace all supported-disease recognition gates."
+      }
+    },
+    "phase96_cached_routing_bound/result.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase96_cached_routing_bound/result.json",
+      "sha256": "d0a4b2e66e2a6a029fe63f67c3f6ad81f2a441e37fd20fd5e7a50349f2297b2d",
+      "report": {
+        "protocol_sha256": "66e0239257f0911e34d38f7569d2b8f24d00d7cfe3dded25ee180db81fcc5bbf",
+        "controls": {
+          "linear": {
+            "optimistic_best": {
+              "healthy": 87,
+              "false_healthy": 16,
+              "positive_cut": 1.0,
+              "negative_cut": 0.0,
+              "expert_enabled": false
+            },
+            "required_healthy": 157,
+            "passes_optimistic_ceiling": false
+          },
+          "mlp": {
+            "optimistic_best": {
+              "healthy": 107,
+              "false_healthy": 16,
+              "positive_cut": 0.49905431270599365,
+              "negative_cut": 0.6895250082015991,
+              "expert_enabled": true
+            },
+            "required_healthy": 157,
+            "passes_optimistic_ceiling": false
+          },
+          "corrected_dino_sft": {
+            "optimistic_best": {
+              "healthy": 122,
+              "false_healthy": 16,
+              "positive_cut": 0.005106442142277956,
+              "negative_cut": 0.6737053394317627,
+              "expert_enabled": true
+            },
+            "required_healthy": 157,
+            "passes_optimistic_ceiling": false
+          },
+          "corrected_continued_expert": {
+            "optimistic_best": {
+              "healthy": 130,
+              "false_healthy": 16,
+              "positive_cut": 0.764085054397583,
+              "negative_cut": 0.8408636450767517,
+              "expert_enabled": true
+            },
+            "required_healthy": 157,
+            "passes_optimistic_ceiling": false
+          },
+          "verified_continuation": {
+            "optimistic_best": {
+              "healthy": 129,
+              "false_healthy": 16,
+              "positive_cut": 0.7019056677818298,
+              "negative_cut": 0.9326258897781372,
+              "expert_enabled": true
+            },
+            "required_healthy": 157,
+            "passes_optimistic_ceiling": false
+          },
+          "original_cnn_direction": {
+            "optimistic_best": {
+              "healthy": 87,
+              "false_healthy": 16,
+              "positive_cut": 1.0,
+              "negative_cut": 0.0,
+              "expert_enabled": false
+            },
+            "required_healthy": 157,
+            "passes_optimistic_ceiling": false
+          },
+          "kernel": {
+            "optimistic_best": {
+              "healthy": 125,
+              "false_healthy": 16,
+              "positive_cut": 0.3699618637299434,
+              "negative_cut": 0.6897088257227856,
+              "expert_enabled": true
+            },
+            "required_healthy": 157,
+            "passes_optimistic_ceiling": false
+          },
+          "logit_reward": {
+            "optimistic_best": {
+              "healthy": 125,
+              "false_healthy": 16,
+              "positive_cut": 0.03043252043426037,
+              "negative_cut": 0.9562282562255859,
+              "expert_enabled": true
+            },
+            "required_healthy": 157,
+            "passes_optimistic_ceiling": false
+          }
+        },
+        "passing_optimistic_bound": 0,
+        "ad_independent": false,
+        "olid_independent": false,
+        "candidate_policy_selected": false,
+        "new_encoder_inputs": 0
+      }
+    },
+    "phase101_cnn_bag_adaptation/prefix/complete.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase101_cnn_bag_adaptation/prefix/complete.json",
+      "sha256": "fdaab0d998f75b9b8399fa4b7b9431c45293cc5b3f91324d4dcb674c816c94f6",
+      "report": {
+        "protocol_sha256": "f2c7f2575b552dbbfe642ea3827b5e0961d586d1528449cbab6eae4ba20916c2",
+        "missing_prefix_sha256": "ef3e8806f5ff6f87b3fe97c29cc1ed4b4338ac666f9e27e35916253056e06e14",
+        "old_inputs_reused": 1772,
+        "newly_computed_inputs": 854,
+        "all_selected_inputs_audited": 2626,
+        "all_selected_maximum_error": 6.198883056640625e-06
+      }
+    },
+    "phase102_cached_fusion_bound/result.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase102_cached_fusion_bound/result.json",
+      "sha256": "71afde3a9b820ccf11efe981246ef419f0740cc0ea5015dc02dfb80048b27547",
+      "report": {
+        "protocol_sha256": "6458fc5ba5fa1fca1deebcd80f56be39c69a79396b93f934a7ab9d2ceaa2b863",
+        "controls": {
+          "cnn+dino": {
+            "optimistic_best": {
+              "healthy": 144,
+              "false_healthy": 16,
+              "positive_cut": 0.4281856963457621,
+              "negative_cut": 0.7946300601183963,
+              "expert_enabled": true
+            },
+            "required_healthy": 157,
+            "passes_optimistic_ceiling": false
+          },
+          "cnn+kernel": {
+            "optimistic_best": {
+              "healthy": 142,
+              "false_healthy": 16,
+              "positive_cut": 0.5017796239280885,
+              "negative_cut": 0.2954461923920463,
+              "expert_enabled": true
+            },
+            "required_healthy": 157,
+            "passes_optimistic_ceiling": false
+          }
+        },
+        "passing_optimistic_bound": 0,
+        "new_encoder_inputs": 0,
+        "ad_independent": false,
+        "olid_independent": false,
+        "candidate_policy_selected": false
+      }
+    },
+    "phase79_opened_olid_diagnostic/cnn_routing_bound.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase79_opened_olid_diagnostic/cnn_routing_bound.json",
+      "sha256": "9164ad8db76c361d294ac95d63ef920e4412c4ed170ccf6cc75bacd5e950875b",
+      "report": {
+        "healthy": 139,
+        "false_healthy": 16,
+        "positive_cut": 0.7575953602790833,
+        "negative_cut": 0.09219294786453247,
+        "expert_enabled": true
+      }
+    }
+  }
+}

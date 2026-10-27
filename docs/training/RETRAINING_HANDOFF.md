@@ -1,5 +1,10 @@
 # Agribot training failure investigation, recovery, and Android integration
 
+**Latest offline evidence:** [corrected cache joins and bounded supervised/reward
+controls](OFFLINE_RECOGNITION_20261027.md). Phase 89/91 are explicitly invalidated;
+their corrected successors and later CNN/reward controls still fail recognition.
+No failed replacement model may enter the normal app bundle.
+
 **Latest outcome:** [27 October acceptance failure and continuation](FIELD_ACCEPTANCE_20261027.md).
 The app passes 133 native unit and 22 emulator checks. The frozen recognition
 candidate fails fresh OLID Healthy recovery at 87/223, with no improvement.

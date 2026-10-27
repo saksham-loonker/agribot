@@ -1,5 +1,11 @@
 # Cache-first training and recognition decision handoff
 
+**27 October update:** OLID was opened once and failed acceptance. AD and OLID
+are now permanently consumed. The historical sealed-source descriptions below
+do not apply to current work. Read [the current offline continuation](OFFLINE_RECOGNITION_20261027.md)
+for corrected input-hash joins, stopped supervised/reward controls and current
+prospective-source limitations.
+
 **Resumed work and code review:** [PR 6 review and supervised continuation](PR6_CODE_REVIEW_20261026.md)
 supersedes the earlier checkpoint below. Compact, source-balanced supervised,
 spatial, scoped routing and symptom-region controls have completed and stopped

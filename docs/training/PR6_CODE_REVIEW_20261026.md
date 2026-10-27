@@ -1,5 +1,9 @@
 # PR 6 code review and continued recognition work
 
+**Latest code/evidence:** [27 October offline continuation](OFFLINE_RECOGNITION_20261027.md)
+records the fixed cache-namespace collision, invalidated runs, verified
+continuations, logit-reward/CNN controls and unchanged failed recognition gates.
+
 **Current outcome:** The app passes native verification, but the frozen model
 failed OLID acceptance (87/223 Healthy, zero gain). AD and OLID are consumed.
 Keep PR #6 draft and read [the current continuation](FIELD_ACCEPTANCE_20261027.md).

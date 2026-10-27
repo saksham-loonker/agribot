@@ -1,5 +1,9 @@
 # Field acceptance failure and continuing recognition repair
 
+**Latest offline continuation:** [corrected cache joins, supervised/reward
+controls and stopping evidence](OFFLINE_RECOGNITION_20261027.md). No replacement
+passes recognition. The new prospective source remains provisional and sealed.
+
 This supersedes earlier statements that OLID is sealed or that development
 qualification is sufficient for promotion. **The phase-69 candidate is rejected
 for release.** App verification succeeded; recognition acceptance did not.
