@@ -1,6 +1,11 @@
 # PR 6 code review and continued recognition work
 
-**Newest continuation:** [qualified development candidate](QUALIFIED_DEVELOPMENT_20261027.md).
+**Current outcome:** The app passes native verification, but the frozen model
+failed OLID acceptance (87/223 Healthy, zero gain). AD and OLID are consumed.
+Keep PR #6 draft and read [the current continuation](FIELD_ACCEPTANCE_20261027.md).
+Historical sealed and development-qualified notes below do not authorize release.
+
+**Earlier development pass:** [development evidence](QUALIFIED_DEVELOPMENT_20261027.md).
 Phase 69 now passes every unchanged development gate; original disease verdicts
 are preserved. Shared-model restoration and full LiteRT replay both pass all
 6,742 verdicts; native integration is being verified. Both CI jobs pass

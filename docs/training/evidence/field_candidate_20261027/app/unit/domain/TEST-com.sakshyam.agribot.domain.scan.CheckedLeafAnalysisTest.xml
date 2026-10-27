@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.domain.scan.CheckedLeafAnalysisTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:36:13" hostname="vewmet" time="0.011">
+  <properties/>
+  <testcase name="a dim view with useful structure is not discarded by the warning threshold" classname="com.sakshyam.agribot.domain.scan.CheckedLeafAnalysisTest" time="0.01"/>
+  <testcase name="a usable view reaches inference once with its assessment" classname="com.sakshyam.agribot.domain.scan.CheckedLeafAnalysisTest" time="0.001"/>
+  <testcase name="dark glare and detail-free views do not reach the classifier" classname="com.sakshyam.agribot.domain.scan.CheckedLeafAnalysisTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

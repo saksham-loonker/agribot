@@ -1,10 +1,16 @@
 # Agribot training failure investigation, recovery, and Android integration
 
-**Newest development pass:** [passing candidate and release gates](QUALIFIED_DEVELOPMENT_20261027.md).
+**Latest outcome:** [27 October acceptance failure and continuation](FIELD_ACCEPTANCE_20261027.md).
+The app passes 133 native unit and 22 emulator checks. The frozen recognition
+candidate fails fresh OLID Healthy recovery at 87/223, with no improvement.
+Both AD and OLID are now consumed development. PR #6 stays draft; no phone
+promotion is authorized by these results. Earlier “OLID sealed” notes are history.
+
+**Earlier development pass:** [historical development evidence](QUALIFIED_DEVELOPMENT_20261027.md).
 Phase 69 passes every unchanged development gate. Restored and actual LiteRT
 verification both preserve all 6,742 verdicts; shared model bytes are frozen.
-The Android port is under verification. The app fixes pass CI at `b307415`. Fresh OLID
-acceptance and model integration are still pending; AD remains consumed.
+The later Android port passed verification; OLID acceptance then failed as
+described above. The model remains unqualified for promotion.
 
 **27 October takes precedence:** read the
 [app and recognition checkpoint](APP_RECOGNITION_CHECKPOINT_20261027.md).

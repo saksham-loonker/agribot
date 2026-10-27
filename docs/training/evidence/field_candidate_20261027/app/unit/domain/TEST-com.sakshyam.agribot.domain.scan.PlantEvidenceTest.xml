@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.domain.scan.PlantEvidenceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:36:13" hostname="vewmet" time="0.002">
+  <properties/>
+  <testcase name="consistent healthy leaves give healthy" classname="com.sakshyam.agribot.domain.scan.PlantEvidenceTest" time="0.001"/>
+  <testcase name="needs more views before deciding" classname="com.sakshyam.agribot.domain.scan.PlantEvidenceTest" time="0.0"/>
+  <testcase name="empty evidence asks for more views" classname="com.sakshyam.agribot.domain.scan.PlantEvidenceTest" time="0.0"/>
+  <testcase name="one leaf seen in many frames cannot outvote other leaves" classname="com.sakshyam.agribot.domain.scan.PlantEvidenceTest" time="0.0"/>
+  <testcase name="unknown condition when Other dominates" classname="com.sakshyam.agribot.domain.scan.PlantEvidenceTest" time="0.0"/>
+  <testcase name="a single diseased leaf does not override a healthy plant" classname="com.sakshyam.agribot.domain.scan.PlantEvidenceTest" time="0.001"/>
+  <testcase name="split evidence is unsure" classname="com.sakshyam.agribot.domain.scan.PlantEvidenceTest" time="0.0"/>
+  <testcase name="two strongly blighted leaves are reported even when most leaves look healthy" classname="com.sakshyam.agribot.domain.scan.PlantEvidenceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

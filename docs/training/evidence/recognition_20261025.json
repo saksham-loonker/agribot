@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "status": "Phase69 development, restored-model and full LiteRT gates pass; Android integration in progress; AD consumed; OLID sealed",
+  "status": "Native app verification passes; frozen model fails OLID acceptance at 87/223 Healthy with zero gain; AD and OLID consumed; promotion blocked",
   "installed_classifier_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
   "initial_trained_controls": {
     "heads": 29,
@@ -12704,5 +12704,21 @@
     "independent_acceptance": "sealed pending final deployment/protocol freeze",
     "new_model_app_integration": "in progress",
     "qualified_evidence": "docs/training/evidence/qualified_development_evidence_20261027.json"
+  },
+  "fresh_acceptance_20261027": {
+    "passed": false,
+    "healthy_correct": 87,
+    "healthy_n": 223,
+    "healthy_gain": 0.0,
+    "baseline_false_healthy": 16,
+    "candidate_false_healthy": 16,
+    "protocol_sha256": "22a7842047a1c9b5a8ca178a39832bac916e62012ae39039eb7ec944a87dcdcf",
+    "ad_independent": false,
+    "olid_independent": false,
+    "evidence": "field_candidate_20261027/fresh_acceptance_result.json",
+    "native_unit_checks": 133,
+    "emulator_checks": 22,
+    "physical_phone_verified": false,
+    "next": "Stopped cached-score and frozen-visual heads; inspect actual eligible operating points from caches before any copied-block supervised adaptation"
   }
 }

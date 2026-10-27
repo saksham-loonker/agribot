@@ -21,7 +21,7 @@ class AndroidModelContractTest(unittest.TestCase):
 
     def test_manifest_schema_and_labels(self):
         m = self.manifest
-        self.assertIn(m["schema"], (2, 3, 4))
+        self.assertIn(m["schema"], (2, 3, 4, 5))
         c = m["classifier"]
         self.assertEqual(c["labels"][c["other_index"]], "Other")
         self.assertIn("Healthy", c["labels"])
@@ -47,6 +47,22 @@ class AndroidModelContractTest(unittest.TestCase):
             )
         else:
             self.assertNotIn("view_confirmation", c)
+        if m["schema"] == 5:
+            self.assertEqual(c["members"][0]["output"], [1, 12])
+            self.assertEqual(
+                c["auxiliary_outputs"],
+                ["compact_positive_H", "compact_negative_H", "adapted_dino_H"],
+            )
+            recovery = m["primary_recovery"]
+            self.assertEqual(recovery["scope"], "primary_visible_view")
+            self.assertEqual(recovery["policy"], "phase69_whole_local")
+            self.assertEqual(recovery["minimum_frames"], 7)
+            self.assertEqual(recovery["maximum_leaves"], 6)
+            self.assertEqual(recovery["model"]["output"], [1, 4])
+            self.assertEqual(
+                recovery["model"]["outputs"],
+                ["positive_H", "negative_H", "tomato_genus", "natural_context"],
+            )
         self.assertGreater(c["temperature"], 0)
         d = m["detector"]
         self.assertEqual(d["output_rows"], ["x1", "y1", "x2", "y2", "score"])
@@ -60,14 +76,20 @@ class AndroidModelContractTest(unittest.TestCase):
         files.append(
             (self.manifest["detector"]["file"], self.manifest["detector"]["sha256"])
         )
+        if self.manifest["schema"] == 5:
+            context = self.manifest["primary_recovery"]["model"]
+            files.append((context["file"], context["sha256"]))
         for name, sha in files:
-            data = (ASSETS / "models" / name).read_bytes()
-            if data.startswith(LFS_POINTER):
-                self.skipTest(
-                    "model files are Git LFS pointers in this checkout (run git lfs pull)"
+            with (ASSETS / "models" / name).open("rb") as stream:
+                if stream.read(len(LFS_POINTER)) == LFS_POINTER:
+                    self.skipTest(
+                        "model files are Git LFS pointers in this checkout (run git lfs pull)"
+                    )
+                stream.seek(0)
+                self.assertEqual(
+                    hashlib.file_digest(stream, "sha256").hexdigest(), sha, name
                 )
-            self.assertEqual(hashlib.sha256(data).hexdigest(), sha, name)
-        self.assertTrue(self.manifest["bundle_id"].endswith(files[0][1][:8]))
+        self.assertIn(files[0][1][:8], self.manifest["bundle_id"])
 
     def test_golden_sets_are_identical_and_complete(self):
         expected = json.loads(

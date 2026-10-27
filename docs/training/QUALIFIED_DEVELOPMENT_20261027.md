@@ -1,8 +1,13 @@
-# Passing development candidate and remaining release work
+# Historical development pass: subsequent acceptance failed
+
+The frozen candidate subsequently failed OLID acceptance at 87/223 Healthy,
+with zero gain. It is not promoted. AD and OLID are now consumed development.
+Read [the current continuation](FIELD_ACCEPTANCE_20261027.md) first.
 
 The phase-69 route passes every unchanged development recognition gate. This
 is a development qualification, not independent acceptance or release approval.
-AD remains permanently consumed development. OLID remains diagnostically sealed.
+At this development checkpoint AD was consumed and OLID was still sealed;
+the subsequent failed opening supersedes that status.
 
 The [condensed evidence](evidence/qualified_development_evidence_20261027.json)
 pins completed controls, protocols, checkpoints, caches and the frozen shared
