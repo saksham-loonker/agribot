@@ -1,5 +1,11 @@
 # Agribot training failure investigation, recovery, and Android integration
 
+**Newest development pass:** [passing candidate and release gates](QUALIFIED_DEVELOPMENT_20261027.md).
+Phase 69 passes every unchanged development gate. Restored and actual LiteRT
+verification both preserve all 6,742 verdicts; shared model bytes are frozen.
+The Android port is under verification. The app fixes pass CI at `b307415`. Fresh OLID
+acceptance and model integration are still pending; AD remains consumed.
+
 **27 October takes precedence:** read the
 [app and recognition checkpoint](APP_RECOGNITION_CHECKPOINT_20261027.md).
 Copied DINO-tail adaptation meets Healthy minima but fails unsupported retention;

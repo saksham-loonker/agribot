@@ -22,12 +22,24 @@ from partial_dino_healthy import (
 from phase28_roi_confirmation import pixel_key
 
 
-def prepare(campaign, data, paths):
+def prepare(
+    campaign,
+    data,
+    paths,
+    namespace="phase53_whole_dino",
+    head_namespace="phase51_dino_adaptation",
+):
     started = time.monotonic()
     p = Path(campaign)
-    root = p / "phase53_whole_dino/cache"
+    assert namespace in (
+        "phase53_whole_dino",
+        "phase54_dino_conflict",
+        "phase69_whole_local",
+    )
+    assert head_namespace in ("phase51_dino_adaptation", "phase55_dino_continuation")
+    root = p / namespace / "cache"
     root.mkdir(parents=True, exist_ok=True)
-    head = p / "phase51_dino_adaptation/head"
+    head = p / head_namespace / "head"
     result = read(head / "result.json")
     assert result["checkpoint_sha256"] == digest(head / "candidate.pt")
     assert result["probabilities_sha256"] == digest(head / "probabilities.npy")
@@ -67,6 +79,36 @@ def prepare(campaign, data, paths):
     scores = np.load(head / "probabilities.npy")
     assert len(existing) == len(scores)
     known = {r["input_sha256"]: float(score) for r, score in zip(existing, scores)}
+    imported = 0
+    previous = p / "phase53_whole_dino/cache"
+    if (
+        namespace != "phase53_whole_dino"
+        and head_namespace == "phase51_dino_adaptation"
+        and (previous / "complete.json").exists()
+    ):
+        complete = read(previous / "complete.json")
+        assert complete["protocol_sha256"] == digest(previous / "protocol.json")
+        assert complete["probabilities_sha256"] == digest(
+            previous / "probabilities.json"
+        )
+        assert complete["inputs_sha256"] == digest(previous / "inputs.json")
+        prior = read(previous / "protocol.json")
+        for field in (
+            "checkpoint_sha256",
+            "preprocessing",
+            "runtime",
+            "model_source_sha256",
+        ):
+            assert prior[field] == protocol[field]
+        prior_scores = read(previous / "probabilities.json")
+        for row in read(previous / "inputs.json"):
+            value = float(prior_scores[row["path"]])
+            assert np.isfinite(value) and 0 <= value <= 1
+            if row["input_sha256"] in known:
+                assert abs(known[row["input_sha256"]] - value) < 1e-5
+            else:
+                known[row["input_sha256"]] = value
+                imported += 1
     descriptors = []
     tensors = {}
 
@@ -128,6 +170,7 @@ def prepare(campaign, data, paths):
         inputs=len(paths),
         reused_inputs=sum(row["input_sha256"] not in tensors for row in descriptors),
         new_unique_encoder_inputs=len(keys),
+        imported_prior_unique_scores=imported,
         elapsed_seconds=time.monotonic() - started,
         cold_olid_used=False,
     )

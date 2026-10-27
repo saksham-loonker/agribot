@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-25",
-  "status": "Copied DINO-tail control meets Healthy minima but fails unsupported retention; whole-image confirmation fails Healthy minima; controls stopped; local app verification passed; phone disconnected; no qualified replacement; AD consumed; OLID sealed",
+  "status": "Phase69 development, restored-model and full LiteRT gates pass; Android integration in progress; AD consumed; OLID sealed",
   "installed_classifier_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
   "initial_trained_controls": {
     "heads": 29,
@@ -12697,6 +12697,12 @@
     "ad_independent": false,
     "model_exported": false,
     "final_app_verification": "passed: debug/release/lint and 20 emulator checks",
-    "app_evidence": "docs/training/evidence/app_verification_20261027/summary.json"
+    "app_evidence": "docs/training/evidence/app_verification_20261027/summary.json",
+    "development_recognition_passed": true,
+    "restored_model_passed": true,
+    "mobile_regression_passed": true,
+    "independent_acceptance": "sealed pending final deployment/protocol freeze",
+    "new_model_app_integration": "in progress",
+    "qualified_evidence": "docs/training/evidence/qualified_development_evidence_20261027.json"
   }
 }

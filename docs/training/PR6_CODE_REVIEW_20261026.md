@@ -1,5 +1,11 @@
 # PR 6 code review and continued recognition work
 
+**Newest continuation:** [qualified development candidate](QUALIFIED_DEVELOPMENT_20261027.md).
+Phase 69 now passes every unchanged development gate; original disease verdicts
+are preserved. Shared-model restoration and full LiteRT replay both pass all
+6,742 verdicts; native integration is being verified. Both CI jobs pass
+at `b307415`; export, independent acceptance and device gates remain outstanding.
+
 **27 October checkpoint:** [app and recognition continuation](APP_RECOGNITION_CHECKPOINT_20261027.md).
 The scheduled GitHub check finds no remote changes at `187c87d`; both published
 CI checks pass. Completed copied-tail and whole-image controls remain rejected.

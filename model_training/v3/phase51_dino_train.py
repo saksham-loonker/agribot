@@ -6,6 +6,7 @@ import collections
 import concurrent.futures
 import copy
 import json
+import shutil
 import time
 import numpy as np
 import torch
@@ -25,26 +26,40 @@ from permissive_encoder import digest
 from phase49_partial_cnn_train import cpu_state
 from source_balance import source_class_group_weights
 from training_support import atomic_save
+from healthy_tail_risk import weighted_upper_tail
 
 
-def named_targets(campaign, fitting, descriptors):
+def condition_target(source_row, healthy, include_explicit_other=False):
+    if healthy:
+        return 1
+    if source_row is None:
+        return -1
+    label = source_row["label"]
+    if label in LABELS[:8] and label != "Healthy":
+        return LABELS.index(label)
+    raw = source_row.get("raw_label")
+    if (
+        include_explicit_other
+        and label == "Other"
+        and isinstance(raw, str)
+        and raw.strip()
+        and raw.strip().casefold()
+        not in ("diseased_unspecified", "diseased", "unhealthy", "unknown")
+    ):
+        return 8
+    return -1
+
+
+def named_targets(campaign, fitting, descriptors, include_explicit_other=False):
     source = read(Path(campaign) / "phase10_leaf/cnn_inputs/rows.json")
     labels = []
     for row in fitting:
         descriptor = descriptors[row["table"]]
-        label = (
-            source[descriptor["index"]]["label"]
-            if descriptor["kind"] == "old"
-            else None
+        source_row = (
+            source[descriptor["index"]] if descriptor["kind"] == "old" else None
         )
         labels.append(
-            1
-            if row["y"] == 1
-            else (
-                LABELS.index(label)
-                if label in LABELS[:8] and label != "Healthy"
-                else -1
-            )
+            condition_target(source_row, row["y"] == 1, include_explicit_other)
         )
     grouped = collections.defaultdict(set)
     for row, target in zip(fitting, labels):
@@ -63,16 +78,32 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--campaign", required=True)
     parser.add_argument("--prepare-only", action="store_true")
+    parser.add_argument("--continue-from-phase51", action="store_true")
+    parser.add_argument("--risk-control", action="store_true")
+    parser.add_argument("--explicit-other-control", action="store_true")
     args = parser.parse_args()
+    assert not (args.risk_control and args.continue_from_phase51)
+    assert not args.explicit_other_control or not (
+        args.risk_control or args.continue_from_phase51
+    )
+    sparse_evaluation = args.risk_control or args.explicit_other_control
     campaign = Path(args.campaign)
     cache = prepare(campaign)
     if args.prepare_only:
         return
-    root = campaign / "phase51_dino_adaptation/head"
-    root.mkdir(exist_ok=True)
+    root = campaign / (
+        "phase55_dino_continuation/head"
+        if args.continue_from_phase51
+        else "phase51_dino_adaptation/head"
+    )
+    if args.risk_control:
+        root = campaign / "phase57_dino_risk/head"
+    if args.explicit_other_control:
+        root = campaign / "phase59_explicit_other/head"
+    root.mkdir(parents=True, exist_ok=True)
     rows = read(campaign / "phase46_paper_primary/fitting_rows.json")
     descriptors = input_rows(campaign)
-    named = named_targets(campaign, rows, descriptors)
+    named = named_targets(campaign, rows, descriptors, args.explicit_other_control)
     protocol = dict(
         hypothesis="Original DINO visual final-block adaptation with scoped Healthy labels and masked original named-condition supervision, preserving the deployed recognizer",
         prefix_complete_sha256=digest(cache / "complete.json"),
@@ -84,8 +115,8 @@ def main():
         ),
         script_sha256=digest(__file__),
         model_source_sha256=digest(Path(__file__).with_name("partial_dino_healthy.py")),
-        epochs=8,
-        minimum_epochs=4,
+        epochs=16 if args.continue_from_phase51 else 8,
+        minimum_epochs=12 if args.continue_from_phase51 else 4,
         early_stop_patience=3,
         seed=1519,
         loss="Healthy-versus-rest BCE negative cost 4 plus 0.25 original named-class CE where explicit; coarse/unknown named targets masked",
@@ -104,6 +135,73 @@ def main():
         ad_independent=False,
         restricted_teacher_used=False,
     )
+    parent = campaign / "phase51_dino_adaptation/head"
+    required = None
+    if sparse_evaluation:
+        parent = campaign / "phase55_dino_continuation/head"
+        plan = campaign / "phase57_input_plan"
+        required = np.array(read(plan / "inputs.json"), dtype=np.int64)
+        assert (
+            required.size and required.min() >= 0 and required.max() < len(descriptors)
+        )
+        protocol.update(
+            initialization_checkpoint_sha256=digest(parent / "best.pt"),
+            initialization_protocol_sha256=digest(parent / "protocol.json"),
+            required_input_plan_sha256=digest(plan / "protocol.json"),
+            required_input_indices_sha256=digest(plan / "inputs.json"),
+            evaluation_scope="Only all fitting-prefix inputs plus the label-blind fixed route's required indices; unscored probabilities remain NaN and must never be used",
+            maximum_controls=1,
+        )
+    if args.risk_control:
+        protocol.update(
+            hypothesis="Reduce high-confidence disease-to-Healthy tail errors by supervised family-weighted negative CVaR on the copied DINO final blocks; no RL or acceptance-data fitting",
+            additional_negative_risk_coefficient=0.25,
+            negative_tail_mass=0.1,
+            risk_loss_source_sha256=digest(
+                Path(__file__).with_name("healthy_tail_risk.py")
+            ),
+            loss=protocol["loss"]
+            + " plus 0.25 conditional worst-10%-mass negative BCE",
+            selection="Single EMA checkpoint minimizing source/class/family weighted negative-cost BCE plus 0.25 weighted worst-10%-mass negative BCE",
+        )
+    if args.explicit_other_control:
+        protocol.update(
+            hypothesis="Add the missing categorical Other supervision only for explicitly named publisher unsupported conditions; retain coarse/missing-condition masking and all app gates",
+            loss=protocol["loss"]
+            + "; additional explicit unsupported-condition CE weight 1, masked for coarse/unknown labels",
+            explicit_other_target_scope="Original old input descriptor, label Other and a nonempty named raw publisher condition; generic Diseased/Unhealthy/Unknown targets remain masked",
+            explicit_other_cross_entropy_weight=1.0,
+        )
+        assert (named == 8).any()
+    if args.continue_from_phase51:
+        initial = read(parent / "protocol.json")
+        for key in (
+            "prefix_complete_sha256",
+            "fitting_rows_sha256",
+            "original_named_rows_sha256",
+            "model_source_sha256",
+            "seed",
+            "loss",
+            "sampling",
+            "tail_learning_rate",
+            "head_learning_rate",
+            "batch",
+            "weight_decay",
+            "ema_decay",
+            "selection",
+        ):
+            assert initial[key] == protocol[key], key
+        history = read(parent / "history.json")
+        assert len(history) == 8 and history[-1]["best_epoch"] == 7
+        assert history[-1]["validation_loss"] < history[-2]["validation_loss"]
+        protocol.update(
+            hypothesis="Continue the capped but still-improving original DINO adaptation without restarting training or altering loss, data, learning rates or app gates",
+            continuation_parent_protocol_sha256=digest(parent / "protocol.json"),
+            continuation_parent_last_sha256=digest(parent / "last.pt"),
+            continuation_parent_best_sha256=digest(parent / "best.pt"),
+            additional_epoch_limit=8,
+            stopping_rule="At most eight additional epochs; stop on three stale validation epochs after four additional epochs, then screen exactly one unchanged route",
+        )
     frozen = root / "protocol.json"
     if frozen.exists():
         assert read(frozen) == protocol
@@ -144,6 +242,17 @@ def main():
     model = PartialDinoHealthyTail(original).cuda()
     expected = read(cache / "complete.json")["prefix_state_sha256"]
     assert prefix_identity(model.backbone) == expected
+    if sparse_evaluation:
+        initialization = torch.load(
+            parent / "best.pt", weights_only=True, map_location="cpu"
+        )
+        assert initialization["protocol"] == read(parent / "protocol.json")
+        assert (
+            initialization["protocol"]["prefix_complete_sha256"]
+            == protocol["prefix_complete_sha256"]
+        )
+        model.load_state_dict(initialization["model"], strict=True)
+        assert prefix_identity(model.backbone) == expected
     ema = copy.deepcopy(model).eval().requires_grad_(False)
     optimizer = torch.optim.AdamW(
         [
@@ -161,9 +270,15 @@ def main():
         weight_decay=0.01,
     )
     start, best, best_epoch, stale, history = 0, float("inf"), -1, 0, []
-    if (root / "last.pt").exists():
-        state = torch.load(root / "last.pt", weights_only=True, map_location="cuda")
-        assert state["protocol"] == protocol
+    resume = root / "last.pt"
+    from_parent = args.continue_from_phase51 and not resume.exists()
+    if from_parent:
+        resume = parent / "last.pt"
+        shutil.copy2(parent / "best.pt", root / "best.pt")
+        shutil.copy2(parent / "best_val_logits.npy", root / "best_val_logits.npy")
+    if resume.exists():
+        state = torch.load(resume, weights_only=True, map_location="cuda")
+        assert state["protocol"] == (initial if from_parent else protocol)
         model.load_state_dict(state["model"], strict=True)
         ema.load_state_dict(state["ema"], strict=True)
         optimizer.load_state_dict(state["optimizer"])
@@ -188,8 +303,11 @@ def main():
                 ]
             )
 
-    for epoch in range(start, 8):
-        if epoch >= 4 and stale >= 3:
+    for epoch in range(start, protocol["epochs"]):
+        if (
+            epoch >= protocol["minimum_epochs"]
+            and stale >= protocol["early_stop_patience"]
+        ):
             break
         model.train()
         order = torch.multinomial(
@@ -207,10 +325,20 @@ def main():
                 )
                 * torch.where(truth[index] > 0, 1.0, 4.0)
             ).mean()
-            valid = classes[index] >= 0
+            if args.risk_control:
+                negatives = truth[index] == 0
+                loss = loss + 0.25 * weighted_upper_tail(
+                    F.softplus(healthy_margin(logits)[negatives]), fraction=0.1
+                )
+            valid = (classes[index] >= 0) & (classes[index] < 8)
             if valid.any():
                 loss = loss + 0.25 * F.cross_entropy(
                     logits[valid], classes[index][valid]
+                )
+            explicit_other = classes[index] == 8
+            if args.explicit_other_control and explicit_other.any():
+                loss = loss + F.cross_entropy(
+                    logits[explicit_other], classes[index][explicit_other]
                 )
             assert torch.isfinite(loss)
             optimizer.zero_grad(set_to_none=True)
@@ -235,6 +363,12 @@ def main():
                 * weights
             ).sum()
         )
+        if args.risk_control:
+            negatives = truth[val] == 0
+            score += float(
+                0.25
+                * weighted_upper_tail(F.softplus(z[negatives]), weights[negatives], 0.1)
+            )
         assert np.isfinite(score)
         if score < best - 0.00001:
             best, best_epoch, stale = score, epoch, 0
@@ -276,7 +410,7 @@ def main():
     selected = torch.load(root / "best.pt", weights_only=True, map_location="cpu")
     model.load_state_dict(selected["model"], strict=True)
     model.eval()
-    raw = np.zeros(len(descriptors), np.float32)
+    raw = np.full(len(descriptors), np.nan, np.float32)
     raw[tables] = evaluate(model, np.arange(len(tables))).cpu().numpy()
     error = float(
         np.max(
@@ -291,6 +425,8 @@ def main():
         raw[np.array([r["table"] for r in rows])[val]], target[val], vw
     )
     missing = np.flatnonzero(lookup < 0)
+    if sparse_evaluation:
+        missing = np.intersect1d(missing, required)
     pixels = CanonicalInputs(campaign)
     try:
         with concurrent.futures.ThreadPoolExecutor(8) as pool, torch.inference_mode():
@@ -317,6 +453,11 @@ def main():
     )
     np.save(root / "logits.npy", raw)
     np.save(root / "probabilities.npy", probabilities)
+    scored_indices = np.flatnonzero(np.isfinite(probabilities))
+    np.save(root / "scored_indices.npy", scored_indices)
+    assert not sparse_evaluation or set(map(int, required)) <= set(
+        map(int, scored_indices)
+    )
     atomic_save(
         dict(
             architecture="PartialDinoHealthyTail",
@@ -332,6 +473,8 @@ def main():
         protocol=protocol,
         checkpoint_sha256=digest(root / "candidate.pt"),
         probabilities_sha256=digest(root / "probabilities.npy"),
+        scored_indices_sha256=digest(root / "scored_indices.npy"),
+        scored_inputs=len(scored_indices),
         logits_sha256=digest(root / "logits.npy"),
         selected_epoch=selected["epoch"],
         calibration=calibration,
