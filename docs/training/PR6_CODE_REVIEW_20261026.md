@@ -5,6 +5,12 @@ retains the original model and passes 133 unit/22 emulator checks. Rejected
 replacement weights are not packaged; recognition and physical-device gates
 still prevent taking the combined PR out of draft.
 
+The first CI run for `b7089fb` caught an active-manifest parser-fixture mismatch.
+The fix separates the research fixture and declares the real app manifest as a
+Gradle test input; the corrected local 133-unit/22-emulator run passes. APK
+payloads and signing identities are unchanged. The justified 448-pixel CNN
+control also completed and failed Healthy recovery; it is stopped, not exported.
+
 **Latest code/evidence:** [27 October offline continuation](OFFLINE_RECOGNITION_20261027.md)
 records the fixed cache-namespace collision, invalidated runs, verified
 continuations, logit-reward/CNN controls and unchanged failed recognition gates.

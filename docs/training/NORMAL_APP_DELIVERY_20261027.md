@@ -55,7 +55,14 @@ is about 138 MB, rather than the stale 607 MB artifact. Its release counterpart
 is about 111 MB. The stale artifact is not a delivery build.
 
 The clean full build took 59.65 seconds and final emulator verification took
-23.87 seconds on the PC. Byte-exact APK reconstruction reuses verified local
+24.16 seconds on the PC. A subsequent CI check exposed a parser test that had
+read the normal manifest while expecting research-only fields. Its research
+contract now comes from a fixed unit-test resource, while bundled-contract
+tests continue reading the real manifest. Gradle explicitly tracks that external
+manifest as a test input, preventing stale results after model swaps. The final
+validation build took 17.10 seconds; all 133 unit and 22 emulator checks pass.
+Both APK hashes remain unchanged because this correction affects only tests and
+their build inputs. Byte-exact APK reconstruction reuses verified local
 model payloads and transfers approximately 26.6 MB for debug and 5.3 MB for
 release. Every reconstructed APK matches the PC source hash before signing.
 

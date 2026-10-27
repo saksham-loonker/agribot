@@ -159,6 +159,8 @@ class VisionManifestTest {
     }
 
     @Test fun `primary recovery rejects changed thresholds scope and preprocessing`() {
+        val text = requireNotNull(javaClass.getResourceAsStream("/primary_model_manifest.json"))
+            .bufferedReader().use { it.readText() }
         val m = VisionManifest.parse(text)
         assertEquals(com.sakshyam.agribot.domain.scan.PrimaryImagePolicy(), m.primaryPolicy)
         assertEquals(224, m.contextModel!!.inputSize)

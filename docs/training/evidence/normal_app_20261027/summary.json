@@ -87,8 +87,8 @@
   ],
   "build": {
     "exit_code": 0,
-    "elapsed_seconds": 59.65105858002789,
-    "source_sha256": "59a776af3cb024e83a14cce3fded42a1a92a1e68c2cf344ff32b3b1f84c257b2"
+    "elapsed_seconds": 17.10207482194528,
+    "source_sha256": "7b9089106e80a2ec986ac26b0a10f22032fa3c036e93ace8a8282fd536baed5c"
   },
   "native": {
     "passed": true,
@@ -96,25 +96,25 @@
     "failed": 0,
     "skipped": 0,
     "failures": [],
-    "elapsed_seconds": 23.866835068911314,
+    "elapsed_seconds": 24.158897988963872,
     "exit_code": 0,
-    "build_source_sha256": "59a776af3cb024e83a14cce3fded42a1a92a1e68c2cf344ff32b3b1f84c257b2",
+    "build_source_sha256": "7b9089106e80a2ec986ac26b0a10f22032fa3c036e93ace8a8282fd536baed5c",
     "model_manifest_sha256": "b9ecdf557015e847bb4a4d76b622ab66100c036effa86e5a63c151e32de15f4f",
     "case_names": [
       {
         "name": "failedMoveKeepsTheCurrentPlantAndAllowsASafeRetry",
         "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
-        "time": "0.125"
+        "time": "0.13"
       },
       {
         "name": "checkRejectsAnInferenceThatSpansABackgroundTransition",
         "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
-        "time": "0.001"
+        "time": "0.0"
       },
       {
         "name": "quickCheckWaitsForPrimaryWindowInsteadOfFinalizingOtherEarly",
         "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
-        "time": "0.124"
+        "time": "0.123"
       },
       {
         "name": "failedModelsDoNotLeaveWalkStartWaitingForever",
@@ -124,12 +124,12 @@
       {
         "name": "failedCheckSaveKeepsTheVerdictAndRetriesWithoutAnOrphanRun",
         "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
-        "time": "0.076"
+        "time": "0.101"
       },
       {
         "name": "multiPlantTransactionRollsBackEarlierWritesInTheSameMovement",
         "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
-        "time": "0.001"
+        "time": "0.0"
       },
       {
         "name": "walkThatFinishesStartingInTheBackgroundRemainsPaused",
@@ -139,12 +139,12 @@
       {
         "name": "quickCheckTransactionRollsBackTheRunWhenDecisionInsertFails",
         "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
-        "time": "0.0"
+        "time": "0.001"
       },
       {
         "name": "finishRetryDoesNotDuplicateTheAlreadyCommittedPlant",
         "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
-        "time": "0.101"
+        "time": "0.102"
       },
       {
         "name": "pauseAndResumeRejectThePreviousInFlightFrame",
@@ -159,57 +159,57 @@
       {
         "name": "homeShowsBothModesAndRecentSection",
         "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
-        "time": "0.981"
+        "time": "1.005"
       },
       {
         "name": "checkPlantOpensCameraWithGuidance",
         "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
-        "time": "0.554"
+        "time": "0.604"
       },
       {
         "name": "walkSetupRejectsInvalidNumbers",
         "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
-        "time": "0.625"
+        "time": "0.803"
       },
       {
         "name": "settingsSwitchesLanguageToHindiAndBack",
         "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
-        "time": "0.75"
+        "time": "0.855"
       },
       {
         "name": "runPersistenceSupportsReplacementRetakeAndPiCompatibleExports",
         "classname": "com.sakshyam.agribot.AgribotRoomExportIntegrationTest",
-        "time": "0.052"
+        "time": "0.082"
       },
       {
         "name": "renderEnglishAndHindiCards",
         "classname": "com.sakshyam.agribot.VerdictCardRenderTest",
-        "time": "1.13"
+        "time": "1.15"
       },
       {
         "name": "primaryScoresAndProtectedDiseaseVerdictsMatchMobileReference",
         "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
-        "time": "1.53"
+        "time": "1.556"
       },
       {
         "name": "checkAPlantVerdictOnStaticImagesAgreesWithReference",
         "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
-        "time": "1.479"
+        "time": "1.456"
       },
       {
         "name": "wholeImageLogitsAndLabelsMatchReference",
         "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
-        "time": "1.228"
+        "time": "1.23"
       },
       {
         "name": "fullAnalysisRunsAndReportsLatency",
         "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
-        "time": "0.778"
+        "time": "0.779"
       },
       {
         "name": "detectionsMatchReference",
         "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
-        "time": "0.276"
+        "time": "0.278"
       }
     ],
     "physical_phone": false

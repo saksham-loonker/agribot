@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.sakshyam.agribot.ml.vision.LeafDetectionDecoderTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:36:15" hostname="vewmet" time="0.001">
+<testsuite name="com.sakshyam.agribot.ml.vision.LeafDetectionDecoderTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-27T17:39:24" hostname="vewmet" time="0.001">
   <properties/>
-  <testcase name="rejects truncated output" classname="com.sakshyam.agribot.ml.vision.LeafDetectionDecoderTest" time="0.001"/>
-  <testcase name="nms keeps the strongest of overlapping boxes, clamps and caps" classname="com.sakshyam.agribot.ml.vision.LeafDetectionDecoderTest" time="0.0"/>
+  <testcase name="rejects truncated output" classname="com.sakshyam.agribot.ml.vision.LeafDetectionDecoderTest" time="0.0"/>
+  <testcase name="nms keeps the strongest of overlapping boxes, clamps and caps" classname="com.sakshyam.agribot.ml.vision.LeafDetectionDecoderTest" time="0.001"/>
   <testcase name="maps letterboxed corners to frame pixels and filters by score" classname="com.sakshyam.agribot.ml.vision.LeafDetectionDecoderTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

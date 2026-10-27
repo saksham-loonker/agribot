@@ -137,7 +137,7 @@
     "agribot_android_app/android/gradle/wrapper/gradle-wrapper.properties": "9db79e0547a30f1239eb9ad76c2d9105ad26e8dd65dd75486a606e17c29571ad",
     "agribot_android_app/android/gradlew": "a3648413b47ef77af21d5ebc36c687c7d103aaef3e17f33de7d4f080a6f300a3",
     "agribot_android_app/android/gradlew.bat": "57931b17dd228e5c24dac90e815d0bf82477e831a4618dfab4136f5446b42a9f",
-    "agribot_android_app/android/ml/build.gradle": "d0b664ba505fa4cc282df256d08046258e27fe0997a31166d7ac4e42d3212cde",
+    "agribot_android_app/android/ml/build.gradle": "fa251bb08c782bc1b8bdd0e1ad71f9626ce318bc34c1a0076cc3671d638a150f",
     "agribot_android_app/android/ml/consumer-rules.pro": "bae0045bcff4adcfc435eb32dcfb8887757baab0a52859b7508109d367ab6d4f",
     "agribot_android_app/android/ml/src/main/java/com/sakshyam/agribot/ml/di/MlModule.kt": "e868a1ffec649a61f86cf8809ee9de6c6b433baf02ec726866d0d93d638995d5",
     "agribot_android_app/android/ml/src/main/java/com/sakshyam/agribot/ml/vision/AgribotLeafVision.kt": "e86b9e9e61b9b4cc23ee70db0645ebdb3bd50573cc604beb01c8002795156f9f",
@@ -152,7 +152,7 @@
     "agribot_android_app/android/ml/src/test/java/com/sakshyam/agribot/ml/vision/GoldenParityTest.kt": "e67086098c189cdd753e074998dfe96d925dd40b04b10eb093104955a10c475b",
     "agribot_android_app/android/ml/src/test/java/com/sakshyam/agribot/ml/vision/TestPng.kt": "fb290f652caa6548f842df28c3ac78fd5903795f78b5084336d8deba946989d7",
     "agribot_android_app/android/ml/src/test/java/com/sakshyam/agribot/ml/vision/ViewConfirmationTest.kt": "89d50f857e99878fae6e3307b744ff3312dccc711a193f68dbfb5fcf7e7984d1",
-    "agribot_android_app/android/ml/src/test/java/com/sakshyam/agribot/ml/vision/VisionCoreTest.kt": "5bfd12fd645e68c6c0f3e8e0be6e48c977ddd487e30b94b608a39eaad2711bcd",
+    "agribot_android_app/android/ml/src/test/java/com/sakshyam/agribot/ml/vision/VisionCoreTest.kt": "172c345cdd071c92fef659a45ac0359fe0346ebafecd6c3cb229f4c199d7da8b",
     "agribot_android_app/android/ml/src/test/resources/golden/golden_00.png": "bf5e22e574db3b93171950fb90b8dad1d8df46df0eb0acea6524c33a73d7f866",
     "agribot_android_app/android/ml/src/test/resources/golden/golden_01.png": "82412422f1172d07c74898c2a866e04fe583bfb246e6faa4487b53f067177608",
     "agribot_android_app/android/ml/src/test/resources/golden/golden_02.png": "b926d6beee70e9572c93de2aed7ba66ec0d665522608aa1492a64916b8481f9c",
@@ -167,6 +167,7 @@
     "agribot_android_app/android/ml/src/test/resources/golden/golden_11.png": "29bda42f6368356c5475edfe5b104769597b586e8b93c3fe10137f1b1f1a3670",
     "agribot_android_app/android/ml/src/test/resources/golden/golden_12.png": "30fac81c5319f999b45b9839c2540df107b8ec88112644ac5035e49336468004",
     "agribot_android_app/android/ml/src/test/resources/golden/golden_expected.json": "ce048b4fdfc0253d2990f5f5705719803c558f77ffe032d06d13d366186b6c97",
+    "agribot_android_app/android/ml/src/test/resources/primary_model_manifest.json": "20966893dac9e2d8a455d27c7b9108ee10f5d829d6f2455627162c5fcfea5c64",
     "agribot_android_app/android/settings.gradle": "40c55e8eeab58bb067207291f9b25966d862640a0045073672d483d68313b2a6",
     "agribot_android_app/android/variables.gradle": "56e2ac80af0c924ddf1b219cec2887c37930d9dad82c6cf5121d78070befb105",
     "agribot_android_app/package.json": "1e67e31a0beb9c56fbb052c2c894ddcde50af53d9cae99389b7bce6ed92a630e",
@@ -175,5 +176,5 @@
     "agribot_android_app/www/index.html": "815b2254d486ec5add28634cd6a0b1d8713152dc12a491189fe4d27c280f8b96",
     "agribot_android_app/www/styles.css": "049223518c433125a5563fbcc1ee56306e363a1cf6ad4701a25db00cbc69f0d4"
   },
-  "source_sha256": "59a776af3cb024e83a14cce3fded42a1a92a1e68c2cf344ff32b3b1f84c257b2"
+  "source_sha256": "7b9089106e80a2ec986ac26b0a10f22032fa3c036e93ace8a8282fd536baed5c"
 }

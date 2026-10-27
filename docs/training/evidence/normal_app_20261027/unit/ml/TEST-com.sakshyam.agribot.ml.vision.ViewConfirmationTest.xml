@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:36:15" hostname="vewmet" time="0.004">
+<testsuite name="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-10-27T17:39:24" hostname="vewmet" time="0.005">
   <properties/>
-  <testcase name="schema four requires both reference outputs and disease priority" classname="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" time="0.002"/>
+  <testcase name="schema four requires both reference outputs and disease priority" classname="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" time="0.003"/>
   <testcase name="the second view preserves tips cropped from a wide leaf" classname="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" time="0.0"/>
   <testcase name="a new Healthy call requires the full leaf to agree" classname="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" time="0.0"/>
-  <testcase name="full ROI downsampling uses canonical area averages" classname="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" time="0.0"/>
-  <testcase name="a different disease cannot confirm a proposed diagnosis" classname="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" time="0.001"/>
+  <testcase name="full ROI downsampling uses canonical area averages" classname="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" time="0.001"/>
+  <testcase name="a different disease cannot confirm a proposed diagnosis" classname="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" time="0.0"/>
   <testcase name="an unrecognized correction also needs agreement when configured" classname="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" time="0.0"/>
   <testcase name="existing Healthy and disease decisions stay on the original path" classname="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" time="0.0"/>
   <testcase name="paired model output requires the new manifest contract" classname="com.sakshyam.agribot.ml.vision.ViewConfirmationTest" time="0.001"/>

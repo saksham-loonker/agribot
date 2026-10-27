@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.sakshyam.agribot.ml.vision.GoldenParityTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:36:14" hostname="vewmet" time="0.165">
+<testsuite name="com.sakshyam.agribot.ml.vision.GoldenParityTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-27T17:39:24" hostname="vewmet" time="0.188">
   <properties/>
-  <testcase name="crop rectangle and decoder agree with the reference on golden detections" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.068"/>
-  <testcase name="decision maths reproduces reference probabilities and labels" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.008"/>
+  <testcase name="crop rectangle and decoder agree with the reference on golden detections" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.075"/>
+  <testcase name="decision maths reproduces reference probabilities and labels" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.011"/>
   <testcase name="golden set is present and matches the bundled manifest" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.001"/>
-  <testcase name="detector letterbox and input match the reference" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.046"/>
-  <testcase name="classifier preprocessing matches the reference for every golden image" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.042"/>
+  <testcase name="detector letterbox and input match the reference" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.053"/>
+  <testcase name="classifier preprocessing matches the reference for every golden image" classname="com.sakshyam.agribot.ml.vision.GoldenParityTest" time="0.047"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

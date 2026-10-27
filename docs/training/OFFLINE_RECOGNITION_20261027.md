@@ -129,6 +129,43 @@ threshold or coefficient hunt on the consumed labels.
 
 ## Prospective data and the next justified work
 
+### Additional native-resolution control: stopped
+
+An audit found that the 194 newly cached Healthy center ROIs have native short
+sides of at least 501 pixels, with median 830. This justified one 448-pixel
+spatial CNN control before attributing the failure solely to insufficient image
+detail or labels. Phase 104 creates canonical 448-pixel inputs directly from
+original files, validates their corresponding 224-pixel parent geometries, and
+reuses only cached detector outputs. It never upsamples the cached 224-pixel
+tensors or incorrectly reuses their encoder features.
+
+All 2,626 new input identities are frozen. One original CNN forward per new
+input captures both its prefix and original logits; every stored prefix must
+reconstruct those logits within 0.002. A separate shape-checked hash helper
+supports 448-pixel tensors, preserving the legacy 224-pixel helper. An initial
+preflight caught that old helper's intentional shape guard before any training;
+there was only one actual training run.
+
+Training retains the original family fold and prior duplicate-group quarantine,
+uses primary-image bag labels, protects the original classifier, and freezes
+BatchNorm running statistics. Validation selection is stricter: it first
+prevents every newly Healthy diseased validation image, even when other old
+errors are removed. The final original recognition and family-safety gates are
+unchanged.
+
+The best checkpoint is epoch 1. It gives 13/40 validation Healthy, 89/223 full
+consumed Healthy, and 15/507 false Healthy. Old retention and safety pass, but
+Healthy recovery fails. It stopped at epoch 5 after four stale evaluations.
+Total recorded setup, cache generation, training and evaluation time was 114.79
+seconds. Its exact optimistic cached routing bound is 114/223, below the 157
+required even before harder confidence/retention/uncertainty constraints. No
+larger-input model is exported or integrated. Keep this control stopped.
+
+[Evidence](evidence/field_candidate_20261027/high_resolution_control_20261027.json)
+pins the native-resolution audit, all-input reconstruction, frozen protocols,
+checkpoint, final verdict metrics, history and routing bound. The normal app
+continues using its original 224-pixel classifier.
+
 The TCP v4 publisher archive remains verified by SHA-256. Only the three
 explicit tomato **leaf** folders were extracted; fruit categories were excluded.
 Source-label, native-resolution, exact/near-copy, contradictory-label,
