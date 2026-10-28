@@ -39,8 +39,8 @@ accuracy evidence or a physical-phone latency test. The phone remains absent.
 The PC debug signature must not replace the laptop upgrade APK's signature or
 be described as an owner production signing identity.
 
-The full local Python suite now runs **198 checks, zero failures, one optional
-downloaded-media skip**, in 21.50 seconds. Six provenance checks cover cache
+The latest full local Python suite runs **240 checks, zero failures, one optional
+downloaded-media skip**, in 22.333 seconds. Six provenance checks cover cache
 identity, lossless storage/corruption, valid geometry, repeated-texture rejection,
 encoded/decoded photo identities and member CRC integrity. Three more checks
 ensure inactive routed cases retain their full-cohort denominator and fixed
@@ -198,6 +198,15 @@ caches. New expected-reward and hard-negative controls retain the original
 recognition and safety gates. Complete source/result identities and the
 full-source supervised control are recorded there; no failed candidate is
 exported or bundled into Android.
+
+Additional semantic, native-global, corrected photo-weighting, original CNN
+Healthy-axis, ConvNeXt, patch-memory and cached hard-negative/joint-head
+controls also fail. The two latest cached heads take 3.06 and 3.16 seconds
+without an image encoder. All controls are stopped at their declared limits.
+The best historical large-teacher checkpoint remains 25/40 Healthy with two
+new false Healthy; it does not meet the 28/40 and zero-new-error screen.
+The corrective code and evidence are durable; the recognition repair is
+unfinished. Do not mark PR #6 ready on the strength of software tests.
 
 ## Remaining qualification and evidence
 

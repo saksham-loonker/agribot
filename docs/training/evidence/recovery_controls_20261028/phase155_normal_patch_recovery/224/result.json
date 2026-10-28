@@ -1,0 +1,15 @@
+{
+  "resolution": 224,
+  "healthy_validation_correct": 13,
+  "new_false_healthy_by_source": {
+    "plantvillage": 0,
+    "tlid": 0,
+    "bangladesh_classification": 0,
+    "olid_tomato": 0
+  },
+  "old_healthy_correct": 0,
+  "cheap_pass": false,
+  "passed": false,
+  "full_screen_run": false,
+  "new_encoder_inputs": 0
+}

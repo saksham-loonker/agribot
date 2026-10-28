@@ -1,6 +1,10 @@
 # Agribot training failure investigation, recovery, and Android integration
 
 **28 October takes precedence:** [app delivery and bounded recognition continuation](COMPLETION_CHECKPOINT_20261028.md).
+See [latest repair evidence](RECOGNITION_REPAIR_20261028.md) for the clinical
+photo-weighting correction, CNN output semantics and completed semantic,
+native-resolution, normal-patch, alternative-CNN and hard-negative controls.
+None qualified a replacement. Preserve completed runs and exact-identity caches.
 The actual minified ARM64 release passes additional runtime smoke checks.
 The user cancelled recurring PR-monitor prompts; the scheduled task is disabled.
 AD and OLID are consumed development. Older sealed-OLID and monitoring

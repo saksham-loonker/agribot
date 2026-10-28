@@ -526,5 +526,239 @@
         "passed": false
       }
     ]
+  },
+  {
+    "phase": "phase150_semantic_recovery",
+    "elapsed_seconds": 6.491008108947426,
+    "methods": [
+      {
+        "C": 0.1,
+        "healthy_validation_correct": 13,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "C": 1.0,
+        "healthy_validation_correct": 13,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase151_native_global_recovery",
+    "elapsed_seconds": 5.235435185022652,
+    "methods": [
+      {
+        "method": "original_native_class_head",
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "best_decision": [
+          0,
+          13,
+          0,
+          -0.0
+        ],
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "linear",
+        "best_decision": [
+          0,
+          13,
+          5,
+          -0.7062397640424182
+        ],
+        "selected_epoch": 20,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "mlp",
+        "best_decision": [
+          0,
+          18,
+          6,
+          -0.9296266191009799
+        ],
+        "selected_epoch": 35,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase152_balanced_photo_teacher",
+    "elapsed_seconds": 299.7575038000941,
+    "methods": [
+      {
+        "method": "balanced_photo_clinical_teacher",
+        "best_decision": [
+          -1,
+          21,
+          10,
+          -0.875875203489425
+        ],
+        "selected_epoch": 5,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase153_healthy_axis_cnn",
+    "elapsed_seconds": 10.132557619013824,
+    "methods": [
+      {
+        "method": "healthy_axis_cnn_sft",
+        "best_decision": [
+          0,
+          14,
+          1,
+          -0.6303192925526628
+        ],
+        "selected_epoch": 0,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase154_convnext_clinical_teacher",
+    "elapsed_seconds": 166.98635709506925,
+    "methods": [
+      {
+        "method": "convnext_clinical_teacher",
+        "best_decision": [
+          0,
+          17,
+          0,
+          -0.7687847048911949
+        ],
+        "selected_epoch": 0,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase155_normal_patch_recovery",
+    "elapsed_seconds": 6.0007689339108765,
+    "methods": [
+      {
+        "healthy_validation_correct": 13,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "healthy_validation_correct": 13,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase156_cached_teacher_ranking",
+    "elapsed_seconds": 3.0642902640393004,
+    "methods": [
+      {
+        "best_decision": [
+          -1,
+          14,
+          5,
+          -0.6010749340057373
+        ],
+        "selected_epoch": 0,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 3.0642902640393004
+      }
+    ]
+  },
+  {
+    "phase": "phase157_cached_separation_audit",
+    "elapsed_seconds": 2.1607058038935065,
+    "methods": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "phase": "phase158_joint_cached_teacher",
+    "elapsed_seconds": 3.1595369280548766,
+    "methods": [
+      {
+        "best_decision": [
+          -1,
+          14,
+          5,
+          -0.5969998836517334
+        ],
+        "selected_epoch": 0,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 3.1595369280548766
+      }
+    ]
   }
 ]

@@ -1,0 +1,42 @@
+{
+  "calibration": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0
+    ]
+  ],
+  "results": {
+    "healthy_logit": {
+      "healthy_validation": 13,
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      }
+    },
+    "calibrated_healthy_logit": {
+      "healthy_validation": 13,
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      }
+    },
+    "subtracted_knownness": {
+      "healthy_validation": 17,
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 8
+      }
+    }
+  },
+  "source_sha256": "f410a41172e5aa2ad925202b309eee9833c1fea334d1e3d5495c77feae9d52a8"
+}

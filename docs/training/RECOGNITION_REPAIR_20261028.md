@@ -262,6 +262,118 @@ for any subsequent control means incomplete, never a pass.
 
 ## Reproduction and next action
 
+### Additional completed controls: 149–158
+
+These controls also failed the unchanged recognition/safety screen. No failed
+weights were exported or added to Android. Counts below are actual consumed
+validation app verdicts, including the 13 protected Healthy cases; the minimum
+is 28/40 with zero new disease-to-Healthy errors before complete development
+screening. Neither AD nor OLID is independent acceptance.
+
+| Control | Selected Healthy / 40 | New false Healthy | Outcome |
+| --- | ---: | ---: | --- |
+| 150 semantic clinical prompts, two regularizations | 13 each | 0 | Stop |
+| 151 true native-448 global CLS, original clinical head | 13 | 0 | Stop |
+| 151 native-global residual linear / MLP | 13 / 18 | 0 | Stop |
+| 152 corrected per-photo clinical weighting, large teacher | 21 | 1 | Stop |
+| 153 original CNN Healthy output, full-source supervised tail | 14 | 0 | Stop |
+| 154 ConvNeXt-Tiny clinical teacher with channel-MLP LoRA | 17 | 0 | Stop |
+| 155 Healthy patch memories, 224 / 448 | 13 each | 0 | Stop |
+| 156 cached large clinical head, hard-negative continuation | 14 | 1 | Stop |
+| 158 learned large-DINO / ConvNeXt joint clinical residual | 14 | 1 | Stop |
+
+**Clinical weighting correction.** The original photometric clinical controls
+146–148 flattened all valid views before averaging. New-source photos have
+four rotations whereas old photos have one; that inadvertently gave each
+new-source photo four times the clinical loss weight. The binary photo loss
+did not have this problem. `balanced_clinical_loss.py` first averages valid
+clinical views within each photograph, then averages photographs. Phase 152
+reran the changed objective with the verified large teacher and otherwise
+matching sampler, seed and input policy. It reached 21/40 with one new false
+Healthy and failed. View-replication invariance, coarse disease labels and
+missing-view rejection have regression coverage. Earlier completed results
+remain historical evidence, not evidence for the corrected objective.
+
+**CNN output semantics.** The retained CNN's two outputs are independent binary
+logits: column zero is Healthy; column one is knownness. They are not a
+two-class softmax. Experimental margin controls such as 101/110/142/144 reused
+their difference, which does not preserve the original Healthy warm function.
+The existing app fusion already handles the original semantics correctly.
+Phase 153 restores the original Healthy row directly through the existing
+single-output tail, audits zero-update parity and applies the full-source
+supervised recipe. Its 14/40 safe result does not solve recognition. See the
+recorded [axis diagnostic](evidence/recovery_controls_20261028/cnn_axis_semantics_diagnostic.json).
+Do not describe this as an app normalization defect or a shipped-app fix.
+
+**Semantic features without re-encoding photos.** Phase 149 obtains the official
+SigLIP2 text tower from immutable revision
+`3f9f96cb90da5dbc758b01813f2f6f1aee24c1ab`. Every vision tensor exactly matches
+the already cached image encoder, proving the shared coordinate basis. Nineteen
+fixed clinical prompts use 103 vocabulary rows; exact ID remapping and a
+full-versus-pruned small-model forward check give zero error. HTTPS ranges
+downloaded 714,918,784 bytes in 240.48 seconds rather than the full model.
+The full parent-file hash was not verified; range hashes, pinned identity and
+the complete vision-tensor proof are recorded instead. Phase 150 uses family
+out-of-fold training calibration, whole-pixel overlap quarantine and two fixed
+regularizations. It runs no image encoder. Both controls fail at 13/40.
+
+**Independent backbone probe.** Phase 154 uses official ConvNeXt-Tiny weights,
+audits frozen-feature restoration, warms its nine-class head from the cache,
+then adapts the channel-mixing linear layers with zero-initialized LoRA and
+the corrected per-photo clinical loss. Inputs remain the canonical 224-pixel
+app ROIs with ImageNet normalization; this is not the standard 236-resize
+ImageNet evaluation transform. Mutable checkpoints omit the frozen backbone.
+The selected safe checkpoint is 17/40; the 26/40 epoch introduces five false
+Healthy. No mobile student or export was attempted.
+
+**Normal-patch alternative.** Phase 155 uses existing normalized local tokens
+at 224 and 448 pixels. Healthy reference banks and normality calibration use
+separate inner training folds joined by family and shared ROI identity.
+Farthest-point coresets retain 512 actual training patches; distance quantiles
+feed a logistic calibrator constrained so greater anomaly cannot increase
+Healthy probability. Per-view probabilities retain the conservative crop-pair
+minimum and fixed .95 admission. This is inspired by patch-memory anomaly
+detection, not an exact PatchCore reproduction. Both resolutions recover no
+additional Healthy validation photo. No encoder inference is needed.
+
+**Cheap hard-negative stopping test.** Phase 156 continues phase 152's completed
+cached clinical-head warm-up on the same frozen large-encoder feature basis.
+It adds training-only hardest-negative ranking to clinical/binary supervision,
+with one fixed objective and six-stale-epoch stopping. It finishes in 3.06
+seconds, without loading an encoder or decoding photos, and fails at 14/40
+with one new false Healthy. Its head cannot be mixed with adapted-encoder
+features. No further encoder training is justified by this head result alone.
+
+**Separation audit.** Phase 157 replays 33 selected prediction caches with exact
+validation-index checks and file hashes. It uses consumed validation labels
+only for an explicitly optimistic diagnostic: allow each expert its own
+zero-new-FP threshold, then union its safe recoveries. Even that oracle union
+reaches only **23/40**, below 28. There are 18 guard-reachable rejected Healthy
+cases and 32 admissible negative cases. These thresholds are never candidates
+or deployment settings. This stops simple monotone threshold/OR exploration
+for these 33 selected checkpoints; it does not rule out learned interactions,
+other checkpoints, architectures or improved supervision. The older phase-130
+diagnostic includes a different expert set and is not directly interchangeable.
+
+Phase 158 explicitly tests the learned-interaction alternative rather than
+another threshold combination. It joins the existing large-DINO and ConvNeXt
+representations by canonical input SHA, initializes a joint nonlinear residual
+to zero over the completed clinical head, and uses the same clinical/binary/
+hard-negative supervision. Exact warm-logit preservation has regression
+coverage. This bounded control finishes in **3.16 seconds**, with zero new
+encoder inputs, at 14/40 with one new false Healthy. It also stops; no full
+encoder verification, distillation or export follows that failed screen.
+
+The next substantive model work must state what new information or visual
+representation should resolve the remaining separation failures before another
+run. Preserve the corrected objectives, original named disease verdicts and
+all safety gates. Do not start another loss/threshold grid or rerun completed
+adapters. Suitable additional field supervision requires documented clinical
+labels, source/family separation and overlap audits; the existing publisher
+collection's orientation/EXIF confound makes it insufficient independent field
+evidence. No recognition completion date is supportable while no candidate
+passes the development screen and fresh acceptance is still unqualified.
+
 Campaign: `/home/genesis/agribot-data/recognition_campaign_20261024` on
 `agribot-5090`. Python: `/home/genesis/.venvs/agribot-train/bin/python`.
 Code overlay: `/home/genesis/agribot/model_training/v3`. Useful jobs run in
@@ -277,7 +389,12 @@ checks proceeds to restored-model verification and parity. Truly suitable
 unconsumed prospective data must have an independently justified protocol
 before opening; AD, OLID and this new collection cannot fill that role.
 
-Local regression validation: **228 Python tests, one optional media skip**.
+Local regression validation before these additions: **228 Python tests, one
+optional media skip**. The additional clinical weighting, adapter merge,
+monotone calibration and range-offset/corruption tests are included in the
+latest machine-readable test evidence alongside this document.
+The latest full run passes **240 tests with one optional media skip**, in
+22.333 seconds. These are software/contract checks, not recognition acceptance.
 Tests cover protected verdict identity, GRL direction, contrastive edge cases,
 replay mass, zero-residual warm parity, LoRA merge/key preservation, readable
 NPY headers, cache-identity rejection, condition logit conservation and

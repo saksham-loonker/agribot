@@ -1,0 +1,218 @@
+{
+  "protocol_sha256": "3d15cfd6615458ca35a20c20290087c86eecfa617eb1cdf2cb05e30cef29ea6d",
+  "selected_experts": 33,
+  "controls": [
+    {
+      "name": "phase129_native_dino_mil/gated_attention_mil/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 22,
+      "healthy_at_fixed_admission": 19,
+      "maximum_admissible_negative_probability": 0.926637589931488
+    },
+    {
+      "name": "phase124_lora_recovery/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 21,
+      "healthy_at_fixed_admission": 19,
+      "maximum_admissible_negative_probability": 0.9198862910270691
+    },
+    {
+      "name": "phase145_photometric_lora_recovery/photometric_lora_supervised/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 20,
+      "healthy_at_fixed_admission": 20,
+      "maximum_admissible_negative_probability": 0.9489876627922058
+    },
+    {
+      "name": "phase151_native_global_recovery/mlp/validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 19,
+      "healthy_at_fixed_admission": 18,
+      "maximum_admissible_negative_probability": 0.9394832253456116
+    },
+    {
+      "name": "phase151_native_global_recovery/original_native_class_predictions.npz",
+      "oracle_zero_new_fp_healthy": 19,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.042322028428316116
+    },
+    {
+      "name": "phase132_large_roi_recovery/large_mlp/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 17,
+      "healthy_at_fixed_admission": 15,
+      "maximum_admissible_negative_probability": 0.8273234367370605
+    },
+    {
+      "name": "phase150_semantic_recovery/C1.0/validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 17,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.5698616018279608
+    },
+    {
+      "name": "phase154_convnext_clinical_teacher/convnext_clinical_teacher/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 17,
+      "healthy_at_fixed_admission": 17,
+      "maximum_admissible_negative_probability": 0.9472233653068542
+    },
+    {
+      "name": "phase134_anchor_lora/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 16,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.8229696750640869
+    },
+    {
+      "name": "phase135_condition_split_lora/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 16,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.8455564975738525
+    },
+    {
+      "name": "phase136_hard_negative_lora/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 16,
+      "healthy_at_fixed_admission": 14,
+      "maximum_admissible_negative_probability": 0.8477826714515686
+    },
+    {
+      "name": "phase146_original_clinical_lora/original_nine_class_supervised/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 16,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.8744591474533081
+    },
+    {
+      "name": "phase150_semantic_recovery/C0.1/validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 16,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.5901878532543559
+    },
+    {
+      "name": "phase129_native_dino_mil/topk_damage_mil/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 15,
+      "healthy_at_fixed_admission": 15,
+      "maximum_admissible_negative_probability": 0.9448872804641724
+    },
+    {
+      "name": "phase144_photometric_cnn_recovery/photometric_supervised/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 15,
+      "healthy_at_fixed_admission": 15,
+      "maximum_admissible_negative_probability": 0.9287291765213013
+    },
+    {
+      "name": "phase127_clinical_anchors/clinical_anchors/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 14,
+      "healthy_at_fixed_admission": 14,
+      "maximum_admissible_negative_probability": 0.944469690322876
+    },
+    {
+      "name": "phase127_clinical_anchors/condition_subtypes/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 14,
+      "healthy_at_fixed_admission": 14,
+      "maximum_admissible_negative_probability": 0.9325693845748901
+    },
+    {
+      "name": "phase127_clinical_anchors/subtype_contrastive/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 14,
+      "healthy_at_fixed_admission": 14,
+      "maximum_admissible_negative_probability": 0.9313788414001465
+    },
+    {
+      "name": "phase132_large_roi_recovery/large_linear/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 14,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.9334327578544617
+    },
+    {
+      "name": "phase139_full_source_recovery/full_source_rank/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 14,
+      "healthy_at_fixed_admission": 14,
+      "maximum_admissible_negative_probability": 0.9395508766174316
+    },
+    {
+      "name": "phase139_full_source_recovery/full_source_sft/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 14,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.9275707006454468
+    },
+    {
+      "name": "phase142_full_source_cnn_recovery/full_source_cnn_rank/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 14,
+      "healthy_at_fixed_admission": 14,
+      "maximum_admissible_negative_probability": 0.9355418682098389
+    },
+    {
+      "name": "phase142_full_source_cnn_recovery/full_source_cnn_sft/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 14,
+      "healthy_at_fixed_admission": 14,
+      "maximum_admissible_negative_probability": 0.9145496487617493
+    },
+    {
+      "name": "phase147_large_clinical_teacher/large_clinical_teacher/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 14,
+      "healthy_at_fixed_admission": 25,
+      "maximum_admissible_negative_probability": 0.9999821186065674
+    },
+    {
+      "name": "phase148_guard_reward_teacher/guard_aware_expected_reward_teacher/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 14,
+      "healthy_at_fixed_admission": 14,
+      "maximum_admissible_negative_probability": 0.9800732731819153
+    },
+    {
+      "name": "phase153_healthy_axis_cnn/healthy_axis_cnn_sft/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 14,
+      "healthy_at_fixed_admission": 14,
+      "maximum_admissible_negative_probability": 0.8826383352279663
+    },
+    {
+      "name": "phase140_large_kernel_recovery/C1/predictions.npz",
+      "oracle_zero_new_fp_healthy": 13,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.745031921051083
+    },
+    {
+      "name": "phase140_large_kernel_recovery/C10/predictions.npz",
+      "oracle_zero_new_fp_healthy": 13,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.7426549185116508
+    },
+    {
+      "name": "phase151_native_global_recovery/linear/validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 13,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.9467683434486389
+    },
+    {
+      "name": "phase152_balanced_photo_teacher/balanced_photo_clinical_teacher/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 13,
+      "healthy_at_fixed_admission": 21,
+      "maximum_admissible_negative_probability": 0.999933123588562
+    },
+    {
+      "name": "phase155_normal_patch_recovery/224/validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 13,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.5260130635161642
+    },
+    {
+      "name": "phase155_normal_patch_recovery/448/validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 13,
+      "healthy_at_fixed_admission": 13,
+      "maximum_admissible_negative_probability": 0.5867644209099145
+    },
+    {
+      "name": "phase156_cached_teacher_ranking/best_validation_predictions.npz",
+      "oracle_zero_new_fp_healthy": 13,
+      "healthy_at_fixed_admission": 14,
+      "maximum_admissible_negative_probability": 0.9870348572731018
+    }
+  ],
+  "fixed_healthy_correct": 13,
+  "guard_reachable_rejected_healthy": 18,
+  "admissible_negative_images": 32,
+  "oracle_zero_fp_union_healthy": 23,
+  "required_healthy": 28,
+  "simple_monotone_threshold_or_still_possible": false,
+  "diagnostic_only": true,
+  "candidate_selected": false,
+  "model_promoted": false,
+  "acceptance_data_used": false,
+  "ad_independent": false,
+  "olid_independent": false,
+  "new_encoder_inputs": 0,
+  "elapsed_seconds": 2.1607058038935065
+}

@@ -1,6 +1,11 @@
 {
-  "archive_sha256": "bdae9099f552bf17368a6a40f9cb150d351c97e6990dde7f9f609c30557cd7de",
+  "archive_sha256": "f38f0376391aa6d91bd310cdbca03e2e7b65b8ebe48727a216ccd9f3ffd1e1a0",
   "files": [
+    {
+      "path": "model_training/v3/balanced_clinical_loss.py",
+      "sha256": "28b384ce3974feb3532fb214af7ac674750103762ec5054f405936b3bbaf5192",
+      "bytes": 1174
+    },
     {
       "path": "model_training/v3/clinical_anchor_head.py",
       "sha256": "3c47159f0332c220ab76a07b9c68c1597f22a9a1eeb19c9fd9d41d764d57208c",
@@ -10,6 +15,11 @@
       "path": "model_training/v3/clinical_photometric_dino.py",
       "sha256": "7178e62239defa098bee86c5651053c3994572a672bf3f0c7592081251f122a1",
       "bytes": 5196
+    },
+    {
+      "path": "model_training/v3/clinical_semantic_prompts.py",
+      "sha256": "ff4dbde027a9c42fb7ba6398401dd0b9f3a797199ee2a68e6ab8a6704968ba8d",
+      "bytes": 2315
     },
     {
       "path": "model_training/v3/condition_split_head.py",
@@ -32,9 +42,24 @@
       "bytes": 1440
     },
     {
+      "path": "model_training/v3/convnext_clinical_teacher.py",
+      "sha256": "8df49c7c630cf8b974569eb34264a06c4619779a6cb2946d5e4d5871622d1229",
+      "bytes": 5858
+    },
+    {
       "path": "model_training/v3/hard_negative_ranking.py",
       "sha256": "0d2b38b225fe19cd1614961ff63881e258997b1e7ed6b381f81fdd4966753465",
       "bytes": 535
+    },
+    {
+      "path": "model_training/v3/hf_range_tensors.py",
+      "sha256": "8a3cba0b495c5353fc6970bd4c0816555e93c232f46a221bd37892417afbe6dc",
+      "bytes": 5403
+    },
+    {
+      "path": "model_training/v3/joint_clinical_head.py",
+      "sha256": "0fefc61d67bf66a02b5a3e8a2c864952ae523aa5090b2a76c754e83bf6988aaa",
+      "bytes": 855
     },
     {
       "path": "model_training/v3/large_photometric_dino.py",
@@ -60,6 +85,21 @@
       "path": "model_training/v3/lora_dino.py",
       "sha256": "e58ca2efa7241536c089ef73452e14672042392b310ef9266be51672c163dc92",
       "bytes": 1741
+    },
+    {
+      "path": "model_training/v3/lora_linear.py",
+      "sha256": "40ac2a5f180fb24af2ca519a8e5894340db68c47919de0fcc9dbb8e99debc162",
+      "bytes": 1013
+    },
+    {
+      "path": "model_training/v3/monotone_normality.py",
+      "sha256": "04a7b3cf7900d5c5d8f68a53e44929a0c5b4c68f6593ddfb326af0fe204dbcec",
+      "bytes": 1598
+    },
+    {
+      "path": "model_training/v3/native_global_head.py",
+      "sha256": "445fca43b4e10ef352a5c51637c525e62ad3cb5ee5f49de6689a309aa0b4d0e4",
+      "bytes": 922
     },
     {
       "path": "model_training/v3/native_local_damage_heads.py",
@@ -205,6 +245,56 @@
       "path": "model_training/v3/phase148_guard_reward_teacher.py",
       "sha256": "624f8ea017e0f05db91fde78c8821d25175d4b4b9aaf976833fbbb564f876d74",
       "bytes": 17850
+    },
+    {
+      "path": "model_training/v3/phase149_semantic_text_features.py",
+      "sha256": "2fd6de368fe6df8073fa007b30cc7931fc97f26fbbf7cd05064b8a0cab61691f",
+      "bytes": 9438
+    },
+    {
+      "path": "model_training/v3/phase150_semantic_recovery.py",
+      "sha256": "59f9313d4460e3b26e35268f61b97fd28bed88314854e37dae2ceae2d0e0ebb7",
+      "bytes": 11392
+    },
+    {
+      "path": "model_training/v3/phase151_native_global_recovery.py",
+      "sha256": "7aaa12afdb067be2348a4d50ba4a4a89a6b43d09ed239a2918753c694d9b24d7",
+      "bytes": 9722
+    },
+    {
+      "path": "model_training/v3/phase152_balanced_photo_teacher.py",
+      "sha256": "258e27eac14ae1481c20ce5c0258018d54e60c2a30c11c9bcc62b4b30e29eb36",
+      "bytes": 20511
+    },
+    {
+      "path": "model_training/v3/phase153_healthy_axis_cnn.py",
+      "sha256": "7ba0153983871f3d92ab45397cbf9f813821635a1b134bdf94cc999524e9753f",
+      "bytes": 13874
+    },
+    {
+      "path": "model_training/v3/phase154_convnext_clinical_teacher.py",
+      "sha256": "c7b91184d047ec03ce163c20028e553ef76d3bbb50bd1e5cf413297556612570",
+      "bytes": 20669
+    },
+    {
+      "path": "model_training/v3/phase155_normal_patch_recovery.py",
+      "sha256": "5554da7e03a338e981ba9832d346dd6a3a39ba3b6bbcab4c9c1fcdb487048ff6",
+      "bytes": 9872
+    },
+    {
+      "path": "model_training/v3/phase156_cached_teacher_ranking.py",
+      "sha256": "c8152573fd03517c47f3a3adecb39a1f561292cf3e12c9f4b5aee67de00d18ad",
+      "bytes": 10263
+    },
+    {
+      "path": "model_training/v3/phase157_cached_separation_audit.py",
+      "sha256": "5e7dadf76b56e66a869659f2aa567c8cdf23c2288a21e317b8ef2387480a41aa",
+      "bytes": 5742
+    },
+    {
+      "path": "model_training/v3/phase158_joint_cached_teacher.py",
+      "sha256": "68cd2a8effe64dce1c24974660729f91e7caa1e3ba71d9c3dd15dedb6f510c24",
+      "bytes": 11365
     },
     {
       "path": "model_training/v3/photometric_dino.py",
