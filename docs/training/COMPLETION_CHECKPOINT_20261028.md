@@ -81,6 +81,22 @@ restored verification and export were correctly skipped. Do not extend this
 stopped full-backbone control. Initialization/checkpoint-write failures preceding the valid run
 are preserved separately and are not experimental recognition results.
 
+The final phase-117 control tested the strongest remaining representation
+alternative: low-rate adaptation of the **entire copied DINO backbone**,
+warm-starting phase 97's selected suffix rather than restarting it. Only the
+existing consumed development collection was used; its source/family split,
+exact input quarantine, full 40-photo denominator, auxiliary calibration and
+routing cutoffs stayed fixed. Prefix weights now changed, so their frozen
+feature cache could not replace training forwards; exact canonical input
+pixels were reused instead. The deployed classifier remained untouched.
+
+It stopped after nine bounded epochs in **86.23 seconds**. Selected epoch 4
+recognized **19/40 Healthy** with a source validation false-Healthy increase
+of one, already inadmissible. The higher-recall epoch reached 25/40 while
+introducing six source safety violations. Neither met 28/40 or safety.
+Full-cohort verification/export were skipped. Do not extend this stopped
+full-DINO control or describe the unsafe higher-recall epoch as a repair.
+
 ## Source integrity and sealed data
 
 The neural-free prior-overlap audit fingerprints 36,101 previous identities,
