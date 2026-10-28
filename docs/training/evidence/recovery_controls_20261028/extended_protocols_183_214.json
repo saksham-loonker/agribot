@@ -1,5 +1,5 @@
 {
-  "archive_sha256": "351ef70165027fcdb80163c3fd8d366953b908f19793bc59c948c9863f875a9d",
+  "archive_sha256": "f0f91b8ceeb3fc7755e02f8bfa144018c9c372879677ea51be1b1e9ca0d445b4",
   "protocols": [
     {
       "path": "phase183_native_convergence/protocol.json",
@@ -174,6 +174,24 @@
       "sha256": "0ec79013ad765274fa7f8be99eab4bd24b355c1e6137d8aa65b60b8928483030",
       "bytes": 104672,
       "source_sha256": "3f251361dcea9f6426afc65e554d06859d043044244e140a7927b74c8a79041f"
+    },
+    {
+      "path": "phase212_mixed_source_replay/protocol.json",
+      "sha256": "113be1c1c4b6c944c83d21014fcc675e564117719467af8e87a385e690dfb963",
+      "bytes": 121904,
+      "source_sha256": "5ba3863d4a0b398cc07115f7c72c62369840407fd00025b143f19f9be31f1dae"
+    },
+    {
+      "path": "phase213_targeted_negative_heads/protocol.json",
+      "sha256": "0290e6e08ba84fad172825995c62ffe97c0d43877bd30dddcfa9a50bf8f9dc4c",
+      "bytes": 143608,
+      "source_sha256": "6acf1faf36a33447ceab300a2533ee780a7af3a4c0427b360790314a5d72b6af"
+    },
+    {
+      "path": "phase214_targeted_veto_policy/protocol.json",
+      "sha256": "63138be19114f5fb2ce30492d08a808b8e6cb929582b47ac4a593ffdeb8920d0",
+      "bytes": 1509,
+      "source_sha256": "1a026e1d8ea0e69adb58d5f526af25fa364bd5ea468f6814971eadae16edcedd"
     }
   ],
   "purpose": "Lossless exact PC protocol bytes, compressed to avoid hundreds of thousands of generated diff lines; results retain original protocol hashes. No arrays, images or weights."

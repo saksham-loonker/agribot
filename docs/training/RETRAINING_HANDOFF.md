@@ -2,7 +2,7 @@
 
 **29 October continuation takes precedence:**
 [convergence, capacity and checkpoint handoff](CONVERGENCE_AND_CAPACITY_20261029.md)
-records phases 183–211, exhaustive replay, longer/full-encoder adaptation,
+records phases 183–214, exhaustive replay, longer/full-encoder adaptation,
 unclipped-score stopping evidence, strict full-CNN checkpoint restoration and
 verified laptop backups. No replacement is qualified. The longer full-model,
 clinical-loss ablation and cached worst-group controls have all stopped

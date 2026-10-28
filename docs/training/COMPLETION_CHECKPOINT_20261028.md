@@ -1,7 +1,7 @@
 # App delivery and recognition continuation — 28 October 2026
 
 **29 October update:** [convergence and capacity evidence](CONVERGENCE_AND_CAPACITY_20261029.md)
-supersedes the research status below with phases 183–211 and 300 passing Python
+supersedes the research status below with phases 183–214 and 300 passing Python
 tests (one optional media skip). Original app delivery remains unchanged. No
 research model may ship until the unchanged recognition gates pass.
 

@@ -73,6 +73,8 @@ claim the trained model itself was safe. None of these rows qualifies a model.
 | 208–209 | Restore repair, training-only loss audit, then 60 additional full-mobile epochs (100 total). Training binary EMA .140827 to .063965, stopped after 12 stale epochs; safe incumbent still 15/0. No promotion. |
 | 210 | Matched full-mobile clinical-loss ablation, 40 epochs: safe incumbent 15/0; peak 28/+16. No promotion. |
 | 211 | Training-only class-conditional worst-group reweighting over the exhaustive frozen-feature replay, 40 epochs: selected 14/0. Zero new encoder inputs. No promotion. |
+| 212 | Combined full source-107, exhaustive original replay and field-93 supervision, one supervised head, 40 epochs in 4.226 seconds: selected 15/0. Every epoch checkpoint backed up; no new encoding. |
+| 213–214 | Two targeted nitrogen-deficiency/Other versus Healthy heads, 40 epochs each, then 108 fixed new-admission veto policies: best 18/40 with zero new false Healthy, below 28/40. No new encoding and no candidate selected. |
 
 The phase 198 veto has an [inactive, separately tested retention proposal](CLINICAL_RETENTION_PROPOSAL_20261028.md).
 No active gate imports it and no authorization is assumed. Even that proposed
@@ -142,6 +144,49 @@ All 40 epoch weights and predictions were saved. The selected result is only
 14/40 Healthy at zero new false Healthy; no encoder inputs were recomputed.
 The frozen-feature worst-group control is closed unsuccessful. Do not launch
 a full-model version or coefficient grid on the strength of this failure.
+
+## Combined-supervision coverage control: phase 212
+
+One final cheap coverage gap remained: phase 139 used full source 107 with
+bounded old anchors before field 93 existed; phase 193 used exhaustive old
+replay and field 93 but excluded continued source-107 training. Phase 212
+tests the combination, retaining target mass .5, exhaustive original mass .25,
+and splitting the extra-source quarter equally between source 107 and field
+93. It uses the same supervised head, warm ancestry, clinical-balanced
+sampler, seed, optimizer and 40-epoch budget as phase 193. All source-107
+images remain a single development-only publisher collection; no validation
+or prospective data are reclassified as training. Existing real ROI bags,
+rotations and input-identity caches are reused without new encoder inference.
+
+The control completed in 4.226 seconds, selected 15/40 Healthy at zero new
+false Healthy, and failed the unchanged screen. All forty epoch models, best
+and final optimizer/RNG are independently backed up and hash-verified on the
+laptop under `.toolchains/model-checkpoints/phase212/`; its committed receipt
+lists 42 files. This combined-supervision objective is now closed unsuccessful.
+It does not justify another full-encoder run or full restored-model evaluation.
+
+## Targeted negative specialists: phases 213–214
+
+The remaining parent-policy errors specifically involved nitrogen deficiency
+and publisher-labeled Other. Instead of another all-disease average loss,
+phase 213 fits those two condition-specific negative-versus-Healthy heads.
+Each uses all applicable quarantined Healthy training cases and only its
+selected negative condition; other diseases are excluded rather than relabeled
+Healthy. Binary classes retain equal mass, with source/condition/family
+balancing inside each. Raw BCE logits replace the inherited general-class
+calibrator; they are not claimed as calibrated clinical certainty. All
+features come from existing exact-identity caches.
+
+Phase 214 tests only the declared single/joint new-admission vetoes at fixed
+.5 and .95 thresholds on the 18 previously declared coverage-capable parents:
+108 policies, no fitted validation cutoff. Main .95 admission and every
+original guard/retention requirement remain. Existing Healthy and named
+disease outputs cannot be overwritten. The best policy uses the Other head
+at .95 and reaches 18/40 Healthy with zero new false Healthy, still below
+28/40. No candidate was selected, exported or sent for full inference.
+All 80 epoch models and both selected/final optimizer checkpoints are backed
+up and SHA-verified on the laptop; the phase-213 receipt lists 84 files.
+These specialized vetoes are closed unsuccessful under the current screen.
 
 Phase 208 failed its restore preflight before taking any training step. The
 shared partial-load assertion expected BatchNorm bookkeeping keys that
@@ -227,10 +272,11 @@ reported an in-use cache; no lock was forced and unrelated jobs were preserved.
 
 ## Software and acceptance evidence
 
-The expanded local Python suite passes **300 tests** in 24.506 seconds, with
+The expanded local Python suite passes **300 tests**, with
 one optional downloaded-media skip. Native/app source and bundled models did not change in
-this continuation. The previously published `cc3ea38` CI passed 270 training
-contracts and the Android job; the expanded source requires its own CI result.
+this continuation. Published `72fc345` CI passed 300 training contracts and
+the Android job; the final additional cached controls require their own
+publication CI result.
 Earlier 133 native units, 22 selected emulator checks and actual minified ARM64
 release smoke remain software/runtime evidence, not independent recognition.
 
@@ -238,9 +284,9 @@ The evidence directory contains hash-bound protocols/results, the explicit
 phase-204 failure, checkpoint-backup receipts, normalization and convergence
 audits, and an archive of exact PC source bytes (including the inactive tested
 proposal). Arrays, images, weights and APKs are intentionally not committed.
-The 29 new protocols are stored losslessly in
-`extended_protocols_183_211.zip`, indexed by path, SHA-256 and byte size in the
-adjacent JSON manifest. This preserves 15,426,214 exact raw protocol bytes
+The 32 new protocols are stored losslessly in
+`extended_protocols_183_214.zip`, indexed by path, SHA-256 and byte size in the
+adjacent JSON manifest. This preserves 15,693,235 exact raw protocol bytes
 without adding hundreds of thousands of generated protocol diff lines.
 Results retain their original raw protocol hashes. Three additional software
 tests verify the source archive, compressed protocol identities and result
@@ -249,7 +295,16 @@ datasets as fresh acceptance.
 
 ## Next decisions and stopping criteria
 
-1. Phases 209, 210 and 211 are closed unsuccessful. Do not restart them or add
+An eight-case clinical-review preparation packet is available privately under
+`.toolchains/recognition-data-preview/clinical-review-20261029/`. The reviewer
+ZIP preserves original image bytes and supplies a blank review form; publisher
+labels and provenance remain in a separate mapping. These are deliberately
+selected, previously inspected development cases, not an accuracy sample or
+fresh acceptance. No reviewer was contacted, no clinical adjudication occurred,
+and no labels, denominators or gates changed. Record uncertainty and required
+plant context rather than forcing nutrient diagnoses from ambiguous RGB leaves.
+
+1. Phases 209–214 are closed unsuccessful. Do not restart them or add
    epochs merely to accumulate checkpoints. Preserve the evidence and exact
    caches for an independently justified next hypothesis.
 2. Only a candidate passing the cheaper actual-verdict screen may receive full

@@ -1,5 +1,5 @@
 {
-  "archive_sha256": "037910bb53fd9bb0767ebe318a9cafd688a72565bc6049902620c63de56a1dd3",
+  "archive_sha256": "355e855e731ba2d2b83978f3cdfb335620e4af6130fcbb41230175d762d16300",
   "files": [
     {
       "path": "model_training/v3/actual_admission_target.py",
@@ -650,6 +650,21 @@
       "path": "model_training/v3/phase211_conditional_group_dro.py",
       "sha256": "3f251361dcea9f6426afc65e554d06859d043044244e140a7927b74c8a79041f",
       "bytes": 15812
+    },
+    {
+      "path": "model_training/v3/phase212_mixed_source_replay.py",
+      "sha256": "5ba3863d4a0b398cc07115f7c72c62369840407fd00025b143f19f9be31f1dae",
+      "bytes": 15303
+    },
+    {
+      "path": "model_training/v3/phase213_targeted_negative_heads.py",
+      "sha256": "6acf1faf36a33447ceab300a2533ee780a7af3a4c0427b360790314a5d72b6af",
+      "bytes": 15997
+    },
+    {
+      "path": "model_training/v3/phase214_targeted_veto_policy.py",
+      "sha256": "1a026e1d8ea0e69adb58d5f526af25fa364bd5ea468f6814971eadae16edcedd",
+      "bytes": 4830
     },
     {
       "path": "model_training/v3/photo_mixstyle.py",

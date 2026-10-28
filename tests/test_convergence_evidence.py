@@ -16,8 +16,8 @@ class ConvergenceEvidenceTests(unittest.TestCase):
                 self.assertEqual(sha(z.read(row['path'])),row['sha256'],row['path'])
 
     def test_lossless_protocol_archive_and_execution_sources(self):
-        manifest=json.loads((EVIDENCE/'extended_protocols_183_211.json').read_text())
-        archive=EVIDENCE/'extended_protocols_183_211.zip'
+        manifest=json.loads((EVIDENCE/'extended_protocols_183_214.json').read_text())
+        archive=EVIDENCE/'extended_protocols_183_214.zip'
         self.assertEqual(sha(archive.read_bytes()),manifest['archive_sha256'])
         sources={Path(row['path']).name:row['sha256'] for row in json.loads((EVIDENCE/'executed_sources.json').read_text())['files']}
         with zipfile.ZipFile(archive) as z:
@@ -28,7 +28,7 @@ class ConvergenceEvidenceTests(unittest.TestCase):
                 if script in sources:self.assertEqual(protocol['source_sha256'],sources[script],script)
 
     def test_results_remain_bound_to_archived_protocols(self):
-        manifest=json.loads((EVIDENCE/'extended_protocols_183_211.json').read_text())
+        manifest=json.loads((EVIDENCE/'extended_protocols_183_214.json').read_text())
         for row in manifest['protocols']:
             folder=EVIDENCE/Path(row['path']).parent
             for result_file in folder.rglob('result.json'):
