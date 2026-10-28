@@ -1,0 +1,33 @@
+{
+  "source_sha256": "f3403c107111a1e241fc8ac0323f8fb06af054c5ec185a0253ca3a590c388b07",
+  "protocol_sha256": "0c2c2bba38b91c3a0d8e06c9e76ba3bdc82a878347d67839ed13a0db561d0028",
+  "features_sha256": "c78f55efba5524b5a14ba6959c7b78f150d9506ba17a39f6e5d6ba58e8fcb506",
+  "controls": [
+    {
+      "method": "field_source_sft",
+      "protected_original_or_internal_changes": 18,
+      "protected_publisher_healthy_changes": 0,
+      "corrected_consumed_false_healthy": 2,
+      "damaged_consumed_correct_healthy": 0,
+      "passes_preflight": false,
+      "model_promoted": false
+    },
+    {
+      "method": "field_source_rank",
+      "protected_original_or_internal_changes": 37,
+      "protected_publisher_healthy_changes": 0,
+      "corrected_consumed_false_healthy": 2,
+      "damaged_consumed_correct_healthy": 0,
+      "passes_preflight": false,
+      "model_promoted": false
+    }
+  ],
+  "new_encoder_inputs": 153,
+  "cached_encoder_inputs_reused": 579,
+  "diagnostic_only": true,
+  "model_promoted": false,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false,
+  "elapsed_seconds": 8.218893554992974
+}

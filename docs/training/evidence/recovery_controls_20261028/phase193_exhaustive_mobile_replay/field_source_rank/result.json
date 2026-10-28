@@ -1,0 +1,778 @@
+{
+  "method": "field_source_rank",
+  "protocol_sha256": "eec7bec4e7e8a591c2f828e273cfdd9d045e187faed895f11ace2afbf257a001",
+  "checkpoint_sha256": "8f3c97afa7b1bb8d4424796018a11ae95c399c1e800302fc04e5654e312afe11",
+  "best_decision": [
+    0,
+    15,
+    6,
+    -0.7537639613681999
+  ],
+  "selected_epoch": 16,
+  "history": [
+    {
+      "epoch": 0,
+      "decision": [
+        0,
+        13,
+        0,
+        -0.816640408629677
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.7866327352821827,
+      "training_loss_ema": 0.7866327352821827,
+      "training_stale": 0,
+      "checkpoint_sha256": "311244609e9cc37005786158c9f5fb6b84b1f660ea20dd9b8f1a25295c1620da"
+    },
+    {
+      "epoch": 1,
+      "decision": [
+        0,
+        13,
+        0,
+        -0.6673328277408885
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.6551486123353243,
+      "training_loss_ema": 0.7734843229874969,
+      "training_stale": 0,
+      "checkpoint_sha256": "dca0b4a8d61962c9806954efde4a5c44f57f5133abbf10bfa34bcc54f6bd50f1"
+    },
+    {
+      "epoch": 2,
+      "decision": [
+        0,
+        13,
+        2,
+        -0.7672791238482293
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.6037182258442044,
+      "training_loss_ema": 0.7565077132731677,
+      "training_stale": 0,
+      "checkpoint_sha256": "c29b8672a3b51fc1cb458e7516f440a9461a632651a4722cefacc6cd79b70206"
+    },
+    {
+      "epoch": 3,
+      "decision": [
+        0,
+        13,
+        2,
+        -0.7601645591099677
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.5527102816849947,
+      "training_loss_ema": 0.7361279701143504,
+      "training_stale": 0,
+      "checkpoint_sha256": "01e27a8341f5cae262d5e89987e4ca2aefb4a21982e8722f80c6dd8941e23655"
+    },
+    {
+      "epoch": 4,
+      "decision": [
+        0,
+        13,
+        4,
+        -0.788225762594315
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.49930839985609055,
+      "training_loss_ema": 0.7124460130885245,
+      "training_stale": 0,
+      "checkpoint_sha256": "38f0b2eb683ad7839ccf396042a4ceb1ae76cace551cc24a483f39786d6f4360"
+    },
+    {
+      "epoch": 5,
+      "decision": [
+        0,
+        13,
+        2,
+        -0.5990534089018413
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.4704494457691908,
+      "training_loss_ema": 0.6882463563565911,
+      "training_stale": 0,
+      "checkpoint_sha256": "4da5f09a7e3b122822b7354f4cc7db8adc46a26c0e52400e5e3298abc44cd3ae"
+    },
+    {
+      "epoch": 6,
+      "decision": [
+        0,
+        13,
+        3,
+        -0.6626286814256144
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.4339436376467347,
+      "training_loss_ema": 0.6628160844856055,
+      "training_stale": 0,
+      "checkpoint_sha256": "1d864951bb71d38fbe087e9854c2de99a43d0ea33bc575a1e7467ef954c706c4"
+    },
+    {
+      "epoch": 7,
+      "decision": [
+        0,
+        13,
+        4,
+        -0.6675162677765414
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.3983490923419595,
+      "training_loss_ema": 0.6363693852712409,
+      "training_stale": 0,
+      "checkpoint_sha256": "24bf92756f20310af92b482aa0ed9ba86c21d26ae03acc227687d62be820eaa0"
+    },
+    {
+      "epoch": 8,
+      "decision": [
+        0,
+        13,
+        4,
+        -0.6796559162885949
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.36615904746577144,
+      "training_loss_ema": 0.609348351490694,
+      "training_stale": 0,
+      "checkpoint_sha256": "26b974c7d65fc1e0f1c6c21cb38769cf72b5f2ac461b5f824cef8eb477523c6c"
+    },
+    {
+      "epoch": 9,
+      "decision": [
+        0,
+        13,
+        5,
+        -0.6652970968683511
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.3850668449886143,
+      "training_loss_ema": 0.586920200840486,
+      "training_stale": 0,
+      "checkpoint_sha256": "a7cb9ab5ff7f0c1dccc4540d9e3ac7b9ee48b7217ef1881018b6d324bbc90415"
+    },
+    {
+      "epoch": 10,
+      "decision": [
+        0,
+        13,
+        5,
+        -0.8151995776548749
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.33387597603723407,
+      "training_loss_ema": 0.5616157783601609,
+      "training_stale": 0,
+      "checkpoint_sha256": "0814727b40c3cc2b6b86a9d21ea6d299b1a98f0964def7d9f96c0aa4ef4ecc83"
+    },
+    {
+      "epoch": 11,
+      "decision": [
+        0,
+        14,
+        2,
+        -0.6688584313852579
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.3302943129092455,
+      "training_loss_ema": 0.5384836318150693,
+      "training_stale": 0,
+      "checkpoint_sha256": "89207e55f65dd871815a1926356d6d9b597f9f7f88ae7a7beffd785c71fad907"
+    },
+    {
+      "epoch": 12,
+      "decision": [
+        -1,
+        14,
+        5,
+        -0.8481963178150298
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.29823296749964356,
+      "training_loss_ema": 0.5144585653835267,
+      "training_stale": 0,
+      "checkpoint_sha256": "d4bc8709d94f7d173cb434f15f30a826d822d6981931494c340f4cb267d9c2eb"
+    },
+    {
+      "epoch": 13,
+      "decision": [
+        -1,
+        13,
+        4,
+        -0.6745466122186383
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.3011352177709341,
+      "training_loss_ema": 0.4931262306222675,
+      "training_stale": 0,
+      "checkpoint_sha256": "81b0423716ce65393ce12dbbf30846d0e770eef536578b1aa345c1ca2ce20ccf"
+    },
+    {
+      "epoch": 14,
+      "decision": [
+        -1,
+        15,
+        4,
+        -0.7001241408677379
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.28999465657398105,
+      "training_loss_ema": 0.4728130732174389,
+      "training_stale": 0,
+      "checkpoint_sha256": "51175cbd16371c8bd55cd605c1e6026b5e19fb6b215e886449e038c6f5825ca2"
+    },
+    {
+      "epoch": 15,
+      "decision": [
+        0,
+        13,
+        4,
+        -0.7216179973641531
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.24515064270235598,
+      "training_loss_ema": 0.45004683016593056,
+      "training_stale": 0,
+      "checkpoint_sha256": "c4237d3cb728dc9fbcab1ed01e24d51ac6d139726aaeb34484ab56e54f960492"
+    },
+    {
+      "epoch": 16,
+      "decision": [
+        0,
+        15,
+        6,
+        -0.7537639613681999
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "training_loss": 0.2459888483863324,
+      "training_loss_ema": 0.42964103198797077,
+      "training_stale": 0,
+      "checkpoint_sha256": "d3e73aa5e6297fa6f80faa1c3b6382df09cf2236879fda30533aa49f65c5cf03"
+    },
+    {
+      "epoch": 17,
+      "decision": [
+        -1,
+        15,
+        12,
+        -0.8931920127622688
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.2175744860433042,
+      "training_loss_ema": 0.40843437739350413,
+      "training_stale": 0,
+      "checkpoint_sha256": "3ba7afecd43c3c4e8b62474539841fd7dfeba3f59f2f6b2ff9116d4415fd09da"
+    },
+    {
+      "epoch": 18,
+      "decision": [
+        -1,
+        15,
+        5,
+        -0.734809730878687
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.19872419815510511,
+      "training_loss_ema": 0.38746335946966426,
+      "training_stale": 0,
+      "checkpoint_sha256": "f7d9123a6808c4891d00cc1a1a5cb5d27facf74d58deb8e0e2a3f2a67777dba9"
+    },
+    {
+      "epoch": 19,
+      "decision": [
+        -1,
+        15,
+        4,
+        -0.8607038902254186
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.2020892109721899,
+      "training_loss_ema": 0.36892594461991685,
+      "training_stale": 0,
+      "checkpoint_sha256": "b01534fcddf622c91b5c81f431f9304690b0590ff94fea6db65fa3865865b85e"
+    },
+    {
+      "epoch": 20,
+      "decision": [
+        -1,
+        15,
+        7,
+        -0.8506769329592387
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.17299640574492514,
+      "training_loss_ema": 0.3493329907324177,
+      "training_stale": 0,
+      "checkpoint_sha256": "836dfaf92714a30d79c168d915743ff5b39ef3fbffcda6cee411552edbc35d0c"
+    },
+    {
+      "epoch": 21,
+      "decision": [
+        -1,
+        15,
+        7,
+        -0.8682938054617846
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.13597114267759025,
+      "training_loss_ema": 0.3279968059269349,
+      "training_stale": 0,
+      "checkpoint_sha256": "7642137518a453ee511e7bf8e87aa5a3da02a42b39017a9b07aada73fbb1168c"
+    },
+    {
+      "epoch": 22,
+      "decision": [
+        -1,
+        15,
+        10,
+        -0.8814945004047099
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.14832264848519117,
+      "training_loss_ema": 0.31002939018276054,
+      "training_stale": 0,
+      "checkpoint_sha256": "81b87351aa8a22009eecba177e1ceb04e3a177b176683b0aafce5b597ad41675"
+    },
+    {
+      "epoch": 23,
+      "decision": [
+        -2,
+        16,
+        8,
+        -0.9571508323609501
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 1,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.14585002302192152,
+      "training_loss_ema": 0.29361145346667666,
+      "training_stale": 0,
+      "checkpoint_sha256": "be997f4998deb3442ecdfed72570bc137ef1e758c6488ed681c0b822100a4073"
+    },
+    {
+      "epoch": 24,
+      "decision": [
+        -1,
+        15,
+        4,
+        -0.9535811708759029
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.1647587006445974,
+      "training_loss_ema": 0.2807261781844687,
+      "training_stale": 0,
+      "checkpoint_sha256": "e24139abbe22621c175f1f71fd49b20ad09946b98191958469315bc08040fd16"
+    },
+    {
+      "epoch": 25,
+      "decision": [
+        -1,
+        16,
+        9,
+        -0.9513679719516511
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.13495353411417454,
+      "training_loss_ema": 0.26614891377743927,
+      "training_stale": 0,
+      "checkpoint_sha256": "ffb66c36de65c565c6ab91df9abb5e94acd6caab45a3ef8b1821574e33d8f5ad"
+    },
+    {
+      "epoch": 26,
+      "decision": [
+        -1,
+        15,
+        8,
+        -0.9853661479260634
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.15273984824307263,
+      "training_loss_ema": 0.2548080072240026,
+      "training_stale": 0,
+      "checkpoint_sha256": "9246c1d2e0d5ebf03287d9c5ad7f6349e02db64a14797c1a7ee626a895073bde"
+    },
+    {
+      "epoch": 27,
+      "decision": [
+        -1,
+        16,
+        7,
+        -1.028460864272477
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.13113221456296742,
+      "training_loss_ema": 0.24244042795789908,
+      "training_stale": 0,
+      "checkpoint_sha256": "cf99b421bf2511aa76b3c37846f4d55e46464cafc77fdb4bd46790eccdd6f225"
+    },
+    {
+      "epoch": 28,
+      "decision": [
+        -2,
+        16,
+        8,
+        -1.064565089462492
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "training_loss": 0.12436818605056033,
+      "training_loss_ema": 0.2306332037671652,
+      "training_stale": 0,
+      "checkpoint_sha256": "24f3117a0d69d2aff6990a27fe8ea5f9819aa95670d361e170ea2a159279a877"
+    },
+    {
+      "epoch": 29,
+      "decision": [
+        -1,
+        15,
+        10,
+        -1.2227362405314566
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.0902268206118606,
+      "training_loss_ema": 0.21659256545163474,
+      "training_stale": 0,
+      "checkpoint_sha256": "b3e807c1bc5edf73e36e95e712f6bf62f31eafdf509e1dd5a61d555f15a727fe"
+    },
+    {
+      "epoch": 30,
+      "decision": [
+        -1,
+        15,
+        5,
+        -1.2036469233398808
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.09466032858472317,
+      "training_loss_ema": 0.2043993417649436,
+      "training_stale": 0,
+      "checkpoint_sha256": "7b199e86068841d650007b3bb31d1b054756a0aa856f4afe244dce12ad456db6"
+    },
+    {
+      "epoch": 31,
+      "decision": [
+        -2,
+        16,
+        15,
+        -1.1377961915128796
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "training_loss": 0.08752146002370864,
+      "training_loss_ema": 0.1927115535908201,
+      "training_stale": 0,
+      "checkpoint_sha256": "6bc47fcb953cb57e710138abff4a41b15d01ec2f80e9618a126e303a51cb62b8"
+    },
+    {
+      "epoch": 32,
+      "decision": [
+        -1,
+        15,
+        7,
+        -1.103794814985243
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.08664930594386533,
+      "training_loss_ema": 0.18210532882612462,
+      "training_stale": 0,
+      "checkpoint_sha256": "afff59243b5250b23b415d499d4ab78fab84d72da47c78e1d94e2f2dc504bef8"
+    },
+    {
+      "epoch": 33,
+      "decision": [
+        -1,
+        15,
+        9,
+        -1.0890758310670303
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.10030469502089545,
+      "training_loss_ema": 0.17392526544560172,
+      "training_stale": 0,
+      "checkpoint_sha256": "b5c2fc69915713469c00561206bb52589deadca54e340bd6989dde92c8ba167d"
+    },
+    {
+      "epoch": 34,
+      "decision": [
+        -2,
+        15,
+        14,
+        -1.0240591280297415
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 1,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.07130752841476351,
+      "training_loss_ema": 0.1636634917425179,
+      "training_stale": 0,
+      "checkpoint_sha256": "62f7df695ba6715ac2fe3f9047736d91b7e646bea4e022862b84a0a43ca21ad8"
+    },
+    {
+      "epoch": 35,
+      "decision": [
+        -1,
+        17,
+        6,
+        -1.0628155724949366
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.10723641322692856,
+      "training_loss_ema": 0.15802078389095897,
+      "training_stale": 0,
+      "checkpoint_sha256": "ff95611cd5cde69a68b831b577c08edb222172b45dd50b00ed3661f1bdca5539"
+    },
+    {
+      "epoch": 36,
+      "decision": [
+        -1,
+        15,
+        4,
+        -1.1149550209840715
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.08718979830155149,
+      "training_loss_ema": 0.15093768533201823,
+      "training_stale": 0,
+      "checkpoint_sha256": "c74cd7c8e23f1b9b398e3212385690f0c48597bfa95f00fa861c146187de6394"
+    },
+    {
+      "epoch": 37,
+      "decision": [
+        -3,
+        17,
+        5,
+        -1.0967644840273203
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 1,
+        "olid_tomato": 2
+      },
+      "training_loss": 0.08901105396216735,
+      "training_loss_ema": 0.14474502219503316,
+      "training_stale": 0,
+      "checkpoint_sha256": "e05e9d84834c3cfcf95ac1ea07c16bd42f5c99129a44d5ca814e5706fce26ea5"
+    },
+    {
+      "epoch": 38,
+      "decision": [
+        -1,
+        16,
+        9,
+        -1.062148365104495
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "training_loss": 0.07871169509598985,
+      "training_loss_ema": 0.13814168948512884,
+      "training_stale": 0,
+      "checkpoint_sha256": "438ca7fdac649fea014a797105ad2144fd5bf710c5e5ec1145e8fd3839973e66"
+    },
+    {
+      "epoch": 39,
+      "decision": [
+        -2,
+        17,
+        8,
+        -1.1503283704849612
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "training_loss": 0.10086694930214435,
+      "training_loss_ema": 0.13441421546683038,
+      "training_stale": 0,
+      "checkpoint_sha256": "199927ef6234e89da9ed0ddbc5f8c4a6761c0bfb389e589ddde1c67592ea63f5"
+    }
+  ],
+  "cheap_pass": false,
+  "passed": false,
+  "model_promoted": false,
+  "new_encoder_inputs": 0
+}

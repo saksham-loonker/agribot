@@ -1,0 +1,180 @@
+{
+  "archive_sha256": "351ef70165027fcdb80163c3fd8d366953b908f19793bc59c948c9863f875a9d",
+  "protocols": [
+    {
+      "path": "phase183_native_convergence/protocol.json",
+      "sha256": "97e0b67cc41cca2739121a3ccea3a6def3f945a2144f5a1014f3b12d4ba1a293",
+      "bytes": 13301,
+      "source_sha256": "3709f0ab26313c206db957fab7daf284b22aedd650dddef87ae0b6abda26d585"
+    },
+    {
+      "path": "phase184_nutrient_label_geometry_audit/protocol.json",
+      "sha256": "3ad3dd62859ddb29d055cfb750024d926df08b33ba0a9aa91119f8208e9bcce9",
+      "bytes": 104039,
+      "source_sha256": "dbd8516e309da21877f4dca14449a617c2715ccffc422ce21e137cc7a8aa81a4"
+    },
+    {
+      "path": "phase185_condition_balanced_native_head/protocol.json",
+      "sha256": "b95833e27228ab9a2c206fe125383c544a435c55abf327d52dcab3745ac85c3d",
+      "bytes": 12205,
+      "source_sha256": "7c0b10559764aec23361c314340e82be40b8af752b8734b7552f1168dffff252"
+    },
+    {
+      "path": "phase186_color_evidence_kernel/protocol.json",
+      "sha256": "8babacce241fc85235cadba8928d8e7931ad2d443ebb322d4b83b67f77cc5402",
+      "bytes": 66616,
+      "source_sha256": "8a39b39ff93bb58108d4d3e437dcb35af19810c17a0cd3f04cb09c2c88ec5c57"
+    },
+    {
+      "path": "phase187_trajectory_committee_audit/protocol.json",
+      "sha256": "9c9d124a2afed69893266c78881372c4b6710c3434898aeba8a1768641b5be04",
+      "bytes": 15062,
+      "source_sha256": "107ddc3ba7cb7b54e076f579fef4c32f35d44adf140fe341ac76e33fef64bc7d"
+    },
+    {
+      "path": "phase188_native_weight_average/protocol.json",
+      "sha256": "75b134bdd024a0ee3659dffa968a65bac98c327e63f5fe97a2db042f45c1e58c",
+      "bytes": 13831,
+      "source_sha256": "b9f8d3623a94ca7365e3e74847fee998f4d420a23255bc57038db348b9a31fa2"
+    },
+    {
+      "path": "phase189_full_field_native_extension/protocol.json",
+      "sha256": "b5128e1ac37020883e0b3b71acd8d5d77b5a0671deebb6d09122864f8d486e6b",
+      "bytes": 840374,
+      "source_sha256": "d4dda0ab08614dfd7fae2e4e1fa26c00093778c04193565f4f6f347298fbabb3"
+    },
+    {
+      "path": "phase191_adapted_patch_supervision/protocol.json",
+      "sha256": "5c7a6b187749bd295ca27c722de67f1a4d5287c336ac3cf3d57db7d48dc75091",
+      "bytes": 13553,
+      "source_sha256": "a6f72de2fe1c5f7192f87d9a23c64a7bdaf66d8820c17b0d117bf1618a53c086"
+    },
+    {
+      "path": "phase191_frozen_prefix_cache/protocol.json",
+      "sha256": "fca237531d96318dbf673015925689266dcb9b02de79a44f84059dadb9e57fc5",
+      "bytes": 152211,
+      "source_sha256": null
+    },
+    {
+      "path": "phase192_confident_veto_audit/protocol.json",
+      "sha256": "4dc67d19d54fdc311ed2a0a3d20cade0cf1cfd7d2bc26d5b5ff7601d6881d65d",
+      "bytes": 1023,
+      "source_sha256": "0d0bef6bb455ada54ee837f4bb92c104021b5f94b2ea73cb1323c48f0ea08d2d"
+    },
+    {
+      "path": "phase193_exhaustive_mobile_replay/protocol.json",
+      "sha256": "eec7bec4e7e8a591c2f828e273cfdd9d045e187faed895f11ace2afbf257a001",
+      "bytes": 101103,
+      "source_sha256": "9482b2e55d9f87570cffe846c53a0c02ada0091f197a6d7dba6e12c56d6b253f"
+    },
+    {
+      "path": "phase194_exhaustive_veto_audit/protocol.json",
+      "sha256": "f9e6c907de8f4ee145601049300eb370c96a90cb4d6bc5e7a433b44f8288ff5c",
+      "bytes": 1023,
+      "source_sha256": "fcc9181d0c80881f7d4fc5f6825c9ebead7e4d10a7c78afaca83ad56184a5400"
+    },
+    {
+      "path": "phase195_rotation_feature_extension/protocol.json",
+      "sha256": "a32e527ca77ed04d6936a427909c5f66e44e3c4b5021d58a16bfea964e6f4122",
+      "bytes": 9203958,
+      "source_sha256": "812de3d5776604f6c10c990566fb522e2862b8e972f4dc20fd1d199fe1200616"
+    },
+    {
+      "path": "phase196_rotation_mobile_replay/protocol.json",
+      "sha256": "33441470786ebc30d647008e33237184644d11900eb1ba59c61426ffb1ba356d",
+      "bytes": 101425,
+      "source_sha256": "486620fcca10dcab883292e3c841edd7b611e68de6e8b88b280b8221b2fedd5a"
+    },
+    {
+      "path": "phase197_veto_label_audit/protocol.json",
+      "sha256": "15510da84793e794e3f7971e9bd5648c5da44b3b53efee26d163453bd2a199a7",
+      "bytes": 472,
+      "source_sha256": "da51f0fe4c11f4ddae928ae0600ea485c9bb92d6e5293842e15fe89f45257831"
+    },
+    {
+      "path": "phase198_veto_rotation_consistency/protocol.json",
+      "sha256": "0c2c2bba38b91c3a0d8e06c9e76ba3bdc82a878347d67839ed13a0db561d0028",
+      "bytes": 231990,
+      "source_sha256": "f3403c107111a1e241fc8ac0323f8fb06af054c5ec185a0253ca3a590c388b07"
+    },
+    {
+      "path": "phase199_full_patch_supervision/protocol.json",
+      "sha256": "279b00de5e875eb0939e0a1d0308f0aeb0168b05457b8fd048fe25cd08c6c470",
+      "bytes": 13686,
+      "source_sha256": "f4c984577367e006e17b219a087dc3d2b1835f24dcbb6101d964d0c602165afd"
+    },
+    {
+      "path": "phase200_cached_admission_policy_preflight/protocol.json",
+      "sha256": "b791a5c36cbe2bb0719500dfe0347f4ee8f3014d78864d836052f9efaca60a20",
+      "bytes": 12822,
+      "source_sha256": "dfdf1d3f7af23bfd4c933cbd21f4cce3e9d0e09537263adfbbcf7a821d7e6971"
+    },
+    {
+      "path": "phase201_two_snapshot_coverage/protocol.json",
+      "sha256": "ab57d664bf465fe5aa64289f608daf4d36ff392d0f25b2ae24e66ba9462c6740",
+      "bytes": 12613,
+      "source_sha256": "6b1bdc6681a5cb9e6fa76371c996ab8f9a841b62c5024bde0698d3d9849a2e7f"
+    },
+    {
+      "path": "phase202_new_admission_veto/protocol.json",
+      "sha256": "243298eaaabbee5887eeb08b460a3a906c5b5ebfeaf4ee5474426d1c1c42992e",
+      "bytes": 1584,
+      "source_sha256": "d12ab2acf187e52f7a968177cdf9ef5c13b69893c1c243043a63c2a1d36825a6"
+    },
+    {
+      "path": "phase203_family_neighbor_recovery/protocol.json",
+      "sha256": "2869a2195849d6fbe46b00e2df941dd43acc57a7429266b95f0326685d71b276",
+      "bytes": 548668,
+      "source_sha256": "8e671d1017b4f11f6bf2f9d808712f2e09d8e6cd972d7b468892cc10a5d1a474"
+    },
+    {
+      "path": "phase204_map_admission_veto/protocol.json",
+      "sha256": "d32b5291e7b69de47f0dc93c85c8fd73bac971d402df142099bece36bef5bf58",
+      "bytes": 32104,
+      "source_sha256": "091ceeedd676a4436b7c924392f116ca51977716b579bfb164cbeb06057751b9"
+    },
+    {
+      "path": "phase205_map_policy_replay/protocol.json",
+      "sha256": "bff085a41678b5839bfba5c3fd23cfe06c383f1abcd5467538110a6703d69ea1",
+      "bytes": 2313,
+      "source_sha256": "56d85f43799c2ab5b0eb0a82d4902c2ca41163fd7bbbb224436427a38eb44e88"
+    },
+    {
+      "path": "phase206_full_mobile_supervision/protocol.json",
+      "sha256": "ba965358b407a214972decf7daac2056370f5b8257ad0ec66341ec524c7b76c3",
+      "bytes": 950105,
+      "source_sha256": "af9bfcea16ed4d03e2acaf3e2cdf10d127bdca36dfcfd552362ce17b1b5b8695"
+    },
+    {
+      "path": "phase207_unclipped_score_audit/protocol.json",
+      "sha256": "fc16906302f90edbd27f88191b17075451c00ed0a5668053d4ab24f5fe162a6a",
+      "bytes": 23706,
+      "source_sha256": "2ffcc76f185caeb401e6faeadc6882bd8952e41ed6230b2c88cc884bf65018f3"
+    },
+    {
+      "path": "phase208_full_mobile_convergence/protocol.json",
+      "sha256": "bea0ca0acdfb747617b05f2232a8e94ad3c8e8bf0828fad903e0e6b297f876ef",
+      "bytes": 950442,
+      "source_sha256": "dd64f7a6af0ae3bebc06a5a2e0dab9101b8e380ec6e28d0e64c37744251c8bd4"
+    },
+    {
+      "path": "phase209_full_mobile_convergence/protocol.json",
+      "sha256": "9ddd626e2a3cc40ca35bbf053b573b47829e65e2ece0a33eabb3a1ee98b68d6b",
+      "bytes": 950825,
+      "source_sha256": "8d2577f2c9ada6bfbf12a7bef2d5f968e325ae4197ea16c57e6de1a5ffb1f9e6"
+    },
+    {
+      "path": "phase210_full_mobile_clinical_ablation/protocol.json",
+      "sha256": "bc0bbc5646b87d51eaf3ee46beb9ea68fdb9093b53f0beeb6560ae6b7044cc0c",
+      "bytes": 950488,
+      "source_sha256": "2e073f018eec57d286a9f3b34b9662e37681ba430dc758840c78e3ae64ea75a0"
+    },
+    {
+      "path": "phase211_conditional_group_dro/protocol.json",
+      "sha256": "0ec79013ad765274fa7f8be99eab4bd24b355c1e6137d8aa65b60b8928483030",
+      "bytes": 104672,
+      "source_sha256": "3f251361dcea9f6426afc65e554d06859d043044244e140a7927b74c8a79041f"
+    }
+  ],
+  "purpose": "Lossless exact PC protocol bytes, compressed to avoid hundreds of thousands of generated diff lines; results retain original protocol hashes. No arrays, images or weights."
+}

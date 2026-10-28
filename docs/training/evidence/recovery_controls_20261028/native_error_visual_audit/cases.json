@@ -1,0 +1,2171 @@
+{
+  "checkpoint_sha256": "8800fb3c67200fc6cc5eeed123ee068f8e1a8ef0f777e5fa86bfc0d28f1c3656",
+  "cases": [
+    {
+      "index": 1508,
+      "path": "/home/genesis/agribot-data/PlantVillage/diagnostic255/Tomato___Tomato_Yellow_Leaf_Curl_Virus__2a5ba381-ff56-458f-89d1-0e03bb8d070f___YLCV_GCREC 2720.JPG",
+      "label": "Other",
+      "source": "plantvillage",
+      "group": "plantvillage:Tomato___Tomato_Yellow_Leaf_Curl_Virus:2a5ba381-ff56-458f-89d1-0e03bb8d070f___YLCV_GCREC 2720",
+      "y": 0,
+      "probability": 0.0014135076198726892,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.8546437621116638,
+        0.7255100607872009,
+        0.9956550002098083,
+        5.402037913881941e-06
+      ],
+      "leaves": [
+        [
+          [
+            0.6407338380813599,
+            0.7460119724273682,
+            0.01816759631037712
+          ],
+          [
+            0.27038463950157166,
+            0.78404301404953,
+            0.01702922023832798
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 1656,
+      "path": "/home/genesis/agribot-data/Tomato-Village/Variant-a(Multiclass Classification)/train/Healthy/IMG20220324114315.jpg",
+      "label": "Healthy",
+      "source": "tomatovillage",
+      "group": "tomatovillage:IMG20220324114315",
+      "y": 1,
+      "probability": 0.9957709908485413,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9521716833114624,
+        0.9724451303482056,
+        0.9999818801879883,
+        1.739748678453168e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.8954441547393799,
+            0.986804723739624,
+            0.894637942314148
+          ],
+          [
+            0.7866116166114807,
+            0.9735216498374939,
+            0.9230109453201294
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 2856,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/0-Healthy/IMG_1458_0.jpg",
+      "label": "Healthy",
+      "source": "tlid",
+      "group": "campaign:8361d22a83002281",
+      "y": 1,
+      "probability": 0.9954540729522705,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9483534693717957,
+        0.8075079917907715,
+        0.9994050860404968,
+        2.093996442908974e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.8826332092285156,
+            0.89435213804245,
+            0.6519518494606018
+          ],
+          [
+            0.9377527832984924,
+            0.9401368498802185,
+            0.9870734810829163
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 2875,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/0-Healthy/IMG_1620_0.jpg",
+      "label": "Healthy",
+      "source": "tlid",
+      "group": "campaign:1947be48b8bebc10",
+      "y": 1,
+      "probability": 0.9992040991783142,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9935327768325806,
+        0.9810379147529602,
+        0.9982917308807373,
+        5.254353254713351e-06
+      ],
+      "leaves": [
+        [
+          [
+            0.9721007347106934,
+            0.9710378050804138,
+            0.8127925395965576
+          ],
+          [
+            0.9643096327781677,
+            0.9716749787330627,
+            0.9548124670982361
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 2884,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/0-Healthy/IMG_1675_0.jpg",
+      "label": "Healthy",
+      "source": "tlid",
+      "group": "campaign:514886d62154ae7c",
+      "y": 1,
+      "probability": 0.9970122575759888,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9289819598197937,
+        0.8517859578132629,
+        0.9990155696868896,
+        1.4139028507997864e-06
+      ],
+      "leaves": [
+        [
+          [
+            0.9387412071228027,
+            0.9041459560394287,
+            0.7128166556358337
+          ],
+          [
+            0.9474007487297058,
+            0.936873197555542,
+            0.9889182448387146
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 2959,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/0-Healthy/IMG_2076_0.jpg",
+      "label": "Healthy",
+      "source": "tlid",
+      "group": "campaign:3e333435eec7014f",
+      "y": 1,
+      "probability": 0.06875398755073547,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.8999902606010437,
+        0.8878612518310547,
+        0.9956079721450806,
+        2.1152804663415736e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.9288040995597839,
+            0.9489017128944397,
+            0.9183316826820374
+          ],
+          [
+            0.8980703949928284,
+            0.8956877589225769,
+            0.988789975643158
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 2967,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/0-Healthy/IMG_2128_0.jpg",
+      "label": "Healthy",
+      "source": "tlid",
+      "group": "campaign:dc0b7639f426715f",
+      "y": 1,
+      "probability": 0.9999583959579468,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9812250137329102,
+        0.9489882588386536,
+        0.9999174475669861,
+        9.850920434928412e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.9046212434768677,
+            0.9198789596557617,
+            0.8196913599967957
+          ],
+          [
+            0.856288731098175,
+            0.9125162363052368,
+            0.8206838369369507
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 2987,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/0-Healthy/IMG_2219_0.jpg",
+      "label": "Healthy",
+      "source": "tlid",
+      "group": "campaign:fb81708173755448",
+      "y": 1,
+      "probability": 0.9997722506523132,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9943975806236267,
+        0.9816305041313171,
+        0.9935631155967712,
+        1.4328044244393823e-06
+      ],
+      "leaves": [
+        [
+          [
+            0.9639514684677124,
+            0.9144954085350037,
+            0.9193058013916016
+          ],
+          [
+            0.9538180828094482,
+            0.9622128009796143,
+            0.9876145720481873
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 3011,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/0-Healthy/IMG_2425_0.jpg",
+      "label": "Healthy",
+      "source": "tlid",
+      "group": "campaign:f91aca2687735800",
+      "y": 1,
+      "probability": 0.9997033476829529,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9774057269096375,
+        0.9608838558197021,
+        0.9992563128471375,
+        1.190440798382042e-06
+      ],
+      "leaves": [
+        [
+          [
+            0.9357800483703613,
+            0.9176455140113831,
+            0.946153998374939
+          ],
+          [
+            0.9092752933502197,
+            0.896687924861908,
+            0.985588014125824
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 3025,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/0-Healthy/IMG_2493_0.jpg",
+      "label": "Healthy",
+      "source": "tlid",
+      "group": "campaign:e9b331a808e78053",
+      "y": 1,
+      "probability": 0.1803906112909317,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9422281980514526,
+        0.8057951927185059,
+        0.9987016320228577,
+        1.1645646225133532e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.9042732119560242,
+            0.8771677613258362,
+            0.6841202974319458
+          ],
+          [
+            0.8031379580497742,
+            0.872489333152771,
+            0.9406793713569641
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 3050,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/0-Healthy/IMG_285_0.jpg",
+      "label": "Healthy",
+      "source": "tlid",
+      "group": "campaign:0048728c655c9da2",
+      "y": 1,
+      "probability": 0.9999390840530396,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9892690181732178,
+        0.9657705426216125,
+        0.9993093609809875,
+        1.9716510735179327e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.9306627511978149,
+            0.8600431680679321,
+            0.8414731621742249
+          ],
+          [
+            0.8932075500488281,
+            0.9369281530380249,
+            0.9895351529121399
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 3065,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/0-Healthy/IMG_364_0.jpg",
+      "label": "Healthy",
+      "source": "tlid",
+      "group": "campaign:70d59b0ef2835ac3",
+      "y": 1,
+      "probability": 0.9103785157203674,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9608754515647888,
+        0.8963513970375061,
+        0.9907950162887573,
+        2.6236246508659633e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.8734126687049866,
+            0.821502149105072,
+            0.7455211877822876
+          ],
+          [
+            0.840243935585022,
+            0.9051545262336731,
+            0.9303086996078491
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 3181,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/0-Healthy/IMG_938_0.jpg",
+      "label": "Healthy",
+      "source": "tlid",
+      "group": "campaign:fae9f2efe522f196",
+      "y": 1,
+      "probability": 0.7996095418930054,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9611688852310181,
+        0.9104287624359131,
+        0.9962268471717834,
+        5.135012970391983e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.9008194208145142,
+            0.8941500186920166,
+            0.945225179195404
+          ],
+          [
+            0.8953179717063904,
+            0.901467502117157,
+            0.9397749304771423
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 3914,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/tlid/images/3-PowderyMildew/IMG_1182_3.jpg",
+      "label": "Other",
+      "source": "tlid",
+      "group": "campaign:f3af2ae6a0345ea8",
+      "y": 0,
+      "probability": 0.9893819093704224,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.8600584864616394,
+        0.7294711470603943,
+        0.9957953095436096,
+        5.202499551160145e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.20320922136306763,
+            0.20930983126163483,
+            0.31377166509628296
+          ],
+          [
+            0.5420296788215637,
+            0.6055371761322021,
+            0.5285981893539429
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 4330,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/fresh_classification/Bacteiral Spot/Bacteiral Spot_101.jpg",
+      "label": "Other",
+      "source": "bangladesh_classification",
+      "group": "phase2:ecdf47db26856a868760",
+      "y": 0,
+      "probability": 0.04696834459900856,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9467940926551819,
+        0.717452883720398,
+        0.9988422393798828,
+        6.063954316459785e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.6426769495010376,
+            0.6276369094848633,
+            0.8535477519035339
+          ],
+          [
+            0.5365723371505737,
+            0.43337011337280273,
+            0.7827203869819641
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 4394,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/fresh_classification/Healthy/Healthy_132.jpg",
+      "label": "Healthy",
+      "source": "bangladesh_classification",
+      "group": "phase2:a69b085e1b7c6945d986",
+      "y": 1,
+      "probability": 0.8506998419761658,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9455669522285461,
+        0.9021589756011963,
+        0.9997580647468567,
+        2.835935479506002e-11
+      ],
+      "leaves": [
+        [
+          [
+            0.87168288230896,
+            0.2736530601978302,
+            0.7863672971725464
+          ],
+          [
+            0.6774420142173767,
+            0.7686917185783386,
+            0.5356286764144897
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 4404,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/fresh_classification/Healthy/Healthy_63.jpg",
+      "label": "Healthy",
+      "source": "bangladesh_classification",
+      "group": "phase2:2f901be3a148b5ac9522",
+      "y": 1,
+      "probability": 0.5576484203338623,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.8888123035430908,
+        0.8786032199859619,
+        0.9991697072982788,
+        1.02645225652509e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.8102788925170898,
+            0.12718868255615234,
+            0.611253023147583
+          ],
+          [
+            0.787448525428772,
+            0.8756754398345947,
+            0.8228368759155273
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 4414,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/fresh_classification/Healthy/Healthy_43.jpg",
+      "label": "Healthy",
+      "source": "bangladesh_classification",
+      "group": "phase2:e2a255d78a0d5160400b",
+      "y": 1,
+      "probability": 0.9910723567008972,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9325975179672241,
+        0.9647032618522644,
+        0.9998286366462708,
+        2.3466570353569693e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.7942816019058228,
+            0.2533164918422699,
+            0.8758544921875
+          ],
+          [
+            0.8873070478439331,
+            0.9110344648361206,
+            0.9707417488098145
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 4417,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/fresh_classification/Healthy/Healthy_61.jpg",
+      "label": "Healthy",
+      "source": "bangladesh_classification",
+      "group": "phase2:2f901be3a148b5ac9522",
+      "y": 1,
+      "probability": 0.18547885119915009,
+      "verdict": "UNSURE",
+      "whole": [
+        0.9943695664405823,
+        0.9877126812934875,
+        0.9998213052749634,
+        1.3940172800819273e-11
+      ],
+      "leaves": [
+        [
+          [
+            0.9151898622512817,
+            0.2593271732330322,
+            0.9382097125053406
+          ],
+          [
+            0.978221595287323,
+            0.9482133388519287,
+            0.9399774074554443
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 4418,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/fresh_classification/Healthy/Healthy_133.jpg",
+      "label": "Healthy",
+      "source": "bangladesh_classification",
+      "group": "phase2:a69b085e1b7c6945d986",
+      "y": 1,
+      "probability": 0.008112045004963875,
+      "verdict": "UNSURE",
+      "whole": [
+        0.9035002589225769,
+        0.7838648557662964,
+        0.9999092817306519,
+        2.6959916937796535e-11
+      ],
+      "leaves": [
+        [
+          [
+            0.9628307223320007,
+            0.6530736684799194,
+            0.9690567255020142
+          ],
+          [
+            0.9675148725509644,
+            0.8316715955734253,
+            0.7377017736434937
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 4638,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/fresh_classification/Magnesium Deficiency/Magnesium Deficiency_47.jpg",
+      "label": "Magnesium Deficiency",
+      "source": "bangladesh_classification",
+      "group": "phase2:c4576f0e180d24d9ed4e",
+      "y": 0,
+      "probability": 0.5768154263496399,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9872597455978394,
+        0.9851161241531372,
+        0.9997621178627014,
+        1.4668922965199727e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.6848805546760559,
+            0.8469690084457397,
+            0.8710179328918457
+          ],
+          [
+            0.7125543355941772,
+            0.874416172504425,
+            0.8435646891593933
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 5598,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/paper_full/images/Resize Dataset/Healthy Leaf/image_0021.png",
+      "label": "Healthy",
+      "source": "swtt5wy2pr",
+      "group": "paper:Healthy Leaf:block4",
+      "y": 1,
+      "probability": 0.9994416832923889,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9996238350868225,
+        0.9994209408760071,
+        0.9992219805717468,
+        3.555459399118277e-11
+      ],
+      "leaves": [
+        [
+          [
+            0.7502790093421936,
+            0.7671319246292114,
+            0.9228904843330383
+          ],
+          [
+            0.8515971899032593,
+            0.8898760080337524,
+            0.9413683414459229
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 5619,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/paper_full/images/Resize Dataset/Healthy Leaf/image_0092.png",
+      "label": "Healthy",
+      "source": "swtt5wy2pr",
+      "group": "paper:Healthy Leaf:block18",
+      "y": 1,
+      "probability": 0.9997722506523132,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.99995356798172,
+        0.9999287724494934,
+        0.999975860118866,
+        5.7022104052451006e-12
+      ],
+      "leaves": [
+        [
+          [
+            0.950519323348999,
+            0.9101740717887878,
+            0.9776648879051208
+          ],
+          [
+            0.8565325736999512,
+            0.7572876214981079,
+            0.9050353765487671
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 5621,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/paper_full/images/Resize Dataset/Healthy Leaf/image_0094.png",
+      "label": "Healthy",
+      "source": "swtt5wy2pr",
+      "group": "paper:Healthy Leaf:block18",
+      "y": 1,
+      "probability": 0.9999734163284302,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.999233067035675,
+        0.9972917437553406,
+        0.9999917149543762,
+        7.0317720535229e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.7324583530426025,
+            0.8082906603813171,
+            0.9666459560394287
+          ],
+          [
+            0.8863040208816528,
+            0.9103274941444397,
+            0.9393863677978516
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 5664,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/paper_full/images/Resize Dataset/Healthy Leaf/image_0302.png",
+      "label": "Healthy",
+      "source": "swtt5wy2pr",
+      "group": "paper:Healthy Leaf:block60",
+      "y": 1,
+      "probability": 0.9865418672561646,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9704350829124451,
+        0.8557275533676147,
+        0.9999565482139587,
+        2.446038597364586e-12
+      ],
+      "leaves": [
+        [
+          [
+            0.6284404993057251,
+            0.7673366665840149,
+            0.8973675966262817
+          ],
+          [
+            0.5199589133262634,
+            0.8885772824287415,
+            0.9058161377906799
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6204,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__LM/tomato__LM (159).JPG",
+      "label": "Leaf Miner",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:5a901cc9f5ac7d479cba",
+      "y": 0,
+      "probability": 0.47334912419319153,
+      "verdict": "UNSURE",
+      "whole": [
+        0.8684660196304321,
+        0.8535118699073792,
+        0.9994542002677917,
+        1.2146678107782805e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.9548126459121704,
+            0.8953635096549988,
+            0.7965120673179626
+          ],
+          [
+            0.8925758004188538,
+            0.6465164422988892,
+            0.21476531028747559
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6337,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (10).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 0,
+      "probability": 0.4269465506076813,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.971005916595459,
+        0.9795269966125488,
+        0.9994562268257141,
+        4.984875179303572e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.8852047324180603,
+            0.12428940087556839,
+            0.06270698457956314
+          ],
+          [
+            0.8993388414382935,
+            0.2699211835861206,
+            0.07619605213403702
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6338,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (100).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:474c48035953d1fe917e",
+      "y": 0,
+      "probability": 0.0786750540137291,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9660401940345764,
+        0.9861637949943542,
+        0.9990529417991638,
+        8.73924543842719e-11
+      ],
+      "leaves": [
+        [
+          [
+            0.5161163806915283,
+            0.021149033680558205,
+            0.08709980547428131
+          ],
+          [
+            0.8222745060920715,
+            0.05234365537762642,
+            0.1318390816450119
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6379,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (141).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:a65c660388f4715c3c5f",
+      "y": 0,
+      "probability": 0.13473118841648102,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9569981098175049,
+        0.9586201906204224,
+        0.9977759122848511,
+        3.8325828621843527e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.9324590563774109,
+            0.3264038860797882,
+            0.11069183051586151
+          ],
+          [
+            0.9580480456352234,
+            0.7465828061103821,
+            0.1370183825492859
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6380,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (142).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:a65c660388f4715c3c5f",
+      "y": 0,
+      "probability": 0.0022972209844738245,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.867785632610321,
+        0.9737655520439148,
+        0.9482750296592712,
+        0.00020954557112418115
+      ],
+      "leaves": [
+        [
+          [
+            0.9632124304771423,
+            0.626142680644989,
+            0.14352470636367798
+          ],
+          [
+            0.9684338569641113,
+            0.8297604322433472,
+            0.1306723654270172
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6381,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (143).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:a65c660388f4715c3c5f",
+      "y": 0,
+      "probability": 0.09252943843603134,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.8756268620491028,
+        0.926267147064209,
+        0.995026171207428,
+        6.918223771634757e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.9552971720695496,
+            0.7908055782318115,
+            0.637160062789917
+          ],
+          [
+            0.9559177756309509,
+            0.7009077072143555,
+            0.11963377147912979
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6394,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (156).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:1a521656698a9b8080aa",
+      "y": 0,
+      "probability": 0.015955228358507156,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9888144135475159,
+        0.9957519769668579,
+        0.9885991811752319,
+        1.4416154492380429e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.8884000778198242,
+            0.16006916761398315,
+            0.10851148515939713
+          ],
+          [
+            0.9654683470726013,
+            0.9391629695892334,
+            0.11548841744661331
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6396,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (158).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:1a521656698a9b8080aa",
+      "y": 0,
+      "probability": 8.601226909377147e-06,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9405587315559387,
+        0.9638364911079407,
+        0.9980122447013855,
+        1.7992855816384434e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.9596882462501526,
+            0.6239229440689087,
+            0.05042612552642822
+          ],
+          [
+            0.9718697667121887,
+            0.8928322196006775,
+            0.09936771541833878
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6397,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (159).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:1a521656698a9b8080aa",
+      "y": 0,
+      "probability": 0.02433490939438343,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9201470017433167,
+        0.9677673578262329,
+        0.9997085928916931,
+        2.6251965046242276e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.9503883719444275,
+            0.8443368673324585,
+            0.3438747525215149
+          ],
+          [
+            0.949453592300415,
+            0.8071869015693665,
+            0.12035641074180603
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6399,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (160).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:1a521656698a9b8080aa",
+      "y": 0,
+      "probability": 0.0002845681447070092,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9247673749923706,
+        0.9662080407142639,
+        0.9970350861549377,
+        8.928750321501866e-05
+      ],
+      "leaves": [
+        [
+          [
+            0.9196516275405884,
+            0.48736438155174255,
+            0.15403780341148376
+          ],
+          [
+            0.9611704349517822,
+            0.8074766397476196,
+            0.09942634403705597
+          ]
+        ],
+        [
+          [
+            0.9204795956611633,
+            0.2487877458333969,
+            0.14990994334220886
+          ],
+          [
+            0.8690483570098877,
+            0.2759554982185364,
+            0.13214989006519318
+          ]
+        ],
+        [
+          [
+            0.8312258720397949,
+            0.45579686760902405,
+            0.1141393855214119
+          ],
+          [
+            0.9432594776153564,
+            0.5385974645614624,
+            0.04971049353480339
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6447,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (27).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:d3659c2f8fdf1555ef61",
+      "y": 0,
+      "probability": 0.0015422709984704852,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9333270788192749,
+        0.9684805870056152,
+        0.9997312426567078,
+        4.201917533919186e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.9852701425552368,
+            0.9738866686820984,
+            0.17566847801208496
+          ],
+          [
+            0.9680529832839966,
+            0.9396501779556274,
+            0.2172427475452423
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6477,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (56).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:ca739b88bf5d9d99b4d3",
+      "y": 0,
+      "probability": 0.0010262008290737867,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9520916938781738,
+        0.9785445928573608,
+        0.9990053772926331,
+        2.2743464889174447e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.9399272203445435,
+            0.5477263331413269,
+            0.1972482055425644
+          ],
+          [
+            0.5727607011795044,
+            0.03192882612347603,
+            0.38101184368133545
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6478,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (57).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:ca739b88bf5d9d99b4d3",
+      "y": 0,
+      "probability": 0.00035574371577240527,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9687563180923462,
+        0.9897944927215576,
+        0.998823881149292,
+        1.2269582683188673e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.8177856206893921,
+            0.08079353719949722,
+            0.07631818950176239
+          ],
+          [
+            0.9550727009773254,
+            0.5708261728286743,
+            0.10257811099290848
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6481,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (6).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 0,
+      "probability": 0.12993882596492767,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9313605427742004,
+        0.9715310335159302,
+        0.997406005859375,
+        4.312196433264859e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.7771244645118713,
+            0.057589564472436905,
+            0.23748628795146942
+          ],
+          [
+            0.9671295285224915,
+            0.7903791666030884,
+            0.2330918312072754
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6492,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (7).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 0,
+      "probability": 0.000761981587857008,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9409652352333069,
+        0.9415425062179565,
+        0.9996605515480042,
+        1.3187285503590829e-06
+      ],
+      "leaves": [
+        [
+          [
+            0.9738754630088806,
+            0.8658462166786194,
+            0.08285265415906906
+          ],
+          [
+            0.9595581889152527,
+            0.8355430364608765,
+            0.13156349956989288
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6494,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (71).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:77abaa40bd6104d7f648",
+      "y": 0,
+      "probability": 0.4598902463912964,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9477016925811768,
+        0.9864121079444885,
+        0.9996228218078613,
+        1.8504766785554239e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.9034425616264343,
+            0.4123837947845459,
+            0.17201098799705505
+          ],
+          [
+            0.9173651933670044,
+            0.6788417100906372,
+            0.25109782814979553
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6495,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (72).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:77abaa40bd6104d7f648",
+      "y": 0,
+      "probability": 0.0006920352461747825,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.951715886592865,
+        0.9843630790710449,
+        0.9985541105270386,
+        1.7934442553269037e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.9163488149642944,
+            0.41836294531822205,
+            0.06381696462631226
+          ],
+          [
+            0.9258968234062195,
+            0.7084171175956726,
+            0.08910281211137772
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6496,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (73).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:77abaa40bd6104d7f648",
+      "y": 0,
+      "probability": 7.594486669404432e-05,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9094785451889038,
+        0.9393728971481323,
+        0.989854633808136,
+        1.585311292728875e-05
+      ],
+      "leaves": [
+        [
+          [
+            0.9295840859413147,
+            0.7768716812133789,
+            0.05937264487147331
+          ],
+          [
+            0.9379743933677673,
+            0.8199120759963989,
+            0.10470873862504959
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6497,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (74).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:77abaa40bd6104d7f648",
+      "y": 0,
+      "probability": 0.05205843597650528,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9495381712913513,
+        0.9876627326011658,
+        0.9999548196792603,
+        6.399579755012041e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.8902615308761597,
+            0.3920798599720001,
+            0.16565579175949097
+          ],
+          [
+            0.9336884021759033,
+            0.8202135562896729,
+            0.08470939844846725
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6502,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (81).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:3e90e08fc935989c1991",
+      "y": 0,
+      "probability": 0.004019881132990122,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9174892902374268,
+        0.8758716583251953,
+        0.9981281757354736,
+        2.6237396699713145e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.9464988112449646,
+            0.8041659593582153,
+            0.12081602960824966
+          ],
+          [
+            0.9124525189399719,
+            0.6583186388015747,
+            0.12691667675971985
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6503,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (82).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:3e90e08fc935989c1991",
+      "y": 0,
+      "probability": 0.00022421062749344856,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9579916000366211,
+        0.9781988263130188,
+        0.9964909553527832,
+        7.254734555317555e-06
+      ],
+      "leaves": [
+        [
+          [
+            0.9410616755485535,
+            0.6195400357246399,
+            0.06907130777835846
+          ],
+          [
+            0.9579691886901855,
+            0.8626781105995178,
+            0.08273179829120636
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6504,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (83).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:3e90e08fc935989c1991",
+      "y": 0,
+      "probability": 0.9285785555839539,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.8695515394210815,
+        0.9123214483261108,
+        0.997938871383667,
+        1.0156064433886058e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.7551286220550537,
+            0.043204911053180695,
+            0.1081535592675209
+          ],
+          [
+            0.7661369442939758,
+            0.04820897802710533,
+            0.14051364362239838
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6511,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (9).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 0,
+      "probability": 0.001991652650758624,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9718155860900879,
+        0.9935163259506226,
+        0.9992799162864685,
+        6.582171181435115e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.8675781488418579,
+            0.20223930478096008,
+            0.05798101797699928
+          ],
+          [
+            0.8666753172874451,
+            0.19485227763652802,
+            0.07964801788330078
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6516,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (96).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:474c48035953d1fe917e",
+      "y": 0,
+      "probability": 0.0020781445782631636,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9115101099014282,
+        0.9559107422828674,
+        0.9999246597290039,
+        1.8421738801066567e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.5898202657699585,
+            0.052492789924144745,
+            0.08816103637218475
+          ],
+          [
+            0.5247012972831726,
+            0.015048027038574219,
+            0.09942308813333511
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6517,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (97).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:474c48035953d1fe917e",
+      "y": 0,
+      "probability": 0.09343226253986359,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9853923916816711,
+        0.9939196705818176,
+        0.9993826746940613,
+        1.4231776503947913e-06
+      ],
+      "leaves": [
+        [
+          [
+            0.8422627449035645,
+            0.09195101261138916,
+            0.09484301507472992
+          ],
+          [
+            0.7949548959732056,
+            0.07108770310878754,
+            0.1323620229959488
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6518,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__MIT/tomato__MIT (98).JPG",
+      "label": "Other",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:474c48035953d1fe917e",
+      "y": 0,
+      "probability": 0.0015714128967374563,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9433034658432007,
+        0.9499111771583557,
+        0.9979689717292786,
+        3.0569395903512486e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.4447650909423828,
+            0.008933832868933678,
+            0.059957388788461685
+          ],
+          [
+            0.8329141139984131,
+            0.09882752597332001,
+            0.09656881541013718
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6534,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__N/tomato__N (28).JPG",
+      "label": "Nitrogen Deficiency",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 0,
+      "probability": 0.9985698461532593,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9682154655456543,
+        0.9883658289909363,
+        0.9985862374305725,
+        6.832545551560543e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.9884091019630432,
+            0.970294177532196,
+            0.45696714520454407
+          ],
+          [
+            0.9414265751838684,
+            0.3421635627746582,
+            0.07761465013027191
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6535,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__N/tomato__N (29).JPG",
+      "label": "Nitrogen Deficiency",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 0,
+      "probability": 0.9996291399002075,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9975442290306091,
+        0.9979636669158936,
+        0.98750239610672,
+        4.6237177975250177e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.9659152626991272,
+            0.9494160413742065,
+            0.49680283665657043
+          ],
+          [
+            0.9779610633850098,
+            0.9277762174606323,
+            0.22049273550510406
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6638,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (136).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 1,
+      "probability": 0.0784899890422821,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9750194549560547,
+        0.9831409454345703,
+        0.997287392616272,
+        6.40836539389511e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.9030588269233704,
+            0.1420244574546814,
+            0.28583118319511414
+          ],
+          [
+            0.9541851282119751,
+            0.34174641966819763,
+            0.22138711810112
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6639,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (137).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 1,
+      "probability": 0.9971879124641418,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.8662735819816589,
+        0.7395724058151245,
+        0.9991484880447388,
+        8.99972263379567e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.9835322499275208,
+            0.9577898979187012,
+            0.7290735840797424
+          ],
+          [
+            0.9382033348083496,
+            0.8802899122238159,
+            0.22891643643379211
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6640,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (138).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 1,
+      "probability": 0.9826250076293945,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.8669959306716919,
+        0.7715574502944946,
+        0.9985679984092712,
+        1.51408796611463e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.9875791072845459,
+            0.9706171751022339,
+            0.9024509191513062
+          ],
+          [
+            0.9203147292137146,
+            0.6537696123123169,
+            0.16838207840919495
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6643,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (140).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 1,
+      "probability": 0.9623646140098572,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9885910749435425,
+        0.9949086308479309,
+        0.9998349547386169,
+        3.848082883450843e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.9685028791427612,
+            0.9481913447380066,
+            0.0741245225071907
+          ],
+          [
+            0.9503940343856812,
+            0.9443497657775879,
+            0.22647051513195038
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6665,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (161).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 1,
+      "probability": 0.9996579885482788,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9407965540885925,
+        0.9261235594749451,
+        0.9987654685974121,
+        1.0664907845736593e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.9638866186141968,
+            0.9693418145179749,
+            0.8772833943367004
+          ],
+          [
+            0.9130641222000122,
+            0.9211797714233398,
+            0.588473916053772
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6666,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (162).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 1,
+      "probability": 0.983069658279419,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9656773805618286,
+        0.9556909203529358,
+        0.9997102618217468,
+        1.5089511862242944e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.9707052111625671,
+            0.9645464420318604,
+            0.6839232444763184
+          ],
+          [
+            0.908113956451416,
+            0.8554481267929077,
+            0.15156584978103638
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6667,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (163).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:b0c86b1a09023c1358e9",
+      "y": 1,
+      "probability": 0.007996013388037682,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9590917825698853,
+        0.9837655425071716,
+        0.9987823963165283,
+        1.0909733646258246e-05
+      ],
+      "leaves": [
+        [
+          [
+            0.8377375602722168,
+            0.22630923986434937,
+            0.08345796912908554
+          ],
+          [
+            0.7686246037483215,
+            0.09656871110200882,
+            0.0895104929804802
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6696,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (192).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:c6e8384c34ff854d1cf0",
+      "y": 1,
+      "probability": 0.9892442226409912,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.8836289048194885,
+        0.8856409788131714,
+        0.9151285290718079,
+        5.583460430114151e-11
+      ],
+      "leaves": [
+        [
+          [
+            0.9513628482818604,
+            0.9006832242012024,
+            0.6235065460205078
+          ],
+          [
+            0.98312908411026,
+            0.9877700805664062,
+            0.3382379114627838
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6698,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (194).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:c6e8384c34ff854d1cf0",
+      "y": 1,
+      "probability": 0.9993863105773926,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9916450381278992,
+        0.9943215847015381,
+        0.9996604919433594,
+        5.567705851916571e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.9835145473480225,
+            0.980961263179779,
+            0.40919366478919983
+          ],
+          [
+            0.9663938283920288,
+            0.9113876819610596,
+            0.08906322717666626
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6701,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (197).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:497f0c84459063628c16",
+      "y": 1,
+      "probability": 0.9979591369628906,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.8784666061401367,
+        0.8721656799316406,
+        0.9993017315864563,
+        4.823268540121717e-08
+      ],
+      "leaves": [
+        [
+          [
+            0.9774872660636902,
+            0.9736810326576233,
+            0.765457272529602
+          ],
+          [
+            0.9770081639289856,
+            0.970071017742157,
+            0.5216096639633179
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6702,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (198).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:497f0c84459063628c16",
+      "y": 1,
+      "probability": 0.7377290725708008,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.953224778175354,
+        0.9851754903793335,
+        0.9998188018798828,
+        5.01609864755892e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.6233522891998291,
+            0.047043465077877045,
+            0.0885704904794693
+          ],
+          [
+            0.7061553001403809,
+            0.05631306394934654,
+            0.1019103154540062
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6732,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (228).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:eefa010cbc724a7d6539",
+      "y": 1,
+      "probability": 0.9578779935836792,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9622060060501099,
+        0.9757753610610962,
+        0.9997772574424744,
+        2.1452187248804933e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.9553831815719604,
+            0.9338914155960083,
+            0.7081801891326904
+          ],
+          [
+            0.937186598777771,
+            0.7374319434165955,
+            0.26851603388786316
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6756,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (39).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:1095407340ffeb9368f6",
+      "y": 1,
+      "probability": 0.9303323030471802,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9867963790893555,
+        0.9941365122795105,
+        0.9996930956840515,
+        3.77907011239742e-10
+      ],
+      "leaves": [
+        [
+          [
+            0.9670045375823975,
+            0.8637328147888184,
+            0.5475984215736389
+          ],
+          [
+            0.963528037071228,
+            0.9225673079490662,
+            0.3859404921531677
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6802,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (81).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:d106a46812088e5bf2a4",
+      "y": 1,
+      "probability": 0.9989609718322754,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.8559345006942749,
+        0.8947165012359619,
+        0.9989745020866394,
+        1.728267307044007e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.9381879568099976,
+            0.9306266903877258,
+            0.8839762210845947
+          ],
+          [
+            0.9243685007095337,
+            0.8633104562759399,
+            0.25495097041130066
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6807,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (86).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:3f80e7857c4f26528158",
+      "y": 1,
+      "probability": 0.004022140055894852,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9891398549079895,
+        0.9965146780014038,
+        0.9980722069740295,
+        6.155476057756459e-06
+      ],
+      "leaves": [
+        [
+          [
+            0.8455326557159424,
+            0.19109904766082764,
+            0.08906147629022598
+          ],
+          [
+            0.8654560446739197,
+            0.5608693361282349,
+            0.10233048349618912
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6808,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (87).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:3f80e7857c4f26528158",
+      "y": 1,
+      "probability": 0.9982184767723083,
+      "verdict": "HEALTHY",
+      "whole": [
+        0.9056744575500488,
+        0.97050541639328,
+        0.9993925094604492,
+        5.32200999714405e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.9785852432250977,
+            0.9716070294380188,
+            0.8877121806144714
+          ],
+          [
+            0.8863227367401123,
+            0.78025221824646,
+            0.20166359841823578
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6809,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (88).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:3f80e7857c4f26528158",
+      "y": 1,
+      "probability": 0.021745579317212105,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9808979630470276,
+        0.9901943206787109,
+        0.9996138215065002,
+        4.780056794828624e-09
+      ],
+      "leaves": [
+        [
+          [
+            0.9342515468597412,
+            0.403961181640625,
+            0.12057573348283768
+          ],
+          [
+            0.9642226099967957,
+            0.6268841028213501,
+            0.10339002311229706
+          ]
+        ]
+      ]
+    },
+    {
+      "index": 6812,
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (90).JPG",
+      "label": "Healthy",
+      "source": "olid_tomato",
+      "group": "olid:conservative_family:3f80e7857c4f26528158",
+      "y": 1,
+      "probability": 0.5585174560546875,
+      "verdict": "UNKNOWN_CONDITION",
+      "whole": [
+        0.9276058077812195,
+        0.9799266457557678,
+        0.9974319934844971,
+        2.647492181040434e-07
+      ],
+      "leaves": [
+        [
+          [
+            0.6823480725288391,
+            0.05447959899902344,
+            0.1221175268292427
+          ],
+          [
+            0.7980095744132996,
+            0.12023166567087173,
+            0.11662229895591736
+          ]
+        ]
+      ]
+    }
+  ],
+  "selected_indices": [
+    3914,
+    6534,
+    6535,
+    6807,
+    6667,
+    6809,
+    6638,
+    6639
+  ],
+  "diagnostic_only": true,
+  "consumed_validation": true
+}

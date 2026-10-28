@@ -1,0 +1,21 @@
+{
+  "protocol_sha256": "3ad3dd62859ddb29d055cfb750024d926df08b33ba0a9aa91119f8208e9bcce9",
+  "query_regions": 24,
+  "gallery_regions": 194,
+  "region_pairs": 4656,
+  "geometric_cross_label_matches": 0,
+  "edges": [],
+  "fingerprints": {
+    "reused": 0,
+    "new": 242
+  },
+  "diagnostic_only": true,
+  "automatic_relabeling": false,
+  "model_promoted": false,
+  "new_encoder_inputs": 0,
+  "acceptance_data_used": false,
+  "ad_independent": false,
+  "olid_independent": false,
+  "elapsed_seconds": 50.08420702593867,
+  "limitations": "A geometry match suggests shared visual provenance, not confirmed erroneous clinical labels or plant identity. A nonmatch does not establish label validity, specimen independence or separability. No cases are dropped from gates."
+}

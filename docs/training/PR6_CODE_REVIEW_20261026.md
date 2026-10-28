@@ -1,5 +1,17 @@
 # PR 6 code review and continued recognition work
 
+## Current-status override — 29 October 2026
+
+The [convergence and capacity handoff](CONVERGENCE_AND_CAPACITY_20261029.md)
+supersedes historical sealed-OLID, active-schedule and experiment-status claims
+below. OLID and AD are consumed development. The recurring task is cancelled
+and disabled; review PR #6 only when useful. Its last inspected external head
+was `cc3ea381238a2470d2e90e52bee8684a3a3229e0`, open draft, 28 commits, zero
+issue or inline comments; no new external code required incorporation. Both
+published-head CI jobs passed. The new expanded local suite passes 300 tests,
+one optional media skip; its own publication CI must be checked separately.
+No replacement recognition model is qualified and no failed weights ship.
+
 **28 October override:** the user cancelled recurring monitor prompts. The
 Windows scheduled task is disabled. Do not resume the four-hour monitor from
 historical instructions below; continue app/recognition work under the

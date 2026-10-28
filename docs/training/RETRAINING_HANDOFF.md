@@ -1,5 +1,13 @@
 # Agribot training failure investigation, recovery, and Android integration
 
+**29 October continuation takes precedence:**
+[convergence, capacity and checkpoint handoff](CONVERGENCE_AND_CAPACITY_20261029.md)
+records phases 183–211, exhaustive replay, longer/full-encoder adaptation,
+unclipped-score stopping evidence, strict full-CNN checkpoint restoration and
+verified laptop backups. No replacement is qualified. The longer full-model,
+clinical-loss ablation and cached worst-group controls have all stopped
+unsuccessful. Preserve exact caches, completed evidence and original gates.
+
 **Latest continuation:** [field supervision and native-resolution repair](FIELD_AND_NATIVE_REPAIR_20261028.md).
 Phases 159–182 stop below unchanged recognition/safety gates. Preserve the exact
 caches and completed checkpoints; do not repeat failed objectives or export them.

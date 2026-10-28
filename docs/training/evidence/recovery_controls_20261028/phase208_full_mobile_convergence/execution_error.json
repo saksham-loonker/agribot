@@ -1,0 +1,11 @@
+{
+  "status": "failed_restore_preflight_before_training",
+  "failure": "Generic missing-key contract incorrectly expected BatchNorm bookkeeping keys that PyTorch suppresses in partial loads",
+  "parent_checkpoint_intact": true,
+  "no_training_steps": true,
+  "duplicate_untrained_warm_state_sha256": "a77961d633194fe1f0a64dff1a79b144c3ee03363e8a3a95493dc290d9a09bd3",
+  "duplicate_warm_state_equals_verified_phase206_best": true,
+  "duplicate_ram_file_removed_only_after_tensor_identity_verification": true,
+  "repair": "Phase209 uses strict complete-state merge, preserving frozen parameters and buffers; tested BatchNorm bookkeeping and rejection without mutation",
+  "model_promoted": false
+}

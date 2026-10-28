@@ -1,5 +1,5 @@
 {
-  "archive_sha256": "85657667672897cedbd10a9d9793010bc25f83ec77646d4198be952be6bbc742",
+  "archive_sha256": "037910bb53fd9bb0767ebe318a9cafd688a72565bc6049902620c63de56a1dd3",
   "files": [
     {
       "path": "model_training/v3/actual_admission_target.py",
@@ -17,9 +17,24 @@
       "bytes": 1653
     },
     {
+      "path": "model_training/v3/clinical_color_features.py",
+      "sha256": "c18699b3790bdc854f8195893093129935eec3a5c7c544ec04e7c13376aedf5c",
+      "bytes": 2041
+    },
+    {
       "path": "model_training/v3/clinical_photometric_dino.py",
       "sha256": "7178e62239defa098bee86c5651053c3994572a672bf3f0c7592081251f122a1",
       "bytes": 5196
+    },
+    {
+      "path": "model_training/v3/clinical_replay_balance.py",
+      "sha256": "42cc6e1dddd400b9405022ca43c95cb67519abfa27c5dbbd7311e2329281e724",
+      "bytes": 941
+    },
+    {
+      "path": "model_training/v3/clinical_retention_proposal.py",
+      "sha256": "063a430dd7d45c8533c8d866e6c358fcfd7243d496c1f69f44dba041c0a6a8ca",
+      "bytes": 1724
     },
     {
       "path": "model_training/v3/clinical_semantic_prompts.py",
@@ -42,6 +57,11 @@
       "bytes": 1850
     },
     {
+      "path": "model_training/v3/conditional_group_dro.py",
+      "sha256": "6444cf7cdd1bd655d1b09cceff4bddd56cde23e92aac71655b962d5ac0ece078",
+      "bytes": 1944
+    },
+    {
       "path": "model_training/v3/conditional_recovery_losses.py",
       "sha256": "9d72baac0a905d923a2ae286cc4a808376aeeaddc26b20ac5bd54e24f905c4cb",
       "bytes": 1666
@@ -60,6 +80,21 @@
       "path": "model_training/v3/convnext_clinical_teacher.py",
       "sha256": "8df49c7c630cf8b974569eb34264a06c4619779a6cb2946d5e4d5871622d1229",
       "bytes": 5858
+    },
+    {
+      "path": "model_training/v3/exhaustive_replay_data.py",
+      "sha256": "4d0c76952c45c1ae935915788dfb80a2f7d05529cec4d482db759e8bd02215c4",
+      "bytes": 3448
+    },
+    {
+      "path": "model_training/v3/family_knn.py",
+      "sha256": "9d13eda884d43827693ff386792f2d23dcfe232497a80522f7ff5630ca7b080e",
+      "bytes": 2467
+    },
+    {
+      "path": "model_training/v3/full_mobile_clinical_expert.py",
+      "sha256": "851f91ee458729f526f4f9a1468f1a5ba4bef40e84a7f694713caf75ebce1c60",
+      "bytes": 1374
     },
     {
       "path": "model_training/v3/guard_admission_reward.py",
@@ -120,6 +155,16 @@
       "path": "model_training/v3/monotone_normality.py",
       "sha256": "04a7b3cf7900d5c5d8f68a53e44929a0c5b4c68f6593ddfb326af0fe204dbcec",
       "bytes": 1598
+    },
+    {
+      "path": "model_training/v3/native_adapted_patch_tail.py",
+      "sha256": "bd13ad5f1d8dcd0a3b1012e2fa9979b21a1c3d71ffc7bbbf0c285a8f89b72b32",
+      "bytes": 1992
+    },
+    {
+      "path": "model_training/v3/native_full_patch_tail.py",
+      "sha256": "89cfef91b5d3643a8ba53601fc4613dee55197692dd490b06610ff7e945a6055",
+      "bytes": 349
     },
     {
       "path": "model_training/v3/native_full_tail.py",
@@ -462,9 +507,159 @@
       "bytes": 7706
     },
     {
+      "path": "model_training/v3/phase183_native_convergence.py",
+      "sha256": "3709f0ab26313c206db957fab7daf284b22aedd650dddef87ae0b6abda26d585",
+      "bytes": 21474
+    },
+    {
+      "path": "model_training/v3/phase184_nutrient_label_geometry_audit.py",
+      "sha256": "dbd8516e309da21877f4dca14449a617c2715ccffc422ce21e137cc7a8aa81a4",
+      "bytes": 3693
+    },
+    {
+      "path": "model_training/v3/phase185_condition_balanced_native_head.py",
+      "sha256": "7c0b10559764aec23361c314340e82be40b8af752b8734b7552f1168dffff252",
+      "bytes": 11050
+    },
+    {
+      "path": "model_training/v3/phase186_color_evidence_kernel.py",
+      "sha256": "8a39b39ff93bb58108d4d3e437dcb35af19810c17a0cd3f04cb09c2c88ec5c57",
+      "bytes": 11805
+    },
+    {
+      "path": "model_training/v3/phase187_trajectory_committee_audit.py",
+      "sha256": "107ddc3ba7cb7b54e076f579fef4c32f35d44adf140fe341ac76e33fef64bc7d",
+      "bytes": 5976
+    },
+    {
+      "path": "model_training/v3/phase188_native_weight_average.py",
+      "sha256": "b9f8d3623a94ca7365e3e74847fee998f4d420a23255bc57038db348b9a31fa2",
+      "bytes": 16600
+    },
+    {
+      "path": "model_training/v3/phase189_full_field_native_extension.py",
+      "sha256": "d4dda0ab08614dfd7fae2e4e1fa26c00093778c04193565f4f6f347298fbabb3",
+      "bytes": 8958
+    },
+    {
+      "path": "model_training/v3/phase190_full_field_native_head.py",
+      "sha256": "fed7d55630e8f8636e2752aa602a1b06f697b468e44ace2b17f2eb2cb430bbcf",
+      "bytes": 11008
+    },
+    {
+      "path": "model_training/v3/phase191_adapted_patch_supervision.py",
+      "sha256": "a6f72de2fe1c5f7192f87d9a23c64a7bdaf66d8820c17b0d117bf1618a53c086",
+      "bytes": 20759
+    },
+    {
+      "path": "model_training/v3/phase192_confident_veto_audit.py",
+      "sha256": "0d0bef6bb455ada54ee837f4bb92c104021b5f94b2ea73cb1323c48f0ea08d2d",
+      "bytes": 4673
+    },
+    {
+      "path": "model_training/v3/phase193_exhaustive_mobile_replay.py",
+      "sha256": "9482b2e55d9f87570cffe846c53a0c02ada0091f197a6d7dba6e12c56d6b253f",
+      "bytes": 14828
+    },
+    {
+      "path": "model_training/v3/phase194_exhaustive_veto_audit.py",
+      "sha256": "fcc9181d0c80881f7d4fc5f6825c9ebead7e4d10a7c78afaca83ad56184a5400",
+      "bytes": 4681
+    },
+    {
+      "path": "model_training/v3/phase195_rotation_feature_extension.py",
+      "sha256": "812de3d5776604f6c10c990566fb522e2862b8e972f4dc20fd1d199fe1200616",
+      "bytes": 6621
+    },
+    {
+      "path": "model_training/v3/phase196_rotation_mobile_replay.py",
+      "sha256": "486620fcca10dcab883292e3c841edd7b611e68de6e8b88b280b8221b2fedd5a",
+      "bytes": 16501
+    },
+    {
+      "path": "model_training/v3/phase197_veto_label_audit.py",
+      "sha256": "da51f0fe4c11f4ddae928ae0600ea485c9bb92d6e5293842e15fe89f45257831",
+      "bytes": 2518
+    },
+    {
+      "path": "model_training/v3/phase198_veto_rotation_consistency.py",
+      "sha256": "f3403c107111a1e241fc8ac0323f8fb06af054c5ec185a0253ca3a590c388b07",
+      "bytes": 7715
+    },
+    {
+      "path": "model_training/v3/phase199_full_patch_supervision.py",
+      "sha256": "f4c984577367e006e17b219a087dc3d2b1835f24dcbb6101d964d0c602165afd",
+      "bytes": 21809
+    },
+    {
+      "path": "model_training/v3/phase200_cached_admission_policy_preflight.py",
+      "sha256": "dfdf1d3f7af23bfd4c933cbd21f4cce3e9d0e09537263adfbbcf7a821d7e6971",
+      "bytes": 4996
+    },
+    {
+      "path": "model_training/v3/phase201_two_snapshot_coverage.py",
+      "sha256": "6b1bdc6681a5cb9e6fa76371c996ab8f9a841b62c5024bde0698d3d9849a2e7f",
+      "bytes": 4257
+    },
+    {
+      "path": "model_training/v3/phase202_new_admission_veto.py",
+      "sha256": "d12ab2acf187e52f7a968177cdf9ef5c13b69893c1c243043a63c2a1d36825a6",
+      "bytes": 11185
+    },
+    {
+      "path": "model_training/v3/phase203_family_neighbor_recovery.py",
+      "sha256": "8e671d1017b4f11f6bf2f9d808712f2e09d8e6cd972d7b468892cc10a5d1a474",
+      "bytes": 8837
+    },
+    {
+      "path": "model_training/v3/phase204_map_admission_veto.py",
+      "sha256": "091ceeedd676a4436b7c924392f116ca51977716b579bfb164cbeb06057751b9",
+      "bytes": 11179
+    },
+    {
+      "path": "model_training/v3/phase205_map_policy_replay.py",
+      "sha256": "56d85f43799c2ab5b0eb0a82d4902c2ca41163fd7bbbb224436427a38eb44e88",
+      "bytes": 6746
+    },
+    {
+      "path": "model_training/v3/phase206_full_mobile_supervision.py",
+      "sha256": "af9bfcea16ed4d03e2acaf3e2cdf10d127bdca36dfcfd552362ce17b1b5b8695",
+      "bytes": 18619
+    },
+    {
+      "path": "model_training/v3/phase207_unclipped_score_audit.py",
+      "sha256": "2ffcc76f185caeb401e6faeadc6882bd8952e41ed6230b2c88cc884bf65018f3",
+      "bytes": 5688
+    },
+    {
+      "path": "model_training/v3/phase208_full_mobile_convergence.py",
+      "sha256": "dd64f7a6af0ae3bebc06a5a2e0dab9101b8e380ec6e28d0e64c37744251c8bd4",
+      "bytes": 21569
+    },
+    {
+      "path": "model_training/v3/phase209_full_mobile_convergence.py",
+      "sha256": "8d2577f2c9ada6bfbf12a7bef2d5f968e325ae4197ea16c57e6de1a5ffb1f9e6",
+      "bytes": 22268
+    },
+    {
+      "path": "model_training/v3/phase210_full_mobile_clinical_ablation.py",
+      "sha256": "2e073f018eec57d286a9f3b34b9662e37681ba430dc758840c78e3ae64ea75a0",
+      "bytes": 19205
+    },
+    {
+      "path": "model_training/v3/phase211_conditional_group_dro.py",
+      "sha256": "3f251361dcea9f6426afc65e554d06859d043044244e140a7927b74c8a79041f",
+      "bytes": 15812
+    },
+    {
       "path": "model_training/v3/photo_mixstyle.py",
       "sha256": "819aef48eeb73e0b93d5e65984b34941be81d4a94f7a28fb8adb56cbf5441f1c",
       "bytes": 2456
+    },
+    {
+      "path": "model_training/v3/photo_rotation_replay.py",
+      "sha256": "da8ad60eb714a53395dca7a404327c63de5d097fa4991992dea854fcd690dfa8",
+      "bytes": 779
     },
     {
       "path": "model_training/v3/photometric_dino.py",
@@ -487,10 +682,15 @@
       "bytes": 579
     },
     {
+      "path": "model_training/v3/strict_trainable_restore.py",
+      "sha256": "07f23739f5bb67c735827d9e1318099904e53fd04b3292aad33ad3aa9b801347",
+      "bytes": 754
+    },
+    {
       "path": "model_training/v3/target_replay_sampling.py",
       "sha256": "abd3c416525969615dc5986a49296aeec6bb9ad42c0fb5e15e452d264214177a",
       "bytes": 771
     }
   ],
-  "purpose": "Exact PC execution bytes; preserve hash identities across Git line-ending conversion"
+  "purpose": "Exact PC source bytes for executed controls and support modules, including the inactive proposal tested separately on the laptop; archive membership alone does not prove execution. Preserve identities across Git line-ending conversion"
 }

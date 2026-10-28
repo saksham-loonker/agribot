@@ -1,0 +1,15 @@
+{
+  "protocol_sha256": "9ddd626e2a3cc40ca35bbf053b573b47829e65e2ece0a33eabb3a1ee98b68d6b",
+  "maximum_original_feature_error": 2.2649765014648438e-06,
+  "maximum_probability_error": 1.296401023864746e-06,
+  "all_validation_verdicts_equal": true,
+  "warm_decision": [
+    0,
+    15,
+    2,
+    -0.879252016544342
+  ],
+  "real_dino_gradient_nonzero": true,
+  "real_cnn_gradient_nonzero": true,
+  "all_running_buffers_unchanged": true
+}

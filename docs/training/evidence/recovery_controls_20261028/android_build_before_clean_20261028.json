@@ -1,0 +1,24 @@
+{
+  "workspace": "/home/genesis/agribot-native-field-20261027/agribot_android_app/android",
+  "archive": "/home/genesis/agribot-data/android_build_before_clean_20261028.zip",
+  "archive_sha256": "5bd318586ad8ad13d23c90b5ce4101555d4dbe06d039da771b4874e2457ca56d",
+  "archive_bytes": 223578018,
+  "files": 125,
+  "apks": [
+    {
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 137994140,
+      "sha256": "fcd4d1596e5c2f6a0410a758475d8f32f704d98ccf7a1eda93c5c2b3259dc30c"
+    },
+    {
+      "path": "app/build/outputs/apk/release/app-release-unsigned.apk",
+      "bytes": 111048119,
+      "sha256": "d3ef6ffbd9959768232b79f0d30a4b1f976e3aa759c8aded277ecdff4a398a75"
+    },
+    {
+      "path": "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+      "bytes": 3441119,
+      "sha256": "5429cb0e3a2c68a158a5677c2d829ccfa98b5b52e5d64b1126651a6406f56b60"
+    }
+  ]
+}

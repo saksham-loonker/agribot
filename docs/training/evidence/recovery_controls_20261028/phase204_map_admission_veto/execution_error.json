@@ -1,0 +1,15 @@
+{
+  "status": "failed_after_valid_feature_encoding",
+  "source_sha256": "091ceeedd676a4436b7c924392f116ca51977716b579bfb164cbeb06057751b9",
+  "protocol_sha256": "d32b5291e7b69de47f0dc93c85c8fd73bac971d402df142099bece36bef5bf58",
+  "failure": "Encoding batch loop shadowed canonical validation IDs: 71 decisions versus final 8 encoding IDs",
+  "invalid_outputs": [
+    "veto_predictions.npz"
+  ],
+  "valid_outputs": [
+    "features.npy"
+  ],
+  "repair": "phase205_map_policy_replay reuses valid exact-identity features and canonical IDs, recomputing only the cheap heads; no new encoder inputs",
+  "invalid_prediction_cache_must_never_be_reused": true,
+  "model_promoted": false
+}

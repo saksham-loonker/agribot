@@ -1,0 +1,24 @@
+{
+  "source_sha256": "091ceeedd676a4436b7c924392f116ca51977716b579bfb164cbeb06057751b9",
+  "coverage_protocol_sha256": "ab57d664bf465fe5aa64289f608daf4d36ff392d0f25b2ae24e66ba9462c6740",
+  "coverage_result_sha256": "9307545ee1e022e6108fbe586b0a1dbabe049297e891f5b51056dfacb4269895",
+  "candidate_bank_sha256": "184f3473c465df59e0ef78e48ea911cad37eabb280149e5e87277511ef5e3635",
+  "parent_protocol_sha256": "eec7bec4e7e8a591c2f828e273cfdd9d045e187faed895f11ace2afbf257a001",
+  "rotation_complete_sha256": "9d0f101a6c4528cdcff28ac9f6d73f71f93d4e75ab8031b955acf34470fff93e",
+  "checkpoint_sha256": {
+    "field_source_sft": "b9e84d0362d55d284fc7c23fedcdad171145d1024861abc43e60eb7673f9bfb6",
+    "field_source_rank": "8f3c97afa7b1bb8d4424796018a11ae95c399c1e800302fc04e5654e312afe11"
+  },
+  "rule": "Two fixed negative-veto alternatives: full-replay SFT alone, or unanimous SFT/ranking. Both require <=.5 Healthy in every crop/orientation and affect only NEW Healthy admissions from the frozen two-native/four-mobile OR. Preserve every existing Healthy and named disease output exactly; no source or labels enter scoring",
+  "threshold": 0.5,
+  "orientations": [
+    0,
+    90,
+    180,
+    270
+  ],
+  "original_gates_unchanged": true,
+  "clinical_labels_only_for_diagnostic_counts": true,
+  "independent_frames_claimed": false,
+  "acceptance_data_used": false
+}

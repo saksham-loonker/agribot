@@ -1,0 +1,1108 @@
+{
+  "protocol_sha256": "b791a5c36cbe2bb0719500dfe0347f4ee8f3014d78864d836052f9efaca60a20",
+  "saved_native_branches": 84,
+  "mobile_branches": 4,
+  "maximum_or_healthy": 27,
+  "branches_with_sufficient_coverage": 0,
+  "controls": [
+    {
+      "prediction": "phase183_native_convergence/epoch_008_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_008.pt",
+      "checkpoint_sha256": "4c38e4b320347bc2bb11621924cd0e9691911aa3860ce77170c19234c582b6de",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_009_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_009.pt",
+      "checkpoint_sha256": "ff89af25aec50339736c5f899950b52a973c2011286276e9cfe43033602847f0",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_010_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_010.pt",
+      "checkpoint_sha256": "f8c9d44c12149423d53a3855d0d762afb48a7db2fac2c16419635ef0c252463b",
+      "healthy_before_veto": 22,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_011_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_011.pt",
+      "checkpoint_sha256": "d80817dcbe63f8c197d8e4597b15d900dea211ee8068c03913ab508cabe63e99",
+      "healthy_before_veto": 21,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_012_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_012.pt",
+      "checkpoint_sha256": "df26168aab425bc98f6615fcd29a46c275ca6b123f1fa6a9e814ece725bb2037",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 4
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_013_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_013.pt",
+      "checkpoint_sha256": "11c61c87766800d34a62dadfc44378dbaa6c710062f62e633d4f3c29ba2ce5cb",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_014_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_014.pt",
+      "checkpoint_sha256": "f7df315aaf4dab498bffb158c04db713972e2ec7e58f30edcf8dc1fa44a4915f",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 4
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_015_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_015.pt",
+      "checkpoint_sha256": "2a1731540438faa305b8249a3f6b3414cd0b395df7bd94829114eba80da2db45",
+      "healthy_before_veto": 25,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_016_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_016.pt",
+      "checkpoint_sha256": "f848982918f79d5d949029ffd7cb7a04b80b4c2b407320de9e32c255ff42933d",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_017_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_017.pt",
+      "checkpoint_sha256": "be26007ae9af3631117d3cd75fcd578304f8987e5f8c20bff5e77d84c3364248",
+      "healthy_before_veto": 20,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_018_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_018.pt",
+      "checkpoint_sha256": "b6808e596bb50d462059e0242dadc7b070142959969fa328228d2be754a1f681",
+      "healthy_before_veto": 26,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 4
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_019_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_019.pt",
+      "checkpoint_sha256": "b819cca77607419f4a950f9999e6f30d019c034e2f1c51821fd4c6cc54269cd4",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_020_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_020.pt",
+      "checkpoint_sha256": "654d0b8357a4c4db316342653e1cbad3b1a71aca41ed3a1690c8c1f8685beb93",
+      "healthy_before_veto": 25,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_021_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_021.pt",
+      "checkpoint_sha256": "709a84324bcd688b65187b3b1caeee4877d51811c4c725172bf5fc6728681c14",
+      "healthy_before_veto": 22,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_022_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_022.pt",
+      "checkpoint_sha256": "6532a105453eaec73d1afe80e88c7ece4eb72c34390724ff06661bb926f6f08d",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_023_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_023.pt",
+      "checkpoint_sha256": "80e2510c107291abd0264ed249bf189e956731f00b007415b1a90c72f3c7a5f3",
+      "healthy_before_veto": 22,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_024_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_024.pt",
+      "checkpoint_sha256": "70982ebc858e1a8f7e25c3af039daa15ca02c899c4b32d7e73b66c0cb3524acc",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_025_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_025.pt",
+      "checkpoint_sha256": "70437c201c11b5aae13e8c5fa86f209f4e6ff9919e7f6378488990fe882e2e4f",
+      "healthy_before_veto": 26,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_026_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_026.pt",
+      "checkpoint_sha256": "0976bb3616d9ab4940d495e29b2c8085a2d28c956b9c5a5c63946a8fce5a1824",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_027_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_027.pt",
+      "checkpoint_sha256": "a85a9df0d9aeb7dbf26dcaaed18caef43974bb178985221a59799f6caff46b04",
+      "healthy_before_veto": 22,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_028_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_028.pt",
+      "checkpoint_sha256": "2aae932baed104e8351c541365a9ae896bb6190bd26473e214654b3bdef3a4eb",
+      "healthy_before_veto": 27,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 5
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_029_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_029.pt",
+      "checkpoint_sha256": "26e2b8cbc745c95d472540481a15f19190ee5ae01be8194c2530f560bcd77c02",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_030_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_030.pt",
+      "checkpoint_sha256": "529429f9433c463a71503feab74ff28f5e755ee7fa49c39e4f87cd5a747582e5",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_031_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_031.pt",
+      "checkpoint_sha256": "12b67655669a9e61e21280bb6adbc0901c45121db090720379d9292759a66144",
+      "healthy_before_veto": 25,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 4
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_032_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_032.pt",
+      "checkpoint_sha256": "6ca78cc731788acfbac91965a4eeb3ec76b05e61b1c179a09ff8032974809fe5",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_033_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_033.pt",
+      "checkpoint_sha256": "22fcfbe2e01f18521057b85141da25d0b000ac527be573f6fd0b5291d4ed468a",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_034_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_034.pt",
+      "checkpoint_sha256": "2fc2f0a948b06efc824d112e0ef7ad9b81560f17ef2a5e214de089d0e7e2d5fb",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_035_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_035.pt",
+      "checkpoint_sha256": "268c5b3f99c00ea180bb18fcb033feb133fa6cac382551b1ebcbb8c88ec7e044",
+      "healthy_before_veto": 27,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_036_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_036.pt",
+      "checkpoint_sha256": "316b128ab0ae9d10325b1f053993784fff0b8644cbd13255f5c2ba3f1d49c1e4",
+      "healthy_before_veto": 25,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_037_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_037.pt",
+      "checkpoint_sha256": "33658b8dd6cacbd88a0657761786b48f1aee8059871a2a1c341c10c4f5d7b245",
+      "healthy_before_veto": 25,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_038_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_038.pt",
+      "checkpoint_sha256": "2bf6b07d28ee7d97de650db4aa98b1dc045cd32a2888e2561141539ae3b6075e",
+      "healthy_before_veto": 25,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_039_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_039.pt",
+      "checkpoint_sha256": "8b4688e083f7f1b51bece55257b16870b0de340a86749cef47644740d72b9781",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_040_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_040.pt",
+      "checkpoint_sha256": "cf2eb3c57fae880273b2033c6fa24dca5f133ebd4ff47ff9440eba4dc2547ac3",
+      "healthy_before_veto": 25,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_041_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_041.pt",
+      "checkpoint_sha256": "a3a717ea2fa0aa2d6856a46df9c8813f439bfc770b09817f94c303158cfb751e",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_042_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_042.pt",
+      "checkpoint_sha256": "c293354da120a9fd35e140f1eece9f8067e353c34eecdebf81cf2cd3bd7da215",
+      "healthy_before_veto": 26,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 4
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_043_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_043.pt",
+      "checkpoint_sha256": "f494a3a8f88e75203a59cdfb3b4ac2d5db5a57e9b87db730711754504a0dd09f",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_044_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_044.pt",
+      "checkpoint_sha256": "e7448c668fd73aa9c0f0fd71a47f4b6fcc614ca129a932b11f8a12adbd67195f",
+      "healthy_before_veto": 26,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_045_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_045.pt",
+      "checkpoint_sha256": "58f0c8e14abc4e57d52b699ce5e5dcc8c1a77ba86cbacfa25bfa716c36ec8701",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_046_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_046.pt",
+      "checkpoint_sha256": "102dfa4b82a116298e2273e306f62f574b266a010bfec89796aab9f8cdd753a8",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase183_native_convergence/epoch_047_predictions.npz",
+      "checkpoint": "phase183_native_convergence/epoch_047.pt",
+      "checkpoint_sha256": "a5cb06290f72898a2a1b8a44dd2d222061f0c74e6e994423f38bb4d55718fe80",
+      "healthy_before_veto": 26,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_000_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_000.pt",
+      "checkpoint_sha256": "8e2c6f00da91513cd20c5e2cb5787e094bff80885ea313843ee79419748e42db",
+      "healthy_before_veto": 16,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_001.pt",
+      "checkpoint_sha256": "0cbdd4c17b9d657a98a9490d256a8b2bb87fdce7ef36a9aa4b85b17908a323a5",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_002_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_002.pt",
+      "checkpoint_sha256": "e186f59286b557c41056ad2340376e79f281d70c8f48b2646bf2bc12727f5a64",
+      "healthy_before_veto": 16,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_003_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_003.pt",
+      "checkpoint_sha256": "8bd412510b5adb2a107f308f7590e34cb931b82e1915b0d839cd42823152ef58",
+      "healthy_before_veto": 17,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_004_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_004.pt",
+      "checkpoint_sha256": "eed53c0ea435446538d5b76c0a57c9622594d52b11cc2b3cf5a701d50651c5ad",
+      "healthy_before_veto": 21,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_005_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_005.pt",
+      "checkpoint_sha256": "06b902320dc15bc733bb219af2d31f0ca8950f3115c8a6767b3c77208f279be5",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 3
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_006.pt",
+      "checkpoint_sha256": "7a8bc47bef749a34607d9b14ac5b9547943785956a00d97932009f4578449d5f",
+      "healthy_before_veto": 27,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 5
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_007_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_007.pt",
+      "checkpoint_sha256": "890bade35244e6da14061238afa18d21c6e24019cdae4ce202c873115a4fcfdd",
+      "healthy_before_veto": 21,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_008_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_008.pt",
+      "checkpoint_sha256": "0c0f718ee0686bd976a5cb16dab14b2758e9af065b3d7567539da843ba4f4c78",
+      "healthy_before_veto": 22,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_009_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_009.pt",
+      "checkpoint_sha256": "dd0fc345c3c8d2072a8508ff26c011699e358d01d5d8fac5a972d8d73c783bff",
+      "healthy_before_veto": 18,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_010_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_010.pt",
+      "checkpoint_sha256": "45896171ed7adfea0c4ac6b0c49b496b4d4d974804a653c9ce5b2a2e7231989a",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_011_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_011.pt",
+      "checkpoint_sha256": "8b78a9f4c50deae4fbf451145c3d64bfb2a9bd92aa5c657cb4077230da88dfeb",
+      "healthy_before_veto": 22,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_012_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_012.pt",
+      "checkpoint_sha256": "08501aeb8c1ca4309d7c6f35dcf490b8c52108eefa29cdcf66edb8c9e53109b6",
+      "healthy_before_veto": 21,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_013_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_013.pt",
+      "checkpoint_sha256": "fb6b10d6836c5dc5fcd0661282a4d313eb539264ea86eed4117b1c59e8c2ee18",
+      "healthy_before_veto": 19,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_014_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_014.pt",
+      "checkpoint_sha256": "8833b8d9868db0ef999760c90e9e30299184d1bfbe138718e986b2607e1ab427",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_015_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_015.pt",
+      "checkpoint_sha256": "fcd6ef86444a8ebd72102fe0f28b584e88946896205ae70265da5c30fa239c11",
+      "healthy_before_veto": 25,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_016_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_016.pt",
+      "checkpoint_sha256": "0b836ca907581aa7abffe6ebd0a0138812e828e63ab5526348a5309dabb89654",
+      "healthy_before_veto": 21,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_017_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_017.pt",
+      "checkpoint_sha256": "9fcc1c7346fc9c2801773aea561b39e1f3c3046131378be74a145fcd6285ba26",
+      "healthy_before_veto": 21,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_018_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_018.pt",
+      "checkpoint_sha256": "fbcd1bbfc9b6de56b2b5e4ec09bb4da8cdc23657b001bd35baede95139950c8d",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_019.pt",
+      "checkpoint_sha256": "55edbc11faa94c7302080613a5f4fde375ce1f04e8d5b8dc7dd6f599c3760fc4",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 4
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_020_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_020.pt",
+      "checkpoint_sha256": "50d8abdf58a1a79a25fb56f72b34a4269f62986faf8d20bcdcc3af9d671d1500",
+      "healthy_before_veto": 25,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_021_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_021.pt",
+      "checkpoint_sha256": "c96ce09839eb4797541b92a6ebfa133fc8c5f598f74ffd350bbc48ea7f124417",
+      "healthy_before_veto": 22,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_022.pt",
+      "checkpoint_sha256": "50df8d73c6f7ffc026a001b74f2375714ea7f926c2e8210598b9b22625bad352",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_023_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_023.pt",
+      "checkpoint_sha256": "2f14717543b8f074ce9f09af2fa3be0f46593934ddd366a9324a562f40757bc3",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_024_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_024.pt",
+      "checkpoint_sha256": "cfe18f2a68109f45c9eb4b10606a6e541ecc159d705c0869b242a53c87384f58",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_025_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_025.pt",
+      "checkpoint_sha256": "01e754c2a04afc98b7d14d4905320d19a95216ea5c5b1583eacccbed3a468318",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_026_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_026.pt",
+      "checkpoint_sha256": "5e1cc877613e93741f39db0ebc86f71804c57008d578da4aecd00bba33a8a45f",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_027_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_027.pt",
+      "checkpoint_sha256": "2e81620b95f7bfa988a717d85fc6b58c191d244ccf00dbee9871629ed3128651",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_028_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_028.pt",
+      "checkpoint_sha256": "5a25a39ec142470368df38f2df4175b36805d376841dfe2276f7e4ac81ddc197",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_029_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_029.pt",
+      "checkpoint_sha256": "4ba03e8e8b38ebdbcd51fb30b3aabe4a2e7c7a09bc36e380c28ddc3a34e7c7c9",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_030.pt",
+      "checkpoint_sha256": "b54917feb3724f51a3e4df18b5c53fe0892541c44a33ce9bed53d9c59fd0d03a",
+      "healthy_before_veto": 25,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_031_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_031.pt",
+      "checkpoint_sha256": "a2a252f2d7126e8b289ff453c50106b12c05ce9059ff62541cbf4f7efc99a65b",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_032_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_032.pt",
+      "checkpoint_sha256": "96ee25c49b39988d5443032abdc0130378ca1e1ca4bcdbf3689c907379975371",
+      "healthy_before_veto": 22,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_033_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_033.pt",
+      "checkpoint_sha256": "bdd04e8d052f5f32e152dddc5f0f8238c7fba435cab8dba24ccfbadfe972232c",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_034_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_034.pt",
+      "checkpoint_sha256": "b837cb66dde3e5febbbc95c482f00bae6ebf9672b4a319ef9a146a23aa0ebd04",
+      "healthy_before_veto": 22,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_035_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_035.pt",
+      "checkpoint_sha256": "f824ce0117ac1c5d0abef5a67a2fb9ba49c074555c4da3b92cb52d7ddced252a",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_036_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_036.pt",
+      "checkpoint_sha256": "d97c726a12a147f450b4bb3106e121808be34f9aad3136577cc2314cd8c8f6cf",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_037_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_037.pt",
+      "checkpoint_sha256": "5eb5fe045c7628f8acc1a84504f7c1f3e230209e512f340f5c94284bb8364564",
+      "healthy_before_veto": 24,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_038_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_038.pt",
+      "checkpoint_sha256": "0827689572dc8677be4c73b20c2b66682894c3ea2cb8c384a1f43d3108ba2d67",
+      "healthy_before_veto": 22,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase191_adapted_patch_supervision/epoch_039_predictions.npz",
+      "checkpoint": "phase191_adapted_patch_supervision/epoch_039.pt",
+      "checkpoint_sha256": "2207d26b913bc072b41008d27295961e7ff28beb8a8f9fc947efaa6f3cbe83e1",
+      "healthy_before_veto": 23,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 2
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase199_full_patch_supervision/epoch_009_predictions.npz",
+      "checkpoint": "phase199_full_patch_supervision/epoch_009.pt",
+      "checkpoint_sha256": "2219c583904553ee88c34afa6774a71f615cae9e1ff298e50865aa0d80dd9c86",
+      "healthy_before_veto": 20,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "checkpoint": "phase199_full_patch_supervision/epoch_019.pt",
+      "checkpoint_sha256": "156f9845e234bc5c4d27b3db696fcfc6276105331c62a64c7406e99d694fef3d",
+      "healthy_before_veto": 27,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 13
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase199_full_patch_supervision/epoch_029_predictions.npz",
+      "checkpoint": "phase199_full_patch_supervision/epoch_029.pt",
+      "checkpoint_sha256": "537baf53c4a4d6b95f4c668295da302e3a30793d46b86a97009c0ba6c5612619",
+      "healthy_before_veto": 26,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 6
+      },
+      "coverage_can_pass": false
+    },
+    {
+      "prediction": "phase199_full_patch_supervision/epoch_039_predictions.npz",
+      "checkpoint": "phase199_full_patch_supervision/epoch_039.pt",
+      "checkpoint_sha256": "3b8c84f0727ccca33c223edb31cdc9a59a6b6beaa21e5bad039dbbd4a1b5bc9c",
+      "healthy_before_veto": 25,
+      "new_false_healthy_before_veto": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 5
+      },
+      "coverage_can_pass": false
+    }
+  ],
+  "next_action": "Stop this OR/veto family: a veto can only lower already insufficient Healthy coverage",
+  "model_promoted": false,
+  "new_encoder_inputs": 0,
+  "acceptance_data_used": false,
+  "ad_independent": false,
+  "olid_independent": false,
+  "elapsed_seconds": 2.752132531022653
+}

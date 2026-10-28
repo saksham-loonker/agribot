@@ -1,0 +1,16 @@
+{
+  "protocol_sha256": "5c7a6b187749bd295ca27c722de67f1a4d5287c336ac3cf3d57db7d48dc75091",
+  "original_protocol_preserved": true,
+  "inherited_prose_errata": {
+    "local_grid_storage": "Unused inherited description from phase174; this run does not create or train on a frozen 6x6 local grid",
+    "local_grid_shape": "Unused inherited field; actual trainable local attention consumes 1369 adapted patch tokens per actual ROI"
+  },
+  "actual_architecture": "NativeAdaptedPatchTail: final-two-block Q/V LoRA, image-supervised gated attention over all 37x37 adapted local tokens, global CLS/texture residual, no patch clinical targets",
+  "actual_prefix_storage": "Original 2106 native prefix identities persisted losslessly as FP32 in phase191_frozen_prefix_cache; 142 additional field identities stay on GPU during this run",
+  "disk_action": "Purged 2079 disposable pip HTTP/wheel cache files (12580.8 MB); installed packages, datasets, model checkpoints and encoder caches preserved",
+  "clinical_sampler": "Equal binary and source mass, equal clinical condition within binary/source, equal family within condition",
+  "candidate_combines_changes": true,
+  "causal_component_attribution_claimed": false,
+  "original_gates_unchanged": true,
+  "acceptance_data_used": false
+}

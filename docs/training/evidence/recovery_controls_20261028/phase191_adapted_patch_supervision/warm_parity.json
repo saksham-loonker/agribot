@@ -1,0 +1,12 @@
+{
+  "protocol_sha256": "5c7a6b187749bd295ca27c722de67f1a4d5287c336ac3cf3d57db7d48dc75091",
+  "maximum_native_cls_error": 0.0,
+  "maximum_probability_error": 3.5762786865234375e-07,
+  "all_71_app_verdicts_equal": true,
+  "warm_decision": [
+    0,
+    14,
+    10,
+    -0.6088752150535583
+  ]
+}
