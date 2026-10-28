@@ -1,0 +1,1549 @@
+{
+  "source_doi": "10.17632/xc94xbg239.1",
+  "role": "development_only",
+  "training_started": true,
+  "training_stage": "phase115_new_supervision_head",
+  "training_source_sha256": "20fac49aad5613c773dcb48d1b0bc72cad1fe98c9a64bd04c5da91e1fee6c1a4",
+  "selected_photographs": [
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (746).jpg",
+      "sha256": "3d3acdf5cd30a96932053d7d864fa16db14b9b65fb5d645598eaf306f4afcdcd",
+      "group": "new107:aeb95afc787c81935402",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (348).jpg",
+      "sha256": "4a655d3abbb70ec8b83bc2158c4c808a0bc315c9aa9aaf7d243e313b96f01213",
+      "group": "new107:289ce14d04eaa215b021",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (134).jpg",
+      "sha256": "7647803ab841a3fad9e5dac8f66ce5f83af8347df5c9b34e6df419cd40de2806",
+      "group": "new107:9c33856b75247a71951e",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (214).jpg",
+      "sha256": "76956e014ef820dec471ac519c8fc3d44c559315550f0599ea684caba7550e65",
+      "group": "new107:2811844bfcbdcd4eaf8e",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (504).jpg",
+      "sha256": "8a83ec4e02c0dff513b4cf643a37659c373f0ef5317849c1580bba72edd9ebb2",
+      "group": "new107:ae12666f0704d62af189",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (698).jpg",
+      "sha256": "bc86edd279bd79522746bd22a32acc344cf2aa765f8e5ad0da93ee17eaace5fa",
+      "group": "new107:d2e33eb165180baa8c57",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (620).jpg",
+      "sha256": "c61bbd26941a549332251ebfc555d51f1c52cb84ebd13c02160a1c655715dffb",
+      "group": "new107:34b57dfcba7ce89ee610",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (668).jpg",
+      "sha256": "5cbc77d14e88b2508c952b54c8ef52a276fe6fcafae3b06eb473e42788ca69f5",
+      "group": "new107:4e35b7cfdbc79ccea21d",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (230).jpg",
+      "sha256": "625a9425c92d4349c9a36714934dcc7f79af7e4cfc984ff568dafe013caaf557",
+      "group": "new107:474fa14f4ba42fdec069",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (170).jpg",
+      "sha256": "9d5f7636471b8106887eb1532c92ec75c2057fe1bf0b89c5e28a75032cb26a39",
+      "group": "new107:693cda7fe8d6044bd03a",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (764).jpg",
+      "sha256": "dcd9d5dc94249064546f6d2ca201570f7117af2c5ef8ef8a6a8eec409daae42f",
+      "group": "new107:4c2432734edc6ba1fecb",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (945).jpg",
+      "sha256": "8e15195e972cd16307e1631be06bfe878a6bce7ea33f0eab2e09a3ab2821d54c",
+      "group": "new107:cfe5a349cd7ff313f7ad",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (422).jpg",
+      "sha256": "8815dd390738d3d5cd373d4ec95429aa2717e9c37b16b081116b0f6659c26670",
+      "group": "new107:1fff23bfdacf85db8a54",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (986).jpg",
+      "sha256": "77b27da3e7685364b4c0f960472b72825a20b76c17275dbffcdc0db2b5ce5d1a",
+      "group": "new107:688b57e500d1e70f6026",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (18).jpg",
+      "sha256": "24b944d21bb15db7aef19274f28ee5db243d6761d3e7437b649daf090e200eac",
+      "group": "new107:e577614930a367b9dd88",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (266).jpg",
+      "sha256": "6d2f7ab778c67c617478d73211100178d4c2258a3d0d809034319c7a30d7d2f1",
+      "group": "new107:efaff8b6b7330bc8346e",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (936).jpg",
+      "sha256": "957fb4d82f016980c299817f4383bce5895944eb67b0933f8e900b9decaa4009",
+      "group": "new107:ec9cf09eacc502acb256",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (916).jpg",
+      "sha256": "3a4ce291db5ab44c530142b095d0cfbb1f5c632a55c9a2ed27a64c60e4c64e42",
+      "group": "new107:3a2f251a7615a1fd1350",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (227).jpg",
+      "sha256": "ffef50da5933142ccdc9fd52780258b949bc0f0735f75a362be4212e3e8b330d",
+      "group": "new107:2644c662dd0d85a54275",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (323).jpg",
+      "sha256": "7711657fa8b6d4e2044e3cb18b35cd4e777e753dc39a93f9f52dba8b6bbd52cd",
+      "group": "new107:b696dcaae13a160d3d31",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (468).jpg",
+      "sha256": "221ac673e0d30facb880b84f2727595eebd9e29b47dfbcbf6c7a41c16c45d815",
+      "group": "new107:4bd844d5bd93a6ab81ed",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (511).jpg",
+      "sha256": "f5c0c9f4a4913c7585fba63df6051fb36ddd8958f9cd694c6219fe6250a30ef3",
+      "group": "new107:d33e404cadf315a08a92",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (24).jpg",
+      "sha256": "995134e2affe023c3fa0b75b778ff7b76042b2318eaee1c10e5ba3396d6fc200",
+      "group": "new107:3579c97891873bf2c9ed",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (944).jpg",
+      "sha256": "c8443053e62ae8a24a9fa1439704621899b0fbe71acee5b3c0e853ed2f4efc42",
+      "group": "new107:a3594796f6256236be5b",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (155).jpg",
+      "sha256": "c7bd9a4765e3ba452f5142633680c90f23d3ca665b480fe188f6bad1e436080f",
+      "group": "new107:d1d19eceadeceb085c59",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (330).jpg",
+      "sha256": "4a923e0092559a730dc7ae659c4a505062f91bf544a1d1258c48ffcb1548156a",
+      "group": "new107:0af6f4bab0cce66d712b",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (638).jpg",
+      "sha256": "26dfbfe86896a77a73e045bc427f96dab388729b1b5bf5232baaa63034ac9c42",
+      "group": "new107:0cca90d7c85086ce0af0",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (662).jpg",
+      "sha256": "9c173e95a19ae520bbbbaf9122f5648c5df0cdd47610b866f1791af9516c4110",
+      "group": "new107:a0a5626ddce4b8ccdd70",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (419).jpg",
+      "sha256": "5f7a8b433526f3e6b30143696591af3d1fa9652c729b77de2c7f8f9196872fd7",
+      "group": "new107:bd6156cd9f503bbe2715",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (425).jpg",
+      "sha256": "c4fd285c3b8bd171cb3484274f17d66899ae125f8b1a2476d37dca6fdc38a840",
+      "group": "new107:818c59da4b9440b7adb0",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (92).jpg",
+      "sha256": "064f6e755287b63d3569f410931cfcea61259924dd4ed9a83d5090ff57ad4324",
+      "group": "new107:76f37c68607cb49be113",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (294).jpg",
+      "sha256": "2432a91cfea1c1d1fb58507e3f8801883a78d016ecc15e6c19ff18106a48a0dc",
+      "group": "new107:791b0bc3a0cbfa876a17",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (175).jpg",
+      "sha256": "63fb3651f57ad6429d565d1c7f42f5ae1e78907803aeebc19f5d63efbcfb65b2",
+      "group": "new107:85c7cdfafc0b23c0d88b",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (589).jpg",
+      "sha256": "c7a067e4ea536e331a4991ee8590dd69a77b054ba50b753cebb474b93d1e8013",
+      "group": "new107:8cf49bbd0dbee8a4773f",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (149).jpg",
+      "sha256": "687078b017acba84c27eda56c87476d0d0e335f373ae3b6e53a52a06ff1fa72f",
+      "group": "new107:44fac21973ebcbb5d369",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (146).jpg",
+      "sha256": "542009218ebca20d3037bd0067c1dff122da03352839256405b80cc834965bac",
+      "group": "new107:0d38443ec1e14dad38b1",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (457).jpg",
+      "sha256": "c2620895157a18eccf0f3367817c63eb3dc8b5662d5cef290b33e436e47daf50",
+      "group": "new107:bb00e950144ffb620400",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (769).jpg",
+      "sha256": "ca244b83f308fc18872accb3489cdddbde7b477b3e6ab2a9793f4d29f47c2f62",
+      "group": "new107:b4b3b5b0c906f6b93ce1",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (199).jpg",
+      "sha256": "fd4e11c814541361a6c0c1f62581cf1036c8516eff1a6d45834f7f0b4c78d0f1",
+      "group": "new107:7a002464ce19d8616cb6",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (538).jpg",
+      "sha256": "fa6ffb9a2df8a47ee0280da8d5a94271a470d7c37a6abed2a634a980f6706b73",
+      "group": "new107:256f0c2311a5d4e41fc6",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (193).jpg",
+      "sha256": "9e99c23083144a7e1de3e39d5ecba82b6c15979ea5106f639a32b9907f4138e9",
+      "group": "new107:4d3891188e5a6f54c279",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (27).jpg",
+      "sha256": "284ca925da151ce69cffa820f62a60a5c6a3e93bb281992a1f055369baa80f66",
+      "group": "new107:46298634010a52a0e53c",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (781).jpg",
+      "sha256": "c3b76b2692e71f40ae58938ec1510e153cbdc6f891ef4b0bd02442c3b8df3cce",
+      "group": "new107:ae01a71e94fff1a24ee0",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (534).jpg",
+      "sha256": "e17ec8b9ab663ebdc029574b5bbb6357f9033835f8e17c46ceadc0ddc8bab553",
+      "group": "new107:4d8663da5d6920b8eaef",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (626).jpg",
+      "sha256": "2b59c7f982c6bd3282d0d31c07ae4eb058e10396849657f232e2d82313cef1e4",
+      "group": "new107:73e1a9788dbda6fe40d7",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (33).jpg",
+      "sha256": "093f94c3c0bf5b963bf5fe407b1891889ad523656b9a5ee5d886a2f337def67b",
+      "group": "new107:569d7251022f12de945a",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (949).jpg",
+      "sha256": "9afaee5820f024de5cb3d078249d155be847eb4a40981586bf9e2b2e142558c8",
+      "group": "new107:2478926e4ce9387229b7",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (951).jpg",
+      "sha256": "b51254c9fbc5a75bbe714e5c99fa287742e2f88ec3eaa6ce044ca69f9cf612c6",
+      "group": "new107:6905fadbc25158e9644c",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (73).jpg",
+      "sha256": "d7a5a07c51f834645f71f0cab7479da36ef17ce7c3841537c629cf63ecae8ec8",
+      "group": "new107:35182d41840f3ca0b34a",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (412).jpg",
+      "sha256": "8a3bd6cbb415426e782ed844f2e8fa2c7848dd8a2e52485106b8781613d7327a",
+      "group": "new107:181e409d037edcf66deb",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (75).jpg",
+      "sha256": "855d6429f2b13eadf9345aed1a265b1db213d2537f37cece6eb992282dff15ae",
+      "group": "new107:12e7d862b2f5ecdcb96e",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (603).jpg",
+      "sha256": "fd0ce626517a9254c779ee722c8ec481497f45d5929eac27f9f617774a080d95",
+      "group": "new107:a5d43c2dfbda2e1d86a7",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (278).jpg",
+      "sha256": "2b1cfaf784c2142919f8410ca57c1a921b606343387712c8b72d891d67af1d4d",
+      "group": "new107:6f8fa095ae0384f4f7df",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (273).jpg",
+      "sha256": "126be563bfd7723c3fedd26efdd0fe017c750bf504d188d54dcb3d76857619ac",
+      "group": "new107:fee406adda804b3a17dd",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (782).jpg",
+      "sha256": "f1a4dfb37c027b8fe38d2d1e7537274730ffe98f10a45350d08c53910c48a42e",
+      "group": "new107:f7ca482d52a4c04f2986",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (540).jpg",
+      "sha256": "21662b270d93a5e6994732066fcf497f92783a4ea8fa2e7f1a0307448280a02f",
+      "group": "new107:aaa5463145f09f2e82c9",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (529).jpg",
+      "sha256": "759e1e9fa708e5062253476f4f0814f80f08436fb747f8b48c9153a3cf148b23",
+      "group": "new107:48a43fa1c1e96b721b4c",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (280).jpg",
+      "sha256": "3f4f698f74401c02fc496aae9eb428f21f75f62b72a1b5c4346dd7328c1047b7",
+      "group": "new107:58427d49f4d5a5b68d58",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (923).jpg",
+      "sha256": "ee8614bb84cac9efeffa323dfd2c63d648ca7546194afd0a3e6cbc6220feec70",
+      "group": "new107:5d2d724427e23baa063b",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (359).jpg",
+      "sha256": "0ab9eef50d531f40510facda28ee3ad3f7b612c9679144445bf79478650b72c6",
+      "group": "new107:a23e4f8417f4372c6279",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (888).jpg",
+      "sha256": "d81d76bb0742b545fdaec5525751d34887b493e16c9da5687c42a9192fa776e5",
+      "group": "new107:febe4df766a272180bda",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (111).jpg",
+      "sha256": "ffa685fa58a9870f6aee79fa7d59e7ba311fdaf5ef184583e7b75ff0e7a693b8",
+      "group": "new107:3c8b675bed571e4f93e9",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (72).jpg",
+      "sha256": "ce824e1af79f687d3df7506a009fd4c9504fd0e0170a1dfcaa44f4f2d9018253",
+      "group": "new107:2167d89ddae410acec75",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (583).jpg",
+      "sha256": "24090837e4d1efa9a8f24533b99c3f624e955fcbd82921fc8a552d3fe00e6e2d",
+      "group": "new107:163a93f419b5cff67681",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (537).jpg",
+      "sha256": "0ee4853be92ba0e7e9e14a04e67a9e7d340254ddc184bfbbe979e40328e3c9d7",
+      "group": "new107:b7f03bd2287d5a961ede",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (449).jpg",
+      "sha256": "b9167a65aa1212dd3b1283ef35c6fd08dd7edf5d79b2f2ead44d636189938b32",
+      "group": "new107:ee2bb0cbd4766abd7b71",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (982).jpg",
+      "sha256": "6b10cde4994efaa2d532b446849cd5bef95ece054547ab4d8eec7448ab57bc14",
+      "group": "new107:3cb5609e0d2b5594f91d",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (448).jpg",
+      "sha256": "cc26a5b9154e03a4b83a723484db2906d5a805601b8ce2dd3216f1c42d822a5d",
+      "group": "new107:3f26a5f493bd626db410",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (920).jpg",
+      "sha256": "422d2e7f7b9486a533a3f0d4c3679e02249268c6f920244eb97657dcf2eed6d8",
+      "group": "new107:7fc6ab2e38362205fdad",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (792).jpg",
+      "sha256": "615990df5bedd2c03b9fc023ee9048790fec6dbb65695d185f1ed3d676f373e9",
+      "group": "new107:2f90e68dae86c625f932",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (564).jpg",
+      "sha256": "c71bfd3a1ee918c799376443c299bbbfb6dc08a37862fa82541aeb8cec5ea86e",
+      "group": "new107:051009fdb42842b24109",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (382).jpg",
+      "sha256": "1dd315b2d54d6694d4c23c3915c867441e86bba342df8d216d1f6b700d2b38e0",
+      "group": "new107:e496a8c93b9ad7db53ef",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (963).jpg",
+      "sha256": "9bd0a12260b91dae0f079aef0f8d4358d6847f684fcf343805121f426a90075f",
+      "group": "new107:ddaaeb27ad462b1b7f0f",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (876).jpg",
+      "sha256": "cd069c3039a3b97e2eba760adbdabc1e2c4e58156e38b8482cdf37ea42d377f9",
+      "group": "new107:6fdc8e152eb53a95b6f3",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (70).jpg",
+      "sha256": "113fad25f9cd9201c22b8a6c0b1b47c61184f0c579bc15114a1e96b759580d40",
+      "group": "new107:37aed01411b44443c603",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (976).jpg",
+      "sha256": "38fc03ce965a80cfeec04790b47011d73fa8a0b0eaa720b43e7ba6334c2260f9",
+      "group": "new107:bd3121d23a31245c02a7",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (902).jpg",
+      "sha256": "dee2f232179e3e48e891bacf67e508f2e3b810956aa3ca87fddd339e6efdedb6",
+      "group": "new107:2e37380f254b3af86bde",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (985).jpg",
+      "sha256": "94e3fa3e2c9cc9823d1c823bf33c109e1f21e9a56b559c102edcb5a866a61873",
+      "group": "new107:3cc10a17bfedd9d70e56",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (60).jpg",
+      "sha256": "854d6032491c0febd97c7316590630c30e05c153a0e6fe27460f3c7d8de4fe98",
+      "group": "new107:e06df73e7ea58bef99f2",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (600).jpg",
+      "sha256": "75aa6cfabf17c063940199d0f11bfabbd22b8d978c9687eb04e094c78840c844",
+      "group": "new107:1f2b0c7f66185cba4508",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (519).jpg",
+      "sha256": "7b7b8e6c44f39629c77e945f0c387b26f0adf53e2beb2d174790da338cbfdf5a",
+      "group": "new107:c165e3b0b02ed79adfa6",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (56).jpg",
+      "sha256": "5ed07fda68b50e06ee25d04e26c382ba3927086441b0b295cc856ffe2a745abd",
+      "group": "new107:619292afcb64f10aa14a",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (687).jpg",
+      "sha256": "e4f3f5c3edaa58bc5a35fc6e7fde72e167f2b0697ca35a08536cf81f017ceb0b",
+      "group": "new107:ada56b18893bdd109ece",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (38).jpg",
+      "sha256": "dd1a72bb9b18281e21eed010bc824e943bc252c7295b1f00f1842c6a002a609b",
+      "group": "new107:3856df2189e0eed155ed",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (883).jpg",
+      "sha256": "f3bdf479e549141b1b1efca50a2adcbf4d71beeca5e8f4c7b34407a58002d5a6",
+      "group": "new107:51610d13c85c7911dd76",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (760).jpg",
+      "sha256": "c1073944fd86875aac069c2f67aeee4c61ad4fc46e2884e2e9365eeec1191fb2",
+      "group": "new107:bdc6ffb632bc92b7e953",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (251).jpg",
+      "sha256": "184680e9972634fec75feaaa3a5b96d9fa1e50e230d624f701b74cf7bcbbe783",
+      "group": "new107:ef088caaa8faa8234e48",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (57).jpg",
+      "sha256": "4d6cf3fab48ff87cf073485e8b49b5c0cda747bc2f542a9f44a1bf7807f08a00",
+      "group": "new107:0b31d3c689c52f1cde24",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (926).jpg",
+      "sha256": "fa4c46a0d9a43ae4b8f4f07cf9cb93e91cf3c9b41a28cd67f0facee27eacf5b4",
+      "group": "new107:c263c0db90c598e711ed",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (350).jpg",
+      "sha256": "8fa109c06049150bcf054378c5ce2aff506cf9c4b44f61b3df1fbc10b536074d",
+      "group": "new107:a68a05bdd43360ea5bba",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (268).jpg",
+      "sha256": "e76a0e1ba754a957ae8c219c2844dcc456f888c18113822350c042d05551fc4b",
+      "group": "new107:3e4f37d037c4eb0eab8e",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (353).jpg",
+      "sha256": "3bf881c86d127fee1a3e727301ddab79c5b7ecd829aa772e75f6cf0b659d10f0",
+      "group": "new107:6951d33c743621958055",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (591).jpg",
+      "sha256": "c6cd7f5e4be6f6111ada9fa5218348011c44908f20b080961b01e760b5266514",
+      "group": "new107:d1d642e30910cdd50199",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (628).jpg",
+      "sha256": "9f6665a997b7f40212e5cda32160ec54003523b3d322dbdea49eefc06df3bb75",
+      "group": "new107:85ba4734ba0e5ad6b4db",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (489).jpg",
+      "sha256": "175c15410aeb041bac78e7087e822621bf752c48d386de4f20f578c9026e45f4",
+      "group": "new107:640c5ed4bbae19069347",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (206).jpg",
+      "sha256": "02b1cabfa06647f80f2466eef0a79f1b0f3b28716d8153c70fd39e832d212619",
+      "group": "new107:b872738a9625e9043534",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (808).jpg",
+      "sha256": "4c2b9b25e85b42b8bfdb9fdb9e7c88b05efaac0778ff0cf07d204092cab623eb",
+      "group": "new107:456f47ea3406e92b8915",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (381).jpg",
+      "sha256": "54abccf14e73339fa3f0bf71bf0d224ab185ef489ceb368c81486880da7b9186",
+      "group": "new107:f31b3ede0ae4dc9177f3",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (788).jpg",
+      "sha256": "6c738caea64a998e6133e6939aee5dc14cb9f83314380b1bdc7ab99afb41588e",
+      "group": "new107:46003f7aff9599d44e9d",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (377).jpg",
+      "sha256": "b450a7ead847251b9f94fa4c54ad2df2718043f7b0f70352af6ed9f02f396f5a",
+      "group": "new107:c033e2a4955984a81fbf",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (34).jpg",
+      "sha256": "4a67a1d92c031458c5e71b26bd67676e25a213e26156817c373342dfa7c38d16",
+      "group": "new107:bc0f543d0dc2772ee29f",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (653).jpg",
+      "sha256": "004070dd5aea7085295c9d462078ca600f0ea62272194d0519ec9fcda8de5a2d",
+      "group": "new107:1db02a2e0b3ff7584bb5",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (814).jpg",
+      "sha256": "c0303d3cae5ebcdb41e971965bb47df3bc55db59fd5441d6bf7bee3f98f5b20c",
+      "group": "new107:07eaa8cbb8c3e4736884",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (928).jpg",
+      "sha256": "575c1a2092e89829b434d0fb5599660ca32c79c6de074f96e413d50de666013e",
+      "group": "new107:56d94d6ec237885fba7b",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (83).jpg",
+      "sha256": "a7e0675d2617b0b78fd64e2b14d21c9b7b715e20168f3a1f39f1c4a80bfaeb9f",
+      "group": "new107:ea84e90e65e111bdae76",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (380).jpg",
+      "sha256": "6fbbbaa59d5e768a8d4f182a3827be267eafcb784fe0954c5ee82d8529d60c42",
+      "group": "new107:0033a6563f9b05dc8c75",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (670).jpg",
+      "sha256": "63f4294204f875660f255598a43541651d0e93b28b514274b2cc3b50af401d8f",
+      "group": "new107:4ff4049007b543275f4e",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (654).jpg",
+      "sha256": "ebf6ea8723c701cafdb3c6af53a7b8fff0a8443f996dd62aac4cf629a6feb8f9",
+      "group": "new107:c4d884da8807b9165d35",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (572).jpg",
+      "sha256": "e82634fb5e71fc7a075a3adf01e0c01cbbd0e84ffe0e69ed66218d2cfe440bea",
+      "group": "new107:09029a0e9f8617230a56",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (398).jpg",
+      "sha256": "38ef70d25ec46c59f5c0ae81bfff33e5526e17d1e88f7734a24c7264d27df030",
+      "group": "new107:2bcd5e5ffb628cd962b5",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (950).jpg",
+      "sha256": "cab5da9d3ac291e6eb6e1fa33fc987d7913ed7c408b67fe3bc17201f7e48efb3",
+      "group": "new107:7ad03ffb9b643551dfa2",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (533).jpg",
+      "sha256": "bb2e9edf7f75d213df853c2df09665e5f14086117d2074d69797d056ca579560",
+      "group": "new107:fa744c9bd1052ef7faf0",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (351).jpg",
+      "sha256": "7839afeac870b621fd2540451eb4b222725cc328352b685d69a3a69061636da5",
+      "group": "new107:24fadccf641e01887365",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (215).jpg",
+      "sha256": "bb49e61a468f907fd391aadaa23fb0072e811c20ed1debe3cb68769052d4e400",
+      "group": "new107:eba3849a7e843e80a86c",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (579).jpg",
+      "sha256": "c0c6f2e3956e0bd2fe326595a38b523c711f89b94923ec72e82a2e84e5ed4b12",
+      "group": "new107:f82fdfed9f2cbfbd5805",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (217).jpg",
+      "sha256": "02ce637fa055ed409a489dc2e0608c8f289c4d7802e5e1124e5022120e8fcff5",
+      "group": "new107:ec063dee221e905add57",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (367).jpg",
+      "sha256": "103dc96d594415a9aa42f5fefc6b3cf57f46df66590f7691d9c8f249adedee42",
+      "group": "new107:3b8b7bde68b5c77285b6",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (269).jpg",
+      "sha256": "5f6e1659e8095b36743df8f66a0f09c42bebbaeb93106b8d0bc1386ad9d4206d",
+      "group": "new107:c9941dcf19a6698e3a3e",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (68).jpg",
+      "sha256": "e208e0890323319b3c863c1eb022b219946faa1801f8735019b4add96e19017d",
+      "group": "new107:c1cc8aaca6cfcc56f262",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (696).jpg",
+      "sha256": "1e9ad8670ec512b65a2db39a6b4b80cb0709f65a0eeb124946f79094dccd5a24",
+      "group": "new107:cafba9631be4510c6aaa",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (204).jpg",
+      "sha256": "5ff3e1523bf3ffb5819901ce3dc3acb67fe228ea1c50ca392cb9a8372690c8e7",
+      "group": "new107:4a61c6bd031e6855dd2c",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (37).jpg",
+      "sha256": "4e8ddb5686c6e6bd4bfbd8eb701646a04bb09c46cc4777197ace5f3dd957f391",
+      "group": "new107:84dbd90d109009688888",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (328).jpg",
+      "sha256": "4b5e1f62e6e23876cd09e013b5df8de387fc9e9364885dfdbce5d964e55a5425",
+      "group": "new107:1046b390a734b4547665",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (715).jpg",
+      "sha256": "b09851313154a33b20bacb6f88057c489c2f7f6a1405a6a3dc016d0838271129",
+      "group": "new107:680c8e8f19a797a623e1",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (998).jpg",
+      "sha256": "65fbc1610010bbaeff2c72810344381a12e728b212b1c1c67e790b40a9a92719",
+      "group": "new107:d74add6c072592a61c28",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (748).jpg",
+      "sha256": "0c57cfcdcf1d15a2e4e1a96b6f4407198f4d2e0c4cca9be7cfab61ec2aa5327e",
+      "group": "new107:48b9a9ee6a651bf7f413",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (495).jpg",
+      "sha256": "79df7ad1180fa3f1241bef147899746a3756e26f5599a6a135df817169f46408",
+      "group": "new107:36ccfa33dcb30336d125",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Healthy_Leaf/healthy_leaf  (554).jpg",
+      "sha256": "e65b25cd934f171b73d32244e992594cabb443959355d147bce10dd742b79e72",
+      "group": "new107:7dd98d9c202329a2a1f7",
+      "label": "Healthy"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (174).JPG",
+      "sha256": "f0ba1339b715bc3dac655abd6bc48e1115ecb309add5e36d9544d714ec61e2e7",
+      "group": "new107:33e3c3ee1db095064c83",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (986).JPG",
+      "sha256": "acfab9be752213c3c0e36ef9da2eb8d4b2aa5309910bf9197532bf2c5ba09d4d",
+      "group": "new107:32724e4ef472097bcb23",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (49).JPG",
+      "sha256": "e4196d7837affd06fa5e1c8342d85a3e4359c771b103a418cd9ee3bda95e9610",
+      "group": "new107:2f26b212a0376b98b7cc",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (637).JPG",
+      "sha256": "b1e1de922d55422f2305f1d3049e8238211b844f6e24a0150c64633a56f12dd2",
+      "group": "new107:9cbc08d3838dd8f27a68",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (551).JPG",
+      "sha256": "4d2a44307a736b8fc2656026a75983729a6015e62a3dc11e3df10632dd86a212",
+      "group": "new107:387d5e2eca09809c57bf",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (513).JPG",
+      "sha256": "f5c530b616a2cfe2aaee7384197f4877f5ffb10699ce8676c896b79a2040b310",
+      "group": "new107:765ac9b4ca45e18c9cfb",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (898).JPG",
+      "sha256": "8aefdb4e71245cb9aed033f8618f5c770e02fd99c9a6d45c3e6ee7ddf3b01b97",
+      "group": "new107:70c05e53aeaf6f687f93",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (644).JPG",
+      "sha256": "7ef0f14b4df58655b8ff6a1e7c93fd4e068e6570b824c25760530726a85ae3b2",
+      "group": "new107:16001fcc391d4066287e",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (48).JPG",
+      "sha256": "22974871c9a281d0b49bc45cada081f80273c5dbd1d88f86728789f569b99343",
+      "group": "new107:393b13a763a0c6579b2d",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (642).JPG",
+      "sha256": "14c40a6808e2d45edc8e670cca17f7bbd99cc356a9f48397b2a8adb0a2979ed3",
+      "group": "new107:466ff88e62a6e836c410",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (837).JPG",
+      "sha256": "4569c887ac1b3d33a83d42bddb09c7d6f4f6431be1de3e904cda282db3589a1b",
+      "group": "new107:bbb6862f7d7e47a6a641",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (147).JPG",
+      "sha256": "8835a8bfcbfe00b166e43d0a4e6c7b59b88a0e723bf1763120a366a91409b694",
+      "group": "new107:7612cdf22cf8349e16da",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (846).JPG",
+      "sha256": "d7e96749507f19f098b41eee4433bbfa811790c93422438e3d4b1f617537198a",
+      "group": "new107:01d615719bde9ac47ddf",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (1040).JPG",
+      "sha256": "aeccf47cef12841ece95f460dda0fbc082a259282b0ec7cc6e7523c5cb867ee7",
+      "group": "new107:b6a552a2108704b05e01",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (540).JPG",
+      "sha256": "9d7d14f7150de7f42f87befb5dfda4f7aed480493d1127b4f3f205ebe8c3ef7b",
+      "group": "new107:c49da9e383041deb8043",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (964).JPG",
+      "sha256": "e50ed2bbec5892c2c913132ff6bca41220906389da8d92f4c04b148e4f14911e",
+      "group": "new107:50a2edcb09cdb19fe7d5",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (98).JPG",
+      "sha256": "47f7bb645736157ba1b0f319d71aeccc61fa3bcbb86a67de5ab23d49b9efa0d6",
+      "group": "new107:a64c6b99828885e4906c",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (542).JPG",
+      "sha256": "c125fadb74ba0410eeabb2a235e87f4c298b33be151407fc781de8321c31c319",
+      "group": "new107:90fe2d32e8a9959d0d9c",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (901).JPG",
+      "sha256": "0fccd5557d16cc8ad09804d9b16ed9cca25a9ff7ef4ea90450b24081569c9e22",
+      "group": "new107:0c1d50f05b19928db0ef",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (787).JPG",
+      "sha256": "d91d36cb3c6cb829abe3f41a8d4255fab0cfc57b48f9cb0770b00f8cd413bd18",
+      "group": "new107:be2a9f6e6e1b0076ddff",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (460).JPG",
+      "sha256": "69ba68ae33a93d12b0935e9fb2e02ae7c5d3a6491b5f84366b9748e69d6835be",
+      "group": "new107:7d3d23e8f4d5e511ca3c",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (166).JPG",
+      "sha256": "b971f647988fd54ad30b4dddc349f6800affe1dcfaad993914ffe231f423c985",
+      "group": "new107:96ca3bc0d97f49b1dda9",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (754).JPG",
+      "sha256": "ff90053428fa2eb8da5813439cd1e429bb9cd0400bcd5258405278fd69450e41",
+      "group": "new107:5203f49d0d6f637b81a8",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (623).JPG",
+      "sha256": "734133977c1c095cbf8d2bdeed0179a639726182f7ccf80bc791b1dd68f735e5",
+      "group": "new107:430ea4d45997d6d4ed91",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (599).JPG",
+      "sha256": "9a25985d4315dec93c70aa6fc4af93e857bcc15b37891db7efbba91857f1236b",
+      "group": "new107:12753d76d4661e145bf0",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (773).JPG",
+      "sha256": "2eabe01018ba95b03ad851db37784ccebf0fcafb415847f675a282d5c72d6263",
+      "group": "new107:270019234cde86cda991",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (807).JPG",
+      "sha256": "4a8216b48360eda923962d92b6f5b627db4793e0e11b5b01e6b4297a0cb8dd98",
+      "group": "new107:c045ed47637da58abd00",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (560).JPG",
+      "sha256": "f3e9c4f5ef6d69ba4224ff622d140e8810ff963429551391a04628e402520fdf",
+      "group": "new107:d8e051fe5ed088a92477",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (728).JPG",
+      "sha256": "66754c9d078f055dd1be6347bbb91327acb2ac17992bee8ed229ce27905f868a",
+      "group": "new107:4aeb4e73b4f85cfd06cf",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (766).JPG",
+      "sha256": "74e67b7a571f2abe598dc89259e535924c2ff6679ce90d94dbd3220a8d402df1",
+      "group": "new107:6dc2b0c62dc10c7e5ead",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (154).JPG",
+      "sha256": "e9a7f0cd632da513eaebbf9e3304b85225a007364bb69d490506f1aa13eafaa0",
+      "group": "new107:4cc6d54b41cc3e8ec28f",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (988).JPG",
+      "sha256": "696e4acc8e42680cb1fabe930ff9adb96694c1393aeef3dbf80fc8b36ac64a75",
+      "group": "new107:52578314613b6a29e717",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (744).JPG",
+      "sha256": "a9c59548cfe06741a2c38bc82d26b9221c1fecfa2b482f5aecc8f8ab5217b4a4",
+      "group": "new107:e5c970ae6a9dba0de8d6",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (221).JPG",
+      "sha256": "c24d45ff2b84f4f199a3a20db1f886e5bdea7f9470a1cc2e24c657c6e31dd280",
+      "group": "new107:5bed4e19c96b0c06b0c2",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (12).JPG",
+      "sha256": "1660d87ecab0e9f81ab9bc9a0f825043b1040b1075280be4494d9c02aba72cdf",
+      "group": "new107:81cd382364c49f1de6b4",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (835).JPG",
+      "sha256": "bc7ca6a4727314b8e4f698ef18acaf0af1af71cea590b8a8e93eabe2377b0798",
+      "group": "new107:6c8f3b6ca7f1c0bab27e",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (701).JPG",
+      "sha256": "9ef14c905153faff9e0fed9c40eb28038ce37665a91e58f777c6740cf0055dd0",
+      "group": "new107:b4310301838ffcc34299",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (1001).JPG",
+      "sha256": "a29994f354f79713e51fafc7e03ecbc68714b549100003e08076da6083637c19",
+      "group": "new107:a42baea2b6d525b93dfb",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (110).JPG",
+      "sha256": "0f4b6d6959674e2f1d8d52a3ca3fe39185c15c93ff142939b53aa8a0b2f0fe62",
+      "group": "new107:17181189c16bb4520c53",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (525).JPG",
+      "sha256": "5d10c88a7bf1a27692577ede0d9832855a5ab623f471c981d72a98f1b47775a8",
+      "group": "new107:e46c332cd2e720469955",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (1029).JPG",
+      "sha256": "95b4b37bbc45445f7739929c0a9f4422dc01bb2811638903962727b7ee6f8856",
+      "group": "new107:75bd84b8e1c33cfbda83",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (423).JPG",
+      "sha256": "e6e72c166d84928ea37c24f1aca9fa3f53de6bf0e114cf01d273f425970bc4de",
+      "group": "new107:bfe8d85691864ec3d636",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (265).JPG",
+      "sha256": "bafd946dfac5beb7e0b86461fbbbd7959d267c1875196cc4ccf31ea1a63fd540",
+      "group": "new107:2a1b2819ddf1bf6ea655",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (652).JPG",
+      "sha256": "202f2a7fad907d8f317f1266e3b964a0967e906b97a1e24d250fd79c4da70e6c",
+      "group": "new107:acdcd7e63304d2e5a5ef",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (956).JPG",
+      "sha256": "0d26a0a20dd1fb403e9d6dd5ea88a6c5e4f4815b7619bacf5040cffd25057630",
+      "group": "new107:ae1ea124de53905e4d8f",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (10).JPG",
+      "sha256": "d0a0f04a9c2905346cafd6c40799a5b54c5c068449a1ea2ee5ee4a41cc296777",
+      "group": "new107:8c65906652edab19d485",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (359).JPG",
+      "sha256": "b55bac7483fe32a7e6d65a9b44f5488ecb42e4a7e7177b5fa8483695d1d0888e",
+      "group": "new107:42837515de8a7f55c2b0",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (37).JPG",
+      "sha256": "43cd029d6fec16f5d95fc45f3d1aa9efbe1887e728ac287dfb52179f7bc42507",
+      "group": "new107:ffc19c331cf6f63b294f",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (357).JPG",
+      "sha256": "8f6229faa57418a52f32529a6efb794769d82c56174ea18295b2f14041ac7090",
+      "group": "new107:b0feff44a016299b3e74",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (118).JPG",
+      "sha256": "1bd5de5c289003b492b544367f98868e8710d54914a729ebcf053f9ead663324",
+      "group": "new107:04fe49294ad15aef2651",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (874).JPG",
+      "sha256": "180c7e7834481c7405d0782d8b7a7392735548c2e3c1620156c8509d2f074fd9",
+      "group": "new107:69233ee5b807ec702cde",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (54).JPG",
+      "sha256": "27c27ece7fb4e00e453e059fe7f521a4ed3f067c756bae8a10ef965f1b0787e7",
+      "group": "new107:ebe8a5ee78d199dfa1aa",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (772).JPG",
+      "sha256": "904c8236e549ee938a0fdfd794718acfeb6cbd3312bdad9abd32aaa8225f573f",
+      "group": "new107:894e1d402ddc828af82b",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (1027).JPG",
+      "sha256": "cdbd2b17cab0fb61363adbc8d14ab0a6a818497d3cac40533605ccc384b0eca9",
+      "group": "new107:677df5cae1bb9b60c34f",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (22).JPG",
+      "sha256": "31e9645d62c7ed54c69a8c08a0a498129a7b838760ac295de7b741a8786161e4",
+      "group": "new107:c993f6d5d554b8186c03",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (924).JPG",
+      "sha256": "894838b510c925eedab1511289d90deb7ae61d6b0cb323c490717878980c7c1a",
+      "group": "new107:d3ac6ab4402d0f2ec31d",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (246).JPG",
+      "sha256": "0de3f2071238c0998bf3ffb0ee5839043ad9e9a2c2cbed388d72c9242342b2e2",
+      "group": "new107:7c852f183dcbb04d24dc",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (335).JPG",
+      "sha256": "cd219257859b169cf5a6b5dd49fe965b44ee20e62038b86ecdd888285f512ec5",
+      "group": "new107:64dfc8b76017368f85ed",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (1034).JPG",
+      "sha256": "b3caa397797f922f8c93d1ec9fbedb3c81ca6a702e01d6df56be064dd1685a2f",
+      "group": "new107:dd3d4eb4dd4777c8a04e",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (827).JPG",
+      "sha256": "79870116fe895bfffc944d169e1eb6c2c963a3e8d93776776cfc24288014f807",
+      "group": "new107:3b655e169ca8c2c4135b",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (436).JPG",
+      "sha256": "b26aa3d07c05deeb23af3f19bd1e27ad8eae2292ec37703c80dd0470d0318110",
+      "group": "new107:c850cacb8fc3861befe1",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (52).JPG",
+      "sha256": "7b5ea8432f60493eaed26afdc4d89124da295d83c0c7386d3f896e94993a6a3c",
+      "group": "new107:73e61eeb50cff1d76ffc",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (878).JPG",
+      "sha256": "de0f37cd9d4de51dbad35dd5b9e47f04ee5b3261805ce210bbd328b2b36cd87a",
+      "group": "new107:6f4fffe661d4b696fb7e",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (506).JPG",
+      "sha256": "7ffbe251baab51e1b98eb8844c45731a3433d98b0c41830f19846eb994605700",
+      "group": "new107:a1c5b5b0ca642f4689de",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (546).JPG",
+      "sha256": "a7a6aca6640119bff995d7fd41cb958d389565d8005e4fb2808e6f3dc72408f2",
+      "group": "new107:9ffe4311a257cbb6176a",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (857).JPG",
+      "sha256": "9bf5f4ad8b6021f106014bbaeecb6ea0cfc64f837e1b7b1ac8b8f95adf0bc377",
+      "group": "new107:3b9bdd1b24630f19aaef",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (409).JPG",
+      "sha256": "4014eb58c186d29a56869875300b27fbe099c893eb29713f65391c05fb179c1b",
+      "group": "new107:13cda8d24c9f0016acb4",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (933).JPG",
+      "sha256": "f78581512b797857e07b74d1bbf70eb7a5552266b2afe45003920df40f047a72",
+      "group": "new107:262505c9ba1726b156ec",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (387).JPG",
+      "sha256": "ca7ea42c32a348c44122e15847db76f7127e84bef18ca588956694dd2e1892f6",
+      "group": "new107:7a846d1faeed58a45849",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (1014).JPG",
+      "sha256": "00c3c61e9902c68a546b40d7de3a0a5eb49cb79efd465a4195c6a91f136a4e78",
+      "group": "new107:6203f12cf4c9e43eccbe",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (300).JPG",
+      "sha256": "42581d1400eb445db43470f249957abaedd199a09df4f7c43a51f87589951e5d",
+      "group": "new107:32d6b7cf93408acf6ecd",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (877).JPG",
+      "sha256": "9d2ab1fd47dcb330c55fc89026f33c46b1f3b39536e71d17432edfbc92372d08",
+      "group": "new107:444d04f52b5baa6dcbd9",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (729).JPG",
+      "sha256": "565e0900a234dd08b54be065aa85b283b28c764369b44cff3c0409be85efcd81",
+      "group": "new107:8bf40d48fc43013f7eae",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (500).JPG",
+      "sha256": "ac26bfb7344d1ec7d560931af879240c5a6ee5989584fccfc02f525cb4a0c1e3",
+      "group": "new107:d9ccb7e08d926ca4b103",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (1042).JPG",
+      "sha256": "d1d14f43b563c5b1432559053ba861a3174c08ca55f126d7af4d278bf2d0ad43",
+      "group": "new107:60fafe25fd0c81fc9d03",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (1036).JPG",
+      "sha256": "8d14a91926e0bc3c8049a8ee2f9679646b3c4c7f875519dfff811807552a1353",
+      "group": "new107:1df2823ba7ceae304631",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (844).JPG",
+      "sha256": "187991d8c593d5612ecdac8178a8ef1689b7c4edb707f09256791738090a3b2e",
+      "group": "new107:0bffcfb57a0b29d98a5a",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (434).JPG",
+      "sha256": "b587ee2068b3a9cccf645dbbfc57bbcbe556a7965d9baa54d4905b54f3e43550",
+      "group": "new107:21ff46fbf528724924af",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (286).JPG",
+      "sha256": "5b3d142e1a283cc8ef28eab63ea7e7611364d98dda8e0abf85609a20add153d0",
+      "group": "new107:347f4165b06f9c2afb9a",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (88).JPG",
+      "sha256": "ceb6afe1a8e119a79f5b8b213428874466b8ac0d6ed2650047b4666affa8c8f6",
+      "group": "new107:4d50b558c726768bba2c",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (472).JPG",
+      "sha256": "6af0c756085bf173d572ab9fcbe8bca183b29f8d22a4c2f319c7f3ceddeade3c",
+      "group": "new107:f44fc7519f1da4ebb982",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (596).JPG",
+      "sha256": "28e47e9eaff4964d79a08997e7fa137902914721f04c3cedefeb106d92bcf33f",
+      "group": "new107:cb6ac76498d587031650",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (228).JPG",
+      "sha256": "1f99f21fe857c57dcc81b3ccdca0055e993486dc4619018d018d69679c82644a",
+      "group": "new107:5d67967e16c2eb784a52",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (902).JPG",
+      "sha256": "83f649d45598d451a9d874ef3b5eeb34dc189f1266017663d312165d2e74acf7",
+      "group": "new107:6a8b008b57523c88da43",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (257).JPG",
+      "sha256": "7bc2f76c65e2f2340f241e2794fdada60a0cd4fd37bbf1ff3ac2e5cc2dd28feb",
+      "group": "new107:3b11ec7a97634d6c1a11",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (441).JPG",
+      "sha256": "40c0f4ea7b0ec060251576bb70a154f5247246b47c993f3ad337b6cabe18e1c3",
+      "group": "new107:4dfb2787c7ba1a1fbbca",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (607).JPG",
+      "sha256": "aedecaca8cda88054ac7bf2af39732ffe3dbde1b51c380330a04d2c3f33d8f7c",
+      "group": "new107:64ff89a8af6caeff9d71",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (819).JPG",
+      "sha256": "b5c3171c4b5f5c241090caa6f98b611b789431002415f8b9b9e0bdac79fa2f67",
+      "group": "new107:87e78541ff504fbcf66c",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (960).JPG",
+      "sha256": "7d9408ac7b7005ba86183ed60ffb63c59b990b731943acc1bd0ae2fefa1c48b4",
+      "group": "new107:ee43e20a0eadfe96b04a",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (1).JPG",
+      "sha256": "768b56e3e413ce3aa9b676a62729870546b0da55f220bb6e2ed1ae96304dc918",
+      "group": "new107:16407ba0508a9c775e82",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (661).JPG",
+      "sha256": "f27f9874343894d39deef565da90fbe713049257a33b7471867ddb8b47704da2",
+      "group": "new107:de8c6ea50729095de266",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (692).JPG",
+      "sha256": "443f6c6d737247b0788eb5754ff2dd59b212a0f223e5c92b221318ad90e4f20b",
+      "group": "new107:fb20e78413cca59fd9e9",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (297).JPG",
+      "sha256": "182719d990a48627d1c6a3db18148aaf161f357baee0fd4ecc3c7234e1cbe98f",
+      "group": "new107:f73a2aa678e94a6074af",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (624).JPG",
+      "sha256": "35426608e5cbff3b444cc1b1f76a84ad5709db9afbeee2a1d3784491431259ad",
+      "group": "new107:a34e804e955ffbb74e6e",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (466).JPG",
+      "sha256": "5bdf9bb7e7f53ce0d00a5b478a285d08fbc6895b49aff019262beebe6c9881e5",
+      "group": "new107:633782261e7fa941ad17",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (515).JPG",
+      "sha256": "c883f39202c28b185be617d60da03418f6b885815730c46ee5e2c807da74a4d7",
+      "group": "new107:064383c6cab9871595d1",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (125).JPG",
+      "sha256": "e19f930f9a9c6f272201074f442c2c639a38381e44b2a2e2a32d47d3b735e2a4",
+      "group": "new107:c38ce6c83611a61ac4fd",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (256).JPG",
+      "sha256": "4296cd0c0d3ef09f5c6e3e5dad6f87c0985793cac80852f7086c4022a730ac0d",
+      "group": "new107:9f1875f72579154bf740",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (424).JPG",
+      "sha256": "a4171aab243bbb5737ebcaf77c26f6c6f1651fc92ed625f63098d5e92a0d2524",
+      "group": "new107:d189bab23f8f673822b5",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (40).JPG",
+      "sha256": "cb31fc7750c953583bd53531f321b14f0443b1b6038bb7ceed0a054f6103ae56",
+      "group": "new107:e907edd5e36e2066726e",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (19).JPG",
+      "sha256": "29bcb392eb5405c2bdfd49bc669b3b18948eccb000c0b51d2acbb1b5e08ca7f5",
+      "group": "new107:55f8a8e59f98c4ba5298",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (330).JPG",
+      "sha256": "5b02a4ca21e2a6d77903de73265a57929292eb4c96367906936fd9924b4ea313",
+      "group": "new107:3fbfe750e9a1a0d5bb4f",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (641).JPG",
+      "sha256": "e661765167c2e8b9025aff654c0998a83b56c7e7a0267fbd5046e19b0877910e",
+      "group": "new107:54a72aee8aa56bb1ecc7",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (356).JPG",
+      "sha256": "18a98b9c57294accc261198bdb40237f5ee0110cb1735a1a1ecb7c92be706842",
+      "group": "new107:e93d0125e6be07625703",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (469).JPG",
+      "sha256": "eeeb17770718a18f6bb1a4184b4de7648a5b317e7fba3097f36aa60e8998cf2a",
+      "group": "new107:52d398c5c4b203b65b52",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (801).JPG",
+      "sha256": "77c51387a1321e2d03d26c88724c16542d5238b477778671b0bf38ea2f0dfff8",
+      "group": "new107:9fc5e51ff34ba014d7a1",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (308).JPG",
+      "sha256": "bec23c0f806cf5e496093ec895eae930e6094310667e0d675f2f4dcb840466b1",
+      "group": "new107:cb037f554e81cd37b880",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (633).JPG",
+      "sha256": "b4b65c0a1ff6cfa62ae99bce2bdf53d7a50f409627ef7954122a53d60cb5f6fd",
+      "group": "new107:c04dad0dc53e2bf13a46",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (207).JPG",
+      "sha256": "5321ef7b6d1448c5f71a5d9bd0a1ad1a93b84926e73a384a7001da39f75ba899",
+      "group": "new107:b4272fa9156cf42e0fa7",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (674).JPG",
+      "sha256": "4a29ee77f016e3b0fe2d5106426283749b5514c0f837e21b85b1324692534625",
+      "group": "new107:c6c2c2ad4058134ebd35",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (389).JPG",
+      "sha256": "0e1776d92d5f0f585b8b25a882c2d574a989e15b5a4b8a48fe4d82edb678ac25",
+      "group": "new107:bcddc1debe603f7a8c22",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (745).JPG",
+      "sha256": "e352d3694459c93c30c53e732ab4cac6622f00894e5d5899d9a6191bf401bef3",
+      "group": "new107:8b23f0ce8f143aa44ad9",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (687).JPG",
+      "sha256": "1ac9518bb75e7fae5f281d81e1bb3e0f18afff825391ba6d977d063e0364940a",
+      "group": "new107:bb070ac95cb80b091282",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (1024).JPG",
+      "sha256": "1176a2810eca4b742cdb1dd502f61c59ece73c6e2dfa195d6d719090cbb57041",
+      "group": "new107:7058d3e78ceb18c2264b",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (1019).JPG",
+      "sha256": "edbf00ad2c17b2b59ab1e32152a9af4d5145f91cb3917d02830418f23c3f487c",
+      "group": "new107:18c245baa6d83801eb83",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (843).JPG",
+      "sha256": "d96615af571b573198b7b7a2466f71853d93d2ee056f58f1e12a57066dcbc73e",
+      "group": "new107:9e0d6f8122ec1c7986e1",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (497).JPG",
+      "sha256": "bf1141f201ed84a2811881954ea15d1ccad8d51a5fea74c2128302762dd67733",
+      "group": "new107:61ecd521935f502846d6",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (639).JPG",
+      "sha256": "e1b7da4d1353bc77cbc0cff375d2aa4a71ef7f3a89fd612d753f67a7fd720a3f",
+      "group": "new107:e96617d3a59423861db0",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (101).JPG",
+      "sha256": "1ea8d24e15e01376296279a03c3d265f422bc7826292a118b301e6327bcac097",
+      "group": "new107:714889efcd0e31a80e15",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (326).JPG",
+      "sha256": "631d945b8885589f9fb31db57137c2bb15176c09f1ed2314f31293157f0f2a81",
+      "group": "new107:f461879078877441b168",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (998).JPG",
+      "sha256": "d452a6ba7bda023b50453b3dfa22cedce1fa6d2a92fb0c9adf3271b45fbde315",
+      "group": "new107:70141974786dcdd12529",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (354).JPG",
+      "sha256": "16a1cc27d925dd21ae0e31d0fbba21966cd802448906a1233e1ed6312f7787c1",
+      "group": "new107:270bd720de8b2697d01a",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (832).JPG",
+      "sha256": "7b4d007b9cce1f95fd81a8fa020a1bc6324dde775f522d73ae27155c197197dd",
+      "group": "new107:779758038effcb81e91d",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (668).JPG",
+      "sha256": "86a368522cee63cd300773f3fcd5bf859a6f6a4a623d77e14f31427f51781809",
+      "group": "new107:f4e8110fdb51cb1aa27a",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (305).JPG",
+      "sha256": "be3a83588b672df0b22e6924cb6c2cf1e6d0dab08cbf46f7c93e439391a3df3a",
+      "group": "new107:13d23cdaea53f571c783",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (229).JPG",
+      "sha256": "115d19f46b2a142ed42aeb75fcaf69cb10d2d6ab95d4ebb1e3bc9e4ac690df67",
+      "group": "new107:ae322b376d7dc333c7b7",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (853).JPG",
+      "sha256": "cd9ee108f87d63e15705f2646172899df2610519a6796601c083619252d5b6cb",
+      "group": "new107:14c71bf3bd915e51ee3e",
+      "label": "Diseased_unspecified"
+    },
+    {
+      "id": "dev107:Infected_Leaf/infected_leaf  (778).JPG",
+      "sha256": "1f9a6076d664aa6905bf4e38fe38e8f2d20e2618823973670c3fa03635712bb9",
+      "group": "new107:c3e8e147fb30f2ff770e",
+      "label": "Diseased_unspecified"
+    }
+  ],
+  "entire_collection_unavailable_for_independent_acceptance": true,
+  "protected_tcp_clinical_predictions_opened": false,
+  "ad_independent": false,
+  "olid_independent": false
+}

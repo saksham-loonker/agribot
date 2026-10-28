@@ -1,0 +1,21 @@
+{
+  "protocol_sha256": "64ffe162c13bc52e564abfaa5b1a59a643184c0ae0a91f17aed9fef96aa630d2",
+  "gallery_identities": 36101,
+  "query_images": 2063,
+  "overlap_images": 0,
+  "overlapping_inferred_families": 0,
+  "retained_images": 2063,
+  "retained_counts": {
+    "Healthy": 1013,
+    "Diseased_unspecified": 1050
+  },
+  "edges": [],
+  "source_role": "development_only",
+  "acceptance_ready": false,
+  "independence_established": false,
+  "diagnostic_predictions_opened": false,
+  "training_used": false,
+  "new_encoder_inputs": 0,
+  "elapsed_seconds": 131.30820647103246,
+  "limitations": "Approximate retrieval and inferred similarity families; no proof of specimen/capture independence or clinical labels. Whole collection must not be randomly split."
+}

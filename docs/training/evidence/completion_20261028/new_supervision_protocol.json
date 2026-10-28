@@ -1,0 +1,36 @@
+{
+  "source_sha256": "20fac49aad5613c773dcb48d1b0bc72cad1fe98c9a64bd04c5da91e1fee6c1a4",
+  "parents": {
+    "base_complete_sha256": "41f8ddfbdac0b1bf26fdda321ef30bf1091976612006d29bbf1b3ae9d3d330f4",
+    "extra_complete_sha256": "e4b623374ef0b5accf979d7e53a6a085dd72cc071563df55faf7865e87bd68a8"
+  },
+  "new_feature_complete_sha256": "babc5185445b86d3c5586cede762d7fd655b8684664b88281707faf963fcb466",
+  "warm_checkpoint_sha256": "8f05682de7f9723f567eeed7dc2054299cd0c5c87fbd796e664a4226f7bdfc74",
+  "train_images": 1238,
+  "validation_images": 303,
+  "new_source_training_images": 256,
+  "healthy_validation_full_cohort": 40,
+  "inactive_healthy_fixed_correct": 0,
+  "protected_reservation_audit_sha256": "54c0ddbfb0277a414dfd523d017a66f107650980ed9b508281175bfb44fce42e",
+  "maximum_epochs": 30,
+  "minimum_epochs": 8,
+  "patience": 6,
+  "learning_rate": 0.001,
+  "negative_loss_weight": 8.0,
+  "weight_decay": 0.01,
+  "seed": 2115,
+  "calibration": [
+    1.5967854309058274,
+    2.542799527954181
+  ],
+  "positive_threshold": 0.95,
+  "negative_threshold": 0.001,
+  "source_class_group_balanced": true,
+  "encoder_weights_changed": false,
+  "robust_loss": "Healthy minimum and diseased maximum over mean actual-ROI logits of both crop views and all four new-source rotations; one publisher image label per bag",
+  "new_source_role": "Entire collection training-only; camera/style confounding remains unresolved; never independent acceptance",
+  "acceptance_data_used": false,
+  "ad_independent": false,
+  "olid_independent": false,
+  "stopping": "One MLP, at most 30 epochs and six stale actual-verdict epochs. Require >=28/40 validation Healthy with no source false-Healthy increase before full cached head screen. No threshold/calibration/architecture search, full restored model or export without all recognition gates."
+}

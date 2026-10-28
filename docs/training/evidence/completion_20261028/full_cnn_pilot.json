@@ -1,0 +1,212 @@
+{
+  "cheap_pass": false,
+  "selected_epoch": 9,
+  "best_decision": [
+    0,
+    18,
+    164,
+    -1.484793089703791
+  ],
+  "history": [
+    {
+      "epoch": 0,
+      "decision": [
+        -3,
+        14,
+        160,
+        -6.070577685625748
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 1,
+        "tlid": -45,
+        "bangladesh_classification": 2,
+        "swtt5wy2pr": 0,
+        "olid_tomato": -1
+      }
+    },
+    {
+      "epoch": 1,
+      "decision": [
+        -4,
+        19,
+        161,
+        -5.87286988442894
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 1,
+        "tlid": -34,
+        "bangladesh_classification": 2,
+        "swtt5wy2pr": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 2,
+      "decision": [
+        -5,
+        22,
+        164,
+        -4.334173158230169
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 1,
+        "tlid": -26,
+        "bangladesh_classification": 2,
+        "swtt5wy2pr": 0,
+        "olid_tomato": 2
+      }
+    },
+    {
+      "epoch": 3,
+      "decision": [
+        -2,
+        17,
+        158,
+        -3.6982696460596243
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 1,
+        "tlid": -42,
+        "bangladesh_classification": 1,
+        "swtt5wy2pr": 0,
+        "olid_tomato": 0
+      }
+    },
+    {
+      "epoch": 4,
+      "decision": [
+        -3,
+        17,
+        159,
+        -6.669855450047658
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 1,
+        "tlid": -37,
+        "bangladesh_classification": 2,
+        "swtt5wy2pr": 0,
+        "olid_tomato": -1
+      }
+    },
+    {
+      "epoch": 5,
+      "decision": [
+        -2,
+        20,
+        163,
+        -6.5075955379079
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 1,
+        "tlid": -51,
+        "bangladesh_classification": 1,
+        "swtt5wy2pr": 0,
+        "olid_tomato": 0
+      }
+    },
+    {
+      "epoch": 6,
+      "decision": [
+        -1,
+        18,
+        157,
+        -8.76027888624497
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 1,
+        "tlid": -49,
+        "bangladesh_classification": 0,
+        "swtt5wy2pr": 0,
+        "olid_tomato": -1
+      }
+    },
+    {
+      "epoch": 7,
+      "decision": [
+        -6,
+        22,
+        167,
+        -6.770968517565772
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 1,
+        "tlid": -43,
+        "bangladesh_classification": 2,
+        "swtt5wy2pr": 0,
+        "olid_tomato": 3
+      }
+    },
+    {
+      "epoch": 8,
+      "decision": [
+        -3,
+        21,
+        163,
+        -23.441543988127147
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 1,
+        "tlid": -50,
+        "bangladesh_classification": 2,
+        "swtt5wy2pr": 0,
+        "olid_tomato": 0
+      }
+    },
+    {
+      "epoch": 9,
+      "decision": [
+        0,
+        18,
+        164,
+        -1.484793089703791
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 0,
+        "tlid": -39,
+        "bangladesh_classification": 0,
+        "swtt5wy2pr": 0,
+        "olid_tomato": -2
+      }
+    },
+    {
+      "epoch": 10,
+      "decision": [
+        -3,
+        22,
+        166,
+        -6.792142628406742
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 1,
+        "tlid": -40,
+        "bangladesh_classification": 1,
+        "swtt5wy2pr": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 11,
+      "decision": [
+        -2,
+        20,
+        162,
+        -9.520373964153395
+      ],
+      "false_healthy_delta_by_source": {
+        "plantvillage": 1,
+        "tlid": -49,
+        "bangladesh_classification": 1,
+        "swtt5wy2pr": 0,
+        "olid_tomato": -1
+      }
+    }
+  ],
+  "checkpoint_sha256": "72469a3693e890680642680bf72669742eafe571b1ead6bb73f59f853f4d10e5",
+  "protocol_sha256": "60b933c204b2f8eeae20a2caa6c8e98df80d0a12cbef10ca4f08b8aac566564c",
+  "source_sha256": "c2e9da8fc6e004847cc8c3867fe547b296222321fdf53f883566138f0ad3049e",
+  "elapsed_seconds": 186.35542665002868,
+  "ad_independent": false,
+  "olid_independent": false,
+  "model_promoted": false,
+  "full_cohort_inference_run": false
+}

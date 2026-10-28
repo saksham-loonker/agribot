@@ -1,5 +1,10 @@
 # PR 6 code review and continued recognition work
 
+**28 October override:** the user cancelled recurring monitor prompts. The
+Windows scheduled task is disabled. Do not resume the four-hour monitor from
+historical instructions below; continue app/recognition work under the
+[current completion checkpoint](COMPLETION_CHECKPOINT_20261028.md).
+
 **Normal app finished offline:** [2.0.4 delivery](NORMAL_APP_DELIVERY_20261027.md)
 retains the original model and passes 133 unit/22 emulator checks. Rejected
 replacement weights are not packaged; recognition and physical-device gates

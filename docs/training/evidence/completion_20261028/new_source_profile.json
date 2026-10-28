@@ -1,0 +1,48 @@
+{
+  "protocol_sha256": "2f7353b7de36feab3edad61eb599954087e39ff14cc0f32d01117c7e7d3fbb31",
+  "source_sha256": "83742e856561db0954e32167ab4c6d4c8b3676a69d52f6a64e1a0327e6d55d71",
+  "archive_verified": true,
+  "images": 2063,
+  "label_counts": {
+    "Healthy": 1013,
+    "Diseased_unspecified": 1050
+  },
+  "file_unique": 2063,
+  "decoded_unique": 2063,
+  "exact_cross_label_pixel_identities": 0,
+  "inferred_image_families": 1776,
+  "similarity_edges": 330,
+  "largest_inferred_family": 52,
+  "by_label": {
+    "Healthy": {
+      "images": 1013,
+      "orientation": {
+        "portrait": 987,
+        "landscape": 26
+      },
+      "cameras": {
+        "": 1013
+      },
+      "missing_capture_time": 1013,
+      "inferred_families": 855
+    },
+    "Diseased_unspecified": {
+      "images": 1050,
+      "orientation": {
+        "landscape": 1020,
+        "portrait": 30
+      },
+      "cameras": {
+        "iPhone 14 Pro": 1050
+      },
+      "missing_capture_time": 10,
+      "inferred_families": 956
+    }
+  },
+  "training_used": false,
+  "diagnostic_predictions_opened": false,
+  "independence_established": false,
+  "acceptance_ready": false,
+  "training_ready": false,
+  "remaining": "Whole-source prior-overlap check, clinical label-scope review and mitigation of class-correlated orientation/camera/background; similarity components are not verified plant identities."
+}

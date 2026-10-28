@@ -1,0 +1,303 @@
+{
+  "advance": false,
+  "healthy_recovered": 0,
+  "healthy_n": 8,
+  "new_false_healthy": 0,
+  "new_encoder_inputs": 0,
+  "cases": [
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (233).JPG",
+      "label": "Healthy",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (203).JPG",
+      "label": "Healthy",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (77).JPG",
+      "label": "Healthy",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (116).JPG",
+      "label": "Healthy",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (224).JPG",
+      "label": "Healthy",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (59).JPG",
+      "label": "Healthy",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (155).JPG",
+      "label": "Healthy",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (215).JPG",
+      "label": "Healthy",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__MIT/tomato__MIT (87).JPG",
+      "label": "Other",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__MIT/tomato__MIT (195).JPG",
+      "label": "Other",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__MIT/tomato__MIT (139).JPG",
+      "label": "Other",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__MIT/tomato__MIT (132).JPG",
+      "label": "Other",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__MIT/tomato__MIT (154).JPG",
+      "label": "Other",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__MIT/tomato__MIT (187).JPG",
+      "label": "Other",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__MIT/tomato__MIT (105).JPG",
+      "label": "Other",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__MIT/tomato__MIT (114).JPG",
+      "label": "Other",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__LM/tomato__LM (73).JPG",
+      "label": "Leaf Miner",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__LM/tomato__LM (64).JPG",
+      "label": "Leaf Miner",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__LM/tomato__LM (205).JPG",
+      "label": "Leaf Miner",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__LM/tomato__LM (206).JPG",
+      "label": "Leaf Miner",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__K/tomato__K (8).JPG",
+      "label": "Pottassium Deficiency",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__N_K/tomato__N_K (2).JPG",
+      "label": "Diseased_unspecified",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__N/tomato__N (4).JPG",
+      "label": "Nitrogen Deficiency",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    },
+    {
+      "id": "olid:tomato__N/tomato__N (10).JPG",
+      "label": "Nitrogen Deficiency",
+      "valid_mask": false,
+      "inputs": {
+        "center": [],
+        "full": []
+      },
+      "mask_audit": [],
+      "healthy_probability": 0.0,
+      "proposed_healthy": false
+    }
+  ],
+  "protocol_sha256": "9759aba2dd4c01bcc6721b67d3da237dba8d9abfa45dbde57437bcbb2a352c25",
+  "source_sha256": "6a13cddd74e576b36f93891556c1ccd6b8e45666fc1c7af4e8d4c97b7eafb1a7",
+  "elapsed_seconds": 4.862275501014665,
+  "ad_independent": false,
+  "olid_independent": false,
+  "model_promoted": false
+}

@@ -1,0 +1,24 @@
+{
+  "total_files": 3588,
+  "folders": {
+    "New_data/Apple": 519,
+    "New_data/Berry": 340,
+    "New_data/Fig": 508,
+    "New_data/Guava": 520,
+    "New_data/Orange": 547,
+    "New_data/Palm": 468,
+    "New_data/Persimmon": 527,
+    "New_data/Tomato": 159
+  },
+  "nonimage_files": [],
+  "pixels_downloaded": false,
+  "training_used": false,
+  "diagnostic_predictions_opened": false,
+  "suitability": "Only species labels may be present; health mapping must be explicit before clinical acceptance. Never infer tomato health from species name.",
+  "catalog_sha256": "69d25ede8960eb70f0ebe376b8fb25c5e794ffc29c2bfb9c31cb4cf86681d7b2",
+  "publisher_paper": "https://www.nature.com/articles/s41597-025-06539-8",
+  "publisher_dataset": "https://www.kaggle.com/datasets/mahmoudshaheen1134/plant-leaf-image-dataset/versions/1",
+  "publisher_notebook": "https://github.com/MahmoudShahenn/EgyPLI/blob/EgyPLI/cnn-for-plant-identification.ipynb",
+  "classification_scope": "Species only in release catalog and notebook; no explicit health mapping found; do not label all Tomato Healthy",
+  "acceptance_ready": false
+}

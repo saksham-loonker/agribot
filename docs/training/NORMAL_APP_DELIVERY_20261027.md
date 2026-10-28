@@ -1,5 +1,11 @@
 # Normal app 2.0.4: completed offline build and verification
 
+**28 October addition:** the actual minified ARM64 release also passed
+CameraX detection/classification, quick-check save/reopen, manual row-walk
+completion, CSV/PDF/ZIP chooser generation, and persistence after cold restart.
+See [the completion checkpoint and evidence](COMPLETION_CHECKPOINT_20261028.md).
+The APKs and model bytes below are unchanged. The phone remains disconnected.
+
 27 October 2026, 23:00 IST. The normal app now contains the original published
 classifier and detector, with the completed persistence, lifecycle, scan-window
 and evidence-scope repairs. **No rejected replacement model is bundled.**

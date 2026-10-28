@@ -1,5 +1,11 @@
 # Agribot training failure investigation, recovery, and Android integration
 
+**28 October takes precedence:** [app delivery and bounded recognition continuation](COMPLETION_CHECKPOINT_20261028.md).
+The actual minified ARM64 release passes additional runtime smoke checks.
+The user cancelled recurring PR-monitor prompts; the scheduled task is disabled.
+AD and OLID are consumed development. Older sealed-OLID and monitoring
+instructions below are historical and must not override this checkpoint.
+
 **Normal app 2.0.4 is built:** [delivery and verification](NORMAL_APP_DELIVERY_20261027.md).
 The original release-baseline model is retained; no failed replacement is bundled.
 

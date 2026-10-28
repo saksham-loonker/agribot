@@ -230,6 +230,12 @@ individual PC measurements, not a model-delivery estimate. A reliable completion
 ETA is not available while recognition and fresh-source suitability still fail.
 There is no useful training job to leave running merely to occupy the GPU.
 
+**28 October update:** read [the completion checkpoint](COMPLETION_CHECKPOINT_20261028.md).
+The actual minified release also passes runtime smoke checks; provenance
+verification now rejects repeated target-point matches. The user cancelled
+the recurring monitor and its Windows scheduled task is disabled. The final
+sentence below describes the superseded monitoring instruction.
+
 Publish research source/evidence and the verified normal app source with its
 original model. Keep rejected replacement assets preserved separately for
 research. PR #6 may leave draft only after all remaining gates pass;
