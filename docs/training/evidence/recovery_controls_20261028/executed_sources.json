@@ -1,6 +1,11 @@
 {
-  "archive_sha256": "f38f0376391aa6d91bd310cdbca03e2e7b65b8ebe48727a216ccd9f3ffd1e1a0",
+  "archive_sha256": "85657667672897cedbd10a9d9793010bc25f83ec77646d4198be952be6bbc742",
   "files": [
+    {
+      "path": "model_training/v3/actual_admission_target.py",
+      "sha256": "8527205ee036f7d60a960dca7b093ecab4e6c97f8f5d8cde32334d3fefc7093b",
+      "bytes": 525
+    },
     {
       "path": "model_training/v3/balanced_clinical_loss.py",
       "sha256": "28b384ce3974feb3532fb214af7ac674750103762ec5054f405936b3bbaf5192",
@@ -20,6 +25,16 @@
       "path": "model_training/v3/clinical_semantic_prompts.py",
       "sha256": "ff4dbde027a9c42fb7ba6398401dd0b9f3a797199ee2a68e6ab8a6704968ba8d",
       "bytes": 2315
+    },
+    {
+      "path": "model_training/v3/committee_feasibility.py",
+      "sha256": "8a33a1b8c5c53be7474e68a13082c3d43ce49d15250cf77cf59621516a34b7e5",
+      "bytes": 2618
+    },
+    {
+      "path": "model_training/v3/committee_outer_bound.py",
+      "sha256": "a1746d3007e7ef8b1771d311947d3e5afad313fa653b7f7d18f1a418bd53ab25",
+      "bytes": 1985
     },
     {
       "path": "model_training/v3/condition_split_head.py",
@@ -47,6 +62,11 @@
       "bytes": 5858
     },
     {
+      "path": "model_training/v3/guard_admission_reward.py",
+      "sha256": "58b7c8c1739eb2af8eba18e5eee062ae3e581534c1a00fd7af1b86e407af4d58",
+      "bytes": 903
+    },
+    {
       "path": "model_training/v3/hard_negative_ranking.py",
       "sha256": "0d2b38b225fe19cd1614961ff63881e258997b1e7ed6b381f81fdd4966753465",
       "bytes": 535
@@ -55,6 +75,11 @@
       "path": "model_training/v3/hf_range_tensors.py",
       "sha256": "8a3cba0b495c5353fc6970bd4c0816555e93c232f46a221bd37892417afbe6dc",
       "bytes": 5403
+    },
+    {
+      "path": "model_training/v3/image_bag_supervision.py",
+      "sha256": "647fde7062521411d04f02b320070590fb2348fab20861ab2f53cdfbf12bae93",
+      "bytes": 2663
     },
     {
       "path": "model_training/v3/joint_clinical_head.py",
@@ -97,14 +122,34 @@
       "bytes": 1598
     },
     {
+      "path": "model_training/v3/native_full_tail.py",
+      "sha256": "e0d880fc625862bb260aaad77ff82d5d4ab31097d5c49c5f49cc4cbb3ce5a3c1",
+      "bytes": 687
+    },
+    {
       "path": "model_training/v3/native_global_head.py",
       "sha256": "445fca43b4e10ef352a5c51637c525e62ad3cb5ee5f49de6689a309aa0b4d0e4",
       "bytes": 922
     },
     {
+      "path": "model_training/v3/native_joint_features.py",
+      "sha256": "f325ea09b92f6a6ac3f70dc18cdf742897316751e67aa2429830548261879f7e",
+      "bytes": 991
+    },
+    {
+      "path": "model_training/v3/native_local_clinical_head.py",
+      "sha256": "06ee91925389a5c9e302444a56046634e0bcb11ade2c3665ade7bca46e1b1083",
+      "bytes": 1099
+    },
+    {
       "path": "model_training/v3/native_local_damage_heads.py",
       "sha256": "621935f348135c0051fcab5650919e327e89421cfed8b6c5f3b48f75a9e52cf7",
       "bytes": 2221
+    },
+    {
+      "path": "model_training/v3/native_lora_tail.py",
+      "sha256": "75f34fd80ba27c9e7a0633bd2d89f20ba3132b718a2f5646be176559aa9dad11",
+      "bytes": 1274
     },
     {
       "path": "model_training/v3/phase118_conditional_recovery.py",
@@ -295,6 +340,131 @@
       "path": "model_training/v3/phase158_joint_cached_teacher.py",
       "sha256": "68cd2a8effe64dce1c24974660729f91e7caa1e3ba71d9c3dd15dedb6f510c24",
       "bytes": 11365
+    },
+    {
+      "path": "model_training/v3/phase159_image_bag_clinical_teacher.py",
+      "sha256": "7ab7afde8cce2f9c5c7daf035ba98eb993bc5d5504a015aba765ec897a76dba0",
+      "bytes": 11522
+    },
+    {
+      "path": "model_training/v3/phase160_committee_diagnostic.py",
+      "sha256": "dbc9dd5be9b330023d1ed46d3438b0f7ba105b95e3cea1d94567b4c01c3b0f7c",
+      "bytes": 4902
+    },
+    {
+      "path": "model_training/v3/phase161_field_supervision_source.py",
+      "sha256": "311a899b37909b93b53518a15b17702fc02fa1b50435f9e144c634f905ca35fe",
+      "bytes": 8156
+    },
+    {
+      "path": "model_training/v3/phase162_field_source_profile.py",
+      "sha256": "58b10fd9348146050afd51d6d1fddd1e1cb3f89cc50d257b9eb0b81dd0240026",
+      "bytes": 5663
+    },
+    {
+      "path": "model_training/v3/phase163_field_source_overlap.py",
+      "sha256": "d8454be97d03857f2be2104e77172149490d52d12cce5911a00dee2fbf67ed3b",
+      "bytes": 7807
+    },
+    {
+      "path": "model_training/v3/phase164_new_field_features.py",
+      "sha256": "116de18fb8f9f408146ada0be3d6a5f940485ac31b69816a550c42d8cf3c8db4",
+      "bytes": 13374
+    },
+    {
+      "path": "model_training/v3/phase165_new_field_joint_teacher.py",
+      "sha256": "7c88507a8cee3ddfc6f694f5a57fed279496f19028068191cdc8efad2fa0a8bc",
+      "bytes": 13153
+    },
+    {
+      "path": "model_training/v3/phase166_new_field_bag_teacher.py",
+      "sha256": "9052218043dd87eb1396fe096031c4a792ca16c6a5e3d84dd0aa79f3f9d49bd1",
+      "bytes": 13196
+    },
+    {
+      "path": "model_training/v3/phase167_field_student_recovery.py",
+      "sha256": "fc16a955916eeec25cd88359751d152e0492906637523b92091f4862fb3ac3c4",
+      "bytes": 13080
+    },
+    {
+      "path": "model_training/v3/phase168_early_cnn_prefix.py",
+      "sha256": "33112be4f3e8e1f6873d6db42877cc8fd5998015fc557edf47481f14dcc31d1a",
+      "bytes": 11173
+    },
+    {
+      "path": "model_training/v3/phase169_field_style_cnn.py",
+      "sha256": "902917bdd63118b6e2abdd1f454812010f82a4ee92597ca23f504971a57eedff",
+      "bytes": 12524
+    },
+    {
+      "path": "model_training/v3/phase170_committee_outer_audit.py",
+      "sha256": "82ec6ec3b73713baad01d98be70ad2433e8e26c66e6a6e95aef4fb9bd39096e3",
+      "bytes": 5576
+    },
+    {
+      "path": "model_training/v3/phase171_field_replay_ablation.py",
+      "sha256": "a993c0ee867901f250b3220ace7c7ae7c7d1a5d3e2bafe2d535b52498ddf1716",
+      "bytes": 13151
+    },
+    {
+      "path": "model_training/v3/phase172_native_large_field_features.py",
+      "sha256": "8099c2905d82acdd671215059c4b2e8b04f2e3b284a3ef3c09b297e8055b6672",
+      "bytes": 12222
+    },
+    {
+      "path": "model_training/v3/phase173_native_large_field_head.py",
+      "sha256": "aa39262f29f2781a2b60cd551787e25825e3c9078861cf53b18d3c0417a90f15",
+      "bytes": 10727
+    },
+    {
+      "path": "model_training/v3/phase174_native_tail_adaptation.py",
+      "sha256": "6c3b591f192c8eea0c073a08e39686e7cce6b493135dc2065bc2258c555206a5",
+      "bytes": 18258
+    },
+    {
+      "path": "model_training/v3/phase175_native_local_clinical_head.py",
+      "sha256": "3fdfc266817c027d47d483480431c5added51096601962cc30a04c5c4edf5162",
+      "bytes": 13315
+    },
+    {
+      "path": "model_training/v3/phase176_native_reward_continuation.py",
+      "sha256": "29015d72dc5cf9d6e545ee3a72189c1bd52a0f10c06a1fb2629607246ebba6a3",
+      "bytes": 20603
+    },
+    {
+      "path": "model_training/v3/phase177_actionability_audit.py",
+      "sha256": "0657221a57bbbac2b35b2537f2f18bb014a252e188de59698fb590ba3844860c",
+      "bytes": 4351
+    },
+    {
+      "path": "model_training/v3/phase178_guard_coverage_audit.py",
+      "sha256": "c132c5c59946917b893331e818ad572264b5371f469fb775c4864532e266beb8",
+      "bytes": 5880
+    },
+    {
+      "path": "model_training/v3/phase179_full_field_replay.py",
+      "sha256": "69fcbc768cdda718e8e43aae50b66d8a5a6ab00baecf1e64de1e68ede5279b77",
+      "bytes": 13377
+    },
+    {
+      "path": "model_training/v3/phase180_native_field_kernel.py",
+      "sha256": "ca3d1e886d0e82e732f62c203367b19082e93fa7f76349334f20e017a4433f8b",
+      "bytes": 9094
+    },
+    {
+      "path": "model_training/v3/phase181_native_full_tail.py",
+      "sha256": "d07526a89cd910980dc3b8a2530eb7cf1ac6a5f8ce05a2961bf16eea181d2075",
+      "bytes": 19299
+    },
+    {
+      "path": "model_training/v3/phase182_full_field_context_kernel.py",
+      "sha256": "6fdf70cf60ec0225ea25492dd24989b4694e2520451f5588e90e6407deefde6d",
+      "bytes": 7706
+    },
+    {
+      "path": "model_training/v3/photo_mixstyle.py",
+      "sha256": "819aef48eeb73e0b93d5e65984b34941be81d4a94f7a28fb8adb56cbf5441f1c",
+      "bytes": 2456
     },
     {
       "path": "model_training/v3/photometric_dino.py",

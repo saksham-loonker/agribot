@@ -1,0 +1,17 @@
+{
+  "files": [
+    {
+      "name": "best.pt",
+      "bytes": 101777709,
+      "sha256": "2219da8bd08d4d2bff4de1d2ae2bb482f96ed4a1d34da5eb2092d376f8f3e6fa"
+    },
+    {
+      "name": "last.pt",
+      "bytes": 305355435,
+      "sha256": "60144dfe2285eacc5705762e0f15198e57cdfa604612835c42fcba461a375c63"
+    }
+  ],
+  "source": "Completed full-tail control, research only; safe incumbent and failed final checkpoint",
+  "volatile_on_gpu_host": true,
+  "laptop_backup_required": true
+}

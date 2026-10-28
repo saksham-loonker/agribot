@@ -760,5 +760,375 @@
         "elapsed_seconds": 3.1595369280548766
       }
     ]
+  },
+  {
+    "phase": "phase159_image_bag_clinical_teacher",
+    "elapsed_seconds": 3.9405224029906094,
+    "methods": [
+      {
+        "best_decision": [
+          -1,
+          17,
+          6,
+          -1.134682536125183
+        ],
+        "selected_epoch": 20,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 3.9405224029906094
+      }
+    ]
+  },
+  {
+    "phase": "phase160_committee_diagnostic",
+    "elapsed_seconds": 2.1428054869174957,
+    "methods": [
+      {
+        "elapsed_seconds": 0.02386283897794783
+      },
+      {
+        "elapsed_seconds": 0.004918365040794015
+      }
+    ]
+  },
+  {
+    "phase": "phase162_field_source_profile",
+    "elapsed_seconds": 13.864325073082,
+    "methods": [
+      {
+        "elapsed_seconds": 13.864325073082
+      }
+    ]
+  },
+  {
+    "phase": "phase163_field_source_overlap",
+    "elapsed_seconds": 65.71110098995268,
+    "methods": [
+      {
+        "elapsed_seconds": 65.71110098995268
+      }
+    ]
+  },
+  {
+    "phase": "phase165_new_field_joint_teacher",
+    "elapsed_seconds": 3.181520591955632,
+    "methods": [
+      {
+        "best_decision": [
+          -1,
+          14,
+          6,
+          -0.6160221099853516
+        ],
+        "selected_epoch": 0,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 3.181520591955632
+      }
+    ]
+  },
+  {
+    "phase": "phase166_new_field_bag_teacher",
+    "elapsed_seconds": 3.323357471032068,
+    "methods": [
+      {
+        "best_decision": [
+          -1,
+          16,
+          9,
+          -0.5273650884628296
+        ],
+        "selected_epoch": 5,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 3.323357471032068
+      }
+    ]
+  },
+  {
+    "phase": "phase167_field_student_recovery",
+    "elapsed_seconds": 5.94522574194707,
+    "methods": [
+      {
+        "method": "field_source_sft",
+        "best_decision": [
+          0,
+          13,
+          4,
+          -0.7336214977509121
+        ],
+        "selected_epoch": 5,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "field_source_rank",
+        "best_decision": [
+          0,
+          14,
+          3,
+          -0.7610458401153448
+        ],
+        "selected_epoch": 9,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase169_field_style_cnn",
+    "elapsed_seconds": 47.14349595399108,
+    "methods": [
+      {
+        "method": "earlier_tail_sft",
+        "best_decision": [
+          -1,
+          16,
+          3,
+          -0.9277046738439789
+        ],
+        "selected_epoch": 4,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "photo_mixstyle_tail_sft",
+        "best_decision": [
+          -1,
+          18,
+          2,
+          -1.4584986628055985
+        ],
+        "selected_epoch": 11,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase170_committee_outer_audit",
+    "elapsed_seconds": 2.1792387049645185,
+    "methods": [
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "phase": "phase171_field_replay_ablation",
+    "elapsed_seconds": 3.269666702952236,
+    "methods": [
+      {
+        "best_decision": [
+          -1,
+          14,
+          7,
+          -0.6276254653930664
+        ],
+        "selected_epoch": 3,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 3.269666702952236
+      }
+    ]
+  },
+  {
+    "phase": "phase173_native_large_field_head",
+    "elapsed_seconds": 3.0765792609890923,
+    "methods": [
+      {
+        "best_decision": [
+          0,
+          14,
+          2,
+          -0.5776537656784058
+        ],
+        "selected_epoch": 2,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 3.0765792609890923
+      }
+    ]
+  },
+  {
+    "phase": "phase174_native_tail_adaptation",
+    "elapsed_seconds": 230.17740062403027,
+    "methods": [
+      {
+        "best_decision": [
+          0,
+          14,
+          2,
+          -0.5776537656784058
+        ],
+        "selected_epoch": -1,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 230.17740062403027
+      }
+    ]
+  },
+  {
+    "phase": "phase175_native_local_clinical_head",
+    "elapsed_seconds": 3.5720088520320132,
+    "methods": [
+      {
+        "best_decision": [
+          0,
+          14,
+          6,
+          -0.6576279997825623
+        ],
+        "selected_epoch": 3,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 3.5720088520320132
+      }
+    ]
+  },
+  {
+    "phase": "phase176_native_reward_continuation",
+    "elapsed_seconds": 176.30066283093765,
+    "methods": [
+      {
+        "best_decision": [
+          0,
+          14,
+          2,
+          -0.5776537656784058
+        ],
+        "selected_epoch": -1,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 176.30066283093765
+      }
+    ]
+  },
+  {
+    "phase": "phase177_actionability_audit",
+    "elapsed_seconds": 2.191823255037889,
+    "methods": [
+      {
+        "elapsed_seconds": 2.191823255037889
+      }
+    ]
+  },
+  {
+    "phase": "phase178_guard_coverage_audit",
+    "elapsed_seconds": 2.1783910100348294,
+    "methods": [
+      {
+        "elapsed_seconds": 2.1783910100348294
+      }
+    ]
+  },
+  {
+    "phase": "phase179_full_field_replay",
+    "elapsed_seconds": 5.926666204002686,
+    "methods": [
+      {
+        "method": "field_source_sft",
+        "best_decision": [
+          0,
+          13,
+          3,
+          -0.6270693616755603
+        ],
+        "selected_epoch": 3,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "field_source_rank",
+        "best_decision": [
+          0,
+          13,
+          6,
+          -0.7324772811174745
+        ],
+        "selected_epoch": 7,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase180_native_field_kernel",
+    "elapsed_seconds": 4.0945270240772516,
+    "methods": [
+      {
+        "C": 1.0,
+        "healthy_validation_correct": 13,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "C": 10.0,
+        "healthy_validation_correct": 14,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase181_native_full_tail",
+    "elapsed_seconds": 188.13641226291656,
+    "methods": [
+      {
+        "best_decision": [
+          0,
+          14,
+          2,
+          -0.5776537656784058
+        ],
+        "selected_epoch": -1,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 188.13641226291656
+      }
+    ]
+  },
+  {
+    "phase": "phase182_full_field_context_kernel",
+    "elapsed_seconds": 10.671410217066295,
+    "methods": [
+      {
+        "C": 1.0,
+        "healthy_validation_correct": 13,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "C": 10.0,
+        "healthy_validation_correct": 13,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
   }
 ]

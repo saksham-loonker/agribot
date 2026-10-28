@@ -1,0 +1,36 @@
+{
+  "protocol_sha256": "fb0f7b48b8f8eb76bbf541b57685b28843d78713ff5e3384d6553040383b02fb",
+  "images": 391,
+  "all_publisher_hashes_verified": true,
+  "publisher_image_counts": {
+    "Bacterial Spot": 376,
+    "Cercospora leaf mold": 156,
+    "Early Blight": 204,
+    "Healthy": 103,
+    "Insect Damage": 336,
+    "Late Blight": 166,
+    "Leaf Miner": 519,
+    "Leaf Mold": 66,
+    "Spider Mites": 307,
+    "Tomato Leaf Curl Virus": 394
+  },
+  "selected_image_counts": {
+    "Healthy": 103,
+    "Early Blight": 32,
+    "Late Blight": 32,
+    "Leaf Miner": 32,
+    "Bacterial Spot": 32,
+    "Cercospora leaf mold": 32,
+    "Insect Damage": 32,
+    "Leaf Mold": 32,
+    "Spider Mites": 32,
+    "Tomato Leaf Curl Virus": 32
+  },
+  "source_role": "development_only",
+  "training_ready": false,
+  "model_predictions_opened": false,
+  "training_used": false,
+  "independence_established": false,
+  "acceptance_ready": false,
+  "elapsed_seconds": 133.30462181090843
+}

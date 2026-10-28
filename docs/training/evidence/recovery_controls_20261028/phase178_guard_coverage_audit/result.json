@@ -1,0 +1,1971 @@
+{
+  "protocol_sha256": "43ad1ae9dbccf6a3f6ef3df89c05d60603c2c5ed6499a0af0454e62f3552c4aa",
+  "full_consumed_healthy": {
+    "healthy_images": 223,
+    "fixed_healthy": 87,
+    "guard_recoverable_rejected": 107,
+    "oracle_maximum_healthy": 194,
+    "blocked_images": 29,
+    "blocked_reason_counts": {
+      "whole_healthy_below_fixed_guard": 29,
+      "retained_named_suspicion": 1
+    }
+  },
+  "validation_healthy": {
+    "healthy_images": 40,
+    "fixed_healthy": 13,
+    "guard_recoverable_rejected": 18,
+    "oracle_maximum_healthy": 31,
+    "blocked_images": 9,
+    "blocked_reason_counts": {
+      "whole_healthy_below_fixed_guard": 9
+    }
+  },
+  "training_coverage": {
+    "all_available_quarantined_full_field_images": 358,
+    "all_available_label_counts": {
+      "Other": 122,
+      "Pottassium Deficiency": 20,
+      "Leaf Miner": 12,
+      "Nitrogen Deficiency": 22,
+      "Diseased_unspecified": 19,
+      "Healthy": 163
+    },
+    "selected_bounded_field_images": 287,
+    "omitted_field_images": 71,
+    "omitted_label_counts": {
+      "Pottassium Deficiency": 3,
+      "Diseased_unspecified": 2,
+      "Healthy": 66
+    },
+    "omitted_indices": [
+      6128,
+      6139,
+      6142,
+      6579,
+      6589,
+      6599,
+      6600,
+      6601,
+      6602,
+      6603,
+      6605,
+      6613,
+      6615,
+      6616,
+      6626,
+      6632,
+      6637,
+      6642,
+      6647,
+      6651,
+      6652,
+      6655,
+      6670,
+      6673,
+      6674,
+      6675,
+      6676,
+      6677,
+      6678,
+      6679,
+      6681,
+      6684,
+      6689,
+      6693,
+      6705,
+      6713,
+      6734,
+      6741,
+      6742,
+      6743,
+      6744,
+      6745,
+      6747,
+      6748,
+      6750,
+      6751,
+      6752,
+      6759,
+      6760,
+      6763,
+      6764,
+      6765,
+      6767,
+      6768,
+      6769,
+      6771,
+      6779,
+      6782,
+      6789,
+      6790,
+      6792,
+      6794,
+      6795,
+      6796,
+      6797,
+      6799,
+      6800,
+      6801,
+      6811,
+      6815,
+      6817
+    ],
+    "source_selection": "All source/family/raw/ROI validation quarantines from phase127 retained; omission means bounded fitting replay, not independent or unused dataset evidence"
+  },
+  "full_gate_threshold": 157,
+  "validation_gate_threshold": 28,
+  "routing_ceiling_below_full_gate": false,
+  "cases": [
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (1).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (1).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (10).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (10).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (100).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (100).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (101).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (101).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (102).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (102).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (103).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (103).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (104).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (104).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (105).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (105).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (106).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (106).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (107).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (107).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (108).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (108).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (109).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (109).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (11).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (11).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (110).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (110).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (111).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (111).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (112).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (112).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (113).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (113).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (114).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (114).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (115).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (115).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (116).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (116).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (117).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (117).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (118).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (118).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (119).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (119).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (12).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (12).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (120).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (120).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (121).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (121).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (122).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (122).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (123).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (123).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (124).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (124).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (125).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (125).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (126).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (126).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (127).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (127).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (128).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (128).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (129).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (129).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (13).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (13).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (130).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (130).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (131).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (131).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (132).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (132).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (134).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (134).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (135).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (135).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (136).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (136).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (137).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (137).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (138).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (138).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (139).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (139).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (14).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (14).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (140).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (140).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (141).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (141).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (142).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (142).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (143).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (143).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (144).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (144).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (145).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (145).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (146).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (146).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (148).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (148).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (149).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (149).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (15).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (15).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (150).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (150).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (151).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (151).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (152).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (152).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (153).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (153).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (154).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (154).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (155).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (155).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (156).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (156).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (157).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (157).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (158).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (158).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (159).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (159).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (16).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (16).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (160).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (160).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (161).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (161).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (162).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (162).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (163).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (163).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (164).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (164).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (165).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (165).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (166).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (166).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (167).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (167).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (168).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (168).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (169).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (169).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (17).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (17).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (170).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (170).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (171).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (171).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (172).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (172).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (173).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (173).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (174).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (174).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (176).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (176).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (177).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (177).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (178).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (178).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (179).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (179).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (18).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (18).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (180).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (180).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (183).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (183).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (184).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (184).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (185).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (185).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (186).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (186).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (187).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (187).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (188).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (188).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (189).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (189).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (19).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (19).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (190).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (190).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (191).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (191).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (192).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (192).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (193).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (193).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (194).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (194).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (195).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (195).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (196).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (196).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (197).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (197).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (198).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (198).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (199).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (199).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (2).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (2).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (20).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (20).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (200).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (200).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (201).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (201).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (202).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (202).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (203).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (203).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (204).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (204).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (207).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (207).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (209).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (209).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (21).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (21).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (211).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (211).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (212).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (212).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (213).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (213).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (214).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (214).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (215).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (215).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (216).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (216).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (217).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (217).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (218).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (218).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (219).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (219).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (22).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (22).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (220).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (220).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (221).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (221).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (222).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (222).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (223).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (223).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (224).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (224).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (225).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (225).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (226).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (226).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (227).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (227).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (228).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (228).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (229).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (229).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (23).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (23).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (230).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (230).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (231).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (231).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (233).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (233).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (234).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (234).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (235).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (235).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (236).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (236).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (24).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (24).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (25).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (25).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (26).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (26).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (28).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (28).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (29).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (29).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (3).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (3).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (30).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (30).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (31).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (31).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (32).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (32).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (33).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (33).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (34).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (34).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (35).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (35).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (36).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (36).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (37).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (37).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (38).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (38).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (39).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (39).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (4).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (4).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "retained_named_suspicion",
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (40).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (40).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (41).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (41).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (42).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (42).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (43).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (43).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (44).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (44).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (45).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (45).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (46).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (46).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (47).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (47).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (48).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (48).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (49).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (49).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (5).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (5).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (50).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (50).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (51).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (51).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (52).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (52).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (53).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (53).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (54).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (54).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (55).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (55).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (56).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (56).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (57).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (57).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (58).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (58).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (59).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (59).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (6).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (6).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (60).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (60).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (61).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (61).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (62).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (62).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (63).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (63).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (64).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (64).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (65).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (65).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (66).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (66).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (67).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (67).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (68).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (68).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (69).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (69).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (7).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (7).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (70).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (70).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (71).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (71).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (72).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (72).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (73).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (73).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (74).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (74).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (75).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (75).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (76).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (76).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (77).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (77).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (78).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (78).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (79).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (79).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (80).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (80).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (81).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (81).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (82).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (82).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (83).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (83).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (84).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (84).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (85).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (85).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": false,
+      "blocked_reasons": [
+        "whole_healthy_below_fixed_guard"
+      ]
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (86).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (86).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (87).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (87).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (88).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (88).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (89).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (89).JPG",
+      "validation": true,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (9).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (9).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (90).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (90).JPG",
+      "validation": true,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (91).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (91).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (92).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (92).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (94).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (94).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (95).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (95).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (96).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (96).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (97).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (97).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (98).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (98).JPG",
+      "validation": false,
+      "fixed_healthy": true,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    },
+    {
+      "id": "olid:tomato__healthy/tomato__healthy (99).JPG",
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase24_olid_source/files/tomato__healthy/tomato__healthy (99).JPG",
+      "validation": false,
+      "fixed_healthy": false,
+      "oracle_healthy": true,
+      "blocked_reasons": []
+    }
+  ],
+  "diagnostic_only": true,
+  "model_promoted": false,
+  "new_encoder_inputs": 0,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false,
+  "elapsed_seconds": 2.1783910100348294
+}

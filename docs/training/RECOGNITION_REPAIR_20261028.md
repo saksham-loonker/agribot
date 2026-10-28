@@ -1,5 +1,11 @@
 # Recognition repair: recovery-only training and new evidence
 
+**Latest:** [phases 159–182: field supervision and native-resolution repair](FIELD_AND_NATIVE_REPAIR_20261028.md).
+This adds source audits, image-bag/whole-context alternatives, full field replay,
+native LoRA and full-block supervised adaptation, plus expected-reward controls.
+No replacement qualifies. The latest local suite passes 270 tests with one
+optional media skip; the older counts and phase-158 endpoint below are historical.
+
 ## Objective and immutable qualification
 
 Repair rejected Healthy tomato leaves without trading them for diseased leaves

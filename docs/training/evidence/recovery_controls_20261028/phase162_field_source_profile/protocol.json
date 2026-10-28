@@ -1,0 +1,15 @@
+{
+  "acceptance_data_used": false,
+  "download_complete_sha256": "ed3605046f290dca678eb7a96893cbed8cff280559995d64d639cc81815bcabf",
+  "family": "Rotation/mirror canonical pHash Hamming <=6 connected components; approximate photo similarity only, never verified specimen identity",
+  "model_predictions_opened": false,
+  "opencv_version": "5.0.0",
+  "profile_source_sha256": "83742e856561db0954e32167ab4c6d4c8b3676a69d52f6a64e1a0327e6d55d71",
+  "publisher_listing_scope": "Ten explicitly labelled class folders; no claim that these exhaust unlabelled files or the publisher description Other category",
+  "quarantine": "Entire inferred family when an exact decoded pixel identity has conflicting Healthy/disease labels or distinct named clinical targets. Coarse disease is compatible with any named non-Healthy target.",
+  "source_protocol_sha256": "fb0f7b48b8f8eb76bbf541b57685b28843d78713ff5e3384d6553040383b02fb",
+  "source_role": "development_only",
+  "source_sha256": "58b10fd9348146050afd51d6d1fddd1e1cb3f89cc50d257b9eb0b81dd0240026",
+  "training_used": false,
+  "unit": "One original publisher photograph, not detector ROI or augmented rotation"
+}

@@ -1,0 +1,15 @@
+{
+  "source_sha256": "c132c5c59946917b893331e818ad572264b5371f469fb775c4864532e266beb8",
+  "route_source_sha256": "ca188430f54d143e92729ceef71ac82cf35b54663012cd3432d6528780b22b66",
+  "fitting_rows_sha256": "4fb762cea4c798541f9d1a012159afed9c7d2ca14dad5b87cbc9742a6ccc9a49",
+  "full_clinical_protocol_sha256": "27f6afd2245b255e26d76f37d85763c85ce8ddfa944e5342e24690e6119d427c",
+  "bounded_replay_protocol_sha256": "b293320776d02d58140c5284e0247eee4bd17c2506ad9335d991f227d1ed2a4e",
+  "diagnostic_only": true,
+  "uses_consumed_labels": true,
+  "counterfactual": "Healthy-labelled cases get admission probability one only to measure a routing ceiling; these label-oracle choices are never a candidate policy",
+  "original_recognition_and_safety_gates_unchanged": true,
+  "new_encoder_inputs": 0,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false
+}

@@ -1,0 +1,16 @@
+{
+  "protocol_sha256": "ab6e47e69ea07e69c567e6b2e48fc715bbc09ba4a87367c543bb5427f199abe2",
+  "features_sha256": "3432047a5afc24dafe6967f55210c3a028498d11d3d6b4015ef0466f7be426ef",
+  "rows_sha256": "b6bd8555ab96803e69db472935b5be885d31944428ba77e4454fec237ae7b03f",
+  "bags_sha256": "25c6a5d4665d4287e4389b64c261093ca6c1339c028637ba333a02fc40fc55c8",
+  "newly_computed_earlier_prefixes": 4282,
+  "reused_completed_prefixes": 0,
+  "canonical_inputs": 4282,
+  "new_detector_inputs": 0,
+  "new_dino_inputs": 0,
+  "all_raw_inputs_sha256_checked": true,
+  "maximum_original_cnn_restore_error": 0.0,
+  "source_role": "development_only",
+  "acceptance_data_used": false,
+  "elapsed_seconds": 116.57981766201556
+}

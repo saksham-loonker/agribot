@@ -1,0 +1,25 @@
+{
+  "clinical_ROI_labels_inferred": false,
+  "coarse_disease_not_other": true,
+  "diagnostic_predictions_opened": false,
+  "labels": {
+    "Bacterial Spot": "Diseased_unspecified",
+    "Cercospora leaf mold": "Diseased_unspecified",
+    "Early Blight": "Early_blight",
+    "Healthy": "Healthy",
+    "Insect Damage": "Diseased_unspecified",
+    "Late Blight": "Late_blight",
+    "Leaf Miner": "Leaf Miner",
+    "Leaf Mold": "Diseased_unspecified",
+    "Spider Mites": "Diseased_unspecified",
+    "Tomato Leaf Curl Virus": "Diseased_unspecified"
+  },
+  "licence": "CC BY 4.0",
+  "no_random_source_holdout": true,
+  "publisher_labels_unverified_clinically": true,
+  "requirements": "Verify publisher file hashes, decode integrity, class/family confounds and exact/near-copy overlap against all old sources and protected reservations before training. Preserve existing gates; no sealed acceptance predictions.",
+  "role": "Entire publisher collection is development-only; never independent acceptance",
+  "source_doi": "10.17632/93h9p62kg4.1",
+  "source_url": "https://data.mendeley.com/datasets/93h9p62kg4/1",
+  "training_used": false
+}

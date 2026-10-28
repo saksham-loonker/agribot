@@ -1,5 +1,12 @@
 # Agribot training failure investigation, recovery, and Android integration
 
+**Latest continuation:** [field supervision and native-resolution repair](FIELD_AND_NATIVE_REPAIR_20261028.md).
+Phases 159–182 stop below unchanged recognition/safety gates. Preserve the exact
+caches and completed checkpoints; do not repeat failed objectives or export them.
+The suspected training-eligibility mismatch was audited and rejected. The newly
+audited publisher collection is entirely development-only. Full field replay,
+native full-block finetuning and expected logit rewards did not qualify a model.
+
 **28 October takes precedence:** [app delivery and bounded recognition continuation](COMPLETION_CHECKPOINT_20261028.md).
 See [latest repair evidence](RECOGNITION_REPAIR_20261028.md) for the clinical
 photo-weighting correction, CNN output semantics and completed semantic,

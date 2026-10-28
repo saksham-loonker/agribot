@@ -1,5 +1,12 @@
 # App delivery and recognition continuation — 28 October 2026
 
+**Latest continuation:** [field supervision and native-resolution repair](FIELD_AND_NATIVE_REPAIR_20261028.md)
+records phases 159–182, 270 passing Python tests (one optional media skip),
+the rejected eligibility-mismatch hypothesis, full field-replay coverage audit,
+native/full-block supervised adaptation and expected-reward results. All fail
+the unchanged recognition gate; no replacement was exported or integrated.
+The source/test evidence is updated; the original app model remains bundled.
+
 This checkpoint supersedes the recurring PR-monitor instructions and older
 sealed-OLID statements. The user explicitly requested app and recognition work
 take priority and cancelled the recurring prompts. The Windows task
