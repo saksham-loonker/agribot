@@ -1,10 +1,13 @@
-import sys,unittest
+import importlib.util,sys,unittest
 from pathlib import Path
-import torch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'model_training/v3'))
-from joint_clinical_head import JointClinicalHead
+READY=importlib.util.find_spec('torch') is not None
+if READY:
+    import torch
+    from joint_clinical_head import JointClinicalHead
 
 
+@unittest.skipUnless(READY,'Optional training Torch environment required')
 class JointClinicalHeadTests(unittest.TestCase):
     def test_zero_residual_preserves_warm_clinical_logits_for_bags(self):
         torch.manual_seed(2158);warm=torch.nn.Linear(1024,9);head=JointClinicalHead();head.load_warm_head(warm.state_dict());head.eval()

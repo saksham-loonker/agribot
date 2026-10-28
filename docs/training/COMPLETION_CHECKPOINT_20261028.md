@@ -40,7 +40,7 @@ The PC debug signature must not replace the laptop upgrade APK's signature or
 be described as an owner production signing identity.
 
 The latest full local Python suite runs **240 checks, zero failures, one optional
-downloaded-media skip**, in 22.333 seconds. Six provenance checks cover cache
+downloaded-media skip**, in 24.485 seconds. Six provenance checks cover cache
 identity, lossless storage/corruption, valid geometry, repeated-texture rejection,
 encoded/decoded photo identities and member CRC integrity. Three more checks
 ensure inactive routed cases retain their full-cohort denominator and fixed

@@ -1,10 +1,13 @@
 from pathlib import Path
-import sys,unittest
+import importlib.util,sys,unittest
 import numpy as np
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'model_training/v3'))
-from monotone_normality import fit_normality,predict_normality
+READY=importlib.util.find_spec('scipy') is not None
+if READY:
+    from monotone_normality import fit_normality,predict_normality
 
 
+@unittest.skipUnless(READY,'Optional training SciPy environment required')
 class NormalityCalibrationTests(unittest.TestCase):
     def test_more_anomalous_features_cannot_raise_healthy_probability(self):
         x=np.array([[0.,.1],[.1,.2],[.2,.1],[1.,1.2],[1.1,1.3],[1.2,1.1]])

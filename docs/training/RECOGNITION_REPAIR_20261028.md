@@ -394,7 +394,10 @@ optional media skip**. The additional clinical weighting, adapter merge,
 monotone calibration and range-offset/corruption tests are included in the
 latest machine-readable test evidence alongside this document.
 The latest full run passes **240 tests with one optional media skip**, in
-22.333 seconds. These are software/contract checks, not recognition acceptance.
+24.485 seconds. These are software/contract checks, not recognition acceptance.
+The lightweight Android job skips optional training-package tests; the separate
+training-contract job requires them all to execute. Range tests explicitly
+declare their Requests dependency in the shared Python test requirements.
 Tests cover protected verdict identity, GRL direction, contrastive edge cases,
 replay mass, zero-residual warm parity, LoRA merge/key preservation, readable
 NPY headers, cache-identity rejection, condition logit conservation and
