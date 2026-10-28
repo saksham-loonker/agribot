@@ -1,0 +1,12 @@
+{
+  "protocol_sha256": "68e60c5c811195809d069b0ff55bee3f9376c66e639d83ffc9b1a9c88efe2820",
+  "features_sha256": "b7deb55c5c261ddfe7fa28906ace81670e452220d625aa55b1f86a2767c64ade",
+  "completed": 868,
+  "reused": 0,
+  "new_encoder_inputs": 868,
+  "reused_graph_audit_errors": [],
+  "elapsed_seconds": 44.11758522409946,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false
+}

@@ -188,6 +188,17 @@ release does not supply an explicit Healthy/diseased mapping. It is unsuitable
 for clinical acceptance as distributed; do not label every Tomato image Healthy.
 No pixels, clinical predictions or training were opened for this source.
 
+## Additional recognition repair
+
+The subsequent recovery-only campaign is documented in
+[Recognition repair](RECOGNITION_REPAIR_20261028.md). It separates Healthy
+admission from legacy vetoes, adds class-balanced replay and clinical anchors,
+compares local/native-resolution features and LoRA, and reuses exact-identity
+caches. New expected-reward and hard-negative controls retain the original
+recognition and safety gates. Complete source/result identities and the
+full-source supervised control are recorded there; no failed candidate is
+exported or bundled into Android.
+
 ## Remaining qualification and evidence
 
 AD and OLID are permanently consumed development. Keep all original recognition

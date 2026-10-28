@@ -1,0 +1,53 @@
+{
+  "source_sha256": "851a746025e0ae0590cfb2c2e6097673b324b4c13724a78656c40643667aa00d",
+  "lora_source_sha256": "e58ca2efa7241536c089ef73452e14672042392b310ef9266be51672c163dc92",
+  "parents": {
+    "base_complete_sha256": "41f8ddfbdac0b1bf26fdda321ef30bf1091976612006d29bbf1b3ae9d3d330f4",
+    "extra_complete_sha256": "e4b623374ef0b5accf979d7e53a6a085dd72cc071563df55faf7865e87bd68a8"
+  },
+  "input_cache_complete_sha256": "067c8969a1e75b03c3e3230388eb1ad10fa8dd728dbedf73a046b760105d351e",
+  "selected_population_protocol_sha256": "952aaee3024a5b204d123f5ea1cb938602d6ba32e32bdb22b9ff3aa4f8d9b052",
+  "anchor_selection_protocol_sha256": "b293320776d02d58140c5284e0247eee4bd17c2506ad9335d991f227d1ed2a4e",
+  "condition_loss_source_sha256": "3c47159f0332c220ab76a07b9c68c1597f22a9a1eeb19c9fd9d41d764d57208c",
+  "rank_loss_source_sha256": "0d2b38b225fe19cd1614961ff63881e258997b1e7ed6b381f81fdd4966753465",
+  "ranking_loss_weight": 0.2,
+  "ranking_margin": 1.0,
+  "maximum_hard_negatives_per_batch": 4,
+  "warm_checkpoint_sha256": "6c59ed0039983bcaacdde6bc43b92f45f717da0bfccc6a0e8af1df97192a5091",
+  "train_images": 662,
+  "validation_images": 71,
+  "rank": 8,
+  "alpha": 16.0,
+  "dropout": 0.05,
+  "lora_blocks": 12,
+  "lora_components": [
+    "query",
+    "value"
+  ],
+  "trainable_parameters": 151689,
+  "frozen_base_parameters": 21628032,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "batch_images": 8,
+  "maximum_epochs": 80,
+  "minimum_epochs": 25,
+  "patience": 15,
+  "seed": 2124,
+  "target_replay_weight": 0.5,
+  "anchor_replay_weight": 0.5,
+  "condition_loss_weight": 0.3,
+  "draws_per_epoch": 1024,
+  "zero_adapter_maximum_margin_error": 0.0,
+  "calibration": [
+    0.7674187142596203,
+    1.0432257202649171
+  ],
+  "admission_probability": 0.95,
+  "existing_healthy_and_named_disease_preserved": true,
+  "hypothesis": "Anchor-supervised LoRA raised Healthy recall while admitting diseases. Add a training-only pairwise logit separation loss against the four hardest non-Healthy examples per batch; keep the same input, warm model, sampler, BCE/clinical loss, seed, admission and safety rules.",
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false,
+  "new_publisher_source_used": false,
+  "stopping": "One hard-negative ranking clinical-anchor rank-eight Q/V control, minimum twenty-five epochs, fifteen stale actual-verdict epochs, eighty maximum. Extend cached input coverage and run full gates only after >=28/40 Healthy and zero new source false-Healthy. No export unless complete old and consumed recognition gates pass."
+}

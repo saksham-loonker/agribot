@@ -1,0 +1,8 @@
+{
+  "valid": false,
+  "reason": "Patch-input memory layout differs from the source encoder; identical pixels produced maximum normalized CLS drift 0.012824058532714844 in the reused-case audit",
+  "required_maximum_error": 0.002,
+  "trained_candidate_created": false,
+  "existing_verified_donor_preserved": true,
+  "replacement": "phase147_large_teacher_features with explicit channels_last_NCHW and preflight before bulk extraction"
+}

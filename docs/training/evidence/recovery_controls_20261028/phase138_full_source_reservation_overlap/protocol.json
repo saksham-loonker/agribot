@@ -1,0 +1,12 @@
+{
+  "clinical_predictions_opened": false,
+  "feature_version": "0402728551b86a48f0892deb94fa66a928e1adb39c2e35f8aa0c920f4f65d797",
+  "proposed_training_photos": 2063,
+  "proposed_training_protocol_sha256": "6922b7809a0ec9b4537837cf12ca1d1034d74c1a83c8e97073bbffc0ea4144b2",
+  "protected_images": 2461,
+  "protected_manifest_sha256": "82207b5426d888c01cca869bd944fdf43c67851c2f4c91fd69fb635cf3dae680",
+  "purpose": "Geometry-only split-protection audit before fitting; no clinical predictions or labels from the protected reservation",
+  "source_sha256": "86f07b674d1d20c531c2e332ef91b9a8c85bf8fa91e4203c5da8c4facda52ad5",
+  "training_used": false,
+  "verifier_sha256": "401b44e8394852df5a77fef599b72f815a4c5fbb96be58677ff0359c103f6498"
+}

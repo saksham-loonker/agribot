@@ -1,0 +1,530 @@
+[
+  {
+    "phase": "phase118_conditional_recovery",
+    "elapsed_seconds": 3.7912116469815373,
+    "methods": [
+      {
+        "method": "conditional_sft",
+        "best_decision": [
+          0,
+          13,
+          1,
+          -0.8717357910073678
+        ],
+        "selected_epoch": 3,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "cross_source_supcon",
+        "best_decision": [
+          0,
+          13,
+          1,
+          -0.8556862771829264
+        ],
+        "selected_epoch": 6,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "conditional_domain_adversarial",
+        "best_decision": [
+          0,
+          13,
+          3,
+          -0.7914869865068911
+        ],
+        "selected_epoch": 21,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "decision_reward",
+        "best_decision": [
+          0,
+          13,
+          2,
+          -0.9275581797168541
+        ],
+        "selected_epoch": 4,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase119_target_replay",
+    "elapsed_seconds": 4.133233743952587,
+    "methods": [
+      {
+        "method": "source_balanced_warmup",
+        "best_decision": [
+          0,
+          13,
+          3,
+          -0.907191528598365
+        ],
+        "selected_epoch": 17,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "target_replay",
+        "best_decision": [
+          0,
+          13,
+          7,
+          -0.855942725861444
+        ],
+        "selected_epoch": 26,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "target_replay_margin",
+        "best_decision": [
+          0,
+          13,
+          5,
+          -0.9470491151657734
+        ],
+        "selected_epoch": 10,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase121_local_damage_mil",
+    "elapsed_seconds": 6.53164318902418,
+    "methods": [
+      {
+        "method": "gated_attention_mil",
+        "best_decision": [
+          0,
+          15,
+          7,
+          -0.7681669256038759
+        ],
+        "selected_epoch": 33,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "topk_damage_mil",
+        "best_decision": [
+          0,
+          14,
+          4,
+          -0.7997949496509156
+        ],
+        "selected_epoch": 23,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase122_context_fusion",
+    "elapsed_seconds": 8.90854173596017,
+    "methods": [
+      {
+        "method": "additive_context",
+        "best_decision": [
+          0,
+          14,
+          5,
+          -0.9490611028536879
+        ],
+        "selected_epoch": 21,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "bilinear_context",
+        "best_decision": [
+          0,
+          15,
+          7,
+          -0.7203220409633762
+        ],
+        "selected_epoch": 19,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase124_lora_recovery",
+    "elapsed_seconds": 28.856681060045958,
+    "methods": [
+      {
+        "best_decision": [
+          0,
+          19,
+          8,
+          -0.867821560756561
+        ],
+        "selected_epoch": 2,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 28.856681060045958
+      }
+    ]
+  },
+  {
+    "phase": "phase127_clinical_anchors",
+    "elapsed_seconds": 9.301744782947935,
+    "methods": [
+      {
+        "method": "clinical_anchors",
+        "best_decision": [
+          0,
+          14,
+          1,
+          -0.6277973207472396
+        ],
+        "selected_epoch": 14,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "condition_subtypes",
+        "best_decision": [
+          0,
+          14,
+          0,
+          -0.6173688311573297
+        ],
+        "selected_epoch": 13,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "subtype_contrastive",
+        "best_decision": [
+          0,
+          14,
+          0,
+          -0.6853328148943265
+        ],
+        "selected_epoch": 11,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase129_native_dino_mil",
+    "elapsed_seconds": 8.382024680962786,
+    "methods": [
+      {
+        "method": "gated_attention_mil",
+        "best_decision": [
+          0,
+          19,
+          4,
+          -0.8624860414781022
+        ],
+        "selected_epoch": 31,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "topk_damage_mil",
+        "best_decision": [
+          0,
+          15,
+          3,
+          -0.7580161400818771
+        ],
+        "selected_epoch": 15,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase130_cached_complementarity",
+    "elapsed_seconds": 7.470673080999404,
+    "methods": [
+      {
+        "elapsed_seconds": 7.470673080999404
+      }
+    ]
+  },
+  {
+    "phase": "phase132_large_roi_recovery",
+    "elapsed_seconds": 4.959881886024959,
+    "methods": [
+      {
+        "method": "large_linear",
+        "best_decision": [
+          0,
+          13,
+          3,
+          -0.6387516938026547
+        ],
+        "selected_epoch": 5,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "large_mlp",
+        "best_decision": [
+          0,
+          15,
+          13,
+          -1.4698859228659589
+        ],
+        "selected_epoch": 34,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase134_anchor_lora",
+    "elapsed_seconds": 60.722119066049345,
+    "methods": [
+      {
+        "best_decision": [
+          0,
+          13,
+          4,
+          -0.4965652242672276
+        ],
+        "selected_epoch": 0,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 60.722119066049345
+      }
+    ]
+  },
+  {
+    "phase": "phase135_condition_split_lora",
+    "elapsed_seconds": 60.95846984500531,
+    "methods": [
+      {
+        "best_decision": [
+          0,
+          13,
+          3,
+          -0.5237586156129348
+        ],
+        "selected_epoch": 0,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 60.95846984500531
+      }
+    ]
+  },
+  {
+    "phase": "phase136_hard_negative_lora",
+    "elapsed_seconds": 61.5533008989878,
+    "methods": [
+      {
+        "best_decision": [
+          0,
+          14,
+          5,
+          -0.5033938818400341
+        ],
+        "selected_epoch": 0,
+        "cheap_pass": false,
+        "passed": false,
+        "elapsed_seconds": 61.5533008989878
+      }
+    ]
+  },
+  {
+    "phase": "phase138_full_source_reservation_overlap",
+    "elapsed_seconds": 23.106670577079058,
+    "methods": [
+      {
+        "elapsed_seconds": 23.106670577079058
+      }
+    ]
+  },
+  {
+    "phase": "phase139_full_source_recovery",
+    "elapsed_seconds": 6.2365287620341405,
+    "methods": [
+      {
+        "method": "full_source_sft",
+        "best_decision": [
+          0,
+          13,
+          2,
+          -0.7049116790034252
+        ],
+        "selected_epoch": 18,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "full_source_rank",
+        "best_decision": [
+          0,
+          14,
+          1,
+          -0.6333081668679645
+        ],
+        "selected_epoch": 7,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase140_large_kernel_recovery",
+    "elapsed_seconds": 3.4586990129901096,
+    "methods": [
+      {
+        "C": 1.0,
+        "healthy_validation_correct": 13,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "C": 10.0,
+        "healthy_validation_correct": 13,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase142_full_source_cnn_recovery",
+    "elapsed_seconds": 12.501347591984086,
+    "methods": [
+      {
+        "method": "full_source_cnn_sft",
+        "best_decision": [
+          0,
+          14,
+          1,
+          -0.7809155831685688
+        ],
+        "selected_epoch": 2,
+        "cheap_pass": false,
+        "passed": false
+      },
+      {
+        "method": "full_source_cnn_rank",
+        "best_decision": [
+          0,
+          14,
+          9,
+          -1.142774492787441
+        ],
+        "selected_epoch": 4,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase144_photometric_cnn_recovery",
+    "elapsed_seconds": 106.10500850807875,
+    "methods": [
+      {
+        "method": "photometric_supervised",
+        "best_decision": [
+          0,
+          15,
+          3,
+          -1.5700786062625278
+        ],
+        "selected_epoch": 4,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase145_photometric_lora_recovery",
+    "elapsed_seconds": 177.81053464789875,
+    "methods": [
+      {
+        "method": "photometric_lora_supervised",
+        "best_decision": [
+          0,
+          20,
+          7,
+          -0.7572236929627288
+        ],
+        "selected_epoch": 0,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase146_original_clinical_lora",
+    "elapsed_seconds": 180.57935337594245,
+    "methods": [
+      {
+        "method": "original_nine_class_supervised",
+        "best_decision": [
+          0,
+          13,
+          0,
+          -0.8659572966546047
+        ],
+        "selected_epoch": 0,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase147_large_clinical_teacher",
+    "elapsed_seconds": 302.4446019460447,
+    "methods": [
+      {
+        "method": "large_clinical_teacher",
+        "best_decision": [
+          -2,
+          25,
+          13,
+          -1.1192353154132488
+        ],
+        "selected_epoch": 4,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  },
+  {
+    "phase": "phase148_guard_reward_teacher",
+    "elapsed_seconds": 269.72657544200774,
+    "methods": [
+      {
+        "method": "guard_aware_expected_reward_teacher",
+        "best_decision": [
+          -1,
+          14,
+          6,
+          -2.019857950405
+        ],
+        "selected_epoch": 5,
+        "cheap_pass": false,
+        "passed": false
+      }
+    ]
+  }
+]
