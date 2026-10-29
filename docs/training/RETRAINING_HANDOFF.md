@@ -1,5 +1,13 @@
 # Agribot training failure investigation, recovery, and Android integration
 
+**Latest continuation:** [full-feature, bilinear and spatial-colour controls](FISHER_BILINEAR_SPATIAL_REPAIR_20261029.md)
+records phases 220-225: eight model controls, 80 additional saved epochs and 576
+cached routing checks. All fail the unchanged gate; best safe development policy
+remains 19/40 Healthy, below 28/40. No app model replacement. Preserve verified
+laptop backups and prediction caches; the 84 phase-221 PT files were offloaded
+only after independent member-SHA verification. Restore them before weight loading.
+The checkpoint-selection audit and post-execution source changes are explicit.
+
 **Latest continuation:** [density and held-source meta-learning](DENSITY_AND_META_REPAIR_20261029.md)
 records phases 215–219: eight model settings, 80 saved training epochs and 288
 cached policy evaluations. The best new fixed rule reaches 19/40 Healthy at

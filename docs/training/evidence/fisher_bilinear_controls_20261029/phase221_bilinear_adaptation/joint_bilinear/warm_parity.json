@@ -1,0 +1,6 @@
+{
+  "maximum_probability_error": 2.980232238769531e-07,
+  "all_admission_decisions_equal": true,
+  "warm_checkpoint_sha256": "aab6219adc76078f6c7077790251546f2966d1e95c86cbc1268d3e5463f3c516",
+  "protocol_sha256": "990bf380051b9f6be54e6dc5cbc7b34470bc10a024b62f11581c8483d26afd88"
+}
