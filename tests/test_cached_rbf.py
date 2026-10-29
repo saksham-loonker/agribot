@@ -1,10 +1,13 @@
 import sys,unittest
 from pathlib import Path
-import numpy as np
-from sklearn.svm import SVC
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'model_training/v3'))
-from cached_rbf import training_gamma,restored_margin
+try:
+    import numpy as np
+    from sklearn.svm import SVC
+    from cached_rbf import training_gamma,restored_margin
+except ImportError:np=None
 
+@unittest.skipIf(np is None,'Scientific training dependencies unavailable')
 class CachedRBFTests(unittest.TestCase):
     def test_explicit_arrays_reproduce_sklearn_binary_margin(self):
         rng=np.random.default_rng(19);x=rng.normal(size=(24,2,5));y=np.arange(24)%2;gamma=training_gamma(x);m=SVC(C=1,gamma=gamma).fit(x.reshape(-1,5),np.repeat(y,2));q=rng.normal(size=(13,5));state=dict(classes=m.classes_,support_vectors=m.support_vectors_,dual_coef=m.dual_coef_,intercept=m.intercept_,gamma=gamma)
