@@ -1,5 +1,10 @@
 # Recognition convergence, capacity and checkpoint handoff — 29 October 2026
 
+**Later continuation:** [density and source-meta controls](DENSITY_AND_META_REPAIR_20261029.md)
+records phases 215–219 and a new fixed development policy at 19/40 with zero
+new false Healthy. It remains below the unchanged gate; this does not qualify
+a replacement or open acceptance data.
+
 ## Release decision
 
 No replacement recognition model is qualified. The normal Android 2.0.4 app

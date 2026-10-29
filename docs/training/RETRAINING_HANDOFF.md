@@ -1,5 +1,12 @@
 # Agribot training failure investigation, recovery, and Android integration
 
+**Latest continuation:** [density and held-source meta-learning](DENSITY_AND_META_REPAIR_20261029.md)
+records phases 215–219: eight model settings, 80 saved training epochs and 288
+cached policy evaluations. The best new fixed rule reaches 19/40 Healthy at
+zero new false Healthy on consumed development, below 28/40. All new controls
+are stopped; no replacement is qualified. Preserve the verified laptop backup,
+exact executed source bytes, unchanged gates and sealed provisional TCP data.
+
 **29 October continuation takes precedence:**
 [convergence, capacity and checkpoint handoff](CONVERGENCE_AND_CAPACITY_20261029.md)
 records phases 183–214, exhaustive replay, longer/full-encoder adaptation,

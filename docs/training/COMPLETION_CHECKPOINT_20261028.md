@@ -1,5 +1,10 @@
 # App delivery and recognition continuation — 28 October 2026
 
+**Latest continuation:** [cached density and source-meta repair](DENSITY_AND_META_REPAIR_20261029.md)
+records phases 215–219, with a best new development policy of 19/40 Healthy and
+zero new false Healthy, still below the unchanged 28/40 gate. The app retains
+its original model. No fresh acceptance or phone verification is claimed.
+
 **29 October update:** [convergence and capacity evidence](CONVERGENCE_AND_CAPACITY_20261029.md)
 supersedes the research status below with phases 183–214 and 300 passing Python
 tests (one optional media skip). Original app delivery remains unchanged. No

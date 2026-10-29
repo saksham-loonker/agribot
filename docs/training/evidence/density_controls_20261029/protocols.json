@@ -1,0 +1,35 @@
+{
+  "archive_sha256": "94ca6441fdff4bb9dfb910d843365412f229c00ec3acc666115c09c9232e1f10",
+  "protocols": [
+    {
+      "path": "phase215_shrinkage_density/native/protocol.json",
+      "sha256": "721ca974ca0996e90d45ce4fa55e6b085eec95fceba2a46d7a0b390c11acfd8c",
+      "bytes": 94078
+    },
+    {
+      "path": "phase215_shrinkage_density/mobile/protocol.json",
+      "sha256": "98a8b8864a9abe7ae7282dbc98280145b620b00bbed324644ca6820a1da30176",
+      "bytes": 486934
+    },
+    {
+      "path": "phase216_density_policy/protocol.json",
+      "sha256": "3ee9da392b740392927286fbc0a4adedd5f5d11e8a39323dc1b1a1e363b31a53",
+      "bytes": 1548
+    },
+    {
+      "path": "phase217_density_stack/protocol.json",
+      "sha256": "d10eb38e31ed5857765eb8e35e00f0a553818e0ca49630a54bf83932ddbea0b1",
+      "bytes": 155799
+    },
+    {
+      "path": "phase218_meta_domain_generalization/protocol.json",
+      "sha256": "db2cb2b15a5d07a6d88b20a75d9a802a2013bba5f1f25833b7041e871e10c99f",
+      "bytes": 863347
+    },
+    {
+      "path": "phase219_fixed_recovery_policy/protocol.json",
+      "sha256": "e4f4b2afeeff4ca0b7c265ea00b6281f618ef279fae775258ae725faf5496f23",
+      "bytes": 1937
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "python": "3.12.3",
+  "numpy": "2.5.2",
+  "scipy": "1.18.1",
+  "sklearn": "1.9.1",
+  "torch": "2.11.0+cu128",
+  "new_encoder_inputs": 0,
+  "acceptance_data_used": false
+}

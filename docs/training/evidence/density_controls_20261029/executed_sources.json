@@ -1,0 +1,66 @@
+{
+  "archive_sha256": "14b2be243be5f91476b101a6fbe4506a963301c5912d9c4cd6c3e8a204b215bd",
+  "files": [
+    {
+      "path": "model_training/v3/shrinkage_density.py",
+      "sha256": "bc440331a89a53fd0d6ee1bff13cdc2567e03f2b6fa1873d85724bc6fcb2efab",
+      "bytes": 2949
+    },
+    {
+      "path": "model_training/v3/density_stack.py",
+      "sha256": "462515d4aa764bdd2cf5bae9583ff6ec5a15ad205dd32a499991bc1ff093b8f2",
+      "bytes": 721
+    },
+    {
+      "path": "model_training/v3/meta_domain_loss.py",
+      "sha256": "0843a746633cea6eecdd0a83f83a97b585ca32eaed66cc477cbb453f91f50735",
+      "bytes": 575
+    },
+    {
+      "path": "model_training/v3/phase215_shrinkage_density.py",
+      "sha256": "6a1fa29f5bb29b9b7787f7eb834725b261a54f1111d13f5b7ad11654bb36273b",
+      "bytes": 10315
+    },
+    {
+      "path": "model_training/v3/phase216_density_policy.py",
+      "sha256": "c9bd67e6ac095c7277dff0b61a90e67c780bee44e44290a68771cc5e2a640ebe",
+      "bytes": 5061
+    },
+    {
+      "path": "model_training/v3/phase217_density_stack.py",
+      "sha256": "c80e40eff30415b1b027eaff570256f1a7087f3e8088bbddeed04698b62af7fd",
+      "bytes": 6843
+    },
+    {
+      "path": "model_training/v3/phase218_meta_domain_generalization.py",
+      "sha256": "0bdfb837eece9a49bd0ee9389cfbc54585283b0a7ec6ef595735882e6caff660",
+      "bytes": 11247
+    },
+    {
+      "path": "model_training/v3/phase219_fixed_recovery_policy.py",
+      "sha256": "d99c30ef33b4d2052d815f7e9fb8f52dc8f55c09e89987fde7164f9fd7614a63",
+      "bytes": 5562
+    },
+    {
+      "path": "model_training/v3/exhaustive_replay_data.py",
+      "sha256": "4d0c76952c45c1ae935915788dfb80a2f7d05529cec4d482db759e8bd02215c4",
+      "bytes": 3448
+    },
+    {
+      "path": "model_training/v3/clinical_replay_balance.py",
+      "sha256": "42cc6e1dddd400b9405022ca43c95cb67519abfa27c5dbbd7311e2329281e724",
+      "bytes": 941
+    },
+    {
+      "path": "model_training/v3/conditional_recovery_policy.py",
+      "sha256": "ca188430f54d143e92729ceef71ac82cf35b54663012cd3432d6528780b22b66",
+      "bytes": 522
+    },
+    {
+      "path": "model_training/v3/leaf_feature_expert.py",
+      "sha256": "b508b184d176c57d4e23bd3faf2c6adef248902322f27b6616f8964bcb21692f",
+      "bytes": 737
+    }
+  ],
+  "purpose": "Exact PC execution bytes for density and meta-domain controls. Current Git utility hardening, if any, is declared separately; these bytes bind historical protocols."
+}
