@@ -1,0 +1,61 @@
+{
+  "protocol_sha256": "b6bdf699a8e4c1ed869a09522a7910858278a25cb7b1a0043278d3d57f4f560f",
+  "controls": [
+    {
+      "mode": "frozen",
+      "healthy_validation_correct": 13,
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "old_healthy_correct": 0,
+      "calibration": [
+        0.36164775040191016,
+        0.10979621585845858
+      ],
+      "model_sha256": "37099be2bf6d5b8a052f29c5e93693143fcba227125b429bd43fad90082e0023",
+      "cheap_pass": false
+    },
+    {
+      "mode": "lora",
+      "healthy_validation_correct": 13,
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "old_healthy_correct": 0,
+      "calibration": [
+        0.22124796877047087,
+        0.2577154115132837
+      ],
+      "model_sha256": "5a540edb9203957e63ecd1753fabdd395bb764755b30bf8c0b43806b161365a6",
+      "cheap_pass": false
+    },
+    {
+      "mode": "full_suffix",
+      "healthy_validation_correct": 13,
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "old_healthy_correct": 0,
+      "calibration": [
+        0.13803416598395954,
+        0.48046857673986915
+      ],
+      "model_sha256": "c56ef4795c8ae8a0cf3f7e034d06c480057dc5936d18e180cab470e64c52e7f8",
+      "cheap_pass": false
+    }
+  ],
+  "elapsed_seconds": 184.21079334698152,
+  "model_promoted": false,
+  "acceptance_data_used": false,
+  "ad_independent": false,
+  "olid_independent": false
+}

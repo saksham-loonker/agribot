@@ -1,0 +1,75 @@
+{
+  "archive_sha256": "666199497557a46afdcd10ef2e9a6c6555623ff07372ffd7b307c2e6e85a1b09",
+  "protocols": [
+    {
+      "path": "phase231_cross_crop_features/protocol.json",
+      "bytes": 1973,
+      "sha256": "24426758e0a477062f23f583c5d2631aa285d67c25265a1f42325b0fdd7c0f31"
+    },
+    {
+      "path": "phase232_auxiliary_nutrition_heads/protocol.json",
+      "bytes": 498014,
+      "sha256": "67d1bbdf850c60f0542f45466037cedd059a05585688cf9f10c3f947aa1b3d80"
+    },
+    {
+      "path": "phase233_deployment_scope_calibration/preflight_failure/protocol.json",
+      "bytes": 50615,
+      "sha256": "17bf25c4f3f44c7eb2319522e161a15cf6fe7337ef5d87aadaf6b0fb522f494a"
+    },
+    {
+      "path": "phase233_deployment_scope_calibration/protocol.json",
+      "bytes": 50615,
+      "sha256": "3966157b0f7c4dd844c42d42d5a94fdcea40974f40c278e05479579e9c7729a4"
+    },
+    {
+      "path": "phase234_auxiliary_nutrition_policy/protocol.json",
+      "bytes": 1987,
+      "sha256": "1c91158ae933c54519f5bf398218a026f602f90b78313c05ee4689cc1e8cde59"
+    },
+    {
+      "path": "phase235_scope_attribution/invalid_initial_attribution/protocol.json",
+      "bytes": 940,
+      "sha256": "19e33f09884f5bbfad9c0ac9ae8ecaa7d580697362c6dcd36e28b608032926a9"
+    },
+    {
+      "path": "phase235_scope_attribution/protocol.json",
+      "bytes": 940,
+      "sha256": "e81f3b2514e44084975ac3931e0edba8fae756e6692ad8b7ec066d7a2c14aee1"
+    },
+    {
+      "path": "phase236_whole_primary_probe/protocol.json",
+      "bytes": 2079,
+      "sha256": "3ffb3941e58f08bb0f1fbb88a14f13029acacd9b8fbbc178473ac58c96f4022b"
+    },
+    {
+      "path": "phase237_auxiliary_prefix_cache/protocol.json",
+      "bytes": 443930,
+      "sha256": "486eeab394bce2736471f4d2c5be087483457619ff2dc739ea19f5214e898c46"
+    },
+    {
+      "path": "phase238_auxiliary_encoder_adaptation/protocol.json",
+      "bytes": 122074,
+      "sha256": "b6bdf699a8e4c1ed869a09522a7910858278a25cb7b1a0043278d3d57f4f560f"
+    },
+    {
+      "path": "phase239_auxiliary_encoder_policy/protocol.json",
+      "bytes": 1829,
+      "sha256": "10bcc951aeb7f808db12d8f076c253453a074b2217ebd6f73490dd608398c58c"
+    },
+    {
+      "path": "phase240_local_visual_veto/protocol.json",
+      "bytes": 4235,
+      "sha256": "53bea6e7d48bdce0d64b6a268faefc36da51b3ee9e00d3679832adf02f5ad7d3"
+    },
+    {
+      "path": "phase241_cached_visual_policy/protocol.json",
+      "bytes": 1556,
+      "sha256": "7efc770f6a8f58dd4615a90dfad343ded5e58fcf1a8ed36d12d380edf2291414"
+    },
+    {
+      "path": "phase243_all_photo_context_supervision/protocol.json",
+      "bytes": 332730,
+      "sha256": "e4dfb3cafa308a15f6a0a2c05d396a3831828c0dba4089936c6c331e5468e6c1"
+    }
+  ]
+}

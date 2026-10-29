@@ -1,0 +1,6 @@
+{
+  "failure": "Overstrict array equality compared weak-scalar float32 arithmetic with restored NumPy float64 scalar arithmetic. No completed verdict result or candidate was produced.",
+  "repair": "Convert cached raw margins to explicit float64 before both calibration applications; verify exact arrays and threshold parity.",
+  "training_restarted": false,
+  "encoder_inference_repeated": false
+}

@@ -1,0 +1,12 @@
+{
+  "protocol_sha256": "53bea6e7d48bdce0d64b6a268faefc36da51b3ee9e00d3679832adf02f5ad7d3",
+  "predictions_sha256": "9180a66836752182426c6dd01c407f2a178d923c0df748e6817fb6a143f16909",
+  "new_visual_inferences": 71,
+  "reused_visual_inferences": 0,
+  "elapsed_seconds": 98.2318864959525,
+  "model_promoted": false,
+  "training_labels_changed": false,
+  "acceptance_data_used": false,
+  "ad_independent": false,
+  "olid_independent": false
+}

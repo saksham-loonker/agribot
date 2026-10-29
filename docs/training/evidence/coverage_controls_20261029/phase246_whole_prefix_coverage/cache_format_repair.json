@@ -1,0 +1,13 @@
+{
+  "reason": "NumPy open_memmap accepted list-shaped header on writing but np.load rejects it. Repair header delimiters to tuple; payload bytes unchanged. No encoding or training repeated.",
+  "original_file_sha256": "2400534b77f43c194a62ae40285f85045f63ef40f6ac55273f94f2333924c125",
+  "repaired_file_sha256": "6de8066e5fab76e5082d5ce871f95e00675a1ad9d15deee00cc1de470b9475ce",
+  "payload_sha256": "76756eeac3c035aec6a3dc03ca4a0871393c7ce2e08cf02b4fb5cd0cda9c264d",
+  "payload_bytes_unchanged": true,
+  "shape": [
+    234,
+    256,
+    768
+  ],
+  "dtype": "float32"
+}

@@ -1,0 +1,4087 @@
+{
+  "summary": {
+    "Diseased_unspecified": {
+      "nominal_training": 37,
+      "selected": 19,
+      "omitted": 18,
+      "omitted_reasons": {
+        "no_cached_detected_roi": 18
+      },
+      "unexplained_indices": []
+    },
+    "Healthy": {
+      "nominal_training": 183,
+      "selected": 163,
+      "omitted": 20,
+      "omitted_reasons": {
+        "no_cached_detected_roi": 20
+      },
+      "unexplained_indices": []
+    },
+    "Leaf Miner": {
+      "nominal_training": 137,
+      "selected": 12,
+      "omitted": 125,
+      "omitted_reasons": {
+        "no_cached_detected_roi": 125
+      },
+      "unexplained_indices": []
+    },
+    "Nitrogen Deficiency": {
+      "nominal_training": 37,
+      "selected": 22,
+      "omitted": 15,
+      "omitted_reasons": {
+        "no_cached_detected_roi": 15
+      },
+      "unexplained_indices": []
+    },
+    "Other": {
+      "nominal_training": 170,
+      "selected": 122,
+      "omitted": 48,
+      "omitted_reasons": {
+        "no_cached_detected_roi": 48
+      },
+      "unexplained_indices": []
+    },
+    "Pottassium Deficiency": {
+      "nominal_training": 28,
+      "selected": 20,
+      "omitted": 8,
+      "omitted_reasons": {
+        "no_cached_detected_roi": 8
+      },
+      "unexplained_indices": []
+    }
+  },
+  "cases": [
+    {
+      "index": 6091,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6092,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6093,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6094,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6095,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6096,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6097,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6098,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6099,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6100,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6101,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6102,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6103,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6104,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6105,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6106,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6107,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6108,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6109,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6110,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6111,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6112,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6113,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6114,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6115,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6116,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6117,
+      "label": "Pottassium Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6118,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6119,
+      "label": "Pottassium Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6120,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6121,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6122,
+      "label": "Pottassium Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6123,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6124,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6125,
+      "label": "Pottassium Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6126,
+      "label": "Pottassium Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6127,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6128,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6129,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6130,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6131,
+      "label": "Pottassium Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6132,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6133,
+      "label": "Pottassium Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6134,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6135,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6136,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6137,
+      "label": "Pottassium Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6138,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6139,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6140,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6141,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6142,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6143,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6144,
+      "label": "Pottassium Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6145,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6146,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6147,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6148,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6149,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6150,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6151,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6152,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6153,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6155,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6156,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6157,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6158,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6159,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6160,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6167,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6168,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6169,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6170,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6171,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6172,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6173,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6174,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6175,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6177,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6178,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6179,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6180,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6181,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6182,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6183,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6184,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6185,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6192,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6193,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6194,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6195,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6196,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6197,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6198,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6199,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6200,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6201,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6205,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6207,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6208,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6209,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6210,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6211,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6216,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6218,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6219,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6220,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6221,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6222,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6223,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6224,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6225,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6226,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6227,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6228,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6229,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6230,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6231,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6232,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6237,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6239,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6240,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6241,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6242,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6243,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6244,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6245,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6246,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6247,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6248,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6249,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6250,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6251,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6252,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6253,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6254,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6255,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6256,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6257,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6262,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6263,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6264,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6265,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6266,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6271,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6272,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6273,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6274,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6275,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6276,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6282,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6283,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6284,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6285,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6286,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6287,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6288,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6289,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6290,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6291,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6292,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6293,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6294,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6295,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6296,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6297,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6298,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6299,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6300,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6301,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6302,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6303,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6304,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6305,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6306,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6307,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6308,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6309,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6310,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6311,
+      "label": "Leaf Miner",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6312,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6313,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6314,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6315,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6316,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6317,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6318,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6327,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6334,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6335,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6336,
+      "label": "Leaf Miner",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6339,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6340,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6341,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6342,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6343,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6344,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6345,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6346,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6347,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6348,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6349,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6350,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6351,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6352,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6353,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6354,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6355,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6356,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6357,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6358,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6359,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6360,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6361,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6362,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6363,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6364,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6365,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6366,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6367,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6368,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6369,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6370,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6371,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6372,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6373,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6374,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6375,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6376,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6377,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6378,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6384,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6385,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6386,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6387,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6388,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6389,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6390,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6391,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6392,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6393,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6398,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6400,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6401,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6402,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6403,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6404,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6405,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6406,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6407,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6408,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6409,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6410,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6411,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6412,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6413,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6414,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6415,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6416,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6417,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6418,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6419,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6420,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6421,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6422,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6423,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6424,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6425,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6426,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6427,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6428,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6429,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6430,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6431,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6432,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6433,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6434,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6435,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6436,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6437,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6438,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6439,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6440,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6441,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6442,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6443,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6444,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6445,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6450,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6452,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6453,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6454,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6455,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6456,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6457,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6458,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6459,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6460,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6461,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6462,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6463,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6464,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6465,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6466,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6467,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6468,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6469,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6470,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6471,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6472,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6473,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6474,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6475,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6476,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6483,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6484,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6485,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6486,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6487,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6488,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6489,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6490,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6491,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6493,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6499,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6500,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6501,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6507,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6508,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6509,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6510,
+      "label": "Other",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6512,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6513,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6514,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6515,
+      "label": "Other",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6520,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6521,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6522,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6523,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6524,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6525,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6526,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6527,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6528,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6529,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6530,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6531,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6532,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6536,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6538,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6539,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6540,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6541,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6542,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6543,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6544,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6545,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6546,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6547,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6548,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6549,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6550,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6551,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6552,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6553,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6554,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6555,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6556,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6557,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6558,
+      "label": "Nitrogen Deficiency",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6559,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6560,
+      "label": "Nitrogen Deficiency",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6561,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6562,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6563,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6564,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6565,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6566,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6567,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6568,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6569,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6570,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6571,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6572,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6573,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6574,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6575,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6576,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6577,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6578,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6579,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6580,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6581,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6582,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6583,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6584,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6585,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6586,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6587,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6588,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6589,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6590,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6591,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6592,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6593,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6594,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6595,
+      "label": "Diseased_unspecified",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6596,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6597,
+      "label": "Diseased_unspecified",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6598,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6599,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6600,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6601,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6602,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6603,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6604,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6605,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6606,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6607,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6608,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6609,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6610,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6611,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6612,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6613,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6614,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6615,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6616,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6617,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6618,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6619,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6620,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6621,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6622,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6623,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6624,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6625,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6626,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6627,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6628,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6629,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6630,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6631,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6632,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6633,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6634,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6635,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6636,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6637,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6642,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6644,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6645,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6646,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6647,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6648,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6649,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6650,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6651,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6652,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6653,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6654,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6655,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6656,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6657,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6658,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6659,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6660,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6661,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6662,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6663,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6664,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6670,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6671,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6672,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6673,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6674,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6675,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6676,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6677,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6678,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6679,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6680,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6681,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6682,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6683,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6684,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6685,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6686,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6687,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6688,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6689,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6690,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6691,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6692,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6693,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6694,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6704,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6705,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6707,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6708,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6709,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6710,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6711,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6712,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6713,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6714,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6715,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6716,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6717,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6718,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6719,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6720,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6721,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6722,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6723,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6724,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6725,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6726,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6727,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6728,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6729,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6734,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6736,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6737,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6738,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6739,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6740,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6741,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6742,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6743,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6744,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6745,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6746,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6747,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6748,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6749,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6750,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6751,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6752,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6757,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6759,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6760,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6761,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6762,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6763,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6764,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6765,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6766,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6767,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6768,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6769,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6770,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6771,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6772,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6773,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6774,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6775,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6776,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6777,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6778,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6779,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6780,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6781,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6782,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6783,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6784,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6785,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6786,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6787,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6788,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6789,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6790,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6791,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6792,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6793,
+      "label": "Healthy",
+      "selected": false,
+      "reasons": [
+        "no_cached_detected_roi"
+      ]
+    },
+    {
+      "index": 6794,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6795,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6796,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6797,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6798,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6799,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6800,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6801,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6811,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6813,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6814,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6815,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6816,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6817,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6818,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6819,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    },
+    {
+      "index": 6820,
+      "label": "Healthy",
+      "selected": true,
+      "reasons": []
+    }
+  ],
+  "diagnostic_only": true,
+  "new_encoder_inputs": 0,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false,
+  "model_promoted": false,
+  "source_sha256": "317a2949243d80c0b2fd1d46f86246de83f045f1af99aebf4528e56fd0e1d82d"
+}

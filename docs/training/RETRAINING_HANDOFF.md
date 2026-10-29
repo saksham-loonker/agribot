@@ -1,5 +1,13 @@
 # Agribot training failure investigation, recovery, and Android integration
 
+**Latest continuation:** [auxiliary supervision and missing no-ROI coverage](NO_ROI_AND_AUXILIARY_REPAIR_20261029.md)
+records phases226–248, independent checkpoint backups, explicit attribution
+corrections, and a newly identified training-coverage gap. Whole-photo encoder
+adaptation included 20 Healthy and 15 nitrogen-deficiency training photos
+absent from earlier exact prefix caches. The matched adaptation and target-only
+OOF calibration also failed; this whole-photo family is stopped. Best safe development policy remains
+19/40 versus the unchanged28/40 gate. No model export or Android replacement.
+
 **Latest continuation:** [full-feature, bilinear and spatial-colour controls](FISHER_BILINEAR_SPATIAL_REPAIR_20261029.md)
 records phases 220-225: eight model controls, 80 additional saved epochs and 576
 cached routing checks. All fail the unchanged gate; best safe development policy

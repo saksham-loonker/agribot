@@ -1,0 +1,8 @@
+{
+  "archive": "artifacts.tar",
+  "bytes": 493168640,
+  "sha256": "3fdf9dab2462156c9b53db5359d2ce1effeb73dc628c6837ce8107dde105343f",
+  "verified_artifacts": 228,
+  "all_member_sha256_verified": true,
+  "volatile_prefix_cache_separate": true
+}

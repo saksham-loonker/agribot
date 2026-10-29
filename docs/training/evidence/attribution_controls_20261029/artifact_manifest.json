@@ -1,0 +1,858 @@
+{
+  "files": [
+    {
+      "path": "phase226_failure_attribution/result.json",
+      "sha256": "1ffe788cc676ef959a800a0d9ae7d2574b85cbf27a28cc030c861690796b1c4f",
+      "bytes": 80313
+    },
+    {
+      "path": "phase227_paired_view_controls/result.json",
+      "sha256": "8344cd1abdcf7dcce88129c9431937ef942dc90d5d43bd48c5ba36397b1fef8b",
+      "bytes": 1771
+    },
+    {
+      "path": "phase227_paired_view_controls/protocol.json",
+      "sha256": "8b4558559b488969aac0a699d5062817ba5d5fb01a230c0157312a521c9ed14d",
+      "bytes": 93671
+    },
+    {
+      "path": "phase227_paired_view_controls/conditional_rbf/predictions.npz",
+      "sha256": "fa154f2b44d12e773a144fb8dcf4654239ad29f83a9cbdca6ba4185e3b6b1787",
+      "bytes": 19992
+    },
+    {
+      "path": "phase227_paired_view_controls/conditional_rbf/model.npz",
+      "sha256": "4b2edb3ebcc3e3d57b2dd27b89b2a8f1ef34c04384852ddbcfba95a14ede05c3",
+      "bytes": 64693666
+    },
+    {
+      "path": "phase227_paired_view_controls/conditional_linear/predictions.npz",
+      "sha256": "a66a9a8a35f239471d68af9b49cce419a137b8aae2165b77cab6cf727a087c9e",
+      "bytes": 19992
+    },
+    {
+      "path": "phase227_paired_view_controls/conditional_linear/model.npz",
+      "sha256": "983a26b791007ef9e64de1faa665e40fb3c847b5a3ab3ab01d0af58d2eebf7a0",
+      "bytes": 47809
+    },
+    {
+      "path": "phase228_generalization_regularizers/protocol.json",
+      "sha256": "81d6bcb1050723d67734a46c08c2135ca74f5922a05e1cb596e21d4b5822c827",
+      "bytes": 486890
+    },
+    {
+      "path": "phase228_generalization_regularizers/result.json",
+      "sha256": "10260b38485f0fef11b719e11685b917740453cfd28e58362d4499d3d4084bfc",
+      "bytes": 1960
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/predictions.npz",
+      "sha256": "81ac91d9282c90199b2496f4ca5f49da7748e7e6ad7ae11d859abee2d6847bb1",
+      "bytes": 81954
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/predictions.npz",
+      "sha256": "26ef6559a4fe06ab97fce412ef36ee31f27bc2c9a54e256881b93d98b91cf455",
+      "bytes": 81954
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/predictions.npz",
+      "sha256": "27f577d4a4249b3d4e6da7587b80a81d742486ad292a7ce238aa7bd70eb6541f",
+      "bytes": 81954
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/fold_1/complete.json",
+      "sha256": "c078d701c42e92e06807e8086a7ca04563c1120d44befb263c06e96da251264b",
+      "bytes": 3211
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/fold_1/last.pt",
+      "sha256": "20d8270684d92c3abf19d05b80893f4201e12fb1400c794979a4ec6adea3bebf",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/fold_3/complete.json",
+      "sha256": "32595c0ade160e786bf28181fafae15f0f3924a3b0aa181362e59c02d8fdc2c3",
+      "bytes": 3225
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/fold_3/last.pt",
+      "sha256": "690e96a65f7c02e5803b141aa9f9ec23e26e212eb2935cf4e99223d32fcb00f0",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/fold_0/complete.json",
+      "sha256": "2ee882d2218b6bf5658ab85d06bd3cb2f7cdedbd48f1ea9b70eb2d75752b5385",
+      "bytes": 3222
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/fold_0/last.pt",
+      "sha256": "d1e6dd4e1c7f7bae5742950ced6514a8b3eaad58158ec3dc1f8ec28802dc1557",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_020.pt",
+      "sha256": "672f33c0863e420ac3305ccc7e77fc396c4f25f1c3fbf6153b54ffc6acd04bad",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_032.pt",
+      "sha256": "9545d45aada1b3045e438d3b2d3976d6220a9bc93c8c74572edb965fcc3cc4e5",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_010.pt",
+      "sha256": "c03ce18008e84f2f644b34ca9a1e17add4ac4134188d310f44b67cf5043391c6",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_001.pt",
+      "sha256": "1277835d446243660364269ba2e2cf18a76b7780d0e6be08e0f6be538d3d53fe",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_012.pt",
+      "sha256": "a7082654cb7063fa766383f8803b3c7ece10bf07ea6bd4373ef7e6cba710655f",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/complete.json",
+      "sha256": "76e294e8dab4879fa3736447b44aaf2afc122b0e2ed341933eaac93ba9ba2768",
+      "bytes": 3208
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_024.pt",
+      "sha256": "885c0b78bd77a221063699ac6d61cc6943e94922dddb7838c1aa184e95e25409",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_011.pt",
+      "sha256": "47538594dbff65559accfd3d15a97645063842484e76fb09b1e9adf97530994a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_004.pt",
+      "sha256": "e07a23522e67e6e6bd2079d837302be43b1976e839998daab0e7b5fd8a1be7e4",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_005.pt",
+      "sha256": "602bb1887cfb8e2df97dfcd090b83ed6e00e45f1e8a307244ac18a6314056e91",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_009.pt",
+      "sha256": "2bec6e06b88a78dc9835779e119d2c1525cde4cc9a434eff73a42bbfc9cd61fd",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_028.pt",
+      "sha256": "d28342748d09688fd77b5a4770ff22abbd7a5226d098e7677c3809754fdba0fb",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_022.pt",
+      "sha256": "438e90b31112f4be8ae852ef2d35a3aa9833be9a06dbafdf26a59679ec7586bf",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_037.pt",
+      "sha256": "576d6263319e5a351e123ab303bec8722a3891d6dd45604343dbcb4801c81c4c",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_021.pt",
+      "sha256": "846539da0fbb6c595233a2077cc85ecd66b74265d509b858b1f11e53bdd8a504",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_033.pt",
+      "sha256": "bbceb34d95295b3297d9b89c1db6c4595a88321f91f6875e2fc899812e58bede",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_025.pt",
+      "sha256": "cd2debf7ee1927f0a721179b54332046a1a9edbb69c88006c073405a14acb18b",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_019.pt",
+      "sha256": "bcbc368e4d5c3acb151e1ef7097360d8ff8e22928cbe0e2ef217e29729374f09",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_036.pt",
+      "sha256": "f3ae5412bec068e2b374c1d5d29d3c62c2bcc25fd10378806b56b5d2ce4398ad",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_035.pt",
+      "sha256": "fa868580d798223b2b8ca3c8ce2b1abd857c7e79f48af0ececdb7ccd23a2cbb0",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_039.pt",
+      "sha256": "58a7bfcbc0cbd133e0764e6ee7b89ad17fea5def7e7b94fcca8db93561372644",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_008.pt",
+      "sha256": "dce96795e6ec374d90627fb0efd266c0a8a65e2d4357680a233430da28e0f341",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_031.pt",
+      "sha256": "232b1cc65414661a460bc38e1b0193068477f31a7e28fe4a553bab07c5156d64",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/last.pt",
+      "sha256": "4cfe3171f4fc6494c29ae1ae508f9ab8455e9d220661adfcb942d680ba6d1015",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_034.pt",
+      "sha256": "8208f964eca62d86dd786dbe92c6b1529376d0c9c99c79720186e6e917b5debe",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_029.pt",
+      "sha256": "06f75c91c1ef973f76c1a8eea795a71ffab45409d22302986756b526e1ce55d2",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_030.pt",
+      "sha256": "04f7f8bdbce26ddfe631332738d4f69016d66c19f8b0ba299b3fda69f5261e22",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_015.pt",
+      "sha256": "5b812e5bc8e6535fdda2678be51bf8643df804f6b47dd3f14479cfcb17502777",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_027.pt",
+      "sha256": "34a7eed293e2ea11475fae0c66cf37b96f2b357a01a015fc3e795d5fa85a5f2c",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_018.pt",
+      "sha256": "ee42ba4153a43f6ae2a18153205040b1b543ca4a532d1001279b7c30e35b003a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_006.pt",
+      "sha256": "d868d3431c664c5bb6d027e89b093b783cbaecfcf3903c1e66d63dc0d48a91af",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_013.pt",
+      "sha256": "ab6b98b2e3dbcef5e21a663386adb5189ff32537244feaacdb8193b2dd7858c7",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_007.pt",
+      "sha256": "0ec39f93c358ef27311e0c013d8ba862f7f4ef4d610aa72a361a07952270e976",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_000.pt",
+      "sha256": "ee9bbab69492336c209b6db34ac8116f133daaf1f3beacea96493112bcfe1d44",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_026.pt",
+      "sha256": "a70de2a8348fc4c7aea91b8739618a4da9bd88b7a8925c1ff800bbfbe84932d3",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_016.pt",
+      "sha256": "c1a4952a5fca8dfe33f76dea2a6470fd32c8d43574737c626785049b443ae61d",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_014.pt",
+      "sha256": "cd8311c760f2335618caf84cbe15feead26bc76e611626d040ce14db5de7aeea",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_003.pt",
+      "sha256": "d3ef229fd1077609e125e6470f26becbc8306ab6110e9edfc0636e67ea3ad5f1",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_038.pt",
+      "sha256": "184137af9f8358e65461a7e9ced68345329922264607e85b32e68e56f6cb28e7",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_002.pt",
+      "sha256": "012bafeb95c7d69eaed2728acd544a917ddbbf952b2c99e9bc65dc178a846106",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_017.pt",
+      "sha256": "820bf98aa468335d7a5275ec30c8b3cd50bfa413bfb9068b57e9fa13ceb3fc5c",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/full/epoch_023.pt",
+      "sha256": "6e6b1ece416b7a505615cfd79e9b3dfb42c07317893818f29919a1dd782df394",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/fold_2/complete.json",
+      "sha256": "b4d7df4fc2ba788494afe52d6cf39e7ff746e2ad557f84ff207efe9e8c347af6",
+      "bytes": 3218
+    },
+    {
+      "path": "phase228_generalization_regularizers/spectral_decoupling/fold_2/last.pt",
+      "sha256": "27c34ea02206ddcee52f66190f057a1d472f8e3092ceae3d8bbe630c54d05f9e",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/fold_1/complete.json",
+      "sha256": "1ce39a579ad2ba88fc7d8a890b22a80969c0cd5f90c914d75b8b21a7cb589dce",
+      "bytes": 3229
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/fold_1/last.pt",
+      "sha256": "32520b05ef637441400b5d36d8b412baf0792bd71911aa798980c325aaa46869",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/fold_3/complete.json",
+      "sha256": "66665d1644799b7cbe2602ae1a57ca0f9528b0e62e85541556cf66c160cc8f3f",
+      "bytes": 3234
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/fold_3/last.pt",
+      "sha256": "c3e85c4b96dc1af31f1d7f985e93c1738377a2fd3e3283dfc33b33208e6f28ac",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/fold_0/complete.json",
+      "sha256": "93a30785fac00a6ade893cfa2c4f8dc71a6be1f967f867f2eb02da988ecd83dc",
+      "bytes": 3238
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/fold_0/last.pt",
+      "sha256": "07fb66ad56278bb5f42d8d128d2861bdcaef800f5e0f48713ab2e8545e0ac5ef",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_020.pt",
+      "sha256": "8e876c3eeed1a386b95092b375c309533a5da82995294b5e577ffa5b4d02deb1",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_032.pt",
+      "sha256": "73ff7f59d9f627ae934eeff745038a8683899fe8ecb210e9f43d3b4017eb71d7",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_010.pt",
+      "sha256": "3f78b52e1d89cb99bb24fd2af1fd342f26bb21bbfc6906d6aab3191f0a681635",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_001.pt",
+      "sha256": "f365bba37107ec23efccdbd80902df86ff820a8754f0e1d61dc623dfa274d4f1",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_012.pt",
+      "sha256": "6f7cd656a732f0c98189e889934c0642a46dfb5e319c39af064d6a73147239e6",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/complete.json",
+      "sha256": "c9726e7118b5366bb472b56dc8abd2022e3675fc72e7532a6c2c50cf77e4dd2e",
+      "bytes": 3225
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_024.pt",
+      "sha256": "20692d6ef36e3936619d7a458c34288318bcfe0fcb9f93da348c9d4d3d2474aa",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_011.pt",
+      "sha256": "209b1a596493ca0e2ce7a0ed950e3e7bee481d46a680e86e24e0102c5c344d5f",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_004.pt",
+      "sha256": "e61111f61c828f16093eace3076401139f50e1d809414502a53dc210938a3f1d",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_005.pt",
+      "sha256": "1685f757c77d233e729348e812a9b952a4e029f1a9c3f9c3de08668184a1ba99",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_009.pt",
+      "sha256": "75d28bcc9a4f2826f36917873a7686cba15ec1bf866431f32faa45662cc07856",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_028.pt",
+      "sha256": "56c1cc0996815b67e458b720caa05cc023a57e035948faf5061264b7d9050459",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_022.pt",
+      "sha256": "bde54a3a91ecb9b469685febb51ca86ca9e9e5ccadb96382db1ace8779b6c607",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_037.pt",
+      "sha256": "60f8cb5c809207e3183ff51836fadf7d5694ebd42a3334092d69b506f113dc28",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_021.pt",
+      "sha256": "b4a79fbbb452cbce595b89c29d7f96a6c5533c94d4d80e436bfa58f009ce1026",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_033.pt",
+      "sha256": "8364ff42dce1f12b1c95a5657b79094c6c727d0b4ba2409a54d1da0100a2a945",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_025.pt",
+      "sha256": "2e173611863948940f038b2d2f32fddc0de77ce7e08be776c6da180370d5f303",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_019.pt",
+      "sha256": "41d589c28c446898eb1ef325a6dfae13db89d0f848febb130b005fbc199fa16d",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_036.pt",
+      "sha256": "6ff3045bd17076fbe1e49b2f3b550f24db17e6c489a734aaedbc8eb0e85c5d6b",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_035.pt",
+      "sha256": "8e194578988ce14fc250b56d6cfc5b91f82ea7c4f8d85ebc1eafe339e9012f1b",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_039.pt",
+      "sha256": "604bb196594cd03e42f55fea8875cb1dbb7ec19166267be17d7e8156f694d07a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_008.pt",
+      "sha256": "de3c36b9dae3ad5ffa60c668d4a6742210b5b168337e5b6ef58643bd2d3f89cd",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_031.pt",
+      "sha256": "aab52ea93542b05df936ee9827cd2ccbd62e37718ac68f6c60631897c42cd289",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/last.pt",
+      "sha256": "65790f4f4b0591dc3731adc204a5cce1b85068b850acafd19c2536ac62ccba67",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_034.pt",
+      "sha256": "b1cf4af5a8ce95bc693d1c24a9f39159a40228e697a3fb4f34341ad6b37aa196",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_029.pt",
+      "sha256": "7badda36e39de73ea958d0902cc0a3c916116ae2e8a4fe670bcfbc076025a617",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_030.pt",
+      "sha256": "91fdc2b37f23c973efab648794bff4c6a0b63d151a3127c9630846ce6eda6fce",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_015.pt",
+      "sha256": "25cb2338a9d2b04ca6bef0fa60abceed9e1a8101d97682b84ab8f764b0f7056d",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_027.pt",
+      "sha256": "c41cfe6139a7d608ad6c8fcb240170c59aee366c07e5aa20029d8138cf9794ea",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_018.pt",
+      "sha256": "bf96b73afb6f089cbdb9437eab9bc45f13ec23bc56d3c1912cfacdc67bfe1cae",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_006.pt",
+      "sha256": "ed24ab4c4c0afe14aa2307e3dd296157832ec4e0b8832136253ecd4f19f82ce9",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_013.pt",
+      "sha256": "445eb72f0f8e4011baa411d2ce9cd5479d4c0af9c2bd8bb79638d8a629f64093",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_007.pt",
+      "sha256": "2439346fd5bbb9c3250f2f6bc398b95cbdd0c3e54d94ace2b0aada0c18aa0507",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_000.pt",
+      "sha256": "7dcd2f70c7bde098e10cd3d453a827828349e91eb17765c36d83169ccc6865ae",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_026.pt",
+      "sha256": "208344caa2472e92744cb6f703aece5080dddeb36f327482fa60849d3a4a793a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_016.pt",
+      "sha256": "fa7152b728b1a77d92ccbd8d22da977ff994963c238d747e2f7abe916f6ba5c6",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_014.pt",
+      "sha256": "7e6dec5da1ae5f74cc6b9c791871b0652ca44d2ab99969f8a67dae231575b5d4",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_003.pt",
+      "sha256": "3b9d898060cb3ce6922a6548b42b1cb1084fb59f96fd511aa545436723e307da",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_038.pt",
+      "sha256": "80c104736c0c233a8c4041c09bc0b9dabb86d88263d2fbecb1716550e7c938fd",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_002.pt",
+      "sha256": "a6254019d400e2aebbadac72f7509e32cfe028a469bcf75178f997ce949d6f47",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_017.pt",
+      "sha256": "218c9fc4a9ca17b2ad5e8c7f5b0ec6e6ee497435a7e08b356a89cdc1694e3e95",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/full/epoch_023.pt",
+      "sha256": "955a8d364a6bff7e81f5a733023daaba75f5e679125203a70b65811ccac3fe73",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/fold_2/complete.json",
+      "sha256": "f32103c2314f1932f5a975154de2da3998e2ad311ed298489ce9618e28abb2e1",
+      "bytes": 3235
+    },
+    {
+      "path": "phase228_generalization_regularizers/cross_source_same_label_mixup/fold_2/last.pt",
+      "sha256": "da80c3a22ea573334e5aff96427f7e9aab7086af809218e546a936b4ce049f8a",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/fold_1/complete.json",
+      "sha256": "484434ec79186d8d4bc9bf86265cd2063db569eb72af8105e8c4b5a4b4b4c028",
+      "bytes": 3224
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/fold_1/last.pt",
+      "sha256": "155597bfde2d37e5b84f11c6ddd1bcbcef3445a3a79c7233729cc7e5b6efdc17",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/fold_3/complete.json",
+      "sha256": "3402663b7fc4b1d3a2d64cc870f923622b4d391f589fd4af24cd00e5481d07ab",
+      "bytes": 3237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/fold_3/last.pt",
+      "sha256": "81f4a2e216c2fc905ae56d11cc1229afa1d74d56e3356732a0236b496699167f",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/fold_0/complete.json",
+      "sha256": "efdc60b0e64c71084cb94b0ea39066425572f7b956fb5eb75b55e0375634a349",
+      "bytes": 3233
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/fold_0/last.pt",
+      "sha256": "5c1949355c3073f338c1219c62a31e4650ec8e826366214e833309c6fa725029",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_020.pt",
+      "sha256": "a0fda6adbfa5900a5c0ce5e3baed7d559fba96661bcc29e5504471d50dc3276c",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_032.pt",
+      "sha256": "49f5c0590bc72302fe7c48d84939a141ae4b44bfbb61fe3d209f1ec1bc5404de",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_010.pt",
+      "sha256": "c6914cc5d8c802db43a975f94f3f3f5166c9e881f742a17d7913ffd57450a2a5",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_001.pt",
+      "sha256": "cf64855ef4d1a634a666af1aa77ed38e5ed6746fbe2e170b47722fe54fd10afe",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_012.pt",
+      "sha256": "13113bb69a382bb5daf57e25de5962b0e4221e3b71188b3d284971f000568708",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/complete.json",
+      "sha256": "7ed0e928745ddc5a0b4fa7463129560ad3cb118568165ee1beea6283788550d0",
+      "bytes": 3222
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_024.pt",
+      "sha256": "1965bb3a49bb78723162f1c07b0789f64daee5700ad4d879d0a6901275691368",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_011.pt",
+      "sha256": "9700f6f7d10477f9f47a48acd069224210d936422e1af6b284b726d5488b6489",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_004.pt",
+      "sha256": "b080a6b6e66259a8e6eaa93fd360ca18d4d32f60bae94a6b20412e80860dfcb8",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_005.pt",
+      "sha256": "6080607bbba294d865d3b5a2f59ce3fa6c34952fc18b92678df7dd93522ce35c",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_009.pt",
+      "sha256": "d03bd5c891934a1c5e07f8a784c1770fec0c8ad8cc35fc3520c261585ba9d6dd",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_028.pt",
+      "sha256": "f7e515f320de988cd3626bf700f36163f33bd1a832e241716990b0a5a6c8056e",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_022.pt",
+      "sha256": "c7d21dcb18b33f11bc5eafcc621276bdc790130ed4acd329559b478f8ee2757a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_037.pt",
+      "sha256": "6b8d1d276fa73fa744a6be54ead3b6ea5ac90318470ebef71ddeec59a0440f7a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_021.pt",
+      "sha256": "8d47609c71e7f8b845da6642a0c8570d3dababcf838e845883e5e1775985a76b",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_033.pt",
+      "sha256": "fc780dd089df1604f85ec0c215018b399286ec2cd5df24610c32be41c8891ce8",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_025.pt",
+      "sha256": "e46701c967769f0914e2d633e0bf9c9fc4f319153c958f639c4a246fec2dff15",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_019.pt",
+      "sha256": "0173c9a7f09ce1d045b13887cb57a0edca6b908e7a0269e60bb02e5dcdcbc598",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_036.pt",
+      "sha256": "8fcd385ec7ae0808206af2deec56d9f6050e5ede7b23011fb199a80836f9709e",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_035.pt",
+      "sha256": "e5922091f4a291a6756059234bffe8b4868cc27092a136baddb285e3785ce691",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_039.pt",
+      "sha256": "6091d60ab977279502a9b6fb3a9210ff2355e791a6f3f08d74bdf176654a3aff",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_008.pt",
+      "sha256": "e6deaf4438c2691988282c4bfd328f640ed130ffb3c7a1318b70916573fa458a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_031.pt",
+      "sha256": "3094ab5e966b35739e89982de8c547d04e100878901b4dbe60c52bf2bbbe0b06",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/last.pt",
+      "sha256": "f97fcecd91d996af439ef08166ce2c13d5838fae0636c4a298154a0b2fe41d6b",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_034.pt",
+      "sha256": "054d6d8fec8d5ac119720002cf80e3462f54aa4217cb05864ba9043eea13cfe1",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_029.pt",
+      "sha256": "8a6586c2d6fb1543bdfbf1e3b91df536b724c5ebba5bb3682e2d24cb6637bd0c",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_030.pt",
+      "sha256": "4d24916cfdbe2a37d6d7d1d7471253f4f7b9ab330d41d7a5a76db0f8764dd191",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_015.pt",
+      "sha256": "3e16bfe02e9f7b96c6159bca3d703bd21f38de90807e688dba3b27fa5a396b63",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_027.pt",
+      "sha256": "d71580b5f9858fcb3ae5c61d85c231b535581760bfe488fa800616b1efecb58a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_018.pt",
+      "sha256": "eb1ef22e1bf79b95723f4102555715f83ff9df429de109254e7b7f51fa8c6111",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_006.pt",
+      "sha256": "4ed56c5d4c0c2897cf89a500a46981c3b1205cf3c9a4abd68c055d29a06595a4",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_013.pt",
+      "sha256": "e6e858402193bcf93632f0cb5a0873abe533cc8e358987dae5911bf975795b26",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_007.pt",
+      "sha256": "626123d620a2db6d6c11efd0f6e8673ef18852816f430b74f391f9dc70b35e4a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_000.pt",
+      "sha256": "c1d527d7d7e178ede7be6f362cb09ccc394a465e26e729f2200d800960785fa1",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_026.pt",
+      "sha256": "e52e77b8b620e8714e2c672ff500b26e711a62472e98dc68c061ec100f1a237e",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_016.pt",
+      "sha256": "efafb8156f1198f6881ff99f95c562792adc171442e00e756bcdc281ac09039b",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_014.pt",
+      "sha256": "0632680992ac9d7f6b76bc817b5207c02949dc7f3a7ec3824b0437d738568a10",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_003.pt",
+      "sha256": "fc7f2738e49b2c7703da113a1007084df4a5e4a3a1b9c10560a37e83c4379a21",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_038.pt",
+      "sha256": "fd6650ee40d3167db4f7acf3ecf51464abe484a78cbfbc79320c57cc4043d31c",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_002.pt",
+      "sha256": "a3f5cc26ee858c0532fec214e4e4e44ebc41b965dad7ab7b4446fb9ae5b6115e",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_017.pt",
+      "sha256": "e7d99a6bd0205c431a6359c970c9b97e8264472b4caa159090c1ad1e87cb361e",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/full/epoch_023.pt",
+      "sha256": "df78320d0d0794c039cc24e4140391fafeaedf20724c01e9912c22218eba890e",
+      "bytes": 736237
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/fold_2/complete.json",
+      "sha256": "0ca9f0d1484a197196b8cda1fcf403b2ec8bd5a7fe3289e6346befdb4a813cfa",
+      "bytes": 3232
+    },
+    {
+      "path": "phase228_generalization_regularizers/matched_erm/fold_2/last.pt",
+      "sha256": "e3993e9c3fdfbdfee229648626344e155e5e80301b147410e02e8435da05ff34",
+      "bytes": 2219509
+    },
+    {
+      "path": "phase229_domain_conditional_stack/protocol.json",
+      "sha256": "713899add3ab27e8f95df65a0785f7e0b34ee61569d8ac91998de5020bde3a8f",
+      "bytes": 103512
+    },
+    {
+      "path": "phase229_domain_conditional_stack/result.json",
+      "sha256": "2d36fed0f15b9cac3661ec727269ce2e527467985bcd197f328a688cec1117e3",
+      "bytes": 1671
+    },
+    {
+      "path": "phase229_domain_conditional_stack/diverse_unconditional/predictions.npz",
+      "sha256": "7e017e7ebf3c5a563b48fbeea5d7f16672914e30d03424df48798bdb2a14198a",
+      "bytes": 4926
+    },
+    {
+      "path": "phase229_domain_conditional_stack/diverse_unconditional/model.npz",
+      "sha256": "8b5f4303950ae41c49015e100951ca92e1207672689d36a86c3e7483d6d6ad95",
+      "bytes": 16649
+    },
+    {
+      "path": "phase229_domain_conditional_stack/single_rbf_domain/predictions.npz",
+      "sha256": "9edf0a554913ec6f780128cb31f43243650726ade5b7f24c001f48a1d7625fac",
+      "bytes": 4926
+    },
+    {
+      "path": "phase229_domain_conditional_stack/single_rbf_domain/model.npz",
+      "sha256": "7d841d1b2dd72fa1e22ba0b9b141486631260acc1e83c1c95b3251b15a808d73",
+      "bytes": 16449
+    },
+    {
+      "path": "phase229_domain_conditional_stack/diverse_domain/predictions.npz",
+      "sha256": "400b334dde0014cbe36087f2ad34086a9a896a3418c8692082096775d6add453",
+      "bytes": 4926
+    },
+    {
+      "path": "phase229_domain_conditional_stack/diverse_domain/model.npz",
+      "sha256": "59a9e95874a876b7fb06c4fdb85f09217cb289020dcf3fb9b9ffe3540bf96409",
+      "bytes": 16737
+    }
+  ],
+  "trained_head_epochs": 600,
+  "full_fit_epoch_checkpoints": 120,
+  "final_optimizer_rng_states": 15,
+  "model_promoted": false
+}

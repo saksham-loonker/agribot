@@ -1,0 +1,25 @@
+{
+  "source_sha256": "847bf09ba7d08ae1a1f3fc00e3b2379912cc644f1c9f2e4b06f9d5b90f00cbb3",
+  "archive_sha256": "54adee6acd78df7473a9271c007dd45c2b23cdd75fff24afaced13d09b3dabde",
+  "archive_publisher_md5": "ee699a9bc84dcdd9c78cba37f79bf900",
+  "label_mapping": {
+    "cucumber__healthy": "Healthy",
+    "cucumber__N": "N",
+    "cucumber__K": "K",
+    "cucumber__N_K": "N_K"
+  },
+  "role": "auxiliary_training_only",
+  "crop": "Cucumber",
+  "whole_collection_single_training_fold": true,
+  "app_eval_sha256": "8d5cf35135af9426f4cadc55f2a4aa49f5fe6c9a58d68296e75efc6b53d0f88f",
+  "canonical_sha256": "60987b10e4ab8c8372d51abd61d81b943ebc79a7db930e9858697b26b9535c09",
+  "prepared_overlap_sha256": "18aeafb9594dd53807634fe87be9a8a97d0e5b2a11b12faf4d037df8eda5dd4f",
+  "opencv": "5.0.0",
+  "numpy": "2.3.5",
+  "python": "3.11.9",
+  "input": "Original publisher whole-leaf pixels, center/letterbox224 ImageNet0-1 normalization and exact existing600px original/mirror grayscale geometry preparation.",
+  "acceptance_data_used": false,
+  "ad_independent": false,
+  "olid_independent": false,
+  "training_used": false
+}

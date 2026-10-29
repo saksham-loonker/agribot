@@ -1,0 +1,22 @@
+{
+  "protocol_sha256": "486eeab394bce2736471f4d2c5be087483457619ff2dc739ea19f5214e898c46",
+  "tokens_sha256": "c831f218b50428087236f7b11e71ba2e72d9fe4370aa051d24651a9de8329c82",
+  "tables_sha256": "98d7e10d7e652e6711a752b8d92f88221d4f959dea4779c618e1fb00d40633c4",
+  "reference_features_sha256": "cd7ce43c77997391c965cdade144e90b000a42b540e4b0be65d67e9863d94bc7",
+  "rows_sha256": "eaaf8da11a4320256bb72480b573ffa66022e45241c15b66b54e7dfff228f38a",
+  "locations_sha256": "d237f138ad9e74857621e8456542e54c6b192e76cf9d23d66a6cd9cfe32958b2",
+  "old_prefix_rows_reused": 17,
+  "new_prefix_rows": 2478,
+  "new_prefix_bytes": 978195456,
+  "maximum_original_cls_error": 9.655952453613281e-06,
+  "reference_prefix_error": 1.3828277587890625e-05,
+  "reference_prefix_rows_verified": 17,
+  "original_cls_rows_verified": 2495,
+  "completed": 2478,
+  "reused_input_embeddings": 1601,
+  "new_input_embeddings": 877,
+  "elapsed_seconds": 39.61690709600225,
+  "acceptance_data_used": false,
+  "model_promoted": false,
+  "cache_volatile": true
+}

@@ -1,0 +1,13 @@
+{
+  "archive": "artifacts.tar",
+  "archive_bytes": 187668480,
+  "archive_sha256": "cc76b21b4e9e0d2654d675b8e89054b8ca58dde1fb62e1f3902f62a05918e5b3",
+  "verified_artifacts": 170,
+  "all_manifest_payloads_sha256_verified": true,
+  "final_optimizer_rng_states_verified": 15,
+  "final_full_fit_states_match_epoch39": true,
+  "tar_prefix_mapping": {
+    "phase226_failure_attribution": "agribot-phase226-attribution",
+    "phase227_paired_view_controls": "agribot-phase227-paired"
+  }
+}

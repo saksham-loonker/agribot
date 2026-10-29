@@ -1,0 +1,1139 @@
+[
+  {
+    "index": 1508,
+    "source_file_sha256": "2d22f574a91dbe7027b4ab6df23cea760f6fca1eca83ea64082b45ab34036805",
+    "image_png_sha256": "b39122a14d9e82aaf9c66b9fd579295a35a1c7637753e24380048ebc63750f13",
+    "cache_identity": "f62dea505e030ce4b338dc72c3450323dcb330b6eb303bc7737c37e9b7433125",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 31422046029,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 1656,
+    "source_file_sha256": "8417a2906b260541334ba5609c64b062d00ebf20a57e72a9f0e410c0a992556c",
+    "image_png_sha256": "0635fe15769359f97ef96dac3f88165c5df2ddacd4d8bc975119c9932b54a829",
+    "cache_identity": "ccbdf15b46b5940da0dc41d5d6d5b3316e380df287df9658790e392aff4d9125",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 557381508,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 2856,
+    "source_file_sha256": "54781cc69b0fb29618baa1b9a8c48fbc6d23d36e51a94201478b884e6e84b566",
+    "image_png_sha256": "ae579c7310b25b1ca0b00583b21ee88ac1d8a916e8db7b11594e1b22cc59e7d4",
+    "cache_identity": "82ce936aad90f846cb4c6dd635a6e347503470a3a00e0357dd4020d993ba4e02",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 541387014,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 2875,
+    "source_file_sha256": "2f49c66c14ad5c07330c46cbf54969195d0eb3674238e74131dfdaa14136c825",
+    "image_png_sha256": "6b9afaf8d64ee8ac697f77c4f4239e2e6360fc2e01286f75ecd7e8a357b6600d",
+    "cache_identity": "0cd73953ec5205e97791bcff698a146734fb25b7c99004b4bf60881444d2e8bb",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 550621235,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 2884,
+    "source_file_sha256": "de14a100aa73bfd26f03851c03282c66f79a57c6f6d057d08ca129253de67bd5",
+    "image_png_sha256": "fa010449d142dbe662ae204330a9b01e18791590fbbce990b238eef56935c41d",
+    "cache_identity": "757329fb0af91ed4ae055d7a8f7e05d0038703f01f4c1f48ab6384012c77089d",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 544350968,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 2959,
+    "source_file_sha256": "c185d8707a45afd518e1837c216a9b3034adb8ebd849c544a1d599e2cd13529d",
+    "image_png_sha256": "480a90492436c33d693c1e851b70c3fe66328d01448a2f5ca5d3ca57a0fac04d",
+    "cache_identity": "3b08491ff1d64a1acd0724262be074d31090393e3acea000335cf0443b047b93",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 592276078,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 2967,
+    "source_file_sha256": "b0ef07ce1261a805007b6466d0e538572f7b689b269d2ecd86e3aa8575fb5951",
+    "image_png_sha256": "62bd06bd9c5f6be10308a9b5f0edb3eacf6a9ae10560eda9491a86768569d541",
+    "cache_identity": "6981bb5c2c405ebcc8b2a769fb20a3ee9935965f2afee9f7566b11dd98d33e5e",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 587545452,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 2987,
+    "source_file_sha256": "64060f271c2129d795cf7008f7266a4ed0631efb0a9a83788cb597abcad0d2d4",
+    "image_png_sha256": "c3f0ff01579680e9129908ba878fdf8ef2ef1f30f5751edca18fcc179668d9e6",
+    "cache_identity": "0edf0efd3c7571d28c723a28fc5418b3ac4051b0b5b6322f9a04fa52b4f54763",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 542679244,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 3011,
+    "source_file_sha256": "e2cb7662629fa5ac8615f60c524fc3327d8bbab72736bf18ad7d85e0e3d1c6ee",
+    "image_png_sha256": "eaa4152383b371ab311333ec87991343fc23b56f4ecad6dc9163d1dfeca353a4",
+    "cache_identity": "2bc3460f2a3054281b9f5a703704a5cb4bf15dfef7c5e3b80567e21a352f4c10",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 594984166,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 3025,
+    "source_file_sha256": "30422c93024a693eefd0512819505ee946408b75adb04ec1ad90b46495555641",
+    "image_png_sha256": "337e4b75f5e211486db6379fb42b89fb8bfa0ece34143879c829372ff19f49a6",
+    "cache_identity": "fc5162e396accefa9958f917af6053fb138303be258caebec5a256b64f911815",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 597322948,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 3050,
+    "source_file_sha256": "ea2fb407a8e90b46ef31a5a1bf0593bc40c7086ad795987f9c0bce749cd00682",
+    "image_png_sha256": "68a83c010d91c34755d9b058536c8e232190922cc1b7b00b72bd896ee6867738",
+    "cache_identity": "67943808f27579f8c489f6aa5f0f2195cc285694226bf4cb3c5bdcac515f9a77",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 594852596,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 3065,
+    "source_file_sha256": "814451429053e7a748080e8cdc501248d70b117b494a7972345cb5ee8d95b1d8",
+    "image_png_sha256": "550501f76de3a64352a43c0aedeba7db0b0705a25f76ea9222abfd0a1a656102",
+    "cache_identity": "7daa080efe49a2b24a9559c50f9c2de6499e6af71b35b94ed6964d7aff376533",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 606520919,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 3181,
+    "source_file_sha256": "121b67567c846c616538cbb928ff942bd3083a916f3854fbcef7bfb08b703e18",
+    "image_png_sha256": "8b6e0e63ee8b50eabd303eebd451cb369a575405e3d0c509c08f216ed595a0d7",
+    "cache_identity": "f3012889748b5a0e77380651631efc82f08655ed96e57284223877e7fd1d4dc9",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 550262090,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 3914,
+    "source_file_sha256": "bb8cf41ac420fd2a904b9ffe2c16ca7deae1924f78562a482d881024c6216a2f",
+    "image_png_sha256": "c7dae156833c555eb647f44fd52e9b3eb3e07e53f8ff725e6d075812a4c8d7d5",
+    "cache_identity": "379d818295b1b37412827b9be7102c3e9880829bebc6a631660397063818f519",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 559727398,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 4330,
+    "source_file_sha256": "c9e47931930cac3a11cbd77c7ad4aa39aa4b9a7b97323221aa0371b4970be3f2",
+    "image_png_sha256": "bb08daba0d77099df6362483f6f8024c6081c5412d5f46d210c6b57e300dba7b",
+    "cache_identity": "9351e669111f97af5a5e709ad4ac4414fd9657d2687b1c35e25f2694336c0bce",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "abnormal_chlorosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 679208732,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 4394,
+    "source_file_sha256": "5598048b9d63ebffb542274bb7246a0e869dcb9cd7a5978665fb067fc128997e",
+    "image_png_sha256": "11648d1cc50b086018d571f21d4742df85354e7c051d2bbfbeffdab3640508f7",
+    "cache_identity": "c5545d1e7e49fe1439c263cc3f057e7cc95d3d3599122813cf45cee029f60a73",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 668118650,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 4404,
+    "source_file_sha256": "84ff98036cf729ddb76b36523c6b8dbe1e4778d3148170d19b887be018e10abd",
+    "image_png_sha256": "5815148f6b5e03d88a34df715bc1bd3ae111858c46bddb0a66c021799ab2dd24",
+    "cache_identity": "5c47b30b28fe7894c6959c7d0c6f0dae6721e68e17b1b5be6d0c39c6c6305633",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "abnormal_chlorosis",
+        "marginal_necrosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 717711603,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 4414,
+    "source_file_sha256": "22e250159c698b3f47e4b4aa7238af02a5066098d6be5650a9e8d07c4ddd6ba2",
+    "image_png_sha256": "880a390f6133f50a083be42d5c479988e3aff242b53ac20456e1ce0d57e2c9bb",
+    "cache_identity": "1bafa2c878e9d55164ca4d8ac1ad1e0ef40860c402e07df6e6f954dce3d5f71b",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 584379609,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 4417,
+    "source_file_sha256": "35cd2fcb3701da8803466742a7a6621ce4bee5bb77e5e478a82544d22de09cb1",
+    "image_png_sha256": "229816791bad18b39c220b147916a798af3dcf01a25ea18c9766a5442ded0fd8",
+    "cache_identity": "e3d3e2fb2a8bd7ae11f1b07c129284fea125c757ff86800cf3c6d03859ef904f",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 768853013,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 4418,
+    "source_file_sha256": "0d9295ae33c7131d18484aced4f487526a857727ed241abd4c168284a4a80745",
+    "image_png_sha256": "2858237d537de0d4510132a4c7b5ebcd8213525318ed9a2dfc6073dc45ff1ac9",
+    "cache_identity": "96768917837e58b9fde7087954f51f60993da4fc5c2daca12f565cebaa8558db",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 845251262,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 4638,
+    "source_file_sha256": "607a9763b9969ab975b52411abeaef02fb791a7d08e8964910625d06da4a6e83",
+    "image_png_sha256": "9c2227ef9af8cefcb1b41d017d61a14f8c6c2ce00b13f016954d100363b5f534",
+    "cache_identity": "18bcec82c3db7959de460b1a2a0304759887165c9e2c349f0df5fce31af9d5bb",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "leaf_miner_tracks",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 780123272,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 5598,
+    "source_file_sha256": "db0c0f8fe903118e8f40cad2225eed8e1fceecdea91762254400b9dc116d3f41",
+    "image_png_sha256": "afd4a85b16626818e0d262f15a26d19be459981a056db6f0c7c3286cd088e84f",
+    "cache_identity": "635c76c9f7b5cd35e90c5e5f0fa0f0594a892eabb2e68158e48870653e6872b4",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "leaf_miner_tracks",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 794075523,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 5619,
+    "source_file_sha256": "c89add36b518ec4de59ed56018fc77d07475eb909bba63c1ac0be45696e1b353",
+    "image_png_sha256": "6ac7480319892ab9b10b0799c3214840dd6d51feac19b894f2b875834e8f6a64",
+    "cache_identity": "bb7a00aebde72c91becc999853d1ca8f2aa89b5c5f18ceb8933d7c2e193306a6",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [
+        "leaf_miner_tracks",
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "pest_injury",
+        "abnormal_chlorosis"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 862824637,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 5621,
+    "source_file_sha256": "cb02e85a90599340ce55de896c527e0a46e82ec31b191fbfe773c0fc3cdc7685",
+    "image_png_sha256": "ef64d02e476de1a003fb63cf2a27a2e7a14a71821deef1f42f540c176184a00b",
+    "cache_identity": "06bd9d454a12104f68be513d0585415704d4f7fe86f030fa8d3e48c5b7f2e059",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 572419328,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 5664,
+    "source_file_sha256": "72e4a4704ea2851af063b0ecb2252ef2d6afcaf7688f34da5500ac2cc6a7f49d",
+    "image_png_sha256": "f3c85f5c9d73bad0e24c9156fcfeebb7aa15654c7ce35957cf6433bf6a10202d",
+    "cache_identity": "c0f81d6b41721bd00d512312d3320e3da6ec0206c64ff49c8e251e10cfd26551",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "leaf_miner_tracks",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 758396796,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6204,
+    "source_file_sha256": "de86650d32cea7a91cac623d4312be6c41c9a42db2b45ff0b51e965ed74663a0",
+    "image_png_sha256": "3e9b67fccdd95eda0ced8563c84c5562ce896090601db7d8863c9e71ad8b7f38",
+    "cache_identity": "b2f370b358f9d2bcff75a49eb081c97ca8aedf5917d794bc491a92277f7dff3c",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 929998059,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6337,
+    "source_file_sha256": "f61259b1156d93d5018acfa5222832634adfdd5ec8198e56165d666f0f900f13",
+    "image_png_sha256": "169eee659ea483821d5e7fee2286f00e480a8a5e0a30310858c45c22979d5bd9",
+    "cache_identity": "f748576889a02644d00c85ab5c07d6de0ec1ec478907b9e8bff36272f622add1",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 928706645,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6338,
+    "source_file_sha256": "e3273749b08ed4f592731b19aac17464211f1e5d2af32ff9beb52a46b50c1486",
+    "image_png_sha256": "3e5f9b4e3642848abaddafa075f4eeadce7f66538396c1f483349a9436d19833",
+    "cache_identity": "150f391fa8a99e21812d2f444ec8776b32100e7854db3d8f31a46c7f1ac061d7",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 803067918,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6379,
+    "source_file_sha256": "fb7bfb5f2f066527321b547c32f8deeab63b141bfcfe151738c418e858c2bfa6",
+    "image_png_sha256": "8050c38161148194450b97254cac765e44db9d6b7f52509d50696948660755ea",
+    "cache_identity": "102ae0bcb0dee90d7e7188b42b7441f187132fa0193ce4bca4870678ae4fbd7d",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "abnormal_chlorosis",
+        "marginal_necrosis"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 825272182,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6380,
+    "source_file_sha256": "e391b831089409b657257d49afeb90fee9b519463babbf93f0cb4b8dd191c717",
+    "image_png_sha256": "253528ae8681324ad48c602643f9e0eb2ea9e4d0c8711f472bf57160d573713d",
+    "cache_identity": "76d2866c6d53ed4cb7118b5684676848a80f6af2cb3f095464f9d9af768d08fe",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "leaf_miner_tracks",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 917558531,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6381,
+    "source_file_sha256": "ba8ffeb5ef5a721727e444a1e5476c98e930586ad5ef573c5510a2793582d7d3",
+    "image_png_sha256": "3fe385ae73fadf4d77d8d88102805b5a8169bd1fa273eabb6f70d42c87d9d4b4",
+    "cache_identity": "75826fbe3aaf5539fee976128c3f1cc0078e6c7a6d56e8b1a4465fbaa4f4b8b1",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "abnormal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 882517381,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6394,
+    "source_file_sha256": "8afc7d2f42e6935a93f1d9c5361c8276f26131597967640dc9ede4f467cd86f8",
+    "image_png_sha256": "b800b09dfbbe16a3b0ec858048b3b16895f25020bec53e1fed17b2a8209406e5",
+    "cache_identity": "7d1c04fd332c411aeff662f537583e203fac4ef712c066e80303e1b644e085ef",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 690207780,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6396,
+    "source_file_sha256": "8b97352318f5b42876c362c37452c13a67b016bc6d91c40aa807f44b5762a651",
+    "image_png_sha256": "10973a1295b2f047e79a9970e4d34c3ddccafa8a116668309f433839f92aba1b",
+    "cache_identity": "7b514e14dd6ea505f1d8b1639a18fea12cd54af1389d1b51ce4a3b1a446b844e",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 890594540,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6397,
+    "source_file_sha256": "4a0e05801336869ea8e7ca6c069386f8cd81a722638a1616d3346be3f86efea0",
+    "image_png_sha256": "2be89e7ef85a541d111bdcd3c31bf7220764c5df442b314b3d9fdbd9b4f59883",
+    "cache_identity": "69f90c6737f779ef109172735010028e386bcb3daf6452e912f80260d78007f4",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 868790591,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6399,
+    "source_file_sha256": "e481d8310a1eb3fcbc71cb839a6ef7165dcfa00cfb745ada787b78a422e5a89f",
+    "image_png_sha256": "bff1a5798be7a8d7fc3ecde4aea3bf3da647275c9148095ff1f76beaa2eff54c",
+    "cache_identity": "650bd57d418baca5648f547d39002896a4bedd38f7dd6e5a8f1792ef056b27d9",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "lesions",
+        "marginal_necrosis"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 825655668,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6447,
+    "source_file_sha256": "5bbf4d49c2c853b2e9176ef159ac90c23b274afb0ac7198b2d111aa3700e1b28",
+    "image_png_sha256": "e554fed2307e89090e3e7c366ddae5e178e309339e1c7a72206b4fa4868aac78",
+    "cache_identity": "0d06e7e8b48912a0cb33fa757c9cdae1a7e97fbb4458c657d9a859d5d23b5fe4",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "leaf_miner_tracks",
+        "abnormal_chlorosis"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 801668571,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6477,
+    "source_file_sha256": "8fcbb9f25aa02d30c25c7dcd553d462ecb7d18c9c125696ba252e642e32b5565",
+    "image_png_sha256": "87f69823551bb482f0f2cd8e37cb7921f4a5f0810192b86ab1beec4e02a9242d",
+    "cache_identity": "f1625dd2f1f37fe5c31a66452159ee2d5dc1e94b6edefd4dd72fdb5bee191147",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 771455511,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6478,
+    "source_file_sha256": "3960edd750f2e548cc90bc9c7ccd17676064a70dfe65a4684aaeb4b0f5515b9c",
+    "image_png_sha256": "db047416515574cd9410e26e807d5e88f5b6c8ac9d65bbe65ef3db6a41e2fd24",
+    "cache_identity": "cde26820ce6d0bb958b0e42bd66b64118ab8d401698aefa42417f20aa3b5b48c",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 910240941,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6481,
+    "source_file_sha256": "50007aa4591d6bd727045d7bf7d3c0cef520cb2e2931c5870358fa058df508e4",
+    "image_png_sha256": "dd6a6afb61ef2816dc3e1b8ea6e1702e98425838f6ca336769d80dbe18cf1471",
+    "cache_identity": "958366342d7278adf0f2989878e5a47991d5ce16e01f1dac4bef228254e150f1",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 762889601,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6492,
+    "source_file_sha256": "f21df97a9d4db6f6304f7c11c23673e1047daa1aefcdeda8cc1c44960e84d082",
+    "image_png_sha256": "81b47a56ed771b946df2f1922375e0eb1d93f8b85879cbac1632044df6a3064d",
+    "cache_identity": "77b60b9c1f4543485c40b89526ed40417714e7a45643f1836d24f6b742e80f6b",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 908344862,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6494,
+    "source_file_sha256": "0aeae93d7621770de722f1f5874b389bd751d17618cb5876a7a2436618898f52",
+    "image_png_sha256": "ccec0de7442c98df0386baf22c2817b3a96b05c38ba9c16f9adcf877db9bc7df",
+    "cache_identity": "b1b22bec353da00a9268ab35baad2fd175909c5e453989b2570dc11c83f98354",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 769775799,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6495,
+    "source_file_sha256": "8e527d14c1d5437a58f4873f069ec1aa3194e3d25e68873946356d4bfb4d0951",
+    "image_png_sha256": "a85c221ebaf2250f1dda4bbedaf636847f6ccd79ed35f000220cce4663a4b4b8",
+    "cache_identity": "9bbb146306ad54b8326dce4699c84bc2e9fd535a719477b2eed6cd2a27183338",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "abnormal_chlorosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 777887806,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6496,
+    "source_file_sha256": "40845be95db292d87f520b33522e3486f36b1e8036911e09f83a47457bfad575",
+    "image_png_sha256": "90ca43b96fede2835a05972508b9a8ed7289014b132306d2722290dc8e408639",
+    "cache_identity": "f6a3f69ab47e071b13ec3ff6e585f3abc2fec9e09ae4bf170b20b867a3838aa5",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "abnormal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 875469856,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6497,
+    "source_file_sha256": "967e522fa2f79470c36cf35f67bc4217e579a1fb9f6f21f77b0c383c8e69674c",
+    "image_png_sha256": "ff884ee43421d1f251c80065656608ff32fbdf656b0da754cf502f788dae2967",
+    "cache_identity": "adf5fd1128e13d7a659d31f4735fd6102c2cf26ad3077da6fd1f6d4c8a765340",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 882381353,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6502,
+    "source_file_sha256": "adf18a20ed3001a2124a0e2439f3a8de9a70b23c58bf7b93e2666f59a57aea2b",
+    "image_png_sha256": "31ab47259997b73d6823e56657bda07a9a6028d5e0abe145994322ef3f9f14c5",
+    "cache_identity": "73317821950a6b549abbf4ecebf8f197f4c8f9d3e5ee66a94924debdc9e8338a",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "abnormal_chlorosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 764257729,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6503,
+    "source_file_sha256": "635900685a82c1d7a7af3a7aca892bc851fe31158118db14ca054f375493cc72",
+    "image_png_sha256": "ecb210f342c96ada77d20bc0353614d5a13f1894dfea4efbb86cd87f672bb816",
+    "cache_identity": "07bf0f68a7e9bc3bb5daf01456a80fab15c6e01f7bb5f6f89b7dff5c5663dae9",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "abnormal_chlorosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 760993938,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6504,
+    "source_file_sha256": "70d44ce7df9d18181b418b602962cca58565d04fd723d7eed0345eaa203ac111",
+    "image_png_sha256": "569517867bebe51c8092e7dcf2f6bfd98f88979102e6aa39ceacc69d8c26e20b",
+    "cache_identity": "d2cb9019621fdc649909955326ee16a342adda98853dad01528e10450e6e3c8c",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "abnormal_chlorosis",
+        "leaf_miner_tracks",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 864881429,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6511,
+    "source_file_sha256": "8391456f37ecf36a31e91a1d5793bd1f29b5521541414bacaf3bfbc904d01fa9",
+    "image_png_sha256": "e4465105cefa7d2265c8c54667e4507a06cfe3cf5e4e7d96de6ac365c7cbeaae",
+    "cache_identity": "984903b2c40cb7cba5d700e5ac1192168f55f4429b49567454075e39bbd3b818",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 913669066,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6516,
+    "source_file_sha256": "1e8f709bbf2f1353a55e144e6d6f1ee97d1940e5cab40b7bf1a8202b2b3ea12b",
+    "image_png_sha256": "6609f62da6668afd2c81bc19939d66e95efebc18b70a293f78e4b3a2ad6a1a32",
+    "cache_identity": "9af23cb9e7de40707bd3702b3208b27f20470b8339c468dbc0eaa68ca38ee041",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 882529495,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6517,
+    "source_file_sha256": "97008215a0e1748b0658928e42358b82bca5cf027cb86b3b4161300464d385c4",
+    "image_png_sha256": "f549240d37928c86c127b98c53ac02d0da8c899f39655b64991145c1e93b9e62",
+    "cache_identity": "21342c3805fc397034953d843769b505c5a3dcdd2b6e7e75349e434d4b28a808",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "abnormal_chlorosis",
+        "leaf_miner_tracks",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 897353452,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6518,
+    "source_file_sha256": "2491481314dd42f57078bc745982626c24185dadd87567aaaad1ace014e05c1d",
+    "image_png_sha256": "63d1a268553162e92f436162abddd158dc57e011c647aac1ac1dca698bb05a06",
+    "cache_identity": "f7c1bd150dae3a68c68c77d1ff27a7fe3143658c6904e6e2a95c41b1b15c3e92",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 933542297,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6534,
+    "source_file_sha256": "d13da437ccc5b7e6bfe1d3668808c1f7f50d05ce6931dd391d9b126d35f88a34",
+    "image_png_sha256": "7de52bc7e81492523930fbda8cd741389ba28bb067ba4c2eb0774caae5007d6f",
+    "cache_identity": "259b752dabd3b4b7e1940c86979455c31be6567d7adee65dc6f07228cddad217",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "leaf_miner_tracks",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 875278690,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6535,
+    "source_file_sha256": "88976a0e36f94dbdfab7fcdbb8fd852d29dd516ae47a8fe4e0ad30af61cd8f20",
+    "image_png_sha256": "14e89c58d5173a04e86d5c33f74fad0fbe5bd8a9348a2a8374c056b7639cca61",
+    "cache_identity": "97fdbe6ed92907ce0fbb17a105526a208f0a8f608c6b396ff166219ffe2cb468",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 753981959,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6638,
+    "source_file_sha256": "531287da2b44a1c1491317e9c3fea7cb0a195cdd2a4e2d9fc3d185942e394171",
+    "image_png_sha256": "c77423b73ffbf86222f1c70a81ac41b38a907377436c977b13edc82bd677650a",
+    "cache_identity": "fe4d204255ffec91819e9b02655b52a4af455662a212ac818ec1b7831f46c48b",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 759871343,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6639,
+    "source_file_sha256": "203e6c4bfdd2032577e71894c9ee2b19ce510f24ed96758c06a18a2638acfc23",
+    "image_png_sha256": "ffd24751ca77b35a7b542ae168f1ab757e1d9f5886936a4722b48730bbe75248",
+    "cache_identity": "f6b7c23112866d10f561f5d814697dcbb71620be0c681bfb66415dae8477c592",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 715189607,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6640,
+    "source_file_sha256": "b8b5d5e2929934bb1d760c5752106badb33fefa8b70851b2b00f4bf943c313cd",
+    "image_png_sha256": "75c48f372242d1b28d801f09b644543462475598c73312b07c62f40c90ed1ff7",
+    "cache_identity": "fbca195cc1ff35bdb1b4ac2ea3943a0a72ca3678ae6fdc038c8c183e6b881973",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "abnormal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 883739772,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6643,
+    "source_file_sha256": "019621ec2a290fa9ceb0604ad2c17c9c4c445e5aa18c587a0af594d0beb62a81",
+    "image_png_sha256": "cdf4fb9c8e6134e164ca79036831ec5d02f698388f58c33d5769c8125a9be4ce",
+    "cache_identity": "f2c4e778cc452288034d550f3d3f80753c927406eeb7b034045a66bb03684254",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 884121032,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6665,
+    "source_file_sha256": "a8ad8c4ca1130e26d0966ef4d0863dac13bc6d4f488e79c9b368d68f6ed92e27",
+    "image_png_sha256": "0f52ad602ab91196c6240aed56876c8fb5ac2791b65ad6482c52d10dd790a9c6",
+    "cache_identity": "b6bbdc42c5f3fc10c42806ac279a3f245573dd5ba891fb7b988b3c2c43d5651b",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 921023675,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6666,
+    "source_file_sha256": "0b89239f756b6f30256760c8005977c81ab803ce72c0b00d977e3f26edce8847",
+    "image_png_sha256": "cc2ce174cc178d008c7553ce1a0f921f8dfd283399d32a985ebadc2760d29d4b",
+    "cache_identity": "b7c02d06d6b13ebb6f6147eff52df0a5bea2b63740ab9ef71bd6d1fb8b3c78a4",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "leaf_miner_tracks",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 858497790,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6667,
+    "source_file_sha256": "e9f33dd97a7f309922f8b4f70ab0bc0f4b8d992cb04fd049c664ac988ddfe347",
+    "image_png_sha256": "8dc3ecd3764e614990250dcf5dd39debac9dce21f87cb0cfd499f8e9a8678fd3",
+    "cache_identity": "f648d1a96d92c4bfc59cf53bf6e4febcf870d194a1b4bbdbfa4a38fb2b1c8b30",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 883547061,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6696,
+    "source_file_sha256": "62573f33b03db38064a2c9146b8138b916a4038bb0cfa271249c0fdc366a01b2",
+    "image_png_sha256": "1f5282fe5074621136fa95fb2d13638e5288c254ef9703ff31a907bc51617bb1",
+    "cache_identity": "59ebeaa2d9976466c9171f5d59d00ab5957facb5a56cb0e9befaf7c61c676599",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [
+        "leaf_miner_tracks",
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "pest_injury",
+        "abnormal_chlorosis"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 1000291199,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6698,
+    "source_file_sha256": "0ca6c5899b165d7ebbb400663d1d43c7d63ab4bd2ef2dcb4d1a0c70004e01d89",
+    "image_png_sha256": "eb0236c66b18ed8cb7d7017a7197724f1cb30c66cc53a5393a162b0ec12aedc1",
+    "cache_identity": "2e31894a60ba09d0767da17f0c220779c993c0bcd751bffbd324ab46fdefd733",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 794276646,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6701,
+    "source_file_sha256": "4027dc9399eace7c1ad851dfaaa28311dbe47edb2f582cf4c1b31025eaef887b",
+    "image_png_sha256": "5087cce03f54720abc8dc19549c3f52ba8c827c787a4c2d2f0122345eb3dc9e7",
+    "cache_identity": "920c2c8ac93860fd14265f0598e79b42ab776bbf0cc3604dbd19b5c13e069604",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 779912865,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6702,
+    "source_file_sha256": "3278c53a3a84048d88330e04f7908393c1e70c9bd668b0bfeb49b99612045dde",
+    "image_png_sha256": "1aa822c3b90aef7da52c314e02dc7b8ff426d62b57211181d9c20550420734db",
+    "cache_identity": "6737471a7b09e22d1839d6211b0aae478c975781e00c47251e8c5a7320c409e5",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "leaf_miner_tracks",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 849487214,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6732,
+    "source_file_sha256": "d69299b159c0df263fddcd290bf5b543ecf1d5084eec015e881b0c965d1e1f89",
+    "image_png_sha256": "2ca106e776dbe034361c99d98bdad392cbf34aa0ed50341dbfc943d6aecdc363",
+    "cache_identity": "53737621fb380024f0221cb3a4b8c707936d42b4cfd8a5a8c9c3c17fe48281c5",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 784987607,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6756,
+    "source_file_sha256": "88fc28c8cb971be5fe189b742ebd61f96f8b4d87fe6e2514eb60755ba48b56e2",
+    "image_png_sha256": "7c3b4400f9a2da27826918716478870c1d67c4e18d0777c20e90b72f59e86062",
+    "cache_identity": "1f9d41a2f199a00b6264ce71254936d533fdeef691354eace67fa5f4f615cf1c",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 766894226,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6802,
+    "source_file_sha256": "41b65a7feb8c660406f4397d40834f796c5c345b8f59ecd41e105964f9ab4693",
+    "image_png_sha256": "c843cd2cfe63ee9f0c774fa561e879b89ceb838fbafdd59d160b38987b82e753",
+    "cache_identity": "2fa52f18ed679fd6502c4ae2cf312aefb1dbac196cc224057492217eed98ddc2",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 710978069,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6807,
+    "source_file_sha256": "d681d7c36d29ad1f224d47b100122a532d2eb8e12c1c6c90a949527197473f23",
+    "image_png_sha256": "6083e8a6fb86a9011a036718002fe799bfd4a56d76e503385f2f38e2c5fe02d4",
+    "cache_identity": "c633da49fc6ec35104842b5351aac05fcfcf28af9335edf878b01000ba2ed35b",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 712695094,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6808,
+    "source_file_sha256": "0a7b0dc714df386d1a7e345198c5375d6778e938273595732ef1653cd61fbd1b",
+    "image_png_sha256": "426ab34c80031efd6453d35582a7ac554d2e3a9150b0a80d67b33f03209412b0",
+    "cache_identity": "f2d152dde4a4140f1926ba855b6e5a66f552404042934044e8ffa8033a366109",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "lesions"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 794833058,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6809,
+    "source_file_sha256": "973b4bc564e08e666bb44650183942ef4fe657e18312f579c7fd7c57e15356c4",
+    "image_png_sha256": "4c5af66396c6d31877bbc2457f07d9bc15e628e6aaad70b22dfa81f7ef60fb52",
+    "cache_identity": "e78e9c213825f5fc5d22dd1d0cce4214b99162a9094db593ad01cf7ba6c2d5c9",
+    "prediction": {
+      "label": "VisibleStress",
+      "visible_signs": [
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "leaf_miner_tracks",
+        "pest_injury"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 916351592,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  },
+  {
+    "index": 6812,
+    "source_file_sha256": "ca90bfc15e854d1b4b8e7eb89dcc37c7ba88a067603b4096d499769da499d603",
+    "image_png_sha256": "40146e35e38b2f0d1b19a3e63a812976c5854856fd317c0ea54d744a3b781afa",
+    "cache_identity": "c3367437bfe2f9c06c800f1b922c3c64739b07349e1f9ff5ebce23301cc0d29d",
+    "prediction": {
+      "label": "Healthy",
+      "visible_signs": [
+        "leaf_miner_tracks",
+        "interveinal_chlorosis",
+        "marginal_necrosis",
+        "lesions",
+        "pest_injury",
+        "abnormal_chlorosis"
+      ],
+      "leaf_detail_sufficient": true
+    },
+    "total_duration_ns": 1028714284,
+    "model_digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb"
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "manifest_sha256": "4be0186c26ae60fa92992c39d336159a7a06dd8f45fbaba1f2de820bbe48993d",
+  "canonical_runtime_sha256": "484dee1cc9972f237829639c80e7459f42bfa3cd2772e2c743284a94829189a0",
+  "purpose": "Additional cross-device binding for the sparse-resize module installed by app_eval; no pixel or annotation changes."
+}
