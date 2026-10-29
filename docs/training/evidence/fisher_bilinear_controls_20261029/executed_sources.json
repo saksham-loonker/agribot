@@ -1,0 +1,76 @@
+{
+  "archive_sha256": "21bf5ae94bba6311e36a404d91f4e2981e706c2e55c9c2f5865dc7e005d6183e",
+  "files": [
+    {
+      "path": "model_training/v3/full_fisher.py",
+      "sha256": "07a556770ef5fe6486190782faa2dce6ce5d054769c0e692ef54a8483a8f933d",
+      "bytes": 2462
+    },
+    {
+      "path": "model_training/v3/bilinear_healthy_adapter.py",
+      "sha256": "c160d4e65b6270fd69a9a71970b43bcfd8182085e107c39e1f12d5672291f9a1",
+      "bytes": 1362
+    },
+    {
+      "path": "model_training/v3/phase220_full_fisher.py",
+      "sha256": "dad915556da51fb53e02db8134e158ad0f4e129616108c039b2a0908539aa904",
+      "bytes": 7596
+    },
+    {
+      "path": "model_training/v3/phase221_bilinear_adaptation.py",
+      "sha256": "439af2c4034d5b0966b523ee83078791418a76343a66296b86b1563a516dab34",
+      "bytes": 18452
+    },
+    {
+      "path": "model_training/v3/phase222_fisher_bilinear_policy.py",
+      "sha256": "ea8db651c2629d3567d75775c27829b103dd3bbe8d97ea51469fc53e69fe0407",
+      "bytes": 7505
+    },
+    {
+      "path": "model_training/v3/phase215_shrinkage_density.py",
+      "sha256": "6a1fa29f5bb29b9b7787f7eb834725b261a54f1111d13f5b7ad11654bb36273b",
+      "bytes": 10315
+    },
+    {
+      "path": "model_training/v3/exhaustive_replay_data.py",
+      "sha256": "4d0c76952c45c1ae935915788dfb80a2f7d05529cec4d482db759e8bd02215c4",
+      "bytes": 3448
+    },
+    {
+      "path": "model_training/v3/photo_rotation_replay.py",
+      "sha256": "da8ad60eb714a53395dca7a404327c63de5d097fa4991992dea854fcd690dfa8",
+      "bytes": 779
+    },
+    {
+      "path": "model_training/v3/leaf_feature_expert.py",
+      "sha256": "b508b184d176c57d4e23bd3faf2c6adef248902322f27b6616f8964bcb21692f",
+      "bytes": 737
+    },
+    {
+      "path": "model_training/v3/clinical_replay_balance.py",
+      "sha256": "42cc6e1dddd400b9405022ca43c95cb67519abfa27c5dbbd7311e2329281e724",
+      "bytes": 941
+    },
+    {
+      "path": "model_training/v3/conditional_recovery_policy.py",
+      "sha256": "ca188430f54d143e92729ceef71ac82cf35b54663012cd3432d6528780b22b66",
+      "bytes": 522
+    },
+    {
+      "path": "model_training/v3/hard_negative_ranking.py",
+      "sha256": "0d2b38b225fe19cd1614961ff63881e258997b1e7ed6b381f81fdd4966753465",
+      "bytes": 535
+    },
+    {
+      "path": "model_training/v3/source_balance.py",
+      "sha256": "1bfc1a41f90d33b8ec177955ba8da670c8186b9f38e1e1817333848be9ec2608",
+      "bytes": 918
+    },
+    {
+      "path": "model_training/v3/training_support.py",
+      "sha256": "83040dbb8b2c321c1f13be9d1e42bc8cae475c693d0274521b78a1b172d5b67c",
+      "bytes": 7147
+    }
+  ],
+  "purpose": "Exact PC bytes for full-feature Fisher and bilinear experiments. Current selection-loss/mask hardening is declared separately; immutable original execution is preserved."
+}

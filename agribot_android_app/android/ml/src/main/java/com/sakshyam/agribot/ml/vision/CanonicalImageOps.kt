@@ -246,6 +246,32 @@ object CanonicalImageOps {
         return true
     }
 
+    /** A second classifier view preserves the entire padded ROI, including leaf tips. */
+    fun classifierLetterboxInputInto(
+        frame: RgbFrame, size: Int, destination: FloatArray, box: PixelBox? = null, pad: Double = 0.10,
+    ): Boolean {
+        require(destination.size == tensorElements(size, size))
+        val rect = box?.let { cropRect(frame.width, frame.height, it, pad) }
+            ?: intArrayOf(0, 0, frame.width, frame.height)
+        val width = rect[2] - rect[0]
+        val height = rect[3] - rect[1]
+        if (width < 1 || height < 1 || (box != null && (width < 2 || height < 2))) return false
+        val scale = min(size.toDouble() / width, size.toDouble() / height)
+        val nw = Math.rint(width * scale).toInt().coerceIn(1, size)
+        val nh = Math.rint(height * scale).toInt().coerceIn(1, size)
+        val px = (size - nw) / 2
+        val py = (size - nh) / 2
+        java.util.Arrays.fill(destination, LETTERBOX_PAD)
+        resizeInto(frame, rect[0], rect[1], width, height, nw, nh,
+            destination, (py * size + px) * 3, size * 3)
+        for (i in destination.indices step 3) {
+            destination[i] = (destination[i] / 255f - IMAGENET_MEAN[0]) / IMAGENET_STD[0]
+            destination[i + 1] = (destination[i + 1] / 255f - IMAGENET_MEAN[1]) / IMAGENET_STD[1]
+            destination[i + 2] = (destination[i + 2] / 255f - IMAGENET_MEAN[2]) / IMAGENET_STD[2]
+        }
+        return true
+    }
+
     /** Letterbox geometry: model px = frame px * scale + pad. */
     data class Letterbox(val scale: Double, val padX: Int, val padY: Int, val inputSize: Int) {
         fun toFrameX(modelX: Float): Double = (modelX - padX) / scale

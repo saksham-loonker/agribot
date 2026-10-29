@@ -1,0 +1,8 @@
+{
+  "archive": "artifacts.tar",
+  "archive_bytes": 21329920,
+  "archive_sha256": "3b831fa88fb3f5765f5d06ebe3091fb0fac25d129f18f819c22edb9e3ae67cdd",
+  "verified_artifacts": 12,
+  "all_manifest_payloads_sha256_verified": true,
+  "restore": "Private laptop phase223-225 TAR contains spatial caches, models and predictions. No learned arrays in Git."
+}

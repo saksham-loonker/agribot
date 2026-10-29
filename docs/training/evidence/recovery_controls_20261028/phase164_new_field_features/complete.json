@@ -1,0 +1,26 @@
+{
+  "protocol_sha256": "78633fd3d960eaa98b876380f3ba4f9a6a9e245b1169c10bf40c7ec85047860d",
+  "features_sha256": "b8f90df84d9ce3526614f8e7f7593383f768128cb75fc436ec23e0d5fb204097",
+  "input_sha256_sha256": "29a9408e2695fe2c7b2028d2e478444a6fc719862318cf6bad2324f3095a5330",
+  "bags_sha256": "2733744da0d67b751009b9ab167b8fd4b9b16954445639b666eee85f446acf25",
+  "restore_preflight_sha256": "1ecef87061aa72c234a591e369a2bde2521c68285c1f00855d45fdd92be1db6a",
+  "source_images": 244,
+  "detected_images": 244,
+  "canonical_input_identities": 488,
+  "new_encoder_inputs_by_tower": {
+    "original_1408": 488,
+    "large_1024": 488,
+    "convnext_768": 488
+  },
+  "donor_encoder_inputs_reused_by_tower": {
+    "original_1408": 0,
+    "large_1024": 0,
+    "convnext_768": 0
+  },
+  "new_detector_inputs": 244,
+  "old_detector_inputs_reused": 0,
+  "elapsed_seconds": 34.65873536199797,
+  "source_role": "development_only",
+  "acceptance_data_used": false,
+  "model_promoted": false
+}

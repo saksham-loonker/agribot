@@ -1,0 +1,343 @@
+{
+  "verified": true,
+  "backup_directory": "C:\\Users\\Manisha\\agribot\\.toolchains\\model-checkpoints\\phase213",
+  "files": {
+    "other_vs_healthy/last.pt": {
+      "sha256": "ff9b511d63a2eea30aa4cd0e19e77ed56d1adfaaf81a065c7776e678d4929dbf",
+      "bytes": 2226357
+    },
+    "other_vs_healthy/epoch_039.pt": {
+      "sha256": "6c3ff4947c3e907ab1ea84ef66736f601d6632f8589e3a126ea51e090e81aa31",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_038.pt": {
+      "sha256": "ac805aeab2c1727d3864b07f03e46ff16e9540784bab0784b36a64d45925f688",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_037.pt": {
+      "sha256": "95e1e0ef8127b1224e99f90d3d854c6a433dd6a1c5d5a0a25de711abb857c821",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_036.pt": {
+      "sha256": "b8373e0be1162e17ea0e4517ff809f74f4231d97c7ff36a3233245b4db708a35",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_035.pt": {
+      "sha256": "7e567a4af28c9d104f335cd647ff58328df68b53940352e1f7c84d07bace1fbd",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_034.pt": {
+      "sha256": "d3ac16c54a1783ffd2d49241db293fa8f8bc1d39b646ea0ff190fe04c2334615",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_033.pt": {
+      "sha256": "1887f74a8a6ea8236131220074f06c53263584729303663605c3d7336b876621",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_032.pt": {
+      "sha256": "cc9f2e93c8775af12ca14b65f1f8f6e9b294f0cf19602955d6f485fadf039a59",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_031.pt": {
+      "sha256": "6db45612f69c1c34c82ac8d90a1b19b04e13c73796603ffc1599442ff3ef7610",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_030.pt": {
+      "sha256": "b6ca5998c10ea17a2b5aef61247e7f93596871fd825dcae5eab53c9da7c1c2f8",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_029.pt": {
+      "sha256": "eeafcf7605ee7a0b6ea660330dc23e9cf8d1dbf6c8f86e712f2507801384656c",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_028.pt": {
+      "sha256": "6b4d8fa0e872ad7619a7f2bc5ec47cb22a7741347bf00b90e05f77591cfc3130",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_027.pt": {
+      "sha256": "1b132882ebeeb4ac990ed19ed8d05b9f6ed59984b684af940e1c28dfa9769fd4",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_026.pt": {
+      "sha256": "bcaf40d55bfe5d47dff82831cb9eac52c8c8792ebac4405085b6272c3387573b",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_025.pt": {
+      "sha256": "fa607ddefd9bc3755c68e8e5109058b755a1d073d6cf3ea29b2b92f519f408e3",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_024.pt": {
+      "sha256": "13b44a1c188447545cb2f414142aedc751bce1add81a2914d6eb0bfebf56ae53",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_023.pt": {
+      "sha256": "496b52e3fea922b0656652c9e1dd6315a737b4b44eea7a527a4e635fa6f57f6b",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_022.pt": {
+      "sha256": "2404bc59e7e5d5a9d770e8089d8661e0d5c8ca81c185e4c281f88192b4029281",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_021.pt": {
+      "sha256": "2146ea10e818bdc8d8d522bebefe0d006cd00dcda16fc87bd2cf5bd5156e0538",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_020.pt": {
+      "sha256": "9c05ca821e19957405d6a42b4995cedf934a1c1745125b3c5ad33d31f851c6d7",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_019.pt": {
+      "sha256": "519322b08f60597f6aa357e60fb33a597038b06e757bab659ee51154f09a765c",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_018.pt": {
+      "sha256": "a29aad498e1614641232339572fb238a608057661c2ea2ecdc08f41b09c1f8ed",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_017.pt": {
+      "sha256": "2b55cbf51463ad22b44e5075c27821738922146e9dc92d6bb5ad64ed319aa7a8",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_016.pt": {
+      "sha256": "bb4a0cf1828a128d7d0794a0ae47c6f69da135475ae4c4b50f0754c1f13842f2",
+      "bytes": 736237
+    },
+    "other_vs_healthy/best.pt": {
+      "sha256": "dbbe50b5cbda2c5ffe8793e3be85e25ed60de09b337a5199e9678ac99391767c",
+      "bytes": 735857
+    },
+    "other_vs_healthy/epoch_015.pt": {
+      "sha256": "1c42b3c0f989f849b5aabf4343dfc617ebdd0c642862c60e00a287a3f7a1f906",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_014.pt": {
+      "sha256": "973d32a155d2377fc05aa2c8ebb582ddb706111966ebde75efb9c640d10f987d",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_013.pt": {
+      "sha256": "a3eefedab23c68feb9a27fd95069447c24959e8aba97cbe592bed2f5c6e10a6a",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_012.pt": {
+      "sha256": "c3342c92f7a84f61e1454592ba21c6b6a7fa75db6d3517f8623674ab8a2e6df3",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_011.pt": {
+      "sha256": "b2b6e3b63ad556f8f4216714dbf9d18601dba99a5c0c21d80166efa1165d51db",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_010.pt": {
+      "sha256": "c20e3a008155f42b836a33aaf55c75b0258cb32189c0f1a0e7f0a05e1a8a5a2a",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_009.pt": {
+      "sha256": "69c088f63b7cdf65ce76e7b6a0356964abdf8f6981b5c9724fc76c9123548fe6",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_008.pt": {
+      "sha256": "c3a0fabe6c09d9beed564fd4260af47f35afbbaafd4c9e465b4d3caf9d8e5795",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_007.pt": {
+      "sha256": "c9892abdf795e684223be3ee49e92d7d5ccbbc37d2aab1ddd3769445890a964d",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_006.pt": {
+      "sha256": "f2caae880d0fd03652a700db811381f75c2b9e4071e12c2384f02014d768340f",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_005.pt": {
+      "sha256": "cf275fb34db3dd8487954f625627b707c4de5d4bff3e285d6285cc1c3b319cd4",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_004.pt": {
+      "sha256": "8210c5c0c6696d687294d163acddd99c94dca44af27887663c89453470179053",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_003.pt": {
+      "sha256": "8d385e5e14e313cc2b72a1befbb47175dc9eb40775e73d26ffc30759aadffc4e",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_002.pt": {
+      "sha256": "4d65f7f4919335e82e16829bece7cb1044f3bebfa9235a74daa06a2e6443ef08",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_001.pt": {
+      "sha256": "389b574fb068570084b67123c370f8d6742265dbcceee6c20236f0802e4fe83a",
+      "bytes": 736237
+    },
+    "other_vs_healthy/epoch_000.pt": {
+      "sha256": "b0c124959633cd513249dbec0f7114e65198c27f3e63b0ff4ed51bc6870f5e66",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/last.pt": {
+      "sha256": "def162865eec732e7b1198f363f3c44e33c9498951cf8d380a4ffa1441fc92a6",
+      "bytes": 2226357
+    },
+    "nitrogen_vs_healthy/epoch_039.pt": {
+      "sha256": "9c4e472c4468d595d217d1b794e5289ff95eca7b99a98e58f496d0810fbcb956",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_038.pt": {
+      "sha256": "b284bea22328ac55ab83081e6fac3bb771f494ae04db9fe31b863cc7675ed0d8",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_037.pt": {
+      "sha256": "77f9c9557bdeecd34deacf19726d305c0491c16d9fc5bd90b6704fbf72818e83",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_036.pt": {
+      "sha256": "1e280f4bbf52add077391359f32eccd8b091af069657e46155757ee8303b6bc4",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_035.pt": {
+      "sha256": "d10f1dec0e718ba2be43366501a31021abb6789e5a7ba129de6fc22fb2e202df",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_034.pt": {
+      "sha256": "e89816ac12743868e07b87436df0cf95c6040f317d16ed4febc568975c4dd157",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_033.pt": {
+      "sha256": "b5763c0f2c223da051b4ee9b1a697b5ceda660be5cafad1a942cc51ac858128d",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_032.pt": {
+      "sha256": "f6678b880c79b0bb537007a658c846a7f4f6f9f96ccfc1c822c43c08d7b80024",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_031.pt": {
+      "sha256": "a2e83d5853ccc0ec57636b3c33a9b1c5f8dd1baf36a12bb6bb8d81c12349a156",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_030.pt": {
+      "sha256": "434333ca28916920566c342a2ec3dd07c937ff8d98fa8a95b0bf799ef2f3d57c",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_029.pt": {
+      "sha256": "e6cd41d3ea8ead36b6d3534eb429b267556c20ab653563f1b9ed0d89a171355e",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_028.pt": {
+      "sha256": "63e0ecede010a175454a5489c3e0061aecde69cc0d8348fa4583b81a5c68d367",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_027.pt": {
+      "sha256": "3626b55373db945978207f5e49aa8a5370a0b4d5e087859f85f9c708e7278805",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_026.pt": {
+      "sha256": "5d73a93dcf9d0dea1922681dc0912d3a3ea5d49f8129c2e888008f27561baa08",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_025.pt": {
+      "sha256": "5108fc20d93ecbd7dee885bdc6dd215f09c36bfe357eeba4fb7893346c9b4a10",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_024.pt": {
+      "sha256": "8223604d25f43908a00f2d279693afed486e9689d1706a8b7e8004a7506f6ae8",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_023.pt": {
+      "sha256": "536c4e7e5fb7c3ece453953cc2263503c83f5efae78132aef2a1f3ff900a23e5",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_022.pt": {
+      "sha256": "92f1b180c637e4c9be91d610e040573cfeb4837e0956bde82a400f26aa7bbb5b",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_021.pt": {
+      "sha256": "806f44694e566741e12067357176d3924e3aa5f52f9dc07bc7c5a5168c81b147",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_020.pt": {
+      "sha256": "460f4ece45808854d17948ef3a3792221c26678fdfb09e0500e64f5b7aca350e",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_019.pt": {
+      "sha256": "514c9d103b177725b61f66b1718e86d81f5bf260e13cc2fcbd94cccc9400d898",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_018.pt": {
+      "sha256": "081543e6e20a8309ac3f82af4cf6a576a1e3e259560696bdf91859d6dcefc266",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_017.pt": {
+      "sha256": "965b6eabbc488c256b69912480b1fee340db5ef423eecf17aee9a399c958a5fc",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_016.pt": {
+      "sha256": "df080bc81a65281c0252e1801fa0da0c1c830e45b3646248231205396c2f3d3d",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_015.pt": {
+      "sha256": "c2f22d30889e8ad1be74c2dd8f94acfdc182ebed51a745a85af0d88f530754cf",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_014.pt": {
+      "sha256": "4ce00f6ca3b321242f5f9cd69ac705cb2d1a81bbf7f7ee7a2c71ee14449e12d7",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_013.pt": {
+      "sha256": "1eb326a73cba2b97c14d1cda0f11237896b9448f20322b169ad34c6c0045feb4",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_012.pt": {
+      "sha256": "01cad3e518fc467c31eefd9b1a48d64c54ed8d8552833c0efd995f17dc356007",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_011.pt": {
+      "sha256": "4cff26d7cb5b3e3dc0539953d6328a435014d12dca887f0e8519d169637e122b",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_010.pt": {
+      "sha256": "5eb2f4dc98b7e026db3b084cda99e94f820ecde2c19a944547f286c521f8775c",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_009.pt": {
+      "sha256": "5a47d1ad3072a060b205cb75108e303e8cca9d4105f853ae8dec51232fc80262",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_008.pt": {
+      "sha256": "7c96dbbfff0b51c4fba2e9b90c320ce734b6a00060e6ee0bf0dbacb5d22d63c8",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_007.pt": {
+      "sha256": "471895f6c0cfeb97b961e2ff5bf0b7ae3ec672ed9c5e4eb2342dd61bcb66cec7",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_006.pt": {
+      "sha256": "3cfe26ccc4c1e45de5f6147c8c6c341e12a5296cf1eeb33385e8b12284f4c895",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_005.pt": {
+      "sha256": "8f39326300d3d23f3f28a7e8c42c10ceea39c249f55d1f5c61e42c8e857d9618",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_004.pt": {
+      "sha256": "754bc521874914e0af2a16d22b05a7e49bf0aa42f998242ea8300df2bc106603",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_003.pt": {
+      "sha256": "a7ebaf41aecda4aee20d181e017fd85743dd7f341a920d7b4270da04b21c6f43",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_002.pt": {
+      "sha256": "16f300c9319059e2c7b2c30c9e8a1d38412007c553cb71ad940f1053ed73d757",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_001.pt": {
+      "sha256": "5a25830f0cd44ea92bec41cb64b70a7d15f54c44fb1bb69f2e23edbd06cc4ecf",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/epoch_000.pt": {
+      "sha256": "ee6587657c839dfd5027786c5133974c11d6cb4efa978babad6920668f48c293",
+      "bytes": 736237
+    },
+    "nitrogen_vs_healthy/best.pt": {
+      "sha256": "3b0d5fccf40151e2dfb7ba92b1d40e680bef5d6ff730fa114dfaa7b151ed49ba",
+      "bytes": 735857
+    }
+  },
+  "all_eighty_epoch_models_and_both_best_final_optimizer_rng": true
+}

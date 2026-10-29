@@ -21,6 +21,7 @@ import com.sakshyam.agribot.domain.scan.VerdictRecords
 import com.sakshyam.agribot.domain.scan.VisionFrame
 import com.sakshyam.agribot.domain.scan.VisionModelInfo
 import com.sakshyam.agribot.domain.scan.VisionStatus
+import com.sakshyam.agribot.domain.scan.analyzeUsable
 import com.sakshyam.agribot.featurescan.scan.FrameTools
 import com.sakshyam.agribot.featurescan.ui.LeafBox
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -30,6 +31,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -39,7 +41,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
-enum class CheckHint { FIND_LEAVES, MOVE_CLOSER, HOLD_STEADY, TOO_DARK, NO_LEAVES }
+enum class CheckHint { FIND_LEAVES, MOVE_CLOSER, HOLD_STEADY, TOO_DARK, CLEAR_VIEW, NO_LEAVES }
 
 data class CheckUiState(
     val vision: VisionStatus = VisionStatus.Loading,
@@ -73,6 +75,8 @@ class CheckPlantViewModel @Inject constructor(
     private val busy = AtomicBoolean(false)
     private val pacer = com.sakshyam.agribot.featurescan.scan.FramePacer(context)
     private val generation = AtomicInteger(0)
+    private val screenActive = AtomicBoolean(false)
+    private val resetPending = AtomicBoolean(false)
     private val lock = Mutex()
     @Volatile private var info: VisionModelInfo? = null
     private var tracker = LeafTracker()
@@ -95,16 +99,34 @@ class CheckPlantViewModel @Inject constructor(
     }
 
     /** Camera thread: only accept a frame when nothing is in flight and we are still scanning. */
-    fun isReady(): Boolean = _state.value.scanning && _state.value.vision is VisionStatus.Ready && !busy.get() && pacer.tryAcquire()
+    fun isReady(): Boolean = screenActive.get() && _state.value.scanning && _state.value.vision is VisionStatus.Ready && !busy.get() && pacer.tryAcquire()
+
+    fun setScreenActive(active: Boolean) {
+        if (screenActive.getAndSet(active) == active) return
+        generation.incrementAndGet()
+        if (!active) {
+            resetPending.set(true)
+            viewModelScope.launch { lock.withLock { resetPendingEvidence() } }
+        }
+    }
+
+    private fun resetPendingEvidence() {
+        if (resetPending.compareAndSet(true, false) && _state.value.verdict == null) {
+            resetEvidence()
+            _state.update { it.copy(boxes = emptyList(), leavesSeen = 0, framesUsed = 0, progress = 0f) }
+        }
+    }
 
     fun onFrame(frame: VisionFrame) {
+        if (!screenActive.get() || _state.value.vision !is VisionStatus.Ready || !_state.value.scanning) return
         if (!busy.compareAndSet(false, true)) return
         val gen = generation.get()
         viewModelScope.launch(Dispatchers.Default) {
             try {
                 process(frame, gen)
             } catch (e: Exception) {
-                _state.update { it.copy(error = CheckError.ANALYSIS_FAILED) }
+                if (e is CancellationException) throw e
+                if (gen == generation.get()) _state.update { it.copy(error = CheckError.ANALYSIS_FAILED) }
             } finally {
                 busy.set(false)
             }
@@ -112,14 +134,24 @@ class CheckPlantViewModel @Inject constructor(
     }
 
     private suspend fun process(frame: VisionFrame, gen: Int) {
+        if (!screenActive.get() || gen != generation.get()) return
         val i = info ?: return
-        val quality = FrameTools.quality(frame)
-        val analysis = vision.analyze(frame, MAX_LEAVES)
+        val checked = vision.analyzeUsable(frame, MAX_LEAVES)
+        val quality = FrameTools.quality(checked.quality)
+        val analysis = checked.analysis
         lock.withLock {
-            if (gen != generation.get() || !_state.value.scanning) return
-            val ev = evidence ?: PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex).also { evidence = it }
+            if (gen != generation.get() || !screenActive.get() || !_state.value.scanning) return
+            resetPendingEvidence()
+            if (analysis == null) {
+                stableFrames = 0; lastKey = null
+                _state.update { it.copy(hint = if (quality.tooDark) CheckHint.TOO_DARK else CheckHint.CLEAR_VIEW, boxes = emptyList(), error = null) }
+                return
+            }
+            val ev = evidence ?: PlantEvidence(i.labels.size, i.healthyIndex, i.otherIndex, i.referenceDiseasePriority, i.primaryPolicy).also { evidence = it }
             val boxes = analysis.leaves.map { LeafBox.of(it, analysis.frameWidth, analysis.frameHeight, i) }
-            if (analysis.leaves.isEmpty()) {
+            frameIndex++
+            analysis.primaryEvidence?.let { ev.addPrimaryFrame(frame.timestampNanos, it) }
+            if (analysis.leaves.isEmpty() && analysis.primaryEvidence == null) {
                 framesWithoutLeaves++
                 val hint = when {
                     quality.tooDark -> CheckHint.TOO_DARK
@@ -130,10 +162,9 @@ class CheckPlantViewModel @Inject constructor(
                 return
             }
             framesWithoutLeaves = 0
-            frameIndex++
-            val obs = analysis.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, quality.weight) }
+            val obs = analysis.leaves.map { LeafObservation(it.box, it.detectorScore, it.probabilities, quality.weight, it.referenceProbabilities) }
             val ids = tracker.update(frameIndex, obs)
-            obs.forEachIndexed { k, o -> ev.add(ids[k], frameIndex, o) }
+            obs.forEachIndexed { k, o -> ev.add(ids[k], if (i.primaryPolicy != null) frame.timestampNanos else frameIndex, o) }
             if (analysis.leaves.size >= bestFrameLeaves) { bestFrame = frame; bestFrameLeaves = analysis.leaves.size }
 
             val v = ev.verdict()
@@ -141,8 +172,10 @@ class CheckPlantViewModel @Inject constructor(
             stableFrames = if (key == lastKey) stableFrames + 1 else 0
             lastKey = key
             val smallLeaves = analysis.leaves.all { (it.box.width * it.box.height) / (analysis.frameWidth.toFloat() * analysis.frameHeight) < 0.01f }
-            val decided = v.kind != VerdictKind.NEED_MORE_VIEWS &&
-                ((v.kind != VerdictKind.UNSURE && stableFrames >= STABLE_FRAMES) || ev.framesUsed >= MAX_FRAMES)
+            // A confident original Other verdict can stabilize before the primary
+            // recovery window is ready. Keep observing through that real-frame
+            // window; named disease still has its original early exit.
+            val decided = com.sakshyam.agribot.domain.scan.QuickCheckCompletion.isReady(v, ev.framesUsed, stableFrames, i.primaryPolicy)
             val progress = (ev.framesUsed.toFloat() / MIN_FRAMES_FOR_PROGRESS).coerceAtMost(0.95f)
             _state.update {
                 it.copy(
@@ -156,14 +189,21 @@ class CheckPlantViewModel @Inject constructor(
     }
 
     fun checkAgain() {
+        if (_state.value.saving) return
         viewModelScope.launch {
             lock.withLock {
+                if (_state.value.saving) return@withLock
                 generation.incrementAndGet()
-                tracker = LeafTracker(); evidence = null; frameIndex = 0; framesWithoutLeaves = 0
-                stableFrames = 0; lastKey = null; bestFrame = null; bestFrameLeaves = 0
+                resetPending.set(false)
+                resetEvidence()
                 _state.update { CheckUiState(vision = it.vision, labels = it.labels) }
             }
         }
+    }
+
+    private fun resetEvidence() {
+        tracker = LeafTracker(); evidence = null; frameIndex = 0; framesWithoutLeaves = 0
+        stableFrames = 0; lastKey = null; bestFrame = null; bestFrameLeaves = 0
     }
 
     fun save() {
@@ -171,22 +211,26 @@ class CheckPlantViewModel @Inject constructor(
         val v = s.verdict ?: return
         val i = info ?: return
         if (s.saving || s.savedRunId != null) return
+        val frameToSave = bestFrame
         _state.update { it.copy(saving = true) }
         viewModelScope.launch(Dispatchers.IO) {
+            val runId = RunId(UUID.randomUUID().toString())
+            val decisionId = DecisionId(UUID.randomUUID().toString())
             runCatching {
-                val runId = RunId(UUID.randomUUID().toString())
-                runs.createRun(RunConfig(runId, RecordingMode.CHECK_PLANT, FieldId(QUICK_CHECK_FIELD), 0, i.bundleId))
-                val decisionId = DecisionId(UUID.randomUUID().toString())
                 val keepPhoto = settings.observeSettings().first().saveEvidenceFrames
-                val photo = if (keepPhoto) bestFrame?.let { f -> evidenceRepo.saveEvidence(runId, decisionId, FrameTools.toAnalysisFrame(f), "check").path } else null
-                runs.appendDecision(
+                val photo = if (keepPhoto) frameToSave?.let { f -> evidenceRepo.saveEvidence(runId, decisionId, FrameTools.toAnalysisFrame(f), "check").path } else null
+                runs.saveCompletedRun(
+                    RunConfig(runId, RecordingMode.CHECK_PLANT, FieldId(QUICK_CHECK_FIELD), 0, i.bundleId),
                     VerdictRecords.toDecision(decisionId, runId, 1, RecordingMode.CHECK_PLANT, PlantPlace(QUICK_CHECK_FIELD, null, null),
                         v, i.labels, i.bundleId, Instant.now(), evidencePath = photo),
                 )
-                runs.markRunCompleted(runId)
                 runId.value
             }.onSuccess { id -> _state.update { it.copy(saving = false, savedRunId = id) } }
-                .onFailure { _state.update { it.copy(saving = false, error = CheckError.SAVE_FAILED) } }
+                .onFailure {
+                    if (it is CancellationException) throw it
+                    runCatching { evidenceRepo.deleteEvidence(runId, decisionId) }
+                    _state.update { it.copy(saving = false, error = CheckError.SAVE_FAILED) }
+                }
         }
     }
 
@@ -196,8 +240,6 @@ class CheckPlantViewModel @Inject constructor(
     companion object {
         const val QUICK_CHECK_FIELD = "quick-check"
         private const val MAX_LEAVES = 6
-        private const val STABLE_FRAMES = 2
-        private const val MAX_FRAMES = 14
         private const val MIN_FRAMES_FOR_PROGRESS = 6f
         private const val NO_LEAF_FRAMES_BEFORE_HELP = 15
     }

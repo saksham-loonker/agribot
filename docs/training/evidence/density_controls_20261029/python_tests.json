@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "tests": 312,
+  "skipped": 1,
+  "skip_scope": "Optional downloaded-media probe",
+  "elapsed_seconds": 28.736,
+  "command": "python -m unittest discover -s tests -p test_*.py",
+  "log_sha256": "bbea523bf848e1ab44e949beda34a49ab98ae4348ec5c785c2a28628aa087221",
+  "executed_source_archive_sha256": "14b2be243be5f91476b101a6fbe4506a963301c5912d9c4cd6c3e8a204b215bd",
+  "additional_targeted_check": {
+    "tests": 3,
+    "status": "passed",
+    "scope": "Result checksum assertion strengthening after the full-suite run",
+    "command": "python -m unittest discover -s tests -p test_density_control_evidence.py"
+  }
+}

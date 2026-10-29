@@ -1,4 +1,4 @@
-# Agribot Android app (v2)
+# Agribot Android app (2.0.3 candidate)
 
 Offline tomato-leaf checking for farmers. Two modes:
 
@@ -13,12 +13,27 @@ No internet permission, no cloud inference. All results, photos and exports stay
 | File | Model | Licence | Input |
 |---|---|---|---|
 | `models/leaf_detector.tflite` | YOLOv9-T leaf detector (LibreYOLO) | MIT | 1x320x320x3, letterbox, /255 |
-| `models/disease_classifier_0.tflite` | DINOv2 ViT-S/14 classifier, 9 classes (8 conditions + Other) | Apache-2.0 | 1x224x224x3, ImageNet mean/std |
+| `models/disease_classifier_0.tflite` | DINOv2 ViT-S/14 plus MobileNetV3-Small specialist, 9 classes | Apache-2.0 | 1x224x224x3, ImageNet mean/std |
 | `model_manifest.json` | Contract: shapes, labels, thresholds, calibration, SHA-256 | | |
 
-The app reads every model constant from `model_manifest.json`; nothing about the model is hard-coded. The training,
-export and evaluation scripts live in [`../model_training/v2`](../model_training/v2). Held-out results measured on the
-shipped `.tflite` files are recorded in `model_manifest.json` under `heldout_results`.
+The app reads model shapes, hashes, labels and calibration from `model_manifest.json`.
+Canonical preprocessing and plant evidence policy are implemented in Kotlin and
+checked against the reference; unsupported normalization is rejected explicitly.
+The retained interim classifier combines the original DINOv2 recognizer with a
+MobileNetV3-Small specialist. Its SHA-256 starts `d7013580`; the model manifest
+pins its complete identity. The 2.0.3 app candidate fixes persistence and scan
+lifecycle behavior while retaining that model. Recognition replacement is still
+in development; see [the current review and training checkpoint](../docs/training/PR6_CODE_REVIEW_20261026.md).
+
+The training and export code lives in [`../model_training/v3`](../model_training/v3).
+The recorded results distinguish development selection, public-source regression
+and additional-source tests; they are not a live-camera accuracy guarantee.
+See [the October 24 validation report](../docs/training/APP_VALIDATION_20261024.md)
+for the retained model, rejected experiments, physical-device checks and remaining
+release review.
+Views with essentially no image detail request a clearer view without contributing
+evidence. Dim/soft views with useful structure can still be analyzed. An
+unrecognized result does not itself confirm that a plant is diseased.
 
 After cloning, fetch the models: `git lfs install && git lfs pull`. Without them the app shows "models could not be
 loaded" and the contract test skips the hash check.
@@ -45,6 +60,13 @@ Release signing reads `AGRIBOT_RELEASE_STORE_FILE`, `AGRIBOT_RELEASE_STORE_PASSW
 python3 -m unittest discover -s tests -p "test_*.py"   # from the repository root
 ```
 
+Debug builds include `arm64-v8a` and `x86_64`, so lifecycle, database, export and
+UI checks can run on a hardware-accelerated Android emulator while the phone is
+disconnected. Release builds remain `arm64-v8a`. Emulator evidence does not
+replace physical-phone latency, camera or field validation. The injected-failure
+suite `ScanPersistenceLifecycleTest` checks atomic quick-check/movement saves,
+retry behavior and rejection of in-flight results across lifecycle transitions.
+
 - `ml` golden parity tests: Kotlin preprocessing and decision maths against the Python reference
   (`model_training/v2/final/canon.py`).
 - `AgribotModelGoldenTest` (on device): the shipped `.tflite` files reproduce the reference logits, labels and
@@ -57,7 +79,11 @@ kernels there. Real phones use XNNPACK. Measure speed only on real phones.
 
 Use [FIELD_PILOT_RUNBOOK.md](FIELD_PILOT_RUNBOOK.md) for the physical-phone pilot.
 
-## Latency work and pending device checks (2026-10-02)
+## Historical latency investigation (2026-10-02)
+
+For the October 24 app/model decision and current checks, see the validation
+report linked above. The following records the earlier optimization campaign;
+it does not establish a new sustained-camera speed measurement.
 
 The original merged app at `1b0ca6dc5c20a0651548880123557ea83431349c` measured 592.2, 625.0 and
 464.2 ms per `analyze()` on an RMX5101 / Android 16 / SM7750 phone (mean 560.47 ms, one classified

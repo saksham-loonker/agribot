@@ -1,0 +1,30 @@
+{
+  "archive_sha256": "96c685ef90cd48c76ae42e95725ecf9a4ab1c57639b2746311a4df45d0eb9d69",
+  "protocols": [
+    {
+      "path": "phase244_whole_context_recovery/protocol.json",
+      "bytes": 1751,
+      "sha256": "d170f815af54ee3535b97802994d0d927a7ac2c65700ea8b9d7186e9a8e2825f"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/protocol.json",
+      "bytes": 331708,
+      "sha256": "1e286c9a04f5d1a4356ecd3576fe69cb3632db91a9aeccfdc3cf530c7468afff"
+    },
+    {
+      "path": "phase246_whole_prefix_coverage/protocol.json",
+      "bytes": 159065,
+      "sha256": "a40266829d1a7add3422c6fd90f61389f9a11bf2979661fde193c509ead72bf7"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/protocol.json",
+      "bytes": 111553,
+      "sha256": "fd07548d8a58407597e7e36471def7c5600824e1a2534a7be95b10f1e49d4658"
+    },
+    {
+      "path": "phase248_target_scope_calibration/protocol.json",
+      "bytes": 2343,
+      "sha256": "df5e84199f522a0864826bb3586954dfb07f78f5ef57f3916c187a0e2dbd4964"
+    }
+  ]
+}

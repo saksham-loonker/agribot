@@ -1,0 +1,54 @@
+{
+  "protocol": {
+    "task": "Held-out publisher symptom-region utility screen, development only",
+    "checkpoint_sha256": "f531364109608722accfdaffe646ac89dfd26ac30b4232b1303dbd3bafbaecb2",
+    "source_rows_sha256": "4e5877184214049e4f67f6b212a7c9b9b73e8a8536b2425659cecdaa09cc8078",
+    "training_result_sha256": "614f9d392f294ef01214f9284f65e854e6461f2b170fa2bcc676a7c812db2cfd",
+    "confidence_cutoffs": [
+      0.75,
+      0.9
+    ],
+    "disease_class": 1,
+    "healthy_class": 0,
+    "require_disease_class_winner": true,
+    "nms_iou": 0.6,
+    "max_regions": 300,
+    "region_matching_iou": 0.5,
+    "utility_screen": "At least 20% diseased-photo veto recall and at most 5% Healthy-photo veto rate; app gates remain mandatory",
+    "stopping_rule": "No app inference if neither fixed cutoff passes this utility screen; no threshold expansion",
+    "script_sha256": "c7ffac9e1272ebe56889ca7b5631f1cd9205dba023c3ddfbcadfd38d1806250c",
+    "canonical_source_sha256": "60987b10e4ab8c8372d51abd61d81b943ebc79a7db930e9858697b26b9535c09",
+    "cold_olid_used": false,
+    "ad_independent": false
+  },
+  "candidates": [
+    {
+      "cutoff": 0.75,
+      "diseased_photos": 137,
+      "healthy_photos": 11,
+      "diseased_photo_veto": 1,
+      "healthy_photo_false_veto": 0,
+      "disease_regions": 3745,
+      "matched_disease_regions": 1,
+      "predicted_regions": 1,
+      "passed_utility_screen": false
+    },
+    {
+      "cutoff": 0.9,
+      "diseased_photos": 137,
+      "healthy_photos": 11,
+      "diseased_photo_veto": 0,
+      "healthy_photo_false_veto": 0,
+      "disease_regions": 3745,
+      "matched_disease_regions": 0,
+      "predicted_regions": 0,
+      "passed_utility_screen": false
+    }
+  ],
+  "passing_utility_screens": 0,
+  "predictions_sha256": "aef0c110588ef807bf3e19bd4c0c0eb16a5366d5fce0f9b18e947316948a6f94",
+  "new_inference_images": 148,
+  "inference_seconds": 1.1334539109957404,
+  "cold_olid_used": false,
+  "app_acceptance_claim": false
+}

@@ -1,0 +1,8 @@
+{
+    "tests":  198,
+    "failures":  0,
+    "skipped":  1,
+    "elapsed_seconds":  21.497,
+    "log_sha256":  "c707885fb8ba89dba42dd6df41079422586c38590c09669912e6a8d1807364ef",
+    "note":  "Complete local suite; one optional downloaded-media check skipped. Six provenance and three full-cohort denominator regressions executed."
+}

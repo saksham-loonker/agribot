@@ -1,0 +1,39 @@
+{
+  "protocol_sha256": "4b6d66f087bedcc4c036b3c7bd9e021b4b7bf00acc8868b4d072fa10a2f27c25",
+  "retained_manifest_sha256": "e9413370acf1375f36a7e79863d61a792e18d1118fab39e93ea1f00fbc08d9ca",
+  "gallery_entries": 40625,
+  "query_images": 391,
+  "overlap_images": 0,
+  "overlapping_families": 0,
+  "retained_images": 391,
+  "retained_label_counts": {
+    "Healthy": 103,
+    "Early_blight": 32,
+    "Late_blight": 32,
+    "Leaf Miner": 32,
+    "Diseased_unspecified": 192
+  },
+  "retained_publisher_class_counts": {
+    "Healthy": 103,
+    "Early Blight": 32,
+    "Late Blight": 32,
+    "Leaf Miner": 32,
+    "Bacterial Spot": 32,
+    "Cercospora leaf mold": 32,
+    "Insect Damage": 32,
+    "Leaf Mold": 32,
+    "Spider Mites": 32,
+    "Tomato Leaf Curl Virus": 32
+  },
+  "edges": [],
+  "source_role": "development_only",
+  "training_used": false,
+  "model_predictions_opened": false,
+  "new_encoder_inputs": 0,
+  "protected_training_used": false,
+  "protected_clinical_predictions_opened": false,
+  "independence_established": false,
+  "acceptance_ready": false,
+  "limitations": "Approximate geometry and inferred families do not prove specimen/capture independence. The entire publisher collection is development-only; protected data stays diagnostically sealed.",
+  "elapsed_seconds": 65.71110098995268
+}

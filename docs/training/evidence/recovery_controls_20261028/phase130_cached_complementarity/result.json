@@ -1,0 +1,114 @@
+{
+  "protocol_sha256": "f87cb945df037de7a05d86423773165d95c2f18a291cdd6d0cb7b60647121302",
+  "summaries": {
+    "phase95_corrected_continued_expert": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 17
+    },
+    "phase97_continued_verified_expert": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 21
+    },
+    "phase101_cnn_bag_adaptation": {
+      "new_false_healthy": 2,
+      "healthy_validation_correct": 17
+    },
+    "phase118_conditional_recovery/conditional_sft": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 13
+    },
+    "phase118_conditional_recovery/cross_source_supcon": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 13
+    },
+    "phase118_conditional_recovery/conditional_domain_adversarial": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 13
+    },
+    "phase118_conditional_recovery/decision_reward": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 13
+    },
+    "phase119_target_replay/source_balanced_warmup": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 13
+    },
+    "phase119_target_replay/target_replay": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 13
+    },
+    "phase119_target_replay/target_replay_margin": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 13
+    },
+    "phase121_local_damage_mil/gated_attention_mil": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 15
+    },
+    "phase121_local_damage_mil/topk_damage_mil": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 14
+    },
+    "phase122_context_fusion/additive_context": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 14
+    },
+    "phase122_context_fusion/bilinear_context": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 15
+    },
+    "phase124_lora_recovery": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 19
+    },
+    "phase127_clinical_anchors/clinical_anchors": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 14
+    },
+    "phase127_clinical_anchors/condition_subtypes": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 14
+    },
+    "phase127_clinical_anchors/subtype_contrastive": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 14
+    },
+    "phase129_native_dino_mil/gated_attention_mil": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 19
+    },
+    "phase129_native_dino_mil/topk_damage_mil": {
+      "new_false_healthy": 0,
+      "healthy_validation_correct": 15
+    }
+  },
+  "safe_experts": [
+    "phase95_corrected_continued_expert",
+    "phase97_continued_verified_expert",
+    "phase118_conditional_recovery/conditional_sft",
+    "phase118_conditional_recovery/cross_source_supcon",
+    "phase118_conditional_recovery/conditional_domain_adversarial",
+    "phase118_conditional_recovery/decision_reward",
+    "phase119_target_replay/source_balanced_warmup",
+    "phase119_target_replay/target_replay",
+    "phase119_target_replay/target_replay_margin",
+    "phase121_local_damage_mil/gated_attention_mil",
+    "phase121_local_damage_mil/topk_damage_mil",
+    "phase122_context_fusion/additive_context",
+    "phase122_context_fusion/bilinear_context",
+    "phase124_lora_recovery",
+    "phase127_clinical_anchors/clinical_anchors",
+    "phase127_clinical_anchors/condition_subtypes",
+    "phase127_clinical_anchors/subtype_contrastive",
+    "phase129_native_dino_mil/gated_attention_mil",
+    "phase129_native_dino_mil/topk_damage_mil"
+  ],
+  "optimistic_safe_union_healthy_validation_correct": 22,
+  "healthy_denominator": 40,
+  "required": 28,
+  "full_model_inference_inputs": 0,
+  "new_encoder_inputs": 0,
+  "new_cached_head_validation_predictions": 781,
+  "elapsed_seconds": 7.470673080999404,
+  "model_promoted": false
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.data.repository.RepositoryMappersTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-27T12:36:15" hostname="vewmet" time="0.003">
+  <properties/>
+  <testcase name="decisionMapperRoundTripsTreatmentStatusAndNote" classname="com.sakshyam.agribot.data.repository.RepositoryMappersTest" time="0.002"/>
+  <testcase name="unknownPersistedTreatmentStatusSafelyFallsBackToNotTreated" classname="com.sakshyam.agribot.data.repository.RepositoryMappersTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,10 @@
+{
+  "old_file_sha256": "7a33820f4fe8996a1478024a5fe8c627f2270433f77e0c38762a37e2680b80a3",
+  "new_file_sha256": "55a7e7971143a00df4e803789bd13b6b994ae7afa90452522f789d87cb1378de",
+  "unchanged_payload_sha256": "1ab5a376b6767981ae91466b495b12704be0bc890d1e55ba802ed232325ee2c9",
+  "new_source_sha256": "42419db90f2a6d0590f0bb569bd2d35e0f5d469040c3243eed1c7c343d365b9a",
+  "prior_protocol_sha256": "56cc7e1aab4059ebeafbe29fdad0fb720a74bd679a7cc1c9ad3b93ece5947002",
+  "maximum_cls_error_after_repair": 2.346639776051873e-06,
+  "encoder_inputs_recomputed": 0,
+  "change": "Only NPY header shape list -> tuple; original protocols and source preserved"
+}

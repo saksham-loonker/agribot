@@ -1,0 +1,225 @@
+{
+  "oracle_threshold_union_healthy": 24,
+  "admissible_negative_images": 32,
+  "reachable_positive_images": 18,
+  "diagnostic_only": true,
+  "not_independent_acceptance": true,
+  "controls": [
+    {
+      "name": "phase129_native_dino_mil/gated_attention_mil",
+      "oracle_zero_new_fp_healthy": 22,
+      "maximum_admissible_negative_probability": 0.926637589931488,
+      "healthy_at_fixed_threshold": 19
+    },
+    {
+      "name": "phase124_lora_recovery",
+      "oracle_zero_new_fp_healthy": 21,
+      "maximum_admissible_negative_probability": 0.9198862910270691,
+      "healthy_at_fixed_threshold": 19
+    },
+    {
+      "name": "phase97_continued_verified_expert",
+      "oracle_zero_new_fp_healthy": 21,
+      "maximum_admissible_negative_probability": 0.9208377599716187,
+      "healthy_at_fixed_threshold": 21
+    },
+    {
+      "name": "phase145_photometric_lora_recovery/photometric_lora_supervised",
+      "oracle_zero_new_fp_healthy": 20,
+      "maximum_admissible_negative_probability": 0.9489876627922058,
+      "healthy_at_fixed_threshold": 20
+    },
+    {
+      "name": "phase121_local_damage_mil_gated_attention_mil",
+      "oracle_zero_new_fp_healthy": 17,
+      "maximum_admissible_negative_probability": 0.9147121906280518,
+      "healthy_at_fixed_threshold": 15
+    },
+    {
+      "name": "phase122_context_fusion_bilinear_context",
+      "oracle_zero_new_fp_healthy": 17,
+      "maximum_admissible_negative_probability": 0.9290246956729321,
+      "healthy_at_fixed_threshold": 15
+    },
+    {
+      "name": "phase132_large_roi_recovery/large_mlp",
+      "oracle_zero_new_fp_healthy": 17,
+      "maximum_admissible_negative_probability": 0.8273234367370605,
+      "healthy_at_fixed_threshold": 15
+    },
+    {
+      "name": "phase95_corrected_continued_expert",
+      "oracle_zero_new_fp_healthy": 17,
+      "maximum_admissible_negative_probability": 0.9401048421859741,
+      "healthy_at_fixed_threshold": 17
+    },
+    {
+      "name": "phase134_anchor_lora",
+      "oracle_zero_new_fp_healthy": 16,
+      "maximum_admissible_negative_probability": 0.8229696750640869,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase135_condition_split_lora",
+      "oracle_zero_new_fp_healthy": 16,
+      "maximum_admissible_negative_probability": 0.8455564975738525,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase136_hard_negative_lora",
+      "oracle_zero_new_fp_healthy": 16,
+      "maximum_admissible_negative_probability": 0.8477826714515686,
+      "healthy_at_fixed_threshold": 14
+    },
+    {
+      "name": "phase146_original_clinical_lora/original_nine_class_supervised",
+      "oracle_zero_new_fp_healthy": 16,
+      "maximum_admissible_negative_probability": 0.8744591474533081,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase129_native_dino_mil/topk_damage_mil",
+      "oracle_zero_new_fp_healthy": 15,
+      "maximum_admissible_negative_probability": 0.9448872804641724,
+      "healthy_at_fixed_threshold": 15
+    },
+    {
+      "name": "phase144_photometric_cnn_recovery/photometric_supervised",
+      "oracle_zero_new_fp_healthy": 15,
+      "maximum_admissible_negative_probability": 0.9287291765213013,
+      "healthy_at_fixed_threshold": 15
+    },
+    {
+      "name": "phase121_local_damage_mil_topk_damage_mil",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9498307704925537,
+      "healthy_at_fixed_threshold": 14
+    },
+    {
+      "name": "phase122_context_fusion_additive_context",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9444246501391017,
+      "healthy_at_fixed_threshold": 14
+    },
+    {
+      "name": "phase127_clinical_anchors/clinical_anchors",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.944469690322876,
+      "healthy_at_fixed_threshold": 14
+    },
+    {
+      "name": "phase127_clinical_anchors/subtype_contrastive",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9313788414001465,
+      "healthy_at_fixed_threshold": 14
+    },
+    {
+      "name": "phase127_clinical_anchors/condition_subtypes",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9325693845748901,
+      "healthy_at_fixed_threshold": 14
+    },
+    {
+      "name": "phase132_large_roi_recovery/large_linear",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9334327578544617,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase139_full_source_recovery/full_source_rank",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9395508766174316,
+      "healthy_at_fixed_threshold": 14
+    },
+    {
+      "name": "phase139_full_source_recovery/full_source_sft",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9275707006454468,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase142_full_source_cnn_recovery/full_source_cnn_sft",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9145496487617493,
+      "healthy_at_fixed_threshold": 14
+    },
+    {
+      "name": "phase142_full_source_cnn_recovery/full_source_cnn_rank",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9355418682098389,
+      "healthy_at_fixed_threshold": 14
+    },
+    {
+      "name": "phase147_large_clinical_teacher/large_clinical_teacher",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9999821186065674,
+      "healthy_at_fixed_threshold": 25
+    },
+    {
+      "name": "phase148_guard_reward_teacher/guard_aware_expected_reward_teacher",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9800732731819153,
+      "healthy_at_fixed_threshold": 14
+    },
+    {
+      "name": "phase101_cnn_bag_adaptation",
+      "oracle_zero_new_fp_healthy": 14,
+      "maximum_admissible_negative_probability": 0.9997313618659973,
+      "healthy_at_fixed_threshold": 17
+    },
+    {
+      "name": "phase119_target_replay_target_replay",
+      "oracle_zero_new_fp_healthy": 13,
+      "maximum_admissible_negative_probability": 0.946255087852478,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase118_conditional_recovery_decision_reward",
+      "oracle_zero_new_fp_healthy": 13,
+      "maximum_admissible_negative_probability": 0.9188799858093262,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase118_conditional_recovery_conditional_sft",
+      "oracle_zero_new_fp_healthy": 13,
+      "maximum_admissible_negative_probability": 0.9154571890830994,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase118_conditional_recovery_cross_source_supcon",
+      "oracle_zero_new_fp_healthy": 13,
+      "maximum_admissible_negative_probability": 0.9218390583992004,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase119_target_replay_target_replay_margin",
+      "oracle_zero_new_fp_healthy": 13,
+      "maximum_admissible_negative_probability": 0.9380083680152893,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase118_conditional_recovery_conditional_domain_adversarial",
+      "oracle_zero_new_fp_healthy": 13,
+      "maximum_admissible_negative_probability": 0.9379734396934509,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase119_target_replay_source_balanced_warmup",
+      "oracle_zero_new_fp_healthy": 13,
+      "maximum_admissible_negative_probability": 0.9421486258506775,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase140_large_kernel_recovery/C1",
+      "oracle_zero_new_fp_healthy": 13,
+      "maximum_admissible_negative_probability": 0.745031921051083,
+      "healthy_at_fixed_threshold": 13
+    },
+    {
+      "name": "phase140_large_kernel_recovery/C10",
+      "oracle_zero_new_fp_healthy": 13,
+      "maximum_admissible_negative_probability": 0.7426549185116508,
+      "healthy_at_fixed_threshold": 13
+    }
+  ]
+}

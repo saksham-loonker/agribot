@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.data.repository.RepositoryMappersTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:48:49" hostname="LAPTOP-QCI1PSIL" time="0.009">
+  <properties/>
+  <testcase name="decisionMapperRoundTripsTreatmentStatusAndNote" classname="com.sakshyam.agribot.data.repository.RepositoryMappersTest" time="0.008"/>
+  <testcase name="unknownPersistedTreatmentStatusSafelyFallsBackToNotTreated" classname="com.sakshyam.agribot.data.repository.RepositoryMappersTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

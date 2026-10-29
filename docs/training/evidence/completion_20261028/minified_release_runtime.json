@@ -1,0 +1,24 @@
+{
+  "unsigned_release_sha256": "d3ef6ffbd9959768232b79f0d30a4b1f976e3aa759c8aded277ecdff4a398a75",
+  "emulator_signed_sha256": "7b287ab90739d5f8dac1122ce39b3c2f0c5e2d5006b5a3665c33daf7e7927200",
+  "payloads_unchanged": true,
+  "supported_abis": "x86_64,arm64-v8a",
+  "native_bridge": "libndk_translation.so",
+  "production_arm64_apk": true,
+  "minified_release": true,
+  "debug_key_for_emulator_only": true,
+  "checks": [
+    "onboarding",
+    "camera permission",
+    "camera ready without model-load error",
+    "both original LiteRT models initialized",
+    "back navigation",
+    "settings",
+    "English and Hindi",
+    "row-walk entry",
+    "cold restart retains Hindi"
+  ],
+  "fatal_exception": false,
+  "physical_phone_tested": false,
+  "recognition_qualified": false
+}

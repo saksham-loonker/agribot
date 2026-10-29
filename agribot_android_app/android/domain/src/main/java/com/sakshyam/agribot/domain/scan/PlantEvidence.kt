@@ -27,6 +27,8 @@ data class PlantVerdict(
     val framesUsed: Int,
     /** True when a disease was found on some leaves while most leaves look healthy. */
     val partial: Boolean,
+    /** Image-level recovery describes the primary visible view, not every leaf. */
+    val primaryView: Boolean = false,
 )
 
 /** Thresholds for turning leaf evidence into a plant verdict. */
@@ -55,22 +57,34 @@ class PlantEvidence(
     private val numClasses: Int,
     private val healthyIndex: Int,
     private val otherIndex: Int,
+    referenceDiseasePriority: Boolean = false,
+    private val primaryPolicy: PrimaryImagePolicy? = null,
 ) {
+    private val referenceEvidence: PlantEvidence? = if (referenceDiseasePriority) PlantEvidence(numClasses, healthyIndex, otherIndex) else null
     private class LeafAcc(n: Int) {
         val sumP = DoubleArray(n)
         var sumW = 0.0
         var hits = 0
+        val seenFrames = HashSet<Long>()
     }
 
     private val leaves = LinkedHashMap<Long, LeafAcc>()
     private val frames = HashSet<Long>()
+    private val primaryFrames = LinkedHashMap<Long, PrimaryFrameEvidence>()
+    private val admittedPrimaryFrames = HashSet<Long>()
     var observations = 0
         private set
 
     fun add(trackId: Long, frameIndex: Long, obs: LeafObservation) {
         require(obs.probabilities.size == numClasses)
+        referenceEvidence?.let { reference ->
+            val probabilities = requireNotNull(obs.referenceProbabilities) { "disease-priority bundle needs reference probabilities" }
+            require(probabilities.size == numClasses)
+            reference.add(trackId, frameIndex, LeafObservation(obs.box, obs.detectorScore, probabilities, obs.frameQuality))
+        }
         val w = (obs.detectorScore * obs.frameQuality).toDouble().coerceIn(0.05, 1.0)
         val acc = leaves.getOrPut(trackId) { LeafAcc(numClasses) }
+        if (!acc.seenFrames.add(frameIndex)) return
         for (k in 0 until numClasses) acc.sumP[k] += w * obs.probabilities[k]
         acc.sumW += w
         acc.hits++
@@ -80,12 +94,54 @@ class PlantEvidence(
 
     fun clear() {
         leaves.clear(); frames.clear(); observations = 0
+        primaryFrames.clear(); admittedPrimaryFrames.clear()
+        referenceEvidence?.clear()
     }
 
-    val framesUsed: Int get() = frames.size
+    val framesUsed: Int get() = maxOf(frames.size, admittedPrimaryFrames.size)
     val leavesSeen: Int get() = leaves.size
 
+    fun addPrimaryFrame(frameIndex: Long, evidence: PrimaryFrameEvidence) {
+        val policy = primaryPolicy ?: return
+        require(evidence.leaves.size <= policy.maximumLeaves)
+        require(evidence.originalWholeProbabilities == null || evidence.originalWholeProbabilities.size == numClasses)
+        if (!evidence.usable || !admittedPrimaryFrames.add(frameIndex)) return
+        primaryFrames[frameIndex] = evidence
+        while (primaryFrames.size > policy.minimumFrames) primaryFrames.remove(primaryFrames.keys.first())
+    }
+
+    /** Off-plant views cannot supply primary-image evidence for the next row plant. */
+    fun clearPrimaryFrames() { primaryFrames.clear(); admittedPrimaryFrames.clear() }
+
     fun verdict(policy: VerdictPolicy = VerdictPolicy()): PlantVerdict {
+        val baseline = leafVerdict(policy)
+        val primary = primaryPolicy ?: return baseline
+        if (baseline.kind == VerdictKind.DISEASE) return baseline
+        val latest = primaryFrames.values.lastOrNull() ?: return baseline
+        val posterior = posterior(policy)
+        fun action(frame: PrimaryFrameEvidence) = PrimaryImageRouting.action(baseline, posterior, frame, primary, healthyIndex, otherIndex)
+        if (action(latest) == PrimaryAction.ABSTAIN_HEALTHY) return baseline.copy(kind = VerdictKind.UNSURE)
+        if (baseline.kind == VerdictKind.HEALTHY || primaryFrames.size < primary.minimumFrames) return baseline
+        if (!primaryFrames.values.all { action(it) == PrimaryAction.RECOVER_HEALTHY }) return baseline
+        val confidence = primaryFrames.values.map { it.positive }.average().toFloat()
+        return PlantVerdict(VerdictKind.HEALTHY, healthyIndex, confidence, if (healthyIndex == 0) 1 else 0,
+            (1f - confidence) / (numClasses - 1), leaves.size, 0, admittedPrimaryFrames.size, false, primaryView = true)
+    }
+
+    private fun posterior(policy: VerdictPolicy): DoubleArray? {
+        if (leaves.isEmpty()) return null
+        val means = leaves.values.map { a -> DoubleArray(numClasses) { a.sumP[it] / a.sumW } }
+        val weights = leaves.values.map { minOf(it.sumW, policy.maxLeafWeight) }
+        val total = weights.sum()
+        return DoubleArray(numClasses).also { plant ->
+            for ((mean, weight) in means.zip(weights)) for (k in 0 until numClasses) plant[k] += mean[k] * weight / total
+        }
+    }
+
+    private fun leafVerdict(policy: VerdictPolicy): PlantVerdict {
+        // Healthy recovery must not displace a named disease supported by the
+        // frozen recognizer on these same tracks, observations and frames.
+        referenceEvidence?.verdict(policy)?.takeIf { it.kind == VerdictKind.DISEASE }?.let { return it }
         if (leaves.isEmpty()) return empty()
         val means = leaves.values.map { a -> DoubleArray(numClasses) { a.sumP[it] / a.sumW } }
         val weights = leaves.values.map { minOf(it.sumW, policy.maxLeafWeight) }

@@ -1,0 +1,315 @@
+{
+  "phase183_native_convergence": {
+    "best_decision": [
+      0,
+      14,
+      2,
+      -0.5776537656784058
+    ],
+    "cheap_pass": false,
+    "elapsed_seconds": 514.3313583940035,
+    "epochs": 40,
+    "peak_healthy": 27,
+    "peak_new_false_healthy": 6,
+    "first_training_loss": 0.36233116723497005,
+    "last_training_loss": 0.024130507534799506,
+    "per_epoch_checkpoints": 40,
+    "all_checkpoint_hashes_verified": true
+  },
+  "phase185_condition_balanced_native_head": {
+    "best_decision": [
+      0,
+      14,
+      9,
+      -0.5963152050971985
+    ],
+    "cheap_pass": false,
+    "elapsed_seconds": 7.9670689719496295,
+    "epochs": 10,
+    "peak_healthy": 14,
+    "peak_new_false_healthy": 0,
+    "first_training_loss": null,
+    "last_training_loss": null,
+    "per_epoch_checkpoints": 0
+  },
+  "phase186_color_evidence_kernel": {
+    "elapsed_seconds": 51.79813550808467,
+    "controls": [
+      {
+        "C": 1.0,
+        "healthy_validation_correct": 14,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "old_healthy_correct": 0,
+        "cheap_pass": false,
+        "passed": false,
+        "model_sha256": "c09b142fb700c380289f71fd23027b6f23611aec6e806e7d60d7843fa8710ab1"
+      },
+      {
+        "C": 10.0,
+        "healthy_validation_correct": 14,
+        "new_false_healthy_by_source": {
+          "plantvillage": 0,
+          "tlid": 0,
+          "bangladesh_classification": 0,
+          "olid_tomato": 0
+        },
+        "old_healthy_correct": 1,
+        "cheap_pass": false,
+        "passed": false,
+        "model_sha256": "81e7dbed1ce66532001c1a96a2ed01a1195eec35bba5635b3191d7753ce8a362"
+      }
+    ]
+  },
+  "phase187_trajectory_committee_audit": {
+    "elapsed_seconds": 2.9234520429745317,
+    "experts": 98,
+    "controls": [
+      {
+        "status": 0,
+        "optimal": true,
+        "relaxed_healthy_upper_bound": 10,
+        "relaxed_objective": 10,
+        "numerical_relaxation": 1e-06,
+        "diagnostic_only": true,
+        "weights_not_a_candidate": true,
+        "scope": "complete_new_trajectory_scope",
+        "experts": 98,
+        "aggregation": "convex_probability",
+        "fixed_healthy": 13,
+        "relaxed_total_healthy_upper_bound": 23
+      },
+      {
+        "status": 0,
+        "optimal": true,
+        "relaxed_healthy_upper_bound": 10,
+        "relaxed_objective": 10,
+        "numerical_relaxation": 1e-06,
+        "diagnostic_only": true,
+        "weights_not_a_candidate": true,
+        "scope": "complete_new_trajectory_scope",
+        "experts": 98,
+        "aggregation": "convex_clipped_logit",
+        "fixed_healthy": 13,
+        "relaxed_total_healthy_upper_bound": 23
+      }
+    ]
+  },
+  "phase188_native_weight_average": {
+    "best_decision": [
+      -3,
+      24,
+      10,
+      -1.9743151664733887
+    ],
+    "cheap_pass": false,
+    "elapsed_seconds": 92.86149590299465
+  },
+  "phase189_full_field_native_extension": {
+    "elapsed_seconds": 22.656972800032236,
+    "new_native_encoder_inputs": 142,
+    "new_convnext_encoder_inputs": 142,
+    "old_joint_features_reused": 2106
+  },
+  "phase190_full_field_native_head/binary": {
+    "best_decision": [
+      0,
+      14,
+      4,
+      -0.7848607301712036
+    ],
+    "cheap_pass": false,
+    "elapsed_seconds": 7.680620874976739,
+    "epochs": 60,
+    "peak_healthy": 23,
+    "peak_new_false_healthy": 3,
+    "first_training_loss": 0.7238944508135319,
+    "last_training_loss": 0.026013867580331862,
+    "per_epoch_checkpoints": 60,
+    "all_checkpoint_hashes_verified": true
+  },
+  "phase190_full_field_native_head/clinical": {
+    "best_decision": [
+      0,
+      14,
+      10,
+      -0.6088751554489136
+    ],
+    "cheap_pass": false,
+    "elapsed_seconds": 7.669830697006546,
+    "epochs": 60,
+    "peak_healthy": 23,
+    "peak_new_false_healthy": 3,
+    "first_training_loss": 0.9438740164041519,
+    "last_training_loss": 0.01898361195344478,
+    "per_epoch_checkpoints": 60,
+    "all_checkpoint_hashes_verified": true
+  },
+  "phase191_adapted_patch_supervision": {
+    "best_decision": [
+      0,
+      14,
+      10,
+      -0.6088752150535583
+    ],
+    "cheap_pass": false,
+    "elapsed_seconds": 603.9303547749296,
+    "epochs": 40,
+    "peak_healthy": 26,
+    "peak_new_false_healthy": 6,
+    "first_training_loss": 0.5266963405301794,
+    "last_training_loss": 0.0332633723157727,
+    "per_epoch_checkpoints": 40,
+    "all_checkpoint_hashes_verified": true
+  },
+  "phase193_exhaustive_mobile_replay/field_source_sft": {
+    "best_decision": [
+      0,
+      14,
+      3,
+      -0.6716610711174212
+    ],
+    "cheap_pass": false,
+    "epochs": 40,
+    "peak_healthy": 22,
+    "peak_new_false_healthy": 3,
+    "first_training_loss": 0.49124147463589907,
+    "last_training_loss": 0.06186663481639698,
+    "per_epoch_checkpoints": 40,
+    "all_checkpoint_hashes_verified": true
+  },
+  "phase193_exhaustive_mobile_replay/field_source_rank": {
+    "best_decision": [
+      0,
+      15,
+      6,
+      -0.7537639613681999
+    ],
+    "cheap_pass": false,
+    "epochs": 40,
+    "peak_healthy": 17,
+    "peak_new_false_healthy": 1,
+    "first_training_loss": 0.7866327352821827,
+    "last_training_loss": 0.10086694930214435,
+    "per_epoch_checkpoints": 40,
+    "all_checkpoint_hashes_verified": true
+  },
+  "phase196_rotation_mobile_replay/field_source_sft": {
+    "best_decision": [
+      0,
+      15,
+      2,
+      -0.6316859129118684
+    ],
+    "cheap_pass": false,
+    "epochs": 40,
+    "peak_healthy": 15,
+    "peak_new_false_healthy": 1,
+    "first_training_loss": 0.5065306257456541,
+    "last_training_loss": 0.1626166955102235,
+    "per_epoch_checkpoints": 40,
+    "all_checkpoint_hashes_verified": true
+  },
+  "phase196_rotation_mobile_replay/field_source_rank": {
+    "best_decision": [
+      0,
+      15,
+      9,
+      -0.9781827089683409
+    ],
+    "cheap_pass": false,
+    "epochs": 40,
+    "peak_healthy": 15,
+    "peak_new_false_healthy": 0,
+    "first_training_loss": 0.8177203815430403,
+    "last_training_loss": 0.265315652359277,
+    "per_epoch_checkpoints": 40,
+    "all_checkpoint_hashes_verified": true
+  },
+  "phase199_full_patch_supervision": {
+    "best_decision": [
+      0,
+      14,
+      10,
+      -0.6088752150535583
+    ],
+    "cheap_pass": false,
+    "elapsed_seconds": 522.0689075089758,
+    "epochs": 40,
+    "peak_healthy": 27,
+    "peak_new_false_healthy": 5,
+    "first_training_loss": 0.8194512103727902,
+    "last_training_loss": 2.6930349828985998e-05,
+    "per_epoch_checkpoints": 4,
+    "all_checkpoint_hashes_verified": true
+  },
+  "phase206_full_mobile_supervision": {
+    "best_decision": [
+      0,
+      15,
+      2,
+      -0.879252016544342
+    ],
+    "cheap_pass": false,
+    "elapsed_seconds": 283.84318584401626,
+    "epochs": 40,
+    "peak_healthy": 28,
+    "peak_new_false_healthy": 11,
+    "first_training_loss": 0.9574652151204646,
+    "last_training_loss": 0.15517216631815245,
+    "per_epoch_checkpoints": 3,
+    "all_checkpoint_hashes_verified": true
+  },
+  "phase209_full_mobile_convergence": {
+    "best_decision": [
+      0,
+      15,
+      2,
+      -0.879252016544342
+    ],
+    "cheap_pass": false,
+    "elapsed_seconds": 292.6442826909479,
+    "epochs": 60,
+    "peak_healthy": 25,
+    "peak_new_false_healthy": 6,
+    "first_training_loss": 0.26025194862540957,
+    "last_training_loss": 0.12376262037651031,
+    "per_epoch_checkpoints": 0
+  },
+  "phase210_full_mobile_clinical_ablation": {
+    "best_decision": [
+      0,
+      15,
+      2,
+      -0.879252016544342
+    ],
+    "cheap_pass": false,
+    "elapsed_seconds": 222.63742052705493,
+    "epochs": 40,
+    "peak_healthy": 28,
+    "peak_new_false_healthy": 16,
+    "first_training_loss": 0.4973012460661721,
+    "last_training_loss": 0.06941563166447978,
+    "per_epoch_checkpoints": 0
+  },
+  "phase211_conditional_group_dro/conditional_group_dro": {
+    "best_decision": [
+      0,
+      14,
+      6,
+      -0.843148375582478
+    ],
+    "cheap_pass": false,
+    "epochs": 40,
+    "peak_healthy": 20,
+    "peak_new_false_healthy": 3,
+    "first_training_loss": 0.4366947691887617,
+    "last_training_loss": 0.1130774887278676,
+    "per_epoch_checkpoints": 40,
+    "all_checkpoint_hashes_verified": true
+  }
+}

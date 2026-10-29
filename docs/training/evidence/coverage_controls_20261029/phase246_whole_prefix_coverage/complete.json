@@ -1,0 +1,12 @@
+{
+  "protocol_sha256": "a40266829d1a7add3422c6fd90f61389f9a11bf2979661fde193c509ead72bf7",
+  "tokens_sha256": "6de8066e5fab76e5082d5ce871f95e00675a1ad9d15deee00cc1de470b9475ce",
+  "locations_sha256": "9240115b78be30a8e418f7927c6b9d13408a8465ddc60b58b7a277c2ea3f4b29",
+  "path_indices_sha256": "f38b872046abc1feed31bdb9677e11e7ffcafc799051cf445520d3adb3887068",
+  "maximum_feature_error": 1.9073486328125e-05,
+  "new_prefix_inputs": 234,
+  "reused_prefix_inputs": 1487,
+  "elapsed_seconds": 28.03341180307325,
+  "model_promoted": false,
+  "acceptance_data_used": false
+}

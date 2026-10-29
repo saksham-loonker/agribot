@@ -1,0 +1,38 @@
+{
+  "source_sha256": "5adee0a7e8cf2a5ebfa7df384d9c84cd3f51f6d12705ba78d478ee48be243227",
+  "protocol_sha256": "e4dfb3cafa308a15f6a0a2c05d396a3831828c0dba4089936c6c331e5468e6c1",
+  "controls": [
+    {
+      "method": "linear",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      },
+      "old_healthy_correct": 5,
+      "calibration_slope": 2.9528810779330295,
+      "cheap_pass": false,
+      "model_sha256": "f03dc6ed9e3cc5fadfb33bca0774ed23bc671ed9980a524090fd425e10f14d1e"
+    },
+    {
+      "method": "rbf",
+      "healthy_validation_correct": 17,
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      },
+      "old_healthy_correct": 8,
+      "calibration_slope": 2.2321051582998295,
+      "cheap_pass": false,
+      "model_sha256": "daf358159bb05369fec6012eef1b662c559ad6e7e9baafc27abf1c3a0c62b8a8"
+    }
+  ],
+  "elapsed_seconds": 7.484664452029392,
+  "new_encoder_inputs": 0,
+  "model_promoted": false,
+  "acceptance_data_used": false
+}

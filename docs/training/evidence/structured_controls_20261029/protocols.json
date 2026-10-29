@@ -1,0 +1,20 @@
+{
+  "archive_sha256": "3b286ff81fd0b3394dc9291733c1f703f918cc9fd01b5fcc7382383ef6a50b3d",
+  "protocols": [
+    {
+      "path": "phase223_structured_leaf_cache/protocol.json",
+      "sha256": "b9778dc64fada363e4f6b8d8b35fa0c2d7775d2c70a801dd69fe76490da0884a",
+      "bytes": 457487
+    },
+    {
+      "path": "phase224_structured_kernels/protocol.json",
+      "sha256": "aabe229f8cf60372bb4628f3894704fdf3f6e9b99a4f8663434625e35fec3338",
+      "bytes": 93765
+    },
+    {
+      "path": "phase225_structured_kernel_policy/protocol.json",
+      "sha256": "350982786152ba99a979979f7a8b4db2c411060d6edf1c0213f72808c2b6f09d",
+      "bytes": 1573
+    }
+  ]
+}

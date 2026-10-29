@@ -55,8 +55,10 @@
 
     <!-- Verdicts -->
     <string name="verdict_healthy">Looks healthy</string>
+    <string name="verdict_primary_healthy">Looks healthy in this view</string>
     <string name="verdict_disease_partial">%1$s on some leaves</string>
-    <string name="verdict_unknown">Problem not in our list</string>
+    <string name="verdict_unknown">Condition not recognized</string>
+    <string name="scan_quality_retry">The view is not clear enough. Hold steady, move closer and avoid glare or deep shade.</string>
     <string name="verdict_unsure">Not sure — look again</string>
     <string name="verdict_unsure_body">The leaves gave mixed signals (maybe %1$s or %2$s). Move closer, try other leaves or use better light.</string>
     <string name="confidence_high">High confidence</string>
@@ -210,10 +212,10 @@
     <string name="cond_healthy_do1">Keep checking every week, especially after rain.</string>
     <string name="cond_healthy_do2">Look at the lower leaves too — problems often start there.</string>
 
-    <string name="cond_other">Not in our list</string>
-    <string name="cond_other_body">The leaves do not look healthy, but they do not match any condition this app knows (for example bacterial spot, leaf mould, mosaic virus or septoria leaf spot).</string>
+    <string name="cond_other">Condition not recognized</string>
+    <string name="cond_other_body">We could not match these leaves to a supported tomato condition. This result does not confirm a disease. Try a clearer view of tomato leaves; an unsupported condition or a different plant can also give this result.</string>
     <string name="cond_other_do1">Show the plant, or a clear photo, to your agriculture officer or KVK.</string>
-    <string name="cond_other_do2">Keep sick-looking plants apart from healthy ones until you know more.</string>
+    <string name="cond_other_do2">If the plant looks unwell, keep it apart from healthy plants until the cause is identified.</string>
     <string name="cond_other_do3">Do not spray anything until the problem is identified.</string>
 
     <string name="cond_unknown_label">Unknown</string>

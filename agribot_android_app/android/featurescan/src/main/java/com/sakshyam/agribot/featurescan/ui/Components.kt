@@ -33,6 +33,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.pluralStringResource
@@ -146,7 +147,7 @@ fun confidenceText(p: Float): String = stringResource(
 fun verdictTitle(v: PlantVerdict, labels: List<String>): String {
     val key = v.labelIndex?.let { labels.getOrNull(it) }
     return when (v.kind) {
-        VerdictKind.HEALTHY -> stringResource(R.string.verdict_healthy)
+        VerdictKind.HEALTHY -> stringResource(if (v.primaryView) R.string.verdict_primary_healthy else R.string.verdict_healthy)
         VerdictKind.DISEASE -> if (v.partial) stringResource(R.string.verdict_disease_partial, stringResource(Conditions.nameRes(key))) else stringResource(Conditions.nameRes(key))
         VerdictKind.UNKNOWN_CONDITION -> stringResource(R.string.verdict_unknown)
         VerdictKind.UNSURE, VerdictKind.NEED_MORE_VIEWS -> stringResource(R.string.verdict_unsure)
@@ -165,19 +166,22 @@ fun VerdictCard(v: PlantVerdict, labels: List<String>, modifier: Modifier = Modi
         else -> Icons.Filled.Help
     }
     val title = verdictTitle(v, labels)
+    val headerColor = tone.color()
+    // Choose the higher-contrast foreground, including the light tones in dark mode.
+    val headerContent = if (headerColor.luminance() > 0.179f) Color.Black else Color.White
     Card(modifier.fillMaxWidth().semantics { contentDescription = title }, shape = RoundedCornerShape(20.dp)) {
         Column {
-            Row(Modifier.fillMaxWidth().background(tone.color()).padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
-                Icon(icon, contentDescription = null, tint = Color.White, modifier = Modifier.size(36.dp))
+            Row(Modifier.fillMaxWidth().background(headerColor).padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+                Icon(icon, contentDescription = null, tint = headerContent, modifier = Modifier.size(36.dp))
                 Spacer(Modifier.width(12.dp))
-                Text(title, style = MaterialTheme.typography.headlineSmall, color = Color.White, fontWeight = FontWeight.Bold)
+                Text(title, style = MaterialTheme.typography.headlineSmall, color = headerContent, fontWeight = FontWeight.Bold)
             }
             Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 if (v.kind != VerdictKind.UNSURE && v.kind != VerdictKind.NEED_MORE_VIEWS) {
                     Text("${confidenceText(v.confidence)} · ${stringResource(R.string.percent, (v.confidence * 100).toInt())}", style = MaterialTheme.typography.titleMedium)
                     LinearProgressIndicator(progress = { v.confidence.coerceIn(0f, 1f) }, modifier = Modifier.fillMaxWidth().height(8.dp), color = tone.color())
                 }
-                if (v.leavesSeen > 0) Text(stringResource(R.string.leaves_agree, v.leavesAgreeing, v.leavesSeen), style = MaterialTheme.typography.bodyMedium)
+                if (v.leavesSeen > 0 && !v.primaryView) Text(stringResource(R.string.leaves_agree, v.leavesAgreeing, v.leavesSeen), style = MaterialTheme.typography.bodyMedium)
                 when {
                     v.kind == VerdictKind.UNSURE || v.kind == VerdictKind.NEED_MORE_VIEWS ->
                         Text(stringResource(R.string.verdict_unsure_body, stringResource(Conditions.nameRes(key)), stringResource(Conditions.nameRes(runnerKey))))

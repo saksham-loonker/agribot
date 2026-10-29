@@ -1,0 +1,16 @@
+{
+  "source_sha256": "d4dda0ab08614dfd7fae2e4e1fa26c00093778c04193565f4f6f347298fbabb3",
+  "protocol_sha256": "b5128e1ac37020883e0b3b71acd8d5d77b5a0671deebb6d09122864f8d486e6b",
+  "features_sha256": "24f50ecced5207fc5089d0f758444e89a109bd2ad2034ec4f06d1b6d4538865b",
+  "new_native_encoder_inputs": 142,
+  "new_convnext_encoder_inputs": 142,
+  "old_joint_features_reused": 2106,
+  "added_training_images": 71,
+  "added_training_healthy": 66,
+  "maximum_native_restore_error": 0.0,
+  "maximum_convnext_restore_error": 3.5762786865234375e-07,
+  "new_detector_inputs": 0,
+  "model_promoted": false,
+  "acceptance_data_used": false,
+  "elapsed_seconds": 22.656972800032236
+}

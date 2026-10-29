@@ -1,0 +1,1788 @@
+{
+  "source_sha256": "116de18fb8f9f408146ada0be3d6a5f940485ac31b69816a550c42d8cf3c8db4",
+  "source_overlap_result_sha256": "8c418955957e91d6d3dd31787654f9daad216d0062dbc74209caed1bf5cdc2c8",
+  "source_manifest_sha256": "e9413370acf1375f36a7e79863d61a792e18d1118fab39e93ea1f00fbc08d9ca",
+  "selected": [
+    {
+      "id": "field93:82faa4ec-8b5f-4562-b445-b10798411916",
+      "sha256": "3250f2b43d67931a8ae12c2af2c673f5ff89125945d755cb5855e479f3902e59",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:f3aa59b5e9e318d9a563"
+    },
+    {
+      "id": "field93:b8f9a165-b294-47ca-866b-232898c301f2",
+      "sha256": "0eafb5d761d2c66a96d14cc06869e08d2defc01d4ef74a7c9b7f7af175b875a3",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:3e821c5a30c724554a93"
+    },
+    {
+      "id": "field93:c2f2ccf6-3220-4c42-a83a-2e9c147c8311",
+      "sha256": "859506a1ed4434d5d4b20706b0906f631af26d14c26b278c7ac77f1555c84c06",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:6dc2951c84fde46c3ea2"
+    },
+    {
+      "id": "field93:686a96fd-7e17-4ba1-8469-52e8761a2e96",
+      "sha256": "9dca6ab708e312e48bd4230a24a5594597ca78c22b4d4ea8ae7b7c46d8a67c93",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:94a4a9a8e281ace2858c"
+    },
+    {
+      "id": "field93:070e5a46-7a82-4be9-9ebe-d8e0a467ab3f",
+      "sha256": "557cbe96f05ed87112060b7df0e7702cae16c7dcf75bfe974ef5f7c66b38a656",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:029fce7e6e401dc26c3b"
+    },
+    {
+      "id": "field93:577eb551-2951-4bc4-b611-a2e357e35d07",
+      "sha256": "18ef6cba5215c9871784d66d2f824b20bc27676b9fd79efaebb8d407b31162ea",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:4f4e6fa6af8c8216111a"
+    },
+    {
+      "id": "field93:853ff5ae-55e9-4eea-bcdc-5e0f656cd5c3",
+      "sha256": "7c63cff0659464b558b32b8ee6e2b9858e287ebe2009d21687ea5e73f814bfab",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:eff5143c2b6219b1843d"
+    },
+    {
+      "id": "field93:1187cbf5-5784-4193-80f2-0f37d169d158",
+      "sha256": "c97109a5ca7a45bfe9e3eadb36d95b841ff3e14d224a4ac16a493e19b0b46eb6",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:e74d8b91c08af1e2d5ca"
+    },
+    {
+      "id": "field93:f1833cdc-58a5-4cfd-a100-3614fe048238",
+      "sha256": "1401e506b7100aff14d94b1e86af2348630eb3d19ced92d4c88709accfd0bfef",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:88cfe8b733da24f77cd4"
+    },
+    {
+      "id": "field93:9254a1d5-5b04-42f1-9433-3bd1198fcd41",
+      "sha256": "59c121b9f7875af79b21486378f8b3a3bb5fd6bd3d5e1dc496a8d61feda5bc81",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:b70e9fb47d4d938e7f5a"
+    },
+    {
+      "id": "field93:40230db0-e1f3-44db-bb9d-b9e0fd2ff1f2",
+      "sha256": "4cd83ffa735dfe1595603208dcfeabcee254c4ff67f011b56db1a13f15f79bf8",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:ea56cfb529b814e0c4ca"
+    },
+    {
+      "id": "field93:c9483a6e-03fc-4649-8889-9f356e9a0076",
+      "sha256": "84bd4afc8c7a4e693376e381a8c7c437a5954afdbb2ee73d6a9ab4d052aa9173",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:0fecb8122991e79a0d5a"
+    },
+    {
+      "id": "field93:5efea2a5-6e9e-4888-a872-8adcc6774d49",
+      "sha256": "d67aec19e57f6024798064cbbc0fec3186b831ba93ae1f232b7cabbcbf8a74bc",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:27bed9c7a78730afc887"
+    },
+    {
+      "id": "field93:dcd8b82e-f467-44b8-b23c-16908cd1b563",
+      "sha256": "c909a45b1694db225902ef857c0063d5a81acf421e2654372e10e6e6c831c933",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:9470e211f5c2c04e9a78"
+    },
+    {
+      "id": "field93:ae9de1e2-1002-4a23-8dd7-5390f1ffeab0",
+      "sha256": "98fc99988f8fb345508d957040436fa963ad2eed3873b63b069e5fe1186385c2",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:a15f4325f3b5fdfdcc84"
+    },
+    {
+      "id": "field93:906e8ded-759a-4a25-a0c5-1cd7a09b7dda",
+      "sha256": "cd941a6b04cb7efad3971bfd0fe80e51760be346772785c2beabfae2be958e6e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "group": "field93:e4b7e1480220ce7923b8"
+    },
+    {
+      "id": "field93:4cb574dd-e5ce-4665-ae89-8af604299d57",
+      "sha256": "5538859cee5b3b10875c8c6463ce5334d194af15209c15718446f00815368df6",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:67044807addee1e23215"
+    },
+    {
+      "id": "field93:e2b4a0ed-a929-49b5-a5dd-1e948663dbec",
+      "sha256": "4aae21bf436369fbce9ca67f59ac3e8e37d870c6d7fdc1d26ba0e3f1e98d81e5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:fb442dfdc47ed203300c"
+    },
+    {
+      "id": "field93:f9237203-a309-45f0-9840-ca929a5ff608",
+      "sha256": "bcbcda1c8e44206cb84a7f28e28aad4bdcc3764b729aab5466d9e618a66624be",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:73d6b92821f35e1a748f"
+    },
+    {
+      "id": "field93:dab823de-3da5-4742-b628-4e5f196702e1",
+      "sha256": "622f9af1d56fe5d6e136b96553252ea8a5676b6fb2424ab3fb41087b42ffc478",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:cb720f8fc2aa2b39976e"
+    },
+    {
+      "id": "field93:f9e0f8b5-1346-4f91-bdfe-75fc33e075b4",
+      "sha256": "7a21634df8dca4d8e1427f91603e74c840a4b1957734d0015277bce802c737a2",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:ae4d7cd6a2047ff041aa"
+    },
+    {
+      "id": "field93:41e3aeaa-d698-4c18-b972-1d42d8f77fcc",
+      "sha256": "6310d77b5a6476b412ef8cdead27e809de7d7ef7dc8ed1a4fac088415a0fe7f9",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:904971bd1f1e14a09754"
+    },
+    {
+      "id": "field93:e434eac0-e16f-438c-8d68-8c5d6b1f0e36",
+      "sha256": "aaf5fd1fa93b8319e0213e3b1c42e3ea2ca86548b876bcf32d64f7cb7228e4aa",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:8e8d2e19f21ec3d33221"
+    },
+    {
+      "id": "field93:f2a3b972-8961-4d2f-8e7c-bca17af8202d",
+      "sha256": "2fb536f3c36c2c3296289c4310d85f902721a745d5fc5bab32f0c3e3d777ed5a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:c4e9d00a90ddb4db019c"
+    },
+    {
+      "id": "field93:b50236b9-4f4d-464b-9e01-eab19c2eea2e",
+      "sha256": "b59d4fa46fa4b819e4c4a9c0dffe09e705484f8827a266ea262278d5d6b2ecb2",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:c05bc863bd36c82a0eb1"
+    },
+    {
+      "id": "field93:f0e3b1a2-4c4f-4695-806c-eb554b7bf0bc",
+      "sha256": "db539102b90b21fdf256a7f764a693eb0f54f15e5b782fa2d572ea81cff9433e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:d79d902214af4a1e04a3"
+    },
+    {
+      "id": "field93:6177c07f-6ae3-4032-8362-c2cf6994d7d5",
+      "sha256": "fa8e64f1b7d1e0234d16dd733d573dd2ae52034558153e60f2b308d825b7d8b8",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:9cac1535e47ef03741c3"
+    },
+    {
+      "id": "field93:30c8246d-c463-4872-8bce-f30e762a8b06",
+      "sha256": "75cfb053d063313c919fa5cd5a99b0d5326d1aed733824129eac03b2ef6203a7",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:ce6676c8f94e72a12604"
+    },
+    {
+      "id": "field93:35d7a19f-6dae-423b-b038-288a5617bb98",
+      "sha256": "8e4675ea8e930731d17ef2f762f99c9cc1d40bc2adefc040e0ee5461b173e950",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:1eb0a68f720492d8e8ca"
+    },
+    {
+      "id": "field93:bcebf606-2d97-4c5c-b672-71391222c9a5",
+      "sha256": "fcbea6bdf1f18e03e90052cd3a3d066a407efa06afa4f140167cdc450f4fd417",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:6f42356eacdee396f7b7"
+    },
+    {
+      "id": "field93:a600f1b2-5292-4d43-b378-1d251c43e62a",
+      "sha256": "17a21a3334264ed7066a62e814cd095f3a74a55cfb437fe903d2d628ab82df4f",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:33b1258684c736b26f75"
+    },
+    {
+      "id": "field93:3fca0200-1dab-48fa-8366-ca268d4d9e04",
+      "sha256": "858f9a7320bf21de98a24a5f52a1546f9a1b18f57cc65b24583debee34ce4e3d",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "group": "field93:8baad82934214ba335a6"
+    },
+    {
+      "id": "field93:c0c22f91-2055-4293-b763-03e2ba90fbd6",
+      "sha256": "e8cbf9aef4391e593985de8bdffe8fa8496ae419195ab27d8aebeeaf09b47c11",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:3f7a4727ec41977ffa69"
+    },
+    {
+      "id": "field93:8f4ef632-f209-40d7-9e6d-0b26d38c6e30",
+      "sha256": "cebc69daa53d8479b91c07d2fcb8fb7706c75d5a25e65ab9f5116f6d0e5794a9",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:8455f58ce0ef22ee3868"
+    },
+    {
+      "id": "field93:78ed7393-912d-43d5-bac2-c08b6b08944f",
+      "sha256": "3dc3bb95a32aa876a0e5806420eb805320864270fc6a3cfefe168cd8b67318e4",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:156b77018c675992c076"
+    },
+    {
+      "id": "field93:b6665754-99c9-4c2c-808f-2f57b28d46b6",
+      "sha256": "f98096582a0678720114656e0a410b4e5729bf69a721c4ce65a8bc93f5ef48d6",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:373c7a44dfdbaa61b9ac"
+    },
+    {
+      "id": "field93:a17eac21-8ba5-46a4-b3f3-54f2a7bc4484",
+      "sha256": "6f45d320aa9cf446275463c7d2b51e6b25a9ba570f7fb66d40f897c379791ed0",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:459394fdce01d9804faa"
+    },
+    {
+      "id": "field93:04932839-1ad6-40b4-a172-4fdece57a864",
+      "sha256": "e0e0f330f81f431018ba24a1eaa6ae002fb808f3bbbdadada10a33dd381df812",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:7a765ee47018dd784653"
+    },
+    {
+      "id": "field93:4346f5dd-f4e0-4fc8-b7b2-6d6c4e893206",
+      "sha256": "6ad52ea0f56e6fa64137c2683a2fa81dc0920d140f5fc89258b853752f628be4",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:3ef6020f00c652a38c52"
+    },
+    {
+      "id": "field93:2724f67e-c68a-410b-bc28-c25fbab6752c",
+      "sha256": "8039736db5b06ff6fa4fcef5affb2df0c2e05e5b2ad839a78f65942548a0f8d4",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:88b61a3434124e901145"
+    },
+    {
+      "id": "field93:e618b074-a75d-439f-b9fa-db18a141f4b6",
+      "sha256": "15b4bf00ca6f1af27389eecd32014f6e7e51c80d924adf94ba0d30bb03036ee3",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:0a0e3e64c9db70051754"
+    },
+    {
+      "id": "field93:487c2fbf-e44a-45ed-96f8-4b3d5b1d1aab",
+      "sha256": "df4867ad2cb8e40a319d336cb24c8b36c34130136702143b386e0f9d86366970",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:c65e31058fb4e35ca92d"
+    },
+    {
+      "id": "field93:9ff898dd-74d4-48b5-9dd3-85a424feeb38",
+      "sha256": "438ef46390ce4060ea1931b7d111835cbe4a4c5fa1d889c604e2ce0be379b25b",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:1d58984d36dec11e5635"
+    },
+    {
+      "id": "field93:f48ee755-b8da-4b1f-a26f-a6bbab46a29e",
+      "sha256": "81e5957906c3c4fad50a7c2d669e17b3697045a787e90aff08613d03f6c8121c",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:6d795c11013829f74dc7"
+    },
+    {
+      "id": "field93:fc8e6f0d-7e6e-4ff1-a307-5e1efd5d3455",
+      "sha256": "47486bc63ab8ac97c5c26d550e2f797e7282ccfb4192d2c38f3926ac44124ca6",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:f334ad1d0a0588474027"
+    },
+    {
+      "id": "field93:a523f49e-0edd-4786-ad5d-719e702b8671",
+      "sha256": "3ad3ace4e36b0709c3a5fc66b98fabf50642bc771fad8d68e99dd12fa3d8e9a7",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:206e5001f19a1f7045b2"
+    },
+    {
+      "id": "field93:db0c00b1-9aee-4a75-b5d0-3297f130b8e8",
+      "sha256": "7440f461b84001d53e60e628545f8f1d40a9d2d69f46e1a9073d2b19976a79aa",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:cb4d6b7493daf4f8372f"
+    },
+    {
+      "id": "field93:35af1cc1-762e-42f2-a48b-ab37f2ef564c",
+      "sha256": "521c61a9de041f5318a9d170db51ff5409019b4b7a251692682b0538692f17fa",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "group": "field93:d5a7ca56b61949a590ee"
+    },
+    {
+      "id": "field93:c0b3c264-2c7d-4e67-9676-d9961d2b6fae",
+      "sha256": "09d738981627df3c618a2e3bffffe734c778f046db857c7ba6219debfadaad95",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:dc85efb4d1cda98a32e5"
+    },
+    {
+      "id": "field93:bc23177f-49e4-409b-a391-2a9ffd3630b8",
+      "sha256": "10190c76db4aac95abd07984bb2eb12f2ce3621973c49661a6c516f30224f106",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:ba89c66a55a773b08c4a"
+    },
+    {
+      "id": "field93:8a279052-9096-4d26-af80-39bad750fb4e",
+      "sha256": "6353d7f42b65e71eb2d3ae55c83fbe92f1382bcf9fcbd694279d6bac8241d13e",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:9dad6ddd67beff90d74b"
+    },
+    {
+      "id": "field93:f3cb82fe-06cd-4dd1-96d3-a50b1b9e489d",
+      "sha256": "9b6416645e9f6c719cdf7eb82cae29179ec9e2bc00a9e0d112e1ffb1cdc7e05d",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:40ba85de110fede0cdb8"
+    },
+    {
+      "id": "field93:f31c1dcf-e823-4548-9433-a6ec3aad09ce",
+      "sha256": "f7c298c0db5f2c6c6770dda54ed7bc3a1a4786dcfcc74d2c4c3e575b63bf80c7",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:dc864c6fd679f1d4120d"
+    },
+    {
+      "id": "field93:163ca58b-19ee-4af9-87be-b827d053043a",
+      "sha256": "858aa3851b9422306d6a6f30ae6db25a693698b37433e6e4fa3e2174a0000cd0",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:600858c9b18692341ef5"
+    },
+    {
+      "id": "field93:850894b5-7eb3-49b9-8204-7665559610cb",
+      "sha256": "4c76f2f85d2a1bfeb27000a232b14267e683db180b59208113d7ead1c4fd3ab5",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:caaa979ba375b0fc9bc4"
+    },
+    {
+      "id": "field93:1a0331f4-38ad-4cd5-828a-af5a08146527",
+      "sha256": "17c676b0fd1d257c3bf6e83b4ed4554fb07811245933d888ed37c84ad0057832",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:5047296b3417a92bd39c"
+    },
+    {
+      "id": "field93:04ab2644-7115-4d00-9961-93d7f716fb38",
+      "sha256": "4d04895b946d74d6c37a0e3a6d56363be9cd87f45ce82415adcb1014330afc24",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:1632b49e7dd4d7e09dcd"
+    },
+    {
+      "id": "field93:bef0fc52-a7ab-4071-9cba-1f34f3d39fc6",
+      "sha256": "8d08d005ecb2842c70ab764262c7ac1f4199f820a5e117885e885ec0009557f1",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:6560a9a2c3ed6928814d"
+    },
+    {
+      "id": "field93:d99e9a98-24ab-4dcd-88fc-18642cde7c7e",
+      "sha256": "29828350166d781c1ec4f078cc4b009e95995704bf92b8659ac770219b8028ac",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:2331279204f3079bde8c"
+    },
+    {
+      "id": "field93:966b15ba-f081-40b8-8eb2-b8ebd1984d3d",
+      "sha256": "c5541a0f0263de75469944ef4bd0ac191143c5492fb26c907688becc88f39e94",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:ede8f953a43f84ab8e63"
+    },
+    {
+      "id": "field93:07e3a16e-d8dd-4a83-a47b-61ff9375c1f8",
+      "sha256": "ce83d848738280e7172dd2834a37f79de5650da2c22e2759f8ca4a131270a7bc",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:2d7781191414ea6ac502"
+    },
+    {
+      "id": "field93:f10ab78e-bd12-4f4e-95ad-922bd050b966",
+      "sha256": "f1460a7ba19ed97c905e2d6e4e8ece03224697aef7566e25b38b68f9110ca29c",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:1a9fd0c480f7465c9871"
+    },
+    {
+      "id": "field93:19d734ed-70bf-4325-8163-cde46efee176",
+      "sha256": "bd6aba8a19f21569bb4f974b25bf5e82cc8223de62ce3e4caf4897f3b8b84747",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:b7ce341511d2a6f02289"
+    },
+    {
+      "id": "field93:dce87738-9aa2-464d-ae2d-52008c84bbd6",
+      "sha256": "0b7c34847c1931ff3ff53d90b3394c2998302587b123eb5db1697c29f8d2cc7a",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:45a88d2ef0aec1bc9f24"
+    },
+    {
+      "id": "field93:41d82a5b-bbd6-44d3-b92b-ef55d768587f",
+      "sha256": "bdbde34c5f623c7ac7f0ea748dd940ebeb73eaa79a5f3f8782bee180bd6b3730",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:8f88dbd2eff6d7de1a5d"
+    },
+    {
+      "id": "field93:30ba829d-70eb-4bbb-bdba-9591745239b0",
+      "sha256": "4736d2b2d1ddc267b1953c4ed09250ca39164d9213425862f1c62017e3528458",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:dcfbd7908ab414b0790c"
+    },
+    {
+      "id": "field93:d922bb09-4060-4019-bdf9-365306906a4d",
+      "sha256": "913835e0b25a606ccb87a324bcd368b99cf29b8d58d56f0b7848b48982ecc863",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:38c5ce42bfc481dee9cf"
+    },
+    {
+      "id": "field93:b6bee88b-ffbe-4338-8ef9-72d5ab2f6875",
+      "sha256": "7c8466556c5a8ee7eb060dda3edc1db427f4fd560ab31bf038a2b5edb248fc2c",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:58b42f2bf7798865d5a0"
+    },
+    {
+      "id": "field93:7bd1acd0-0da3-4c3b-b797-d3d460135fea",
+      "sha256": "2a427098ef598c5fdb08faa1b6cea586424dcbc3497e6a4e3231ef6e06a9d0c5",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:865c2bade3d58dcb7a8d"
+    },
+    {
+      "id": "field93:a18d4b70-912e-4cad-b61b-c2b033ab2f40",
+      "sha256": "90d5ce7a19537610e48723dfb52fcced9210c7da4e6d6099a92d79da24f13699",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:4606625464001f027eb8"
+    },
+    {
+      "id": "field93:5472883e-a457-434f-bb75-e2556369ab2e",
+      "sha256": "135c65784fb6e0fc54b8225b6be057f8efcaffeb3fb408245f51d8cb6f74e9cc",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:23e04ba85a50eb10cdb4"
+    },
+    {
+      "id": "field93:a279a881-f171-41c5-a5b6-6c56254a8433",
+      "sha256": "c9fc5880c51e66ad0be74849226c972a20e0052c1cd3114d176d3d1d65c19f6d",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:2715e65ece66dc1f8de7"
+    },
+    {
+      "id": "field93:3b9e8ee0-f51b-4f57-9de7-f2132ddc1ff3",
+      "sha256": "b6fe611ed1ff39e07cf8378f963c5ab5402d3ef86d4c71df9f25ac2437ce5bc7",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:386c106d4d3bf8efe923"
+    },
+    {
+      "id": "field93:965e7038-5805-43a5-a424-7795cb75dee7",
+      "sha256": "a77aa8b7bc67ec816623104804dbf1720328d4a880f71f2045a6b2c144d672f9",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:628f2901a2e24d97ea63"
+    },
+    {
+      "id": "field93:bce8cc54-0918-4a0b-84a9-aae44528ed3f",
+      "sha256": "615b0dafb00fec87a8ab68944179471873b6deb2ba2b3b6e7a62ff2b9689e859",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:b24724078f0fbbc83dbf"
+    },
+    {
+      "id": "field93:a8520afc-7713-475f-905e-7a4c723467d7",
+      "sha256": "67665e576f242eef7de53f1b114b300abe957937bd146bfdf0b9e66f20e9f566",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:6669f5d24ba67f40b385"
+    },
+    {
+      "id": "field93:5a8ca32b-ab13-43a1-a540-4b0f242e1571",
+      "sha256": "92f7a85a9f64e573fdc0e3956139b436a9dbbdbb2af7c16561a650157802cf41",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:2dc465dbdedc86b16f02"
+    },
+    {
+      "id": "field93:de81845e-0fa5-45f0-b297-eb4ca75ca2ff",
+      "sha256": "46692524b56de7475b89bfb2a9c0bf34ee75370fabf74a7a6909332d30669265",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:a81babec303bfd3b50a6"
+    },
+    {
+      "id": "field93:3c9faa34-452f-4bd8-a9fc-82c68b05a272",
+      "sha256": "81d20c994727d4e9d410fc39497d736ca3712a16140626ffdbd963e253eb61f0",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:3e7acb70c4ec013d43d3"
+    },
+    {
+      "id": "field93:b9f71a70-6962-4802-9b70-9cee34050aa1",
+      "sha256": "bb5fe40c92df635789eeea5e310b27c05e23f98b020ec7b19a4662013ab9f002",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:1941d79b66543bcf5fc2"
+    },
+    {
+      "id": "field93:8b1c6711-01d2-490d-a88c-622dbc510f8e",
+      "sha256": "6e4c64d1491e35aeaf85ba100fb525d253993d7670c1be4d26471182691c78bf",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:6b8b0500f46ac55b7d67"
+    },
+    {
+      "id": "field93:bc2eb2dd-2c75-4daa-ba53-703b431460fe",
+      "sha256": "4bd8524e9ec94ea1b01df9632af7112738aafaf2298abad6c3cad3450173e232",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:8ae6c99a7e07268bc94c"
+    },
+    {
+      "id": "field93:7fd15432-1f74-4a70-ba2f-1e1b73746189",
+      "sha256": "480fb98032e6a2de6412e51e46752a3e65faece8cebcaaa3186f4e955ff5a66a",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:8fce6109cd976b605404"
+    },
+    {
+      "id": "field93:ce66146f-4ef4-4311-a06f-94a92f72a662",
+      "sha256": "4229281c9d5da07f909f3f031660fba48e0bd2ff4521510c31692a964fc5f056",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:ef430e624edab17da533"
+    },
+    {
+      "id": "field93:bfef6abf-420f-4219-92d8-6984a6e04f45",
+      "sha256": "8e76251412ff8988ec1d866deda1be9ef5bb9ef031f5b6474707100d6ac58d2a",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:9549b6b2698c767a6e2a"
+    },
+    {
+      "id": "field93:1b2d7a8a-17c0-4308-b723-311f83ab24d2",
+      "sha256": "de488da30d6c9a3b9e36d9678c631439d90551c025f59417786ab89982e34585",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:f773dd63e66d3b1c7cd6"
+    },
+    {
+      "id": "field93:19617ef7-93d8-4aff-b967-0051970c1057",
+      "sha256": "b6a2439e12ecd3195c34560a60ea636a9916c0db967c519dd4e57423e9b3112d",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:1715d524d7c835062ce5"
+    },
+    {
+      "id": "field93:e5c15c1e-f515-4c9b-9289-86f42db48e77",
+      "sha256": "1f5f1665d9b4bfee2026fca6086fc3f771238862037093f6dfeaceeef9fc32b7",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:3dc91cc9810eb978b641"
+    },
+    {
+      "id": "field93:45570068-0f48-4c45-bd09-fc34678601fd",
+      "sha256": "d1ac4cbe84fd511c1ae0be41652d7cf815c4627e18ae36f8de41246063223ecc",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:193f381fe3b90c1b0bdc"
+    },
+    {
+      "id": "field93:1369b390-8ff8-4453-8742-0511e22110b3",
+      "sha256": "e3c0ceead430782e0baabf23dbc0991e0d5313f92fee76b99e6bce1427006dd9",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:2ec1870c0a2582b16508"
+    },
+    {
+      "id": "field93:3cfd908d-4cab-4f63-b241-ed2e0bde8445",
+      "sha256": "39ff1b9b48baa300b2414641579666cad520c171fb0f25e590c0eba03f21593c",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:76a4a533a191829c8408"
+    },
+    {
+      "id": "field93:0fc03ba0-d2d3-4d01-976c-8c208a29bd66",
+      "sha256": "af9b83a5be56cf9bdba2b6ff2e478301d76c12a3fd5d135f403eaababb59ae75",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:787e6154ff80f03fc5ac"
+    },
+    {
+      "id": "field93:f7b97a84-4782-412c-935e-8b27044a6ead",
+      "sha256": "b3ce2f66017f3d5b3a26c8dc3a686bce255226847612500e7435b7641619a244",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:cf94f2d97fd82555ddb2"
+    },
+    {
+      "id": "field93:fe173789-4550-4a7c-8183-e17fc121fc81",
+      "sha256": "5d4294a22b0dfd21015eb01d20f63010566fc3f385c3d4b05fda73a7152696ae",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:186c2f2301dc1549e845"
+    },
+    {
+      "id": "field93:ceb25035-d70e-4e7f-92e3-58750ab00aeb",
+      "sha256": "e9b4e93f65e5c1b261804b428fe9f51fbe0e2fbd305f170c5d241f46921c7ac6",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:83572c839363e3684e4d"
+    },
+    {
+      "id": "field93:6115a94a-71b3-4a1d-87de-5e9803fc2e8c",
+      "sha256": "6d07ca5685e07298b2640ca5494c42356298492f8e4848f6665c35da90fb0c03",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:9ab3f14647e06e3c6fa3"
+    },
+    {
+      "id": "field93:39760a95-35e0-480a-b401-a3c1a64f2f26",
+      "sha256": "71214042207cc033c0e7a696109691a3dd3c42358d4779f3a935f8c1ae97fb42",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:a1188be810b706076509"
+    },
+    {
+      "id": "field93:453fbf95-0ca7-4cc3-b856-8aa8b309a8b3",
+      "sha256": "d1f9b26cdc788b911814663d36165866d77ebf6ba3274729e82bc1f5c1bad5a1",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:c695985e681693777e8c"
+    },
+    {
+      "id": "field93:c30f383b-7ff2-4dc8-8a4d-70b5d7a83551",
+      "sha256": "e8017265abd366df99c2c98fbce9de18811c78646a66cd7aa7941c79d1018298",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:aedf15648883eae16d3d"
+    },
+    {
+      "id": "field93:2e13fa7c-3b37-4e40-b598-ff2f465b4000",
+      "sha256": "1386b7122e75dc19318cb4d014bafffd1af1231786b17008f0051fd74c9f22b3",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:f64b3ef8e7dc3b738f3e"
+    },
+    {
+      "id": "field93:114ca95f-0d93-4540-beba-2770306b0912",
+      "sha256": "e13fd48a690376218bdb5d2fca45b75dcc9ab57b4a84d94bf9c4199c0e3705e6",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:fefe0095a6165b88dd00"
+    },
+    {
+      "id": "field93:b349d42f-4dc1-4a94-b701-4d90a523bc40",
+      "sha256": "2811ffb831c4306835a8f52c903e1ebfcbeefa26074645a70b782e1dcd728917",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:4d8bfb8b4e1066eb23d1"
+    },
+    {
+      "id": "field93:985b73fe-622b-4967-a5a1-44fe9b935243",
+      "sha256": "43b403eb159389c9ea894780694001929768a336e5dde2ef757b57e0a79992ba",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:ae0ba4a0e3a80f7f34a9"
+    },
+    {
+      "id": "field93:5d1141c4-e960-4d39-bd03-b3d85f821ebf",
+      "sha256": "1faa559c8025705f4a83cc6ccda4f07d82b3458c33114597bf03437e35010703",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:14a914f674fc5d273b33"
+    },
+    {
+      "id": "field93:282c0112-2e62-499b-9af0-590272c996ab",
+      "sha256": "06d7de328c38605c47d0e5288309ec9d93ef439da839f17c8dc8c629963fe676",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:32539b35c919b269c06c"
+    },
+    {
+      "id": "field93:2f10671d-b6ed-4c04-a5fb-cf915239b9d8",
+      "sha256": "e2fc27b56cc34244e1d647d8f844969eb036701f68559b90066ea3d9dba4f956",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:1986dc9db9bdbeb06b6a"
+    },
+    {
+      "id": "field93:5f33ddab-38eb-4403-8256-5927ec353219",
+      "sha256": "993c8abc07807f0e9ba1acefd089ce23f6ded3da04d1215b78cedf71a954411d",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:aba9587958cdd8d99dca"
+    },
+    {
+      "id": "field93:f113818d-e21e-4557-8257-3e28929f0b97",
+      "sha256": "7df54d592f3e34ab81ac18dac263aabc2629df38dc282e677a8f239de8648cbe",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:ad4bfcf611eacb4bedff"
+    },
+    {
+      "id": "field93:4231c774-8d42-4274-aadb-cba389e5c520",
+      "sha256": "3036f12ad8cdee06cee7a532d7523c6e0698f2f703747dbddb647bc6f249fc19",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:40d77d008269b5d62ee8"
+    },
+    {
+      "id": "field93:7c1d1411-c731-4d52-82f8-8abe3bc9159b",
+      "sha256": "3d92bf21b6eeeaac35bddacb06270372da82b5021892ec2c812642ca87f4d993",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:7b05df57c00c902d766a"
+    },
+    {
+      "id": "field93:aef311b6-1679-4f0f-a543-c1a106b7762b",
+      "sha256": "1236a02a593de8b23b8886253c32636fd10c947e58c6926423c6fea09469364d",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:a3acdc08c27b17971ac4"
+    },
+    {
+      "id": "field93:261dca4e-e725-41fc-aef9-72909463ff76",
+      "sha256": "5e582fa0c1d31cc2e3f11a679c083b197436e22f1c31d019d760e7d6a518dffe",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:6ac028364adda42a68b3"
+    },
+    {
+      "id": "field93:31a2d9be-4ed1-423c-acf2-22643c085424",
+      "sha256": "52b439cbe4ef1d578e06a8bf62a6979b754cb35e193c4efc57ebabc0b0c480d5",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:db401079967e3cfc4297"
+    },
+    {
+      "id": "field93:5e505ac6-1f25-4fca-b4a6-b8cdfea73be7",
+      "sha256": "db1e761597df9e94b9c716d499c2364ffd0c36bce196f7b9c8e587de6245e9c0",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:b7d223e3d2edae4fbed3"
+    },
+    {
+      "id": "field93:43dc34f7-3adc-4a29-80bd-99fce9eaa70a",
+      "sha256": "ee49a8dfb1bab91b02767deac5b516435cff1f3da1b726a992823821ded6ae13",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:e4ae197e20dff41d0db5"
+    },
+    {
+      "id": "field93:753c298e-97cc-4977-9495-3b12bf4859b5",
+      "sha256": "a91acdb81d350390529b922eb638ca06fffbbcbfe010173625edd76c41e8bbbf",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:8a9cc4ce7a8d519fa982"
+    },
+    {
+      "id": "field93:bef1ace3-81dd-49c8-9ca4-b54be226f7d9",
+      "sha256": "a41762e2a74ea91426894e56050d89386b587f43a93fd85d84694de2d69b57e9",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:4b43c9c78b8ad1d246b9"
+    },
+    {
+      "id": "field93:c4666e85-8633-4054-9fec-856291929f25",
+      "sha256": "2179f1aaeaaa860117a170b5a4dadfbb648ff85c84bf4c5503ee304b4efa77a4",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:478c2a0d1b8193222231"
+    },
+    {
+      "id": "field93:b6ccd6b3-a368-41cc-8170-64493d22685b",
+      "sha256": "d12bff0814936a4cf2a2c7d16a6b38d98ebec1cf9610cd1ce89687d386b0b78e",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:e7d303a72e9e7986b890"
+    },
+    {
+      "id": "field93:638c45e8-8298-4fec-bed5-aa26fbdb58ab",
+      "sha256": "d53f916cc52dfbaf941f88e62f844b9e16198dca9fa403dafe143481159506a0",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:e883cbe09faf303ff736"
+    },
+    {
+      "id": "field93:6a2ba1b9-4dab-4dd1-b649-d2d46a612be9",
+      "sha256": "9e634920cd99ae3a1eeb27d992dc50dccb40a70e47332d32beeeb3e45092f206",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:8cc42468e0a4c934e946"
+    },
+    {
+      "id": "field93:262d44eb-59b4-4d90-a51d-263d146250d7",
+      "sha256": "cf2402b9f791cfa49bcb652c8e30ec8fe798ea6a058d65f8df3e835bd2692801",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:e9edab221b3959907389"
+    },
+    {
+      "id": "field93:43f25db6-0d98-4ac1-9e01-83656a44dab1",
+      "sha256": "cb2aff8fa96b6823e41b11ad92fad5e91c971ffb359dd7cbb8d9c36a6ebdf520",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:7c6cf98fb597270b3287"
+    },
+    {
+      "id": "field93:09ebf889-4f70-495f-9267-edab22fe0250",
+      "sha256": "ec1a45dcf6035e397088cecd0e4ed1e3e9dbb35675f8299a1d28dae6046d1a41",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:6c57080858db9c7f0723"
+    },
+    {
+      "id": "field93:5b056fe1-9693-4298-9cc1-3d5a3740c806",
+      "sha256": "157130df2d5fa7dd46ba16a6cda2ac22f0c7387b95d1afd57995a0435c8f001b",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:e5bcc7da2def789aa82c"
+    },
+    {
+      "id": "field93:eab74f0c-7ba4-44d5-91e5-04a0b13da89f",
+      "sha256": "55330b5175af0e3414c5b42cb4b08b281bc266d056eab94fdb562fd13e0ca075",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:f6d7f1a47e9fe1872de0"
+    },
+    {
+      "id": "field93:b88dadd4-f434-4bb6-b52e-30f8abdd3987",
+      "sha256": "067717ed76e7568d5fcdc93d69b6c3dd047b68b7d52eb372f8f0c1c161f5fe10",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:65885033148b19bfa676"
+    },
+    {
+      "id": "field93:c88d2271-f0de-4913-be57-e6c45973a058",
+      "sha256": "0faae62210b2f6c2d03dc04281970a2a59f73eb2a8ba08f02ae7c8389f8159ec",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:1ecbeac7cf85f617096c"
+    },
+    {
+      "id": "field93:78796c69-c1f6-4293-88a6-2eaaab7ca66c",
+      "sha256": "c9b9512cb973df99f06bf1be7b686925a72f8d7a51fcc560032f20679342ce92",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:2decdb786859651a9316"
+    },
+    {
+      "id": "field93:69ff41ea-6a61-4c75-b08f-a1374020752d",
+      "sha256": "0a0979e3817f2bf1ff8491d7307026ca9f40b4031de9753207b1318a0cb53fc6",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:0c76483649283e2ab3f1"
+    },
+    {
+      "id": "field93:33e6d165-7a53-4a52-ae2c-e97b92ec5212",
+      "sha256": "1939c25195dd8f84f2ebd789131bb709b0549cf3546e39ededb64e9c23e88005",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:3b0b3b476943a7fc1169"
+    },
+    {
+      "id": "field93:34d61072-fe83-4cdb-b9f6-dfbab7507937",
+      "sha256": "e4ce1082b5b540597d6481cde966d527011d44ffa6532e51ee10fb0db3ffc8d7",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:d4bee6b6c78f49b585d6"
+    },
+    {
+      "id": "field93:a00f568a-e925-430b-9fa9-e735a9043c3d",
+      "sha256": "09ceb855bc5812ffdf11a7a7a37ed4897d5ceaca08e243e250f9cfa5de87efaf",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:21d830e7807a8c31a938"
+    },
+    {
+      "id": "field93:5f0ca4fa-7126-4611-8fe2-9330a6eedb08",
+      "sha256": "5e43a905620f3399f61d5809f0fcbcfb836c2f480dea44c8e04f9b3e4f3e8f2f",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:c012b8e238d9b49628c3"
+    },
+    {
+      "id": "field93:6c83d489-87be-4e53-9919-8a0599fdef24",
+      "sha256": "44ffc50de58189de88d53032e6346a1495b629a03a1c4e2db1d1819cf232cc23",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:5d58a127fb5e899f9fa9"
+    },
+    {
+      "id": "field93:1bfc0945-83cc-42eb-918f-57db3b8b1e6b",
+      "sha256": "7898e3723ab4f979c995c6ab621872cc3a8ab1f5f81b6eb250afea8987888bba",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:b444d99b6bca234533a4"
+    },
+    {
+      "id": "field93:b53c80ac-94f4-4a39-816d-95c83037cec1",
+      "sha256": "721a9e46396013cdaa88a0ea7147840ac749bfec9135312cbcc5293bb33aae0b",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:c2d0ac530158d19814be"
+    },
+    {
+      "id": "field93:7136a2d0-5724-4377-8858-db219e3bfaea",
+      "sha256": "9ca9dc7b5ec078e834abe614a9aabf15e73dfd7112d6292212e5aa30e241c2d8",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:898a8d92186676fd4df7"
+    },
+    {
+      "id": "field93:762bcd90-4595-4818-8589-7b9945f037c7",
+      "sha256": "e6a96b4646d218159ed844da259bc9105fa0feb3b2f3eabd832df02c8bc1913c",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:847c9abcef03a118120c"
+    },
+    {
+      "id": "field93:3e91572c-713d-46b8-addd-ede6a6479a86",
+      "sha256": "7937e6b71bdcc3d0fdf6b9838e10ff774d9ffc6ff536ad5b8055de1a3068cf54",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:adcccde0bfab97161fb9"
+    },
+    {
+      "id": "field93:1c1bebd9-f3a8-41ef-a7d7-10b020f126a0",
+      "sha256": "e80e45d704063fdad7d6cb820298aa442bf38d39486aea79973c5e1190a8d120",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:32402c4a0b02f4641e19"
+    },
+    {
+      "id": "field93:6888db3c-6533-4909-acaa-ba668385956e",
+      "sha256": "f63c480b695d025224bf29a7757b1ca00cda4381d5ac377b20bd4be128542f9f",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:c407c814e1bef86a9830"
+    },
+    {
+      "id": "field93:e6fd2a62-da62-4142-9be9-0660cfcb3eea",
+      "sha256": "89900ac077f01b7fe10e1dff675d82b27c9f08304db8c8b41813be196471f783",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:76457f5fd786d71e99f8"
+    },
+    {
+      "id": "field93:390fe678-6932-4490-baa2-23e2cca17e1a",
+      "sha256": "650445920ecf7cb73597e75012658518f587608132c7838cd8109969534195ff",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:767457b369aa07de2d1b"
+    },
+    {
+      "id": "field93:f2dde066-3b39-4d26-9586-4d689ac6b165",
+      "sha256": "ce427788786fe31ed31c721be8869df4d9e2649ca66abab24d72091b44dd9f80",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:08d860470ac1add76a30"
+    },
+    {
+      "id": "field93:49e09922-a4c6-48fc-bdbe-3ad4a3a7b08a",
+      "sha256": "dd50f6d6576ac08296633596e8ec4475e25e3ae9ca997fe8e13ce3d939d749ba",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:38d754512eef0c452465"
+    },
+    {
+      "id": "field93:9d0c2914-2825-49f9-8173-564c75443dfa",
+      "sha256": "c5bbeb559f9067b5269bf5272de3197c6ee1ffddd3d806cf266b11d96f8e7f04",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:15772ea506a734c48f4f"
+    },
+    {
+      "id": "field93:e8b36462-59c3-4215-a3fe-4238abb56afe",
+      "sha256": "322609a42eb54d38c066108df26e6a85b1125e5fd384e29ca5d47af4a900f66b",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "group": "field93:8faf85ff75032a287eef"
+    },
+    {
+      "id": "field93:fd6ca544-755a-4baa-9e37-9ce8343cbcef",
+      "sha256": "f8ec1ecd583cde7000f5e49d0328bd67813f00e5ccb8db98f0dd371d640d2d3a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:96621c72fb8812e4ef65"
+    },
+    {
+      "id": "field93:986c6d2c-5f64-4af2-a3b7-7a825eede8fc",
+      "sha256": "22e610d2e0112f71f053539837d191e3b15d17823e23c50f74bc95b549f53b95",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:42ca7de027a61f166ce2"
+    },
+    {
+      "id": "field93:2a5f58f9-1ff3-4cc8-8882-38283a3ea895",
+      "sha256": "43a17f128368501eada894981966ecaec8e5a12eb91caa8fdac4b643ee98779f",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:89d012e29c8358c12ee9"
+    },
+    {
+      "id": "field93:1bceecd9-0e5f-442f-8d24-7939d3ce0010",
+      "sha256": "46d0542e25d4c3315a2da8f35bcf76eacec67b1685f4e0d7de50c105a3515abb",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:05d512e2ccb2875d0e0e"
+    },
+    {
+      "id": "field93:7791950f-96fd-4601-afcd-b8264e0a8bb5",
+      "sha256": "de5e7750e141dd25995ac21dfdb3e6c55f112a55bb8eb078575f37b7cdca7631",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:be68b71fc22b66418559"
+    },
+    {
+      "id": "field93:cf77131a-2d2e-4ed9-95f0-dfbe9fd80566",
+      "sha256": "0a65f449552512be13ce9a711e299a375f34f71e99ab08cd5aab8b7087f64b6e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:e725612e7e4b1e2ccf84"
+    },
+    {
+      "id": "field93:825da09c-51bf-417b-ac2b-9a68d9944b87",
+      "sha256": "f683098a494a42a532970b58ad1436c3fbd7eeef8302bfcd8e13f84cea48a318",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:b8f73d40e12eff95b420"
+    },
+    {
+      "id": "field93:980dc7f0-bbce-4bd5-b9b2-8b2da78b3db4",
+      "sha256": "6c26b82aa19e825df880d4f816812309f6c2d98f80136d7ca1f8b7f137e4490e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:cc4c2819630b93720552"
+    },
+    {
+      "id": "field93:cf669544-2c46-41b9-8027-d44cd4100277",
+      "sha256": "0479be8fa100ed452bd772c42d26303ecc00e32fe41c4dfc7d43e2fe9a6ee487",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:8c2a85a4d85247c58c3f"
+    },
+    {
+      "id": "field93:11924f1e-5a05-4aca-bc72-6c7c6369c1fb",
+      "sha256": "a7df505c4cab99b8d4d04f5cee11d6befa8fc98b20f0d586d27b68baa642685c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:f6dde58c01af6e461cdc"
+    },
+    {
+      "id": "field93:24ac130b-f450-448c-9586-2a15fc00733d",
+      "sha256": "c3df84f8509b8ddc3d66bb2f3374a7ef040aaae2299982babc1ba62b9163985c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:c3e35cd16ef4e66ceeaa"
+    },
+    {
+      "id": "field93:f5640584-7496-441f-88e5-75d62ac1aa2b",
+      "sha256": "e07a8719df6d9fbc9d51bcdb2a5d7c9b38fc993683d457b6f304783601e3076b",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:ae5fec6558b8f53d778b"
+    },
+    {
+      "id": "field93:2db16313-e425-42b1-9d9f-29d9f9848ea5",
+      "sha256": "59f4849a1bdedb235e2a2b586d6f0160aa809ea09933f4b5ef5c1693d1b26918",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:a320743fe252067357eb"
+    },
+    {
+      "id": "field93:41272449-77fc-4b99-8183-4947ecaa6bff",
+      "sha256": "e4af0868925f0f890ac56e354a69af10e5f2dbf9f10fb3d641e0b7d65a3ced60",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:81b93a3d78973a93c7d1"
+    },
+    {
+      "id": "field93:c293615f-58fd-40f7-8593-085d2ad84618",
+      "sha256": "eb44b23e9936ab6a666be2053604e8f78808bfedec9d08bd6d6ac335488e23de",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:edcb6a2b034bdb87bca5"
+    },
+    {
+      "id": "field93:0dfc0e71-a122-4f76-8f71-545e8c710447",
+      "sha256": "103a8bdf4ae2569406f3298aaefffdac27801cd3ef5abf15ff29af220f33562b",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "group": "field93:44fd6b8f9ba12cb98ef0"
+    },
+    {
+      "id": "field93:092090ec-2bf7-4a8a-a3e9-d1f0948fedb3",
+      "sha256": "20df93c1be25372da942c4d25b748a9ddb29d1a378cca11f1b873dcd8325ab0e",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:56f082a91e4bba8f11bd"
+    },
+    {
+      "id": "field93:ec2070cf-1a28-48a4-93a6-b2d5b0007570",
+      "sha256": "cf12e50a6c7f4769bb02b851fd017483531bc568bdd19651dd80715c3d66afce",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:278f04b6b1eeee11d10e"
+    },
+    {
+      "id": "field93:00e0675d-8a47-480f-92dd-523213feafab",
+      "sha256": "f1ee769167fbab2d2b229076e30ad46f8633d304590e938b7c8343cfecef2ffe",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:63fca00e6bee4b33bde0"
+    },
+    {
+      "id": "field93:248a19fd-53aa-40e0-a6eb-7a7a728aaf18",
+      "sha256": "72b369359e784e963123cd298cb2ae207bc300e1a94708861995b3bb5927f3c2",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:cdbc9c1a4a7c64ab1977"
+    },
+    {
+      "id": "field93:03a434df-6e19-485e-a3f2-e5d8bed0aa4c",
+      "sha256": "6a3e3bbe310f5708af1cd573bc818a67f71b0980e7f76bc37b630cf0f45bee78",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:f3885c7d66c4bdfd9ea5"
+    },
+    {
+      "id": "field93:772e95a1-dec2-4532-b76d-eacf1799b8f6",
+      "sha256": "e69c1f67c021ac0f548af2a6bfdbae12de5caf9215bd1cefda0b63da85a5c49a",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:253087da9b66d31717c9"
+    },
+    {
+      "id": "field93:40c20979-6758-41a6-9a77-389be21f3db4",
+      "sha256": "527bb3e493469bc688e2838373be306332f18601727483c052efa499a7e4e014",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:3694fd593478e1ffcd13"
+    },
+    {
+      "id": "field93:5997a4ee-d912-4905-b2c7-708d3c37ebd8",
+      "sha256": "829bbeeefb2ba6e0faeab8391f85fb7396b861a6094250506dd568bc954a9f40",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:4bb90df2d059fb92b0e7"
+    },
+    {
+      "id": "field93:89a0bc17-2ce1-415d-8dfb-cb3e90c1cc09",
+      "sha256": "d032a18e6e4cdbfd3fa81e9aebbd5eea9f425fdb403e7d99bfb5053a96175875",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:94e46f2e17358ee72013"
+    },
+    {
+      "id": "field93:e86689a5-5490-499c-84ef-c4b9a4ce2300",
+      "sha256": "d4b4a638107bec7c281f336bbd8fba81f1081d7aca8943b612aa1968c689be0f",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:a1bd97b73da762d0f063"
+    },
+    {
+      "id": "field93:4709338f-c74f-4529-94d6-ba66dbbd387f",
+      "sha256": "7fa8dc6f7144b49e8cb214ba58f154dfca753b2ceabf88621a91cfb3b9f9c08b",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:fd0ddfc6ae5a84ae3137"
+    },
+    {
+      "id": "field93:3c6a6ba8-1ba9-4a07-a773-f8f4c7a704ca",
+      "sha256": "29d7c406059d8f94baf36b76d51b353bcda682a4d6ceab097e0f27ff25c76727",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:d4b4cc1ec555ca2d66bd"
+    },
+    {
+      "id": "field93:834ab862-290c-40a6-b2c0-695a71b38f9d",
+      "sha256": "904d0fedcf9b08c941a03ca62a605930ea838298181754e39fdc88b21f5e2137",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:76037c4d26d606d7f983"
+    },
+    {
+      "id": "field93:6873c1dc-a1e3-4cd4-b359-d280221c84b2",
+      "sha256": "653b6440dbff7b6fbd95dfc8b700001d541a07b1177593f46adaeea46832d572",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:b24724078f0fbbc83dbf"
+    },
+    {
+      "id": "field93:b463eb25-d45e-4b82-9fdb-5d37371e7c0c",
+      "sha256": "319c36ad56fa73665570076e18f746cf7799c43e832fa8e654e6212f2d2fa92d",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:f1b3c4eec69462fd4f81"
+    },
+    {
+      "id": "field93:6aa6b75a-3369-4536-9f8a-ba251cfd170c",
+      "sha256": "277320fe127dde96d18b4c4e94a36a2a5044000beb223fc5e2817640e3cedac9",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "group": "field93:21ebd3028047b1330054"
+    },
+    {
+      "id": "field93:07cc9801-bac6-4520-a4fa-63f083618044",
+      "sha256": "3fa1ee00cc59de430e0a163b785f46fce2dd725d0a975c192389aeebd92c6f83",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:381e7f17944c00577290"
+    },
+    {
+      "id": "field93:c12e3364-5efa-4105-b1cb-24c6b2fc205f",
+      "sha256": "98993355f3d1cba9225e87d8a6c6a4ed5078f0dd45abb195f6cffce3261073e2",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:01abd81a8227c5493fac"
+    },
+    {
+      "id": "field93:9dcf1b27-7bf5-4524-8627-6d12329efe35",
+      "sha256": "636b96665f23f165903484dcee73f51e9fc7df6216cfc18fb161f5d3bcbe1c64",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:b83d26903caf84af2877"
+    },
+    {
+      "id": "field93:431b40ef-0c68-4588-90f2-9bf7764ed0d3",
+      "sha256": "2e89341b964df5ffc45dbc9cd722f26dc53744be67ea96a4259fc3bd8281ec7c",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:c5b1fb9ae99c422a96fd"
+    },
+    {
+      "id": "field93:5d21f2f9-c7c6-47b9-9af9-08133a18c4d4",
+      "sha256": "ecdd2bc22b1a22986605a1b39b9d6df67d51b194b512fcf7abe8b7c6615da4be",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:4dc4599da888d23bc064"
+    },
+    {
+      "id": "field93:a42786db-a0ee-40a5-87ea-a846e404297d",
+      "sha256": "1403c222645e2d33d17b86dac7591af38506c3725fc77d90de1e68bf11823f37",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:c5e354637fd4ba5259c0"
+    },
+    {
+      "id": "field93:089c608a-d58a-4133-b26e-e9d1236bd211",
+      "sha256": "7129318d3b7bfb353904a5208dc5eefa8df8156aa21ced7ff66a83fac2b7aa17",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:4f548a1d01e527ded77a"
+    },
+    {
+      "id": "field93:53bfbf3a-8946-4a9e-9faa-b6380160ff7f",
+      "sha256": "c5a50901fb720311e59403e00c71a4d41e8bcc6d6f453f19a446dc705f619593",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:d2503c93d450d703b256"
+    },
+    {
+      "id": "field93:59d4d9b8-9d15-46c3-b943-0ac4cc242647",
+      "sha256": "768d629c445b0c50cfb0de155fad00b4c978fa169fbc6e99d0e92a2cbc67e3c6",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:1493d04987662f6195bf"
+    },
+    {
+      "id": "field93:47b9355d-29d6-421a-8d0d-48ae3719a2b7",
+      "sha256": "2d49fda34e10fd19b2329a367b25570c782e1dea83547489e1fa47e3d14a1cfa",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:804b71796902e3a9a6c5"
+    },
+    {
+      "id": "field93:156d2106-11d4-4e33-8564-cb665e8cd828",
+      "sha256": "cebbadb025e8d6dc2fc253051ed24f5b145e2715426b17ddc515498b40077750",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:21a419cf86b468bf1f95"
+    },
+    {
+      "id": "field93:2effd252-5b8d-4a9e-b5d3-3929dd350a94",
+      "sha256": "d2b18e96e0e9677ad43556aec2f366d1c14b02cce64285b7bb53f9ae923b44c5",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:ea4afb77825a0e7f17bf"
+    },
+    {
+      "id": "field93:43243a8b-fd3a-4772-b673-d6f685220996",
+      "sha256": "9110eb22e3b8291a93a48410125523e81c462135b4190bd6305a67929adcf7e5",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:e420f677ca71c40dba41"
+    },
+    {
+      "id": "field93:48fb19b5-32d0-49a6-be9b-3f568196be8a",
+      "sha256": "2bec8082df4716e6c50d49ceb91251def9e5d8f98467e4522b70109014658d27",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:7a89d75c27c617aa2025"
+    },
+    {
+      "id": "field93:9f9f4df9-cdc8-41cd-bb97-c5b77eed68ca",
+      "sha256": "4c5a9371e9770d5210c9fa49ca19e5577cccf3e0cb0ae27123e0218b75b9d70d",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:4e2ae69fd28bd9f37179"
+    },
+    {
+      "id": "field93:2deb9dde-0379-4376-937b-52b372e7238b",
+      "sha256": "0d1c33aeb000bbabf0687d3f35641e81050c2d0f2de01aa24f98e460e009854e",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "group": "field93:f9d843c99c211da4e1ad"
+    },
+    {
+      "id": "field93:c439cb42-fe1f-4803-ac39-9d4c0075b2f8",
+      "sha256": "17b5882be035999ea96c983f90cab29d84177fa95ca83415da09b49f66380b12",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:6e3d177052d64e77e4dd"
+    },
+    {
+      "id": "field93:3044fdb2-72e5-418c-bba9-87001828963a",
+      "sha256": "5d9cd2209fcb9b6a9188b17b42c6e69d6a8e4fd9cb4b56d132a57ad5f0cab055",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:a8eb184487f45258d665"
+    },
+    {
+      "id": "field93:5c22095a-ddd1-425d-9410-5db1b037f29f",
+      "sha256": "ac7ee0d7627077a9190834ce001db7b72558dbe4162fa4fc6e5e7f13fc0820ef",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:7da119ad08dd7ca61f4a"
+    },
+    {
+      "id": "field93:fe1202be-442a-4943-8ce7-e2d45de7f30c",
+      "sha256": "2c05b429537b9c9e62a2ff9a57751410ae4d182bd6ebd5e8bddbffb821bb5fde",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:507dac4b14b228d9718e"
+    },
+    {
+      "id": "field93:51adde03-728b-4b40-8c4e-c31bf8022a0b",
+      "sha256": "d29bcf04db2c9c74325be094703a0852472be517dad8273cecb167c37485d4b6",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:4d20452512b54d241f0e"
+    },
+    {
+      "id": "field93:828c3469-5f03-4742-96dd-fa7a9212fe5c",
+      "sha256": "b81c006075eaea4934750cac122dd564dba8c65f23fd69a63ab036cf05832c69",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:18dd152f2d5333ecb402"
+    },
+    {
+      "id": "field93:00e82ee9-f928-4df5-9970-d91ba51d9320",
+      "sha256": "476fd2f157d6dd7e80c0c034d5f1724441e38ac2ca91ed0a95cc73ee6e18fd7a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:7df53832c1e9578c3062"
+    },
+    {
+      "id": "field93:228089b3-1ecf-42aa-8b2b-64cd795954cb",
+      "sha256": "a7570c44163c33366e4e17a56a04dde1d8d7f98a297401f4e51fcb579d309fde",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:fc31f86fedbad746f81b"
+    },
+    {
+      "id": "field93:038a94cb-cafc-40e6-98bb-a0c920914afe",
+      "sha256": "952760be2af5dc1c3413dfdc4b4d080019f986697ae3670a885584055cef2e60",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:da1742e4be3258f0d174"
+    },
+    {
+      "id": "field93:add634c0-37a8-4d4e-94a2-f00ef1d94761",
+      "sha256": "317efdd4c8af384098603ee0233261e734936a1041f6e83499f06c1af40660b9",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:4555ee39db60d0eefc8d"
+    },
+    {
+      "id": "field93:cd19db06-ba9f-4ee7-9a66-81c4af421ffb",
+      "sha256": "93e359cbc2c9bb33217bc715d985091d2b916306f70ffdc00f23e41c8fff469c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:8afbe3e7d5f24da99c4b"
+    },
+    {
+      "id": "field93:3e1c58a6-1b4e-4b76-bef0-9ee3bd17e712",
+      "sha256": "466f5213585fe79ee1fe1d0ebda02f171a2afddb459cd1a7e97453e8767ed90d",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:d980443190c9f31501ed"
+    },
+    {
+      "id": "field93:729cba0a-5696-4817-ac03-4eeeb94ec66f",
+      "sha256": "8b3bcd647026e95c6c2365cc1498d938a5be5dd7b55cec164f0c267fbe92dbd8",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:0af19d821a734bf05dee"
+    },
+    {
+      "id": "field93:82bc94ad-f5c4-40f6-a0da-77ef640e1d99",
+      "sha256": "4fbb4eccc11f9a151ad80bd293f3e0241adb6f2c2c3a326dcdd9003a618d9f0c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:1e5fe5406f337551d178"
+    },
+    {
+      "id": "field93:c4e8a01c-1564-4a0d-a039-6fbe095b2a70",
+      "sha256": "884f3c71e8f97c6b4d2f7544f35dc461207e49b886c61e576a68af97a3bde84a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:5b43a214b1557c51fc57"
+    },
+    {
+      "id": "field93:e39523b2-510a-4520-b835-e368086dbcc7",
+      "sha256": "9043df2fcb42890731335b5bb530502e99adbfe8d28c934635dc825f079b489f",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "group": "field93:8fe282f12ad75824920f"
+    },
+    {
+      "id": "field93:192fbfc0-9d28-42b7-9ef6-ed8f45b2ac46",
+      "sha256": "a1307f2bf02bdffea5f45d53364b3f0cfae512e14f3f436cea56620aaa4b855e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:263451c55c98b06031ff"
+    },
+    {
+      "id": "field93:4c3d9da9-cb06-4388-9010-3b956ad8f3be",
+      "sha256": "961f26075a14e21f01a571f179c50611489b122a495c25aaab8e5a9f5d5c2019",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:b32482ecc2fbb8a83053"
+    },
+    {
+      "id": "field93:b6f4d012-0f1f-445a-b0fa-a7615cb5fbf2",
+      "sha256": "ff1dda3d0e09f28065ffd104d37545689b6979ac0e08b9034e2acc73709b82a9",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:242b664b72defe93d2c6"
+    },
+    {
+      "id": "field93:56bf571a-8b11-4f99-bbec-e41ce8843d2f",
+      "sha256": "107e975988248d92efc6978c888e617d62d6822ce39b2249197c961f2c4dd8ea",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:83357f8ff1c340136e93"
+    },
+    {
+      "id": "field93:4a419daf-fcea-4beb-9eb7-cceec7a963f3",
+      "sha256": "132ff4b71f53f3a5293ea1e90c3d4ed0f0ea496aa217c73fdcb82675f8d94ff0",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:e7708870c6eb874e11e8"
+    },
+    {
+      "id": "field93:c463720d-85c7-4e5c-a494-68adc853f186",
+      "sha256": "f25d61e5c2a97ea1d09fab26e86ecfc7c42408fe261527b9079093a66098441a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:ba1a3904b225aa6f1954"
+    },
+    {
+      "id": "field93:d5bf8c83-104e-4bc4-b1a4-dc769a148952",
+      "sha256": "036c0e0426e0b096ace84e15412f035a066a3f6f4ce55bd2ed125af616aa148e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:a7ced90cef7cf11f2e62"
+    },
+    {
+      "id": "field93:89ff7bfc-f850-460d-a3a6-9b0a03ab242f",
+      "sha256": "6b2b709087e0af3b6479d1b6151d1f3a90a36465cf7235a0a04e56655cc7c915",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:c9e0fd46ddbad92fe6b9"
+    },
+    {
+      "id": "field93:0b45c862-b16b-42ef-97f3-df52c8e05148",
+      "sha256": "65788092473142fe24a05e284cc49c0bc25f5f2c20510e7d7aee7d9f06770e80",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:bf35a31589a074447073"
+    },
+    {
+      "id": "field93:6d16de13-3063-41fe-852d-04b9c2b1bd0a",
+      "sha256": "6bea61e7671e0010d9ae8575d3d013859cceff2fe9c99418f7336873da0bef0e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:9df5a444518bd51b17ad"
+    },
+    {
+      "id": "field93:cee2fb78-eab0-4257-a664-3d1be2baced7",
+      "sha256": "fca974eead5459c6083f01719f5a75dbf3723e3933cad9374ef99751716bf680",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:a6020eddb8220bb7b462"
+    },
+    {
+      "id": "field93:d8cd04d1-ebb8-45a2-9c7e-a91836084596",
+      "sha256": "81e4cd0230b7b397beee72f5c3941fd75703522190d287421deb581cbf52201f",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:69df566e97a730a82d74"
+    },
+    {
+      "id": "field93:9e54e39a-ae78-4004-872d-97c8584bd2c1",
+      "sha256": "9885c16a2ad28e3ed0951b2f5ea552202f904e895facc7679b7115c8e886c1d5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:81562299b3edf0658559"
+    },
+    {
+      "id": "field93:4f4cc854-b9b7-461e-b858-f767c886c2d5",
+      "sha256": "d758d4e58043137d8a3498faded6db085663ddf2598cbd9b86b2ac738f471918",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:482075fc510296406ebf"
+    },
+    {
+      "id": "field93:fd78ae58-69df-4013-a3ae-997c94a2d5bb",
+      "sha256": "f3ee9939f55703e2b8ed03003af247112b5b53a8d4510962212bcd10349bb4c5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:39472e2790bd39e6a7cd"
+    },
+    {
+      "id": "field93:e36f8550-aa13-4bc1-a391-004570f23387",
+      "sha256": "3ee35ae43d4fe2d133136899285cd1280bc631d6efe8cc05bc4f170207d12132",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "group": "field93:d30f291132e0ff176b79"
+    },
+    {
+      "id": "field93:a52ffdce-2217-46e0-ab16-59bee12fa9e3",
+      "sha256": "f9feec1e0f47c3896de8cd724f2d766d44b1c4119c85b50783100f8bde7284dc",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:1135f2e91e826f165f0d"
+    },
+    {
+      "id": "field93:d4770959-fccc-459c-9455-d3c0e8660c42",
+      "sha256": "2c11ce32783c7c972a2f34e97157459eea4912240efa47f128c6d4e31fe1965c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:d3ca1eca48cb85697403"
+    },
+    {
+      "id": "field93:0f5bf9e3-5817-4ed2-9c39-126b02c0d21e",
+      "sha256": "ac179eb9c09afff33fd62589fd71d5a202d6f3775e9e488ef7921eb774fd12c7",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:9671869c5a94ca5e5cb0"
+    },
+    {
+      "id": "field93:4d73a850-6bd3-445e-8c8c-ca95e705d7d3",
+      "sha256": "a77e006ff033edf7ba35a2165903630cefca74e38d0bf79544afe05e68675537",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:32034db1c5f0153e9319"
+    },
+    {
+      "id": "field93:bf3a4cbb-de61-4208-a42b-58b3eada3527",
+      "sha256": "775ccdd57bd563eb6658d807fb93fb3799d2cb232766acc4bcab8639d1fb84ea",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:40b0f10c6fc85707efe2"
+    },
+    {
+      "id": "field93:15aee095-0fb0-43bb-988f-709c3c59843b",
+      "sha256": "4a5da9c0fb806639f7d0a8d1a4398378679b34e19b9397e9da275e32dcfbe42f",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:4f8883b5a6dacdca72e7"
+    },
+    {
+      "id": "field93:142149a5-1cf3-4fd5-acab-d21dbaa2e3e0",
+      "sha256": "109987346b80b41aa6ae3d3f8b552853697146cccb1459a7d7f5f008ec02d705",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:7c18abe67fe47aa4d65c"
+    },
+    {
+      "id": "field93:073d5fe5-f653-4ce1-b209-cf6b20d106ec",
+      "sha256": "5822d08652f38bac2a0d7f925e390c8b3dc12d26add523611258680420d3cdef",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:0a9ace590dde5e712e0d"
+    },
+    {
+      "id": "field93:825b8521-8122-4d98-a25a-9c45879cc5d2",
+      "sha256": "bbf2ad22484158710a9f0aed8662cd0a7fed6e81a77aca821de14d591febcdaf",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:d22a2f38540c0af1f6c6"
+    },
+    {
+      "id": "field93:f1eb0bf1-9787-443c-981f-c3be3aecab1e",
+      "sha256": "32a793021940181361f77dcdabdb5e3ac0b172a9ed05ca641115566da6383df4",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:6e5d60cd1dda53b9ec6c"
+    },
+    {
+      "id": "field93:34909a60-6c07-4020-a9b1-5488064f3269",
+      "sha256": "7463d21b693ee18242f1534fe676cbb7f7e586061f65dba55730312912c348cb",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:b54d323ff05a99df8ad9"
+    },
+    {
+      "id": "field93:7b9f9f79-e086-4be7-b5da-a01be27fc4af",
+      "sha256": "a9b6dddd49c83ccaa5f87a46c8a7c65f79446a87e303231aa60334b9de46c763",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:5ea80af26aec8860ec7f"
+    },
+    {
+      "id": "field93:b0152020-238a-48fc-9968-e2acc125c1eb",
+      "sha256": "2491e0e7397f04ec3a3df8cd736a79ca98ca6a33d936c4b18171bc7a4fcb825d",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:62e2a0ed4cf3ffc33bf7"
+    },
+    {
+      "id": "field93:cc1186b6-b25a-4b84-a3a7-b96db0df408c",
+      "sha256": "efd3db74cf348828f6c9425dc58462a28978cdeab2a0bcae15be42ebbf30004b",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:acf748ffbbfe9da74c58"
+    },
+    {
+      "id": "field93:49cb841f-8dc8-444a-9224-31f49548fe72",
+      "sha256": "cd4f15b2c1355f72e03e3de21f629f9f67ea3fa7f312284b95f666833b3a78f2",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:f57b97cf5c1e22dcaf14"
+    },
+    {
+      "id": "field93:cb302077-e035-4b75-b981-30544b97e37a",
+      "sha256": "26d0572ba163c27d4a7e5de9042ea9085c296422145d2b35149ea3a31c8e7ed7",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "group": "field93:afaa2e80d37b4a149433"
+    }
+  ],
+  "selection": "All retained approximate Healthy photo families; at most sixteen families per other publisher class; one image per inferred family/class; entire collection remains development-only",
+  "donor_complete_sha256": {
+    "base_complete_sha256": "41f8ddfbdac0b1bf26fdda321ef30bf1091976612006d29bbf1b3ae9d3d330f4",
+    "extra_complete_sha256": "e4b623374ef0b5accf979d7e53a6a085dd72cc071563df55faf7865e87bd68a8",
+    "phase114_new_supervision_features": "babc5185445b86d3c5586cede762d7fd655b8684664b88281707faf963fcb466",
+    "phase137_full_source_features": "56228d4dcfffcb83357e7c499d8d0e6498b0bf8e55f4fe0a3a249218e822a5f1",
+    "phase131_large_roi_cache": "93b312084ff56208d3ed105439c837837395cc5e5d04ae96d53a4908fff1e7ce",
+    "phase147_large_teacher_features": "a3bf7949242b73410003b992eb6049f2739877c93d9813ec31dd884a5c2ddaf7",
+    "phase154_convnext_features": "966f41fa0dd65c70a36f9154ac8d38a2505cce2fa344689bef8069f58a0845fe"
+  },
+  "towers": {
+    "original_1408": "43e4bb99d6cb1164f2d63ca370316f1cb877271982ffb53fa1690a95d2fa0a47",
+    "large_1024": "97a8a8184f1b1059410f9659c44983c68b8e026b7059a048a3e04ca4c09ecc06",
+    "convnext_768": "983f1562536e84ff750a1576fb08e54de751dbf2e17c0d8a4a13704341fdcd3d",
+    "runtime": {
+      "torch": "2.11.0+cu128",
+      "timm": "1.0.30",
+      "numpy": "2.5.2",
+      "Pillow": "12.3.0",
+      "opencv-python": "5.0.0.93"
+    },
+    "tf32": false,
+    "fused_attention": false,
+    "feature_dimensions": [
+      1408,
+      1024,
+      768
+    ]
+  },
+  "feature_namespace": "c99f2c03eb1facbad8c438664f82fd6b64c840c582a3d621d65f220950e976ba",
+  "detector": {
+    "file": "leaf_detector.tflite",
+    "sha256": "0a8c9128544726348a8400ec2f481b5985f47a778b601f4025be582eaa30a0d4",
+    "arch": "YOLOv9-T (LibreYOLO, MIT)",
+    "input": [
+      1,
+      320,
+      320,
+      3
+    ],
+    "layout": "NHWC",
+    "preprocess": "letterbox centred, pad 114, canonical resize, /255",
+    "output": [
+      1,
+      5,
+      2100
+    ],
+    "output_rows": [
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "score"
+    ],
+    "coordinate_space": "letterboxed_input_pixels",
+    "score_threshold": 0.35,
+    "nms_iou": 0.6,
+    "max_detections": 16,
+    "labels": [
+      "leaf"
+    ]
+  },
+  "preprocessing_source_sha256": "60987b10e4ab8c8372d51abd61d81b943ebc79a7db930e9858697b26b9535c09",
+  "app_eval_source_sha256": "4a43c42ed5fa6ec2e5d9ab02aa0304c212603b15f6bdfef34ac09e5a81efc6ec",
+  "preprocessing": "Original actual detector ROIs; canonical 224 FP32 normalized NHWC bytes; unaugmented center/full views; no model/normalization changes",
+  "large_layout": "NHWC permutation to channels_last NCHW",
+  "convnext_layout": "contiguous NCHW stem; channels_last frozen stage prefix, pooled before clinical norm",
+  "source_role": "development_only",
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false,
+  "new_training_used": false,
+  "model_promoted": false
+}

@@ -20,7 +20,10 @@ class EnsembleDecision(
 ) {
     init {
         require(otherIndex in 0 until numClasses)
-        require(temperature > 0.0)
+        require(numClasses >= 2)
+        require(temperature.isFinite() && temperature > 0.0)
+        require(otherBias.isFinite())
+        require(energyRejectBelow == null || energyRejectBelow.isFinite())
     }
 
     data class Result(val probabilities: FloatArray, val labelIndex: Int, val energy: Double, val rejectedByEnergy: Boolean)
@@ -30,6 +33,7 @@ class EnsembleDecision(
         val mean = DoubleArray(numClasses)
         for (z in memberLogits) {
             require(z.size == numClasses) { "member output ${z.size} != $numClasses classes" }
+            require(z.all { it.isFinite() }) { "non-finite classifier logits" }
             val p = softmax(DoubleArray(numClasses) { z[it].toDouble() })
             for (k in 0 until numClasses) mean[k] += p[k] / memberLogits.size
         }

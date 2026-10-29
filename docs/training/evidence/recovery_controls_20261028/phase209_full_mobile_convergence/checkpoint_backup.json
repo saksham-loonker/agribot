@@ -1,0 +1,20 @@
+{
+  "verified": true,
+  "backup_directory": "C:\\Users\\Manisha\\agribot\\.toolchains\\model-checkpoints\\phase209",
+  "files": {
+    "best.pt": {
+      "sha256": "edffe1f0f8e25b2f3f42e3d704ee46095cef22f60f31f59dfa5830649c03eac2",
+      "bytes": 93403181
+    },
+    "epoch_079.pt": {
+      "sha256": "d11c36cb88167405b8c0a7c72955f5881726291b752f9be1aef4b06f4d780b96",
+      "bytes": 93423307
+    },
+    "last.pt": {
+      "sha256": "e7366d000da4aad11fa53e6fb8cf40c8243d8d9ceeb4bf0b24de009d5907bb62",
+      "bytes": 280300221
+    }
+  },
+  "source_checkpoint_directory": "/dev/shm/agribot-phase209-checkpoints",
+  "scope": "Exact immutable completed-run checkpoint files; remote and laptop SHA-256 verified, partial transfers resumable"
+}

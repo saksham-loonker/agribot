@@ -52,6 +52,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.compose.LifecycleStartEffect
 import com.sakshyam.agribot.camera.LeafCamera
 import com.sakshyam.agribot.domain.scan.VerdictKind
 import com.sakshyam.agribot.domain.scan.VisionStatus
@@ -72,6 +73,10 @@ internal fun parseInRange(text: String, min: Double, max: Double): Double? =
 @Composable
 fun WalkRowsScreen(onBack: () -> Unit, onFinished: (String) -> Unit, defaultStride: Double, vm: WalkRowsViewModel = hiltViewModel()) {
     val s by vm.state.collectAsStateWithLifecycle()
+    LifecycleStartEffect(vm) {
+        vm.setScreenActive(true)
+        onStopOrDispose { vm.setScreenActive(false) }
+    }
     var confirmLeave by remember { mutableStateOf(false) }
     LaunchedEffect(s.finished, s.runId) { if (s.finished) s.runId?.let(onFinished) }
     val walking = s.started && !s.finished
@@ -90,7 +95,11 @@ fun WalkRowsScreen(onBack: () -> Unit, onFinished: (String) -> Unit, defaultStri
             else CameraPermissionGate { WalkLive(s, vm) }
             s.error?.let { e ->
                 Text(
-                    stringResource(if (e == WalkError.START_FAILED) R.string.walk_error_start else R.string.error_analysis),
+                    stringResource(when (e) {
+                        WalkError.START_FAILED -> R.string.walk_error_start
+                        WalkError.SAVE_FAILED -> R.string.save_failed
+                        WalkError.ANALYSIS_FAILED -> R.string.error_analysis
+                    }),
                     color = MaterialTheme.colorScheme.onError,
                     modifier = Modifier.align(Alignment.BottomCenter).padding(12.dp).background(MaterialTheme.colorScheme.error, RoundedCornerShape(10.dp)).padding(10.dp),
                 )
@@ -178,7 +187,8 @@ private fun WalkLive(s: WalkUiState, vm: WalkRowsViewModel) {
                 Text(stringResource(R.string.walk_row_plant, s.row, s.plant, s.plantsPerRow), color = Color.White, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold, modifier = Modifier.testTag("row_plant"))
                 val v = s.currentVerdict
                 Text(
-                    if (v != null) stringResource(R.string.walk_current_plant) + ": " + verdictTitle(v, s.labels) else stringResource(R.string.leaves_seen, s.currentLeaves),
+                    if (s.needsClearView) stringResource(R.string.scan_quality_retry)
+                    else if (v != null) stringResource(R.string.walk_current_plant) + ": " + verdictTitle(v, s.labels) else stringResource(R.string.leaves_seen, s.currentLeaves),
                     color = Color.White, style = MaterialTheme.typography.bodyLarge,
                 )
                 if (!s.stepsAvailable) Text(stringResource(R.string.walk_steps_unavailable), color = Color(0xFFFFE066), style = MaterialTheme.typography.bodyMedium)
@@ -189,13 +199,13 @@ private fun WalkLive(s: WalkUiState, vm: WalkRowsViewModel) {
         Column(Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             s.lastSaved?.let { (plant, v) -> Text(stringResource(R.string.walk_plant_saved, plant, if (v.leavesSeen == 0) stringResource(R.string.walk_not_seen) else verdictTitle(v, s.labels)), style = MaterialTheme.typography.bodyMedium) }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                OutlinedButton(onClick = vm::previousPlant, enabled = s.plant > 1, modifier = Modifier.weight(1f).height(56.dp)) { Text(stringResource(R.string.walk_prev_plant)) }
-                Button(onClick = vm::nextPlant, enabled = s.plant < s.plantsPerRow, modifier = Modifier.weight(2f).height(56.dp).testTag("next_plant")) { Text(stringResource(R.string.walk_next_plant)) }
+                OutlinedButton(onClick = vm::previousPlant, enabled = !s.saving && s.plant > 1, modifier = Modifier.weight(1f).height(56.dp)) { Text(stringResource(R.string.walk_prev_plant)) }
+                Button(onClick = vm::nextPlant, enabled = !s.saving && s.plant < s.plantsPerRow, modifier = Modifier.weight(2f).height(56.dp).testTag("next_plant")) { Text(stringResource(R.string.walk_next_plant)) }
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                FilledTonalButton(onClick = vm::togglePause, modifier = Modifier.weight(1f)) { Text(stringResource(if (s.paused) R.string.walk_resume else R.string.walk_pause)) }
-                FilledTonalButton(onClick = vm::nextRow, enabled = s.row < s.rows, modifier = Modifier.weight(1f)) { Text(stringResource(R.string.walk_next_row)) }
-                Button(onClick = vm::finish, modifier = Modifier.weight(1f).testTag("finish_walk")) { Text(stringResource(R.string.walk_finish)) }
+                FilledTonalButton(onClick = vm::togglePause, enabled = !s.saving, modifier = Modifier.weight(1f)) { Text(stringResource(if (s.paused) R.string.walk_resume else R.string.walk_pause)) }
+                FilledTonalButton(onClick = vm::nextRow, enabled = !s.saving && s.row < s.rows, modifier = Modifier.weight(1f)) { Text(stringResource(R.string.walk_next_row)) }
+                Button(onClick = vm::finish, enabled = !s.saving, modifier = Modifier.weight(1f).testTag("finish_walk")) { Text(stringResource(R.string.walk_finish)) }
             }
         }
     }

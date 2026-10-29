@@ -1,0 +1,201 @@
+{
+  "source_sha256": "9052218043dd87eb1396fe096031c4a792ca16c6a5e3d84dd0aa79f3f9d49bd1",
+  "protocol_sha256": "4fa0c68e0a96497ab4368a1aae554e1ac6c8b4447d662f4a6907ee1fcd0d6098",
+  "best_decision": [
+    -1,
+    16,
+    9,
+    -0.5273650884628296
+  ],
+  "selected_epoch": 5,
+  "history": [
+    {
+      "epoch": 0,
+      "decision": [
+        -1,
+        14,
+        5,
+        -0.5171842575073242
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 1,
+      "decision": [
+        -1,
+        14,
+        4,
+        -0.5385192632675171
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 2,
+      "decision": [
+        -1,
+        14,
+        7,
+        -0.523013174533844
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 3,
+      "decision": [
+        -1,
+        14,
+        9,
+        -0.5009403228759766
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 4,
+      "decision": [
+        -1,
+        15,
+        9,
+        -0.5267525315284729
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 5,
+      "decision": [
+        -1,
+        16,
+        9,
+        -0.5273650884628296
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 6,
+      "decision": [
+        -2,
+        17,
+        10,
+        -0.5685129165649414
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 7,
+      "decision": [
+        -2,
+        15,
+        8,
+        -0.6418355107307434
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 8,
+      "decision": [
+        -2,
+        15,
+        10,
+        -0.5965757369995117
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 9,
+      "decision": [
+        -2,
+        15,
+        9,
+        -0.6206392645835876
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 10,
+      "decision": [
+        -2,
+        17,
+        10,
+        -0.6479804515838623
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 11,
+      "decision": [
+        -2,
+        16,
+        10,
+        -0.6807042360305786
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    }
+  ],
+  "cheap_pass": false,
+  "passed": false,
+  "model_promoted": false,
+  "new_encoder_inputs": 0,
+  "elapsed_seconds": 3.323357471032068,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false
+}

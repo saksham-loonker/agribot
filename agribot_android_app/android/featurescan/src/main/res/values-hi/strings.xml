@@ -55,8 +55,9 @@
 
     <!-- परिणाम -->
     <string name="verdict_healthy">स्वस्थ दिखता है</string>
+    <string name="verdict_primary_healthy">इस दृश्य में स्वस्थ दिखता है</string>
     <string name="verdict_disease_partial">कुछ पत्तियों पर %1$s</string>
-    <string name="verdict_unknown">समस्या हमारी सूची में नहीं है</string>
+    <string name="verdict_unknown">स्थिति पहचानी नहीं गई</string>
     <string name="verdict_unsure">पक्का नहीं — फिर से देखें</string>
     <string name="verdict_unsure_body">पत्तियों से मिले-जुले संकेत मिले (शायद %1$s या %2$s)। पास आएँ, दूसरी पत्तियाँ दिखाएँ या बेहतर रोशनी में जाँचें।</string>
     <string name="confidence_high">अधिक भरोसा</string>
@@ -210,10 +211,10 @@
     <string name="cond_healthy_do1">हर हफ़्ते जाँच करते रहें, ख़ासकर बारिश के बाद।</string>
     <string name="cond_healthy_do2">नीचे की पत्तियाँ भी देखें — समस्याएँ अक्सर वहीं से शुरू होती हैं।</string>
 
-    <string name="cond_other">हमारी सूची में नहीं</string>
-    <string name="cond_other_body">पत्तियाँ स्वस्थ नहीं दिखतीं, पर ऐप की जानी-पहचानी किसी स्थिति से मेल नहीं खातीं (जैसे बैक्टीरियल स्पॉट, लीफ़ मोल्ड, मोज़ेक वायरस या सेप्टोरिया लीफ़ स्पॉट)।</string>
+    <string name="cond_other">स्थिति पहचानी नहीं गई</string>
+    <string name="cond_other_body">इन पत्तियों का मिलान ऐप की समर्थित टमाटर की स्थितियों से नहीं हो सका। इसका मतलब यह नहीं है कि पौधा बीमार है। टमाटर की पत्तियों का साफ़ दृश्य लेकर दोबारा जाँचें; कोई दूसरी स्थिति या अलग पौधा भी यह परिणाम दे सकता है।</string>
     <string name="cond_other_do1">पौधा या उसकी साफ़ फ़ोटो अपने कृषि अधिकारी या KVK को दिखाएँ।</string>
-    <string name="cond_other_do2">जब तक पता न चले, बीमार दिखने वाले पौधों को स्वस्थ पौधों से अलग रखें।</string>
+    <string name="cond_other_do2">यदि पौधा बीमार दिखे, तो कारण पता चलने तक उसे स्वस्थ पौधों से अलग रखें।</string>
     <string name="cond_other_do3">समस्या पहचानने से पहले कुछ भी न छिड़कें।</string>
 
     <string name="cond_unknown_label">अज्ञात</string>
@@ -226,4 +227,5 @@
         <item quantity="one">ज़्यादातर पत्तियाँ स्वस्थ दिखती हैं, पर %1$d पत्ती पर इसके साफ़ लक्षण हैं। पूरा पौधा जाँचें।</item>
         <item quantity="other">ज़्यादातर पत्तियाँ स्वस्थ दिखती हैं, पर %1$d पत्तियों पर इसके साफ़ लक्षण हैं। पूरा पौधा जाँचें।</item>
     </plurals>
+    <string name="scan_quality_retry">तस्वीर साफ़ नहीं है। फ़ोन स्थिर रखें, पास आएँ और तेज़ चमक या गहरी छाया से बचें।</string>
 </resources>

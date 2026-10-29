@@ -1,0 +1,20 @@
+{
+  "archive_sha256": "7da78e4e8af1efeb32d68baa11a4f144eadc8382f57502f04cd41396ecc4d47b",
+  "protocols": [
+    {
+      "path": "phase227_paired_view_controls/protocol.json",
+      "sha256": "8b4558559b488969aac0a699d5062817ba5d5fb01a230c0157312a521c9ed14d",
+      "bytes": 93671
+    },
+    {
+      "path": "phase228_generalization_regularizers/protocol.json",
+      "sha256": "81d6bcb1050723d67734a46c08c2135ca74f5922a05e1cb596e21d4b5822c827",
+      "bytes": 486890
+    },
+    {
+      "path": "phase229_domain_conditional_stack/protocol.json",
+      "sha256": "713899add3ab27e8f95df65a0785f7e0b34ee61569d8ac91998de5020bde3a8f",
+      "bytes": 103512
+    }
+  ]
+}

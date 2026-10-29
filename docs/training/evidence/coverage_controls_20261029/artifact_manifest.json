@@ -1,0 +1,373 @@
+{
+  "files": [
+    {
+      "path": "phase244_whole_context_recovery/protocol.json",
+      "bytes": 1751,
+      "sha256": "d170f815af54ee3535b97802994d0d927a7ac2c65700ea8b9d7186e9a8e2825f"
+    },
+    {
+      "path": "phase244_whole_context_recovery/result.json",
+      "bytes": 5404,
+      "sha256": "0a35e1ca6504bcf12d75c3bf15a79570adb53c733ceeae1a9067940814c954cd"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/fold_0/last.pt",
+      "bytes": 1206553,
+      "sha256": "b56cf396185c74150ad6c085efd23346f7e84198e6c541d4b35f2838fb13f98f"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/fold_1/last.pt",
+      "bytes": 1206553,
+      "sha256": "c87ebfd31dc34b8112f883e44b462659735eea280aa85196bd1d786ee1678d3b"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/fold_2/last.pt",
+      "bytes": 1206553,
+      "sha256": "892c09d61695caf1c7f10c123db2ff850bcfc7f890d0e8a9d1e17b9438b93560"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/fold_3/last.pt",
+      "bytes": 1206553,
+      "sha256": "df17ebbc23e3173448605ae6e86f3798a86b39ff5b28ca2120258a999410915a"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/full/epoch_009.pt",
+      "bytes": 402413,
+      "sha256": "b07110224cbe736ef66b0c03ca15a80cba4a9dec5544737198095c2c7ddad15b"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/full/epoch_019.pt",
+      "bytes": 402413,
+      "sha256": "e19743c39b28f7492f76b23dd447435b56846e3261a021390f46f0f090afbad6"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/full/epoch_029.pt",
+      "bytes": 402413,
+      "sha256": "8b0349bdfe9211cea639a77392cff1abb87f2e9b6198d258e5c892d0947cdfe9"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/full/epoch_039.pt",
+      "bytes": 402413,
+      "sha256": "c830d747b76ec0dc8da124594b99c0927d9ebc346b4d0d03c9c706641f467934"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/full/epoch_049.pt",
+      "bytes": 402413,
+      "sha256": "d494df5df31c9047e476be58b15d33c46da6e19f999b5a9b30901f4f56184c37"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/full/epoch_059.pt",
+      "bytes": 402413,
+      "sha256": "ed83dd9cbe638a9ff7cbf3bbcef64fb7de1b8e147fff1480a9f44959c9cc44c6"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/full/epoch_069.pt",
+      "bytes": 402413,
+      "sha256": "c9b11c0c3d8785851900c6272f0ceb4cd7de9c3a64cb6f058cac16141143c981"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/full/epoch_079.pt",
+      "bytes": 402413,
+      "sha256": "cbfa2cb190b6ef6ac6ed7b762f6a478280c4545a9d7ea256c2b037f0f8329303"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/full/last.pt",
+      "bytes": 1206553,
+      "sha256": "3d1ca763fe37f97e1626cc619f02734de38ded3e6a9f06043e68d0a8753bdc0c"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/binary/predictions.npz",
+      "bytes": 84550,
+      "sha256": "fb59992b070db04b220670ef19549b944a527728b27636406d1789851f8f9ea1"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/fold_0/last.pt",
+      "bytes": 1218165,
+      "sha256": "f6e36ec2657471a0ceb8d495b710e2237610e6de1468003df4f7488e84c19b30"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/fold_1/last.pt",
+      "bytes": 1218165,
+      "sha256": "6bbb0ac5b4062de85ebb8e91e8bb4a2accfe8fd735de229acc6bb1fea779a3f6"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/fold_2/last.pt",
+      "bytes": 1218165,
+      "sha256": "46de27b40c0487a6a5bc746c117f27cf29d7b2ebf3faff8db1342861cc3830f9"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/fold_3/last.pt",
+      "bytes": 1218165,
+      "sha256": "a680f7a468f85a223772bffef0a9b46d8e1972e45c121ffa93b2812e550cf7d9"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/full/epoch_009.pt",
+      "bytes": 402413,
+      "sha256": "5f9358f34913345a6fdfd69f624d07cc8c4f7880d60420dd9cac31fe8e32eb0e"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/full/epoch_019.pt",
+      "bytes": 402413,
+      "sha256": "8fd03a47728507ba244b05e355c1dacccdc8ab59a5e605726d3897dda5852fb4"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/full/epoch_029.pt",
+      "bytes": 402413,
+      "sha256": "28b5f7910f9758f7ebaa45fd3dd0ea58da42beb3b61f9a9f64904cb7d1da554e"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/full/epoch_039.pt",
+      "bytes": 402413,
+      "sha256": "6c0290a08b582e22a4cbb1340e3a01c6fb56c0ae1a9d0587a6b7f674e357269e"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/full/epoch_049.pt",
+      "bytes": 402413,
+      "sha256": "2e6dbb777dcd31de406f078cc2e4a070fbf13a3a1dd9ee9829ddbea3c38c1432"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/full/epoch_059.pt",
+      "bytes": 402413,
+      "sha256": "bb0305a089e6eb47e9d2edd559991eb87a5d23e979dd9426c2861d902850cade"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/full/epoch_069.pt",
+      "bytes": 402413,
+      "sha256": "018d49cab55c453aea4c93e2053d27361097aa3e6ef44ecd67b79e26d9f0459f"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/full/epoch_079.pt",
+      "bytes": 402413,
+      "sha256": "fa07859dbdfaa028007748a0f612dd5a62e027c60ce88b23ed7b77462bdbfc3a"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/full/last.pt",
+      "bytes": 1218165,
+      "sha256": "af659ef5924a788f2a8872d5ed3e029d0a0732894e9f6620da9518baef18bd8d"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/clinical_auxiliary/predictions.npz",
+      "bytes": 84550,
+      "sha256": "fd522e05cfacc0bcf6e19ad1c229b8675775a1acb12b3d42a351ec736e55a634"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/protocol.json",
+      "bytes": 331708,
+      "sha256": "1e286c9a04f5d1a4356ecd3576fe69cb3632db91a9aeccfdc3cf530c7468afff"
+    },
+    {
+      "path": "phase245_all_photo_nonlinear_supervision/result.json",
+      "bytes": 1202,
+      "sha256": "48a2430923396d5b662b6f67234fffba03484b30f519b2b8c2acc32ece9e2459"
+    },
+    {
+      "path": "phase246_whole_prefix_coverage/cache_format_preflight/complete.json",
+      "bytes": 569,
+      "sha256": "269e825dc1e1ba6bf4175baec5c14439c002250592a3f27bd1e20ca887ebb542"
+    },
+    {
+      "path": "phase246_whole_prefix_coverage/cache_format_preflight/original_header.bin",
+      "bytes": 128,
+      "sha256": "f010017df4bf6a596b2b90030b52048f0a8543cc6cec050dd038b2fa386d642c"
+    },
+    {
+      "path": "phase246_whole_prefix_coverage/cache_format_preflight/phase246_whole_prefix_coverage.py",
+      "bytes": 7370,
+      "sha256": "21cffa967bda9aa54e58b1dbec518a1b0477a91e1ad93f8c1c3648db646a7cc6"
+    },
+    {
+      "path": "phase246_whole_prefix_coverage/cache_format_preflight/phase247_preflight.log",
+      "bytes": 1194,
+      "sha256": "90a0606bca0841e94b486493862d4897b62b592d722c265d672b045bc0310dfd"
+    },
+    {
+      "path": "phase246_whole_prefix_coverage/cache_format_repair.json",
+      "bytes": 569,
+      "sha256": "e81aec76dfdc4ea4975540bd1db114781189c48a2a2db904b612fea1d715e7a8"
+    },
+    {
+      "path": "phase246_whole_prefix_coverage/complete.json",
+      "bytes": 569,
+      "sha256": "9690344cb570f1fc33e01c4955259129845c1e88cbc9330f79d9e14b59f7fcb0"
+    },
+    {
+      "path": "phase246_whole_prefix_coverage/locations.json",
+      "bytes": 213939,
+      "sha256": "9240115b78be30a8e418f7927c6b9d13408a8465ddc60b58b7a277c2ea3f4b29"
+    },
+    {
+      "path": "phase246_whole_prefix_coverage/path_indices.json",
+      "bytes": 211206,
+      "sha256": "f38b872046abc1feed31bdb9677e11e7ffcafc799051cf445520d3adb3887068"
+    },
+    {
+      "path": "phase246_whole_prefix_coverage/progress.json",
+      "bytes": 154,
+      "sha256": "4fc433b2967ecf275493c79edad50d67c9b1007f2b9f2b59fecf0713b8a2441a"
+    },
+    {
+      "path": "phase246_whole_prefix_coverage/protocol.json",
+      "bytes": 159065,
+      "sha256": "a40266829d1a7add3422c6fd90f61389f9a11bf2979661fde193c509ead72bf7"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/frozen/fold_0/last.pt",
+      "bytes": 1221109,
+      "sha256": "705564a3da99290b00b1bd42176b294426543b589c32afd40a26658859a9b4bd"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/frozen/fold_1/last.pt",
+      "bytes": 1221109,
+      "sha256": "e171d2b978278bf183b1406dd9810245713689205b17736836f70b14305bc7af"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/frozen/fold_2/last.pt",
+      "bytes": 1221109,
+      "sha256": "79fba4b684a293b034340518045ee9ddd4e3c650248403a49e2816aab3d671bb"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/frozen/fold_3/last.pt",
+      "bytes": 1221109,
+      "sha256": "b09b5557c1ce1eb9bb0816222bf988c1ca243577f74c79f4d1798185f6fa6c6b"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/frozen/full/epoch_009.pt",
+      "bytes": 403501,
+      "sha256": "94208f1f2cf0c87e092e0f746e0a8aaac94a05abdf3198b7bb1f2e4f56da03e9"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/frozen/full/epoch_019.pt",
+      "bytes": 403501,
+      "sha256": "9362a568e2ad8eddf348dd557879e198df61d55a7bad7a4119d2a4393d43bf50"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/frozen/full/epoch_029.pt",
+      "bytes": 403501,
+      "sha256": "abc88c1cdbf886ddc533d84f1d22e0a6fbf0c33cac4a29b5d900c0e310815dcd"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/frozen/full/epoch_039.pt",
+      "bytes": 403501,
+      "sha256": "0e3697be08e379ee5cc9ba963a3678f3c53ca8234894a42abf23d01895e609ec"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/frozen/full/last.pt",
+      "bytes": 1221109,
+      "sha256": "8127337dd0eac0703c0b5916bfbc7a718c8f53a22d4df627814957203e9497db"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/frozen/predictions.npz",
+      "bytes": 30246,
+      "sha256": "13d07de819d468ab00f43e2808482f21f450de0c740418f3677f24e0159a3ef9"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/full_suffix/fold_0/last.pt",
+      "bytes": 256430623,
+      "sha256": "9b2d9e5071680b4ca2789bf346f56d9e7c0dc90cb2a7d5154966be5c621acb26"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/full_suffix/fold_1/last.pt",
+      "bytes": 256430623,
+      "sha256": "88ab3bcfca9a75c7e89b3657c4ddf6bfa8437b79f8c5fe735c2781a7cd5140d0"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/full_suffix/fold_2/last.pt",
+      "bytes": 256430623,
+      "sha256": "455f8261a19a53d1147f2e316d8b36841992862842e57a34deeab5426c6e90a9"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/full_suffix/fold_3/last.pt",
+      "bytes": 256430623,
+      "sha256": "8b7b50f9208dba6516e9fe2a74534d1335e755865a3c6e6b804c31afd09b2cfe"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/full_suffix/full/epoch_009.pt",
+      "bytes": 85472642,
+      "sha256": "4d3f31dba4088358d76df79cfd16b781630c89a034b1caa5e8b0deb9c93e2f1d"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/full_suffix/full/epoch_019.pt",
+      "bytes": 85472642,
+      "sha256": "430bfd084d5f0fd8f1ac278bde5368bc7c8bc0dc06577fd538b1482e71baf7a1"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/full_suffix/full/epoch_029.pt",
+      "bytes": 85472642,
+      "sha256": "24c4665613c19df9fe0bc6403e867ce4bc1b6af6955e9cba58c1a7bd7fcaa577"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/full_suffix/full/epoch_039.pt",
+      "bytes": 85472642,
+      "sha256": "5c5ce40e11259d4af6587aa620917274240485662b2a235b85db8418612056ff"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/full_suffix/full/last.pt",
+      "bytes": 256430623,
+      "sha256": "44e5dcf13e956ec91c73839ce98ad2a5f0dc4c3e3cc371e2ce3bc92aa288ff86"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/full_suffix/predictions.npz",
+      "bytes": 30246,
+      "sha256": "d03f9fe76de8e00a376b9ce3ab6a150f322a8132a0e3fa0a95c3976c31403c4b"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/protocol.json",
+      "bytes": 111553,
+      "sha256": "fd07548d8a58407597e7e36471def7c5600824e1a2534a7be95b10f1e49d4658"
+    },
+    {
+      "path": "phase247_all_photo_suffix_adaptation/result.json",
+      "bytes": 1199,
+      "sha256": "479bd728a478170e670e9f241a6d4b4fb6225eed86487c861e351b26c8de2ab7"
+    },
+    {
+      "path": "phase248_target_scope_calibration/binary/calibration.npz",
+      "bytes": 7978,
+      "sha256": "52bca3b74dcd51079f52cc3a1cb3bdf965a986efcd8906cc19372ee5e6476130"
+    },
+    {
+      "path": "phase248_target_scope_calibration/clinical_auxiliary/calibration.npz",
+      "bytes": 7978,
+      "sha256": "bf25a8fdd637f0f348c08cf0005c24520a53cce42e498da24a27343f3e48b59d"
+    },
+    {
+      "path": "phase248_target_scope_calibration/frozen/calibration.npz",
+      "bytes": 7978,
+      "sha256": "0f670ec2e47d806893fd352480bad0943c3ff2cb60407960ab62a9ea3890199d"
+    },
+    {
+      "path": "phase248_target_scope_calibration/full_suffix/calibration.npz",
+      "bytes": 7978,
+      "sha256": "3addfa43e0e427d4a1810885a431c5da1db26fea9e8edb44212365a92494a268"
+    },
+    {
+      "path": "phase248_target_scope_calibration/linear/calibration.npz",
+      "bytes": 7978,
+      "sha256": "44900d9bf224bf8bea1c4b32e8e40409ad01cae48fd25b5cc4aa0026282ac38f"
+    },
+    {
+      "path": "phase248_target_scope_calibration/protocol.json",
+      "bytes": 2343,
+      "sha256": "df5e84199f522a0864826bb3586954dfb07f78f5ef57f3916c187a0e2dbd4964"
+    },
+    {
+      "path": "phase248_target_scope_calibration/rbf/calibration.npz",
+      "bytes": 7978,
+      "sha256": "845c568be8b3c38a56192bc7a88548f3f2867a69f2b6d761507a6d109d835425"
+    },
+    {
+      "path": "phase248_target_scope_calibration/result.json",
+      "bytes": 15606,
+      "sha256": "d4f5e5ff47ca959295bcd3806a234373d6cd4ba6e5c43c78298199ba96ef14f9"
+    }
+  ],
+  "roots": [
+    "phase244_whole_context_recovery",
+    "phase245_all_photo_nonlinear_supervision",
+    "phase246_whole_prefix_coverage",
+    "phase247_all_photo_suffix_adaptation",
+    "phase248_target_scope_calibration"
+  ],
+  "model_promoted": false,
+  "volatile_prefix_cache_not_in_this_archive": true
+}

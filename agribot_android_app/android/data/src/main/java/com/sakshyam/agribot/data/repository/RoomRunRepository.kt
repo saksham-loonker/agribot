@@ -62,6 +62,21 @@ class RoomRunRepository @Inject constructor(
         replaceDecision(decision)
     }
 
+    override suspend fun appendDecisions(decisions: List<RecordedDecision>) {
+        database.withTransaction {
+            decisions.forEach { replaceDecision(it) }
+        }
+    }
+
+    override suspend fun saveCompletedRun(config: RunConfig, decision: RecordedDecision) {
+        require(config.runId == decision.runId) { "Decision belongs to a different run" }
+        database.withTransaction {
+            createRun(config)
+            replaceDecision(decision)
+            markRunCompleted(config.runId)
+        }
+    }
+
     override suspend fun replaceDecision(decision: RecordedDecision) {
         database.withTransaction {
             database.decisionDao().upsertDecision(decision.toEntity())

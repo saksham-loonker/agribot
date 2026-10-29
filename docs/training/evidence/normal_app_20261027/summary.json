@@ -1,0 +1,217 @@
+{
+  "unit_tests": 133,
+  "unit_failures": [],
+  "unit_skips": [],
+  "lint_errors": 0,
+  "lint_warnings": 7,
+  "lint_issues": [
+    {
+      "id": "UnusedAttribute",
+      "severity": "Warning",
+      "message": "Attribute `localeConfig` is only used in API level 33 and higher (current min is 26)",
+      "category": "Correctness",
+      "priority": "6",
+      "summary": "Attribute unused on older versions",
+      "explanation": "This check finds attributes set in XML files that were introduced in a version newer than the oldest version targeted by your application (with the `minSdkVersion` attribute).\n\nThis is not an error; the application will simply ignore the attribute. However, if the attribute is important to the appearance or functionality of your application, you should consider finding an alternative way to achieve the same result with only available attributes, and then you can optionally create a copy of the layout in a layout-vNN folder which will be used on API NN or higher where you can take advantage of the newer attribute.\n\nNote: This check does not only apply to attributes. For example, some tags can be unused too, such as the new `<tag>` element in layouts introduced in API 21.",
+      "errorLine1": "        android:localeConfig=\"@xml/locales_config\">",
+      "errorLine2": "        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    },
+    {
+      "id": "GradleDependency",
+      "severity": "Warning",
+      "message": "A newer version of androidx.activity:activity-compose than 1.9.2 is available: 1.13.0",
+      "category": "Correctness",
+      "priority": "4",
+      "summary": "Obsolete Gradle Dependency",
+      "explanation": "This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.",
+      "errorLine1": "    implementation \"androidx.activity:activity-compose:$androidxActivityVersion\"",
+      "errorLine2": "                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    },
+    {
+      "id": "GradleDependency",
+      "severity": "Warning",
+      "message": "A newer version of androidx.navigation:navigation-compose than 2.8.5 is available: 2.10.2",
+      "category": "Correctness",
+      "priority": "4",
+      "summary": "Obsolete Gradle Dependency",
+      "explanation": "This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.",
+      "errorLine1": "    implementation \"androidx.navigation:navigation-compose:$navigationComposeVersion\"",
+      "errorLine2": "                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    },
+    {
+      "id": "GradleDependency",
+      "severity": "Warning",
+      "message": "A newer version of androidx.core:core-ktx than 1.15.0 is available: 1.19.1",
+      "category": "Correctness",
+      "priority": "4",
+      "summary": "Obsolete Gradle Dependency",
+      "explanation": "This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.",
+      "errorLine1": "    implementation \"androidx.core:core-ktx:$androidxCoreVersion\"",
+      "errorLine2": "                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    },
+    {
+      "id": "GradleDependency",
+      "severity": "Warning",
+      "message": "A newer version of androidx.appcompat:appcompat than 1.7.0 is available: 1.8.0",
+      "category": "Correctness",
+      "priority": "4",
+      "summary": "Obsolete Gradle Dependency",
+      "explanation": "This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.",
+      "errorLine1": "    implementation \"androidx.appcompat:appcompat:$androidxAppCompatVersion\"",
+      "errorLine2": "                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    },
+    {
+      "id": "GradleDependency",
+      "severity": "Warning",
+      "message": "A newer version of androidx.test:rules than 1.6.1 is available: 1.7.0",
+      "category": "Correctness",
+      "priority": "4",
+      "summary": "Obsolete Gradle Dependency",
+      "explanation": "This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.",
+      "errorLine1": "    androidTestImplementation \"androidx.test:rules:1.6.1\"",
+      "errorLine2": "                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    },
+    {
+      "id": "ChromeOsAbiSupport",
+      "severity": "Warning",
+      "message": "Missing x86_64 ABI support for ChromeOS",
+      "category": "Correctness:Chrome OS",
+      "priority": "4",
+      "summary": "Missing ABI Support for ChromeOS",
+      "explanation": "To properly support ChromeOS, your Android application should have an x86 and/or x86_64 binary as part of the build configuration. To fix the issue, ensure your files are properly optimized for ARM; the binary translator will then ensure compatibility with x86. Alternatively, add an `abiSplit` for x86 within your `build.gradle` file and create the required x86 dependencies.",
+      "url": "https://developer.android.com/ndk/guides/abis",
+      "urls": "https://developer.android.com/ndk/guides/abis",
+      "errorLine1": "            ndk { abiFilters 'arm64-v8a' }",
+      "errorLine2": "                             ~~~~~~~~~~~"
+    }
+  ],
+  "build": {
+    "exit_code": 0,
+    "elapsed_seconds": 17.10207482194528,
+    "source_sha256": "7b9089106e80a2ec986ac26b0a10f22032fa3c036e93ace8a8282fd536baed5c"
+  },
+  "native": {
+    "passed": true,
+    "tests": 22,
+    "failed": 0,
+    "skipped": 0,
+    "failures": [],
+    "elapsed_seconds": 24.158897988963872,
+    "exit_code": 0,
+    "build_source_sha256": "7b9089106e80a2ec986ac26b0a10f22032fa3c036e93ace8a8282fd536baed5c",
+    "model_manifest_sha256": "b9ecdf557015e847bb4a4d76b622ab66100c036effa86e5a63c151e32de15f4f",
+    "case_names": [
+      {
+        "name": "failedMoveKeepsTheCurrentPlantAndAllowsASafeRetry",
+        "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+        "time": "0.13"
+      },
+      {
+        "name": "checkRejectsAnInferenceThatSpansABackgroundTransition",
+        "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+        "time": "0.0"
+      },
+      {
+        "name": "quickCheckWaitsForPrimaryWindowInsteadOfFinalizingOtherEarly",
+        "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+        "time": "0.123"
+      },
+      {
+        "name": "failedModelsDoNotLeaveWalkStartWaitingForever",
+        "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+        "time": "0.0"
+      },
+      {
+        "name": "failedCheckSaveKeepsTheVerdictAndRetriesWithoutAnOrphanRun",
+        "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+        "time": "0.101"
+      },
+      {
+        "name": "multiPlantTransactionRollsBackEarlierWritesInTheSameMovement",
+        "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+        "time": "0.0"
+      },
+      {
+        "name": "walkThatFinishesStartingInTheBackgroundRemainsPaused",
+        "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+        "time": "0.026"
+      },
+      {
+        "name": "quickCheckTransactionRollsBackTheRunWhenDecisionInsertFails",
+        "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+        "time": "0.001"
+      },
+      {
+        "name": "finishRetryDoesNotDuplicateTheAlreadyCommittedPlant",
+        "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+        "time": "0.102"
+      },
+      {
+        "name": "pauseAndResumeRejectThePreviousInFlightFrame",
+        "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+        "time": "0.026"
+      },
+      {
+        "name": "restoredCompletedWalkIsNeverReopenedAsRecording",
+        "classname": "com.sakshyam.agribot.ScanPersistenceLifecycleTest",
+        "time": "0.027"
+      },
+      {
+        "name": "homeShowsBothModesAndRecentSection",
+        "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
+        "time": "1.005"
+      },
+      {
+        "name": "checkPlantOpensCameraWithGuidance",
+        "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
+        "time": "0.604"
+      },
+      {
+        "name": "walkSetupRejectsInvalidNumbers",
+        "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
+        "time": "0.803"
+      },
+      {
+        "name": "settingsSwitchesLanguageToHindiAndBack",
+        "classname": "com.sakshyam.agribot.AgribotLaunchUiTest",
+        "time": "0.855"
+      },
+      {
+        "name": "runPersistenceSupportsReplacementRetakeAndPiCompatibleExports",
+        "classname": "com.sakshyam.agribot.AgribotRoomExportIntegrationTest",
+        "time": "0.082"
+      },
+      {
+        "name": "renderEnglishAndHindiCards",
+        "classname": "com.sakshyam.agribot.VerdictCardRenderTest",
+        "time": "1.15"
+      },
+      {
+        "name": "primaryScoresAndProtectedDiseaseVerdictsMatchMobileReference",
+        "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
+        "time": "1.556"
+      },
+      {
+        "name": "checkAPlantVerdictOnStaticImagesAgreesWithReference",
+        "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
+        "time": "1.456"
+      },
+      {
+        "name": "wholeImageLogitsAndLabelsMatchReference",
+        "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
+        "time": "1.23"
+      },
+      {
+        "name": "fullAnalysisRunsAndReportsLatency",
+        "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
+        "time": "0.779"
+      },
+      {
+        "name": "detectionsMatchReference",
+        "classname": "com.sakshyam.agribot.AgribotModelGoldenTest",
+        "time": "0.278"
+      }
+    ],
+    "physical_phone": false
+  }
+}

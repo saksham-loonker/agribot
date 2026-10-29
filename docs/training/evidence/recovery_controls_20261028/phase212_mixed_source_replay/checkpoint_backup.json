@@ -1,0 +1,176 @@
+{
+  "verified": true,
+  "backup_directory": "C:\\Users\\Manisha\\agribot\\.toolchains\\model-checkpoints\\phase212",
+  "files": {
+    "best.pt": {
+      "sha256": "5d3ac444d203518b530ac6fd7018eac5658b2ed0c02bc48205a4e45b51e3577c",
+      "bytes": 735857
+    },
+    "epoch_000.pt": {
+      "sha256": "3afb659ed187362f31905196824ee6f744cd1c4841d584c1e89e366b21873077",
+      "bytes": 736237
+    },
+    "epoch_001.pt": {
+      "sha256": "a37c3f2ffca9e58ec4c3d92ec46a2c539be10c9c08319d8258834760fe0026f3",
+      "bytes": 736237
+    },
+    "epoch_002.pt": {
+      "sha256": "ba2e9747aa980a73d0b47e357189f2bb0b7ea2b0576cdc0547ec47ae8c9acbae",
+      "bytes": 736237
+    },
+    "epoch_003.pt": {
+      "sha256": "15b6d0b5194c3172325225921ad760bdddb7853ffeb5457bea0b90d464f90ee7",
+      "bytes": 736237
+    },
+    "epoch_004.pt": {
+      "sha256": "be5cea2e345966eab8ed507bc66242a47616d609775846193aa76e82205afcd7",
+      "bytes": 736237
+    },
+    "epoch_005.pt": {
+      "sha256": "418a37088bd77ecc1a390eb83fcbec7967a894f99f24d37fdd2433c94e939b25",
+      "bytes": 736237
+    },
+    "epoch_006.pt": {
+      "sha256": "92825c0a438d256cf4f0a768f5b1eff70c937a7260d57c6cb5e764665feb7ca5",
+      "bytes": 736237
+    },
+    "epoch_007.pt": {
+      "sha256": "0caeb07b2c5c2ccb8eb91fce10aeff85a19255717b102abb9fcb8a7a56816690",
+      "bytes": 736237
+    },
+    "epoch_008.pt": {
+      "sha256": "2c9851ed8f9ce5402e2093a57cc51da50653ac63191decb8872d6b43d3b7d51f",
+      "bytes": 736237
+    },
+    "epoch_009.pt": {
+      "sha256": "b1ad08a4614d4735b3fc65556d35feae856c1a5ea688e42837572e53aa2a60ba",
+      "bytes": 736237
+    },
+    "epoch_010.pt": {
+      "sha256": "c4fccff7b9b00435bb5aeea3f76b3e3b4bf71ab821d1ca08c9b180f1b7a3a530",
+      "bytes": 736237
+    },
+    "epoch_011.pt": {
+      "sha256": "b707e30e1b70bae828577d8db177dc2e3307238840f68056422a3b20ca0dd12d",
+      "bytes": 736237
+    },
+    "epoch_012.pt": {
+      "sha256": "a191629f15b394d78d8443b3075005c171c6aa4823446734da3f9e6c84b941ce",
+      "bytes": 736237
+    },
+    "epoch_013.pt": {
+      "sha256": "7a7109709a5ea9e75a00be4476b85522cfd005fe8f4ff151a4ce61aa7ab50475",
+      "bytes": 736237
+    },
+    "epoch_014.pt": {
+      "sha256": "3862c8f5e5e2295d35a84d73e80d1a650180cd79d35ac7eaab5ad91d25d3a8e0",
+      "bytes": 736237
+    },
+    "epoch_015.pt": {
+      "sha256": "1d5a826297106b17818624d1e0116b7f6a373da22140e4029164a89cf9402605",
+      "bytes": 736237
+    },
+    "epoch_016.pt": {
+      "sha256": "e9ca193eb09cb19a6bac0aae221ee85a81a2b2ceb971d243276f3dcb31669dc3",
+      "bytes": 736237
+    },
+    "epoch_017.pt": {
+      "sha256": "9332e5434f05529a1c8c841d43ec4acd1f4801c5b1b13a12dd74028f4c7a98a1",
+      "bytes": 736237
+    },
+    "epoch_018.pt": {
+      "sha256": "2dcd2e02bf48df8fffcdd483e76203cf611d7c321abba3edb68ae2596b2962c2",
+      "bytes": 736237
+    },
+    "epoch_019.pt": {
+      "sha256": "d7bc4970b879478fa1687e8cc6a21389924b9f1f4f87822f1e56397f7d230ff9",
+      "bytes": 736237
+    },
+    "epoch_020.pt": {
+      "sha256": "f10926d8656aa2ef2453c511974e178ae6e998376cd307142d13447ce2ab48ba",
+      "bytes": 736237
+    },
+    "epoch_021.pt": {
+      "sha256": "b1da95dfa2c18dc0df208a99752e8b6f7fb97e4fee54fe9747c3e8745f3d3eda",
+      "bytes": 736237
+    },
+    "epoch_022.pt": {
+      "sha256": "a86604c8ceff779f6802843c56ced6303f0193c313e4c03f4b7053ac1cefa592",
+      "bytes": 736237
+    },
+    "epoch_023.pt": {
+      "sha256": "8d8fc51ae8eac72121d1a89e5098879a557e2a962c825cb0f996c3072d5f8b13",
+      "bytes": 736237
+    },
+    "epoch_024.pt": {
+      "sha256": "fb701db12c511f2ebcb21e4010a596488a818a6503e947d0a67329b4a7badc9b",
+      "bytes": 736237
+    },
+    "epoch_025.pt": {
+      "sha256": "e914b07f2444b228fb55032f10e4f063f1b06fe5da3a5023bcb5db8cbbb39ca1",
+      "bytes": 736237
+    },
+    "epoch_026.pt": {
+      "sha256": "0c658bdacb79078be02ed64305e1a5b1baa2c41ed2eb60d9d1097859f08de317",
+      "bytes": 736237
+    },
+    "epoch_027.pt": {
+      "sha256": "6d5f9d99d09df2a87d1a95c3d1b87e8002c8656beb1752977003e1f1f3947008",
+      "bytes": 736237
+    },
+    "epoch_028.pt": {
+      "sha256": "bb3b725577971b4c7679b249a350a323d5c55530cd19750472a5410f60356eb6",
+      "bytes": 736237
+    },
+    "epoch_029.pt": {
+      "sha256": "4d6935c9bb58e2881ad2633688058dadf8930b7a5e5a5ea0a19ddef4d21ea952",
+      "bytes": 736237
+    },
+    "epoch_030.pt": {
+      "sha256": "20f74de0cf6cb8172aba5bfbfdb9e224651d24bfb2afaf8e856af2895590c06a",
+      "bytes": 736237
+    },
+    "epoch_031.pt": {
+      "sha256": "abc6feb174b05f261ecf1f9c11c493f3cf2951c2e16d3e44b08589f31dc24f0b",
+      "bytes": 736237
+    },
+    "epoch_032.pt": {
+      "sha256": "a787d1b39ef7db7cd0bae0df67141160d22d604dfafe16873ba790f6cbadc497",
+      "bytes": 736237
+    },
+    "epoch_033.pt": {
+      "sha256": "5c4705fc57948e68e34a4d25606607b18ebfc4e21f01948df7734e6467cf82b7",
+      "bytes": 736237
+    },
+    "epoch_034.pt": {
+      "sha256": "7384a5fce7fccaa8e50f5f841d2b5fbd43c83265f03b3b0c20e6128ad677b760",
+      "bytes": 736237
+    },
+    "epoch_035.pt": {
+      "sha256": "e6764edee4315ad3f86faa9e87e8b32603e767ce860856e821d58ab4ad6b13c7",
+      "bytes": 736237
+    },
+    "epoch_036.pt": {
+      "sha256": "5f021433bea6cd41be362ac1cee0702f845f2d09824442d45f29cfee4c28a042",
+      "bytes": 736237
+    },
+    "epoch_037.pt": {
+      "sha256": "86188f5777b6ac2d1271513e6c17edd66bbb3ce512924d653ad7e6caee04a4fc",
+      "bytes": 736237
+    },
+    "epoch_038.pt": {
+      "sha256": "15d99e8fd6b720d8577dd558479595d491358a908e7599dcf9e4b624859079e6",
+      "bytes": 736237
+    },
+    "epoch_039.pt": {
+      "sha256": "ff1716426c401ebccd551f272a4570347f9461fc147616329760baade3379ec2",
+      "bytes": 736237
+    },
+    "last.pt": {
+      "sha256": "3bbd1ebe6fda2fd5cfa8a827657e989c27c75ad15ffde4e75e0cee51509e0708",
+      "bytes": 2226357
+    }
+  },
+  "all_forty_epoch_models_and_best_and_final_optimizer_rng": true,
+  "source_checkpoint_directory": "/dev/shm/agribot-phase212-checkpoints"
+}

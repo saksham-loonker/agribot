@@ -1,0 +1,24 @@
+{
+  "protocol_sha256": "80a5a6ac7f54a8ebe26ec38eb1072f615ed7e97e5dd0950721ebc661133ef1f4",
+  "features_sha256": "162bf5d4c394e27ac47d8f7cbcca79b3a020283dd90dc5620262fea5772a8f05",
+  "new_native_518_inputs": 2106,
+  "cached_native_inputs_reused": 0,
+  "canonical_native_inputs": 2106,
+  "maximum_dynamic_224_restore_error": 1.4185905456542969e-05,
+  "native_positional_embeddings_exact": true,
+  "native_roi_short_side_quantiles": [
+    44.63713697716594,
+    196.61219787597656,
+    779.6825561523438,
+    1356.2146301269531,
+    3088.9481811523438
+  ],
+  "fraction_native_roi_short_side_above_224": 0.680259499536608,
+  "fraction_native_roi_short_side_above_518": 0.5801668211306765,
+  "new_detector_inputs": 0,
+  "old_224_encoders_recomputed": 0,
+  "source_role": "development_only",
+  "acceptance_data_used": false,
+  "model_promoted": false,
+  "elapsed_seconds": 228.40292767900974
+}

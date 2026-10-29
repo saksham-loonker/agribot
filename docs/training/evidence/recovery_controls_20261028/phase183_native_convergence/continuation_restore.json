@@ -1,0 +1,16 @@
+{
+  "parent_epoch": 7,
+  "decision": [
+    -3,
+    24,
+    13,
+    -0.8965644240379333
+  ],
+  "new_false_healthy_by_source": {
+    "plantvillage": 0,
+    "tlid": 1,
+    "bangladesh_classification": 0,
+    "olid_tomato": 2
+  },
+  "optimizer_and_rng_restored": true
+}

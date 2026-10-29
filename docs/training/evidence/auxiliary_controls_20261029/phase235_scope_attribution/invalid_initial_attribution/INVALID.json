@@ -1,0 +1,6 @@
+{
+  "invalid": true,
+  "reason": "Missing no-leaf fallback scores were mistakenly tabulated without an availability denominator. No actual whole-primary outputs existed for these detected-leaf cases. The zeros were not classifier failure measurements.",
+  "training_or_promotion_affected": false,
+  "replacement": "Corrected availability audit and actual deployed-byte whole-primary measurement phase236."
+}

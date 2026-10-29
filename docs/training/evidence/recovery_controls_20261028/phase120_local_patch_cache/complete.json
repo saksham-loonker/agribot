@@ -1,0 +1,21 @@
+{
+  "protocol_sha256": "fb3720841a106f9d0c40029bb5fa834151b087fed0d2e3dae625de3fdcd2d11d",
+  "tokens_sha256": "55a7e7971143a00df4e803789bd13b6b994ae7afa90452522f789d87cb1378de",
+  "inputs": 868,
+  "encoder_prefix_inputs_recomputed": 0,
+  "new_final_token_tail_inputs": 868,
+  "maximum_cls_error": 2.2649765014648438e-06,
+  "prefix_parent": {
+    "completed": 854,
+    "maximum_error": 0.0,
+    "protocol_sha256": "7d6e8d19b89b3285405cfa7c8a09975c38d972b232044ae4917fc82208c08f65",
+    "all_selected_inputs_audited": 2626,
+    "all_selected_maximum_error": 4.76837158203125e-06,
+    "missing_tokens_sha256": "66161d9b9ae7a55280af64e9c4487a2ca85d2ec72c2588263ac61606387dfb51"
+  },
+  "elapsed_seconds": 21.673434489988722,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false,
+  "header_repair_sha256": "a8a7066dbbe80914532c22faca08309d91ca4a8e85172160aa20cecc9cedaca2"
+}

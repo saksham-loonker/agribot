@@ -1,0 +1,968 @@
+{
+  "archive_sha256": "8821b3c737ca233fcee80e4592f122a37df16eed542fb60265e04b18fbf25771",
+  "files": [
+    {
+      "path": "phase215_shrinkage_density/native/result.json",
+      "sha256": "e6c67c697931bfc9307bb4ffb8d3ec8d08f3d2b94dacd2ed3419864c541fd200",
+      "bytes": 1465
+    },
+    {
+      "path": "phase215_shrinkage_density/native/protocol.json",
+      "sha256": "721ca974ca0996e90d45ce4fa55e6b085eec95fceba2a46d7a0b390c11acfd8c",
+      "bytes": 94078
+    },
+    {
+      "path": "phase215_shrinkage_density/mobile/result.json",
+      "sha256": "2cefa6aa6fd27e8a1346990865fb4da60c761fd1081f246d2ee6570e876b84ec",
+      "bytes": 1462
+    },
+    {
+      "path": "phase215_shrinkage_density/mobile/protocol.json",
+      "sha256": "98a8b8864a9abe7ae7282dbc98280145b620b00bbed324644ca6820a1da30176",
+      "bytes": 486934
+    },
+    {
+      "path": "phase215_shrinkage_density/native/class_shrinkage/predictions.npz",
+      "sha256": "dbed977ab7f7ff9bc45ce7e09bff9688d599ff510f271e35b26739614a03ad59",
+      "bytes": 19992
+    },
+    {
+      "path": "phase215_shrinkage_density/native/class_shrinkage/model.npz",
+      "sha256": "85584a68f048687abb786c18b06a1da9814900f887cc39ff5c9f6b700f22c948",
+      "bytes": 560868
+    },
+    {
+      "path": "phase215_shrinkage_density/native/shared/predictions.npz",
+      "sha256": "61975e97c9e6fb5d947eb35b6aceaeacbc7ba9bdbb84df05800690a5621b21ee",
+      "bytes": 19992
+    },
+    {
+      "path": "phase215_shrinkage_density/native/shared/model.npz",
+      "sha256": "15381672f665b3db30ba526eeef15df5ee43600001f0ef4d780f278c592ed264",
+      "bytes": 560868
+    },
+    {
+      "path": "phase215_shrinkage_density/mobile/class_shrinkage/predictions.npz",
+      "sha256": "b3d96cfe09c68272641439ccc10cff0e6493636c7ae40333c313f34deab8a85a",
+      "bytes": 82536
+    },
+    {
+      "path": "phase215_shrinkage_density/mobile/class_shrinkage/model.npz",
+      "sha256": "12d95ab1b3c354a0644ef83d5092cf3b964a73420b0c118434602dda3e0b6d27",
+      "bytes": 459492
+    },
+    {
+      "path": "phase215_shrinkage_density/mobile/shared/predictions.npz",
+      "sha256": "3f407b622a32032983240446c76692412a830e05a9fdd324db8345cbcc46f6f6",
+      "bytes": 82536
+    },
+    {
+      "path": "phase215_shrinkage_density/mobile/shared/model.npz",
+      "sha256": "231bff1e9f88848ff8cd7cc12a9edaece081f1189caeade11eb54b852f9ae5b0",
+      "bytes": 459492
+    },
+    {
+      "path": "phase216_density_policy/protocol.json",
+      "sha256": "3ee9da392b740392927286fbc0a4adedd5f5d11e8a39323dc1b1a1e363b31a53",
+      "bytes": 1548
+    },
+    {
+      "path": "phase216_density_policy/result.json",
+      "sha256": "c78816e129072a7be69b5074ccf0b0b9f94b06af516f54e3575c4a937c0aee6d",
+      "bytes": 70983
+    },
+    {
+      "path": "phase217_density_stack/protocol.json",
+      "sha256": "d10eb38e31ed5857765eb8e35e00f0a553818e0ca49630a54bf83932ddbea0b1",
+      "bytes": 155799
+    },
+    {
+      "path": "phase217_density_stack/result.json",
+      "sha256": "bfee9aa509d83af1806803e59f158b457b59edf454a205fb9624c20291d49523",
+      "bytes": 1156
+    },
+    {
+      "path": "phase217_density_stack/quadratic/predictions.npz",
+      "sha256": "6816352ad5993103e568ae89271a83620082a0858c6008d70bfa161db048787a",
+      "bytes": 4090
+    },
+    {
+      "path": "phase217_density_stack/quadratic/model.npz",
+      "sha256": "d0c0d3f70011f5e06d80eb3e34c6a509ea28fb4bff0d7616fb2ca0989f8767cc",
+      "bytes": 1434
+    },
+    {
+      "path": "phase217_density_stack/linear/predictions.npz",
+      "sha256": "f71686783bb3252b8f30c0c0e1ec19eca4aa47a6d9cd933817b8636fe351ea8a",
+      "bytes": 4090
+    },
+    {
+      "path": "phase217_density_stack/linear/model.npz",
+      "sha256": "ca8e1495b373dae2e07292ad6af51cd48c624968ef009d78b781a7ba6d4035a6",
+      "bytes": 1354
+    },
+    {
+      "path": "phase218_meta_domain_generalization/result.json",
+      "sha256": "3be2554a4ffd402cfe8e04505f6597fbae4fbea87c6ffa95165c3db50dfa97a7",
+      "bytes": 54139
+    },
+    {
+      "path": "phase218_meta_domain_generalization/protocol.json",
+      "sha256": "db2cb2b15a5d07a6d88b20a75d9a802a2013bba5f1f25833b7041e871e10c99f",
+      "bytes": 863347
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/result.json",
+      "sha256": "d9250ddf432ea06b9460d8fec41075c5d1f036b182d75041f7fba68ddacfe710",
+      "bytes": 23461
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/last.pt",
+      "sha256": "0e836804e77eea08fac03f321b984b14a2d245580076e8c75b96ad5e7ab5afa7",
+      "bytes": 2227317
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_039_predictions.npz",
+      "sha256": "129a6bee1ea19f45c95f0bff7e90c9e03ad91966f8c4080778a0367402aa57bf",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_039.pt",
+      "sha256": "27ace5ea03c98610fffa3cb522f405ca30bb7626bfa2353447ca8140946d672a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_038_predictions.npz",
+      "sha256": "14e3f6b66ad53010633da8f14bf733770e9352d1ebc9374dd2d0b4c30027305e",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_038.pt",
+      "sha256": "8cf35553e7accd8c500e50e76216f03f0e46a263155325be120dc5f30ab59fbb",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_037_predictions.npz",
+      "sha256": "2b566a450f06a52d6101f7245acef397fd6dcce65ce842e9f9215e0eba798a76",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_037.pt",
+      "sha256": "016a533a35652f564581a1cf621bdf391b48379347ae9045a7776c53472720a0",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_036_predictions.npz",
+      "sha256": "8c5cd5bd5e436f95150e0680094796931594fee9d911ca508c28a6181c23fdd2",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_036.pt",
+      "sha256": "5523340fd8e67be7688e7dc684e8286a00b02aaacae2ca0840f535500014e3b9",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_035_predictions.npz",
+      "sha256": "688cad9ab1579da4a45c4930c07afe73b29db4503a65dadfccb73f35292de4eb",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_035.pt",
+      "sha256": "8c68728cf5e1eba6de51266a5d61bf8e267eaeb6e809e3ac51ab1f35ff42d8a2",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_034_predictions.npz",
+      "sha256": "7db6c16379983b365f76df4b81c29555529d36b921fd7ddf971f167f489652ff",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_034.pt",
+      "sha256": "a4463c63a424ed6a3851210288d35155e1e6b37f5aa94883e436c4c5eefc7abf",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_033_predictions.npz",
+      "sha256": "2bff126ebe8a108bcf1786acc53d6756fdc85a5ea21818fccb584b0938a887b6",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_033.pt",
+      "sha256": "91b0779bfaf69b84438a56929d635a80d7366f924940c3a410a00507acd17fd9",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_032_predictions.npz",
+      "sha256": "05d78b78e7873ad349102a92d28359a56c56756031037bcbf0ef9ded6b5b1442",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_032.pt",
+      "sha256": "838d792228b2436eaa2ef3c7b448fbc425d0fc04f50f4aa550d4bce19b8fc2b0",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_031_predictions.npz",
+      "sha256": "212b77f6ec8ce3eac33df5551c5f7cda49494f2910b5e759f69872a994e1888b",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_031.pt",
+      "sha256": "f14d6f8baf143a75bf24aea4fe05a4031cbaa134591d7724e829e21db3d6ff10",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_030_predictions.npz",
+      "sha256": "e871153ffcf858eb257bab9d6af961b2a4e455f44202d78195afacbe72c1a12b",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_030.pt",
+      "sha256": "3d851c7de94657521cfa35079198aeeaa46d963658996580eada26f5011627c0",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_029_predictions.npz",
+      "sha256": "cd1671f631a5fb9834c6fdf0d1bc2856ac38ee820aa1210c671f52fdf9503f5a",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_029.pt",
+      "sha256": "9c55932953dc8c43c3428b9b3d1390e700421614992038ec29203c75966233bf",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_028_predictions.npz",
+      "sha256": "dc764677287531b848670e294a9495ea08bf90fd23369e2d816f75a33ac3fe78",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_028.pt",
+      "sha256": "e4a5196f87cc529b9ea4816b83f5a081e26140c5e18824ef854263596f17f8fd",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_027_predictions.npz",
+      "sha256": "e5764dc178a4b003011ab786864b1ff50259fd86c3d9cec314f22e65c051ee34",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_027.pt",
+      "sha256": "57d104e49c3e8c95cd62c84e89aab47d0f417ec7f3169838f08d441804a25a18",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_026_predictions.npz",
+      "sha256": "786247f919d4d1541f3b71a1aaf76ed01e4c2bb395223032f02a713540ad4164",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_026.pt",
+      "sha256": "4d18ba9019a98e3c92097ea03c0568ef9ecf13f3b409ba83a0a30599dc3c134d",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_025_predictions.npz",
+      "sha256": "2403f04316ff98060d7d8782fc0c9e5020a4b8a52852f6da3088c270c2525647",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_025.pt",
+      "sha256": "48f666eacc758933dbab8497858071b2fbea1a5b9ba4cb1f060144a5981a1445",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_024_predictions.npz",
+      "sha256": "b191a06f6bd8823edaec031b6190591d42ee4edd1cc9a4cfeede9cfe36d47853",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_024.pt",
+      "sha256": "115427901eef99ccfd65a3962581d209224fa02212eceb38922fa34e820039c4",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_023_predictions.npz",
+      "sha256": "2af5c4cb007244e8e9816152c0aa72d464ba7d32f60429acb6643ffb413a9e11",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_023.pt",
+      "sha256": "fcdea995e0a306b8c5ace83ded9a1ff37a171ec0bff42e3e2ba8c83da0a9825d",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_022_predictions.npz",
+      "sha256": "fdb7a491a03f1dabd63b281b5d82e7190f2e6e07b3105dd81f42550a65f4c730",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_022.pt",
+      "sha256": "d351311edea37baf281fd40068b77ee8745dbc0e3d227f3080811e434c67e990",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_021_predictions.npz",
+      "sha256": "70ae1b6a32874bd85ae6fb424be235b668a00ddaed9e26758b190850415d3d65",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_021.pt",
+      "sha256": "98802612f9cec7e2fa8e5f7faa971f68b91aa386ce90000e62cfcd670e629e7f",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_020_predictions.npz",
+      "sha256": "c50d9da21020a37444268fc7eb2be30f5337c1515eca789766467e63d25dcac6",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_020.pt",
+      "sha256": "aaf122e0bebffba56b70135c64900884d62c5c469bbf0b84d742f762b0d3921c",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_019_predictions.npz",
+      "sha256": "27de687a0bddd5594163cc04afdb16cb25546aac010d25410c03b2fbc66fcaae",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_019.pt",
+      "sha256": "225bbfe8e33821debea74fdde5be49c7498516564ad55e5480b2709c78b6b2dc",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_018_predictions.npz",
+      "sha256": "a11177729303045d716af44c731cc34903ceb545a2267ee6f1124e17b18a019f",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_018.pt",
+      "sha256": "e3514b0856ad6f7ff71eed914cb1c9527a9685d104105ef2d6572824ba166760",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/best.pt",
+      "sha256": "e66f09b26d690dbe4d2c288c2905c827602f1162fb13d89adddc053dc0371cbd",
+      "bytes": 735857
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_017_predictions.npz",
+      "sha256": "48ed4e9e2ad38bc15521f4b5e52369bf14a57d51e17d08aef441afcf1fefe23c",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_017.pt",
+      "sha256": "d09a584fab14635719ebea1f33dd79b78110fda9bf1697418abfd45d97d98157",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_016_predictions.npz",
+      "sha256": "99ef437a09b33048f0c22536aa3a79d8eba18cd763d0294e3f2eee42322a2b45",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_016.pt",
+      "sha256": "cf7a98fb656bd8bd1366f48d7aaddcd19ba15e76d45d5e6ce8966469f19289cf",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_015_predictions.npz",
+      "sha256": "0583202978613c3238fe37e55635485e31d0eeddd34a8d5d51f3f5a81ba67df9",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_015.pt",
+      "sha256": "c8ed05e48db67a60d4716b5d0f1bf810a656d4c839cd69b7690a5d259422f20e",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_014_predictions.npz",
+      "sha256": "996443c5717daed86a6adb3af9443201d1c6d7d551abfee1ab5eab1c6092bb8b",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_014.pt",
+      "sha256": "43af3dc3d041c5fd673b6b057885259886e42b60c8ccf69199cb17d3a210a786",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_013_predictions.npz",
+      "sha256": "e22f695d12b7a8af1676799150f2401b955535fa98b75896d4abfb090a5b15af",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_013.pt",
+      "sha256": "4fb6ec9d06063fe0c40f14739df3fde9d8521d35cb40c15bd07a9e21a1b09c7c",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_012_predictions.npz",
+      "sha256": "afa452729a0ef448b948474c3788b00d28c4e7686f9a0ca28e20a88f6fab105f",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_012.pt",
+      "sha256": "79fa15ea68c8c9e2654673742d1fac78acc57ba8426ac98be03cdc22575287ed",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_011_predictions.npz",
+      "sha256": "ce7d66d2b05558092bda5170018b8c4e7fd2873987d11af4c739690e5a9b3a68",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_011.pt",
+      "sha256": "81437dcf116778a96e57fb6fa6ede0deca6654ce251f8f908db165cabdced1cd",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_010_predictions.npz",
+      "sha256": "91dc68cc59c6defde2db1d48792c7b4744a0307905e10cd0aeb8d927b6250590",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_010.pt",
+      "sha256": "627fe101bf9b759b3d38c01e22495fbfadb9e00eedf3700d890ec659de14b78e",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_009_predictions.npz",
+      "sha256": "1e37dace5188764bd687856bff72b9e5a1cc7132a7ee5172c0f580223510244a",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_009.pt",
+      "sha256": "59f871158577892995adad97e65c73efdf5ddf75c83a93b73c3f53ca64d48968",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_008_predictions.npz",
+      "sha256": "387450cc35608891e2ea80b6307e2f245b17a76ecd605352e8ea0a889ea8b65b",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_008.pt",
+      "sha256": "f5430f87da21a54149944200dce367dbe4dfce804ad7604d3ae4bec030d08b25",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_007_predictions.npz",
+      "sha256": "4e65c6f6e041c2cfaa91a38e93206608dce2bdd3ce8e62736d2107d4b8fb58e5",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_007.pt",
+      "sha256": "19d149fe39d0a327ed961458cac829d9784abc9868fa82c40886e2c4494004d2",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_006_predictions.npz",
+      "sha256": "b322414af239a2726d9acfb9a2f0292b591266b124433eba7afa5b2f5524044d",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_006.pt",
+      "sha256": "3516d35f86078792950072e1dd24efc68192133f884d0437b509acedb191fc6f",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_005_predictions.npz",
+      "sha256": "607b598a8cccb3234a5d7fcf2d57fc08595273314759f805416cce32fd5d7e14",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_005.pt",
+      "sha256": "687175bf2bee6059cc92a1ed7ad04a2edb6c8e7b278d06713ccf7f9ebb835943",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_004_predictions.npz",
+      "sha256": "a3b249449df51a4888501c821edff1ffd2562adb0012a75566d92208508420c7",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_004.pt",
+      "sha256": "139387c8b89ac955556e15460eaff6f814ee7e135757815310852f5641bd615b",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_003_predictions.npz",
+      "sha256": "464a376e10deaa9a986b4ebe7213672072a05af711a7760b41d75699f3bbf262",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_003.pt",
+      "sha256": "35f85e0938c8b79097811f5fb52f58e3d3682f7f3eb5cb46a4bd0279f9a275f6",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_002_predictions.npz",
+      "sha256": "8631177d6c0ba664ed8cfd88ba2e06768161c4ad48d04db9e27eba9513f956a3",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_002.pt",
+      "sha256": "632c05b6e69e6b6c907e3b99e4b67b07aa550669124b43388b3d9fc139627532",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_001_predictions.npz",
+      "sha256": "cbf480fd515a25c07b94c886e4c2cb4524a30695558cebc8e9e2d41d9e26eb33",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_001.pt",
+      "sha256": "b30b2dad6190711e6e58747b2c6aa633ddac0a8863e9532dc07f860d83541ae0",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_000_predictions.npz",
+      "sha256": "8e39a08b924cadb42d48e8a2fc3b17032931badc63ce5bc5610d93e1919e3414",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/epoch_000.pt",
+      "sha256": "a58870e2c51043b5ffddf4bd34e6b44b96038b580ebcf726e1904895da49db60",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/mldg/best_validation_predictions.npz",
+      "sha256": "adf88755745264971e49b5f0a84a4592cac226c718143f0e3a91196813ef86fb",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/result.json",
+      "sha256": "4feaccc0632ce31762fe82e0216c1a68e1e0c1d9da592b51b8c0a961c6df2589",
+      "bytes": 23482
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/last.pt",
+      "sha256": "e546a4057042d6b2d795e420523d848f01d08ff4e496e9ebe5e254c1615cb179",
+      "bytes": 2227381
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_039_predictions.npz",
+      "sha256": "132ff8176549c861ca0ce797155217dc1e400555839e3471b21a1f451aadc4f1",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_039.pt",
+      "sha256": "59dc4ac2d5c9063223fb2a33e18acb92c1c725f2d59361c2e8ce220584644225",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_038_predictions.npz",
+      "sha256": "3b040a653bfc410740076c2280e5596bc98440e49af676798ac1704039dc6e87",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_038.pt",
+      "sha256": "e5a5a3efe3fd49821ef857371478765384fe541672c7975ef9400066649ac97a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_037_predictions.npz",
+      "sha256": "ccc1343097f3c4877b1e4cb94558fd0426b66f7952ccb07b7c4f838390c2dcf9",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_037.pt",
+      "sha256": "5e36018d282e125287d0b652bff27b93addee8f1ed17113cb7c2af0be48649d1",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_036_predictions.npz",
+      "sha256": "32bf0b26a42dae9c37b4807226d81d679e1241914686fd581389ba676bb1bcb9",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_036.pt",
+      "sha256": "31e196c4e4a7f0dbcbbdd8caf758254e386f8674bbab51ce93c3aafc5f634a2a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_035_predictions.npz",
+      "sha256": "26e6af137c4795927d4ee9aad026a709ede92502457f83c27162b585ebd4a70a",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_035.pt",
+      "sha256": "a0046e878428def42db144074110f4ed25d7999bf55d417508c8ab4036237ed8",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_034_predictions.npz",
+      "sha256": "85ba9839b19e8a2f2c1b3a65d36b80b7dd6c0945f977bc0f66c0a275e6561e83",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_034.pt",
+      "sha256": "4255afd3c9352291012e2711845fad35a34ebd9a151b31283dd164c798312b66",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_033_predictions.npz",
+      "sha256": "8868e4ded44d0fcea74fe0adc2a6ef3145b5c1038f2c7f6c0160c44396c671b7",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_033.pt",
+      "sha256": "6be955ad7841e85c4afa44d965a0e220b67880ed5c18956a6d4044ac4518b7a7",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_032_predictions.npz",
+      "sha256": "c49c37d30ff9b246ff803590cbf1baa07938565eb928935f7900b4c5d829bc11",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_032.pt",
+      "sha256": "467512e2ba6d9effa6a3ad33a7900c8156228f600b38d0bd786c8d08c153730c",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_031_predictions.npz",
+      "sha256": "e634271d36a155d082e7d1488b6e732d51002807fc5d9816baa40a92d0c07cb4",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_031.pt",
+      "sha256": "c77717a2d4286ba5dcf7e67f63dc16a51c728d9c85653d991e5a12c762fa5b25",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_030_predictions.npz",
+      "sha256": "f90a8df882dfad40f256b2df0ccf98823f8e6a5622bd59d7818e6baca1dac4dd",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_030.pt",
+      "sha256": "9d882afe4f1cecc500559a1045a1dcad82de2212a280b452ceb786f241e1b6cc",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_029_predictions.npz",
+      "sha256": "4926c37ec6845562419ce2ef9b2c66b43d7fb51dc46e25dfa4026bf82231a2ad",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_029.pt",
+      "sha256": "52815d9550a42ad8f0d7c6f36ce25aa937d573d2ea9ace2b7480b605c10ff47d",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_028_predictions.npz",
+      "sha256": "5691ef963ac00b7c11a60a6c1b4354821ab515144a3288e3cb41db0355d97ea6",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_028.pt",
+      "sha256": "cb3f8d2c07631a5c49933cdba5d5ea0bfb482fa797834e25b06b9397904f5eac",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_027_predictions.npz",
+      "sha256": "91d32fccd8f16658486e1248836c207089fc25932f8b6372e0a61cc530b7be72",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_027.pt",
+      "sha256": "feb7f7874210478ed9b0e715a59cdd0642144c14711dbb29f67265006fb0a30d",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_026_predictions.npz",
+      "sha256": "7ef8ddfabe39314464d8777f0b679ac8434f29070ad68fd5358929e53fd15487",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_026.pt",
+      "sha256": "45b7fd575b9ffb57d4b7c2070f2d1e49e339aa5d3026320b5a97542d1e2f7704",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/best.pt",
+      "sha256": "89fd59eb98e6a2881e55032deb8e7a1cfc091b568c0925751aca201bddded896",
+      "bytes": 735857
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_025_predictions.npz",
+      "sha256": "4bb7d73b51505edf4ff4d6983f6697fa7104a699360f47e92b67f181b5adb755",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_025.pt",
+      "sha256": "b4e03062193ac20da557fcd547875789a067f3a86d4a2a69b63a6eb7178afc51",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_024_predictions.npz",
+      "sha256": "c73fe2c091af0f1c6df274faaab25a0c4345c459cb982dcb50f649279c64f1aa",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_024.pt",
+      "sha256": "b5d66252a81f4bded0dba6bf85b7d80270c5a75182777426e922bf073c52b7f2",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_023_predictions.npz",
+      "sha256": "8875c9b60ca981a77e221d9a4091d3c2ad4dec22830164bdd47ad3bcabd418ce",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_023.pt",
+      "sha256": "9d5cdd8c90dfdb8c87bbd7f6f37288545828a29f77ebd4733cc68aa620233a2d",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_022_predictions.npz",
+      "sha256": "05313b67cb53fb6f33211fa43745a6f44864e2a9aad98cf04a461325021ca64f",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_022.pt",
+      "sha256": "2e059d7307c94ce8670333552eef063272d199ae298147c6aa49567685d73dec",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_021_predictions.npz",
+      "sha256": "59f52dae3de98a100697e1d697faa5504d80e548b23f1975138040465a934a79",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_021.pt",
+      "sha256": "92755a657ed113186116243a204d0408c0a2eba93590e937cd6b8e45113a78d7",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_020_predictions.npz",
+      "sha256": "cc74440c2c734cc59322e05ae39536aa260144ec1c59e67d42fafabe1942cfd5",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_020.pt",
+      "sha256": "d08a0aeb24aa3ff9e4fe769ed18bac7661c88c5d862c62898cc317acfd811322",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_019_predictions.npz",
+      "sha256": "f3f139c425421a2d6436c49c434368b1a34b01aa1ce6ff812f8c85deeece9370",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_019.pt",
+      "sha256": "547d53fb53f1cbaa1c6e3d381b4c70e8b95946aac4d91adc99b21f150e5115ea",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_018_predictions.npz",
+      "sha256": "f87060c2b6446ef6966b8ee83743ad192b8a24ebe02097c84420d12fce6a5fde",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_018.pt",
+      "sha256": "6f49cb782767fbedc205d99544c993910f2efc2da29a85f3da215ef092af9392",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_017_predictions.npz",
+      "sha256": "6df7cbf070e2a7aad0484bb6755b1b2ef39a29541bea11d5ed535c699b9877ab",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_017.pt",
+      "sha256": "be3bb6e208246d225f54cca550e1606949a228b5e8b08eccd924dee30829df9d",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_016_predictions.npz",
+      "sha256": "b5cb13ce00cd699ffd816d83a071cf6cba56c608d817a38e5e485428d0cf57a8",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_016.pt",
+      "sha256": "cd76a064bc40e32de8aa7cb994358cce19b1878de63570e699206cad4d226172",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_015_predictions.npz",
+      "sha256": "035f78c22776c6ccb390943a77f549a8904a00a53635304102d9f85fda751834",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_015.pt",
+      "sha256": "7309afb999c076d192732f06a3afc248863c78013d0e03f4820391b8763cdc9a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_014_predictions.npz",
+      "sha256": "cc96c06e37c2afb46470c9f5f11d79da7d7d0b896a208f3d6ce34b1078579e4d",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_014.pt",
+      "sha256": "08335d55d69acc38ec6b8f15b48007e2438f87d25863aae61305834054fe7df0",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_013_predictions.npz",
+      "sha256": "13de56491c9373e783dbfece9433547292ccc2942c752031321247dadfbc07be",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_013.pt",
+      "sha256": "a79931200d87427f31ff2e7e04480641f7ee9115c04a0165f31f0cec76d0bb05",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_012_predictions.npz",
+      "sha256": "62e89e7117f539a9168ea104d954922da8ea30afa9bd27ffc154cee6d3b6fca7",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_012.pt",
+      "sha256": "8dac403ea37cfb301cdc63849fbb38f433ea5e9d69f99e321494eb6251bba1a8",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_011_predictions.npz",
+      "sha256": "680a8a034c0b83eb2155c05245cf97a2a200616d870c42b4c7e492995861dd3f",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_011.pt",
+      "sha256": "83534b5ffe425cb7c347e4aa80db3fc3ad92599d18e9e37fe43403e87c683f5a",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_010_predictions.npz",
+      "sha256": "ebdf2d52dea8fafb96c40a8a2df99e1e1635c408d7fda9da99f304730b54b0e7",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_010.pt",
+      "sha256": "2bceccc7c9988278e06955edaf183b2d70770c60a5f71b3a441f78aeb12b97c8",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_009_predictions.npz",
+      "sha256": "e68d33629bc5786bc6b24c2b99fbe8c394eaa8e6daae3eb585fa247c94bbe0f0",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_009.pt",
+      "sha256": "bf5fb2d58c8a278cf0724aa2d0860004aa707bf27178297ebc348c8c441c684e",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_008_predictions.npz",
+      "sha256": "bcd983ac7b2a7bfa55ff5f0f585e44316b93d240abeccb5266757e0048fd8159",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_008.pt",
+      "sha256": "18082acff68a0ef1ca95e4a7c819e843e8901dddec9ff9c512d7430053dc8fa3",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_007_predictions.npz",
+      "sha256": "d3be3239db569caf73905be436f239bb6cc660ff8fc09b6b7128ede9065de087",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_007.pt",
+      "sha256": "447aa1fb59b66cc7deaea4686b1d63d3890c5dad4618a79b1ba4235c6f9a6a25",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_006_predictions.npz",
+      "sha256": "1560682778c2b1cadf3dab399e75228cc4ea5369e75e8c6e2e57aae263f014f8",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_006.pt",
+      "sha256": "7935a7c3ac6a47b1751d38c4959ae1e0ec68da2315b8eabb3a8511a547cc6405",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_005_predictions.npz",
+      "sha256": "33819897ab65170b1a3285450aaec1abf2a08f1703fe6d6ef2d316d83c5ac05f",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_005.pt",
+      "sha256": "7efeeee52080d6cbfc618cf1681bd64404cc88e3f6fa154b23c93f9de17548e1",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_004_predictions.npz",
+      "sha256": "da1fa575ae9d548e5031d49193732b614b923eb5859411bfbb2f3b07e9955d83",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_004.pt",
+      "sha256": "ab5efd158c8757cee3868501c1d85259944c1041df01e5ce298d1d0b136898b5",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_003_predictions.npz",
+      "sha256": "cc0dbd15ea65179b3e3f6149d998fdb5389b409bb8e4246ae386140ceb280438",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_003.pt",
+      "sha256": "5d5b6ec71354f5cc7e49f48ef2be6642c3af6abba1f0389fc7db0d928091dadc",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_002_predictions.npz",
+      "sha256": "fd6a4cc8fec59a2d7382b00e2a1c1cb5f99e5dad4aaae13266b0ceba5b382426",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_002.pt",
+      "sha256": "55070d8f4f85f091a27e915c20e1a6232c03a8b7bfd5b09ae6cc56e686b070a6",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_001_predictions.npz",
+      "sha256": "ae3adbaa4cbc6b1d120ab79716b6fba5ecc79032b57a4b51f7478d0c96523ec8",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_001.pt",
+      "sha256": "e3bb2628c38f3a694c1a0376b8c3678f19031bfd2d77b7693e7ff0518c415d08",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_000_predictions.npz",
+      "sha256": "240c6389f93e90e8e104961b2cd48090bfb7adf879e62d72d10a9e9b7d1215c3",
+      "bytes": 2414
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/epoch_000.pt",
+      "sha256": "dbe0b5adb97dcf92ab85d8755b15ebfd1383eaa89064e357d9859d53d9ea20e9",
+      "bytes": 736237
+    },
+    {
+      "path": "phase218_meta_domain_generalization/episodic_erm/best_validation_predictions.npz",
+      "sha256": "04a3877b2be9c5659a238b84dff613778be36d43605158ff58e4f8e6bfbac36f",
+      "bytes": 2414
+    },
+    {
+      "path": "phase219_fixed_recovery_policy/protocol.json",
+      "sha256": "e4f4b2afeeff4ca0b7c265ea00b6281f618ef279fae775258ae725faf5496f23",
+      "bytes": 1937
+    },
+    {
+      "path": "phase219_fixed_recovery_policy/result.json",
+      "sha256": "4692c30828166b810f3d04d62799ab934f64f511aa3a5e2eb5a7a8d9a0d9427b",
+      "bytes": 72166
+    }
+  ],
+  "epoch_checkpoints_verified": 80,
+  "final_optimizer_and_rng_match_final_snapshot": true,
+  "model_promoted": false
+}

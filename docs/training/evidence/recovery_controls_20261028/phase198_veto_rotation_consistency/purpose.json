@@ -1,0 +1,21 @@
+{
+  "source_sha256": "f3403c107111a1e241fc8ac0323f8fb06af054c5ec185a0253ca3a590c388b07",
+  "parent_protocol_sha256": "eec7bec4e7e8a591c2f828e273cfdd9d045e187faed895f11ace2afbf257a001",
+  "rotation_complete_sha256": "9d0f101a6c4528cdcff28ac9f6d73f71f93d4e75ab8031b955acf34470fff93e",
+  "checkpoint_sha256": {
+    "field_source_sft": "b9e84d0362d55d284fc7c23fedcdad171145d1024861abc43e60eb7673f9bfb6",
+    "field_source_rank": "8f3c97afa7b1bb8d4424796018a11ae95c399c1e800302fc04e5654e312afe11"
+  },
+  "rule": "Veto an existing Healthy only when both crop views in all four right-angle orientations have model Healthy probability <=.05; apply no rule to named disease; never use labels or source identity in scoring",
+  "threshold": 0.05,
+  "orientations": [
+    0,
+    90,
+    180,
+    270
+  ],
+  "original_gates_unchanged": true,
+  "clinical_labels_only_for_diagnostic_counts": true,
+  "independent_frames_claimed": false,
+  "acceptance_data_used": false
+}

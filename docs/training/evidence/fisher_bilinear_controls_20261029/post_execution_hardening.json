@@ -1,0 +1,17 @@
+{
+  "changes": [
+    {
+      "path": "model_training/v3/phase221_bilinear_adaptation.py",
+      "executed_sha256": "439af2c4034d5b0966b523ee83078791418a76343a66296b86b1563a516dab34",
+      "current_lf_sha256": "5617d048b04f4742d5994186c381400f6c2f0a702b0e75828996cd99666d455f",
+      "reason": "Use the same source-weighted BCE for warm and trained checkpoint tie-breaking. Cached-logit audit confirms unchanged epoch -1 selection and gate outcomes for both methods."
+    },
+    {
+      "path": "model_training/v3/phase222_fisher_bilinear_policy.py",
+      "executed_sha256": "ea8db651c2629d3567d75775c27829b103dd3bbe8d97ea51469fc53e69fe0407",
+      "current_lf_sha256": "f5d737698abc8bcad4f662b5ada55aa17fbe1ce827816f79457b5111b3e8b0ef",
+      "reason": "Use an all-false boolean array rather than Python ~False integer coercion in the optional targeted veto. Truth values and reported gate counts are unchanged."
+    }
+  ],
+  "results_from_original_archived_sources": true
+}

@@ -1,0 +1,1358 @@
+{
+  "ad_independent": false,
+  "olid_independent": false,
+  "release_promotion": false,
+  "sources": {
+    "phase78_native_gate_audit/result.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase78_native_gate_audit/result.json",
+      "sha256": "3214a67120765fdddbcf66e6dff7ae765ed8e81138ad9ecde4b6f8bf63c4d917",
+      "passed": true,
+      "checks": {
+        "old_retention": true,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_named_disease_unchanged": true
+      },
+      "temporal_differences": [
+        {
+          "id": "development:532",
+          "kind": "UNSURE",
+          "label": "Late_blight",
+          "frames": 14,
+          "leaves": 2,
+          "primary_view": false,
+          "expected_kind": "UNKNOWN_CONDITION",
+          "expected_label": "Other",
+          "matches": false
+        },
+        {
+          "id": "selection_app:2203",
+          "kind": "UNSURE",
+          "label": "Other",
+          "frames": 14,
+          "leaves": 2,
+          "primary_view": false,
+          "expected_kind": "UNKNOWN_CONDITION",
+          "expected_label": "Other",
+          "matches": false
+        },
+        {
+          "id": "phase5_selection:132",
+          "kind": "UNSURE",
+          "label": "Other",
+          "frames": 14,
+          "leaves": 2,
+          "primary_view": false,
+          "expected_kind": "UNKNOWN_CONDITION",
+          "expected_label": "Other",
+          "matches": false
+        }
+      ],
+      "named_disease_changes": []
+    },
+    "phase79_opened_olid_diagnostic/summary.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase79_opened_olid_diagnostic/summary.json",
+      "sha256": "ad7cb35c8ff9a1db91e557c783a78dc196c0f302d52e7cc6ab67ba4fb3b3f16d",
+      "evidence": {
+        "ad_independent": false,
+        "olid_independent": false,
+        "source": "Consumed after frozen phase76 failure; no new encoder inputs",
+        "groups": {
+          "other_diseased": {
+            "n": 491,
+            "baseline_kinds": {
+              "UNKNOWN_CONDITION": 447,
+              "DISEASE": 4,
+              "UNSURE": 40
+            },
+            "gates_pass": {
+              "positive_hp": 210,
+              "genus": 491,
+              "compact_positive": 472,
+              "negative_leaf": 491,
+              "negative_context": 491,
+              "natural_or_isolated": 0,
+              "local_conflict": 216
+            },
+            "quantiles": {
+              "hp": [
+                1.812417508517683e-06,
+                0.0029435292817652225,
+                0.10132583975791931,
+                0.7699301242828369,
+                0.9410197734832764,
+                0.9722777605056763,
+                0.9993114471435547
+              ],
+              "nh": [
+                1.8317125068278983e-05,
+                0.006822568364441395,
+                0.11961684003472328,
+                0.8225350975990295,
+                0.9640424251556396,
+                0.9873160719871521,
+                0.999365508556366
+              ],
+              "genus": [
+                0.816919207572937,
+                0.9804143309593201,
+                0.9950321316719055,
+                0.9985546469688416,
+                0.9995742440223694,
+                0.9998169541358948,
+                0.9999843239784241
+              ],
+              "natural": [
+                7.14588097353551e-14,
+                1.041249170219416e-10,
+                6.658901763323399e-10,
+                7.727339657037646e-09,
+                1.1329262150638897e-07,
+                1.3187285503590829e-06,
+                0.00020954557112418115
+              ],
+              "compact_positive": [
+                0.013073818758130074,
+                0.30745136737823486,
+                0.6787979304790497,
+                0.8710785508155823,
+                0.9303555190563202,
+                0.956102192401886,
+                0.9748364090919495
+              ],
+              "compact_negative": [
+                0.028115784749388695,
+                0.275121808052063,
+                0.5526491403579712,
+                0.7997199892997742,
+                0.8935239315032959,
+                0.9360209703445435,
+                0.9863268136978149
+              ],
+              "adapted_min": [
+                0.008945615962147713,
+                0.03378412500023842,
+                0.05496767349541187,
+                0.09444408863782883,
+                0.14992881566286087,
+                0.2325621396303177,
+                0.6193544864654541
+              ]
+            }
+          },
+          "diseased_false_h": {
+            "n": 16,
+            "baseline_kinds": {
+              "HEALTHY": 16
+            },
+            "gates_pass": {
+              "positive_hp": 8,
+              "genus": 16,
+              "compact_positive": 16,
+              "negative_leaf": 16,
+              "negative_context": 16,
+              "natural_or_isolated": 0,
+              "local_conflict": 16
+            },
+            "quantiles": {
+              "hp": [
+                0.0037863836623728275,
+                0.08591956784948707,
+                0.3683838061988354,
+                0.846531331539154,
+                0.9545193314552307,
+                0.9792832136154175,
+                0.9852059483528137
+              ],
+              "nh": [
+                0.003851785324513912,
+                0.09926414163783193,
+                0.260657649487257,
+                0.9187409579753876,
+                0.98129802942276,
+                0.9903396964073181,
+                0.9955275654792786
+              ],
+              "genus": [
+                0.9877552390098572,
+                0.9900041222572327,
+                0.9926894307136536,
+                0.9961001574993134,
+                0.9991827756166458,
+                0.999456912279129,
+                0.9998512268066406
+              ],
+              "natural": [
+                1.2178725042333305e-11,
+                7.031815928149054e-11,
+                4.780809012561171e-10,
+                2.260266529496846e-09,
+                2.2282012235308457e-08,
+                4.5244739510508225e-08,
+                3.444665424012783e-07
+              ],
+              "compact_positive": [
+                0.7385460138320923,
+                0.8390495181083679,
+                0.9047610610723495,
+                0.9489615261554718,
+                0.9617159068584442,
+                0.9728075861930847,
+                0.9776178598403931
+              ],
+              "compact_negative": [
+                0.8374554514884949,
+                0.8494465947151184,
+                0.9126054644584656,
+                0.9464325606822968,
+                0.9678762704133987,
+                0.9792114198207855,
+                0.9841710329055786
+              ],
+              "adapted_min": [
+                0.05623428151011467,
+                0.08340277522802353,
+                0.11846122331917286,
+                0.20237882435321808,
+                0.3231252282857895,
+                0.5367102324962616,
+                0.572158694267273
+              ]
+            }
+          },
+          "healthy_rejected": {
+            "n": 136,
+            "baseline_kinds": {
+              "UNKNOWN_CONDITION": 105,
+              "UNSURE": 31
+            },
+            "gates_pass": {
+              "positive_hp": 107,
+              "genus": 136,
+              "compact_positive": 136,
+              "negative_leaf": 136,
+              "negative_context": 136,
+              "natural_or_isolated": 0,
+              "local_conflict": 103
+            },
+            "quantiles": {
+              "hp": [
+                0.4970533847808838,
+                0.7112540006637573,
+                0.8669310510158539,
+                0.9340029656887054,
+                0.9719077497720718,
+                0.989717572927475,
+                0.9985145926475525
+              ],
+              "nh": [
+                0.2031637579202652,
+                0.7697623372077942,
+                0.8814010173082352,
+                0.9598103761672974,
+                0.9859307110309601,
+                0.9942290484905243,
+                0.9993347525596619
+              ],
+              "genus": [
+                0.9104013442993164,
+                0.9895348846912384,
+                0.9959374964237213,
+                0.9988319277763367,
+                0.9996081441640854,
+                0.9997940063476562,
+                0.999963104724884
+              ],
+              "natural": [
+                3.9016994496376967e-11,
+                5.239259304179456e-10,
+                1.94688598575965e-09,
+                1.3483033356465057e-08,
+                1.1431824553653769e-07,
+                6.586608662928484e-07,
+                0.00227168551646173
+              ],
+              "compact_positive": [
+                0.3741074502468109,
+                0.7839790880680084,
+                0.8872294872999191,
+                0.937173068523407,
+                0.9585249722003937,
+                0.9666971564292908,
+                0.9888744950294495
+              ],
+              "compact_negative": [
+                0.0263617355376482,
+                0.35711222887039185,
+                0.7811743319034576,
+                0.9338961541652679,
+                0.9645774960517883,
+                0.973921000957489,
+                0.9886237382888794
+              ],
+              "adapted_min": [
+                0.04904821142554283,
+                0.09110942482948303,
+                0.12094729579985142,
+                0.1727544367313385,
+                0.24938727542757988,
+                0.40034252405166626,
+                0.6093151569366455
+              ]
+            }
+          },
+          "healthy_retained": {
+            "n": 87,
+            "baseline_kinds": {
+              "HEALTHY": 87
+            },
+            "gates_pass": {
+              "positive_hp": 78,
+              "genus": 87,
+              "compact_positive": 87,
+              "negative_leaf": 87,
+              "negative_context": 87,
+              "natural_or_isolated": 0,
+              "local_conflict": 87
+            },
+            "quantiles": {
+              "hp": [
+                0.46183860301971436,
+                0.8558501958847046,
+                0.9352723360061646,
+                0.9749645590782166,
+                0.9885912537574768,
+                0.9950465559959412,
+                0.9991527795791626
+              ],
+              "nh": [
+                0.15934576094150543,
+                0.8814609050750732,
+                0.952154129743576,
+                0.9814131259918213,
+                0.9914374053478241,
+                0.9973612785339355,
+                0.9991059899330139
+              ],
+              "genus": [
+                0.9000725150108337,
+                0.9921269893646241,
+                0.9966209530830383,
+                0.9986663460731506,
+                0.9994817674160004,
+                0.9997321605682373,
+                0.9999524354934692
+              ],
+              "natural": [
+                2.492692738418484e-13,
+                1.5138738873599068e-11,
+                1.0106564196643575e-10,
+                9.370680897902162e-10,
+                9.279159662867187e-09,
+                3.79070705491813e-08,
+                1.4720163790116203e-06
+              ],
+              "compact_positive": [
+                0.8764832615852356,
+                0.9358551740646363,
+                0.9514539539813995,
+                0.963714063167572,
+                0.9733974039554596,
+                0.9785852551460266,
+                0.9907951354980469
+              ],
+              "compact_negative": [
+                0.9005736708641052,
+                0.9528635025024415,
+                0.9643490612506866,
+                0.9725461006164551,
+                0.9816713035106659,
+                0.9850687384605408,
+                0.993369460105896
+              ],
+              "adapted_min": [
+                0.09757132083177567,
+                0.2208440363407135,
+                0.3589377999305725,
+                0.5214705467224121,
+                0.649120956659317,
+                0.7518780708312989,
+                0.8443729877471924
+              ]
+            }
+          }
+        }
+      }
+    },
+    "phase79_opened_olid_diagnostic/oracle_eligibility.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase79_opened_olid_diagnostic/oracle_eligibility.json",
+      "sha256": "f85846e0c53c43f5089bae91ae386ec847f45b5e7c1e29f85eaf3cdda5355d7a",
+      "evidence": {
+        "all": {
+          "healthy_n": 223,
+          "baseline_healthy": 87,
+          "eligible_healthy": 107,
+          "ceiling_healthy": 194,
+          "rejected_UNKNOWN_CONDITION_Other": 105,
+          "rejected_UNSURE_Other": 8,
+          "rejected_UNSURE_Healthy": 22,
+          "rejected_UNSURE_Late_blight": 1
+        },
+        "family_validation": {
+          "healthy_n": 40,
+          "baseline_healthy": 13,
+          "eligible_healthy": 18,
+          "ceiling_healthy": 31,
+          "rejected_UNKNOWN_CONDITION_Other": 20,
+          "rejected_UNSURE_Healthy": 6,
+          "rejected_UNSURE_Other": 1
+        }
+      }
+    },
+    "phase79_opened_olid_diagnostic/score_ceiling.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase79_opened_olid_diagnostic/score_ceiling.json",
+      "sha256": "e32e96438c1ca6aa512b34e169119b917daf8fadc72c5ca7f6dffee73a6147bd",
+      "evidence": {
+        "population_sft": {
+          "validation_healthy_n": 40,
+          "baseline_healthy": 13,
+          "score_only_healthy_ceiling_ignoring_safety": {
+            "0.5": 20,
+            "0.6": 15,
+            "0.65": 14,
+            "0.7": 14,
+            "0.75": 13,
+            "0.8": 13,
+            "0.85": 13,
+            "0.9": 13,
+            "0.95": 13
+          },
+          "eligible_healthy_scores": [
+            0.07550504058599472,
+            0.09471391886472702,
+            0.11017364263534546,
+            0.15968205034732819,
+            0.17890755832195282,
+            0.1829637587070465,
+            0.29704150557518005,
+            0.3839634656906128,
+            0.38914063572883606,
+            0.40140190720558167,
+            0.41472911834716797,
+            0.5203443169593811,
+            0.5224369168281555,
+            0.5647650361061096,
+            0.5684459209442139,
+            0.5824952721595764,
+            0.6219090819358826,
+            0.735529899597168
+          ],
+          "original_correct_healthy_scores": [
+            0.1407380998134613,
+            0.20105288922786713,
+            0.518034040927887,
+            0.5575249195098877,
+            0.5713605284690857,
+            0.6047760844230652,
+            0.6357157826423645,
+            0.6527583599090576,
+            0.6627637147903442,
+            0.6860939264297485,
+            0.6916797161102295,
+            0.7559062838554382,
+            0.7927079200744629
+          ],
+          "original_false_healthy_scores": [
+            0.024605996906757355,
+            0.03164568170905113,
+            0.06772896647453308
+          ]
+        },
+        "population_frozen": {
+          "validation_healthy_n": 40,
+          "baseline_healthy": 13,
+          "score_only_healthy_ceiling_ignoring_safety": {
+            "0.5": 18,
+            "0.6": 14,
+            "0.65": 14,
+            "0.7": 14,
+            "0.75": 13,
+            "0.8": 13,
+            "0.85": 13,
+            "0.9": 13,
+            "0.95": 13
+          },
+          "eligible_healthy_scores": [
+            0.07145956158638,
+            0.0841493234038353,
+            0.09663183987140656,
+            0.14927510917186737,
+            0.15439070761203766,
+            0.1717831939458847,
+            0.25207746028900146,
+            0.3395879864692688,
+            0.346860408782959,
+            0.3724611699581146,
+            0.38058507442474365,
+            0.45139333605766296,
+            0.49803656339645386,
+            0.5159448981285095,
+            0.5189604163169861,
+            0.530187726020813,
+            0.5901905298233032,
+            0.7114949226379395
+          ],
+          "original_correct_healthy_scores": [
+            0.15495766699314117,
+            0.19100342690944672,
+            0.4772425591945648,
+            0.5106422901153564,
+            0.5341857671737671,
+            0.5771059393882751,
+            0.584946870803833,
+            0.6144806146621704,
+            0.6407538056373596,
+            0.6507976055145264,
+            0.6677768230438232,
+            0.7134040594100952,
+            0.7657343149185181
+          ],
+          "original_false_healthy_scores": [
+            0.02649579383432865,
+            0.03020087257027626,
+            0.06413689255714417
+          ]
+        }
+      }
+    },
+    "phase80_cached_isolated_head/result.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase80_cached_isolated_head/result.json",
+      "sha256": "38fa8846dee1d959e41802ae7d3a1505cc99cff787b50c9f32209f025351d9a5",
+      "passing": 0,
+      "controls": [
+        {
+          "kind": "linear",
+          "passed": false,
+          "checks": {
+            "old_retention": true,
+            "old_field_healthy": true,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true,
+            "olid_development_val_healthy": false,
+            "olid_development_val_safety": true
+          },
+          "threshold": 0.9955060349235535,
+          "best_epoch": 79,
+          "checkpoint_sha256": "ebce598d643d6aeedfa610b1a2a61b9b36c18424c1fdc6a7945e68686b74e8fc",
+          "olid_validation_n": 138,
+          "consumed_olid_validation": {
+            "healthy": {
+              "n": 40,
+              "correct": 13,
+              "correct_rate": 0.325,
+              "healthy_verdict": 13,
+              "healthy_recall": 0.325,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 20,
+              "false_other_rate": 0.5,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 20,
+              "kind_UNSURE": 7,
+              "kind_HEALTHY": 13
+            },
+            "false_healthy": 3
+          },
+          "consumed_olid_all": {
+            "healthy": {
+              "n": 223,
+              "correct": 87,
+              "correct_rate": 0.3901345291479821,
+              "healthy_verdict": 87,
+              "healthy_recall": 0.3901345291479821,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 105,
+              "false_other_rate": 0.47085201793721976,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 105,
+              "kind_HEALTHY": 87,
+              "kind_UNSURE": 31
+            },
+            "false_healthy": 16
+          }
+        },
+        {
+          "kind": "mlp32",
+          "passed": false,
+          "checks": {
+            "old_retention": true,
+            "old_field_healthy": true,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true,
+            "olid_development_val_healthy": false,
+            "olid_development_val_safety": true
+          },
+          "threshold": 0.992024229598999,
+          "best_epoch": 39,
+          "checkpoint_sha256": "6ac5f3d66fd8b6099fc5c8a45e1ae80290a088bcbd9d0e97b3c9a08d400f901b",
+          "olid_validation_n": 138,
+          "consumed_olid_validation": {
+            "healthy": {
+              "n": 40,
+              "correct": 13,
+              "correct_rate": 0.325,
+              "healthy_verdict": 13,
+              "healthy_recall": 0.325,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 20,
+              "false_other_rate": 0.5,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 20,
+              "kind_UNSURE": 7,
+              "kind_HEALTHY": 13
+            },
+            "false_healthy": 3
+          },
+          "consumed_olid_all": {
+            "healthy": {
+              "n": 223,
+              "correct": 87,
+              "correct_rate": 0.3901345291479821,
+              "healthy_verdict": 87,
+              "healthy_recall": 0.3901345291479821,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 105,
+              "false_other_rate": 0.47085201793721976,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 105,
+              "kind_HEALTHY": 87,
+              "kind_UNSURE": 31
+            },
+            "false_healthy": 16
+          }
+        }
+      ],
+      "protocol": {
+        "hypothesis": "A supervised confidence expert distinguishes controlled isolated healthy leaves from unsupported damage without misusing the natural-context gate",
+        "data_role": "AD and OLID consumed development; validation families are development only",
+        "source_mobile_scores_sha256": "9b8a75b66204a8ebc13d78cc26711dcb13dbc46f1c1aac3894f86cf2bc5287ee",
+        "original_cases_sha256": "73b058fda4f411d6009b3f312837dc73cb15747ca88fcca74f91fc5b40a43f74",
+        "original_candidate_sha256": "364ca903f715dd44a37cd5e0701273e5d4a9db09d4fd026048daa5aa5ac0d24f",
+        "script_sha256": "cd75cd564ba95bb16a211d35f9efca020b70ae332c66f554bcb0527fc20b0a4c",
+        "heads": [
+          "linear",
+          "mlp32"
+        ],
+        "seed": 1807,
+        "split_sha256": "9f68437e78e2673259ffe55a4a0345198ed4283d0aa90f0231ed168811baef93",
+        "features": "Logit whole4, posterior9, auxiliary minimum3/maximum3/mean3; actual leaf count/6",
+        "maximum_epochs": 80,
+        "minimum_epochs": 12,
+        "patience": 8,
+        "learning_rate": 0.001,
+        "negative_loss_weight": 8.0,
+        "calibration": "Source/class/family weighted validation BCE",
+        "positive_cutoff": "max(.99, maximum validation diseased probability + 1e-6)",
+        "negative_cutoff": 0.001,
+        "encoder_weights_changed": false,
+        "new_encoder_inputs": 0,
+        "original_thresholds_unchanged": true,
+        "ad_independent": false,
+        "olid_independent": false,
+        "stopping_rule": "Stop both cached-score heads if neither passes every old gate and consumed OLID family-validation Healthy>=.70 with paired safety; only then consider new frozen embedding features"
+      },
+      "elapsed_seconds": 0.9731517230393365,
+      "new_encoder_inputs": 0
+    },
+    "phase81_consumed_olid_features/complete.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase81_consumed_olid_features/complete.json",
+      "sha256": "1ba8d9ff281a2b239432b8ecb078b584967bf18bda187c1f8df969d768d09d5e",
+      "evidence": {
+        "protocol_sha256": "a71a7a785ae88cadf75f6ab69d5208a14e0e45a999e26dc66fbd874209978c61",
+        "features_sha256": "6d6c6844d8d27150e73f0fac5c29df71a50c25f903f36587dd386d27a9c1fe90",
+        "inputs_sha256": "642c7b731fa322910ee6058362d15b06e17c83fb4224913e6d45cb06c8ac1249",
+        "newly_computed": 730,
+        "reused_old_images": 6094,
+        "new_images": 730,
+        "original_head_mobile_parity": {
+          "negative": 3.3289194107055664e-05,
+          "genus": 2.6226043701171875e-06,
+          "natural": 7.427297532558441e-08
+        },
+        "olid_independent": false,
+        "ad_independent": false
+      }
+    },
+    "phase82_frozen_isolated_head/result.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase82_frozen_isolated_head/result.json",
+      "sha256": "5c83252b6838cca82331baa6843de154db343d6a6cd216d5769667b06ec09c70",
+      "passing": 0,
+      "controls": [
+        {
+          "kind": "linear",
+          "passed": false,
+          "checks": {
+            "old_retention": true,
+            "old_field_healthy": true,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true,
+            "olid_development_val_healthy": false,
+            "olid_development_val_safety": true
+          },
+          "threshold": 0.9921716318855286,
+          "best_epoch": 79,
+          "checkpoint_sha256": "96add09bf0c0e630300618458e61556b801fa9229a7ad6910bb91c13f62162d6",
+          "olid_validation_n": 138,
+          "consumed_olid_validation": {
+            "healthy": {
+              "n": 40,
+              "correct": 13,
+              "correct_rate": 0.325,
+              "healthy_verdict": 13,
+              "healthy_recall": 0.325,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 20,
+              "false_other_rate": 0.5,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 20,
+              "kind_UNSURE": 7,
+              "kind_HEALTHY": 13
+            },
+            "false_healthy": 3
+          },
+          "consumed_olid_all": {
+            "healthy": {
+              "n": 223,
+              "correct": 90,
+              "correct_rate": 0.40358744394618834,
+              "healthy_verdict": 90,
+              "healthy_recall": 0.40358744394618834,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 104,
+              "false_other_rate": 0.4663677130044843,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 104,
+              "kind_HEALTHY": 90,
+              "kind_UNSURE": 29
+            },
+            "false_healthy": 16
+          }
+        },
+        {
+          "kind": "mlp128",
+          "passed": false,
+          "checks": {
+            "old_retention": true,
+            "old_field_healthy": true,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true,
+            "olid_development_val_healthy": false,
+            "olid_development_val_safety": true
+          },
+          "threshold": 0.9959481821784973,
+          "best_epoch": 2,
+          "checkpoint_sha256": "f910cb538c42c968f9c2d635b4dbb8dbc1f2a0871b99adeec6152dea1aa0c2c9",
+          "olid_validation_n": 138,
+          "consumed_olid_validation": {
+            "healthy": {
+              "n": 40,
+              "correct": 13,
+              "correct_rate": 0.325,
+              "healthy_verdict": 13,
+              "healthy_recall": 0.325,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 20,
+              "false_other_rate": 0.5,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 20,
+              "kind_UNSURE": 7,
+              "kind_HEALTHY": 13
+            },
+            "false_healthy": 3
+          },
+          "consumed_olid_all": {
+            "healthy": {
+              "n": 223,
+              "correct": 87,
+              "correct_rate": 0.3901345291479821,
+              "healthy_verdict": 87,
+              "healthy_recall": 0.3901345291479821,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 105,
+              "false_other_rate": 0.47085201793721976,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 105,
+              "kind_HEALTHY": 87,
+              "kind_UNSURE": 31
+            },
+            "false_healthy": 16
+          }
+        }
+      ],
+      "protocol": {
+        "hypothesis": "A supervised original-SigLIP visual expert repairs isolated Healthy rejection after both score-only heads failed",
+        "data_role": "AD and OLID consumed development; validation families are development only",
+        "source_mobile_scores_sha256": "9b8a75b66204a8ebc13d78cc26711dcb13dbc46f1c1aac3894f86cf2bc5287ee",
+        "original_cases_sha256": "73b058fda4f411d6009b3f312837dc73cb15747ca88fcca74f91fc5b40a43f74",
+        "original_candidate_sha256": "364ca903f715dd44a37cd5e0701273e5d4a9db09d4fd026048daa5aa5ac0d24f",
+        "script_sha256": "df168ade7ca739e1d95bd6a3f111fe7754dbd043dfb7e93376f5251ed089f923",
+        "heads": [
+          "linear",
+          "mlp128"
+        ],
+        "seed": 1807,
+        "split_sha256": "9f68437e78e2673259ffe55a4a0345198ed4283d0aa90f0231ed168811baef93",
+        "features": "Original frozen SigLIP768 on the exact canonical whole letterbox",
+        "feature_cache": {
+          "protocol_sha256": "a71a7a785ae88cadf75f6ab69d5208a14e0e45a999e26dc66fbd874209978c61",
+          "features_sha256": "6d6c6844d8d27150e73f0fac5c29df71a50c25f903f36587dd386d27a9c1fe90",
+          "inputs_sha256": "642c7b731fa322910ee6058362d15b06e17c83fb4224913e6d45cb06c8ac1249",
+          "newly_computed": 730,
+          "reused_old_images": 6094,
+          "new_images": 730,
+          "original_head_mobile_parity": {
+            "negative": 3.3289194107055664e-05,
+            "genus": 2.6226043701171875e-06,
+            "natural": 7.427297532558441e-08
+          },
+          "olid_independent": false,
+          "ad_independent": false
+        },
+        "maximum_epochs": 80,
+        "minimum_epochs": 12,
+        "patience": 8,
+        "learning_rate": 0.001,
+        "negative_loss_weight": 8.0,
+        "calibration": "Source/class/family weighted validation BCE",
+        "positive_cutoff": "max(.95, maximum validation diseased probability + 1e-6)",
+        "negative_cutoff": 0.001,
+        "encoder_weights_changed": false,
+        "new_encoder_inputs": 730,
+        "original_thresholds_unchanged": true,
+        "ad_independent": false,
+        "olid_independent": false,
+        "stopping_rule": "Stop both frozen-visual heads if neither passes every old gate and consumed OLID family-validation Healthy>=.70 with paired safety; only then consider a copied final-block supervised adaptation"
+      },
+      "elapsed_seconds": 0.7130982450325973,
+      "new_encoder_inputs": 730
+    },
+    "phase83_eligible_operating_points/result.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase83_eligible_operating_points/result.json",
+      "sha256": "252d6b923f41426bd4ef299878e01f7bd433ce8a494f90965dca46a8b2269554",
+      "passing": 0,
+      "controls": [
+        {
+          "kind": "linear",
+          "family": "scores",
+          "passed": false,
+          "checks": {
+            "old_retention": false,
+            "old_field_healthy": true,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true,
+            "consumed_val_healthy": false,
+            "consumed_val_safety": true,
+            "consumed_all_safety": false,
+            "consumed_all_retention": false
+          },
+          "threshold": 0.95,
+          "checkpoint_sha256": "ebce598d643d6aeedfa610b1a2a61b9b36c18424c1fdc6a7945e68686b74e8fc",
+          "eligible_validation_negatives": 28,
+          "consumed_validation": {
+            "healthy": {
+              "n": 40,
+              "correct": 13,
+              "correct_rate": 0.325,
+              "healthy_verdict": 13,
+              "healthy_recall": 0.325,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 20,
+              "false_other_rate": 0.5,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 20,
+              "kind_UNSURE": 7,
+              "kind_HEALTHY": 13
+            },
+            "false_healthy": 3
+          },
+          "consumed_all": {
+            "healthy": {
+              "n": 223,
+              "correct": 88,
+              "correct_rate": 0.39461883408071746,
+              "healthy_verdict": 88,
+              "healthy_recall": 0.39461883408071746,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 105,
+              "false_other_rate": 0.47085201793721976,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 105,
+              "kind_HEALTHY": 88,
+              "kind_UNSURE": 30
+            },
+            "false_healthy": 19
+          }
+        },
+        {
+          "kind": "mlp32",
+          "family": "scores",
+          "passed": false,
+          "checks": {
+            "old_retention": false,
+            "old_field_healthy": true,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true,
+            "consumed_val_healthy": false,
+            "consumed_val_safety": true,
+            "consumed_all_safety": false,
+            "consumed_all_retention": false
+          },
+          "threshold": 0.95,
+          "checkpoint_sha256": "6ac5f3d66fd8b6099fc5c8a45e1ae80290a088bcbd9d0e97b3c9a08d400f901b",
+          "eligible_validation_negatives": 28,
+          "consumed_validation": {
+            "healthy": {
+              "n": 40,
+              "correct": 13,
+              "correct_rate": 0.325,
+              "healthy_verdict": 13,
+              "healthy_recall": 0.325,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 20,
+              "false_other_rate": 0.5,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 20,
+              "kind_UNSURE": 7,
+              "kind_HEALTHY": 13
+            },
+            "false_healthy": 3
+          },
+          "consumed_all": {
+            "healthy": {
+              "n": 223,
+              "correct": 95,
+              "correct_rate": 0.4260089686098655,
+              "healthy_verdict": 95,
+              "healthy_recall": 0.4260089686098655,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 104,
+              "false_other_rate": 0.4663677130044843,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 104,
+              "kind_HEALTHY": 95,
+              "kind_UNSURE": 24
+            },
+            "false_healthy": 22
+          }
+        },
+        {
+          "kind": "linear",
+          "family": "visual",
+          "passed": false,
+          "checks": {
+            "old_retention": false,
+            "old_field_healthy": true,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true,
+            "consumed_val_healthy": false,
+            "consumed_val_safety": true,
+            "consumed_all_safety": false,
+            "consumed_all_retention": false
+          },
+          "threshold": 0.9642147885093689,
+          "checkpoint_sha256": "96add09bf0c0e630300618458e61556b801fa9229a7ad6910bb91c13f62162d6",
+          "eligible_validation_negatives": 28,
+          "consumed_validation": {
+            "healthy": {
+              "n": 40,
+              "correct": 17,
+              "correct_rate": 0.425,
+              "healthy_verdict": 17,
+              "healthy_recall": 0.425,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 18,
+              "false_other_rate": 0.45,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 18,
+              "kind_UNSURE": 5,
+              "kind_HEALTHY": 17
+            },
+            "false_healthy": 3
+          },
+          "consumed_all": {
+            "healthy": {
+              "n": 223,
+              "correct": 106,
+              "correct_rate": 0.47533632286995514,
+              "healthy_verdict": 106,
+              "healthy_recall": 0.47533632286995514,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 96,
+              "false_other_rate": 0.4304932735426009,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_HEALTHY": 106,
+              "kind_UNKNOWN_CONDITION": 96,
+              "kind_UNSURE": 21
+            },
+            "false_healthy": 22
+          }
+        },
+        {
+          "kind": "mlp128",
+          "family": "visual",
+          "passed": false,
+          "checks": {
+            "old_retention": true,
+            "old_field_healthy": true,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true,
+            "consumed_val_healthy": false,
+            "consumed_val_safety": true,
+            "consumed_all_safety": false,
+            "consumed_all_retention": false
+          },
+          "threshold": 0.95,
+          "checkpoint_sha256": "f910cb538c42c968f9c2d635b4dbb8dbc1f2a0871b99adeec6152dea1aa0c2c9",
+          "eligible_validation_negatives": 28,
+          "consumed_validation": {
+            "healthy": {
+              "n": 40,
+              "correct": 15,
+              "correct_rate": 0.375,
+              "healthy_verdict": 15,
+              "healthy_recall": 0.375,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 19,
+              "false_other_rate": 0.475,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 19,
+              "kind_UNSURE": 6,
+              "kind_HEALTHY": 15
+            },
+            "false_healthy": 3
+          },
+          "consumed_all": {
+            "healthy": {
+              "n": 223,
+              "correct": 94,
+              "correct_rate": 0.42152466367713004,
+              "healthy_verdict": 94,
+              "healthy_recall": 0.42152466367713004,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 103,
+              "false_other_rate": 0.4618834080717489,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 103,
+              "kind_HEALTHY": 94,
+              "kind_UNSURE": 26
+            },
+            "false_healthy": 19
+          }
+        }
+      ],
+      "protocol": {
+        "script_sha256": "db078a393ff6f5a09eeed2c0ee60c596389086b7c669e945e8d469988f56926b",
+        "route_sha256": "cd75cd564ba95bb16a211d35f9efca020b70ae332c66f554bcb0527fc20b0a4c",
+        "hypothesis": "Validation negatives that cannot enter isolated recovery must not determine its positive cutoff",
+        "controls": [
+          {
+            "family": "scores",
+            "kind": "linear",
+            "checkpoint_sha256": "ebce598d643d6aeedfa610b1a2a61b9b36c18424c1fdc6a7945e68686b74e8fc",
+            "result_sha256": "f40b8782d7991539a43523381995157b415c925db5ab0802d13b23c3846bb938"
+          },
+          {
+            "family": "scores",
+            "kind": "mlp32",
+            "checkpoint_sha256": "6ac5f3d66fd8b6099fc5c8a45e1ae80290a088bcbd9d0e97b3c9a08d400f901b",
+            "result_sha256": "e7094202e4c6972a34f4c61c1ed0d3a50995d4588693dea21a62a68a853f2386"
+          },
+          {
+            "family": "visual",
+            "kind": "linear",
+            "checkpoint_sha256": "96add09bf0c0e630300618458e61556b801fa9229a7ad6910bb91c13f62162d6",
+            "result_sha256": "4e6136cf1419c2090a98074291947a8628e6a7dba2c6c468f921599a53007964"
+          },
+          {
+            "family": "visual",
+            "kind": "mlp128",
+            "checkpoint_sha256": "f910cb538c42c968f9c2d635b4dbb8dbc1f2a0871b99adeec6152dea1aa0c2c9",
+            "result_sha256": "bfc28c42a13f6a691545f3163d015e9f0aabbf651e214af50fb3318b3513d27c"
+          }
+        ],
+        "cutoff": "max(.95, maximum eligible consumed-OLID validation-negative probability + 1e-6)",
+        "eligibility": "Exact input-based proposed isolated route, including original disease/suspected disease and closed-set guards",
+        "maximum_policies": 4,
+        "new_encoder_inputs": 0,
+        "weights_changed": false,
+        "olid_independent": false,
+        "ad_independent": false,
+        "all_original_gates_unchanged": true,
+        "stopping": "No additional thresholds if these four operating points fail"
+      },
+      "new_encoder_inputs": 0
+    },
+    "phase84_population_head/result.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase84_population_head/result.json",
+      "sha256": "fb90421cc09d5273a3905a28d9fe36c3cf843e29c8ee2f0324fba089e3d446b8",
+      "passing": 0,
+      "controls": [
+        {
+          "kind": "mlp128",
+          "passed": false,
+          "checks": {
+            "old_retention": true,
+            "old_field_healthy": true,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true,
+            "consumed_all_safety": true,
+            "consumed_all_retention": true,
+            "olid_development_val_healthy": false,
+            "olid_development_val_safety": true
+          },
+          "threshold": 0.95,
+          "best_epoch": 0,
+          "checkpoint_sha256": "fccba8300cfe9b1ba37c7f4e67ac40279f20617a10be2d64301eec5453c2b09d",
+          "olid_validation_n": 138,
+          "consumed_olid_validation": {
+            "healthy": {
+              "n": 40,
+              "correct": 13,
+              "correct_rate": 0.325,
+              "healthy_verdict": 13,
+              "healthy_recall": 0.325,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 20,
+              "false_other_rate": 0.5,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 20,
+              "kind_UNSURE": 7,
+              "kind_HEALTHY": 13
+            },
+            "false_healthy": 3
+          },
+          "consumed_olid_all": {
+            "healthy": {
+              "n": 223,
+              "correct": 87,
+              "correct_rate": 0.3901345291479821,
+              "healthy_verdict": 87,
+              "healthy_recall": 0.3901345291479821,
+              "false_healthy": 0,
+              "false_healthy_rate": 0.0,
+              "false_other": 105,
+              "false_other_rate": 0.47085201793721976,
+              "false_known": null,
+              "false_known_rate": null,
+              "kind_UNKNOWN_CONDITION": 105,
+              "kind_HEALTHY": 87,
+              "kind_UNSURE": 31
+            },
+            "false_healthy": 16
+          }
+        }
+      ],
+      "protocol": {
+        "hypothesis": "A scope-correct supervised warm-up fits only the actual isolated routing population before any copied-block adaptation",
+        "data_role": "AD and OLID consumed development; validation families are development only",
+        "source_mobile_scores_sha256": "9b8a75b66204a8ebc13d78cc26711dcb13dbc46f1c1aac3894f86cf2bc5287ee",
+        "original_cases_sha256": "73b058fda4f411d6009b3f312837dc73cb15747ca88fcca74f91fc5b40a43f74",
+        "original_candidate_sha256": "364ca903f715dd44a37cd5e0701273e5d4a9db09d4fd026048daa5aa5ac0d24f",
+        "script_sha256": "ecdbc9735c393d80a7f26bc962f7e2ee9b9ea5d11cea61429ee1ec3f9c4945ed",
+        "heads": [
+          "mlp128"
+        ],
+        "seed": 1807,
+        "split_sha256": "9f68437e78e2673259ffe55a4a0345198ed4283d0aa90f0231ed168811baef93",
+        "features": "Original frozen SigLIP768 on the exact canonical whole letterbox",
+        "feature_cache": {
+          "protocol_sha256": "a71a7a785ae88cadf75f6ab69d5208a14e0e45a999e26dc66fbd874209978c61",
+          "features_sha256": "6d6c6844d8d27150e73f0fac5c29df71a50c25f903f36587dd386d27a9c1fe90",
+          "inputs_sha256": "642c7b731fa322910ee6058362d15b06e17c83fb4224913e6d45cb06c8ac1249",
+          "newly_computed": 730,
+          "reused_old_images": 6094,
+          "new_images": 730,
+          "original_head_mobile_parity": {
+            "negative": 3.3289194107055664e-05,
+            "genus": 2.6226043701171875e-06,
+            "natural": 7.427297532558441e-08
+          },
+          "olid_independent": false,
+          "ad_independent": false
+        },
+        "maximum_epochs": 40,
+        "minimum_epochs": 8,
+        "patience": 6,
+        "learning_rate": 0.001,
+        "negative_loss_weight": 8.0,
+        "calibration": "Source/class/family weighted validation BCE",
+        "positive_cutoff": "max(.95, maximum eligible validation negative for a new Healthy proposal + 1e-6)",
+        "negative_cutoff": 0.001,
+        "encoder_weights_changed": false,
+        "new_encoder_inputs": 730,
+        "original_thresholds_unchanged": true,
+        "active_population_sha256": "8c92ebceb01c41247a0ceefbb0cfbb63fc51db011c7c9cd96c36298a3d787244",
+        "warm_start_sha256": "f910cb538c42c968f9c2d635b4dbb8dbc1f2a0871b99adeec6152dea1aa0c2c9",
+        "active_training": 982,
+        "active_validation": 303,
+        "ad_independent": false,
+        "olid_independent": false,
+        "stopping_rule": "One scope-correct MLP warm-up only. If actual app gates or consumed family-validation Healthy>=.70 and paired safety fail, stop head-only fitting and use one copied-block adaptation.",
+        "fitting_rows_sha256": "4fb762cea4c798541f9d1a012159afed9c7d2ca14dad5b87cbc9742a6ccc9a49"
+      },
+      "elapsed_seconds": 0.28515645500738174,
+      "new_encoder_inputs": 730,
+      "validation_recovery": {
+        "training_protocol_sha256": "42daf2e2210b689f8a8945594ae2290f01cd7097008865031a34e74a8ab8f865",
+        "validation_source_sha256": "50f0aafbbd23e961b799f28cfe2bc2f5a1e70ccd57139e9af4dd9ab6ad460042",
+        "checkpoints": {
+          "mlp128": "fccba8300cfe9b1ba37c7f4e67ac40279f20617a10be2d64301eec5453c2b09d"
+        },
+        "change": "Repair evaluation function-name shadowing and evaluate existing selected checkpoints only",
+        "training_restarted": false,
+        "new_encoder_inputs_this_invocation": 0
+      }
+    },
+    "phase84_population_head/validation_recovery_protocol.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase84_population_head/validation_recovery_protocol.json",
+      "sha256": "a72e9e5ca3fa448ac865cbfaf85561561dd9cfcdcc5187e2eed44a400a268909",
+      "evidence": {
+        "training_protocol_sha256": "42daf2e2210b689f8a8945594ae2290f01cd7097008865031a34e74a8ab8f865",
+        "validation_source_sha256": "50f0aafbbd23e961b799f28cfe2bc2f5a1e70ccd57139e9af4dd9ab6ad460042",
+        "checkpoints": {
+          "mlp128": "fccba8300cfe9b1ba37c7f4e67ac40279f20617a10be2d64301eec5453c2b09d"
+        },
+        "change": "Repair evaluation function-name shadowing and evaluate existing selected checkpoints only",
+        "training_restarted": false,
+        "new_encoder_inputs_this_invocation": 0
+      }
+    },
+    "phase85_population_sft/result.json": {
+      "path": "/home/genesis/agribot-data/recognition_campaign_20261024/phase85_population_sft/result.json",
+      "sha256": "7b042e2deda0a689cafd3bac1c4d1a968d3fd5bb7b5aa68a0f6f86982e396e42",
+      "passed": false,
+      "checks": {
+        "old_retention": true,
+        "old_field_healthy": true,
+        "coarse_retention": true,
+        "internal_retention": true,
+        "internal_healthy_each_source": true,
+        "original_disease_exact": true,
+        "consumed_validation_healthy": false,
+        "consumed_validation_safety": true,
+        "consumed_all_safety": true,
+        "consumed_all_retention": true
+      },
+      "selected_epoch": 0,
+      "threshold": 0.95,
+      "calibration": [
+        0.6691727862529112,
+        1.0372001623758316
+      ],
+      "checkpoint_sha256": "c1a648786c0cc9a7fd2f8aa4f0ce3f7c43ade79d831fafc409379a76df16f99e",
+      "protocol_sha256": "8cf4e6ffbc5196afb4b2cf2a3bf18457464b76a201172374296af46ee0990890",
+      "prefix_cache": {
+        "protocol_sha256": "9b86f3887aaaac16a0b825177fe3258edfcc13dc11b1f97256038446f2eab7a2",
+        "missing_tokens_sha256": "c4439613fe97bdad7c167c5b6bb73929ece83456d13800b04f6efeee5019c6a7",
+        "new_prefix_inputs": 782,
+        "reused_prefix_inputs": 504,
+        "maximum_feature_error": 1.9073486328125e-05,
+        "selected_inputs": 1286,
+        "ad_independent": false,
+        "olid_independent": false
+      },
+      "elapsed_seconds": 4.693028904963285,
+      "consumed_validation": {
+        "healthy": {
+          "n": 40,
+          "correct": 13,
+          "correct_rate": 0.325,
+          "healthy_verdict": 13,
+          "healthy_recall": 0.325,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 20,
+          "false_other_rate": 0.5,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 20,
+          "kind_UNSURE": 7,
+          "kind_HEALTHY": 13
+        },
+        "false_healthy": 3
+      },
+      "consumed_all": {
+        "healthy": {
+          "n": 223,
+          "correct": 87,
+          "correct_rate": 0.3901345291479821,
+          "healthy_verdict": 87,
+          "healthy_recall": 0.3901345291479821,
+          "false_healthy": 0,
+          "false_healthy_rate": 0.0,
+          "false_other": 105,
+          "false_other_rate": 0.47085201793721976,
+          "false_known": null,
+          "false_known_rate": null,
+          "kind_UNKNOWN_CONDITION": 105,
+          "kind_HEALTHY": 87,
+          "kind_UNSURE": 31
+        },
+        "false_healthy": 16
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "archive_sha256": "5e6a95de0d40fff6bd8cbe6feb35cecf92259b12cf7346b21ddfa23a4c9af5c6",
+  "files": [
+    {
+      "path": "model_training/v3/phase226_failure_attribution.py",
+      "sha256": "b36ae23fa2948495c82e67ab5df4e4ce7c931602f281c1287cbdbcd2f15269ea",
+      "bytes": 5803
+    },
+    {
+      "path": "model_training/v3/phase227_paired_view_controls.py",
+      "sha256": "bbbee5ae4dbba1e2d6312fad0e1bf2f9dfaca19823d68499fc1bba888767215d",
+      "bytes": 6730
+    },
+    {
+      "path": "model_training/v3/paired_view_features.py",
+      "sha256": "cb0584d2efa62b523e12554e6decf5a4a14a14623ae121452222c47bc59a8ccb",
+      "bytes": 532
+    },
+    {
+      "path": "model_training/v3/cached_rbf.py",
+      "sha256": "afb63e294368e908531c221241344b0911764667a42db34581fc125d65df4044",
+      "bytes": 711
+    },
+    {
+      "path": "model_training/v3/phase228_generalization_regularizers.py",
+      "sha256": "06d1c22bf102159a15a57f6b4d55b3d523e7bf9fce1a831eb807aee533bff3dc",
+      "bytes": 9501
+    },
+    {
+      "path": "model_training/v3/source_interpolation.py",
+      "sha256": "42a24a114b77b08c98bd383e11e7cba90317cd80a92d2e4e6181e8d681539dbd",
+      "bytes": 1150
+    },
+    {
+      "path": "model_training/v3/leaf_feature_expert.py",
+      "sha256": "b508b184d176c57d4e23bd3faf2c6adef248902322f27b6616f8964bcb21692f",
+      "bytes": 737
+    },
+    {
+      "path": "model_training/v3/phase229_domain_conditional_stack.py",
+      "sha256": "d33e02abb9eded6643e117fd3eb686403fd5446c8e8cd1e1f0ad5051a1ad75f2",
+      "bytes": 7837
+    },
+    {
+      "path": "model_training/v3/domain_stack_basis.py",
+      "sha256": "dcac2635f1605cf544e77aa395c155478c3d1b22eee1f0987bb07c049ebf0246",
+      "bytes": 958
+    },
+    {
+      "path": "model_training/v3/phase215_shrinkage_density.py",
+      "sha256": "6a1fa29f5bb29b9b7787f7eb834725b261a54f1111d13f5b7ad11654bb36273b",
+      "bytes": 10315
+    },
+    {
+      "path": "model_training/v3/conditional_recovery_policy.py",
+      "sha256": "ca188430f54d143e92729ceef71ac82cf35b54663012cd3432d6528780b22b66",
+      "bytes": 522
+    },
+    {
+      "path": "model_training/v3/clinical_replay_balance.py",
+      "sha256": "42cc6e1dddd400b9405022ca43c95cb67519abfa27c5dbbd7311e2329281e724",
+      "bytes": 941
+    },
+    {
+      "path": "model_training/v3/hard_negative_ranking.py",
+      "sha256": "0d2b38b225fe19cd1614961ff63881e258997b1e7ed6b381f81fdd4966753465",
+      "bytes": 535
+    },
+    {
+      "path": "model_training/v3/training_support.py",
+      "sha256": "83040dbb8b2c321c1f13be9d1e42bc8cae475c693d0274521b78a1b172d5b67c",
+      "bytes": 7147
+    }
+  ]
+}

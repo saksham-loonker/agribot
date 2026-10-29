@@ -1,0 +1,12 @@
+{
+  "verified": true,
+  "archive_sha256": "8821b3c737ca233fcee80e4592f122a37df16eed542fb60265e04b18fbf25771",
+  "archive_bytes": 62416545,
+  "artifact_files": 192,
+  "epoch_checkpoints_verified": 80,
+  "final_optimizer_and_rng_verified": true,
+  "laptop_backup": "C:\\Users\\Manisha\\agribot\\.toolchains\\model-checkpoints\\phase215-219\\artifacts.zip",
+  "all_member_hashes_verified": true,
+  "crc_verified": true,
+  "model_promoted": false
+}

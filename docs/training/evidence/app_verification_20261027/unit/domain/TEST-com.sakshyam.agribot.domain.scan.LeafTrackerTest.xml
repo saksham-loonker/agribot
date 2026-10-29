@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.domain.scan.LeafTrackerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:24:12" hostname="LAPTOP-QCI1PSIL" time="0.026">
+  <properties/>
+  <testcase name="overlapping boxes keep identity and new boxes get new ids" classname="com.sakshyam.agribot.domain.scan.LeafTrackerTest" time="0.024"/>
+  <testcase name="tracks expire after missed frames" classname="com.sakshyam.agribot.domain.scan.LeafTrackerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,15 @@
+{
+  "protocol_sha256": "ea18813c78d06127ab3e91f219cd8044290638f6c38d107fda980f125ac9f95d",
+  "new_features_sha256": "e6cf1ec069823fe34e0dcfbc8734edae878b96ac1859d16562fcec091d836a4d",
+  "bags_sha256": "29a91e2024446988ea29c61791caa9c1c91e010703bd4e58f00486b0fa48814a",
+  "new_keys_sha256": "60d671330964acb99197d88543c8f5f7fa5689355a7d062ab880fe0392319591",
+  "new_detector_inputs": 1807,
+  "new_encoder_inputs": 14880,
+  "old_encoder_inputs_reused": 0,
+  "source_images": 2063,
+  "detected_images": 2062,
+  "elapsed_seconds": 382.86137398995925,
+  "role": "development_only",
+  "model_promoted": false,
+  "acceptance_data_used": false
+}

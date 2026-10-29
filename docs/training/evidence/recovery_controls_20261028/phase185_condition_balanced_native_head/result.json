@@ -1,0 +1,172 @@
+{
+  "source_sha256": "7c0b10559764aec23361c314340e82be40b8af752b8734b7552f1168dffff252",
+  "protocol_sha256": "b95833e27228ab9a2c206fe125383c544a435c55abf327d52dcab3745ac85c3d",
+  "checkpoint_sha256": "f198a7ec5ae6a382b09d93cbf65e801579cd26a4aabcf3c4c2f0ca14c8429dba",
+  "selected_epoch": 3,
+  "best_decision": [
+    0,
+    14,
+    9,
+    -0.5963152050971985
+  ],
+  "history": [
+    {
+      "epoch": 0,
+      "decision": [
+        0,
+        13,
+        6,
+        -0.6267265677452087
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      }
+    },
+    {
+      "epoch": 1,
+      "decision": [
+        0,
+        13,
+        5,
+        -0.5632097721099854
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      }
+    },
+    {
+      "epoch": 2,
+      "decision": [
+        0,
+        13,
+        6,
+        -0.6553245782852173
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      }
+    },
+    {
+      "epoch": 3,
+      "decision": [
+        0,
+        14,
+        9,
+        -0.5963152050971985
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      }
+    },
+    {
+      "epoch": 4,
+      "decision": [
+        0,
+        14,
+        4,
+        -0.6387973427772522
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      }
+    },
+    {
+      "epoch": 5,
+      "decision": [
+        -1,
+        13,
+        5,
+        -0.6274814605712891
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 6,
+      "decision": [
+        0,
+        14,
+        6,
+        -0.6861715912818909
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 0
+      }
+    },
+    {
+      "epoch": 7,
+      "decision": [
+        -1,
+        14,
+        6,
+        -0.7067422866821289
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 8,
+      "decision": [
+        -1,
+        14,
+        6,
+        -0.6977832913398743
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 0,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    },
+    {
+      "epoch": 9,
+      "decision": [
+        -2,
+        14,
+        10,
+        -0.721608579158783
+      ],
+      "new_false_healthy_by_source": {
+        "plantvillage": 0,
+        "tlid": 1,
+        "bangladesh_classification": 0,
+        "olid_tomato": 1
+      }
+    }
+  ],
+  "cheap_pass": false,
+  "passed": false,
+  "model_promoted": false,
+  "new_encoder_inputs": 0,
+  "elapsed_seconds": 7.9670689719496295,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false
+}

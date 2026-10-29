@@ -114,6 +114,26 @@ class LeafTrackerTest {
 }
 
 class RowWalkTrackerTest {
+    @Test fun `a proposed move cannot change the live position before commit`() {
+        val live = RowWalkTracker(2, 5, 0.5, 0.3)
+        live.onStep()
+        val proposed = live.copy()
+        proposed.nextRow()
+        assertEquals(1, live.rowIndex)
+        assertEquals(0.3, live.distanceM)
+        assertEquals(1, live.steps)
+        assertEquals(2, proposed.rowIndex)
+        assertEquals(0.0, proposed.distanceM)
+    }
+
+    @Test fun `malformed restored counters and distances do not corrupt a walk`() {
+        val walk = RowWalkTracker(2, 5, 0.5, 0.3)
+        walk.restore(1, Double.NaN, -3)
+        assertEquals(1, walk.plantNumber)
+        assertEquals(0.0, walk.distanceM)
+        assertEquals(0, walk.steps)
+    }
+
     @Test fun `steps advance plants by spacing and clamp at row end`() {
         val r = RowWalkTracker(rowCount = 2, plantsPerRow = 3, plantSpacingM = 0.6, strideM = 0.3)
         assertEquals(1, r.plantNumber)

@@ -1,0 +1,13 @@
+{
+  "source_sha256": "0657221a57bbbac2b35b2537f2f18bb014a252e188de59698fb590ba3844860c",
+  "target_helper_sha256": "8527205ee036f7d60a960dca7b093ecab4e6c97f8f5d8cde32334d3fefc7093b",
+  "selection_protocol_sha256": "952aaee3024a5b204d123f5ea1cb938602d6ba32e32bdb22b9ff3aa4f8d9b052",
+  "anchor_protocol_sha256": "b293320776d02d58140c5284e0247eee4bd17c2506ad9335d991f227d1ed2a4e",
+  "diagnostic_only": true,
+  "policy_unchanged": true,
+  "full_validation_population_unchanged": true,
+  "new_encoder_inputs": 0,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false
+}

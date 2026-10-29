@@ -1,0 +1,8 @@
+{
+  "archive": "artifacts.tar",
+  "archive_bytes": 81315840,
+  "archive_sha256": "bba1bf6b07c37479129bceea8cfe9aff5f5afe1620df6686f5d060ac0dd3482e",
+  "verified_artifacts": 188,
+  "all_manifest_payloads_sha256_verified": true,
+  "restore": "Restore individual named members from the private laptop TAR; public evidence contains no learned weights."
+}

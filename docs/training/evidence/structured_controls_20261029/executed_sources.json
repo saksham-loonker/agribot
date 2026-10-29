@@ -1,0 +1,50 @@
+{
+  "archive_sha256": "d3e8e5e114b6279bb7de17f9562b6e6bb0b7de6c1c4f50eb6cc965ca3c998b54",
+  "files": [
+    {
+      "path": "model_training/v3/structured_leaf_features.py",
+      "sha256": "58ab719b20a4994417290bc0bf86a7474cbfef41df08757f1610d643796b0d0b",
+      "bytes": 4014
+    },
+    {
+      "path": "model_training/v3/clinical_color_features.py",
+      "sha256": "c18699b3790bdc854f8195893093129935eec3a5c7c544ec04e7c13376aedf5c",
+      "bytes": 2041
+    },
+    {
+      "path": "model_training/v3/cached_rbf.py",
+      "sha256": "afb63e294368e908531c221241344b0911764667a42db34581fc125d65df4044",
+      "bytes": 711
+    },
+    {
+      "path": "model_training/v3/phase223_structured_leaf_cache.py",
+      "sha256": "3aae18f307dacbd9c8652b2449431d5bec9cd7073e71f114a24eebdccf45bc8c",
+      "bytes": 5838
+    },
+    {
+      "path": "model_training/v3/phase224_structured_kernels.py",
+      "sha256": "c4274cbcafda727972f09e12721b9c01b7543a12bc887168f526fc9accf2ecb1",
+      "bytes": 7772
+    },
+    {
+      "path": "model_training/v3/phase225_structured_kernel_policy.py",
+      "sha256": "54fad9f75a74da1c83c867a4ee25748fb822ff0d13bfc030cae71ca15c3a1219",
+      "bytes": 7423
+    },
+    {
+      "path": "model_training/v3/phase215_shrinkage_density.py",
+      "sha256": "6a1fa29f5bb29b9b7787f7eb834725b261a54f1111d13f5b7ad11654bb36273b",
+      "bytes": 10315
+    },
+    {
+      "path": "model_training/v3/conditional_recovery_policy.py",
+      "sha256": "ca188430f54d143e92729ceef71ac82cf35b54663012cd3432d6528780b22b66",
+      "bytes": 522
+    },
+    {
+      "path": "model_training/v3/clinical_replay_balance.py",
+      "sha256": "42cc6e1dddd400b9405022ca43c95cb67519abfa27c5dbbd7311e2329281e724",
+      "bytes": 941
+    }
+  ]
+}

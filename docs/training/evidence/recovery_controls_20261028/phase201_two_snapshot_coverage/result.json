@@ -1,0 +1,123 @@
+{
+  "protocol_sha256": "ab57d664bf465fe5aa64289f608daf4d36ff392d0f25b2ae24e66ba9462c6740",
+  "candidate_bank_sha256": "184f3473c465df59e0ef78e48ea911cad37eabb280149e5e87277511ef5e3635",
+  "saved_native_branches": 84,
+  "pairs_tested": 3486,
+  "maximum_two_snapshot_healthy": 28,
+  "coverage_capable_pairs": 18,
+  "controls": [
+    {
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 6
+    },
+    {
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 6
+    },
+    {
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 6
+    },
+    {
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 4
+    },
+    {
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 4
+    },
+    {
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 14
+    },
+    {
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 7
+    },
+    {
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 7
+    },
+    {
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 6
+    },
+    {
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 6
+    },
+    {
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 6
+    },
+    {
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 14
+    },
+    {
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 5
+    },
+    {
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 6
+    },
+    {
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 5
+    },
+    {
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 4
+    },
+    {
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 4
+    },
+    {
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_before_veto": 28,
+      "new_false_healthy_before_veto": 14
+    }
+  ],
+  "next_action": "Evaluate only the predeclared fixed rotation-veto alternatives",
+  "model_promoted": false,
+  "new_encoder_inputs": 0,
+  "acceptance_data_used": false,
+  "elapsed_seconds": 2.19467718701344
+}

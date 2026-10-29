@@ -1,0 +1,94 @@
+{
+  "source_sha256": "2fd6de368fe6df8073fa007b30cc7931fc97f26fbbf7cd05064b8a0cab61691f",
+  "range_source_sha256": "8a3cba0b495c5353fc6970bd4c0816555e93c232f46a221bd37892417afbe6dc",
+  "prompt_source_sha256": "ff4dbde027a9c42fb7ba6398401dd0b9f3a797199ee2a68e6ab8a6704968ba8d",
+  "repository": "google/siglip2-base-patch16-256",
+  "revision": "3f9f96cb90da5dbc758b01813f2f6f1aee24c1ab",
+  "prompts": [
+    [
+      "healthy_upper",
+      "a photo of a healthy tomato leaf, uniform green tissue, no lesions, no mines, no mold, and no damaged edges."
+    ],
+    [
+      "healthy_lower",
+      "a photo of the pale green underside of a healthy tomato leaf, visible veins, without spots or damage."
+    ],
+    [
+      "healthy_young",
+      "a photo of a healthy young light green tomato leaf with no visible disease or damage."
+    ],
+    [
+      "early_blight",
+      "a photo of a tomato leaf with early blight, brown circular lesions with rings and yellow halos."
+    ],
+    [
+      "late_blight",
+      "a photo of a tomato leaf with late blight, irregular dark brown damaged patches."
+    ],
+    [
+      "leaf_miner",
+      "a photo of a tomato leaf with leaf miner damage, winding pale trails through the leaf."
+    ],
+    [
+      "magnesium",
+      "a photo of a tomato leaf with magnesium deficiency, pale yellow tissue between green veins."
+    ],
+    [
+      "nitrogen",
+      "a photo of a tomato leaf with nitrogen deficiency, widespread yellowing of an older leaf."
+    ],
+    [
+      "potassium",
+      "a photo of a tomato leaf with potassium deficiency, yellow and brown damaged leaf edges."
+    ],
+    [
+      "spotted_wilt",
+      "a photo of a tomato leaf with spotted wilt, bronze tissue, dark spots and ring patterns."
+    ],
+    [
+      "bacterial_spot",
+      "a photo of a tomato leaf with bacterial spot, small dark lesions and yellow surrounding tissue."
+    ],
+    [
+      "septoria",
+      "a photo of a tomato leaf with many small round brown spots with pale centers."
+    ],
+    [
+      "mites",
+      "a photo of a tomato leaf with spider mite damage, fine pale stippling, bronzing and thin webbing."
+    ],
+    [
+      "leaf_mold",
+      "a photo of a diseased tomato leaf with leaf mold, yellow patches and mold underneath."
+    ],
+    [
+      "powdery_mildew",
+      "a photo of a tomato leaf with white powdery mildew on its surface."
+    ],
+    [
+      "leaf_curl",
+      "a photo of a diseased tomato leaf with abnormal curling, distorted growth and yellowing."
+    ],
+    [
+      "target_spot",
+      "a photo of a tomato leaf with numerous brown lesions and concentric target-like rings."
+    ],
+    [
+      "damaged",
+      "a photo of a visibly damaged tomato leaf with dead tissue, lesions or infestation."
+    ],
+    [
+      "not_tomato",
+      "a photo of a leaf from a plant other than tomato."
+    ]
+  ],
+  "prompt_sha256": "c0ef5ef600a1915ebd97d76554705addb118997f53bfcfbb60698e0e6d89c355",
+  "image_encoder_checkpoint_sha256": "d0b89b19995b59eaf00bb85e1430e424c0c35191208e9edb49bfdc72894c3eff",
+  "role": "Development-only semantic prior; text strings are hypotheses, not new clinical labels or acceptance",
+  "new_image_encoder_inputs": 0,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false,
+  "vocabulary": "Only prompt-used original embedding rows; exact ID remapping, unchanged transformer/position/head weights and last-position pooling",
+  "image_alignment": "Every official vision tensor must match the existing image tower after explicit QKV/attention-pool packing conversion"
+}

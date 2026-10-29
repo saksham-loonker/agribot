@@ -1,0 +1,14 @@
+{
+  "phase69_policy_cases.json": {
+    "uncompressed_sha256": "37230e4c16c706b26f0e2f5c8cbe7f9ffd5499498bfdfc078ef1a0967b46daeb",
+    "uncompressed_bytes": 4091130,
+    "compressed_sha256": "36460f59fce9f2df0e175a1904fff4762ef86e1fc9801620a153b21a230aaf7d",
+    "compressed_bytes": 1346081
+  },
+  "phase69_temporal_cases.json": {
+    "uncompressed_sha256": "73b058fda4f411d6009b3f312837dc73cb15747ca88fcca74f91fc5b40a43f74",
+    "uncompressed_bytes": 6530103,
+    "compressed_sha256": "79bcc69edb5ed5213b90d470514cd68746fad503a88980c2a6222299dc5bc90a",
+    "compressed_bytes": 2124145
+  }
+}

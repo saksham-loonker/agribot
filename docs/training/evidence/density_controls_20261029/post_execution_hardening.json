@@ -1,0 +1,19 @@
+{
+  "changes": [
+    {
+      "path": "model_training/v3/shrinkage_density.py",
+      "executed_sha256": "bc440331a89a53fd0d6ee1bff13cdc2567e03f2b6fa1873d85724bc6fcb2efab",
+      "current_source_lf_sha256": "46d9c149eff82726fe03eee34ec348fb36e50baca0d694fd3152211492d61ab0",
+      "reason": "Zero-mass observations cannot increase the PCA rank bound; completed fits had strictly positive weights.",
+      "completed_results_not_retrained": true
+    },
+    {
+      "path": "model_training/v3/meta_domain_loss.py",
+      "executed_sha256": "0843a746633cea6eecdd0a83f83a97b585ca32eaed66cc477cbb453f91f50735",
+      "current_source_lf_sha256": "4df0996dc1a9f30e13d9b1a7709b76c4e6755607f68361ccccf4cd1a18405310",
+      "reason": "Inner updates preserve frozen parameters and differentiate only trainable parameters; completed LeafFeatureHead runs had all parameters trainable.",
+      "completed_results_not_retrained": true
+    }
+  ],
+  "role": "Tests exercise current Git utilities; immutable executed source bytes remain in executed_sources.zip and bind the recorded training protocols."
+}

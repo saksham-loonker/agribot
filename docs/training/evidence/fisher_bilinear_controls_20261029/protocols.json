@@ -1,0 +1,25 @@
+{
+  "archive_sha256": "429963606c5c8ce3ee7c447a8975f408bc2f952dc472571510aa5f723cc67591",
+  "protocols": [
+    {
+      "path": "phase220_full_fisher/native/protocol.json",
+      "sha256": "9b4196c931f856e5b5438efaa389eb343c04ff0f62942a763a7608010087869b",
+      "bytes": 102594
+    },
+    {
+      "path": "phase220_full_fisher/mobile/protocol.json",
+      "sha256": "2bf37ba3937d58c58af037fecd4d92fbf1375a743293434cfcd8a44120e1f44c",
+      "bytes": 534320
+    },
+    {
+      "path": "phase221_bilinear_adaptation/protocol.json",
+      "sha256": "990bf380051b9f6be54e6dc5cbc7b34470bc10a024b62f11581c8483d26afd88",
+      "bytes": 101648
+    },
+    {
+      "path": "phase222_fisher_bilinear_policy/protocol.json",
+      "sha256": "f43d61efd02448096e38e97dedbe76dd37500812a018c20e95ca42f670ca8ff6",
+      "bytes": 1909
+    }
+  ]
+}

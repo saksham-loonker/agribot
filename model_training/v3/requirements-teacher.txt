@@ -1,0 +1,5 @@
+# Optional whole-object pseudo-label audit; installed training CUDA torch stays unchanged.
+-r requirements-campaign.txt
+transformers==5.20.2
+huggingface-hub==2.2.0
+safetensors==0.8.0

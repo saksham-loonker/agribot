@@ -122,6 +122,13 @@ class EnsembleDecisionTest {
     @Test fun `wrong class count is rejected`() {
         assertThrows(IllegalArgumentException::class.java) { EnsembleDecision(3, 2, 0.0, 1.0, null).combine(listOf(floatArrayOf(1f))) }
     }
+
+    @Test fun `invalid calibration and non-finite logits fail instead of reporting a label`() {
+        assertThrows(IllegalArgumentException::class.java) { EnsembleDecision(3, 2, 0.0, Double.POSITIVE_INFINITY, null) }
+        assertThrows(IllegalArgumentException::class.java) { EnsembleDecision(3, 2, Double.NaN, 1.0, null) }
+        val d = EnsembleDecision(3, 2, 0.0, 1.0, null)
+        assertThrows(IllegalArgumentException::class.java) { d.combine(listOf(floatArrayOf(Float.NaN, 0f, 1f))) }
+    }
 }
 
 class VisionManifestTest {
@@ -139,7 +146,34 @@ class VisionManifestTest {
     }
 
     @Test fun `unsupported schema or detector layout is rejected`() {
-        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("\"schema\": 2", "\"schema\": 1")) }
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace(Regex("\"schema\"\\s*:\\s*[2-5]"), "\"schema\": 1")) }
         assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("\"x1\"", "\"cx\"")) }
+    }
+
+    @Test fun `wrong Other mapping and enabled gate without threshold are rejected`() {
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("\"other_index\": 8", "\"other_index\": 1")) }
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("\"energy_gate\": false", "\"energy_gate\": true")) }
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("disease_classifier_0.tflite", "../disease_classifier_0.tflite")) }
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("NHWC", "NCHW")) }
+        assertThrows(IllegalArgumentException::class.java) { VisionManifest.parse(text.replace("0.48500001430511475", "123.675")) }
+    }
+
+    @Test fun `primary recovery rejects changed thresholds scope and preprocessing`() {
+        val text = requireNotNull(javaClass.getResourceAsStream("/primary_model_manifest.json"))
+            .bufferedReader().use { it.readText() }
+        val m = VisionManifest.parse(text)
+        assertEquals(com.sakshyam.agribot.domain.scan.PrimaryImagePolicy(), m.primaryPolicy)
+        assertEquals(224, m.contextModel!!.inputSize)
+        for ((before, after) in listOf(
+            "primary_visible_view" to "whole_plant",
+            "\"minimum_frames\": 7" to "\"minimum_frames\": 3",
+            "\"healthy_min\": 0.85" to "\"healthy_min\": 0.5",
+            "canonical_whole_letterbox_gray114" to "center_crop",
+            "canonical_full_roi_letterbox_pad10_gray114" to "unpadded_roi",
+            "compact_negative_H" to "adapted_dino_H",
+        )) {
+            assertTrue("fixture must modify $before", text.contains(before))
+            assertThrows("changed contract $before", IllegalArgumentException::class.java) { VisionManifest.parse(text.replace(before, after)) }
+        }
     }
 }

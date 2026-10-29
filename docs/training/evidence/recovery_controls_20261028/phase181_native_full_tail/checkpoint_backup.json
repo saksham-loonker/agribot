@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "backup_directory": "C:\\Users\\Manisha\\agribot\\.toolchains\\model-checkpoints\\phase181",
+  "sha256": {
+    "best.pt": "2219da8bd08d4d2bff4de1d2ae2bb482f96ed4a1d34da5eb2092d376f8f3e6fa",
+    "last.pt": "60144dfe2285eacc5705762e0f15198e57cdfa604612835c42fcba461a375c63"
+  },
+  "ram_copies_removed_after_both_ends_verified": true,
+  "reason": "Reclaim 407 MB volatile RAM for bounded full-mobile objective ablation; exact checkpoints remain on laptop",
+  "restoration_required_before_any_phase181_weight_reload": true
+}

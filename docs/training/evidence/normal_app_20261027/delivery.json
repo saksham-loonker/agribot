@@ -1,0 +1,26 @@
+{
+  "debug_transfer": {
+    "path": "C:\\Users\\Manisha\\agribot\\.toolchains\\app-candidates\\2.0.4-normal\\agribot-2.0.4-normal-pc-debug.apk",
+    "apk_sha256": "fcd4d1596e5c2f6a0410a758475d8f32f704d98ccf7a1eda93c5c2b3259dc30c",
+    "byte_identical": true
+  },
+  "release_transfer": {
+    "path": "C:\\Users\\Manisha\\agribot\\.toolchains\\app-candidates\\2.0.4-normal\\agribot-2.0.4-normal-release-unsigned.apk",
+    "apk_sha256": "d3ef6ffbd9959768232b79f0d30a4b1f976e3aa759c8aded277ecdff4a398a75",
+    "byte_identical": true
+  },
+  "debug_apk": "C:\\Users\\Manisha\\agribot\\.toolchains\\app-candidates\\2.0.4-normal\\agribot-2.0.4-normal-debug.apk",
+  "debug_sha256": "59e15456ffc2ec65a0a8f371ec66d28cd5f3d75a3e99d0b67a6f610a660733a0",
+  "debug_bytes": 138039963,
+  "debug_certificate_sha256": "8567362c2737a9ff86771051894a8d6b67fd1d17eb32756dc5738328595f77b3",
+  "certificate_matches_2_0_3": true,
+  "apk_payloads_unchanged_by_resigning": true,
+  "release_apk": "C:\\Users\\Manisha\\agribot\\.toolchains\\app-candidates\\2.0.4-normal\\agribot-2.0.4-normal-release-unsigned.apk",
+  "release_sha256": "d3ef6ffbd9959768232b79f0d30a4b1f976e3aa759c8aded277ecdff4a398a75",
+  "release_bytes": 111048119,
+  "release_signed": false,
+  "model_manifest_sha256": "b9ecdf557015e847bb4a4d76b622ab66100c036effa86e5a63c151e32de15f4f",
+  "model_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
+  "physical_phone_tested": false,
+  "recognition_repair_qualified": false
+}

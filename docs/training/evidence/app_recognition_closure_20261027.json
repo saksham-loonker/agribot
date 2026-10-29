@@ -1,0 +1,2057 @@
+{
+  "schema": 1,
+  "campaign": "/home/genesis/agribot-data/recognition_campaign_20261024",
+  "cold_olid_used": false,
+  "ad_independent": false,
+  "artifacts": [
+    {
+      "path": "phase46_paper_primary/complete.json",
+      "sha256": "b929340a8ec615191df31cd6af927951ee7d63011db8debdb73f589724318d27",
+      "summary": {
+        "protocol_sha256": "ad473a31c47a81e9044fbdaa777e843f380ff31414d83fabbea33a02d32248b1",
+        "base_maps_sha256": "3f963182e8dc4fd5f0b4ade6f53849fc72076569a9191bca35bb0cf43125a50f",
+        "new_maps_sha256": "cd278de0dbac4eacc8f70ed4e81b7bb2bf47796afbd46ed69e3afb88decd60c0",
+        "fitting_rows_sha256": "d2d3c52467e4738df71026c091add67295086463a8cbe4cac995910ec34339b0",
+        "new_inputs_sha256": "7c27b7843b61d76877e6cdf5064c94f2808f08ddaf1e5203c32d6ef57c4e515d",
+        "source_files_sha256": "1aeaa7437550787704bea86e4f6cce0bbafe5d01d729c06d765e7a7ee7eb65f6",
+        "reused_spatial_maps": 45664,
+        "added_primary_rows": 2340,
+        "new_cnn_maps": 2338,
+        "new_dino_inference": 0,
+        "quarantined_rows": 0,
+        "fitting_rows": 34225,
+        "elapsed_seconds": 7.6032736169872805,
+        "cold_olid_used": false,
+        "context_cache_sha256": "84e8657f9bd20e84e56707fb8f3f22285fbf4080585b7a3eb961493907ad1d01",
+        "context_maps_sha256": "8c546119c4e479d2b95f18544ccc0198d6daf21defd848e184c1931e5386c918"
+      }
+    },
+    {
+      "path": "phase46_paper_primary/head/result.json",
+      "sha256": "287a19668d2b6d58ce12725a5fd6e0a10369f298252bd2e9cc7482e44fb62d60",
+      "summary": {
+        "protocol": {
+          "hypothesis": "Spatial evidence before global average pooling retains small unhealthy regions",
+          "map_contract": {
+            "maps_sha256": "3f963182e8dc4fd5f0b4ade6f53849fc72076569a9191bca35bb0cf43125a50f",
+            "protocol_sha256": "cd67f0654c604a28bdbae74d83ef0b97d781c4e52bbbee0e7bca7be48e5ec91e",
+            "preprocessing": {
+              "model_training/v2/final/canon.py": "1a90cf3e2db691bb94da09b5134b9463d7edf6f7cf1cd1b41bc61cf84a176a13",
+              "tests/model_evaluation/canonical_runtime.py": "c2734b4886de3c6f5aeb4b8b8f94e4ba4220e9c7aa92bd462e5571e2df51893e",
+              "model_training/v3/app_eval.py:classifier_letterbox_input": "d05e356d69acbc9ec4a52f27062f01371af56332ac3185bfd8c55bbd87e4f3e6"
+            },
+            "runtime": {
+              "torch": "2.11.0+cu128",
+              "timm": "1.0.30",
+              "numpy": "2.5.2",
+              "Pillow": "12.3.0",
+              "opencv-python": "5.0.0.93"
+            },
+            "preparation_source_manifest_sha256": "62eca405fc2763c06eec15863eb79226cb468ea17b5a6c1d0704d6ce24de84f8",
+            "primary_bundle_sha256": "43e4bb99d6cb1164f2d63ca370316f1cb877271982ffb53fa1690a95d2fa0a47",
+            "fitting_rows_sha256": "c3f0bfaa53cc2cd055c21222926f7bbdbc7db19a4b56bf4320aa3f550bafb9b6",
+            "input_descriptors_sha256": "393ae4b6e8ed72c7330096c5842828ce8f18c49dd3b883cf23ec700d031312c8"
+          },
+          "data_identity": {
+            "supervised_checkpoint_sha256": "865ec8d429bb3a84deb8be992adcba79b9c4af8de4cdb3bf6df9e3e9361230dc",
+            "rows_sha256": "928f6bd167d0370f9e598dc4193c05942f58a81a4e8707a2bcf47ddc2a4652f2",
+            "internal_baseline_sha256": "afa614feb9585745595260c6ed11f581ea33a0aa3d99da512b17ef47ca2c1181",
+            "baseline_manifest_sha256": "b9ecdf557015e847bb4a4d76b622ab66100c036effa86e5a63c151e32de15f4f",
+            "negative_checkpoint_sha256": "5d4384f5d1abeb40fe812b8317ebc8bc73a63c08475e1debac74bee0c6269f05",
+            "negative_calibration_sha256": "d165ce0b70613b8267a20b6602c607ee482c6883babe0ec96ef92842aeb53c27",
+            "negative_mode": "cvar_bce",
+            "whole_reference_sha256": "4604c30ee9a69ad05a39b88646fb19bac564c916461e8cc063b335e2412ec33f",
+            "old_paths_sha256": "605331cf059a207a210b554f421bab98741670f1a2ac66110cc4c642bd3ccace",
+            "cold_olid_used": false,
+            "ad_independent": false
+          },
+          "head": "Shared channel LayerNorm/Linear576->64/GELU/Linear1, normalized smooth minimum over 49 spatial locations",
+          "supervision": "Only aggregate leaf/primary-image targets, never targets copied to each patch or detected AD ROI",
+          "loss": "weighted BCE, negative cost 4",
+          "sampling": "class/source/family",
+          "seed": 991,
+          "epochs": 60,
+          "lr": 0.001,
+          "checkpoint_epochs": [
+            0,
+            4,
+            9,
+            19,
+            39,
+            59
+          ],
+          "leaf_veto_minima": [
+            0.2,
+            0.5
+          ],
+          "whole_positive_min": 0.85,
+          "whole_negative_max": 0.001,
+          "maximum_app_checks": 12,
+          "original_encoders_frozen": true,
+          "reference_healthy_and_disease_exact": true,
+          "cold_olid_used": false,
+          "ad_independent": false,
+          "script_sha256": "4e82b9867e331d6c7d3321280454aea670062990eac20ee655d8aded514cae12",
+          "head_source_sha256": "05a53513f70e3eb37350edd10415440f036c91c3b3d78e530c3ee105496e0f91",
+          "stopping_rule": "Stop if none of 12 fixed checkpoint/policy checks passes unchanged app gates; no architecture or threshold expansion",
+          "primary_scene_extension": {
+            "protocol_sha256": "ad473a31c47a81e9044fbdaa777e843f380ff31414d83fabbea33a02d32248b1",
+            "base_maps_sha256": "3f963182e8dc4fd5f0b4ade6f53849fc72076569a9191bca35bb0cf43125a50f",
+            "new_maps_sha256": "cd278de0dbac4eacc8f70ed4e81b7bb2bf47796afbd46ed69e3afb88decd60c0",
+            "fitting_rows_sha256": "d2d3c52467e4738df71026c091add67295086463a8cbe4cac995910ec34339b0",
+            "new_inputs_sha256": "7c27b7843b61d76877e6cdf5064c94f2808f08ddaf1e5203c32d6ef57c4e515d",
+            "source_files_sha256": "1aeaa7437550787704bea86e4f6cce0bbafe5d01d729c06d765e7a7ee7eb65f6",
+            "reused_spatial_maps": 45664,
+            "added_primary_rows": 2340,
+            "new_cnn_maps": 2338,
+            "new_dino_inference": 0,
+            "quarantined_rows": 0,
+            "fitting_rows": 34225,
+            "elapsed_seconds": 7.6032736169872805,
+            "cold_olid_used": false,
+            "context_cache_sha256": "84e8657f9bd20e84e56707fb8f3f22285fbf4080585b7a3eb961493907ad1d01",
+            "context_maps_sha256": "8c546119c4e479d2b95f18544ccc0198d6daf21defd848e184c1931e5386c918"
+          }
+        },
+        "best": {
+          "checks": {
+            "old_retention": false,
+            "old_field_healthy": true,
+            "coarse_retention": true,
+            "internal_retention": false,
+            "internal_healthy_each_source": true,
+            "original_disease_and_healthy_exact": true
+          },
+          "passed": false,
+          "metrics": {
+            "development": {
+              "healthy_n": 26,
+              "healthy_correct": 22,
+              "false_healthy": 4,
+              "supported_disease_correct": 446,
+              "by_source": {
+                "plantdoc": {
+                  "n": 231,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 3
+                },
+                "tomatovillage": {
+                  "n": 461,
+                  "healthy_recall": 0.7894736842105263,
+                  "false_healthy": 1
+                }
+              }
+            },
+            "public": {
+              "healthy_n": 80,
+              "healthy_correct": 68,
+              "false_healthy": 9,
+              "supported_disease_correct": 521,
+              "by_source": {
+                "plantdoc": {
+                  "n": 225,
+                  "healthy_recall": 0.375,
+                  "false_healthy": 4
+                },
+                "plantvillage": {
+                  "n": 255,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 4
+                },
+                "tomatovillage": {
+                  "n": 461,
+                  "healthy_recall": 0.6818181818181818,
+                  "false_healthy": 1
+                }
+              }
+            },
+            "prior_test": {
+              "healthy_n": 81,
+              "healthy_correct": 68,
+              "false_healthy": 10,
+              "supported_disease_correct": 558,
+              "by_source": {
+                "plantdoc": {
+                  "n": 225,
+                  "healthy_recall": 0.375,
+                  "false_healthy": 4
+                },
+                "plantvillage": {
+                  "n": 255,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 4
+                },
+                "tomatovillage": {
+                  "n": 489,
+                  "healthy_recall": 0.6521739130434783,
+                  "false_healthy": 2
+                }
+              }
+            },
+            "taiwan": {
+              "healthy_n": 22,
+              "healthy_correct": 21,
+              "false_healthy": 0,
+              "supported_disease_correct": 11,
+              "by_source": {
+                "taiwan": {
+                  "n": 127,
+                  "healthy_recall": 0.9545454545454546,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "phase2_selection": {
+              "healthy_n": 39,
+              "healthy_correct": 16,
+              "false_healthy": 4,
+              "supported_disease_correct": 129,
+              "by_source": {
+                "bangladesh_classification": {
+                  "n": 459,
+                  "healthy_recall": 0.41025641025641024,
+                  "false_healthy": 4
+                }
+              }
+            },
+            "phase5_selection": {
+              "healthy_n": 248,
+              "healthy_correct": 205,
+              "false_healthy": 12,
+              "supported_disease_correct": 29,
+              "by_source": {
+                "swtt5wy2pr": {
+                  "n": 460,
+                  "healthy_recall": 0.907563025210084,
+                  "false_healthy": 4
+                },
+                "tom2024": {
+                  "n": 579,
+                  "healthy_recall": 0.751937984496124,
+                  "false_healthy": 8
+                }
+              }
+            },
+            "original": {
+              "healthy_n": 26,
+              "healthy_correct": 20,
+              "false_healthy": 3,
+              "supported_disease_correct": 435,
+              "by_source": {
+                "plantdoc": {
+                  "n": 226,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 2
+                },
+                "tomatovillage": {
+                  "n": 457,
+                  "healthy_recall": 0.7391304347826086,
+                  "false_healthy": 1
+                }
+              }
+            },
+            "expanded": {
+              "healthy_n": 380,
+              "healthy_correct": 354,
+              "false_healthy": 263,
+              "supported_disease_correct": 138,
+              "by_source": {
+                "pakistan": {
+                  "n": 70,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 3
+                },
+                "tlid": {
+                  "n": 1463,
+                  "healthy_recall": 0.9295392953929539,
+                  "false_healthy": 260
+                }
+              }
+            }
+          },
+          "internal_metrics": {
+            "ad_greenhouse": {
+              "healthy_n": 29,
+              "healthy_correct": 22,
+              "false_healthy": 8,
+              "supported_disease_correct": 0,
+              "by_source": {
+                "ad_greenhouse": {
+                  "n": 94,
+                  "healthy_recall": 0.7586206896551724,
+                  "false_healthy": 8
+                }
+              }
+            },
+            "swtt5wy2pr": {
+              "healthy_n": 0,
+              "healthy_correct": 0,
+              "false_healthy": 0,
+              "supported_disease_correct": 11,
+              "by_source": {
+                "swtt5wy2pr": {
+                  "n": 55,
+                  "healthy_recall": 0.0,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "tom2024": {
+              "healthy_n": 53,
+              "healthy_correct": 40,
+              "false_healthy": 2,
+              "supported_disease_correct": 0,
+              "by_source": {
+                "tom2024": {
+                  "n": 125,
+                  "healthy_recall": 0.7547169811320755,
+                  "false_healthy": 2
+                }
+              }
+            }
+          },
+          "worst_healthy": 0.751937984496124,
+          "mean_healthy": 0.793209670123364,
+          "old_failures": [
+            {
+              "cohort": "public",
+              "metric": "all_false_healthy",
+              "observed": 9,
+              "required": 6,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "public",
+              "metric": "unsupported_tomato_false_known",
+              "observed": 11,
+              "required": 7,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "public",
+              "metric": "non_tomato_false_known",
+              "observed": 14,
+              "required": 13,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "prior_test",
+              "metric": "all_false_healthy",
+              "observed": 10,
+              "required": 6,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "prior_test",
+              "metric": "unsupported_tomato_false_known",
+              "observed": 11,
+              "required": 7,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "prior_test",
+              "metric": "non_tomato_false_known",
+              "observed": 14,
+              "required": 13,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "phase2_selection",
+              "metric": "all_false_healthy",
+              "observed": 4,
+              "required": 3,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "phase2_selection",
+              "metric": "unsupported_tomato_false_known",
+              "observed": 34,
+              "required": 33,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "phase5_selection",
+              "metric": "all_false_healthy",
+              "observed": 12,
+              "required": 11,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "expanded",
+              "metric": "all_false_healthy",
+              "observed": 263,
+              "required": 254,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "expanded",
+              "metric": "unsupported_tomato_false_known",
+              "observed": 288,
+              "required": 282,
+              "direction": "maximum"
+            }
+          ],
+          "internal_failures": [
+            {
+              "cohort": "ad_greenhouse",
+              "metric": "all_false_healthy",
+              "observed": 8,
+              "required": 7,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "ad_greenhouse",
+              "metric": "unsupported_tomato_false_known",
+              "observed": 12,
+              "required": 11,
+              "direction": "maximum"
+            }
+          ],
+          "epoch": 59,
+          "calibration": [
+            0.25831127486128,
+            1.1878635978876424
+          ],
+          "leaf_cutoff": 0.2,
+          "policy": {
+            "healthy_min": 0.85,
+            "negative_healthy_max": 0.001,
+            "genus_min": 0.0,
+            "protect_suspected_disease": true,
+            "preserve_original_healthy": true,
+            "in_domain_other_max": 0.1,
+            "in_domain_disease_mass_min": 0.6
+          }
+        },
+        "passing": 0,
+        "evaluated_policies": 12,
+        "checkpoint_sha256": "164c1a7a45f64497b6f329543bd0753b657b368eeeb89cb7a4ace4ffa7974f88",
+        "selected_epoch": 59,
+        "restored_head_error": 0.0,
+        "elapsed_seconds": 4.131585979019292,
+        "encoder_weights_trained": false,
+        "cold_olid_used": false
+      }
+    },
+    {
+      "path": "phase47_scoped_paper/result.json",
+      "sha256": "928c0b30bc8d1333ae40f7a0c6f80812774b563243d6ab02540a3adabbc5bab2",
+      "summary": {
+        "protocol": {
+          "hypothesis": "Combine scoped field recovery with the newly supervised primary-paper spatial expert; no source-ID routing",
+          "data_identity": {
+            "supervised_checkpoint_sha256": "865ec8d429bb3a84deb8be992adcba79b9c4af8de4cdb3bf6df9e3e9361230dc",
+            "rows_sha256": "928f6bd167d0370f9e598dc4193c05942f58a81a4e8707a2bcf47ddc2a4652f2",
+            "internal_baseline_sha256": "afa614feb9585745595260c6ed11f581ea33a0aa3d99da512b17ef47ca2c1181",
+            "baseline_manifest_sha256": "b9ecdf557015e847bb4a4d76b622ab66100c036effa86e5a63c151e32de15f4f",
+            "negative_checkpoint_sha256": "5d4384f5d1abeb40fe812b8317ebc8bc73a63c08475e1debac74bee0c6269f05",
+            "negative_calibration_sha256": "d165ce0b70613b8267a20b6602c607ee482c6883babe0ec96ef92842aeb53c27",
+            "negative_mode": "cvar_bce",
+            "whole_reference_sha256": "4604c30ee9a69ad05a39b88646fb19bac564c916461e8cc063b335e2412ec33f",
+            "old_paths_sha256": "605331cf059a207a210b554f421bab98741670f1a2ac66110cc4c642bd3ccace",
+            "cold_olid_used": false,
+            "ad_independent": false
+          },
+          "opened_feature_cache_sha256": "9bce9b7c6cfa7b2e6b053180eedfa0d01ab3978000efac811fb8058292bd0020",
+          "context_sha256": "9ae04b6b070253d944ee0a3d0c3a6ed02320c7cbb50e80e728f78cf3e2daacf9",
+          "context_calibration_sha256": "626061bda40fc92ced416d90661b5278361ae9f73d0afc333362c76fbed034b5",
+          "genus_sha256": "d6aa6d6e089861a5a44dcf9dac4d74f91e22d727930c8f230d3062ee4dce6b82",
+          "genus_calibration_sha256": "a728edfd52402fbe787dd2c1b6ad10b68f5a05e360e2663bd1903e2ea670b04f",
+          "positive_leaf_sha256": "a002b19ff03a167384feddc65ff43057cc54f1bf9540a450300fffbeec6073d9",
+          "negative_leaf_sha256": "74477b0edc4626b3c0b62c5175c429571ce30e5798dd7b93fbb905e3a8355b48",
+          "spatial_sha256": "164c1a7a45f64497b6f329543bd0753b657b368eeeb89cb7a4ace4ffa7974f88",
+          "map_contract": {
+            "maps_sha256": "3f963182e8dc4fd5f0b4ade6f53849fc72076569a9191bca35bb0cf43125a50f",
+            "protocol_sha256": "cd67f0654c604a28bdbae74d83ef0b97d781c4e52bbbee0e7bca7be48e5ec91e",
+            "preprocessing": {
+              "model_training/v2/final/canon.py": "1a90cf3e2db691bb94da09b5134b9463d7edf6f7cf1cd1b41bc61cf84a176a13",
+              "tests/model_evaluation/canonical_runtime.py": "c2734b4886de3c6f5aeb4b8b8f94e4ba4220e9c7aa92bd462e5571e2df51893e",
+              "model_training/v3/app_eval.py:classifier_letterbox_input": "d05e356d69acbc9ec4a52f27062f01371af56332ac3185bfd8c55bbd87e4f3e6"
+            },
+            "runtime": {
+              "torch": "2.11.0+cu128",
+              "timm": "1.0.30",
+              "numpy": "2.5.2",
+              "Pillow": "12.3.0",
+              "opencv-python": "5.0.0.93"
+            },
+            "preparation_source_manifest_sha256": "62eca405fc2763c06eec15863eb79226cb468ea17b5a6c1d0704d6ce24de84f8",
+            "primary_bundle_sha256": "43e4bb99d6cb1164f2d63ca370316f1cb877271982ffb53fa1690a95d2fa0a47",
+            "fitting_rows_sha256": "c3f0bfaa53cc2cd055c21222926f7bbdbc7db19a4b56bf4320aa3f550bafb9b6",
+            "input_descriptors_sha256": "393ae4b6e8ed72c7330096c5842828ce8f18c49dd3b883cf23ec700d031312c8"
+          },
+          "context_min": 0.5,
+          "genus_rule": "Binary primary-crop classification at .5, not an unvalidated .95 confidence requirement",
+          "healthy_min": 0.85,
+          "negative_max": 0.001,
+          "positive_leaf_min": 0.1,
+          "leaf_negative_max": 0.001,
+          "spatial_scope": "Natural multi-leaf conflicts require corroboration; isolated recovery requires strong agreement across all actual leaf views",
+          "spatial_strong_unhealthy_probability": 0.8,
+          "spatial_partial_unhealthy_probability": 0.7,
+          "spatial_partial_leaves": 2,
+          "original_correct_healthy_count_must_not_drop": true,
+          "original_disease_exact": true,
+          "maximum_policies": 1,
+          "cold_olid_used": false,
+          "ad_independent": false,
+          "script_sha256": "dff80bf059f0cc66ad446f931e86b5424ca2ce6de9cc95fbc8fa523c2c626597",
+          "stopping_rule": "Stop this fixed route if any unchanged original or internal gate fails; no threshold expansion",
+          "spatial_training_result_sha256": "287a19668d2b6d58ce12725a5fd6e0a10369f298252bd2e9cc7482e44fb62d60",
+          "isolated_scene_rule": "Context below .5, explicit primary crop, at least one real leaf, all center/full leaf-view probabilities at least .95, plus existing whole positive and compact confirmation",
+          "isolated_spatial_healthy_min": 0.95,
+          "negative_whole_scope": "Field CVaR only for matching natural scenes; compact negative leaf evidence remains available in both scopes"
+        },
+        "candidate": {
+          "checks": {
+            "old_retention": false,
+            "old_field_healthy": false,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true
+          },
+          "passed": false,
+          "metrics": {
+            "development": {
+              "healthy_n": 26,
+              "healthy_correct": 20,
+              "false_healthy": 3,
+              "supported_disease_correct": 446,
+              "by_source": {
+                "plantdoc": {
+                  "n": 231,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 3
+                },
+                "tomatovillage": {
+                  "n": 461,
+                  "healthy_recall": 0.6842105263157895,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "public": {
+              "healthy_n": 80,
+              "healthy_correct": 67,
+              "false_healthy": 5,
+              "supported_disease_correct": 521,
+              "by_source": {
+                "plantdoc": {
+                  "n": 225,
+                  "healthy_recall": 0.375,
+                  "false_healthy": 4
+                },
+                "plantvillage": {
+                  "n": 255,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                },
+                "tomatovillage": {
+                  "n": 461,
+                  "healthy_recall": 0.6363636363636364,
+                  "false_healthy": 1
+                }
+              }
+            },
+            "prior_test": {
+              "healthy_n": 81,
+              "healthy_correct": 61,
+              "false_healthy": 5,
+              "supported_disease_correct": 558,
+              "by_source": {
+                "plantdoc": {
+                  "n": 225,
+                  "healthy_recall": 0.375,
+                  "false_healthy": 4
+                },
+                "plantvillage": {
+                  "n": 255,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                },
+                "tomatovillage": {
+                  "n": 489,
+                  "healthy_recall": 0.34782608695652173,
+                  "false_healthy": 1
+                }
+              }
+            },
+            "taiwan": {
+              "healthy_n": 22,
+              "healthy_correct": 22,
+              "false_healthy": 0,
+              "supported_disease_correct": 11,
+              "by_source": {
+                "taiwan": {
+                  "n": 127,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "phase2_selection": {
+              "healthy_n": 39,
+              "healthy_correct": 9,
+              "false_healthy": 2,
+              "supported_disease_correct": 129,
+              "by_source": {
+                "bangladesh_classification": {
+                  "n": 459,
+                  "healthy_recall": 0.23076923076923078,
+                  "false_healthy": 2
+                }
+              }
+            },
+            "phase5_selection": {
+              "healthy_n": 248,
+              "healthy_correct": 156,
+              "false_healthy": 11,
+              "supported_disease_correct": 29,
+              "by_source": {
+                "swtt5wy2pr": {
+                  "n": 460,
+                  "healthy_recall": 0.5042016806722689,
+                  "false_healthy": 4
+                },
+                "tom2024": {
+                  "n": 579,
+                  "healthy_recall": 0.7441860465116279,
+                  "false_healthy": 7
+                }
+              }
+            },
+            "original": {
+              "healthy_n": 26,
+              "healthy_correct": 18,
+              "false_healthy": 3,
+              "supported_disease_correct": 435,
+              "by_source": {
+                "plantdoc": {
+                  "n": 226,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 2
+                },
+                "tomatovillage": {
+                  "n": 457,
+                  "healthy_recall": 0.6521739130434783,
+                  "false_healthy": 1
+                }
+              }
+            },
+            "expanded": {
+              "healthy_n": 380,
+              "healthy_correct": 311,
+              "false_healthy": 255,
+              "supported_disease_correct": 138,
+              "by_source": {
+                "pakistan": {
+                  "n": 70,
+                  "healthy_recall": 0.9090909090909091,
+                  "false_healthy": 2
+                },
+                "tlid": {
+                  "n": 1463,
+                  "healthy_recall": 0.8157181571815718,
+                  "false_healthy": 253
+                }
+              }
+            }
+          },
+          "internal_metrics": {
+            "ad_greenhouse": {
+              "healthy_n": 29,
+              "healthy_correct": 22,
+              "false_healthy": 7,
+              "supported_disease_correct": 0,
+              "by_source": {
+                "ad_greenhouse": {
+                  "n": 94,
+                  "healthy_recall": 0.7586206896551724,
+                  "false_healthy": 7
+                }
+              }
+            },
+            "swtt5wy2pr": {
+              "healthy_n": 0,
+              "healthy_correct": 0,
+              "false_healthy": 0,
+              "supported_disease_correct": 11,
+              "by_source": {
+                "swtt5wy2pr": {
+                  "n": 55,
+                  "healthy_recall": 0.0,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "tom2024": {
+              "healthy_n": 53,
+              "healthy_correct": 39,
+              "false_healthy": 2,
+              "supported_disease_correct": 0,
+              "by_source": {
+                "tom2024": {
+                  "n": 125,
+                  "healthy_recall": 0.7358490566037735,
+                  "false_healthy": 2
+                }
+              }
+            }
+          },
+          "worst_healthy": 0.5042016806722689,
+          "mean_healthy": 0.6857143683607106,
+          "old_failures": [
+            {
+              "cohort": "public",
+              "metric": "unsupported_tomato_false_known",
+              "observed": 8,
+              "required": 7,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "prior_test",
+              "metric": "unsupported_tomato_false_known",
+              "observed": 8,
+              "required": 7,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "expanded",
+              "metric": "all_false_healthy",
+              "observed": 255,
+              "required": 254,
+              "direction": "maximum"
+            }
+          ],
+          "internal_failures": []
+        },
+        "passing": 0,
+        "cached_spatial_inputs": 643,
+        "new_encoder_inference": 0,
+        "new_training": 0,
+        "cold_olid_used": false
+      }
+    },
+    {
+      "path": "phase48_healthy_feasibility_bound.json",
+      "sha256": "07be82fcdc8d5ae8ac06dec901f3f0861d84e8f313c4073fde7b87751a29d355",
+      "summary": {
+        "purpose": "Optimistic routing feasibility bounds on consumed development; not a candidate or acceptance result",
+        "cold_olid_used": false,
+        "ad_independent": false,
+        "rows": [
+          {
+            "cohort": "development",
+            "source": "plantdoc",
+            "healthy_n": 7,
+            "original_kind_counts": {
+              "HEALTHY": 7
+            },
+            "named_disease_exact_upper_bound": 7,
+            "all_fixed_reference_guards_upper_bound": 7,
+            "fixed_whole_positive_upper_bound": 7,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "development",
+            "source": "tomatovillage",
+            "healthy_n": 19,
+            "original_kind_counts": {
+              "HEALTHY": 13,
+              "UNSURE": 4,
+              "DISEASE": 2
+            },
+            "named_disease_exact_upper_bound": 17,
+            "all_fixed_reference_guards_upper_bound": 17,
+            "fixed_whole_positive_upper_bound": 16,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "public",
+            "source": "plantdoc",
+            "healthy_n": 8,
+            "original_kind_counts": {
+              "HEALTHY": 3,
+              "UNKNOWN_CONDITION": 2,
+              "UNSURE": 3
+            },
+            "named_disease_exact_upper_bound": 8,
+            "all_fixed_reference_guards_upper_bound": 7,
+            "fixed_whole_positive_upper_bound": 3,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "public",
+            "source": "plantvillage",
+            "healthy_n": 50,
+            "original_kind_counts": {
+              "HEALTHY": 50
+            },
+            "named_disease_exact_upper_bound": 50,
+            "all_fixed_reference_guards_upper_bound": 50,
+            "fixed_whole_positive_upper_bound": 50,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "public",
+            "source": "tomatovillage",
+            "healthy_n": 22,
+            "original_kind_counts": {
+              "DISEASE": 7,
+              "HEALTHY": 14,
+              "UNSURE": 1
+            },
+            "named_disease_exact_upper_bound": 15,
+            "all_fixed_reference_guards_upper_bound": 15,
+            "fixed_whole_positive_upper_bound": 15,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "prior_test",
+            "source": "plantdoc",
+            "healthy_n": 8,
+            "original_kind_counts": {
+              "HEALTHY": 3,
+              "UNKNOWN_CONDITION": 2,
+              "UNSURE": 3
+            },
+            "named_disease_exact_upper_bound": 8,
+            "all_fixed_reference_guards_upper_bound": 7,
+            "fixed_whole_positive_upper_bound": 3,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "prior_test",
+            "source": "plantvillage",
+            "healthy_n": 50,
+            "original_kind_counts": {
+              "HEALTHY": 50
+            },
+            "named_disease_exact_upper_bound": 50,
+            "all_fixed_reference_guards_upper_bound": 50,
+            "fixed_whole_positive_upper_bound": 50,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "prior_test",
+            "source": "tomatovillage",
+            "healthy_n": 23,
+            "original_kind_counts": {
+              "DISEASE": 5,
+              "HEALTHY": 8,
+              "UNSURE": 10
+            },
+            "named_disease_exact_upper_bound": 18,
+            "all_fixed_reference_guards_upper_bound": 17,
+            "fixed_whole_positive_upper_bound": 15,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "taiwan",
+            "source": "taiwan",
+            "healthy_n": 22,
+            "original_kind_counts": {
+              "HEALTHY": 21,
+              "UNKNOWN_CONDITION": 1
+            },
+            "named_disease_exact_upper_bound": 22,
+            "all_fixed_reference_guards_upper_bound": 22,
+            "fixed_whole_positive_upper_bound": 22,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "selection_app",
+            "source": "pakistan",
+            "healthy_n": 11,
+            "original_kind_counts": {
+              "HEALTHY": 8,
+              "UNSURE": 3
+            },
+            "named_disease_exact_upper_bound": 11,
+            "all_fixed_reference_guards_upper_bound": 11,
+            "fixed_whole_positive_upper_bound": 11,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "selection_app",
+            "source": "plantdoc",
+            "healthy_n": 3,
+            "original_kind_counts": {
+              "HEALTHY": 3
+            },
+            "named_disease_exact_upper_bound": 3,
+            "all_fixed_reference_guards_upper_bound": 3,
+            "fixed_whole_positive_upper_bound": 3,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "selection_app",
+            "source": "tlid",
+            "healthy_n": 369,
+            "original_kind_counts": {
+              "HEALTHY": 294,
+              "UNKNOWN_CONDITION": 42,
+              "UNSURE": 28,
+              "DISEASE": 5
+            },
+            "named_disease_exact_upper_bound": 364,
+            "all_fixed_reference_guards_upper_bound": 362,
+            "fixed_whole_positive_upper_bound": 343,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "selection_app",
+            "source": "tomatovillage",
+            "healthy_n": 23,
+            "original_kind_counts": {
+              "HEALTHY": 15,
+              "DISEASE": 4,
+              "UNSURE": 4
+            },
+            "named_disease_exact_upper_bound": 19,
+            "all_fixed_reference_guards_upper_bound": 18,
+            "fixed_whole_positive_upper_bound": 17,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "phase2_selection",
+            "source": "bangladesh_classification",
+            "healthy_n": 39,
+            "original_kind_counts": {
+              "DISEASE": 13,
+              "HEALTHY": 9,
+              "UNKNOWN_CONDITION": 10,
+              "UNSURE": 7
+            },
+            "named_disease_exact_upper_bound": 26,
+            "all_fixed_reference_guards_upper_bound": 21,
+            "fixed_whole_positive_upper_bound": 17,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "phase5_selection",
+            "source": "swtt5wy2pr",
+            "healthy_n": 119,
+            "original_kind_counts": {
+              "UNKNOWN_CONDITION": 35,
+              "HEALTHY": 51,
+              "UNSURE": 29,
+              "DISEASE": 4
+            },
+            "named_disease_exact_upper_bound": 115,
+            "all_fixed_reference_guards_upper_bound": 111,
+            "fixed_whole_positive_upper_bound": 110,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "phase5_selection",
+            "source": "tom2024",
+            "healthy_n": 129,
+            "original_kind_counts": {
+              "UNKNOWN_CONDITION": 83,
+              "NO_LEAVES": 23,
+              "HEALTHY": 14,
+              "UNSURE": 9
+            },
+            "named_disease_exact_upper_bound": 129,
+            "all_fixed_reference_guards_upper_bound": 129,
+            "fixed_whole_positive_upper_bound": 116,
+            "healthy_without_real_leaf": 23
+          },
+          {
+            "cohort": "internal",
+            "source": "ad_greenhouse",
+            "healthy_n": 29,
+            "original_kind_counts": {
+              "UNKNOWN_CONDITION": 14,
+              "HEALTHY": 10,
+              "DISEASE": 2,
+              "UNSURE": 3
+            },
+            "named_disease_exact_upper_bound": 27,
+            "all_fixed_reference_guards_upper_bound": 26,
+            "fixed_whole_positive_upper_bound": 22,
+            "healthy_without_real_leaf": 0
+          },
+          {
+            "cohort": "internal",
+            "source": "tom2024",
+            "healthy_n": 53,
+            "original_kind_counts": {
+              "UNKNOWN_CONDITION": 29,
+              "HEALTHY": 6,
+              "NO_LEAVES": 14,
+              "UNSURE": 4
+            },
+            "named_disease_exact_upper_bound": 53,
+            "all_fixed_reference_guards_upper_bound": 53,
+            "fixed_whole_positive_upper_bound": 47,
+            "healthy_without_real_leaf": 14
+          }
+        ]
+      }
+    },
+    {
+      "path": "phase49_partial_cnn/prefix/complete.json",
+      "sha256": "4965e28627b419dee9ad746446462c3d64134ba1a7970531ac5ca7ba2d06ec49",
+      "summary": {
+        "protocol_sha256": "76b628f49c4ce9337adfba4082544909449285739af69fd0261fdb820f54a180",
+        "features_sha256": "cb6c74bd28b56d55372e923aa2d0001a5a1e9c0492b253fb2fc136b726edb4c0",
+        "prefix_state_sha256": "c9955cdcbe9a38c470950c0fb0de534c8e4ebf1ff5020ba6a9fc75c433ac1ceb",
+        "architecture": "mobilenetv3_small_100.lamb_in1k",
+        "cut": 4,
+        "inputs": 48002,
+        "maximum_original_map_error": 0.0,
+        "elapsed_seconds": 53.17790009302553,
+        "new_dino_inference": 0,
+        "cold_olid_used": false
+      }
+    },
+    {
+      "path": "phase49_partial_cnn/head/result.json",
+      "sha256": "312bfc10106b1a71a6843365599732b0ed78614d63a78f1a12ae368eaad16748",
+      "summary": {
+        "protocol": {
+          "hypothesis": "Adapt original CNN final visual stages after the properly scoped paper/scene coverage control, retaining its original frozen prefix",
+          "prefix_complete_sha256": "4965e28627b419dee9ad746446462c3d64134ba1a7970531ac5ca7ba2d06ec49",
+          "fitting_rows_sha256": "d2d3c52467e4738df71026c091add67295086463a8cbe4cac995910ec34339b0",
+          "script_sha256": "43940291e1e0949857e59506f5239964214224045fc4591844a7afcee9aaa47c",
+          "model_source_sha256": "6a15405b83c8378149cc974cc1f43592e2e992660c022122d276f38ce367bd09",
+          "supervision": "Human leaf and primary-image targets within their scopes; no patch targets or AD ROI propagation",
+          "epochs": 16,
+          "minimum_epochs": 5,
+          "early_stop_patience": 4,
+          "seed": 1491,
+          "loss": "BCE with negative cost 4",
+          "sampling": "class/source/family",
+          "tail_learning_rate": 1e-05,
+          "projection_learning_rate": 0.0001,
+          "weight_decay": 0.01,
+          "batch": 512,
+          "ema_decay": 0.995,
+          "batchnorm_running_statistics_frozen": true,
+          "selection": "Single EMA checkpoint by source/class/family weighted validation BCE with negative cost 4; no AUC selection",
+          "later_app_screen": "One fixed scoped-paper protocol with unchanged original/internal app gates; stop if it fails, no threshold or architecture expansion",
+          "deployed_recognizer_unchanged": true,
+          "original_prefix_unchanged": true,
+          "cold_olid_used": false,
+          "ad_independent": false,
+          "restricted_teacher_used": false
+        },
+        "checkpoint_sha256": "8a32e6424b9ecdf565329a9c8fd849c5a2f94dd5e3a11844f74635132e4ce216",
+        "probabilities_sha256": "baaedffbe29ea9a6031174c8d965438419c301f1d06e3ae0e329346ff274fefe",
+        "logits_sha256": "a963f02467d98630d1e6d4768ef4f60556a4395323d8373a63f69648f7094977",
+        "selected_epoch": 6,
+        "calibration": [
+          0.4353758096972165,
+          1.3549892727707131
+        ],
+        "cached_restore_maximum_error": 0.0,
+        "inputs": 48002,
+        "trainable_parameters": 1328361,
+        "elapsed_seconds": 11.04823584103724,
+        "cold_olid_used": false,
+        "app_acceptance_claim": false
+      }
+    },
+    {
+      "path": "phase50_adapted_cnn/result.json",
+      "sha256": "1a4336b7092e9e48254f94fb36a9392998ce1b7f4ea08f14a709bba447330f8a",
+      "summary": {
+        "protocol": {
+          "hypothesis": "Replace the frozen-map spatial head with one properly scoped supervised adaptation of the original CNN final stages; routing thresholds unchanged",
+          "data_identity": {
+            "supervised_checkpoint_sha256": "865ec8d429bb3a84deb8be992adcba79b9c4af8de4cdb3bf6df9e3e9361230dc",
+            "rows_sha256": "928f6bd167d0370f9e598dc4193c05942f58a81a4e8707a2bcf47ddc2a4652f2",
+            "internal_baseline_sha256": "afa614feb9585745595260c6ed11f581ea33a0aa3d99da512b17ef47ca2c1181",
+            "baseline_manifest_sha256": "b9ecdf557015e847bb4a4d76b622ab66100c036effa86e5a63c151e32de15f4f",
+            "negative_checkpoint_sha256": "5d4384f5d1abeb40fe812b8317ebc8bc73a63c08475e1debac74bee0c6269f05",
+            "negative_calibration_sha256": "d165ce0b70613b8267a20b6602c607ee482c6883babe0ec96ef92842aeb53c27",
+            "negative_mode": "cvar_bce",
+            "whole_reference_sha256": "4604c30ee9a69ad05a39b88646fb19bac564c916461e8cc063b335e2412ec33f",
+            "old_paths_sha256": "605331cf059a207a210b554f421bab98741670f1a2ac66110cc4c642bd3ccace",
+            "cold_olid_used": false,
+            "ad_independent": false
+          },
+          "opened_feature_cache_sha256": "9bce9b7c6cfa7b2e6b053180eedfa0d01ab3978000efac811fb8058292bd0020",
+          "context_sha256": "9ae04b6b070253d944ee0a3d0c3a6ed02320c7cbb50e80e728f78cf3e2daacf9",
+          "context_calibration_sha256": "626061bda40fc92ced416d90661b5278361ae9f73d0afc333362c76fbed034b5",
+          "genus_sha256": "d6aa6d6e089861a5a44dcf9dac4d74f91e22d727930c8f230d3062ee4dce6b82",
+          "genus_calibration_sha256": "a728edfd52402fbe787dd2c1b6ad10b68f5a05e360e2663bd1903e2ea670b04f",
+          "positive_leaf_sha256": "a002b19ff03a167384feddc65ff43057cc54f1bf9540a450300fffbeec6073d9",
+          "negative_leaf_sha256": "74477b0edc4626b3c0b62c5175c429571ce30e5798dd7b93fbb905e3a8355b48",
+          "spatial_sha256": "8a32e6424b9ecdf565329a9c8fd849c5a2f94dd5e3a11844f74635132e4ce216",
+          "map_contract": {
+            "maps_sha256": "3f963182e8dc4fd5f0b4ade6f53849fc72076569a9191bca35bb0cf43125a50f",
+            "protocol_sha256": "cd67f0654c604a28bdbae74d83ef0b97d781c4e52bbbee0e7bca7be48e5ec91e",
+            "preprocessing": {
+              "model_training/v2/final/canon.py": "1a90cf3e2db691bb94da09b5134b9463d7edf6f7cf1cd1b41bc61cf84a176a13",
+              "tests/model_evaluation/canonical_runtime.py": "c2734b4886de3c6f5aeb4b8b8f94e4ba4220e9c7aa92bd462e5571e2df51893e",
+              "model_training/v3/app_eval.py:classifier_letterbox_input": "d05e356d69acbc9ec4a52f27062f01371af56332ac3185bfd8c55bbd87e4f3e6"
+            },
+            "runtime": {
+              "torch": "2.11.0+cu128",
+              "timm": "1.0.30",
+              "numpy": "2.5.2",
+              "Pillow": "12.3.0",
+              "opencv-python": "5.0.0.93"
+            },
+            "preparation_source_manifest_sha256": "62eca405fc2763c06eec15863eb79226cb468ea17b5a6c1d0704d6ce24de84f8",
+            "primary_bundle_sha256": "43e4bb99d6cb1164f2d63ca370316f1cb877271982ffb53fa1690a95d2fa0a47",
+            "fitting_rows_sha256": "c3f0bfaa53cc2cd055c21222926f7bbdbc7db19a4b56bf4320aa3f550bafb9b6",
+            "input_descriptors_sha256": "393ae4b6e8ed72c7330096c5842828ce8f18c49dd3b883cf23ec700d031312c8"
+          },
+          "context_min": 0.5,
+          "genus_rule": "Binary primary-crop classification at .5, not an unvalidated .95 confidence requirement",
+          "healthy_min": 0.85,
+          "negative_max": 0.001,
+          "positive_leaf_min": 0.1,
+          "leaf_negative_max": 0.001,
+          "spatial_scope": "Natural multi-leaf conflicts require corroboration; isolated recovery requires strong agreement across all actual leaf views",
+          "spatial_strong_unhealthy_probability": 0.8,
+          "spatial_partial_unhealthy_probability": 0.7,
+          "spatial_partial_leaves": 2,
+          "original_correct_healthy_count_must_not_drop": true,
+          "original_disease_exact": true,
+          "maximum_policies": 1,
+          "cold_olid_used": false,
+          "ad_independent": false,
+          "script_sha256": "cf68713761129dc5906367170a9a2d22dcab282fd9c48d08eee14b2e13044306",
+          "stopping_rule": "Stop this fixed route if any unchanged original or internal gate fails; no threshold expansion",
+          "spatial_training_result_sha256": "312bfc10106b1a71a6843365599732b0ed78614d63a78f1a12ae368eaad16748",
+          "isolated_scene_rule": "Context below .5, explicit primary crop, at least one real leaf, all center/full leaf-view probabilities at least .95, plus existing whole positive and compact confirmation",
+          "isolated_spatial_healthy_min": 0.95,
+          "negative_whole_scope": "Field CVaR only for matching natural scenes; compact negative leaf evidence remains available in both scopes",
+          "leaf_expert": "PartialCnnHealthyTail, original prefix frozen and deployed recognizer unchanged",
+          "adapted_training_result_sha256": "312bfc10106b1a71a6843365599732b0ed78614d63a78f1a12ae368eaad16748",
+          "adapted_probabilities_sha256": "baaedffbe29ea9a6031174c8d965438419c301f1d06e3ae0e329346ff274fefe",
+          "prefix_complete_sha256": "4965e28627b419dee9ad746446462c3d64134ba1a7970531ac5ca7ba2d06ec49"
+        },
+        "candidate": {
+          "checks": {
+            "old_retention": false,
+            "old_field_healthy": false,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true
+          },
+          "passed": false,
+          "metrics": {
+            "development": {
+              "healthy_n": 26,
+              "healthy_correct": 20,
+              "false_healthy": 3,
+              "supported_disease_correct": 446,
+              "by_source": {
+                "plantdoc": {
+                  "n": 231,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 3
+                },
+                "tomatovillage": {
+                  "n": 461,
+                  "healthy_recall": 0.6842105263157895,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "public": {
+              "healthy_n": 80,
+              "healthy_correct": 67,
+              "false_healthy": 5,
+              "supported_disease_correct": 521,
+              "by_source": {
+                "plantdoc": {
+                  "n": 225,
+                  "healthy_recall": 0.375,
+                  "false_healthy": 4
+                },
+                "plantvillage": {
+                  "n": 255,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                },
+                "tomatovillage": {
+                  "n": 461,
+                  "healthy_recall": 0.6363636363636364,
+                  "false_healthy": 1
+                }
+              }
+            },
+            "prior_test": {
+              "healthy_n": 81,
+              "healthy_correct": 63,
+              "false_healthy": 5,
+              "supported_disease_correct": 558,
+              "by_source": {
+                "plantdoc": {
+                  "n": 225,
+                  "healthy_recall": 0.375,
+                  "false_healthy": 4
+                },
+                "plantvillage": {
+                  "n": 255,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                },
+                "tomatovillage": {
+                  "n": 489,
+                  "healthy_recall": 0.43478260869565216,
+                  "false_healthy": 1
+                }
+              }
+            },
+            "taiwan": {
+              "healthy_n": 22,
+              "healthy_correct": 22,
+              "false_healthy": 0,
+              "supported_disease_correct": 11,
+              "by_source": {
+                "taiwan": {
+                  "n": 127,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "phase2_selection": {
+              "healthy_n": 39,
+              "healthy_correct": 9,
+              "false_healthy": 2,
+              "supported_disease_correct": 129,
+              "by_source": {
+                "bangladesh_classification": {
+                  "n": 459,
+                  "healthy_recall": 0.23076923076923078,
+                  "false_healthy": 2
+                }
+              }
+            },
+            "phase5_selection": {
+              "healthy_n": 248,
+              "healthy_correct": 177,
+              "false_healthy": 11,
+              "supported_disease_correct": 29,
+              "by_source": {
+                "swtt5wy2pr": {
+                  "n": 460,
+                  "healthy_recall": 0.6554621848739496,
+                  "false_healthy": 4
+                },
+                "tom2024": {
+                  "n": 579,
+                  "healthy_recall": 0.7674418604651163,
+                  "false_healthy": 7
+                }
+              }
+            },
+            "original": {
+              "healthy_n": 26,
+              "healthy_correct": 20,
+              "false_healthy": 3,
+              "supported_disease_correct": 435,
+              "by_source": {
+                "plantdoc": {
+                  "n": 226,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 2
+                },
+                "tomatovillage": {
+                  "n": 457,
+                  "healthy_recall": 0.7391304347826086,
+                  "false_healthy": 1
+                }
+              }
+            },
+            "expanded": {
+              "healthy_n": 380,
+              "healthy_correct": 305,
+              "false_healthy": 254,
+              "supported_disease_correct": 138,
+              "by_source": {
+                "pakistan": {
+                  "n": 70,
+                  "healthy_recall": 0.9090909090909091,
+                  "false_healthy": 2
+                },
+                "tlid": {
+                  "n": 1463,
+                  "healthy_recall": 0.7994579945799458,
+                  "false_healthy": 252
+                }
+              }
+            }
+          },
+          "internal_metrics": {
+            "ad_greenhouse": {
+              "healthy_n": 29,
+              "healthy_correct": 22,
+              "false_healthy": 7,
+              "supported_disease_correct": 0,
+              "by_source": {
+                "ad_greenhouse": {
+                  "n": 94,
+                  "healthy_recall": 0.7586206896551724,
+                  "false_healthy": 7
+                }
+              }
+            },
+            "swtt5wy2pr": {
+              "healthy_n": 0,
+              "healthy_correct": 0,
+              "false_healthy": 0,
+              "supported_disease_correct": 11,
+              "by_source": {
+                "swtt5wy2pr": {
+                  "n": 55,
+                  "healthy_recall": 0.0,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "tom2024": {
+              "healthy_n": 53,
+              "healthy_correct": 39,
+              "false_healthy": 2,
+              "supported_disease_correct": 0,
+              "by_source": {
+                "tom2024": {
+                  "n": 125,
+                  "healthy_recall": 0.7358490566037735,
+                  "false_healthy": 2
+                }
+              }
+            }
+          },
+          "worst_healthy": 0.6554621848739496,
+          "mean_healthy": 0.7293434478995029,
+          "old_failures": [
+            {
+              "cohort": "public",
+              "metric": "unsupported_tomato_false_known",
+              "observed": 8,
+              "required": 7,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "prior_test",
+              "metric": "unsupported_tomato_false_known",
+              "observed": 8,
+              "required": 7,
+              "direction": "maximum"
+            }
+          ],
+          "internal_failures": []
+        },
+        "passing": 0,
+        "cached_spatial_inputs": 643,
+        "new_encoder_inference": 0,
+        "new_training": 0,
+        "cold_olid_used": false
+      }
+    },
+    {
+      "path": "phase51_dino_adaptation/prefix/complete.json",
+      "sha256": "d43cca6e7275cbbc2f5ca93b2c881aafd424c07130fd8cac4fdc097d7c37c2f0",
+      "summary": {
+        "protocol_sha256": "6ded349dbaf4d01a62887a9c273246901d2cfa204b38b5a524d4df3f04a8c275",
+        "features_sha256": "f0203352da7f020204d9333e31cd0825ea87dc1b698bc26ed2df23a23d506285",
+        "tables_sha256": "7dfaa51fbe338badbd699c1e0c77170685da1d12e9d54419896e927af49b4618",
+        "prefix_state_sha256": "2ef89470703a8b8c030d13261a14d12b000ca490f3cfbc507d0e4761967fcbe2",
+        "inputs": 34161,
+        "bytes": 13485123072,
+        "original_feature_rows_audited": 29274,
+        "maximum_original_feature_error": 4.425644874572754e-06,
+        "elapsed_seconds": 20.153359701973386,
+        "timing_scope": "Recovery audit only; initial preparation timing unavailable",
+        "recovery_audit_sha256": "752bd259af4232cce83d8993ce3dcbc154d95880e492476af29ddb2101759a83",
+        "cold_olid_used": false
+      }
+    },
+    {
+      "path": "phase51_dino_adaptation/prefix/recovery_audit.json",
+      "sha256": "752bd259af4232cce83d8993ce3dcbc154d95880e492476af29ddb2101759a83",
+      "summary": {
+        "passed": true,
+        "purpose": "Recover useful complete tokens; no retraining or acceptance claim",
+        "protocol_sha256": "6ded349dbaf4d01a62887a9c273246901d2cfa204b38b5a524d4df3f04a8c275",
+        "auditor_sha256": "45b9bcce0da65fcd682c712f9e9749a3319f2d36101ae0bcfc85d82b20cceb6d",
+        "old_rows_verified_by_original_features": 29274,
+        "new_rows_verified_by_fresh_prefix": 4887,
+        "maximum_original_feature_error": 4.425644874572754e-06,
+        "maximum_fresh_prefix_error": 0.0,
+        "features_sha256": "f0203352da7f020204d9333e31cd0825ea87dc1b698bc26ed2df23a23d506285",
+        "elapsed_seconds": 20.153359701973386,
+        "cold_olid_used": false
+      }
+    },
+    {
+      "path": "phase51_dino_adaptation/head/result.json",
+      "sha256": "f06ad19791561feabb7d64b00af0581d02d56e16494e6892387743d334cf3792",
+      "summary": {
+        "protocol": {
+          "hypothesis": "Original DINO visual final-block adaptation with scoped Healthy labels and masked original named-condition supervision, preserving the deployed recognizer",
+          "prefix_complete_sha256": "d43cca6e7275cbbc2f5ca93b2c881aafd424c07130fd8cac4fdc097d7c37c2f0",
+          "fitting_rows_sha256": "d2d3c52467e4738df71026c091add67295086463a8cbe4cac995910ec34339b0",
+          "original_named_rows_sha256": "5019534db15e84ccef7ceed0bc9efb40f17ab2a849219559deb6c0e3db4dc10c",
+          "script_sha256": "41d90319dede7a1b5174a4581a8172ecb9aab212f99008800c6e4517c933ce2c",
+          "model_source_sha256": "3dd76ee309b9511fd9910f7239273c977979344649c1d05192ef516f5eabad79",
+          "epochs": 8,
+          "minimum_epochs": 4,
+          "early_stop_patience": 3,
+          "seed": 1519,
+          "loss": "Healthy-versus-rest BCE negative cost 4 plus 0.25 original named-class CE where explicit; coarse/unknown named targets masked",
+          "named_counts": {
+            "0": 1102,
+            "1": 5433,
+            "2": 1034,
+            "3": 3530,
+            "4": 1448,
+            "5": 280,
+            "6": 56,
+            "7": 414,
+            "-1": 20928
+          },
+          "sampling": "binary class/source/family",
+          "tail_learning_rate": 1e-06,
+          "head_learning_rate": 1e-05,
+          "batch": 64,
+          "weight_decay": 0.01,
+          "ema_decay": 0.995,
+          "selection": "Single EMA checkpoint by source/class/family weighted Healthy validation BCE with negative cost 4; no AUC ranking",
+          "original_prefix_fp32": true,
+          "deployed_recognizer_unchanged": true,
+          "later_app_screen": "One unchanged scoped-paper route; no threshold expansion, export or full restored-model replay unless the cheap gates pass",
+          "cold_olid_used": false,
+          "ad_independent": false,
+          "restricted_teacher_used": false
+        },
+        "checkpoint_sha256": "74c0d899ac0ad557904d009e27bbe859d84a70f7a9458f2c3bfffdf5d71922ff",
+        "probabilities_sha256": "e3f6ee125934cede405535150be951923f1fdd4e6e9d66935bc67bb440cf928c",
+        "logits_sha256": "d95867e119db20b65499abc51e5686d18b9ddf85bb59d77a2c8f3c3a9729aa25",
+        "selected_epoch": 7,
+        "calibration": [
+          0.8475648600573817,
+          1.1141187627349216
+        ],
+        "cached_restore_maximum_error": 3.5762786865234375e-06,
+        "reused_fitting_prefix_inputs": 34161,
+        "new_evaluation_prefix_inputs": 13841,
+        "inputs": 48002,
+        "trainable_parameters": 3554697,
+        "elapsed_seconds": 83.16711888398277,
+        "cold_olid_used": false,
+        "app_acceptance_claim": false
+      }
+    },
+    {
+      "path": "phase52_adapted_dino/result.json",
+      "sha256": "790ae14061a3ed6dbff9674b51cf0c520c5ae9d04e25c94e389bbef7764bbe34",
+      "summary": {
+        "protocol": {
+          "hypothesis": "Replace the frozen-map spatial head with one properly scoped supervised adaptation of the original CNN final stages; routing thresholds unchanged",
+          "data_identity": {
+            "supervised_checkpoint_sha256": "865ec8d429bb3a84deb8be992adcba79b9c4af8de4cdb3bf6df9e3e9361230dc",
+            "rows_sha256": "928f6bd167d0370f9e598dc4193c05942f58a81a4e8707a2bcf47ddc2a4652f2",
+            "internal_baseline_sha256": "afa614feb9585745595260c6ed11f581ea33a0aa3d99da512b17ef47ca2c1181",
+            "baseline_manifest_sha256": "b9ecdf557015e847bb4a4d76b622ab66100c036effa86e5a63c151e32de15f4f",
+            "negative_checkpoint_sha256": "5d4384f5d1abeb40fe812b8317ebc8bc73a63c08475e1debac74bee0c6269f05",
+            "negative_calibration_sha256": "d165ce0b70613b8267a20b6602c607ee482c6883babe0ec96ef92842aeb53c27",
+            "negative_mode": "cvar_bce",
+            "whole_reference_sha256": "4604c30ee9a69ad05a39b88646fb19bac564c916461e8cc063b335e2412ec33f",
+            "old_paths_sha256": "605331cf059a207a210b554f421bab98741670f1a2ac66110cc4c642bd3ccace",
+            "cold_olid_used": false,
+            "ad_independent": false
+          },
+          "opened_feature_cache_sha256": "9bce9b7c6cfa7b2e6b053180eedfa0d01ab3978000efac811fb8058292bd0020",
+          "context_sha256": "9ae04b6b070253d944ee0a3d0c3a6ed02320c7cbb50e80e728f78cf3e2daacf9",
+          "context_calibration_sha256": "626061bda40fc92ced416d90661b5278361ae9f73d0afc333362c76fbed034b5",
+          "genus_sha256": "d6aa6d6e089861a5a44dcf9dac4d74f91e22d727930c8f230d3062ee4dce6b82",
+          "genus_calibration_sha256": "a728edfd52402fbe787dd2c1b6ad10b68f5a05e360e2663bd1903e2ea670b04f",
+          "positive_leaf_sha256": "a002b19ff03a167384feddc65ff43057cc54f1bf9540a450300fffbeec6073d9",
+          "negative_leaf_sha256": "74477b0edc4626b3c0b62c5175c429571ce30e5798dd7b93fbb905e3a8355b48",
+          "spatial_sha256": "74c0d899ac0ad557904d009e27bbe859d84a70f7a9458f2c3bfffdf5d71922ff",
+          "map_contract": {
+            "maps_sha256": "3f963182e8dc4fd5f0b4ade6f53849fc72076569a9191bca35bb0cf43125a50f",
+            "protocol_sha256": "cd67f0654c604a28bdbae74d83ef0b97d781c4e52bbbee0e7bca7be48e5ec91e",
+            "preprocessing": {
+              "model_training/v2/final/canon.py": "1a90cf3e2db691bb94da09b5134b9463d7edf6f7cf1cd1b41bc61cf84a176a13",
+              "tests/model_evaluation/canonical_runtime.py": "c2734b4886de3c6f5aeb4b8b8f94e4ba4220e9c7aa92bd462e5571e2df51893e",
+              "model_training/v3/app_eval.py:classifier_letterbox_input": "d05e356d69acbc9ec4a52f27062f01371af56332ac3185bfd8c55bbd87e4f3e6"
+            },
+            "runtime": {
+              "torch": "2.11.0+cu128",
+              "timm": "1.0.30",
+              "numpy": "2.5.2",
+              "Pillow": "12.3.0",
+              "opencv-python": "5.0.0.93"
+            },
+            "preparation_source_manifest_sha256": "62eca405fc2763c06eec15863eb79226cb468ea17b5a6c1d0704d6ce24de84f8",
+            "primary_bundle_sha256": "43e4bb99d6cb1164f2d63ca370316f1cb877271982ffb53fa1690a95d2fa0a47",
+            "fitting_rows_sha256": "c3f0bfaa53cc2cd055c21222926f7bbdbc7db19a4b56bf4320aa3f550bafb9b6",
+            "input_descriptors_sha256": "393ae4b6e8ed72c7330096c5842828ce8f18c49dd3b883cf23ec700d031312c8"
+          },
+          "context_min": 0.5,
+          "genus_rule": "Binary primary-crop classification at .5, not an unvalidated .95 confidence requirement",
+          "healthy_min": 0.85,
+          "negative_max": 0.001,
+          "positive_leaf_min": 0.1,
+          "leaf_negative_max": 0.001,
+          "spatial_scope": "Natural multi-leaf conflicts require corroboration; isolated recovery requires strong agreement across all actual leaf views",
+          "spatial_strong_unhealthy_probability": 0.8,
+          "spatial_partial_unhealthy_probability": 0.7,
+          "spatial_partial_leaves": 2,
+          "original_correct_healthy_count_must_not_drop": true,
+          "original_disease_exact": true,
+          "maximum_policies": 1,
+          "cold_olid_used": false,
+          "ad_independent": false,
+          "script_sha256": "e72a48fc09451c99b6aa694d4b646a097829d9fbe24e09855f32d449503adf12",
+          "stopping_rule": "Stop this fixed route if any unchanged original or internal gate fails; no threshold expansion",
+          "spatial_training_result_sha256": "f06ad19791561feabb7d64b00af0581d02d56e16494e6892387743d334cf3792",
+          "isolated_scene_rule": "Context below .5, explicit primary crop, at least one real leaf, all center/full leaf-view probabilities at least .95, plus existing whole positive and compact confirmation",
+          "isolated_spatial_healthy_min": 0.95,
+          "negative_whole_scope": "Field CVaR only for matching natural scenes; compact negative leaf evidence remains available in both scopes",
+          "leaf_expert": "PartialDinoHealthyTail, original prefix frozen and deployed recognizer unchanged",
+          "adapted_training_result_sha256": "f06ad19791561feabb7d64b00af0581d02d56e16494e6892387743d334cf3792",
+          "adapted_probabilities_sha256": "e3f6ee125934cede405535150be951923f1fdd4e6e9d66935bc67bb440cf928c",
+          "prefix_complete_sha256": "d43cca6e7275cbbc2f5ca93b2c881aafd424c07130fd8cac4fdc097d7c37c2f0"
+        },
+        "candidate": {
+          "checks": {
+            "old_retention": false,
+            "old_field_healthy": true,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": true,
+            "original_disease_exact": true
+          },
+          "passed": false,
+          "metrics": {
+            "development": {
+              "healthy_n": 26,
+              "healthy_correct": 20,
+              "false_healthy": 3,
+              "supported_disease_correct": 446,
+              "by_source": {
+                "plantdoc": {
+                  "n": 231,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 3
+                },
+                "tomatovillage": {
+                  "n": 461,
+                  "healthy_recall": 0.6842105263157895,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "public": {
+              "healthy_n": 80,
+              "healthy_correct": 67,
+              "false_healthy": 5,
+              "supported_disease_correct": 521,
+              "by_source": {
+                "plantdoc": {
+                  "n": 225,
+                  "healthy_recall": 0.375,
+                  "false_healthy": 4
+                },
+                "plantvillage": {
+                  "n": 255,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                },
+                "tomatovillage": {
+                  "n": 461,
+                  "healthy_recall": 0.6363636363636364,
+                  "false_healthy": 1
+                }
+              }
+            },
+            "prior_test": {
+              "healthy_n": 81,
+              "healthy_correct": 62,
+              "false_healthy": 6,
+              "supported_disease_correct": 558,
+              "by_source": {
+                "plantdoc": {
+                  "n": 225,
+                  "healthy_recall": 0.375,
+                  "false_healthy": 4
+                },
+                "plantvillage": {
+                  "n": 255,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                },
+                "tomatovillage": {
+                  "n": 489,
+                  "healthy_recall": 0.391304347826087,
+                  "false_healthy": 2
+                }
+              }
+            },
+            "taiwan": {
+              "healthy_n": 22,
+              "healthy_correct": 22,
+              "false_healthy": 0,
+              "supported_disease_correct": 11,
+              "by_source": {
+                "taiwan": {
+                  "n": 127,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "phase2_selection": {
+              "healthy_n": 39,
+              "healthy_correct": 11,
+              "false_healthy": 2,
+              "supported_disease_correct": 129,
+              "by_source": {
+                "bangladesh_classification": {
+                  "n": 459,
+                  "healthy_recall": 0.28205128205128205,
+                  "false_healthy": 2
+                }
+              }
+            },
+            "phase5_selection": {
+              "healthy_n": 248,
+              "healthy_correct": 185,
+              "false_healthy": 11,
+              "supported_disease_correct": 29,
+              "by_source": {
+                "swtt5wy2pr": {
+                  "n": 460,
+                  "healthy_recall": 0.7310924369747899,
+                  "false_healthy": 4
+                },
+                "tom2024": {
+                  "n": 579,
+                  "healthy_recall": 0.7596899224806202,
+                  "false_healthy": 7
+                }
+              }
+            },
+            "original": {
+              "healthy_n": 26,
+              "healthy_correct": 20,
+              "false_healthy": 2,
+              "supported_disease_correct": 435,
+              "by_source": {
+                "plantdoc": {
+                  "n": 226,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 2
+                },
+                "tomatovillage": {
+                  "n": 457,
+                  "healthy_recall": 0.7391304347826086,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "expanded": {
+              "healthy_n": 380,
+              "healthy_correct": 313,
+              "false_healthy": 254,
+              "supported_disease_correct": 138,
+              "by_source": {
+                "pakistan": {
+                  "n": 70,
+                  "healthy_recall": 0.9090909090909091,
+                  "false_healthy": 2
+                },
+                "tlid": {
+                  "n": 1463,
+                  "healthy_recall": 0.8211382113821138,
+                  "false_healthy": 252
+                }
+              }
+            }
+          },
+          "internal_metrics": {
+            "ad_greenhouse": {
+              "healthy_n": 29,
+              "healthy_correct": 22,
+              "false_healthy": 7,
+              "supported_disease_correct": 0,
+              "by_source": {
+                "ad_greenhouse": {
+                  "n": 94,
+                  "healthy_recall": 0.7586206896551724,
+                  "false_healthy": 7
+                }
+              }
+            },
+            "swtt5wy2pr": {
+              "healthy_n": 0,
+              "healthy_correct": 0,
+              "false_healthy": 0,
+              "supported_disease_correct": 11,
+              "by_source": {
+                "swtt5wy2pr": {
+                  "n": 55,
+                  "healthy_recall": 0.0,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "tom2024": {
+              "healthy_n": 53,
+              "healthy_correct": 39,
+              "false_healthy": 2,
+              "supported_disease_correct": 0,
+              "by_source": {
+                "tom2024": {
+                  "n": 125,
+                  "healthy_recall": 0.7358490566037735,
+                  "false_healthy": 2
+                }
+              }
+            }
+          },
+          "worst_healthy": 0.7310924369747899,
+          "mean_healthy": 0.746313026428589,
+          "old_failures": [
+            {
+              "cohort": "public",
+              "metric": "unsupported_tomato_false_known",
+              "observed": 8,
+              "required": 7,
+              "direction": "maximum"
+            },
+            {
+              "cohort": "prior_test",
+              "metric": "unsupported_tomato_false_known",
+              "observed": 8,
+              "required": 7,
+              "direction": "maximum"
+            }
+          ],
+          "internal_failures": []
+        },
+        "passing": 0,
+        "cached_spatial_inputs": 643,
+        "new_encoder_inference": 0,
+        "new_training": 0,
+        "cold_olid_used": false
+      }
+    },
+    {
+      "path": "phase53_whole_dino/result.json",
+      "sha256": "1bfd651945e4a391f7ea969ed3d36f13d853951e1294d679df38ce7f0a03ab18",
+      "summary": {
+        "protocol": {
+          "hypothesis": "Require the same adapted recognizer to confirm the whole plant as well as its leaf evidence, preserving every earlier threshold and app gate",
+          "data_identity": {
+            "supervised_checkpoint_sha256": "865ec8d429bb3a84deb8be992adcba79b9c4af8de4cdb3bf6df9e3e9361230dc",
+            "rows_sha256": "928f6bd167d0370f9e598dc4193c05942f58a81a4e8707a2bcf47ddc2a4652f2",
+            "internal_baseline_sha256": "afa614feb9585745595260c6ed11f581ea33a0aa3d99da512b17ef47ca2c1181",
+            "baseline_manifest_sha256": "b9ecdf557015e847bb4a4d76b622ab66100c036effa86e5a63c151e32de15f4f",
+            "negative_checkpoint_sha256": "5d4384f5d1abeb40fe812b8317ebc8bc73a63c08475e1debac74bee0c6269f05",
+            "negative_calibration_sha256": "d165ce0b70613b8267a20b6602c607ee482c6883babe0ec96ef92842aeb53c27",
+            "negative_mode": "cvar_bce",
+            "whole_reference_sha256": "4604c30ee9a69ad05a39b88646fb19bac564c916461e8cc063b335e2412ec33f",
+            "old_paths_sha256": "605331cf059a207a210b554f421bab98741670f1a2ac66110cc4c642bd3ccace",
+            "cold_olid_used": false,
+            "ad_independent": false
+          },
+          "opened_feature_cache_sha256": "9bce9b7c6cfa7b2e6b053180eedfa0d01ab3978000efac811fb8058292bd0020",
+          "context_sha256": "9ae04b6b070253d944ee0a3d0c3a6ed02320c7cbb50e80e728f78cf3e2daacf9",
+          "context_calibration_sha256": "626061bda40fc92ced416d90661b5278361ae9f73d0afc333362c76fbed034b5",
+          "genus_sha256": "d6aa6d6e089861a5a44dcf9dac4d74f91e22d727930c8f230d3062ee4dce6b82",
+          "genus_calibration_sha256": "a728edfd52402fbe787dd2c1b6ad10b68f5a05e360e2663bd1903e2ea670b04f",
+          "positive_leaf_sha256": "a002b19ff03a167384feddc65ff43057cc54f1bf9540a450300fffbeec6073d9",
+          "negative_leaf_sha256": "74477b0edc4626b3c0b62c5175c429571ce30e5798dd7b93fbb905e3a8355b48",
+          "spatial_sha256": "74c0d899ac0ad557904d009e27bbe859d84a70f7a9458f2c3bfffdf5d71922ff",
+          "map_contract": {
+            "maps_sha256": "3f963182e8dc4fd5f0b4ade6f53849fc72076569a9191bca35bb0cf43125a50f",
+            "protocol_sha256": "cd67f0654c604a28bdbae74d83ef0b97d781c4e52bbbee0e7bca7be48e5ec91e",
+            "preprocessing": {
+              "model_training/v2/final/canon.py": "1a90cf3e2db691bb94da09b5134b9463d7edf6f7cf1cd1b41bc61cf84a176a13",
+              "tests/model_evaluation/canonical_runtime.py": "c2734b4886de3c6f5aeb4b8b8f94e4ba4220e9c7aa92bd462e5571e2df51893e",
+              "model_training/v3/app_eval.py:classifier_letterbox_input": "d05e356d69acbc9ec4a52f27062f01371af56332ac3185bfd8c55bbd87e4f3e6"
+            },
+            "runtime": {
+              "torch": "2.11.0+cu128",
+              "timm": "1.0.30",
+              "numpy": "2.5.2",
+              "Pillow": "12.3.0",
+              "opencv-python": "5.0.0.93"
+            },
+            "preparation_source_manifest_sha256": "62eca405fc2763c06eec15863eb79226cb468ea17b5a6c1d0704d6ce24de84f8",
+            "primary_bundle_sha256": "43e4bb99d6cb1164f2d63ca370316f1cb877271982ffb53fa1690a95d2fa0a47",
+            "fitting_rows_sha256": "c3f0bfaa53cc2cd055c21222926f7bbdbc7db19a4b56bf4320aa3f550bafb9b6",
+            "input_descriptors_sha256": "393ae4b6e8ed72c7330096c5842828ce8f18c49dd3b883cf23ec700d031312c8"
+          },
+          "context_min": 0.5,
+          "genus_rule": "Binary primary-crop classification at .5, not an unvalidated .95 confidence requirement",
+          "healthy_min": 0.85,
+          "negative_max": 0.001,
+          "positive_leaf_min": 0.1,
+          "leaf_negative_max": 0.001,
+          "spatial_scope": "Natural multi-leaf conflicts require corroboration; isolated recovery requires strong agreement across all actual leaf views",
+          "spatial_strong_unhealthy_probability": 0.8,
+          "spatial_partial_unhealthy_probability": 0.7,
+          "spatial_partial_leaves": 2,
+          "original_correct_healthy_count_must_not_drop": true,
+          "original_disease_exact": true,
+          "maximum_policies": 1,
+          "cold_olid_used": false,
+          "ad_independent": false,
+          "script_sha256": "c9acbd82c2d0428f826a4a9f9307e934bec00a820640793d562302ec87833c2b",
+          "stopping_rule": "Stop this fixed route if any unchanged original or internal gate fails; no threshold expansion",
+          "spatial_training_result_sha256": "f06ad19791561feabb7d64b00af0581d02d56e16494e6892387743d334cf3792",
+          "isolated_scene_rule": "Context below .5, explicit primary crop, at least one real leaf, all center/full leaf-view probabilities at least .95, plus existing whole positive and compact confirmation",
+          "isolated_spatial_healthy_min": 0.95,
+          "negative_whole_scope": "Field CVaR only for matching natural scenes; compact negative leaf evidence remains available in both scopes",
+          "leaf_expert": "PartialDinoHealthyTail, original prefix frozen and deployed recognizer unchanged",
+          "adapted_training_result_sha256": "f06ad19791561feabb7d64b00af0581d02d56e16494e6892387743d334cf3792",
+          "adapted_probabilities_sha256": "e3f6ee125934cede405535150be951923f1fdd4e6e9d66935bc67bb440cf928c",
+          "prefix_complete_sha256": "d43cca6e7275cbbc2f5ca93b2c881aafd424c07130fd8cac4fdc097d7c37c2f0",
+          "whole_confirmation_min": 0.5,
+          "whole_confirmation_scope": "Only new Healthy proposals, binary whole-primary Healthy decision; original verdict retained on conflict",
+          "whole_input_source_sha256": "5a38747ae6c53d09d7f5f2624a08e07fc1c15a00ab037ad7e27cb30ca1d0fda0"
+        },
+        "candidate": {
+          "checks": {
+            "old_retention": true,
+            "old_field_healthy": false,
+            "coarse_retention": true,
+            "internal_retention": true,
+            "internal_healthy_each_source": false,
+            "original_disease_exact": true
+          },
+          "passed": false,
+          "metrics": {
+            "development": {
+              "healthy_n": 26,
+              "healthy_correct": 20,
+              "false_healthy": 3,
+              "supported_disease_correct": 446,
+              "by_source": {
+                "plantdoc": {
+                  "n": 231,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 3
+                },
+                "tomatovillage": {
+                  "n": 461,
+                  "healthy_recall": 0.6842105263157895,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "public": {
+              "healthy_n": 80,
+              "healthy_correct": 67,
+              "false_healthy": 4,
+              "supported_disease_correct": 521,
+              "by_source": {
+                "plantdoc": {
+                  "n": 225,
+                  "healthy_recall": 0.375,
+                  "false_healthy": 3
+                },
+                "plantvillage": {
+                  "n": 255,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                },
+                "tomatovillage": {
+                  "n": 461,
+                  "healthy_recall": 0.6363636363636364,
+                  "false_healthy": 1
+                }
+              }
+            },
+            "prior_test": {
+              "healthy_n": 81,
+              "healthy_correct": 62,
+              "false_healthy": 5,
+              "supported_disease_correct": 558,
+              "by_source": {
+                "plantdoc": {
+                  "n": 225,
+                  "healthy_recall": 0.375,
+                  "false_healthy": 3
+                },
+                "plantvillage": {
+                  "n": 255,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                },
+                "tomatovillage": {
+                  "n": 489,
+                  "healthy_recall": 0.391304347826087,
+                  "false_healthy": 2
+                }
+              }
+            },
+            "taiwan": {
+              "healthy_n": 22,
+              "healthy_correct": 22,
+              "false_healthy": 0,
+              "supported_disease_correct": 11,
+              "by_source": {
+                "taiwan": {
+                  "n": 127,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "phase2_selection": {
+              "healthy_n": 39,
+              "healthy_correct": 11,
+              "false_healthy": 2,
+              "supported_disease_correct": 129,
+              "by_source": {
+                "bangladesh_classification": {
+                  "n": 459,
+                  "healthy_recall": 0.28205128205128205,
+                  "false_healthy": 2
+                }
+              }
+            },
+            "phase5_selection": {
+              "healthy_n": 248,
+              "healthy_correct": 174,
+              "false_healthy": 11,
+              "supported_disease_correct": 29,
+              "by_source": {
+                "swtt5wy2pr": {
+                  "n": 460,
+                  "healthy_recall": 0.7310924369747899,
+                  "false_healthy": 4
+                },
+                "tom2024": {
+                  "n": 579,
+                  "healthy_recall": 0.6744186046511628,
+                  "false_healthy": 7
+                }
+              }
+            },
+            "original": {
+              "healthy_n": 26,
+              "healthy_correct": 20,
+              "false_healthy": 2,
+              "supported_disease_correct": 435,
+              "by_source": {
+                "plantdoc": {
+                  "n": 226,
+                  "healthy_recall": 1.0,
+                  "false_healthy": 2
+                },
+                "tomatovillage": {
+                  "n": 457,
+                  "healthy_recall": 0.7391304347826086,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "expanded": {
+              "healthy_n": 380,
+              "healthy_correct": 311,
+              "false_healthy": 254,
+              "supported_disease_correct": 138,
+              "by_source": {
+                "pakistan": {
+                  "n": 70,
+                  "healthy_recall": 0.7272727272727273,
+                  "false_healthy": 2
+                },
+                "tlid": {
+                  "n": 1463,
+                  "healthy_recall": 0.8211382113821138,
+                  "false_healthy": 252
+                }
+              }
+            }
+          },
+          "internal_metrics": {
+            "ad_greenhouse": {
+              "healthy_n": 29,
+              "healthy_correct": 20,
+              "false_healthy": 7,
+              "supported_disease_correct": 0,
+              "by_source": {
+                "ad_greenhouse": {
+                  "n": 94,
+                  "healthy_recall": 0.6896551724137931,
+                  "false_healthy": 7
+                }
+              }
+            },
+            "swtt5wy2pr": {
+              "healthy_n": 0,
+              "healthy_correct": 0,
+              "false_healthy": 0,
+              "supported_disease_correct": 11,
+              "by_source": {
+                "swtt5wy2pr": {
+                  "n": 55,
+                  "healthy_recall": 0.0,
+                  "false_healthy": 0
+                }
+              }
+            },
+            "tom2024": {
+              "healthy_n": 53,
+              "healthy_correct": 29,
+              "false_healthy": 2,
+              "supported_disease_correct": 0,
+              "by_source": {
+                "tom2024": {
+                  "n": 125,
+                  "healthy_recall": 0.5471698113207547,
+                  "false_healthy": 2
+                }
+              }
+            }
+          },
+          "worst_healthy": 0.5471698113207547,
+          "mean_healthy": 0.6605840063401252,
+          "old_failures": [],
+          "internal_failures": []
+        },
+        "passing": 0,
+        "cached_spatial_inputs": 643,
+        "new_encoder_inference": 17,
+        "whole_confirmation_cache": {
+          "protocol_sha256": "796eb35e9e9d67abecbbe02f246ebed94b148b883428f048c0f938c4e5f5a3c9",
+          "probabilities_sha256": "8fff16b7fc8c26c8557657869cd95d0aac48509495be9126fbea9bb68b3fd7b5",
+          "inputs_sha256": "6f00a78fc84c337ba7f81eb30037f0b043cee30e4eb4ed1cc56e2cb3d35d757b",
+          "inputs": 186,
+          "reused_inputs": 169,
+          "new_unique_encoder_inputs": 17,
+          "elapsed_seconds": 1.0659184199757874,
+          "cold_olid_used": false,
+          "new_encoder_inference_this_call": 17
+        },
+        "new_training": 0,
+        "cold_olid_used": false
+      }
+    },
+    {
+      "path": "phase53_whole_dino/cache/complete.json",
+      "sha256": "3ff95c46936153c39172b5db02760891e605071c8ccf781dcdb76bddc1d13610",
+      "summary": {
+        "protocol_sha256": "796eb35e9e9d67abecbbe02f246ebed94b148b883428f048c0f938c4e5f5a3c9",
+        "probabilities_sha256": "8fff16b7fc8c26c8557657869cd95d0aac48509495be9126fbea9bb68b3fd7b5",
+        "inputs_sha256": "6f00a78fc84c337ba7f81eb30037f0b043cee30e4eb4ed1cc56e2cb3d35d757b",
+        "inputs": 186,
+        "reused_inputs": 169,
+        "new_unique_encoder_inputs": 17,
+        "elapsed_seconds": 1.0659184199757874,
+        "cold_olid_used": false
+      }
+    }
+  ]
+}

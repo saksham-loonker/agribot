@@ -1,0 +1,433 @@
+{
+  "protocol_sha256": "990bf380051b9f6be54e6dc5cbc7b34470bc10a024b62f11581c8483d26afd88",
+  "issue": "Warm incumbent used unweighted BCE for the loss tie-break while epochs used source-weighted BCE. App-verdict priority components were consistent.",
+  "repair": "Re-score saved original-crop logits with the same source weights; no training, encoding or threshold change",
+  "original_selected_epoch": -1,
+  "original_warm_loss": 0.9969529509544373,
+  "corrected_warm_loss": 0.978182708861403,
+  "corrected_selection": {
+    "epoch": -1,
+    "decision": [
+      0,
+      15,
+      9,
+      -0.978182708861403
+    ],
+    "checkpoint_sha256": "6e5c6ce884d706b394d41d479d78a86d50185153e19deb08a14f54f3263969ef"
+  },
+  "cheap_pass": false,
+  "gate_outcome_unchanged": true,
+  "new_encoder_inputs": 0,
+  "all_candidates": [
+    {
+      "epoch": -1,
+      "decision": [
+        0,
+        15,
+        9,
+        -0.978182708861403
+      ],
+      "checkpoint_sha256": "6e5c6ce884d706b394d41d479d78a86d50185153e19deb08a14f54f3263969ef"
+    },
+    {
+      "epoch": 0,
+      "decision": [
+        0,
+        15,
+        8,
+        -0.913616875423738
+      ],
+      "checkpoint_sha256": "b6b75600599164cfc719e182f123fbb1e33ed40f79663a36784162a087d3eb3d"
+    },
+    {
+      "epoch": 1,
+      "decision": [
+        0,
+        15,
+        8,
+        -0.9335933720515307
+      ],
+      "checkpoint_sha256": "14e59b6fd0a106e7983d4317875013342c284be025a28980a20458ef820f9f5f"
+    },
+    {
+      "epoch": 2,
+      "decision": [
+        -1,
+        15,
+        6,
+        -0.867448479799717
+      ],
+      "checkpoint_sha256": "d8505417f7bac6f730f81a2b2d27c486f655267439e0348f657db671e6b645dc"
+    },
+    {
+      "epoch": 3,
+      "decision": [
+        0,
+        15,
+        8,
+        -0.9097689563659163
+      ],
+      "checkpoint_sha256": "e1806a236e096e4c3510992e74b91af9a5b9289435f9d8227f646ad27d7b0520"
+    },
+    {
+      "epoch": 4,
+      "decision": [
+        -1,
+        15,
+        8,
+        -0.9186529014053861
+      ],
+      "checkpoint_sha256": "14c9053cb90d94febee88b424bcb965d43c4cf30430a08ba4b90da1cda07d48d"
+    },
+    {
+      "epoch": 5,
+      "decision": [
+        -1,
+        15,
+        6,
+        -0.864461013354596
+      ],
+      "checkpoint_sha256": "208585462d62b8298116fc20d4fd745b9f7ccc74c03045f1ffba11e94924fd32"
+    },
+    {
+      "epoch": 6,
+      "decision": [
+        -1,
+        15,
+        8,
+        -0.9220060364936812
+      ],
+      "checkpoint_sha256": "52a52f69d6d35a6993067b34f9be7744991f88483edbf1ea267d95f0a969583d"
+    },
+    {
+      "epoch": 7,
+      "decision": [
+        -1,
+        15,
+        7,
+        -0.896061838866307
+      ],
+      "checkpoint_sha256": "819baa65a659edd03296f7207a00bef39e6f71e2907e186779fa814c7e4831d8"
+    },
+    {
+      "epoch": 8,
+      "decision": [
+        0,
+        15,
+        6,
+        -0.8755690245304654
+      ],
+      "checkpoint_sha256": "c20d3d39a8e76ab5dd693c0dce71bfb38a3d8f25e25495fe4fca64814d275503"
+    },
+    {
+      "epoch": 9,
+      "decision": [
+        -1,
+        15,
+        6,
+        -0.8801350275998263
+      ],
+      "checkpoint_sha256": "479a72eba0f9337f98b3b101fc5954c4286a51f04eab653e06e1a3cf78b791f7"
+    },
+    {
+      "epoch": 10,
+      "decision": [
+        -2,
+        15,
+        6,
+        -0.8959047887216729
+      ],
+      "checkpoint_sha256": "3eea13cdc57ecbbe7af87624f8ef88c98c2b8a83fdd8957f814589bb8ff18782"
+    },
+    {
+      "epoch": 11,
+      "decision": [
+        -1,
+        15,
+        7,
+        -0.8946534906943605
+      ],
+      "checkpoint_sha256": "9ca4e58e8564a333d3254bd8d117b19d16655b38f8db3e5a3d52c469ce498cda"
+    },
+    {
+      "epoch": 12,
+      "decision": [
+        -2,
+        15,
+        6,
+        -0.8842807657519693
+      ],
+      "checkpoint_sha256": "92524868e097aa8482413a34a045a59e3ccfb9a12cc5f57cf05701835cf5cbff"
+    },
+    {
+      "epoch": 13,
+      "decision": [
+        -1,
+        15,
+        6,
+        -0.8721437890378733
+      ],
+      "checkpoint_sha256": "a3df980331d8648e132ec131ef39cbc3851015a3d7e3aaedcadc4b240c2a8a9c"
+    },
+    {
+      "epoch": 14,
+      "decision": [
+        -1,
+        15,
+        6,
+        -0.8618990012594154
+      ],
+      "checkpoint_sha256": "b65d7b757b28d41256cbd61ee2da604df4efb9992db98dc3ffc59ddbeb4b3f05"
+    },
+    {
+      "epoch": 15,
+      "decision": [
+        -2,
+        15,
+        6,
+        -0.8696616098609584
+      ],
+      "checkpoint_sha256": "8f9e179c96dfd8e799a321789943557e685c1efa73cb3c58d2231d0141eb0830"
+    },
+    {
+      "epoch": 16,
+      "decision": [
+        -1,
+        15,
+        7,
+        -0.8901628026386805
+      ],
+      "checkpoint_sha256": "ec2e5c4f1fd775c64978df2ba141359108bf2aef892cb6ae4584708d4015fa07"
+    },
+    {
+      "epoch": 17,
+      "decision": [
+        -1,
+        14,
+        5,
+        -0.8699331897299719
+      ],
+      "checkpoint_sha256": "400c1cc55f8881a58c28e25bb52754271fc76a079abd3c131776a711a8104875"
+    },
+    {
+      "epoch": 18,
+      "decision": [
+        -1,
+        15,
+        6,
+        -0.8622005760518797
+      ],
+      "checkpoint_sha256": "5765138982618005da5278731bc7b9d6ed0268954267970d1ae8a5bc6a0e7304"
+    },
+    {
+      "epoch": 19,
+      "decision": [
+        -2,
+        15,
+        6,
+        -0.8961175038173407
+      ],
+      "checkpoint_sha256": "161bbeb02bced8f557d01146c826d5c3cc3baae76e1d6e6caee564b41f42bed9"
+    },
+    {
+      "epoch": 20,
+      "decision": [
+        -2,
+        15,
+        5,
+        -0.8582001853665844
+      ],
+      "checkpoint_sha256": "4f99a7260a944262c3e9062b95828637dfae9451f83b2b9165c084ee45380354"
+    },
+    {
+      "epoch": 21,
+      "decision": [
+        -1,
+        15,
+        6,
+        -0.8673040201528324
+      ],
+      "checkpoint_sha256": "9e7a099d49255644eaa1f93b639d763cba735ee9ee0f540841425d6191e99183"
+    },
+    {
+      "epoch": 22,
+      "decision": [
+        -2,
+        15,
+        6,
+        -0.8514667495472015
+      ],
+      "checkpoint_sha256": "b5df353379d5a22551930f7d12b04076d41dc3f0150aab7df6b7243afb8780da"
+    },
+    {
+      "epoch": 23,
+      "decision": [
+        -2,
+        15,
+        6,
+        -0.8465385967806053
+      ],
+      "checkpoint_sha256": "f2993433a57142eebc5054ff86ffc788a36e44debef8f8f5b36088d0f6e4f361"
+    },
+    {
+      "epoch": 24,
+      "decision": [
+        -2,
+        15,
+        3,
+        -0.8202330966153326
+      ],
+      "checkpoint_sha256": "de532208e584313adc8f1816cd7255fecf7510e7dd317c7b71331a9f6428085a"
+    },
+    {
+      "epoch": 25,
+      "decision": [
+        -1,
+        15,
+        4,
+        -0.8517556878100911
+      ],
+      "checkpoint_sha256": "4826051e4ea718faccfffd1cfe7008e120e74f588526485bec3ea779a6a01037"
+    },
+    {
+      "epoch": 26,
+      "decision": [
+        -1,
+        15,
+        5,
+        -0.8056836433260087
+      ],
+      "checkpoint_sha256": "58591a4a13302a745656265f45197dcbed76b5cb88f21e146f1fb2abb8e45b86"
+    },
+    {
+      "epoch": 27,
+      "decision": [
+        -2,
+        15,
+        5,
+        -0.8075386807011414
+      ],
+      "checkpoint_sha256": "4a24af9e95f1339cb74c99c12bcfd08371859faa0cc538d93b9debf219d893b0"
+    },
+    {
+      "epoch": 28,
+      "decision": [
+        0,
+        15,
+        5,
+        -0.8242295993307782
+      ],
+      "checkpoint_sha256": "b89df98619df47c5e7b24414802bccc651207cdc99233190d4108c400fe7b758"
+    },
+    {
+      "epoch": 29,
+      "decision": [
+        -2,
+        15,
+        7,
+        -0.8769589785568069
+      ],
+      "checkpoint_sha256": "150871b629a0d4e964fbc21842dddc41e86c53d23b7343c06ea5f062bb9a6a8f"
+    },
+    {
+      "epoch": 30,
+      "decision": [
+        -2,
+        15,
+        5,
+        -0.8251373153524202
+      ],
+      "checkpoint_sha256": "e59b1841ae74772b3bc2b707a7ba352f24657f9bc53f1f526383fa8b76a688db"
+    },
+    {
+      "epoch": 31,
+      "decision": [
+        -1,
+        15,
+        6,
+        -0.877037066643495
+      ],
+      "checkpoint_sha256": "84719ff015f54ead7605dbbf234ff59bffd70fa0bef7cefbee69aeb23e22b661"
+    },
+    {
+      "epoch": 32,
+      "decision": [
+        -2,
+        15,
+        5,
+        -0.8452101535174712
+      ],
+      "checkpoint_sha256": "5de819d57e55319dd0b75db1043f76878fc6ca75968bca7b8d17dd0ac5b05142"
+    },
+    {
+      "epoch": 33,
+      "decision": [
+        -2,
+        15,
+        7,
+        -0.9091361643824185
+      ],
+      "checkpoint_sha256": "93dcc0eb3e273236001fb288f998e492de1786a8b7415e4c7efa6918c1f531f7"
+    },
+    {
+      "epoch": 34,
+      "decision": [
+        -2,
+        15,
+        7,
+        -0.8868213585363183
+      ],
+      "checkpoint_sha256": "334b557a7813581445b63bdeecddd76e259c45a8ef405f8d96e4dfd26c58f9cf"
+    },
+    {
+      "epoch": 35,
+      "decision": [
+        -2,
+        15,
+        4,
+        -0.8492220814907933
+      ],
+      "checkpoint_sha256": "df09eb8a9d0d3e237bf303a8daa2a9452f196a9f1d4611076aa0cbf22b55f30d"
+    },
+    {
+      "epoch": 36,
+      "decision": [
+        -2,
+        15,
+        6,
+        -0.8777923491643862
+      ],
+      "checkpoint_sha256": "ab520c0c94c69408cfc1dd22b6f01b3272e3bdf51d7ca4627ea987eef7c3fefb"
+    },
+    {
+      "epoch": 37,
+      "decision": [
+        -2,
+        15,
+        6,
+        -0.885091479792016
+      ],
+      "checkpoint_sha256": "f6622f04021a7c8d1ec9266d25fa4f6526493c320da80afb4e436d2aa93091eb"
+    },
+    {
+      "epoch": 38,
+      "decision": [
+        -2,
+        15,
+        6,
+        -0.8965629311184584
+      ],
+      "checkpoint_sha256": "2e733e35e79beaecfa085de40eff4c79bb2e18237a36689ea3b1236dce72e6f2"
+    },
+    {
+      "epoch": 39,
+      "decision": [
+        -1,
+        15,
+        5,
+        -0.841404834842009
+      ],
+      "checkpoint_sha256": "1ae5ee2a94e6ea08a2d5409e31554b5eb0daeb9a055ddb9734e1dbfe03b8104e"
+    }
+  ]
+}

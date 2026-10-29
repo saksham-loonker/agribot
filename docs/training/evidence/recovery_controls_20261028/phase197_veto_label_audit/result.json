@@ -1,0 +1,97 @@
+{
+  "protocol_sha256": "15510da84793e794e3f7971e9bd5648c5da44b3b53efee26d163453bd2a199a7",
+  "controls": [
+    {
+      "parent": "phase192_confident_veto_audit",
+      "method": "field_source_sft",
+      "protected_vetoes": 38,
+      "publisher_labeled_healthy": 3,
+      "publisher_labeled_nonhealthy": 35,
+      "missing_clinical_label": 0,
+      "by_label": {
+        "Other": 17,
+        "Leaf Miner": 18,
+        "Healthy": 3
+      },
+      "by_source_and_label": {
+        "tlid|Other": 17,
+        "tlid|Leaf Miner": 18,
+        "tom2024|Healthy": 2,
+        "ad_greenhouse|Healthy": 1
+      },
+      "unique_paths": 38
+    },
+    {
+      "parent": "phase192_confident_veto_audit",
+      "method": "field_source_rank",
+      "protected_vetoes": 71,
+      "publisher_labeled_healthy": 2,
+      "publisher_labeled_nonhealthy": 69,
+      "missing_clinical_label": 0,
+      "by_label": {
+        "Other": 19,
+        "Leaf Miner": 50,
+        "Healthy": 2
+      },
+      "by_source_and_label": {
+        "tlid|Other": 19,
+        "tlid|Leaf Miner": 50,
+        "tom2024|Healthy": 1,
+        "ad_greenhouse|Healthy": 1
+      },
+      "unique_paths": 71
+    },
+    {
+      "parent": "phase194_exhaustive_veto_audit",
+      "method": "field_source_sft",
+      "protected_vetoes": 45,
+      "publisher_labeled_healthy": 1,
+      "publisher_labeled_nonhealthy": 44,
+      "missing_clinical_label": 0,
+      "by_label": {
+        "Other": 12,
+        "Leaf Miner": 31,
+        "Healthy": 1,
+        "Diseased_unspecified": 1
+      },
+      "by_source_and_label": {
+        "tlid|Other": 11,
+        "tlid|Leaf Miner": 31,
+        "tom2024|Healthy": 1,
+        "tom2024|Diseased_unspecified": 1,
+        "swtt5wy2pr|Other": 1
+      },
+      "unique_paths": 45
+    },
+    {
+      "parent": "phase194_exhaustive_veto_audit",
+      "method": "field_source_rank",
+      "protected_vetoes": 85,
+      "publisher_labeled_healthy": 2,
+      "publisher_labeled_nonhealthy": 83,
+      "missing_clinical_label": 0,
+      "by_label": {
+        "Other": 26,
+        "Leaf Miner": 56,
+        "Healthy": 2,
+        "Diseased_unspecified": 1
+      },
+      "by_source_and_label": {
+        "tlid|Other": 24,
+        "tlid|Leaf Miner": 56,
+        "tom2024|Healthy": 2,
+        "tom2024|Diseased_unspecified": 1,
+        "tom2024|Other": 1,
+        "swtt5wy2pr|Other": 1
+      },
+      "unique_paths": 85
+    }
+  ],
+  "diagnostic_only": true,
+  "model_promoted": false,
+  "original_gates_unchanged": true,
+  "new_encoder_inputs": 0,
+  "acceptance_data_used": false,
+  "elapsed_seconds": 2.496518478030339,
+  "interpretation": "A changed protected verdict is an exact-retention failure, but not automatically a loss of clinically correct recognition. Publisher labels are not new clinical adjudication. Potential corrections do not authorize weakening any existing gate."
+}

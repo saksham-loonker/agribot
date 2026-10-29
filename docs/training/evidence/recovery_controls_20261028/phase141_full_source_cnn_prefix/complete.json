@@ -1,0 +1,14 @@
+{
+  "protocol_sha256": "1d09aaa13a02341f5288a364d42178236ed6c3d0f80a03b0f813f78eff0a76c2",
+  "missing_prefix_sha256": "ef47da9a083c1f4b8e878ed5d3422c19c8ad2717d91c1ffc2339ef82f69cc5ae",
+  "old_inputs_reused": 1618,
+  "new_spatial_prefix_inputs": 17056,
+  "new_detector_inputs": 0,
+  "new_dino_inputs": 0,
+  "all_selected_inputs_audited": 18674,
+  "maximum_cnn_feature_error": 9.5367431640625e-06,
+  "elapsed_seconds": 344.8982564070029,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false
+}

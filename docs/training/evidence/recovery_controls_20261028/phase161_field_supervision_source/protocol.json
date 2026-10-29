@@ -1,0 +1,3538 @@
+{
+  "acceptance_data_used": false,
+  "ad_independent": false,
+  "disease_cap_per_publisher_class": 32,
+  "healthy_cap": 256,
+  "inventory_sha256": "0cf91c994def51e09b03c9007d9324065415ecae8e20b426464509882d07a1eb",
+  "licence": "CC BY 4.0",
+  "model_predictions_opened": false,
+  "olid_independent": false,
+  "purpose_sha256": "59124c97dcd0fe396fa4faff88fd97a8b32fd673b902097a1c7c94d0433397e0",
+  "selection": [
+    {
+      "bytes": 142752,
+      "filename": "IMG_3518_%02d.jpg",
+      "id": "19d734ed-70bf-4325-8163-cde46efee176",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/19d734ed-70bf-4325-8163-cde46efee176.jpg",
+      "sha256": "bd6aba8a19f21569bb4f974b25bf5e82cc8223de62ce3e4caf4897f3b8b84747"
+    },
+    {
+      "bytes": 170228,
+      "filename": "IMG_3547_%02d.jpg",
+      "id": "b53c80ac-94f4-4a39-816d-95c83037cec1",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/b53c80ac-94f4-4a39-816d-95c83037cec1.jpg",
+      "sha256": "721a9e46396013cdaa88a0ea7147840ac749bfec9135312cbcc5293bb33aae0b"
+    },
+    {
+      "bytes": 161480,
+      "filename": "IMG_3480_%02d.jpg",
+      "id": "1369b390-8ff8-4453-8742-0511e22110b3",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/1369b390-8ff8-4453-8742-0511e22110b3.jpg",
+      "sha256": "e3c0ceead430782e0baabf23dbc0991e0d5313f92fee76b99e6bce1427006dd9"
+    },
+    {
+      "bytes": 174172,
+      "filename": "IMG_3550_%02d.jpg",
+      "id": "07e3a16e-d8dd-4a83-a47b-61ff9375c1f8",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/07e3a16e-d8dd-4a83-a47b-61ff9375c1f8.jpg",
+      "sha256": "ce83d848738280e7172dd2834a37f79de5650da2c22e2759f8ca4a131270a7bc"
+    },
+    {
+      "bytes": 148814,
+      "filename": "IMG_3488_%02d.jpg",
+      "id": "966b15ba-f081-40b8-8eb2-b8ebd1984d3d",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/966b15ba-f081-40b8-8eb2-b8ebd1984d3d.jpg",
+      "sha256": "c5541a0f0263de75469944ef4bd0ac191143c5492fb26c907688becc88f39e94"
+    },
+    {
+      "bytes": 148280,
+      "filename": "IMG_3527_%02d.jpg",
+      "id": "6115a94a-71b3-4a1d-87de-5e9803fc2e8c",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/6115a94a-71b3-4a1d-87de-5e9803fc2e8c.jpg",
+      "sha256": "6d07ca5685e07298b2640ca5494c42356298492f8e4848f6665c35da90fb0c03"
+    },
+    {
+      "bytes": 150437,
+      "filename": "IMG_3526_%02d.jpg",
+      "id": "dce87738-9aa2-464d-ae2d-52008c84bbd6",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/dce87738-9aa2-464d-ae2d-52008c84bbd6.jpg",
+      "sha256": "0b7c34847c1931ff3ff53d90b3394c2998302587b123eb5db1697c29f8d2cc7a"
+    },
+    {
+      "bytes": 156957,
+      "filename": "IMG_3476_%02d.jpg",
+      "id": "c30f383b-7ff2-4dc8-8a4d-70b5d7a83551",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/c30f383b-7ff2-4dc8-8a4d-70b5d7a83551.jpg",
+      "sha256": "e8017265abd366df99c2c98fbce9de18811c78646a66cd7aa7941c79d1018298"
+    },
+    {
+      "bytes": 154824,
+      "filename": "IMG_3540_%02d.jpg",
+      "id": "31a2d9be-4ed1-423c-acf2-22643c085424",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/31a2d9be-4ed1-423c-acf2-22643c085424.jpg",
+      "sha256": "52b439cbe4ef1d578e06a8bf62a6979b754cb35e193c4efc57ebabc0b0c480d5"
+    },
+    {
+      "bytes": 144986,
+      "filename": "IMG_3465_%02d.jpg",
+      "id": "19617ef7-93d8-4aff-b967-0051970c1057",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/19617ef7-93d8-4aff-b967-0051970c1057.jpg",
+      "sha256": "b6a2439e12ecd3195c34560a60ea636a9916c0db967c519dd4e57423e9b3112d"
+    },
+    {
+      "bytes": 170279,
+      "filename": "IMG_3557_%02d.jpg",
+      "id": "ee9ba4f5-1bdc-4c06-9e9e-21e23dbb6040",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/ee9ba4f5-1bdc-4c06-9e9e-21e23dbb6040.jpg",
+      "sha256": "425c7a20ae369a333a30c75651fda0d7229965157e355ef3b780262e04282074"
+    },
+    {
+      "bytes": 196196,
+      "filename": "IMG_3468_%02d.jpg",
+      "id": "2e13fa7c-3b37-4e40-b598-ff2f465b4000",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/2e13fa7c-3b37-4e40-b598-ff2f465b4000.jpg",
+      "sha256": "1386b7122e75dc19318cb4d014bafffd1af1231786b17008f0051fd74c9f22b3"
+    },
+    {
+      "bytes": 173522,
+      "filename": "IMG_3474_%02d.jpg",
+      "id": "ceb25035-d70e-4e7f-92e3-58750ab00aeb",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/ceb25035-d70e-4e7f-92e3-58750ab00aeb.jpg",
+      "sha256": "e9b4e93f65e5c1b261804b428fe9f51fbe0e2fbd305f170c5d241f46921c7ac6"
+    },
+    {
+      "bytes": 196524,
+      "filename": "IMG_3470_%02d.jpg",
+      "id": "49e09922-a4c6-48fc-bdbe-3ad4a3a7b08a",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/49e09922-a4c6-48fc-bdbe-3ad4a3a7b08a.jpg",
+      "sha256": "dd50f6d6576ac08296633596e8ec4475e25e3ae9ca997fe8e13ce3d939d749ba"
+    },
+    {
+      "bytes": 144688,
+      "filename": "IMG_3516_%02d.jpg",
+      "id": "c0b3c264-2c7d-4e67-9676-d9961d2b6fae",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/c0b3c264-2c7d-4e67-9676-d9961d2b6fae.jpg",
+      "sha256": "09d738981627df3c618a2e3bffffe734c778f046db857c7ba6219debfadaad95"
+    },
+    {
+      "bytes": 173166,
+      "filename": "IMG_3479_%02d.jpg",
+      "id": "5d1141c4-e960-4d39-bd03-b3d85f821ebf",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/5d1141c4-e960-4d39-bd03-b3d85f821ebf.jpg",
+      "sha256": "1faa559c8025705f4a83cc6ccda4f07d82b3458c33114597bf03437e35010703"
+    },
+    {
+      "bytes": 146569,
+      "filename": "IMG_3492_%02d.jpg",
+      "id": "41d82a5b-bbd6-44d3-b92b-ef55d768587f",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/41d82a5b-bbd6-44d3-b92b-ef55d768587f.jpg",
+      "sha256": "bdbde34c5f623c7ac7f0ea748dd940ebeb73eaa79a5f3f8782bee180bd6b3730"
+    },
+    {
+      "bytes": 167134,
+      "filename": "IMG_3511_%02d.jpg",
+      "id": "753c298e-97cc-4977-9495-3b12bf4859b5",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/753c298e-97cc-4977-9495-3b12bf4859b5.jpg",
+      "sha256": "a91acdb81d350390529b922eb638ca06fffbbcbfe010173625edd76c41e8bbbf"
+    },
+    {
+      "bytes": 142874,
+      "filename": "IMG_3505_%02d.jpg",
+      "id": "390fe678-6932-4490-baa2-23e2cca17e1a",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/390fe678-6932-4490-baa2-23e2cca17e1a.jpg",
+      "sha256": "650445920ecf7cb73597e75012658518f587608132c7838cd8109969534195ff"
+    },
+    {
+      "bytes": 149367,
+      "filename": "IMG_3497_%02d.jpg",
+      "id": "f31c1dcf-e823-4548-9433-a6ec3aad09ce",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/f31c1dcf-e823-4548-9433-a6ec3aad09ce.jpg",
+      "sha256": "f7c298c0db5f2c6c6770dda54ed7bc3a1a4786dcfcc74d2c4c3e575b63bf80c7"
+    },
+    {
+      "bytes": 145988,
+      "filename": "IMG_3487_%02d.jpg",
+      "id": "43dc34f7-3adc-4a29-80bd-99fce9eaa70a",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/43dc34f7-3adc-4a29-80bd-99fce9eaa70a.jpg",
+      "sha256": "ee49a8dfb1bab91b02767deac5b516435cff1f3da1b726a992823821ded6ae13"
+    },
+    {
+      "bytes": 176998,
+      "filename": "IMG_3463_%02d.jpg",
+      "id": "de81845e-0fa5-45f0-b297-eb4ca75ca2ff",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/de81845e-0fa5-45f0-b297-eb4ca75ca2ff.jpg",
+      "sha256": "46692524b56de7475b89bfb2a9c0bf34ee75370fabf74a7a6909332d30669265"
+    },
+    {
+      "bytes": 159910,
+      "filename": "IMG_3544_%02d.jpg",
+      "id": "a279a881-f171-41c5-a5b6-6c56254a8433",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/a279a881-f171-41c5-a5b6-6c56254a8433.jpg",
+      "sha256": "c9fc5880c51e66ad0be74849226c972a20e0052c1cd3114d176d3d1d65c19f6d"
+    },
+    {
+      "bytes": 163266,
+      "filename": "IMG_3509_%02d.jpg",
+      "id": "8b1c6711-01d2-490d-a88c-622dbc510f8e",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/8b1c6711-01d2-490d-a88c-622dbc510f8e.jpg",
+      "sha256": "6e4c64d1491e35aeaf85ba100fb525d253993d7670c1be4d26471182691c78bf"
+    },
+    {
+      "bytes": 166074,
+      "filename": "IMG_3482_%02d.jpg",
+      "id": "bfef6abf-420f-4219-92d8-6984a6e04f45",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/bfef6abf-420f-4219-92d8-6984a6e04f45.jpg",
+      "sha256": "8e76251412ff8988ec1d866deda1be9ef5bb9ef031f5b6474707100d6ac58d2a"
+    },
+    {
+      "bytes": 145844,
+      "filename": "IMG_3525_%02d.jpg",
+      "id": "6888db3c-6533-4909-acaa-ba668385956e",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/6888db3c-6533-4909-acaa-ba668385956e.jpg",
+      "sha256": "f63c480b695d025224bf29a7757b1ca00cda4381d5ac377b20bd4be128542f9f"
+    },
+    {
+      "bytes": 165382,
+      "filename": "IMG_3552_%02d.jpg",
+      "id": "7c1d1411-c731-4d52-82f8-8abe3bc9159b",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/7c1d1411-c731-4d52-82f8-8abe3bc9159b.jpg",
+      "sha256": "3d92bf21b6eeeaac35bddacb06270372da82b5021892ec2c812642ca87f4d993"
+    },
+    {
+      "bytes": 151628,
+      "filename": "IMG_3519_%02d.jpg",
+      "id": "b9f71a70-6962-4802-9b70-9cee34050aa1",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/b9f71a70-6962-4802-9b70-9cee34050aa1.jpg",
+      "sha256": "bb5fe40c92df635789eeea5e310b27c05e23f98b020ec7b19a4662013ab9f002"
+    },
+    {
+      "bytes": 144197,
+      "filename": "IMG_3485_%02d.jpg",
+      "id": "1a0331f4-38ad-4cd5-828a-af5a08146527",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/1a0331f4-38ad-4cd5-828a-af5a08146527.jpg",
+      "sha256": "17c676b0fd1d257c3bf6e83b4ed4554fb07811245933d888ed37c84ad0057832"
+    },
+    {
+      "bytes": 170354,
+      "filename": "IMG_3513_%02d.jpg",
+      "id": "7fd15432-1f74-4a70-ba2f-1e1b73746189",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/7fd15432-1f74-4a70-ba2f-1e1b73746189.jpg",
+      "sha256": "480fb98032e6a2de6412e51e46752a3e65faece8cebcaaa3186f4e955ff5a66a"
+    },
+    {
+      "bytes": 149914,
+      "filename": "IMG_3498_%02d.jpg",
+      "id": "3cfd908d-4cab-4f63-b241-ed2e0bde8445",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/3cfd908d-4cab-4f63-b241-ed2e0bde8445.jpg",
+      "sha256": "39ff1b9b48baa300b2414641579666cad520c171fb0f25e590c0eba03f21593c"
+    },
+    {
+      "bytes": 180864,
+      "filename": "IMG_3469_%02d.jpg",
+      "id": "985b73fe-622b-4967-a5a1-44fe9b935243",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/985b73fe-622b-4967-a5a1-44fe9b935243.jpg",
+      "sha256": "43b403eb159389c9ea894780694001929768a336e5dde2ef757b57e0a79992ba"
+    },
+    {
+      "bytes": 158442,
+      "filename": "IMG_3461_%02d.jpg",
+      "id": "0fc03ba0-d2d3-4d01-976c-8c208a29bd66",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/0fc03ba0-d2d3-4d01-976c-8c208a29bd66.jpg",
+      "sha256": "af9b83a5be56cf9bdba2b6ff2e478301d76c12a3fd5d135f403eaababb59ae75"
+    },
+    {
+      "bytes": 142635,
+      "filename": "IMG_3561_%02d.jpg",
+      "id": "f2dde066-3b39-4d26-9586-4d689ac6b165",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/f2dde066-3b39-4d26-9586-4d689ac6b165.jpg",
+      "sha256": "ce427788786fe31ed31c721be8869df4d9e2649ca66abab24d72091b44dd9f80"
+    },
+    {
+      "bytes": 149052,
+      "filename": "IMG_3528_%02d.jpg",
+      "id": "6a2ba1b9-4dab-4dd1-b649-d2d46a612be9",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/6a2ba1b9-4dab-4dd1-b649-d2d46a612be9.jpg",
+      "sha256": "9e634920cd99ae3a1eeb27d992dc50dccb40a70e47332d32beeeb3e45092f206"
+    },
+    {
+      "bytes": 142835,
+      "filename": "IMG_3560_%02d.jpg",
+      "id": "5472883e-a457-434f-bb75-e2556369ab2e",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/5472883e-a457-434f-bb75-e2556369ab2e.jpg",
+      "sha256": "135c65784fb6e0fc54b8225b6be057f8efcaffeb3fb408245f51d8cb6f74e9cc"
+    },
+    {
+      "bytes": 194439,
+      "filename": "IMG_3467_%02d.jpg",
+      "id": "6ac6bbc6-5499-4367-850a-bb4008d1595e",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/6ac6bbc6-5499-4367-850a-bb4008d1595e.jpg",
+      "sha256": "98447faf23370e013d5328d9f1717c8a766a5b9026b5275743b2c52c48f3a4c9"
+    },
+    {
+      "bytes": 143540,
+      "filename": "IMG_3506_%02d.jpg",
+      "id": "163ca58b-19ee-4af9-87be-b827d053043a",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/163ca58b-19ee-4af9-87be-b827d053043a.jpg",
+      "sha256": "858aa3851b9422306d6a6f30ae6db25a693698b37433e6e4fa3e2174a0000cd0"
+    },
+    {
+      "bytes": 146232,
+      "filename": "IMG_3486_%02d.jpg",
+      "id": "6c83d489-87be-4e53-9919-8a0599fdef24",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/6c83d489-87be-4e53-9919-8a0599fdef24.jpg",
+      "sha256": "44ffc50de58189de88d53032e6346a1495b629a03a1c4e2db1d1819cf232cc23"
+    },
+    {
+      "bytes": 168746,
+      "filename": "IMG_3551_%02d.jpg",
+      "id": "d922bb09-4060-4019-bdf9-365306906a4d",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/d922bb09-4060-4019-bdf9-365306906a4d.jpg",
+      "sha256": "913835e0b25a606ccb87a324bcd368b99cf29b8d58d56f0b7848b48982ecc863"
+    },
+    {
+      "bytes": 174400,
+      "filename": "IMG_3548_%02d.jpg",
+      "id": "bef0fc52-a7ab-4071-9cba-1f34f3d39fc6",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/bef0fc52-a7ab-4071-9cba-1f34f3d39fc6.jpg",
+      "sha256": "8d08d005ecb2842c70ab764262c7ac1f4199f820a5e117885e885ec0009557f1"
+    },
+    {
+      "bytes": 142204,
+      "filename": "IMG_3490_%02d.jpg",
+      "id": "f113818d-e21e-4557-8257-3e28929f0b97",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/f113818d-e21e-4557-8257-3e28929f0b97.jpg",
+      "sha256": "7df54d592f3e34ab81ac18dac263aabc2629df38dc282e677a8f239de8648cbe"
+    },
+    {
+      "bytes": 151690,
+      "filename": "IMG_3502_%02d.jpg",
+      "id": "7136a2d0-5724-4377-8858-db219e3bfaea",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/7136a2d0-5724-4377-8858-db219e3bfaea.jpg",
+      "sha256": "9ca9dc7b5ec078e834abe614a9aabf15e73dfd7112d6292212e5aa30e241c2d8"
+    },
+    {
+      "bytes": 143611,
+      "filename": "IMG_3504_%02d.jpg",
+      "id": "45570068-0f48-4c45-bd09-fc34678601fd",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/45570068-0f48-4c45-bd09-fc34678601fd.jpg",
+      "sha256": "d1ac4cbe84fd511c1ae0be41652d7cf815c4627e18ae36f8de41246063223ecc"
+    },
+    {
+      "bytes": 154936,
+      "filename": "IMG_3517_%02d.jpg",
+      "id": "5f33ddab-38eb-4403-8256-5927ec353219",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/5f33ddab-38eb-4403-8256-5927ec353219.jpg",
+      "sha256": "993c8abc07807f0e9ba1acefd089ce23f6ded3da04d1215b78cedf71a954411d"
+    },
+    {
+      "bytes": 152221,
+      "filename": "IMG_3520_%02d.jpg",
+      "id": "04ab2644-7115-4d00-9961-93d7f716fb38",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/04ab2644-7115-4d00-9961-93d7f716fb38.jpg",
+      "sha256": "4d04895b946d74d6c37a0e3a6d56363be9cd87f45ce82415adcb1014330afc24"
+    },
+    {
+      "bytes": 150215,
+      "filename": "IMG_3530_%02d.jpg",
+      "id": "a00f568a-e925-430b-9fa9-e735a9043c3d",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/a00f568a-e925-430b-9fa9-e735a9043c3d.jpg",
+      "sha256": "09ceb855bc5812ffdf11a7a7a37ed4897d5ceaca08e243e250f9cfa5de87efaf"
+    },
+    {
+      "bytes": 167811,
+      "filename": "IMG_3535_%02d.jpg",
+      "id": "9d0c2914-2825-49f9-8173-564c75443dfa",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/9d0c2914-2825-49f9-8173-564c75443dfa.jpg",
+      "sha256": "c5bbeb559f9067b5269bf5272de3197c6ee1ffddd3d806cf266b11d96f8e7f04"
+    },
+    {
+      "bytes": 142227,
+      "filename": "IMG_3495_%02d.jpg",
+      "id": "7bd1acd0-0da3-4c3b-b797-d3d460135fea",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/7bd1acd0-0da3-4c3b-b797-d3d460135fea.jpg",
+      "sha256": "2a427098ef598c5fdb08faa1b6cea586424dcbc3497e6a4e3231ef6e06a9d0c5"
+    },
+    {
+      "bytes": 167325,
+      "filename": "IMG_3481_%02d.jpg",
+      "id": "bce8cc54-0918-4a0b-84a9-aae44528ed3f",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/bce8cc54-0918-4a0b-84a9-aae44528ed3f.jpg",
+      "sha256": "615b0dafb00fec87a8ab68944179471873b6deb2ba2b3b6e7a62ff2b9689e859"
+    },
+    {
+      "bytes": 159954,
+      "filename": "IMG_3537_%02d.jpg",
+      "id": "f10ab78e-bd12-4f4e-95ad-922bd050b966",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/f10ab78e-bd12-4f4e-95ad-922bd050b966.jpg",
+      "sha256": "f1460a7ba19ed97c905e2d6e4e8ece03224697aef7566e25b38b68f9110ca29c"
+    },
+    {
+      "bytes": 152133,
+      "filename": "IMG_3531_%02d.jpg",
+      "id": "3e91572c-713d-46b8-addd-ede6a6479a86",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/3e91572c-713d-46b8-addd-ede6a6479a86.jpg",
+      "sha256": "7937e6b71bdcc3d0fdf6b9838e10ff774d9ffc6ff536ad5b8055de1a3068cf54"
+    },
+    {
+      "bytes": 147378,
+      "filename": "IMG_3459_%02d.jpg",
+      "id": "e6fd2a62-da62-4142-9be9-0660cfcb3eea",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/e6fd2a62-da62-4142-9be9-0660cfcb3eea.jpg",
+      "sha256": "89900ac077f01b7fe10e1dff675d82b27c9f08304db8c8b41813be196471f783"
+    },
+    {
+      "bytes": 150475,
+      "filename": "IMG_3522_%02d.jpg",
+      "id": "43f25db6-0d98-4ac1-9e01-83656a44dab1",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/43f25db6-0d98-4ac1-9e01-83656a44dab1.jpg",
+      "sha256": "cb2aff8fa96b6823e41b11ad92fad5e91c971ffb359dd7cbb8d9c36a6ebdf520"
+    },
+    {
+      "bytes": 150647,
+      "filename": "IMG_3521_%02d.jpg",
+      "id": "b349d42f-4dc1-4a94-b701-4d90a523bc40",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/b349d42f-4dc1-4a94-b701-4d90a523bc40.jpg",
+      "sha256": "2811ffb831c4306835a8f52c903e1ebfcbeefa26074645a70b782e1dcd728917"
+    },
+    {
+      "bytes": 164081,
+      "filename": "IMG_3472_%02d.jpg",
+      "id": "1c1bebd9-f3a8-41ef-a7d7-10b020f126a0",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/1c1bebd9-f3a8-41ef-a7d7-10b020f126a0.jpg",
+      "sha256": "e80e45d704063fdad7d6cb820298aa442bf38d39486aea79973c5e1190a8d120"
+    },
+    {
+      "bytes": 157063,
+      "filename": "IMG_3538_%02d.jpg",
+      "id": "bef1ace3-81dd-49c8-9ca4-b54be226f7d9",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/bef1ace3-81dd-49c8-9ca4-b54be226f7d9.jpg",
+      "sha256": "a41762e2a74ea91426894e56050d89386b587f43a93fd85d84694de2d69b57e9"
+    },
+    {
+      "bytes": 158825,
+      "filename": "IMG_3541_%02d.jpg",
+      "id": "5f0ca4fa-7126-4611-8fe2-9330a6eedb08",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/5f0ca4fa-7126-4611-8fe2-9330a6eedb08.jpg",
+      "sha256": "5e43a905620f3399f61d5809f0fcbcfb836c2f480dea44c8e04f9b3e4f3e8f2f"
+    },
+    {
+      "bytes": 132772,
+      "filename": "IMG_3493_%02d.jpg",
+      "id": "09ebf889-4f70-495f-9267-edab22fe0250",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/09ebf889-4f70-495f-9267-edab22fe0250.jpg",
+      "sha256": "ec1a45dcf6035e397088cecd0e4ed1e3e9dbb35675f8299a1d28dae6046d1a41"
+    },
+    {
+      "bytes": 168213,
+      "filename": "IMG_3512_%02d.jpg",
+      "id": "a18d4b70-912e-4cad-b61b-c2b033ab2f40",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/a18d4b70-912e-4cad-b61b-c2b033ab2f40.jpg",
+      "sha256": "90d5ce7a19537610e48723dfb52fcced9210c7da4e6d6099a92d79da24f13699"
+    },
+    {
+      "bytes": 164596,
+      "filename": "IMG_3475_%02d.jpg",
+      "id": "f3cb82fe-06cd-4dd1-96d3-a50b1b9e489d",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/f3cb82fe-06cd-4dd1-96d3-a50b1b9e489d.jpg",
+      "sha256": "9b6416645e9f6c719cdf7eb82cae29179ec9e2bc00a9e0d112e1ffb1cdc7e05d"
+    },
+    {
+      "bytes": 153254,
+      "filename": "IMG_3508_%02d.jpg",
+      "id": "d99e9a98-24ab-4dcd-88fc-18642cde7c7e",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/d99e9a98-24ab-4dcd-88fc-18642cde7c7e.jpg",
+      "sha256": "29828350166d781c1ec4f078cc4b009e95995704bf92b8659ac770219b8028ac"
+    },
+    {
+      "bytes": 156108,
+      "filename": "IMG_3515_%02d.jpg",
+      "id": "282c0112-2e62-499b-9af0-590272c996ab",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/282c0112-2e62-499b-9af0-590272c996ab.jpg",
+      "sha256": "06d7de328c38605c47d0e5288309ec9d93ef439da839f17c8dc8c629963fe676"
+    },
+    {
+      "bytes": 136843,
+      "filename": "IMG_3494_%02d.jpg",
+      "id": "78796c69-c1f6-4293-88a6-2eaaab7ca66c",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/78796c69-c1f6-4293-88a6-2eaaab7ca66c.jpg",
+      "sha256": "c9b9512cb973df99f06bf1be7b686925a72f8d7a51fcc560032f20679342ce92"
+    },
+    {
+      "bytes": 175893,
+      "filename": "IMG_3556_%02d.jpg",
+      "id": "8a279052-9096-4d26-af80-39bad750fb4e",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/8a279052-9096-4d26-af80-39bad750fb4e.jpg",
+      "sha256": "6353d7f42b65e71eb2d3ae55c83fbe92f1382bcf9fcbd694279d6bac8241d13e"
+    },
+    {
+      "bytes": 165345,
+      "filename": "IMG_3554_%02d.jpg",
+      "id": "33e6d165-7a53-4a52-ae2c-e97b92ec5212",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/33e6d165-7a53-4a52-ae2c-e97b92ec5212.jpg",
+      "sha256": "1939c25195dd8f84f2ebd789131bb709b0549cf3546e39ededb64e9c23e88005"
+    },
+    {
+      "bytes": 146695,
+      "filename": "IMG_3529_%02d.jpg",
+      "id": "aef311b6-1679-4f0f-a543-c1a106b7762b",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/aef311b6-1679-4f0f-a543-c1a106b7762b.jpg",
+      "sha256": "1236a02a593de8b23b8886253c32636fd10c947e58c6926423c6fea09469364d"
+    },
+    {
+      "bytes": 144343,
+      "filename": "IMG_3496_%02d.jpg",
+      "id": "b6bee88b-ffbe-4338-8ef9-72d5ab2f6875",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/b6bee88b-ffbe-4338-8ef9-72d5ab2f6875.jpg",
+      "sha256": "7c8466556c5a8ee7eb060dda3edc1db427f4fd560ab31bf038a2b5edb248fc2c"
+    },
+    {
+      "bytes": 159125,
+      "filename": "IMG_3514_%02d.jpg",
+      "id": "3b9e8ee0-f51b-4f57-9de7-f2132ddc1ff3",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/3b9e8ee0-f51b-4f57-9de7-f2132ddc1ff3.jpg",
+      "sha256": "b6fe611ed1ff39e07cf8378f963c5ab5402d3ef86d4c71df9f25ac2437ce5bc7"
+    },
+    {
+      "bytes": 161082,
+      "filename": "IMG_3534_%02d.jpg",
+      "id": "4231c774-8d42-4274-aadb-cba389e5c520",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/4231c774-8d42-4274-aadb-cba389e5c520.jpg",
+      "sha256": "3036f12ad8cdee06cee7a532d7523c6e0698f2f703747dbddb647bc6f249fc19"
+    },
+    {
+      "bytes": 170538,
+      "filename": "IMG_3483_%02d.jpg",
+      "id": "30ba829d-70eb-4bbb-bdba-9591745239b0",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/30ba829d-70eb-4bbb-bdba-9591745239b0.jpg",
+      "sha256": "4736d2b2d1ddc267b1953c4ed09250ca39164d9213425862f1c62017e3528458"
+    },
+    {
+      "bytes": 152516,
+      "filename": "IMG_3533_%02d.jpg",
+      "id": "34d61072-fe83-4cdb-b9f6-dfbab7507937",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/34d61072-fe83-4cdb-b9f6-dfbab7507937.jpg",
+      "sha256": "e4ce1082b5b540597d6481cde966d527011d44ffa6532e51ee10fb0db3ffc8d7"
+    },
+    {
+      "bytes": 165962,
+      "filename": "IMG_3545_%02d.jpg",
+      "id": "c4666e85-8633-4054-9fec-856291929f25",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/c4666e85-8633-4054-9fec-856291929f25.jpg",
+      "sha256": "2179f1aaeaaa860117a170b5a4dadfbb648ff85c84bf4c5503ee304b4efa77a4"
+    },
+    {
+      "bytes": 155369,
+      "filename": "IMG_3523_%02d.jpg",
+      "id": "850894b5-7eb3-49b9-8204-7665559610cb",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/850894b5-7eb3-49b9-8204-7665559610cb.jpg",
+      "sha256": "4c76f2f85d2a1bfeb27000a232b14267e683db180b59208113d7ead1c4fd3ab5"
+    },
+    {
+      "bytes": 149834,
+      "filename": "IMG_3501_%02d.jpg",
+      "id": "1bfc0945-83cc-42eb-918f-57db3b8b1e6b",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/1bfc0945-83cc-42eb-918f-57db3b8b1e6b.jpg",
+      "sha256": "7898e3723ab4f979c995c6ab621872cc3a8ab1f5f81b6eb250afea8987888bba"
+    },
+    {
+      "bytes": 164345,
+      "filename": "IMG_3473_%02d.jpg",
+      "id": "261dca4e-e725-41fc-aef9-72909463ff76",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/261dca4e-e725-41fc-aef9-72909463ff76.jpg",
+      "sha256": "5e582fa0c1d31cc2e3f11a679c083b197436e22f1c31d019d760e7d6a518dffe"
+    },
+    {
+      "bytes": 144950,
+      "filename": "IMG_3500_%02d.jpg",
+      "id": "b88dadd4-f434-4bb6-b52e-30f8abdd3987",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/b88dadd4-f434-4bb6-b52e-30f8abdd3987.jpg",
+      "sha256": "067717ed76e7568d5fcdc93d69b6c3dd047b68b7d52eb372f8f0c1c161f5fe10"
+    },
+    {
+      "bytes": 147785,
+      "filename": "IMG_3499_%02d.jpg",
+      "id": "1b2d7a8a-17c0-4308-b723-311f83ab24d2",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/1b2d7a8a-17c0-4308-b723-311f83ab24d2.jpg",
+      "sha256": "de488da30d6c9a3b9e36d9678c631439d90551c025f59417786ab89982e34585"
+    },
+    {
+      "bytes": 178398,
+      "filename": "IMG_3462_%02d.jpg",
+      "id": "3c9faa34-452f-4bd8-a9fc-82c68b05a272",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/3c9faa34-452f-4bd8-a9fc-82c68b05a272.jpg",
+      "sha256": "81d20c994727d4e9d410fc39497d736ca3712a16140626ffdbd963e253eb61f0"
+    },
+    {
+      "bytes": 155757,
+      "filename": "IMG_3542_%02d.jpg",
+      "id": "eab74f0c-7ba4-44d5-91e5-04a0b13da89f",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/eab74f0c-7ba4-44d5-91e5-04a0b13da89f.jpg",
+      "sha256": "55330b5175af0e3414c5b42cb4b08b281bc266d056eab94fdb562fd13e0ca075"
+    },
+    {
+      "bytes": 181410,
+      "filename": "IMG_3460_%02d.jpg",
+      "id": "5e505ac6-1f25-4fca-b4a6-b8cdfea73be7",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/5e505ac6-1f25-4fca-b4a6-b8cdfea73be7.jpg",
+      "sha256": "db1e761597df9e94b9c716d499c2364ffd0c36bce196f7b9c8e587de6245e9c0"
+    },
+    {
+      "bytes": 172236,
+      "filename": "IMG_3478_%02d.jpg",
+      "id": "e8b36462-59c3-4215-a3fe-4238abb56afe",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/e8b36462-59c3-4215-a3fe-4238abb56afe.jpg",
+      "sha256": "322609a42eb54d38c066108df26e6a85b1125e5fd384e29ca5d47af4a900f66b"
+    },
+    {
+      "bytes": 175948,
+      "filename": "IMG_3549_%02d.jpg",
+      "id": "bcec60dd-80df-4353-8271-c407117f5c9e",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/bcec60dd-80df-4353-8271-c407117f5c9e.jpg",
+      "sha256": "b64c0676c88616d1ca0aa014d64ea658f1179e48a39db76ad4c25a0e4b58b93a"
+    },
+    {
+      "bytes": 151227,
+      "filename": "IMG_3471_%02d.jpg",
+      "id": "2f10671d-b6ed-4c04-a5fb-cf915239b9d8",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/2f10671d-b6ed-4c04-a5fb-cf915239b9d8.jpg",
+      "sha256": "e2fc27b56cc34244e1d647d8f844969eb036701f68559b90066ea3d9dba4f956"
+    },
+    {
+      "bytes": 157478,
+      "filename": "IMG_3543_%02d.jpg",
+      "id": "762bcd90-4595-4818-8589-7b9945f037c7",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/762bcd90-4595-4818-8589-7b9945f037c7.jpg",
+      "sha256": "e6a96b4646d218159ed844da259bc9105fa0feb3b2f3eabd832df02c8bc1913c"
+    },
+    {
+      "bytes": 169890,
+      "filename": "IMG_3477_%02d.jpg",
+      "id": "114ca95f-0d93-4540-beba-2770306b0912",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/114ca95f-0d93-4540-beba-2770306b0912.jpg",
+      "sha256": "e13fd48a690376218bdb5d2fca45b75dcc9ab57b4a84d94bf9c4199c0e3705e6"
+    },
+    {
+      "bytes": 140071,
+      "filename": "IMG_3491_%02d.jpg",
+      "id": "e5c15c1e-f515-4c9b-9289-86f42db48e77",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/e5c15c1e-f515-4c9b-9289-86f42db48e77.jpg",
+      "sha256": "1f5f1665d9b4bfee2026fca6086fc3f771238862037093f6dfeaceeef9fc32b7"
+    },
+    {
+      "bytes": 169812,
+      "filename": "IMG_3546_%02d.jpg",
+      "id": "5b056fe1-9693-4298-9cc1-3d5a3740c806",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/5b056fe1-9693-4298-9cc1-3d5a3740c806.jpg",
+      "sha256": "157130df2d5fa7dd46ba16a6cda2ac22f0c7387b95d1afd57995a0435c8f001b"
+    },
+    {
+      "bytes": 156987,
+      "filename": "IMG_3510_%02d.jpg",
+      "id": "c88d2271-f0de-4913-be57-e6c45973a058",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/c88d2271-f0de-4913-be57-e6c45973a058.jpg",
+      "sha256": "0faae62210b2f6c2d03dc04281970a2a59f73eb2a8ba08f02ae7c8389f8159ec"
+    },
+    {
+      "bytes": 151597,
+      "filename": "IMG_3559_%02d.jpg",
+      "id": "965e7038-5805-43a5-a424-7795cb75dee7",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/965e7038-5805-43a5-a424-7795cb75dee7.jpg",
+      "sha256": "a77aa8b7bc67ec816623104804dbf1720328d4a880f71f2045a6b2c144d672f9"
+    },
+    {
+      "bytes": 127082,
+      "filename": "IMG_3524_%02d.jpg",
+      "id": "bc2eb2dd-2c75-4daa-ba53-703b431460fe",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/bc2eb2dd-2c75-4daa-ba53-703b431460fe.jpg",
+      "sha256": "4bd8524e9ec94ea1b01df9632af7112738aafaf2298abad6c3cad3450173e232"
+    },
+    {
+      "bytes": 153037,
+      "filename": "IMG_3532_%02d.jpg",
+      "id": "a8520afc-7713-475f-905e-7a4c723467d7",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/a8520afc-7713-475f-905e-7a4c723467d7.jpg",
+      "sha256": "67665e576f242eef7de53f1b114b300abe957937bd146bfdf0b9e66f20e9f566"
+    },
+    {
+      "bytes": 141298,
+      "filename": "IMG_3489_%02d.jpg",
+      "id": "fe173789-4550-4a7c-8183-e17fc121fc81",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/fe173789-4550-4a7c-8183-e17fc121fc81.jpg",
+      "sha256": "5d4294a22b0dfd21015eb01d20f63010566fc3f385c3d4b05fda73a7152696ae"
+    },
+    {
+      "bytes": 165880,
+      "filename": "IMG_3553_%02d.jpg",
+      "id": "638c45e8-8298-4fec-bed5-aa26fbdb58ab",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/638c45e8-8298-4fec-bed5-aa26fbdb58ab.jpg",
+      "sha256": "d53f916cc52dfbaf941f88e62f844b9e16198dca9fa403dafe143481159506a0"
+    },
+    {
+      "bytes": 145866,
+      "filename": "IMG_3503_%02d.jpg",
+      "id": "39760a95-35e0-480a-b401-a3c1a64f2f26",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/39760a95-35e0-480a-b401-a3c1a64f2f26.jpg",
+      "sha256": "71214042207cc033c0e7a696109691a3dd3c42358d4779f3a935f8c1ae97fb42"
+    },
+    {
+      "bytes": 169424,
+      "filename": "IMG_3536_%02d.jpg",
+      "id": "f7b97a84-4782-412c-935e-8b27044a6ead",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/f7b97a84-4782-412c-935e-8b27044a6ead.jpg",
+      "sha256": "b3ce2f66017f3d5b3a26c8dc3a686bce255226847612500e7435b7641619a244"
+    },
+    {
+      "bytes": 152216,
+      "filename": "IMG_3558_%02d.jpg",
+      "id": "bc23177f-49e4-409b-a391-2a9ffd3630b8",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/bc23177f-49e4-409b-a391-2a9ffd3630b8.jpg",
+      "sha256": "10190c76db4aac95abd07984bb2eb12f2ce3621973c49661a6c516f30224f106"
+    },
+    {
+      "bytes": 141266,
+      "filename": "IMG_3464_%02d.jpg",
+      "id": "262d44eb-59b4-4d90-a51d-263d146250d7",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/262d44eb-59b4-4d90-a51d-263d146250d7.jpg",
+      "sha256": "cf2402b9f791cfa49bcb652c8e30ec8fe798ea6a058d65f8df3e835bd2692801"
+    },
+    {
+      "bytes": 141803,
+      "filename": "IMG_3484_%02d.jpg",
+      "id": "69ff41ea-6a61-4c75-b08f-a1374020752d",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/69ff41ea-6a61-4c75-b08f-a1374020752d.jpg",
+      "sha256": "0a0979e3817f2bf1ff8491d7307026ca9f40b4031de9753207b1318a0cb53fc6"
+    },
+    {
+      "bytes": 139873,
+      "filename": "IMG_3507_%02d.jpg",
+      "id": "b6ccd6b3-a368-41cc-8170-64493d22685b",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/b6ccd6b3-a368-41cc-8170-64493d22685b.jpg",
+      "sha256": "d12bff0814936a4cf2a2c7d16a6b38d98ebec1cf9610cd1ce89687d386b0b78e"
+    },
+    {
+      "bytes": 156993,
+      "filename": "IMG_3539_%02d.jpg",
+      "id": "5a8ca32b-ab13-43a1-a540-4b0f242e1571",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/5a8ca32b-ab13-43a1-a540-4b0f242e1571.jpg",
+      "sha256": "92f7a85a9f64e573fdc0e3956139b436a9dbbdbb2af7c16561a650157802cf41"
+    },
+    {
+      "bytes": 175526,
+      "filename": "IMG_3555_%02d.jpg",
+      "id": "ce66146f-4ef4-4311-a06f-94a92f72a662",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/ce66146f-4ef4-4311-a06f-94a92f72a662.jpg",
+      "sha256": "4229281c9d5da07f909f3f031660fba48e0bd2ff4521510c31692a964fc5f056"
+    },
+    {
+      "bytes": 148752,
+      "filename": "IMG_3466_%02d.jpg",
+      "id": "453fbf95-0ca7-4cc3-b856-8aa8b309a8b3",
+      "label": "Healthy",
+      "publisher_class": "Healthy",
+      "relative_path": "images/453fbf95-0ca7-4cc3-b856-8aa8b309a8b3.jpg",
+      "sha256": "d1f9b26cdc788b911814663d36165866d77ebf6ba3274729e82bc1f5c1bad5a1"
+    },
+    {
+      "bytes": 150894,
+      "filename": "IMG_5800_%02d.jpg",
+      "id": "1d38a6d9-98b0-4639-ae90-25795dc66715",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/1d38a6d9-98b0-4639-ae90-25795dc66715.jpg",
+      "sha256": "cc14c05f9c786ca55860e9203e07acfef8aef68f650c2c3f88e9100d785e5425"
+    },
+    {
+      "bytes": 204706,
+      "filename": "IMG_4261_%02d.jpg",
+      "id": "a17eac21-8ba5-46a4-b3f3-54f2a7bc4484",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/a17eac21-8ba5-46a4-b3f3-54f2a7bc4484.jpg",
+      "sha256": "6f45d320aa9cf446275463c7d2b51e6b25a9ba570f7fb66d40f897c379791ed0"
+    },
+    {
+      "bytes": 151433,
+      "filename": "IMG_2621.jpg",
+      "id": "9ff898dd-74d4-48b5-9dd3-85a424feeb38",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/9ff898dd-74d4-48b5-9dd3-85a424feeb38.jpg",
+      "sha256": "438ef46390ce4060ea1931b7d111835cbe4a4c5fa1d889c604e2ce0be379b25b"
+    },
+    {
+      "bytes": 167493,
+      "filename": "IMG_2656.jpg",
+      "id": "24deccce-f17c-4b53-8441-d9d5642e3ab0",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/24deccce-f17c-4b53-8441-d9d5642e3ab0.jpg",
+      "sha256": "888eb243e869bdb5603acc41e7ca8e5efdb2ac72f82c6b232cc29c1ad59bdfd5"
+    },
+    {
+      "bytes": 170792,
+      "filename": "IMG_4265_%02d.jpg",
+      "id": "076ba157-f491-4a9c-b431-efcf9d154d92",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/076ba157-f491-4a9c-b431-efcf9d154d92.jpg",
+      "sha256": "35d73c06a27c864ab0e509515f30bc845d54f573e20031cdf5e935c400c97ad1"
+    },
+    {
+      "bytes": 158866,
+      "filename": "IMG_5838_%02d.jpg",
+      "id": "7f1c1633-37b6-4004-aea0-0f13214c9ca5",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/7f1c1633-37b6-4004-aea0-0f13214c9ca5.jpg",
+      "sha256": "76a5adc2fe914be2f56ff562b7c86c4282253a7574cd3a7c780cae77ce2e9397"
+    },
+    {
+      "bytes": 180179,
+      "filename": "IMG_4287_%02d.jpg",
+      "id": "8f4ef632-f209-40d7-9e6d-0b26d38c6e30",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/8f4ef632-f209-40d7-9e6d-0b26d38c6e30.jpg",
+      "sha256": "cebc69daa53d8479b91c07d2fcb8fb7706c75d5a25e65ab9f5116f6d0e5794a9"
+    },
+    {
+      "bytes": 222458,
+      "filename": "IMG_2689.jpg",
+      "id": "35af1cc1-762e-42f2-a48b-ab37f2ef564c",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/35af1cc1-762e-42f2-a48b-ab37f2ef564c.jpg",
+      "sha256": "521c61a9de041f5318a9d170db51ff5409019b4b7a251692682b0538692f17fa"
+    },
+    {
+      "bytes": 165274,
+      "filename": "IMG_4272_%02d.jpg",
+      "id": "d9401cff-2e09-4ad0-b462-28600bf5b7b8",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/d9401cff-2e09-4ad0-b462-28600bf5b7b8.jpg",
+      "sha256": "8f6736830d3a284c392250c8d9149991318b51ea485c89f8bacc088d07659b9f"
+    },
+    {
+      "bytes": 149986,
+      "filename": "IMG_2640.jpg",
+      "id": "80d88b88-2174-407e-a448-a7052977421d",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/80d88b88-2174-407e-a448-a7052977421d.jpg",
+      "sha256": "544d6f374c2751cca8ad306193f91dd828ed46b08da0259c5d655eabfa3de87f"
+    },
+    {
+      "bytes": 208839,
+      "filename": "IMG_4258_%02d.jpg",
+      "id": "26f2ad7d-ce6a-4358-9051-cff32f2c624b",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/26f2ad7d-ce6a-4358-9051-cff32f2c624b.jpg",
+      "sha256": "3654cf6856ff83e09ded553579b5436596f863f0508ea02058fe6b6998ebb329"
+    },
+    {
+      "bytes": 210146,
+      "filename": "IMG_4255_%02d.jpg",
+      "id": "a54d77a1-42b0-4110-9cbd-c42b23729377",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/a54d77a1-42b0-4110-9cbd-c42b23729377.jpg",
+      "sha256": "9aea5b70a161b101f5d672bc4f95b9c8cd891063e2229c4fd93c07ed452fed77"
+    },
+    {
+      "bytes": 236593,
+      "filename": "IMG_2696.jpg",
+      "id": "2724f67e-c68a-410b-bc28-c25fbab6752c",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/2724f67e-c68a-410b-bc28-c25fbab6752c.jpg",
+      "sha256": "8039736db5b06ff6fa4fcef5affb2df0c2e05e5b2ad839a78f65942548a0f8d4"
+    },
+    {
+      "bytes": 183264,
+      "filename": "IMG_2685.jpg",
+      "id": "8efe19b0-34c0-40f8-a4d7-9e0592aabac2",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/8efe19b0-34c0-40f8-a4d7-9e0592aabac2.jpg",
+      "sha256": "f79d5576cad6d73b37e36e76d44df7781c0ada7eb812f9d2fa35e3720e9b5a4a"
+    },
+    {
+      "bytes": 151924,
+      "filename": "IMG_2623.jpg",
+      "id": "487c2fbf-e44a-45ed-96f8-4b3d5b1d1aab",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/487c2fbf-e44a-45ed-96f8-4b3d5b1d1aab.jpg",
+      "sha256": "df4867ad2cb8e40a319d336cb24c8b36c34130136702143b386e0f9d86366970"
+    },
+    {
+      "bytes": 156368,
+      "filename": "IMG_5823_%02d.jpg",
+      "id": "68b3b8c7-ecbd-4d52-977b-d2ddc726591f",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/68b3b8c7-ecbd-4d52-977b-d2ddc726591f.jpg",
+      "sha256": "ab12baa76b1f14af18daa828d1f015b88b02239f05ebdfc2224437e297057221"
+    },
+    {
+      "bytes": 214522,
+      "filename": "IMG_4253_%02d.jpg",
+      "id": "4346f5dd-f4e0-4fc8-b7b2-6d6c4e893206",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/4346f5dd-f4e0-4fc8-b7b2-6d6c4e893206.jpg",
+      "sha256": "6ad52ea0f56e6fa64137c2683a2fa81dc0920d140f5fc89258b853752f628be4"
+    },
+    {
+      "bytes": 155618,
+      "filename": "IMG_5853_%02d.jpg",
+      "id": "0fda26fd-dab7-4dd3-92ae-0e7451074f24",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/0fda26fd-dab7-4dd3-92ae-0e7451074f24.jpg",
+      "sha256": "48bdb3dbd3c205f85be9446e45c617a2ce891cd2cad3730ba52a78146150ba4d"
+    },
+    {
+      "bytes": 214451,
+      "filename": "IMG_4254_%02d.jpg",
+      "id": "02402d70-9277-4496-a187-8be89ed17465",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/02402d70-9277-4496-a187-8be89ed17465.jpg",
+      "sha256": "49d292881171d45cec7c8cc2215e51f47cd0d62f3f5b1be8e321ead5dfa442df"
+    },
+    {
+      "bytes": 185067,
+      "filename": "IMG_2686.jpg",
+      "id": "a523f49e-0edd-4786-ad5d-719e702b8671",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/a523f49e-0edd-4786-ad5d-719e702b8671.jpg",
+      "sha256": "3ad3ace4e36b0709c3a5fc66b98fabf50642bc771fad8d68e99dd12fa3d8e9a7"
+    },
+    {
+      "bytes": 153831,
+      "filename": "IMG_5829_%02d.jpg",
+      "id": "ab04cbb8-e281-4376-bb77-fabcedf2c0f7",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/ab04cbb8-e281-4376-bb77-fabcedf2c0f7.jpg",
+      "sha256": "e1d8a65ca0826b6953cca5f8dc2daf20ee62da600f6dc8d57dbcf0241a6d838b"
+    },
+    {
+      "bytes": 203550,
+      "filename": "IMG_4248_%02d.jpg",
+      "id": "fc8e6f0d-7e6e-4ff1-a307-5e1efd5d3455",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/fc8e6f0d-7e6e-4ff1-a307-5e1efd5d3455.jpg",
+      "sha256": "47486bc63ab8ac97c5c26d550e2f797e7282ccfb4192d2c38f3926ac44124ca6"
+    },
+    {
+      "bytes": 151482,
+      "filename": "IMG_2619.jpg",
+      "id": "e618b074-a75d-439f-b9fa-db18a141f4b6",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/e618b074-a75d-439f-b9fa-db18a141f4b6.jpg",
+      "sha256": "15b4bf00ca6f1af27389eecd32014f6e7e51c80d924adf94ba0d30bb03036ee3"
+    },
+    {
+      "bytes": 156044,
+      "filename": "IMG_5852_%02d.jpg",
+      "id": "f48ee755-b8da-4b1f-a26f-a6bbab46a29e",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/f48ee755-b8da-4b1f-a26f-a6bbab46a29e.jpg",
+      "sha256": "81e5957906c3c4fad50a7c2d669e17b3697045a787e90aff08613d03f6c8121c"
+    },
+    {
+      "bytes": 180096,
+      "filename": "IMG_4276_%02d.jpg",
+      "id": "0ce41bcd-c2ca-4fab-aa65-b412a4c6314b",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/0ce41bcd-c2ca-4fab-aa65-b412a4c6314b.jpg",
+      "sha256": "7848e875d1a742a6569fdcd4d0929066cd778a9e973745e9b8c04aa70271a8fa"
+    },
+    {
+      "bytes": 153596,
+      "filename": "IMG_2652.jpg",
+      "id": "db0c00b1-9aee-4a75-b5d0-3297f130b8e8",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/db0c00b1-9aee-4a75-b5d0-3297f130b8e8.jpg",
+      "sha256": "7440f461b84001d53e60e628545f8f1d40a9d2d69f46e1a9073d2b19976a79aa"
+    },
+    {
+      "bytes": 207064,
+      "filename": "IMG_4249_%02d.jpg",
+      "id": "b81b2238-f94b-4377-94dd-7e239468e563",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/b81b2238-f94b-4377-94dd-7e239468e563.jpg",
+      "sha256": "8f7db51c6a047baed5e2a27d80d2468ae3e56450cdd4aedd828eb9084995c028"
+    },
+    {
+      "bytes": 153923,
+      "filename": "IMG_5797_%02d.jpg",
+      "id": "b6665754-99c9-4c2c-808f-2f57b28d46b6",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/b6665754-99c9-4c2c-808f-2f57b28d46b6.jpg",
+      "sha256": "f98096582a0678720114656e0a410b4e5729bf69a721c4ce65a8bc93f5ef48d6"
+    },
+    {
+      "bytes": 149283,
+      "filename": "IMG_5836_%02d.jpg",
+      "id": "78ed7393-912d-43d5-bac2-c08b6b08944f",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/78ed7393-912d-43d5-bac2-c08b6b08944f.jpg",
+      "sha256": "3dc3bb95a32aa876a0e5806420eb805320864270fc6a3cfefe168cd8b67318e4"
+    },
+    {
+      "bytes": 139202,
+      "filename": "IMG_2661.jpg",
+      "id": "c0c22f91-2055-4293-b763-03e2ba90fbd6",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/c0c22f91-2055-4293-b763-03e2ba90fbd6.jpg",
+      "sha256": "e8cbf9aef4391e593985de8bdffe8fa8496ae419195ab27d8aebeeaf09b47c11"
+    },
+    {
+      "bytes": 179785,
+      "filename": "IMG_4264_%02d.jpg",
+      "id": "04932839-1ad6-40b4-a172-4fdece57a864",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/04932839-1ad6-40b4-a172-4fdece57a864.jpg",
+      "sha256": "e0e0f330f81f431018ba24a1eaa6ae002fb808f3bbbdadada10a33dd381df812"
+    },
+    {
+      "bytes": 147108,
+      "filename": "IMG_2634.jpg",
+      "id": "ee33be0e-48df-4ae9-a5b3-bc3ada21111f",
+      "label": "Early_blight",
+      "publisher_class": "Early Blight",
+      "relative_path": "images/ee33be0e-48df-4ae9-a5b3-bc3ada21111f.jpg",
+      "sha256": "e63ec4b128097122f2c28a396063c0faa7817607403cade3fab027116d815c8f"
+    },
+    {
+      "bytes": 139298,
+      "filename": "IMG_5581_%02d.jpg",
+      "id": "b463eb25-d45e-4b82-9fdb-5d37371e7c0c",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/b463eb25-d45e-4b82-9fdb-5d37371e7c0c.jpg",
+      "sha256": "319c36ad56fa73665570076e18f746cf7799c43e832fa8e654e6212f2d2fa92d"
+    },
+    {
+      "bytes": 186195,
+      "filename": "IMG_4146_%02d.jpg",
+      "id": "47aa9686-78a9-4b42-b636-15267c052076",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/47aa9686-78a9-4b42-b636-15267c052076.jpg",
+      "sha256": "f4f19a2374e71fdf301b6a1bd813f24087b737f87ef1662d8c2626121228b59c"
+    },
+    {
+      "bytes": 183159,
+      "filename": "IMG_4171_%02d.jpg",
+      "id": "40c20979-6758-41a6-9a77-389be21f3db4",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/40c20979-6758-41a6-9a77-389be21f3db4.jpg",
+      "sha256": "527bb3e493469bc688e2838373be306332f18601727483c052efa499a7e4e014"
+    },
+    {
+      "bytes": 188852,
+      "filename": "IMG_4153_%02d.jpg",
+      "id": "4709338f-c74f-4529-94d6-ba66dbbd387f",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/4709338f-c74f-4529-94d6-ba66dbbd387f.jpg",
+      "sha256": "7fa8dc6f7144b49e8cb214ba58f154dfca753b2ceabf88621a91cfb3b9f9c08b"
+    },
+    {
+      "bytes": 194497,
+      "filename": "IMG_4160_%02d.jpg",
+      "id": "e86689a5-5490-499c-84ef-c4b9a4ce2300",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/e86689a5-5490-499c-84ef-c4b9a4ce2300.jpg",
+      "sha256": "d4b4a638107bec7c281f336bbd8fba81f1081d7aca8943b612aa1968c689be0f"
+    },
+    {
+      "bytes": 189522,
+      "filename": "IMG_4178_%02d.jpg",
+      "id": "5997a4ee-d912-4905-b2c7-708d3c37ebd8",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/5997a4ee-d912-4905-b2c7-708d3c37ebd8.jpg",
+      "sha256": "829bbeeefb2ba6e0faeab8391f85fb7396b861a6094250506dd568bc954a9f40"
+    },
+    {
+      "bytes": 132496,
+      "filename": "IMG_5587_%02d.jpg",
+      "id": "bfe5198b-b352-4622-a25b-c4dfdbaed39d",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/bfe5198b-b352-4622-a25b-c4dfdbaed39d.jpg",
+      "sha256": "30afa611af549ce4ccd7986465c90fbb8c3290936c781b839d1f677c9348ddf4"
+    },
+    {
+      "bytes": 136718,
+      "filename": "IMG_5569_%02d.jpg",
+      "id": "092090ec-2bf7-4a8a-a3e9-d1f0948fedb3",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/092090ec-2bf7-4a8a-a3e9-d1f0948fedb3.jpg",
+      "sha256": "20df93c1be25372da942c4d25b748a9ddb29d1a378cca11f1b873dcd8325ab0e"
+    },
+    {
+      "bytes": 144466,
+      "filename": "IMG_5565_%02d.jpg",
+      "id": "772e95a1-dec2-4532-b76d-eacf1799b8f6",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/772e95a1-dec2-4532-b76d-eacf1799b8f6.jpg",
+      "sha256": "e69c1f67c021ac0f548af2a6bfdbae12de5caf9215bd1cefda0b63da85a5c49a"
+    },
+    {
+      "bytes": 139931,
+      "filename": "IMG_4139_%02d.jpg",
+      "id": "a3d4372c-9b42-46f6-bbfc-5332c3504a74",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/a3d4372c-9b42-46f6-bbfc-5332c3504a74.jpg",
+      "sha256": "1443cda6a46fe283b1bdbea246930ceb1e07fefd6deb3c6ea5034f74f405dced"
+    },
+    {
+      "bytes": 126844,
+      "filename": "IMG_5588_%02d.jpg",
+      "id": "6aa6b75a-3369-4536-9f8a-ba251cfd170c",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/6aa6b75a-3369-4536-9f8a-ba251cfd170c.jpg",
+      "sha256": "277320fe127dde96d18b4c4e94a36a2a5044000beb223fc5e2817640e3cedac9"
+    },
+    {
+      "bytes": 146615,
+      "filename": "IMG_5554_%02d.jpg",
+      "id": "110f2b65-882d-4f5f-a44c-a89fc9e4f2ae",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/110f2b65-882d-4f5f-a44c-a89fc9e4f2ae.jpg",
+      "sha256": "76f054a77ab1a1da069f6ffe505b49fc85d66016dc68309b5baef6b952123b0e"
+    },
+    {
+      "bytes": 145476,
+      "filename": "IMG_5540_%02d.jpg",
+      "id": "834ab862-290c-40a6-b2c0-695a71b38f9d",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/834ab862-290c-40a6-b2c0-695a71b38f9d.jpg",
+      "sha256": "904d0fedcf9b08c941a03ca62a605930ea838298181754e39fdc88b21f5e2137"
+    },
+    {
+      "bytes": 136539,
+      "filename": "IMG_5584_%02d.jpg",
+      "id": "6f8900ed-ff36-4db2-86f9-91876033ac5e",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/6f8900ed-ff36-4db2-86f9-91876033ac5e.jpg",
+      "sha256": "cb13d33d9e1e298874a78e56e725247694886c481d97a136af7749cd68849807"
+    },
+    {
+      "bytes": 143977,
+      "filename": "IMG_5645_%02d.jpg",
+      "id": "00e0675d-8a47-480f-92dd-523213feafab",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/00e0675d-8a47-480f-92dd-523213feafab.jpg",
+      "sha256": "f1ee769167fbab2d2b229076e30ad46f8633d304590e938b7c8343cfecef2ffe"
+    },
+    {
+      "bytes": 146550,
+      "filename": "IMG_5551_%02d.jpg",
+      "id": "b2030431-a5db-42c6-acd5-b0f0d8bc0522",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/b2030431-a5db-42c6-acd5-b0f0d8bc0522.jpg",
+      "sha256": "799875c1bb1a7c185de1cc95c70ec7c011143b7d69467852967f271a24a12371"
+    },
+    {
+      "bytes": 159691,
+      "filename": "IMG_5599_%02d.jpg",
+      "id": "89a0bc17-2ce1-415d-8dfb-cb3e90c1cc09",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/89a0bc17-2ce1-415d-8dfb-cb3e90c1cc09.jpg",
+      "sha256": "d032a18e6e4cdbfd3fa81e9aebbd5eea9f425fdb403e7d99bfb5053a96175875"
+    },
+    {
+      "bytes": 133772,
+      "filename": "IMG_5624_%02d.jpg",
+      "id": "0e6f6502-250d-4e16-9030-8692c3caeccf",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/0e6f6502-250d-4e16-9030-8692c3caeccf.jpg",
+      "sha256": "a90c3025f7a32ba46b14e6a1aed23b579929bb431cbd975dc86470cfd16f0f42"
+    },
+    {
+      "bytes": 141808,
+      "filename": "IMG_5621_%02d.jpg",
+      "id": "03a434df-6e19-485e-a3f2-e5d8bed0aa4c",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/03a434df-6e19-485e-a3f2-e5d8bed0aa4c.jpg",
+      "sha256": "6a3e3bbe310f5708af1cd573bc818a67f71b0980e7f76bc37b630cf0f45bee78"
+    },
+    {
+      "bytes": 133871,
+      "filename": "IMG_5643_%02d.jpg",
+      "id": "6125face-2d7c-4a7b-84f2-6d48802ec597",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/6125face-2d7c-4a7b-84f2-6d48802ec597.jpg",
+      "sha256": "7a39468e04005724f52d48744db4276ff055b198e63067173eb793f5f847e778"
+    },
+    {
+      "bytes": 160880,
+      "filename": "IMG_5596_%02d.jpg",
+      "id": "96325f18-7f26-4090-8551-8dfd6c8b5390",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/96325f18-7f26-4090-8551-8dfd6c8b5390.jpg",
+      "sha256": "5ad488d7aff8586ec380925df8b1ca7e7e5c5a08eb8184bc8bc800b7ef9a88d2"
+    },
+    {
+      "bytes": 135629,
+      "filename": "IMG_5611_%02d.jpg",
+      "id": "248a19fd-53aa-40e0-a6eb-7a7a728aaf18",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/248a19fd-53aa-40e0-a6eb-7a7a728aaf18.jpg",
+      "sha256": "72b369359e784e963123cd298cb2ae207bc300e1a94708861995b3bb5927f3c2"
+    },
+    {
+      "bytes": 148155,
+      "filename": "IMG_5550_%02d.jpg",
+      "id": "dbf5c685-7a58-4169-b5bc-a5af01073c79",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/dbf5c685-7a58-4169-b5bc-a5af01073c79.jpg",
+      "sha256": "1587c20976ea95987d1a7ba490d4b221d011a8c87f93df959cca009530e56db7"
+    },
+    {
+      "bytes": 145747,
+      "filename": "IMG_5607_%02d.jpg",
+      "id": "cd38e782-f188-460c-98db-47c425e38d78",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/cd38e782-f188-460c-98db-47c425e38d78.jpg",
+      "sha256": "333681fabb61163731a6a07fde5b8018f7df8ad1a99b3b9bb5e199a6689177ff"
+    },
+    {
+      "bytes": 145948,
+      "filename": "IMG_5546_%02d.jpg",
+      "id": "08347d62-f256-4512-a2bc-439892dcd1bd",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/08347d62-f256-4512-a2bc-439892dcd1bd.jpg",
+      "sha256": "0c51555fe2414d6231b3cd2221cf9639af309dffe85a49bdf0904a86323a6469"
+    },
+    {
+      "bytes": 139647,
+      "filename": "IMG_5617_%02d.jpg",
+      "id": "4c414d4e-9511-4ce9-aa81-152ddfc23fb9",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/4c414d4e-9511-4ce9-aa81-152ddfc23fb9.jpg",
+      "sha256": "abae0bce783a78830e5ad2d4a79b82399b9e77a13b5202ab30464cd74c34524c"
+    },
+    {
+      "bytes": 137867,
+      "filename": "IMG_5563_%02d.jpg",
+      "id": "88ff0f7e-95da-44ef-97f0-ecda3f21987c",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/88ff0f7e-95da-44ef-97f0-ecda3f21987c.jpg",
+      "sha256": "1b613346aa1289d6bc8a68613825f7e816c40429c7a37e97e9e92d669c616401"
+    },
+    {
+      "bytes": 134607,
+      "filename": "IMG_5570_%02d.jpg",
+      "id": "72f31843-4335-4c1f-a0bb-1b23245bf5fe",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/72f31843-4335-4c1f-a0bb-1b23245bf5fe.jpg",
+      "sha256": "7a3d7a70a721f850c8ca5ce34612a4884e9ec7c0f02970d8b8c9a07d2e574236"
+    },
+    {
+      "bytes": 138223,
+      "filename": "IMG_5558_%02d.jpg",
+      "id": "59b949d2-10e9-4eff-8fb9-a7c500468b24",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/59b949d2-10e9-4eff-8fb9-a7c500468b24.jpg",
+      "sha256": "a47ddbba6f169ae742e7385d069c6a17779f6d43fff3a393c143135f2c4ba788"
+    },
+    {
+      "bytes": 137207,
+      "filename": "IMG_5571_%02d.jpg",
+      "id": "3c6a6ba8-1ba9-4a07-a773-f8f4c7a704ca",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/3c6a6ba8-1ba9-4a07-a773-f8f4c7a704ca.jpg",
+      "sha256": "29d7c406059d8f94baf36b76d51b353bcda682a4d6ceab097e0f27ff25c76727"
+    },
+    {
+      "bytes": 190257,
+      "filename": "IMG_4151_%02d.jpg",
+      "id": "ec2070cf-1a28-48a4-93a6-b2d5b0007570",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/ec2070cf-1a28-48a4-93a6-b2d5b0007570.jpg",
+      "sha256": "cf12e50a6c7f4769bb02b851fd017483531bc568bdd19651dd80715c3d66afce"
+    },
+    {
+      "bytes": 180957,
+      "filename": "IMG_4163_%02d.jpg",
+      "id": "6873c1dc-a1e3-4cd4-b359-d280221c84b2",
+      "label": "Late_blight",
+      "publisher_class": "Late Blight",
+      "relative_path": "images/6873c1dc-a1e3-4cd4-b359-d280221c84b2.jpg",
+      "sha256": "653b6440dbff7b6fbd95dfc8b700001d541a07b1177593f46adaeea46832d572"
+    },
+    {
+      "bytes": 178491,
+      "filename": "IMG_4476_%02d.jpg",
+      "id": "e96aac0c-aa47-40ed-a62f-90b18da112d3",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/e96aac0c-aa47-40ed-a62f-90b18da112d3.jpg",
+      "sha256": "1bc806882fe6357a3fb68f2629a55c5461ecf70f5f1a91cec3c709a4487b727b"
+    },
+    {
+      "bytes": 131947,
+      "filename": "IMG_4631_%02d.jpg",
+      "id": "712ced2c-9717-471f-bfe5-7546a77c04b6",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/712ced2c-9717-471f-bfe5-7546a77c04b6.jpg",
+      "sha256": "df7697b90c401e57a2feb5fb75d855f7c801ec721c2cd830ded82e3cfcb4103e"
+    },
+    {
+      "bytes": 145248,
+      "filename": "IMG_3585_%02d.jpg",
+      "id": "c7d3afce-3234-4b5b-a45d-44a35330dbe7",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/c7d3afce-3234-4b5b-a45d-44a35330dbe7.jpg",
+      "sha256": "414426ac5165e9994e6b049af183a94eb083c69d1b5cee5d24f40e7416c9d5f2"
+    },
+    {
+      "bytes": 127781,
+      "filename": "IMG_4607_%02d.jpg",
+      "id": "a42786db-a0ee-40a5-87ea-a846e404297d",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/a42786db-a0ee-40a5-87ea-a846e404297d.jpg",
+      "sha256": "1403c222645e2d33d17b86dac7591af38506c3725fc77d90de1e68bf11823f37"
+    },
+    {
+      "bytes": 140317,
+      "filename": "IMG_4652_%02d.jpg",
+      "id": "b8829fbb-d8a0-42bc-9b8a-4fcf46d359eb",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/b8829fbb-d8a0-42bc-9b8a-4fcf46d359eb.jpg",
+      "sha256": "debec4d9043ea9a703609d77112c36447ec03a879910e1bafe3c140a7e0feaba"
+    },
+    {
+      "bytes": 173172,
+      "filename": "IMG_3443_%02d.jpg",
+      "id": "431b40ef-0c68-4588-90f2-9bf7764ed0d3",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/431b40ef-0c68-4588-90f2-9bf7764ed0d3.jpg",
+      "sha256": "2e89341b964df5ffc45dbc9cd722f26dc53744be67ea96a4259fc3bd8281ec7c"
+    },
+    {
+      "bytes": 209931,
+      "filename": "IMG_4858_%02d.jpg",
+      "id": "8170ffa9-f265-4937-9a0d-5b6a7dc06d68",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/8170ffa9-f265-4937-9a0d-5b6a7dc06d68.jpg",
+      "sha256": "12acfdaf0f5c8e2b170b939803cd7e10995296ddc725302c4b2ec5e66ee62412"
+    },
+    {
+      "bytes": 191218,
+      "filename": "IMG_4477_%02d.jpg",
+      "id": "2effd252-5b8d-4a9e-b5d3-3929dd350a94",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/2effd252-5b8d-4a9e-b5d3-3929dd350a94.jpg",
+      "sha256": "d2b18e96e0e9677ad43556aec2f366d1c14b02cce64285b7bb53f9ae923b44c5"
+    },
+    {
+      "bytes": 213492,
+      "filename": "IMG_4829_%02d.jpg",
+      "id": "156d2106-11d4-4e33-8564-cb665e8cd828",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/156d2106-11d4-4e33-8564-cb665e8cd828.jpg",
+      "sha256": "cebbadb025e8d6dc2fc253051ed24f5b145e2715426b17ddc515498b40077750"
+    },
+    {
+      "bytes": 207949,
+      "filename": "IMG_4097_%02d.jpg",
+      "id": "9f9f4df9-cdc8-41cd-bb97-c5b77eed68ca",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/9f9f4df9-cdc8-41cd-bb97-c5b77eed68ca.jpg",
+      "sha256": "4c5a9371e9770d5210c9fa49ca19e5577cccf3e0cb0ae27123e0218b75b9d70d"
+    },
+    {
+      "bytes": 141568,
+      "filename": "IMG_4593_%02d.jpg",
+      "id": "10042dc6-b4e1-4dd4-b58e-e034f867787c",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/10042dc6-b4e1-4dd4-b58e-e034f867787c.jpg",
+      "sha256": "49db7cd61e49be56edcc2cf553d245d15225db4f333b726c2f08e117f2a54252"
+    },
+    {
+      "bytes": 137418,
+      "filename": "IMG_4596_%02d.jpg",
+      "id": "089c608a-d58a-4133-b26e-e9d1236bd211",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/089c608a-d58a-4133-b26e-e9d1236bd211.jpg",
+      "sha256": "7129318d3b7bfb353904a5208dc5eefa8df8156aa21ced7ff66a83fac2b7aa17"
+    },
+    {
+      "bytes": 209387,
+      "filename": "IMG_4899_%02d.jpg",
+      "id": "6a75d58e-8658-4d36-a005-935020cc905a",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/6a75d58e-8658-4d36-a005-935020cc905a.jpg",
+      "sha256": "fa53c77c47299d21c38b57d7952a3b8ede69a2d591df10849c84d0c86684f013"
+    },
+    {
+      "bytes": 210774,
+      "filename": "IMG_4106_%02d.jpg",
+      "id": "47b9355d-29d6-421a-8d0d-48ae3719a2b7",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/47b9355d-29d6-421a-8d0d-48ae3719a2b7.jpg",
+      "sha256": "2d49fda34e10fd19b2329a367b25570c782e1dea83547489e1fa47e3d14a1cfa"
+    },
+    {
+      "bytes": 176517,
+      "filename": "IMG_4105_%02d.jpg",
+      "id": "cce56380-73bd-4207-b164-78a9f1dccf77",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/cce56380-73bd-4207-b164-78a9f1dccf77.jpg",
+      "sha256": "2c6ca9289549484682b68d77c16ab93dc0aefba602334cacaf3a080cca4aa8d9"
+    },
+    {
+      "bytes": 164548,
+      "filename": "IMG_4446_%02d.jpg",
+      "id": "0caa4845-0c6a-46b3-8e3a-f9b80dd67cec",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/0caa4845-0c6a-46b3-8e3a-f9b80dd67cec.jpg",
+      "sha256": "501519abac2d2dd13fc422e925b6247e2d5c9ef023fe11f4cd78f572cf1e112e"
+    },
+    {
+      "bytes": 235945,
+      "filename": "IMG_4772_%02d.jpg",
+      "id": "91fa0f40-95d3-4bed-a6fa-38fa963bdff2",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/91fa0f40-95d3-4bed-a6fa-38fa963bdff2.jpg",
+      "sha256": "f9f28d92b4b600cc20f66c2e3e938e775d4d6a1279ff1c8effb4ab86f065c1b6"
+    },
+    {
+      "bytes": 137978,
+      "filename": "IMG_4655_%02d.jpg",
+      "id": "2deb9dde-0379-4376-937b-52b372e7238b",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/2deb9dde-0379-4376-937b-52b372e7238b.jpg",
+      "sha256": "0d1c33aeb000bbabf0687d3f35641e81050c2d0f2de01aa24f98e460e009854e"
+    },
+    {
+      "bytes": 198873,
+      "filename": "IMG_4800_%02d.jpg",
+      "id": "455c6871-b78c-47d8-9db0-9fbbb7a0c75d",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/455c6871-b78c-47d8-9db0-9fbbb7a0c75d.jpg",
+      "sha256": "42b159cda9388b659e5473d95f7f49f0a00dba20a62be5727fd80b0a7d38f56d"
+    },
+    {
+      "bytes": 194066,
+      "filename": "IMG_4808_%02d.jpg",
+      "id": "53bfbf3a-8946-4a9e-9faa-b6380160ff7f",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/53bfbf3a-8946-4a9e-9faa-b6380160ff7f.jpg",
+      "sha256": "c5a50901fb720311e59403e00c71a4d41e8bcc6d6f453f19a446dc705f619593"
+    },
+    {
+      "bytes": 185775,
+      "filename": "IMG_4876_%02d.jpg",
+      "id": "48fb19b5-32d0-49a6-be9b-3f568196be8a",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/48fb19b5-32d0-49a6-be9b-3f568196be8a.jpg",
+      "sha256": "2bec8082df4716e6c50d49ceb91251def9e5d8f98467e4522b70109014658d27"
+    },
+    {
+      "bytes": 218330,
+      "filename": "IMG_4775_%02d.jpg",
+      "id": "5d21f2f9-c7c6-47b9-9af9-08133a18c4d4",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/5d21f2f9-c7c6-47b9-9af9-08133a18c4d4.jpg",
+      "sha256": "ecdd2bc22b1a22986605a1b39b9d6df67d51b194b512fcf7abe8b7c6615da4be"
+    },
+    {
+      "bytes": 144146,
+      "filename": "IMG_4616_%02d.jpg",
+      "id": "43243a8b-fd3a-4772-b673-d6f685220996",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/43243a8b-fd3a-4772-b673-d6f685220996.jpg",
+      "sha256": "9110eb22e3b8291a93a48410125523e81c462135b4190bd6305a67929adcf7e5"
+    },
+    {
+      "bytes": 135855,
+      "filename": "IMG_4627_%02d.jpg",
+      "id": "59d4d9b8-9d15-46c3-b943-0ac4cc242647",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/59d4d9b8-9d15-46c3-b943-0ac4cc242647.jpg",
+      "sha256": "768d629c445b0c50cfb0de155fad00b4c978fa169fbc6e99d0e92a2cbc67e3c6"
+    },
+    {
+      "bytes": 240639,
+      "filename": "IMG_4117_%02d.jpg",
+      "id": "07cc9801-bac6-4520-a4fa-63f083618044",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/07cc9801-bac6-4520-a4fa-63f083618044.jpg",
+      "sha256": "3fa1ee00cc59de430e0a163b785f46fce2dd725d0a975c192389aeebd92c6f83"
+    },
+    {
+      "bytes": 200088,
+      "filename": "IMG_4081_%02d.jpg",
+      "id": "6ccbce30-d3de-4d3d-8c8f-3d545e1c925e",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/6ccbce30-d3de-4d3d-8c8f-3d545e1c925e.jpg",
+      "sha256": "9b201068cd6ab0796d0a128d168d96530b1c426357ff82763f4b454e4b3af5b1"
+    },
+    {
+      "bytes": 184623,
+      "filename": "IMG_4464_%02d.jpg",
+      "id": "302ae042-8291-4743-8fa0-0b068ce847b7",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/302ae042-8291-4743-8fa0-0b068ce847b7.jpg",
+      "sha256": "0356052bf816ae55efbb6ee57cee677295d49e53453156bcf451fe202e149c17"
+    },
+    {
+      "bytes": 125486,
+      "filename": "IMG_4645_%02d.jpg",
+      "id": "5614f9a8-a2a1-4e44-9926-7f809873b3b0",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/5614f9a8-a2a1-4e44-9926-7f809873b3b0.jpg",
+      "sha256": "4bb9ba7f1c53dc7e5767b4196cb1128cc6b11cecf88499963db8b436e0861d71"
+    },
+    {
+      "bytes": 200217,
+      "filename": "IMG_4833_%02d.jpg",
+      "id": "9dcf1b27-7bf5-4524-8627-6d12329efe35",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/9dcf1b27-7bf5-4524-8627-6d12329efe35.jpg",
+      "sha256": "636b96665f23f165903484dcee73f51e9fc7df6216cfc18fb161f5d3bcbe1c64"
+    },
+    {
+      "bytes": 148396,
+      "filename": "IMG_3562_%02d.jpg",
+      "id": "27c649ac-c8e3-47a3-af79-9870bffd0f59",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/27c649ac-c8e3-47a3-af79-9870bffd0f59.jpg",
+      "sha256": "99a32e7b403912d39db0bce5fa1d42d6198e527c311af7a660df71393744a759"
+    },
+    {
+      "bytes": 124145,
+      "filename": "IMG_4641_%02d.jpg",
+      "id": "c12e3364-5efa-4105-b1cb-24c6b2fc205f",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/c12e3364-5efa-4105-b1cb-24c6b2fc205f.jpg",
+      "sha256": "98993355f3d1cba9225e87d8a6c6a4ed5078f0dd45abb195f6cffce3261073e2"
+    },
+    {
+      "bytes": 122386,
+      "filename": "IMG_4665_%02d.jpg",
+      "id": "6ff9b4d6-6f81-4942-a390-05e7954b2454",
+      "label": "Leaf Miner",
+      "publisher_class": "Leaf Miner",
+      "relative_path": "images/6ff9b4d6-6f81-4942-a390-05e7954b2454.jpg",
+      "sha256": "90459c9c457ad2ba4f19dcd39c136b838e6e8bdf07ab503f984a5f2efc7a272a"
+    },
+    {
+      "bytes": 201376,
+      "filename": "IMG_4522_%02d.jpg",
+      "id": "906e8ded-759a-4a25-a0c5-1cd7a09b7dda",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/906e8ded-759a-4a25-a0c5-1cd7a09b7dda.jpg",
+      "sha256": "cd941a6b04cb7efad3971bfd0fe80e51760be346772785c2beabfae2be958e6e"
+    },
+    {
+      "bytes": 202251,
+      "filename": "IMG_3718_%02d.jpg",
+      "id": "c9483a6e-03fc-4649-8889-9f356e9a0076",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/c9483a6e-03fc-4649-8889-9f356e9a0076.jpg",
+      "sha256": "84bd4afc8c7a4e693376e381a8c7c437a5954afdbb2ee73d6a9ab4d052aa9173"
+    },
+    {
+      "bytes": 196479,
+      "filename": "IMG_4525_%02d.jpg",
+      "id": "40230db0-e1f3-44db-bb9d-b9e0fd2ff1f2",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/40230db0-e1f3-44db-bb9d-b9e0fd2ff1f2.jpg",
+      "sha256": "4cd83ffa735dfe1595603208dcfeabcee254c4ff67f011b56db1a13f15f79bf8"
+    },
+    {
+      "bytes": 168208,
+      "filename": "IMG_4550_%02d.jpg",
+      "id": "9254a1d5-5b04-42f1-9433-3bd1198fcd41",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/9254a1d5-5b04-42f1-9433-3bd1198fcd41.jpg",
+      "sha256": "59c121b9f7875af79b21486378f8b3a3bb5fd6bd3d5e1dc496a8d61feda5bc81"
+    },
+    {
+      "bytes": 230611,
+      "filename": "IMG_4528_%02d.jpg",
+      "id": "e4ad9ab6-9759-47f5-93c5-f153c9556679",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/e4ad9ab6-9759-47f5-93c5-f153c9556679.jpg",
+      "sha256": "59e793b1fa96ac42f3b1f04382f5cbb45e0a0de084958d9b6dd34a670777b7ee"
+    },
+    {
+      "bytes": 158157,
+      "filename": "IMG_3712_%02d.jpg",
+      "id": "82faa4ec-8b5f-4562-b445-b10798411916",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/82faa4ec-8b5f-4562-b445-b10798411916.jpg",
+      "sha256": "3250f2b43d67931a8ae12c2af2c673f5ff89125945d755cb5855e479f3902e59"
+    },
+    {
+      "bytes": 207962,
+      "filename": "IMG_4504_%02d.jpg",
+      "id": "b67aab48-3208-4891-b474-3334f6be58b6",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/b67aab48-3208-4891-b474-3334f6be58b6.jpg",
+      "sha256": "26236a5a1f6ddc3821b2948a0cd95fcac11041b76d8dde218becb3a0e10b7da5"
+    },
+    {
+      "bytes": 145077,
+      "filename": "IMG_5777_%02d.jpg",
+      "id": "b1b3a3a3-42dc-45de-bde0-a05f6715da13",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/b1b3a3a3-42dc-45de-bde0-a05f6715da13.jpg",
+      "sha256": "db4cd10412a83c307b3f6de52d6d1e71090bfe1bce1b2e0bf5427f1f48694dbb"
+    },
+    {
+      "bytes": 167903,
+      "filename": "IMG_3756_%02d.jpg",
+      "id": "1187cbf5-5784-4193-80f2-0f37d169d158",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/1187cbf5-5784-4193-80f2-0f37d169d158.jpg",
+      "sha256": "c97109a5ca7a45bfe9e3eadb36d95b841ff3e14d224a4ac16a493e19b0b46eb6"
+    },
+    {
+      "bytes": 196108,
+      "filename": "IMG_4534_%02d.jpg",
+      "id": "6e0c001d-cf86-4b8f-ac8b-21ee59a5350e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/6e0c001d-cf86-4b8f-ac8b-21ee59a5350e.jpg",
+      "sha256": "357441f8e9ac5a80cddea917f9d8cb311d442b551a41cb00343c6364d7dfff04"
+    },
+    {
+      "bytes": 131073,
+      "filename": "IMG_5778_%02d.jpg",
+      "id": "fecdb22c-1d9b-48d8-986a-30c97a152386",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/fecdb22c-1d9b-48d8-986a-30c97a152386.jpg",
+      "sha256": "5ec8121ebdf3e96f0d6a03684bfc89ebd343edac03d80fd9c2ce95133a57ad1c"
+    },
+    {
+      "bytes": 160127,
+      "filename": "IMG_4554_%02d.jpg",
+      "id": "f1833cdc-58a5-4cfd-a100-3614fe048238",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/f1833cdc-58a5-4cfd-a100-3614fe048238.jpg",
+      "sha256": "1401e506b7100aff14d94b1e86af2348630eb3d19ced92d4c88709accfd0bfef"
+    },
+    {
+      "bytes": 176325,
+      "filename": "IMG_3641_%02d.jpg",
+      "id": "070e5a46-7a82-4be9-9ebe-d8e0a467ab3f",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/070e5a46-7a82-4be9-9ebe-d8e0a467ab3f.jpg",
+      "sha256": "557cbe96f05ed87112060b7df0e7702cae16c7dcf75bfe974ef5f7c66b38a656"
+    },
+    {
+      "bytes": 152383,
+      "filename": "IMG_3726_%02d.jpg",
+      "id": "91db3778-3b82-442f-a58f-b32f2ba38cf4",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/91db3778-3b82-442f-a58f-b32f2ba38cf4.jpg",
+      "sha256": "185e80dca18106f5701d311bdcf55c012f04d666d96a00eff282cb1a5ef6b54c"
+    },
+    {
+      "bytes": 193052,
+      "filename": "IMG_3719_%02d.jpg",
+      "id": "e53c0390-aa7c-4c26-9c89-405f5bc5bff5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/e53c0390-aa7c-4c26-9c89-405f5bc5bff5.jpg",
+      "sha256": "14619ad48ef38601caf542e9c77bab4c84ca5118aeccaf51f13afb0a6aa7e98c"
+    },
+    {
+      "bytes": 197036,
+      "filename": "IMG_4543_%02d.jpg",
+      "id": "ae9de1e2-1002-4a23-8dd7-5390f1ffeab0",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/ae9de1e2-1002-4a23-8dd7-5390f1ffeab0.jpg",
+      "sha256": "98fc99988f8fb345508d957040436fa963ad2eed3873b63b069e5fe1186385c2"
+    },
+    {
+      "bytes": 159152,
+      "filename": "IMG_3679_%02d.jpg",
+      "id": "b55a1980-574b-4473-96e2-0fddd8d4b7b7",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/b55a1980-574b-4473-96e2-0fddd8d4b7b7.jpg",
+      "sha256": "c6a3f6d34fa4ea21ecc89e2181f73a36b321cfc7135abc1e4fe39e323152ad07"
+    },
+    {
+      "bytes": 158701,
+      "filename": "IMG_3673_%02d.jpg",
+      "id": "c2f2ccf6-3220-4c42-a83a-2e9c147c8311",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/c2f2ccf6-3220-4c42-a83a-2e9c147c8311.jpg",
+      "sha256": "859506a1ed4434d5d4b20706b0906f631af26d14c26b278c7ac77f1555c84c06"
+    },
+    {
+      "bytes": 148236,
+      "filename": "IMG_5731_%02d.jpg",
+      "id": "9628f503-1e4b-435a-847e-50f75c01007c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/9628f503-1e4b-435a-847e-50f75c01007c.jpg",
+      "sha256": "78d852f870502bb65df2b9135c0a9adc97bf19be12740121b6573ca7eded50b8"
+    },
+    {
+      "bytes": 149929,
+      "filename": "IMG_3629_%02d.jpg",
+      "id": "40b607a4-4b1f-46e1-940c-c2bd798d92de",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/40b607a4-4b1f-46e1-940c-c2bd798d92de.jpg",
+      "sha256": "2a5deffabb2048434c4659983095d6194d5c6d3ca97a9df30f5f45e9a65b1fc3"
+    },
+    {
+      "bytes": 134585,
+      "filename": "IMG_3761_%02d.jpg",
+      "id": "8ecc4760-ba5f-4c4e-90e0-9aaded0333c8",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/8ecc4760-ba5f-4c4e-90e0-9aaded0333c8.jpg",
+      "sha256": "f3bd3e4150c99b46360da6b63b40f0ed4124565b6fc450aa6bfd039467362923"
+    },
+    {
+      "bytes": 175331,
+      "filename": "IMG_4559_%02d.jpg",
+      "id": "c7c9b2b2-8c4f-4515-9445-e04f776c06bf",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/c7c9b2b2-8c4f-4515-9445-e04f776c06bf.jpg",
+      "sha256": "e03766870b05888919449784dc7d95e34ffa5f9e07a372fb06f9768eb4258e37"
+    },
+    {
+      "bytes": 159817,
+      "filename": "IMG_3632_%02d.jpg",
+      "id": "bc77c8e5-2641-408f-96c5-5fb04d3a478c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/bc77c8e5-2641-408f-96c5-5fb04d3a478c.jpg",
+      "sha256": "a68fef7cbfe490d23b87f2e016fde9f37ac7f65f1c2dc9357551e2a404d80f6d"
+    },
+    {
+      "bytes": 147740,
+      "filename": "IMG_5705_%02d.jpg",
+      "id": "577eb551-2951-4bc4-b611-a2e357e35d07",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/577eb551-2951-4bc4-b611-a2e357e35d07.jpg",
+      "sha256": "18ef6cba5215c9871784d66d2f824b20bc27676b9fd79efaebb8d407b31162ea"
+    },
+    {
+      "bytes": 123636,
+      "filename": "IMG_5711_%02d.jpg",
+      "id": "686a96fd-7e17-4ba1-8469-52e8761a2e96",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/686a96fd-7e17-4ba1-8469-52e8761a2e96.jpg",
+      "sha256": "9dca6ab708e312e48bd4230a24a5594597ca78c22b4d4ea8ae7b7c46d8a67c93"
+    },
+    {
+      "bytes": 154916,
+      "filename": "IMG_3682_%02d.jpg",
+      "id": "a6f9dbd7-d72e-4754-ad8e-195735d7a1c6",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/a6f9dbd7-d72e-4754-ad8e-195735d7a1c6.jpg",
+      "sha256": "cdcdefeaa094de56366e8e619e4c81075199df53a4a88cc0aa573e1982602482"
+    },
+    {
+      "bytes": 149034,
+      "filename": "IMG_5764_%02d.jpg",
+      "id": "853ff5ae-55e9-4eea-bcdc-5e0f656cd5c3",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/853ff5ae-55e9-4eea-bcdc-5e0f656cd5c3.jpg",
+      "sha256": "7c63cff0659464b558b32b8ee6e2b9858e287ebe2009d21687ea5e73f814bfab"
+    },
+    {
+      "bytes": 208274,
+      "filename": "IMG_4515_%02d.jpg",
+      "id": "dcd8b82e-f467-44b8-b23c-16908cd1b563",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/dcd8b82e-f467-44b8-b23c-16908cd1b563.jpg",
+      "sha256": "c909a45b1694db225902ef857c0063d5a81acf421e2654372e10e6e6c831c933"
+    },
+    {
+      "bytes": 164118,
+      "filename": "IMG_3713_%02d.jpg",
+      "id": "b8f9a165-b294-47ca-866b-232898c301f2",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/b8f9a165-b294-47ca-866b-232898c301f2.jpg",
+      "sha256": "0eafb5d761d2c66a96d14cc06869e08d2defc01d4ef74a7c9b7f7af175b875a3"
+    },
+    {
+      "bytes": 133161,
+      "filename": "IMG_5770_%02d.jpg",
+      "id": "98518945-bf26-4586-9f2f-b026a0cbedca",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/98518945-bf26-4586-9f2f-b026a0cbedca.jpg",
+      "sha256": "0fa511b2eaa8766c6b13b15b50785190f68f81dadc4a5e5c1b827c1afdca7771"
+    },
+    {
+      "bytes": 135833,
+      "filename": "IMG_5726_%02d.jpg",
+      "id": "5efea2a5-6e9e-4888-a872-8adcc6774d49",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/5efea2a5-6e9e-4888-a872-8adcc6774d49.jpg",
+      "sha256": "d67aec19e57f6024798064cbbc0fec3186b831ba93ae1f232b7cabbcbf8a74bc"
+    },
+    {
+      "bytes": 141442,
+      "filename": "IMG_5750_%02d.jpg",
+      "id": "42432cc2-934e-4632-a684-a0c823bcd776",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Bacterial Spot",
+      "relative_path": "images/42432cc2-934e-4632-a684-a0c823bcd776.jpg",
+      "sha256": "5385cb43f64b0abd406bbbcb33003a5cfae0a2b19a74c63d505b5913d1f971c6"
+    },
+    {
+      "bytes": 155903,
+      "filename": "IMG_2727.jpg",
+      "id": "f9237203-a309-45f0-9840-ca929a5ff608",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/f9237203-a309-45f0-9840-ca929a5ff608.jpg",
+      "sha256": "bcbcda1c8e44206cb84a7f28e28aad4bdcc3764b729aab5466d9e618a66624be"
+    },
+    {
+      "bytes": 148353,
+      "filename": "IMG_2711.jpg",
+      "id": "671d3fd0-65ed-49cf-8830-7007a79a6b62",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/671d3fd0-65ed-49cf-8830-7007a79a6b62.jpg",
+      "sha256": "dbce78184360038f87aaa536d3681da2c343198554d15222cd277955fe835d7a"
+    },
+    {
+      "bytes": 161368,
+      "filename": "IMG_2721.jpg",
+      "id": "6177c07f-6ae3-4032-8362-c2cf6994d7d5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/6177c07f-6ae3-4032-8362-c2cf6994d7d5.jpg",
+      "sha256": "fa8e64f1b7d1e0234d16dd733d573dd2ae52034558153e60f2b308d825b7d8b8"
+    },
+    {
+      "bytes": 182939,
+      "filename": "IMG_2768.jpg",
+      "id": "a0b894cc-5a32-4a41-80a7-faa54e786fb7",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/a0b894cc-5a32-4a41-80a7-faa54e786fb7.jpg",
+      "sha256": "2430592e7080cb1a90661bc76c53532314048f104af69567d00f895a1e384e89"
+    },
+    {
+      "bytes": 153384,
+      "filename": "IMG_4399_%02d.jpg",
+      "id": "2bab289c-ef9f-40f9-b981-32e95997e9fc",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/2bab289c-ef9f-40f9-b981-32e95997e9fc.jpg",
+      "sha256": "232ae78018463776b76602189191af3b2c8d9aafafe9aa70f73f2347dca1b946"
+    },
+    {
+      "bytes": 163204,
+      "filename": "IMG_2723.jpg",
+      "id": "5611f11e-ab5e-4315-89c0-82378de0ed13",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/5611f11e-ab5e-4315-89c0-82378de0ed13.jpg",
+      "sha256": "326933291f3e64cd0e918b4ecb98c1a5dc4d52f2a0116a40017a48c3d12435a8"
+    },
+    {
+      "bytes": 150424,
+      "filename": "IMG_4388_%02d.jpg",
+      "id": "8a43f51c-61f3-401c-9a50-5237920d89c9",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/8a43f51c-61f3-401c-9a50-5237920d89c9.jpg",
+      "sha256": "68548d853937fd261c011906888d49a391b8dd634c1851357d22a8e902577548"
+    },
+    {
+      "bytes": 174083,
+      "filename": "IMG_4343_%02d.jpg",
+      "id": "35d7a19f-6dae-423b-b038-288a5617bb98",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/35d7a19f-6dae-423b-b038-288a5617bb98.jpg",
+      "sha256": "8e4675ea8e930731d17ef2f762f99c9cc1d40bc2adefc040e0ee5461b173e950"
+    },
+    {
+      "bytes": 166435,
+      "filename": "IMG_4367_%02d.jpg",
+      "id": "bcebf606-2d97-4c5c-b672-71391222c9a5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/bcebf606-2d97-4c5c-b672-71391222c9a5.jpg",
+      "sha256": "fcbea6bdf1f18e03e90052cd3a3d066a407efa06afa4f140167cdc450f4fd417"
+    },
+    {
+      "bytes": 157715,
+      "filename": "IMG_2728.jpg",
+      "id": "c0a12077-df7d-4b9a-851b-d4540f1097cc",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/c0a12077-df7d-4b9a-851b-d4540f1097cc.jpg",
+      "sha256": "1d40e63cb4aa15597a8c2447fbec11f7436e6a3a0ebe18fbe417f1c294a6d5b5"
+    },
+    {
+      "bytes": 173336,
+      "filename": "IMG_2762.jpg",
+      "id": "f31d1274-a6bc-4557-8fe9-00642b639ce3",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/f31d1274-a6bc-4557-8fe9-00642b639ce3.jpg",
+      "sha256": "14835f9d66a36022da1ff75dcb9971b37a00ca016620321dd8f435ff450b76b5"
+    },
+    {
+      "bytes": 174192,
+      "filename": "IMG_4351_%02d.jpg",
+      "id": "cc6f86c0-eb6e-47c5-ba8e-2511d3caf0e5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/cc6f86c0-eb6e-47c5-ba8e-2511d3caf0e5.jpg",
+      "sha256": "da79681ef5f527a77b007a374c11e32324d11fe74904c53b83149d0d02014e80"
+    },
+    {
+      "bytes": 153353,
+      "filename": "IMG_4386_%02d.jpg",
+      "id": "3fca0200-1dab-48fa-8366-ca268d4d9e04",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/3fca0200-1dab-48fa-8366-ca268d4d9e04.jpg",
+      "sha256": "858f9a7320bf21de98a24a5f52a1546f9a1b18f57cc65b24583debee34ce4e3d"
+    },
+    {
+      "bytes": 170576,
+      "filename": "IMG_4347_%02d.jpg",
+      "id": "e434eac0-e16f-438c-8d68-8c5d6b1f0e36",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/e434eac0-e16f-438c-8d68-8c5d6b1f0e36.jpg",
+      "sha256": "aaf5fd1fa93b8319e0213e3b1c42e3ea2ca86548b876bcf32d64f7cb7228e4aa"
+    },
+    {
+      "bytes": 165513,
+      "filename": "IMG_2740.jpg",
+      "id": "f9e0f8b5-1346-4f91-bdfe-75fc33e075b4",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/f9e0f8b5-1346-4f91-bdfe-75fc33e075b4.jpg",
+      "sha256": "7a21634df8dca4d8e1427f91603e74c840a4b1957734d0015277bce802c737a2"
+    },
+    {
+      "bytes": 183484,
+      "filename": "IMG_2744.jpg",
+      "id": "dab823de-3da5-4742-b628-4e5f196702e1",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/dab823de-3da5-4742-b628-4e5f196702e1.jpg",
+      "sha256": "622f9af1d56fe5d6e136b96553252ea8a5676b6fb2424ab3fb41087b42ffc478"
+    },
+    {
+      "bytes": 167612,
+      "filename": "IMG_4356_%02d.jpg",
+      "id": "0afadf40-b691-4032-bb6c-71a2c1ca43ca",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/0afadf40-b691-4032-bb6c-71a2c1ca43ca.jpg",
+      "sha256": "747954ccae5dc1b8b0793db50590add5add06b8071d42670fa7ba4f265ff7ac2"
+    },
+    {
+      "bytes": 165224,
+      "filename": "IMG_4358_%02d.jpg",
+      "id": "ffc01ea9-7cba-41e3-a4e7-bc32b862a52e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/ffc01ea9-7cba-41e3-a4e7-bc32b862a52e.jpg",
+      "sha256": "7bb20449a0af6ae312c7c1ed7b94dde537a4a16c79ca4219eca3389e908d2a51"
+    },
+    {
+      "bytes": 148279,
+      "filename": "IMG_4382_%02d.jpg",
+      "id": "4cb574dd-e5ce-4665-ae89-8af604299d57",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/4cb574dd-e5ce-4665-ae89-8af604299d57.jpg",
+      "sha256": "5538859cee5b3b10875c8c6463ce5334d194af15209c15718446f00815368df6"
+    },
+    {
+      "bytes": 171798,
+      "filename": "IMG_2755.jpg",
+      "id": "a600f1b2-5292-4d43-b378-1d251c43e62a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/a600f1b2-5292-4d43-b378-1d251c43e62a.jpg",
+      "sha256": "17a21a3334264ed7066a62e814cd095f3a74a55cfb437fe903d2d628ab82df4f"
+    },
+    {
+      "bytes": 167126,
+      "filename": "IMG_4357_%02d.jpg",
+      "id": "80f5b612-63ea-470c-9daf-811a5d0e45f7",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/80f5b612-63ea-470c-9daf-811a5d0e45f7.jpg",
+      "sha256": "91474100ca73cd18faf9109e67ce23e78c0ce4eb646c772177e7b2cc5c1f2dbd"
+    },
+    {
+      "bytes": 133023,
+      "filename": "IMG_2752.jpg",
+      "id": "22f0ad13-fabc-40c2-bfc6-b5ae41f3dd5e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/22f0ad13-fabc-40c2-bfc6-b5ae41f3dd5e.jpg",
+      "sha256": "9e3015067b81b5242a7351c4c92e09cffcb349a3f1c7a06515e7ec6b8f1591c9"
+    },
+    {
+      "bytes": 160030,
+      "filename": "IMG_2724.jpg",
+      "id": "30c8246d-c463-4872-8bce-f30e762a8b06",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/30c8246d-c463-4872-8bce-f30e762a8b06.jpg",
+      "sha256": "75cfb053d063313c919fa5cd5a99b0d5326d1aed733824129eac03b2ef6203a7"
+    },
+    {
+      "bytes": 193081,
+      "filename": "IMG_2765.jpg",
+      "id": "e2b4a0ed-a929-49b5-a5dd-1e948663dbec",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/e2b4a0ed-a929-49b5-a5dd-1e948663dbec.jpg",
+      "sha256": "4aae21bf436369fbce9ca67f59ac3e8e37d870c6d7fdc1d26ba0e3f1e98d81e5"
+    },
+    {
+      "bytes": 172322,
+      "filename": "IMG_2748.jpg",
+      "id": "41e3aeaa-d698-4c18-b972-1d42d8f77fcc",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/41e3aeaa-d698-4c18-b972-1d42d8f77fcc.jpg",
+      "sha256": "6310d77b5a6476b412ef8cdead27e809de7d7ef7dc8ed1a4fac088415a0fe7f9"
+    },
+    {
+      "bytes": 163055,
+      "filename": "IMG_2738.jpg",
+      "id": "f0e3b1a2-4c4f-4695-806c-eb554b7bf0bc",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/f0e3b1a2-4c4f-4695-806c-eb554b7bf0bc.jpg",
+      "sha256": "db539102b90b21fdf256a7f764a693eb0f54f15e5b782fa2d572ea81cff9433e"
+    },
+    {
+      "bytes": 141484,
+      "filename": "IMG_2734.jpg",
+      "id": "b50236b9-4f4d-464b-9e01-eab19c2eea2e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/b50236b9-4f4d-464b-9e01-eab19c2eea2e.jpg",
+      "sha256": "b59d4fa46fa4b819e4c4a9c0dffe09e705484f8827a266ea262278d5d6b2ecb2"
+    },
+    {
+      "bytes": 168321,
+      "filename": "IMG_2775.jpg",
+      "id": "b242bfeb-c8f1-4387-ab4b-145fec1f2436",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/b242bfeb-c8f1-4387-ab4b-145fec1f2436.jpg",
+      "sha256": "3e966cbcc6e9aad9a32657d1d24ed9a2b08e1b6994535180394abbd1fc304c2a"
+    },
+    {
+      "bytes": 152753,
+      "filename": "IMG_4393_%02d.jpg",
+      "id": "ac3a50a3-17df-444c-aeef-d07ea4d9dfe7",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/ac3a50a3-17df-444c-aeef-d07ea4d9dfe7.jpg",
+      "sha256": "5e611296ee9d3d50a7797e89a5dcad1a856d42399628fb5577be22fb975a99c5"
+    },
+    {
+      "bytes": 156184,
+      "filename": "IMG_4398_%02d.jpg",
+      "id": "7573d66a-c8d6-41b5-a37b-be075210c15f",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/7573d66a-c8d6-41b5-a37b-be075210c15f.jpg",
+      "sha256": "0dad5b26724f2c5c9c7c47b1ceeadac8e99aba8341d2fb840f3c39863a4dc7fb"
+    },
+    {
+      "bytes": 156286,
+      "filename": "IMG_4374_%02d.jpg",
+      "id": "79e0d80f-dbfd-4539-ab68-5c68a0fa172d",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/79e0d80f-dbfd-4539-ab68-5c68a0fa172d.jpg",
+      "sha256": "ba2163346fb08065c51140eb759529c10d6d8c9788f03386a69e1a45f69e967b"
+    },
+    {
+      "bytes": 151979,
+      "filename": "IMG_4378_%02d.jpg",
+      "id": "f2a3b972-8961-4d2f-8e7c-bca17af8202d",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Cercospora leaf mold",
+      "relative_path": "images/f2a3b972-8961-4d2f-8e7c-bca17af8202d.jpg",
+      "sha256": "2fb536f3c36c2c3296289c4310d85f902721a745d5fc5bab32f0c3e3d777ed5a"
+    },
+    {
+      "bytes": 141936,
+      "filename": "IMG_5334_%02d.jpg",
+      "id": "41272449-77fc-4b99-8183-4947ecaa6bff",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/41272449-77fc-4b99-8183-4947ecaa6bff.jpg",
+      "sha256": "e4af0868925f0f890ac56e354a69af10e5f2dbf9f10fb3d641e0b7d65a3ced60"
+    },
+    {
+      "bytes": 148534,
+      "filename": "IMG_5244_%02d.jpg",
+      "id": "0dfc0e71-a122-4f76-8f71-545e8c710447",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/0dfc0e71-a122-4f76-8f71-545e8c710447.jpg",
+      "sha256": "103a8bdf4ae2569406f3298aaefffdac27801cd3ef5abf15ff29af220f33562b"
+    },
+    {
+      "bytes": 143933,
+      "filename": "IMG_5355_%02d.jpg",
+      "id": "2fce16ca-7728-4be3-ab4d-e83dcecbc62a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/2fce16ca-7728-4be3-ab4d-e83dcecbc62a.jpg",
+      "sha256": "6883287544e04c7cc0679ca1d5d635919c60dd6a76e0dec01da5199518e4c243"
+    },
+    {
+      "bytes": 128836,
+      "filename": "IMG_5528_%02d.jpg",
+      "id": "7791950f-96fd-4601-afcd-b8264e0a8bb5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/7791950f-96fd-4601-afcd-b8264e0a8bb5.jpg",
+      "sha256": "de5e7750e141dd25995ac21dfdb3e6c55f112a55bb8eb078575f37b7cdca7631"
+    },
+    {
+      "bytes": 145661,
+      "filename": "IMG_5458_%02d.jpg",
+      "id": "cf669544-2c46-41b9-8027-d44cd4100277",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/cf669544-2c46-41b9-8027-d44cd4100277.jpg",
+      "sha256": "0479be8fa100ed452bd772c42d26303ecc00e32fe41c4dfc7d43e2fe9a6ee487"
+    },
+    {
+      "bytes": 150004,
+      "filename": "IMG_5463_%02d.jpg",
+      "id": "c8e62f3c-50d5-4bbf-be90-8774582a8c55",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/c8e62f3c-50d5-4bbf-be90-8774582a8c55.jpg",
+      "sha256": "af86de0e2d407c4c7aeb0f8a8663a574e5f408693907ccb9c1295144d7899c9e"
+    },
+    {
+      "bytes": 142714,
+      "filename": "IMG_5256_%02d.jpg",
+      "id": "1bceecd9-0e5f-442f-8d24-7939d3ce0010",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/1bceecd9-0e5f-442f-8d24-7939d3ce0010.jpg",
+      "sha256": "46d0542e25d4c3315a2da8f35bcf76eacec67b1685f4e0d7de50c105a3515abb"
+    },
+    {
+      "bytes": 146144,
+      "filename": "IMG_5282_%02d.jpg",
+      "id": "736f2b66-ff81-4057-8070-be3bf98e3f54",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/736f2b66-ff81-4057-8070-be3bf98e3f54.jpg",
+      "sha256": "913113d4efad048b189142048de90be3e553ab1a797bd33938bc2ed41c486e4a"
+    },
+    {
+      "bytes": 152209,
+      "filename": "IMG_5324_%02d.jpg",
+      "id": "bae4b1d8-492b-40f8-8647-79dee4afc3d0",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/bae4b1d8-492b-40f8-8647-79dee4afc3d0.jpg",
+      "sha256": "b0aaa0baa30b39596132418fc65dcdff1ef073d10a36bf05d6ce278b0eaa80be"
+    },
+    {
+      "bytes": 148481,
+      "filename": "IMG_5384_%02d.jpg",
+      "id": "980dc7f0-bbce-4bd5-b9b2-8b2da78b3db4",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/980dc7f0-bbce-4bd5-b9b2-8b2da78b3db4.jpg",
+      "sha256": "6c26b82aa19e825df880d4f816812309f6c2d98f80136d7ca1f8b7f137e4490e"
+    },
+    {
+      "bytes": 146798,
+      "filename": "IMG_5378_%02d.jpg",
+      "id": "24ac130b-f450-448c-9586-2a15fc00733d",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/24ac130b-f450-448c-9586-2a15fc00733d.jpg",
+      "sha256": "c3df84f8509b8ddc3d66bb2f3374a7ef040aaae2299982babc1ba62b9163985c"
+    },
+    {
+      "bytes": 153680,
+      "filename": "IMG_5395_%02d.jpg",
+      "id": "4ea9bda3-fe98-40c4-b311-f7cf375f5e61",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/4ea9bda3-fe98-40c4-b311-f7cf375f5e61.jpg",
+      "sha256": "77b379015d58d37f962bce507a64d45b3a5a82f0edd2e32967d030f8ec29d439"
+    },
+    {
+      "bytes": 141817,
+      "filename": "IMG_5258_%02d.jpg",
+      "id": "cf77131a-2d2e-4ed9-95f0-dfbe9fd80566",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/cf77131a-2d2e-4ed9-95f0-dfbe9fd80566.jpg",
+      "sha256": "0a65f449552512be13ce9a711e299a375f34f71e99ab08cd5aab8b7087f64b6e"
+    },
+    {
+      "bytes": 157967,
+      "filename": "IMG_5294_%02d.jpg",
+      "id": "73e32c73-a37e-4819-ac14-f3350e553839",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/73e32c73-a37e-4819-ac14-f3350e553839.jpg",
+      "sha256": "b5e8d21ff14b526ea833e83365d74ad2c91e4e51f269f074406a170d508fc41f"
+    },
+    {
+      "bytes": 158307,
+      "filename": "IMG_5394_%02d.jpg",
+      "id": "2a5f58f9-1ff3-4cc8-8882-38283a3ea895",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/2a5f58f9-1ff3-4cc8-8882-38283a3ea895.jpg",
+      "sha256": "43a17f128368501eada894981966ecaec8e5a12eb91caa8fdac4b643ee98779f"
+    },
+    {
+      "bytes": 131776,
+      "filename": "IMG_5521_%02d.jpg",
+      "id": "2db16313-e425-42b1-9d9f-29d9f9848ea5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/2db16313-e425-42b1-9d9f-29d9f9848ea5.jpg",
+      "sha256": "59f4849a1bdedb235e2a2b586d6f0160aa809ea09933f4b5ef5c1693d1b26918"
+    },
+    {
+      "bytes": 149852,
+      "filename": "IMG_5454_%02d.jpg",
+      "id": "d225e4f4-3029-483f-b98f-21e3f47eb427",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/d225e4f4-3029-483f-b98f-21e3f47eb427.jpg",
+      "sha256": "1f75a3cb553d97ac75393012f29947808b513b3b644d1ee40653b8927eb1b6f0"
+    },
+    {
+      "bytes": 147579,
+      "filename": "IMG_5464_%02d.jpg",
+      "id": "9517c579-da6d-4adb-9ade-bac040745024",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/9517c579-da6d-4adb-9ade-bac040745024.jpg",
+      "sha256": "4569bb101228ab9b3112e5a9d1bf64d7bcdaf3bcce2e93827285188cfb81ffe7"
+    },
+    {
+      "bytes": 138633,
+      "filename": "IMG_5277_%02d.jpg",
+      "id": "eaaaa23b-f502-416c-b651-44880b769486",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/eaaaa23b-f502-416c-b651-44880b769486.jpg",
+      "sha256": "4374c491fea5f118fc4c4e7c2d88f1f085daac67e0b22c78594d5ec98cb11153"
+    },
+    {
+      "bytes": 143146,
+      "filename": "IMG_5217_%02d.jpg",
+      "id": "0107cdd2-6f1e-43e5-b6e0-4f70f1424a55",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/0107cdd2-6f1e-43e5-b6e0-4f70f1424a55.jpg",
+      "sha256": "59c932357726f4e551eded1abed768656c08513373738557b9679bd42703069b"
+    },
+    {
+      "bytes": 136355,
+      "filename": "IMG_5226_%02d.jpg",
+      "id": "cf1d0a13-7cfe-4134-9dc1-5b74770f091d",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/cf1d0a13-7cfe-4134-9dc1-5b74770f091d.jpg",
+      "sha256": "689e064e2450bcd608261c430b2f64e2c7a13a4f20ff3caf4976c5325668dacb"
+    },
+    {
+      "bytes": 144709,
+      "filename": "IMG_5283_%02d.jpg",
+      "id": "5f39d873-b25e-491c-9d8e-140fbf91c5b0",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/5f39d873-b25e-491c-9d8e-140fbf91c5b0.jpg",
+      "sha256": "15ce90cb40ae64486aab65dc706d1c4a03c617c6daa7b7e4068df0bd0580b276"
+    },
+    {
+      "bytes": 130906,
+      "filename": "IMG_5481_%02d.jpg",
+      "id": "c293615f-58fd-40f7-8593-085d2ad84618",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/c293615f-58fd-40f7-8593-085d2ad84618.jpg",
+      "sha256": "eb44b23e9936ab6a666be2053604e8f78808bfedec9d08bd6d6ac335488e23de"
+    },
+    {
+      "bytes": 129423,
+      "filename": "IMG_5505_%02d.jpg",
+      "id": "9c61a310-9a54-4853-9b01-84ad032bc446",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/9c61a310-9a54-4853-9b01-84ad032bc446.jpg",
+      "sha256": "6d5b784e7f0d58123a33809da7461693e1d8e17862a842af98ead6a221982486"
+    },
+    {
+      "bytes": 154917,
+      "filename": "IMG_5392_%02d.jpg",
+      "id": "46825428-27dc-4138-b779-18f850fc63e0",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/46825428-27dc-4138-b779-18f850fc63e0.jpg",
+      "sha256": "33a84119bcb680c46984322abdfd030de930ca385b23305252c642ba4cfb7a00"
+    },
+    {
+      "bytes": 155297,
+      "filename": "IMG_5233_%02d.jpg",
+      "id": "986c6d2c-5f64-4af2-a3b7-7a825eede8fc",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/986c6d2c-5f64-4af2-a3b7-7a825eede8fc.jpg",
+      "sha256": "22e610d2e0112f71f053539837d191e3b15d17823e23c50f74bc95b549f53b95"
+    },
+    {
+      "bytes": 140919,
+      "filename": "IMG_5495_%02d.jpg",
+      "id": "0f0a953a-1eea-4570-b42e-b774c58df053",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/0f0a953a-1eea-4570-b42e-b774c58df053.jpg",
+      "sha256": "864c702439dc851ac99b04cd19d4a0b6d33aadcd5ac339067b96ef921686b347"
+    },
+    {
+      "bytes": 183087,
+      "filename": "IMG_5405_%02d.jpg",
+      "id": "825da09c-51bf-417b-ac2b-9a68d9944b87",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/825da09c-51bf-417b-ac2b-9a68d9944b87.jpg",
+      "sha256": "f683098a494a42a532970b58ad1436c3fbd7eeef8302bfcd8e13f84cea48a318"
+    },
+    {
+      "bytes": 133681,
+      "filename": "IMG_5517_%02d.jpg",
+      "id": "714a35ee-f006-46e0-9b2e-1b733983afee",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/714a35ee-f006-46e0-9b2e-1b733983afee.jpg",
+      "sha256": "8ecfec609534a0c38a76585e80df3935eb14dce0dfbc95d0533cf8a71346fbe3"
+    },
+    {
+      "bytes": 144409,
+      "filename": "IMG_5214_%02d.jpg",
+      "id": "11924f1e-5a05-4aca-bc72-6c7c6369c1fb",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/11924f1e-5a05-4aca-bc72-6c7c6369c1fb.jpg",
+      "sha256": "a7df505c4cab99b8d4d04f5cee11d6befa8fc98b20f0d586d27b68baa642685c"
+    },
+    {
+      "bytes": 134661,
+      "filename": "IMG_5370_%02d.jpg",
+      "id": "fd6ca544-755a-4baa-9e37-9ce8343cbcef",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/fd6ca544-755a-4baa-9e37-9ce8343cbcef.jpg",
+      "sha256": "f8ec1ecd583cde7000f5e49d0328bd67813f00e5ccb8db98f0dd371d640d2d3a"
+    },
+    {
+      "bytes": 149060,
+      "filename": "IMG_5452_%02d.jpg",
+      "id": "f5640584-7496-441f-88e5-75d62ac1aa2b",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Insect Damage",
+      "relative_path": "images/f5640584-7496-441f-88e5-75d62ac1aa2b.jpg",
+      "sha256": "e07a8719df6d9fbc9d51bcdb2a5d7c9b38fc993683d457b6f304783601e3076b"
+    },
+    {
+      "bytes": 212021,
+      "filename": "IMG_4191_%02d.jpg",
+      "id": "3044fdb2-72e5-418c-bba9-87001828963a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/3044fdb2-72e5-418c-bba9-87001828963a.jpg",
+      "sha256": "5d9cd2209fcb9b6a9188b17b42c6e69d6a8e4fd9cb4b56d132a57ad5f0cab055"
+    },
+    {
+      "bytes": 192157,
+      "filename": "IMG_4220_%02d.jpg",
+      "id": "ec2392e4-b29c-4a6a-a680-5e4fa0a98138",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/ec2392e4-b29c-4a6a-a680-5e4fa0a98138.jpg",
+      "sha256": "2f2cdc2cb83ce3ad8c4da61fdd5049347858b893edc307224d0f55f04c041a0e"
+    },
+    {
+      "bytes": 227857,
+      "filename": "IMG_4289_%02d.jpg",
+      "id": "729cba0a-5696-4817-ac03-4eeeb94ec66f",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/729cba0a-5696-4817-ac03-4eeeb94ec66f.jpg",
+      "sha256": "8b3bcd647026e95c6c2365cc1498d938a5be5dd7b55cec164f0c267fbe92dbd8"
+    },
+    {
+      "bytes": 200873,
+      "filename": "IMG_4291_%02d.jpg",
+      "id": "828c3469-5f03-4742-96dd-fa7a9212fe5c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/828c3469-5f03-4742-96dd-fa7a9212fe5c.jpg",
+      "sha256": "b81c006075eaea4934750cac122dd564dba8c65f23fd69a63ab036cf05832c69"
+    },
+    {
+      "bytes": 214346,
+      "filename": "IMG_4199_%02d.jpg",
+      "id": "cd19db06-ba9f-4ee7-9a66-81c4af421ffb",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/cd19db06-ba9f-4ee7-9a66-81c4af421ffb.jpg",
+      "sha256": "93e359cbc2c9bb33217bc715d985091d2b916306f70ffdc00f23e41c8fff469c"
+    },
+    {
+      "bytes": 204515,
+      "filename": "IMG_4196_%02d.jpg",
+      "id": "99efa1d9-17f4-4bb1-ab12-f232be3fbd47",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/99efa1d9-17f4-4bb1-ab12-f232be3fbd47.jpg",
+      "sha256": "d99fcaa23d1d85421e6337e0cb7391bb76129084b8ea858d19ec437c18dd5e46"
+    },
+    {
+      "bytes": 196062,
+      "filename": "IMG_4234_%02d.jpg",
+      "id": "8d7f3898-d18d-4932-9ba1-3acf0cd1b745",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/8d7f3898-d18d-4932-9ba1-3acf0cd1b745.jpg",
+      "sha256": "b4d5714a1f97d9976d4e7405bc502f45d870fb235b3dfc0c26a647f07f830371"
+    },
+    {
+      "bytes": 188501,
+      "filename": "IMG_4225_%02d.jpg",
+      "id": "ea5c623a-f512-4661-ae33-aab485904984",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/ea5c623a-f512-4661-ae33-aab485904984.jpg",
+      "sha256": "f4fa8743fed6685715489c05849ca716f16e209dd5f8dd871e65d72a8f522368"
+    },
+    {
+      "bytes": 247333,
+      "filename": "IMG_4183_%02d.jpg",
+      "id": "228089b3-1ecf-42aa-8b2b-64cd795954cb",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/228089b3-1ecf-42aa-8b2b-64cd795954cb.jpg",
+      "sha256": "a7570c44163c33366e4e17a56a04dde1d8d7f98a297401f4e51fcb579d309fde"
+    },
+    {
+      "bytes": 184946,
+      "filename": "IMG_4209_%02d.jpg",
+      "id": "129edbf8-3800-4c4e-8d0a-b959f3497ef1",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/129edbf8-3800-4c4e-8d0a-b959f3497ef1.jpg",
+      "sha256": "2b01ca9f1400f83f0012a85f47a6a50ccfde904505b2184b18e7ab9dc8349b8e"
+    },
+    {
+      "bytes": 195134,
+      "filename": "IMG_4195_%02d.jpg",
+      "id": "e39523b2-510a-4520-b835-e368086dbcc7",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/e39523b2-510a-4520-b835-e368086dbcc7.jpg",
+      "sha256": "9043df2fcb42890731335b5bb530502e99adbfe8d28c934635dc825f079b489f"
+    },
+    {
+      "bytes": 226686,
+      "filename": "IMG_4295_%02d.jpg",
+      "id": "5184a0e2-ac30-4c5e-89e1-74b84b2cd383",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/5184a0e2-ac30-4c5e-89e1-74b84b2cd383.jpg",
+      "sha256": "73b5d98341aff97c6c7548e4f691d9f0bf94ca0010f3d7fea64a97a1d2c36dcc"
+    },
+    {
+      "bytes": 180657,
+      "filename": "IMG_4202_%02d.jpg",
+      "id": "51adde03-728b-4b40-8c4e-c31bf8022a0b",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/51adde03-728b-4b40-8c4e-c31bf8022a0b.jpg",
+      "sha256": "d29bcf04db2c9c74325be094703a0852472be517dad8273cecb167c37485d4b6"
+    },
+    {
+      "bytes": 273252,
+      "filename": "IMG_4181_%02d.jpg",
+      "id": "42446a31-64be-49f2-9056-f63b7f194ac5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/42446a31-64be-49f2-9056-f63b7f194ac5.jpg",
+      "sha256": "2a01573629f269ec855f44bf1ff25153d487e685583b779d68218bb2f38f746f"
+    },
+    {
+      "bytes": 199067,
+      "filename": "IMG_4237_%02d.jpg",
+      "id": "c4e8a01c-1564-4a0d-a039-6fbe095b2a70",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/c4e8a01c-1564-4a0d-a039-6fbe095b2a70.jpg",
+      "sha256": "884f3c71e8f97c6b4d2f7544f35dc461207e49b886c61e576a68af97a3bde84a"
+    },
+    {
+      "bytes": 222870,
+      "filename": "IMG_4294_%02d.jpg",
+      "id": "afca4793-13b5-4da8-b867-754bc3c8b02d",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/afca4793-13b5-4da8-b867-754bc3c8b02d.jpg",
+      "sha256": "e993a7cf3cefe7f3a3b4d827f1db395a2cd76fdfa09ab1c66c325563df777af0"
+    },
+    {
+      "bytes": 181230,
+      "filename": "IMG_4211_%02d.jpg",
+      "id": "03467fa9-e4c1-49e2-8b21-7b7376598c72",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/03467fa9-e4c1-49e2-8b21-7b7376598c72.jpg",
+      "sha256": "dc29a3d82205df94d0a80e107523793c42358738065b75034661a31c229a1742"
+    },
+    {
+      "bytes": 182281,
+      "filename": "IMG_4201_%02d.jpg",
+      "id": "e77bbad2-f9e9-47a6-b136-1d6ab71fcb7e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/e77bbad2-f9e9-47a6-b136-1d6ab71fcb7e.jpg",
+      "sha256": "be9e29a9142aee0e4e5cedab7eb9e3e8273cde5c45c6e2c03839d4694e079fdd"
+    },
+    {
+      "bytes": 187989,
+      "filename": "IMG_4219_%02d.jpg",
+      "id": "fe1202be-442a-4943-8ce7-e2d45de7f30c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/fe1202be-442a-4943-8ce7-e2d45de7f30c.jpg",
+      "sha256": "2c05b429537b9c9e62a2ff9a57751410ae4d182bd6ebd5e8bddbffb821bb5fde"
+    },
+    {
+      "bytes": 198329,
+      "filename": "IMG_4238_%02d.jpg",
+      "id": "5c22095a-ddd1-425d-9410-5db1b037f29f",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/5c22095a-ddd1-425d-9410-5db1b037f29f.jpg",
+      "sha256": "ac7ee0d7627077a9190834ce001db7b72558dbe4162fa4fc6e5e7f13fc0820ef"
+    },
+    {
+      "bytes": 247835,
+      "filename": "IMG_4182_%02d.jpg",
+      "id": "add634c0-37a8-4d4e-94a2-f00ef1d94761",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/add634c0-37a8-4d4e-94a2-f00ef1d94761.jpg",
+      "sha256": "317efdd4c8af384098603ee0233261e734936a1041f6e83499f06c1af40660b9"
+    },
+    {
+      "bytes": 239601,
+      "filename": "IMG_4185_%02d.jpg",
+      "id": "f2ecb204-45c5-4215-b8ad-8fbf8dc5fd96",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/f2ecb204-45c5-4215-b8ad-8fbf8dc5fd96.jpg",
+      "sha256": "9640cf4fe104646f6fde76cfb913dfaeb79479586ee03df5dfd61f98c9b60de6"
+    },
+    {
+      "bytes": 216550,
+      "filename": "IMG_4190_%02d.jpg",
+      "id": "c877b1cf-50d0-40a6-8b88-ed94ab18873a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/c877b1cf-50d0-40a6-8b88-ed94ab18873a.jpg",
+      "sha256": "21ce2ff3c3ad6751cd0c6c43bf4466ca65da3243bcce456ade3889a62848a2f7"
+    },
+    {
+      "bytes": 190111,
+      "filename": "IMG_4230_%02d.jpg",
+      "id": "67eeb623-6be3-4fa6-a1da-d45eb4cefdf1",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/67eeb623-6be3-4fa6-a1da-d45eb4cefdf1.jpg",
+      "sha256": "9521ba639f21df0bda2b938d52607a479fc21c7c6818720f4071ff28ccec4d05"
+    },
+    {
+      "bytes": 178319,
+      "filename": "IMG_4217_%02d.jpg",
+      "id": "c439cb42-fe1f-4803-ac39-9d4c0075b2f8",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/c439cb42-fe1f-4803-ac39-9d4c0075b2f8.jpg",
+      "sha256": "17b5882be035999ea96c983f90cab29d84177fa95ca83415da09b49f66380b12"
+    },
+    {
+      "bytes": 193680,
+      "filename": "IMG_4223_%02d.jpg",
+      "id": "038a94cb-cafc-40e6-98bb-a0c920914afe",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/038a94cb-cafc-40e6-98bb-a0c920914afe.jpg",
+      "sha256": "952760be2af5dc1c3413dfdc4b4d080019f986697ae3670a885584055cef2e60"
+    },
+    {
+      "bytes": 192530,
+      "filename": "IMG_4232_%02d.jpg",
+      "id": "30742740-a14a-428a-8e1d-5b5775338ae4",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/30742740-a14a-428a-8e1d-5b5775338ae4.jpg",
+      "sha256": "fa60234b6250cc9361af410a964a095519bee82867eeb47db6674c097d83e416"
+    },
+    {
+      "bytes": 182595,
+      "filename": "IMG_4216_%02d.jpg",
+      "id": "3e1c58a6-1b4e-4b76-bef0-9ee3bd17e712",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/3e1c58a6-1b4e-4b76-bef0-9ee3bd17e712.jpg",
+      "sha256": "466f5213585fe79ee1fe1d0ebda02f171a2afddb459cd1a7e97453e8767ed90d"
+    },
+    {
+      "bytes": 174176,
+      "filename": "IMG_4215_%02d.jpg",
+      "id": "208e1f3d-585b-4ec2-a375-6c2452a71fbf",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/208e1f3d-585b-4ec2-a375-6c2452a71fbf.jpg",
+      "sha256": "289deccbae9113eab2a45abd318241b439c11ee9e88e8cc012c65d60d28be393"
+    },
+    {
+      "bytes": 191134,
+      "filename": "IMG_4231_%02d.jpg",
+      "id": "82bc94ad-f5c4-40f6-a0da-77ef640e1d99",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/82bc94ad-f5c4-40f6-a0da-77ef640e1d99.jpg",
+      "sha256": "4fbb4eccc11f9a151ad80bd293f3e0241adb6f2c2c3a326dcdd9003a618d9f0c"
+    },
+    {
+      "bytes": 242186,
+      "filename": "IMG_4184_%02d.jpg",
+      "id": "00e82ee9-f928-4df5-9970-d91ba51d9320",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/00e82ee9-f928-4df5-9970-d91ba51d9320.jpg",
+      "sha256": "476fd2f157d6dd7e80c0c034d5f1724441e38ac2ca91ed0a95cc73ee6e18fd7a"
+    },
+    {
+      "bytes": 238313,
+      "filename": "IMG_4187_%02d.jpg",
+      "id": "00ae29c2-2aee-4b5b-b2d0-7ce50f62d7b9",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Leaf Mold",
+      "relative_path": "images/00ae29c2-2aee-4b5b-b2d0-7ce50f62d7b9.jpg",
+      "sha256": "0c65928db0ac7384636845f654d4c84bd7e8e9f15edadadbb0b1f9a5a931c221"
+    },
+    {
+      "bytes": 247687,
+      "filename": "IMG_4070_%02d.jpg",
+      "id": "4c3d9da9-cb06-4388-9010-3b956ad8f3be",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/4c3d9da9-cb06-4388-9010-3b956ad8f3be.jpg",
+      "sha256": "961f26075a14e21f01a571f179c50611489b122a495c25aaab8e5a9f5d5c2019"
+    },
+    {
+      "bytes": 314092,
+      "filename": "IMG_3923_%02d.jpg",
+      "id": "87b198b4-b629-4850-87e2-d51f4ef5ad34",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/87b198b4-b629-4850-87e2-d51f4ef5ad34.jpg",
+      "sha256": "bbc4aca0740b68c82ec59617863772c3b545ac15932479d5256f8af64d839410"
+    },
+    {
+      "bytes": 233460,
+      "filename": "IMG_3946_%02d.jpg",
+      "id": "b6f4d012-0f1f-445a-b0fa-a7615cb5fbf2",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/b6f4d012-0f1f-445a-b0fa-a7615cb5fbf2.jpg",
+      "sha256": "ff1dda3d0e09f28065ffd104d37545689b6979ac0e08b9034e2acc73709b82a9"
+    },
+    {
+      "bytes": 308427,
+      "filename": "IMG_3860_%02d.jpg",
+      "id": "ae080445-6f8f-41de-bc8c-003cf83c3e33",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/ae080445-6f8f-41de-bc8c-003cf83c3e33.jpg",
+      "sha256": "5fb175b8c18c2b18051b7c4577d1b7f10f230d6f8fdb2d62e29e9891b7c8d87e"
+    },
+    {
+      "bytes": 229752,
+      "filename": "IMG_4055_%02d.jpg",
+      "id": "e36f8550-aa13-4bc1-a391-004570f23387",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/e36f8550-aa13-4bc1-a391-004570f23387.jpg",
+      "sha256": "3ee35ae43d4fe2d133136899285cd1280bc631d6efe8cc05bc4f170207d12132"
+    },
+    {
+      "bytes": 293194,
+      "filename": "IMG_3932_%02d.jpg",
+      "id": "4a419daf-fcea-4beb-9eb7-cceec7a963f3",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/4a419daf-fcea-4beb-9eb7-cceec7a963f3.jpg",
+      "sha256": "132ff4b71f53f3a5293ea1e90c3d4ed0f0ea496aa217c73fdcb82675f8d94ff0"
+    },
+    {
+      "bytes": 189279,
+      "filename": "IMG_3880_%02d.jpg",
+      "id": "16e012b6-e2e2-4cb3-9efe-fc35b3201ebe",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/16e012b6-e2e2-4cb3-9efe-fc35b3201ebe.jpg",
+      "sha256": "d56356fc915db49e12424f6d3d31489275a17e02ffae31985e89a50c21f94559"
+    },
+    {
+      "bytes": 178005,
+      "filename": "IMG_3791_%02d.jpg",
+      "id": "6d16de13-3063-41fe-852d-04b9c2b1bd0a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/6d16de13-3063-41fe-852d-04b9c2b1bd0a.jpg",
+      "sha256": "6bea61e7671e0010d9ae8575d3d013859cceff2fe9c99418f7336873da0bef0e"
+    },
+    {
+      "bytes": 251728,
+      "filename": "IMG_4017_%02d.jpg",
+      "id": "192fbfc0-9d28-42b7-9ef6-ed8f45b2ac46",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/192fbfc0-9d28-42b7-9ef6-ed8f45b2ac46.jpg",
+      "sha256": "a1307f2bf02bdffea5f45d53364b3f0cfae512e14f3f436cea56620aaa4b855e"
+    },
+    {
+      "bytes": 181471,
+      "filename": "IMG_3793_%02d.jpg",
+      "id": "18b5cfa8-0f76-4cef-a771-36d65c8b836c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/18b5cfa8-0f76-4cef-a771-36d65c8b836c.jpg",
+      "sha256": "17d5b436798f0121e87dc495b1cc272460111254bd01c3a0ecb2ca0b7aec2bb1"
+    },
+    {
+      "bytes": 236390,
+      "filename": "IMG_3964_%02d.jpg",
+      "id": "362b9dcd-ce91-4b62-a519-811b21684104",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/362b9dcd-ce91-4b62-a519-811b21684104.jpg",
+      "sha256": "32b3bf32ad3cdde940c290c0c154351c27ca87052e80982270cae78790674ba0"
+    },
+    {
+      "bytes": 197482,
+      "filename": "IMG_3775_%02d.jpg",
+      "id": "80f1c30b-65b2-4888-aade-bd6063210874",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/80f1c30b-65b2-4888-aade-bd6063210874.jpg",
+      "sha256": "6c99407a521a55e1bd1c165bd067bc1de755e34c32d2c33361aad979a323eaa6"
+    },
+    {
+      "bytes": 218542,
+      "filename": "IMG_3975_%02d.jpg",
+      "id": "ff43bbd1-6a5e-464d-b204-78b1894ab78d",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/ff43bbd1-6a5e-464d-b204-78b1894ab78d.jpg",
+      "sha256": "11f664be8816094082f7a0a08e90169e55ed38e648b88795ca2727cc728bc4cf"
+    },
+    {
+      "bytes": 236233,
+      "filename": "IMG_4053_%02d.jpg",
+      "id": "4385bb67-a1cb-42bf-a046-77cd22c7286d",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/4385bb67-a1cb-42bf-a046-77cd22c7286d.jpg",
+      "sha256": "b8ef861b75e0dcd9db41b0ac751013683603b82dc6117f3e4809e58a7e173ac7"
+    },
+    {
+      "bytes": 210020,
+      "filename": "IMG_3806_%02d.jpg",
+      "id": "d5bf8c83-104e-4bc4-b1a4-dc769a148952",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/d5bf8c83-104e-4bc4-b1a4-dc769a148952.jpg",
+      "sha256": "036c0e0426e0b096ace84e15412f035a066a3f6f4ce55bd2ed125af616aa148e"
+    },
+    {
+      "bytes": 251030,
+      "filename": "IMG_4032_%02d.jpg",
+      "id": "d8cd04d1-ebb8-45a2-9c7e-a91836084596",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/d8cd04d1-ebb8-45a2-9c7e-a91836084596.jpg",
+      "sha256": "81e4cd0230b7b397beee72f5c3941fd75703522190d287421deb581cbf52201f"
+    },
+    {
+      "bytes": 197983,
+      "filename": "IMG_3780_%02d.jpg",
+      "id": "f5d4dd11-1f36-4bf6-bb65-327b2376c454",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/f5d4dd11-1f36-4bf6-bb65-327b2376c454.jpg",
+      "sha256": "ce43357031035ff9ba96b7cc3fdd6e3a3091d2dab7fdd023969f476a1beddb61"
+    },
+    {
+      "bytes": 189769,
+      "filename": "IMG_3800_%02d.jpg",
+      "id": "9e54e39a-ae78-4004-872d-97c8584bd2c1",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/9e54e39a-ae78-4004-872d-97c8584bd2c1.jpg",
+      "sha256": "9885c16a2ad28e3ed0951b2f5ea552202f904e895facc7679b7115c8e886c1d5"
+    },
+    {
+      "bytes": 171771,
+      "filename": "IMG_3798_%02d.jpg",
+      "id": "4f4cc854-b9b7-461e-b858-f767c886c2d5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/4f4cc854-b9b7-461e-b858-f767c886c2d5.jpg",
+      "sha256": "d758d4e58043137d8a3498faded6db085663ddf2598cbd9b86b2ac738f471918"
+    },
+    {
+      "bytes": 222445,
+      "filename": "IMG_3873_%02d.jpg",
+      "id": "539d2e4c-b2b4-4f0d-aceb-c23d4e092d9e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/539d2e4c-b2b4-4f0d-aceb-c23d4e092d9e.jpg",
+      "sha256": "7b3dddfd5c6ad84f37c12259724f14d37b290d4d3669d84797e2ca3eabf9f3f7"
+    },
+    {
+      "bytes": 174315,
+      "filename": "IMG_3796_%02d.jpg",
+      "id": "fd78ae58-69df-4013-a3ae-997c94a2d5bb",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/fd78ae58-69df-4013-a3ae-997c94a2d5bb.jpg",
+      "sha256": "f3ee9939f55703e2b8ed03003af247112b5b53a8d4510962212bcd10349bb4c5"
+    },
+    {
+      "bytes": 348676,
+      "filename": "IMG_3902_%02d.jpg",
+      "id": "89ff7bfc-f850-460d-a3a6-9b0a03ab242f",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/89ff7bfc-f850-460d-a3a6-9b0a03ab242f.jpg",
+      "sha256": "6b2b709087e0af3b6479d1b6151d1f3a90a36465cf7235a0a04e56655cc7c915"
+    },
+    {
+      "bytes": 235043,
+      "filename": "IMG_3954_%02d.jpg",
+      "id": "56bf571a-8b11-4f99-bbec-e41ce8843d2f",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/56bf571a-8b11-4f99-bbec-e41ce8843d2f.jpg",
+      "sha256": "107e975988248d92efc6978c888e617d62d6822ce39b2249197c961f2c4dd8ea"
+    },
+    {
+      "bytes": 236072,
+      "filename": "IMG_3840_%02d.jpg",
+      "id": "043c7ab6-ccf1-437d-9f3c-a2d4e75a5237",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/043c7ab6-ccf1-437d-9f3c-a2d4e75a5237.jpg",
+      "sha256": "0e52f1114afa18f034b3f2a6b414df6a79a3f07e111dbb685f7db01d07a033f5"
+    },
+    {
+      "bytes": 225899,
+      "filename": "IMG_3987_%02d.jpg",
+      "id": "cece1c52-0dc4-4cb7-a08e-4909c9fde4de",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/cece1c52-0dc4-4cb7-a08e-4909c9fde4de.jpg",
+      "sha256": "51bd34696ffe84d9f0d79f747c2e87e8b97a061b815fadd3b2833fa30287f9e7"
+    },
+    {
+      "bytes": 235399,
+      "filename": "IMG_3950_%02d.jpg",
+      "id": "cee2fb78-eab0-4257-a664-3d1be2baced7",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/cee2fb78-eab0-4257-a664-3d1be2baced7.jpg",
+      "sha256": "fca974eead5459c6083f01719f5a75dbf3723e3933cad9374ef99751716bf680"
+    },
+    {
+      "bytes": 269226,
+      "filename": "IMG_4063_%02d.jpg",
+      "id": "3bd48ed2-a186-4fca-9a94-af5a128c2972",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/3bd48ed2-a186-4fca-9a94-af5a128c2972.jpg",
+      "sha256": "673c1d5ef8dd321cfa41073b57d2d1c6dc8f24ac88adb12cb5da1e11b166bf09"
+    },
+    {
+      "bytes": 204196,
+      "filename": "IMG_3877_%02d.jpg",
+      "id": "0b45c862-b16b-42ef-97f3-df52c8e05148",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/0b45c862-b16b-42ef-97f3-df52c8e05148.jpg",
+      "sha256": "65788092473142fe24a05e284cc49c0bc25f5f2c20510e7d7aee7d9f06770e80"
+    },
+    {
+      "bytes": 216547,
+      "filename": "IMG_3976_%02d.jpg",
+      "id": "591cafbf-12c2-453e-97e1-b3bd64fbaf6b",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/591cafbf-12c2-453e-97e1-b3bd64fbaf6b.jpg",
+      "sha256": "bae9c5eea3662b8377bb0db8e648e8b2b14117858af2994a73a9cc8314809f6a"
+    },
+    {
+      "bytes": 238883,
+      "filename": "IMG_4003_%02d.jpg",
+      "id": "dfefc031-27ee-4ae0-a229-53e69051b412",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/dfefc031-27ee-4ae0-a229-53e69051b412.jpg",
+      "sha256": "1c7587986cc4f71e1d911abc3e1aa601052227ea4ba8bef3a74051d526f1234b"
+    },
+    {
+      "bytes": 220964,
+      "filename": "IMG_3994_%02d.jpg",
+      "id": "c463720d-85c7-4e5c-a494-68adc853f186",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/c463720d-85c7-4e5c-a494-68adc853f186.jpg",
+      "sha256": "f25d61e5c2a97ea1d09fab26e86ecfc7c42408fe261527b9079093a66098441a"
+    },
+    {
+      "bytes": 218358,
+      "filename": "IMG_3831_%02d.jpg",
+      "id": "0dcd51c4-8c16-4af0-9f14-8f0cc0aaaa4b",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Spider Mites",
+      "relative_path": "images/0dcd51c4-8c16-4af0-9f14-8f0cc0aaaa4b.jpg",
+      "sha256": "9bef63781d431717202d5c89eae545efb0f1dd3cdcc3835e321c0dadd7fd855d"
+    },
+    {
+      "bytes": 136827,
+      "filename": "IMG_4696_%02d.jpg",
+      "id": "8b8401f3-2374-402d-b49f-55e63dbdccca",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/8b8401f3-2374-402d-b49f-55e63dbdccca.jpg",
+      "sha256": "b83a8d7a95281e3fee7e9285e4a33f980dcb03abea5fee51763447f1364d7344"
+    },
+    {
+      "bytes": 161184,
+      "filename": "IMG_5154_%02d.jpg",
+      "id": "a52ffdce-2217-46e0-ab16-59bee12fa9e3",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/a52ffdce-2217-46e0-ab16-59bee12fa9e3.jpg",
+      "sha256": "f9feec1e0f47c3896de8cd724f2d766d44b1c4119c85b50783100f8bde7284dc"
+    },
+    {
+      "bytes": 147628,
+      "filename": "IMG_5023_%02d.jpg",
+      "id": "49cb841f-8dc8-444a-9224-31f49548fe72",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/49cb841f-8dc8-444a-9224-31f49548fe72.jpg",
+      "sha256": "cd4f15b2c1355f72e03e3de21f629f9f67ea3fa7f312284b95f666833b3a78f2"
+    },
+    {
+      "bytes": 145037,
+      "filename": "IMG_4678_%02d.jpg",
+      "id": "cb302077-e035-4b75-b981-30544b97e37a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/cb302077-e035-4b75-b981-30544b97e37a.jpg",
+      "sha256": "26d0572ba163c27d4a7e5de9042ea9085c296422145d2b35149ea3a31c8e7ed7"
+    },
+    {
+      "bytes": 141956,
+      "filename": "IMG_5089_%02d.jpg",
+      "id": "e8b0686d-5fe0-4b9d-b9fc-27f145274a47",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/e8b0686d-5fe0-4b9d-b9fc-27f145274a47.jpg",
+      "sha256": "45c8ed043aa1def698014c11f3fc480f61929bd268f313fcd0f1387ecd02cf30"
+    },
+    {
+      "bytes": 171509,
+      "filename": "IMG_5037_%02d.jpg",
+      "id": "142149a5-1cf3-4fd5-acab-d21dbaa2e3e0",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/142149a5-1cf3-4fd5-acab-d21dbaa2e3e0.jpg",
+      "sha256": "109987346b80b41aa6ae3d3f8b552853697146cccb1459a7d7f5f008ec02d705"
+    },
+    {
+      "bytes": 136977,
+      "filename": "IMG_5134_%02d.jpg",
+      "id": "1ca49ecb-d8f9-4511-873c-2396fffd484a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/1ca49ecb-d8f9-4511-873c-2396fffd484a.jpg",
+      "sha256": "023ea0f1b899abb9ca488682ddfa4b3317bab280bf6b6e951a5242268bc4d89d"
+    },
+    {
+      "bytes": 150574,
+      "filename": "IMG_5167_%02d.jpg",
+      "id": "b0152020-238a-48fc-9968-e2acc125c1eb",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/b0152020-238a-48fc-9968-e2acc125c1eb.jpg",
+      "sha256": "2491e0e7397f04ec3a3df8cd736a79ca98ca6a33d936c4b18171bc7a4fcb825d"
+    },
+    {
+      "bytes": 145127,
+      "filename": "IMG_4768_%02d.jpg",
+      "id": "cc1186b6-b25a-4b84-a3a7-b96db0df408c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/cc1186b6-b25a-4b84-a3a7-b96db0df408c.jpg",
+      "sha256": "efd3db74cf348828f6c9425dc58462a28978cdeab2a0bcae15be42ebbf30004b"
+    },
+    {
+      "bytes": 154069,
+      "filename": "IMG_4762_%02d.jpg",
+      "id": "7b9f9f79-e086-4be7-b5da-a01be27fc4af",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/7b9f9f79-e086-4be7-b5da-a01be27fc4af.jpg",
+      "sha256": "a9b6dddd49c83ccaa5f87a46c8a7c65f79446a87e303231aa60334b9de46c763"
+    },
+    {
+      "bytes": 150567,
+      "filename": "IMG_5068_%02d.jpg",
+      "id": "bf3a4cbb-de61-4208-a42b-58b3eada3527",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/bf3a4cbb-de61-4208-a42b-58b3eada3527.jpg",
+      "sha256": "775ccdd57bd563eb6658d807fb93fb3799d2cb232766acc4bcab8639d1fb84ea"
+    },
+    {
+      "bytes": 137195,
+      "filename": "IMG_4682_%02d.jpg",
+      "id": "f1eb0bf1-9787-443c-981f-c3be3aecab1e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/f1eb0bf1-9787-443c-981f-c3be3aecab1e.jpg",
+      "sha256": "32a793021940181361f77dcdabdb5e3ac0b172a9ed05ca641115566da6383df4"
+    },
+    {
+      "bytes": 147777,
+      "filename": "IMG_5172_%02d.jpg",
+      "id": "073d5fe5-f653-4ce1-b209-cf6b20d106ec",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/073d5fe5-f653-4ce1-b209-cf6b20d106ec.jpg",
+      "sha256": "5822d08652f38bac2a0d7f925e390c8b3dc12d26add523611258680420d3cdef"
+    },
+    {
+      "bytes": 158418,
+      "filename": "IMG_5174_%02d.jpg",
+      "id": "85977325-b0c7-4bc4-9480-998e113a032e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/85977325-b0c7-4bc4-9480-998e113a032e.jpg",
+      "sha256": "5e8c936837303fc2072c248d90c14057ed0b25ac9be969b45b84aeaba399b75a"
+    },
+    {
+      "bytes": 152244,
+      "filename": "IMG_5180_%02d.jpg",
+      "id": "9889f842-a81d-4a25-a6c1-d15044229d5c",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/9889f842-a81d-4a25-a6c1-d15044229d5c.jpg",
+      "sha256": "975f8b5383a3389dc2ff308ec651e997f5fca3f1971458bfe1182af19949123f"
+    },
+    {
+      "bytes": 156520,
+      "filename": "IMG_5150_%02d.jpg",
+      "id": "67b1962b-f083-49c7-bb99-f4ec1a6e2cc0",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/67b1962b-f083-49c7-bb99-f4ec1a6e2cc0.jpg",
+      "sha256": "6449e2e9a64bd6f8d42b13d3e8079e8c5dbf37e83275f38520596da1cf33afd1"
+    },
+    {
+      "bytes": 157044,
+      "filename": "IMG_4911_%02d.jpg",
+      "id": "da322744-a13d-419b-b729-10e3fa53e351",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/da322744-a13d-419b-b729-10e3fa53e351.jpg",
+      "sha256": "9a427c08f21465947c5006142870897de1fd15d8992032352925dca498e4c905"
+    },
+    {
+      "bytes": 152784,
+      "filename": "IMG_5096_%02d.jpg",
+      "id": "67d716b2-d0c5-4354-a180-3c520dd9d622",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/67d716b2-d0c5-4354-a180-3c520dd9d622.jpg",
+      "sha256": "2b82c4ceff4a38fd2b009d7fd5c2648f82e1c5aff0d313a02b3fd3b9d0a0a44d"
+    },
+    {
+      "bytes": 167100,
+      "filename": "IMG_5013_%02d.jpg",
+      "id": "0f5bf9e3-5817-4ed2-9c39-126b02c0d21e",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/0f5bf9e3-5817-4ed2-9c39-126b02c0d21e.jpg",
+      "sha256": "ac179eb9c09afff33fd62589fd71d5a202d6f3775e9e488ef7921eb774fd12c7"
+    },
+    {
+      "bytes": 144949,
+      "filename": "IMG_4721_%02d.jpg",
+      "id": "d4770959-fccc-459c-9455-d3c0e8660c42",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/d4770959-fccc-459c-9455-d3c0e8660c42.jpg",
+      "sha256": "2c11ce32783c7c972a2f34e97157459eea4912240efa47f128c6d4e31fe1965c"
+    },
+    {
+      "bytes": 175603,
+      "filename": "IMG_4938_%02d.jpg",
+      "id": "13a57e83-da12-46ba-ae00-0ef142ae77b5",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/13a57e83-da12-46ba-ae00-0ef142ae77b5.jpg",
+      "sha256": "6b5b40f56783cacf8cc13a59cf7848b388e9dead28767ddd3f6f8b21803b5f54"
+    },
+    {
+      "bytes": 163635,
+      "filename": "IMG_4992_%02d.jpg",
+      "id": "1c20050a-2aaf-4cac-873e-261aff7babb9",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/1c20050a-2aaf-4cac-873e-261aff7babb9.jpg",
+      "sha256": "957eff3775cf99da088e4a2186a0808aa0685eb0d0dc879e4705cf2c5d2f05f8"
+    },
+    {
+      "bytes": 146945,
+      "filename": "IMG_5185_%02d.jpg",
+      "id": "825b8521-8122-4d98-a25a-9c45879cc5d2",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/825b8521-8122-4d98-a25a-9c45879cc5d2.jpg",
+      "sha256": "bbf2ad22484158710a9f0aed8662cd0a7fed6e81a77aca821de14d591febcdaf"
+    },
+    {
+      "bytes": 153967,
+      "filename": "IMG_4923_%02d.jpg",
+      "id": "15aee095-0fb0-43bb-988f-709c3c59843b",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/15aee095-0fb0-43bb-988f-709c3c59843b.jpg",
+      "sha256": "4a5da9c0fb806639f7d0a8d1a4398378679b34e19b9397e9da275e32dcfbe42f"
+    },
+    {
+      "bytes": 146793,
+      "filename": "IMG_4711_%02d.jpg",
+      "id": "699ccf66-9783-4e72-9cfe-56ebd9b7fa62",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/699ccf66-9783-4e72-9cfe-56ebd9b7fa62.jpg",
+      "sha256": "9f7f7feeee3acdef2a5fabe178291198d54f4beab29140ea942f11afb151a574"
+    },
+    {
+      "bytes": 160349,
+      "filename": "IMG_5119_%02d.jpg",
+      "id": "34909a60-6c07-4020-a9b1-5488064f3269",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/34909a60-6c07-4020-a9b1-5488064f3269.jpg",
+      "sha256": "7463d21b693ee18242f1534fe676cbb7f7e586061f65dba55730312912c348cb"
+    },
+    {
+      "bytes": 155600,
+      "filename": "IMG_4978_%02d.jpg",
+      "id": "f003f161-e588-42b0-861b-d634f457f52a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/f003f161-e588-42b0-861b-d634f457f52a.jpg",
+      "sha256": "05e40135d7da377fc62ea5bd556b65c72139def832a6e046fb5f8e449b62573f"
+    },
+    {
+      "bytes": 168255,
+      "filename": "IMG_5178_%02d.jpg",
+      "id": "c5d169c6-8842-4d1f-80b6-dcb5c386c61d",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/c5d169c6-8842-4d1f-80b6-dcb5c386c61d.jpg",
+      "sha256": "0dc7e1ebfeb378d114c6d72984706d8ebe03ea2307f4b216e658f5e4a31b1216"
+    },
+    {
+      "bytes": 152388,
+      "filename": "IMG_5092_%02d.jpg",
+      "id": "c49c5e94-1209-428c-ae01-cc147a85fe58",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/c49c5e94-1209-428c-ae01-cc147a85fe58.jpg",
+      "sha256": "9800488ec68b0a030e9147b72947098fd2104dbbb814f07985069503f24703e0"
+    },
+    {
+      "bytes": 167272,
+      "filename": "IMG_4701_%02d.jpg",
+      "id": "ed97bdb6-fab8-441f-8266-7f05a3166f6a",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/ed97bdb6-fab8-441f-8266-7f05a3166f6a.jpg",
+      "sha256": "bfd69a6afa2d4509780124b214359d357f5ca4cbf3533054501216bd04419c55"
+    },
+    {
+      "bytes": 142296,
+      "filename": "IMG_4702_%02d.jpg",
+      "id": "78d48014-2bec-45d3-bbb2-aa13e576c918",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/78d48014-2bec-45d3-bbb2-aa13e576c918.jpg",
+      "sha256": "0ba741084d77f1946b3a77b1078b5eef13b1fe92bfc7bc37d8e65d9ac3d087e8"
+    },
+    {
+      "bytes": 133373,
+      "filename": "IMG_5136_%02d.jpg",
+      "id": "4d73a850-6bd3-445e-8c8c-ca95e705d7d3",
+      "label": "Diseased_unspecified",
+      "publisher_class": "Tomato Leaf Curl Virus",
+      "relative_path": "images/4d73a850-6bd3-445e-8c8c-ca95e705d7d3.jpg",
+      "sha256": "a77e006ff033edf7ba35a2165903630cefca74e38d0bf79544afe05e68675537"
+    }
+  ],
+  "selection_seed": "phase161",
+  "source_doi": "10.17632/93h9p62kg4.1",
+  "source_role": "development_only",
+  "source_sha256": "311a899b37909b93b53518a15b17702fc02fa1b50435f9e144c634f905ca35fe",
+  "total_selected_bytes": 66271843,
+  "training_used": false
+}

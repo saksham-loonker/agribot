@@ -1,0 +1,2186 @@
+{
+  "protocol_sha256": "e4f4b2afeeff4ca0b7c265ea00b6281f618ef279fae775258ae725faf5496f23",
+  "best": {
+    "condition_mode": "both",
+    "recovery_mode": "selected_training_heads",
+    "first": "phase183_native_convergence/epoch_025_predictions.npz",
+    "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+    "healthy_validation_correct": 19,
+    "new_false_healthy_by_source": {
+      "bangladesh_classification": 0,
+      "olid_tomato": 0,
+      "plantvillage": 0,
+      "tlid": 0
+    },
+    "old_healthy_correct": 17,
+    "cheap_pass": false
+  },
+  "controls": [
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 3,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 8,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 3,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 3,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 8,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 8,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 3,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 8,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 3,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 3,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 8,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "none",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 26,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 8,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "nitrogen",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 1
+      },
+      "old_healthy_correct": 18,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 1,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "other",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 24,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 2,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "off",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 14,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_025_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_028_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_001_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_006_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 16,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_022_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 14,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase191_adapted_patch_supervision/epoch_030_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 15,
+      "cheap_pass": false
+    },
+    {
+      "condition_mode": "both",
+      "recovery_mode": "selected_training_heads",
+      "first": "phase183_native_convergence/epoch_035_predictions.npz",
+      "second": "phase199_full_patch_supervision/epoch_019_predictions.npz",
+      "healthy_validation_correct": 19,
+      "new_false_healthy_by_source": {
+        "bangladesh_classification": 0,
+        "olid_tomato": 0,
+        "plantvillage": 0,
+        "tlid": 0
+      },
+      "old_healthy_correct": 17,
+      "cheap_pass": false
+    }
+  ],
+  "policies_evaluated": 144,
+  "passing_policies": 0,
+  "new_encoder_inputs": 0,
+  "model_promoted": false,
+  "acceptance_data_used": false,
+  "elapsed_seconds": 0.020213525975123048
+}

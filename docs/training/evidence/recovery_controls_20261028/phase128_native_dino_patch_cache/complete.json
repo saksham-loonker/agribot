@@ -1,0 +1,14 @@
+{
+  "protocol_sha256": "b6dec660fe4ae9b9ddca1e453fcd5318783db20b4c3e658b913f0e78c0090987",
+  "tokens_sha256": "19f23d54bd75df611e1a132846a0a69ac84917a6245a9116b466080b4960576b",
+  "native_cls_sha256": "7c9a87e2f944cb72aafc4fad9d80286b334ff9417e284708396adef6de7fa14e",
+  "new_448_encoder_inputs": 868,
+  "old_224_encoder_inputs_recomputed": 0,
+  "detector_inputs_recomputed": 0,
+  "dynamic_224_audit_inputs": 16,
+  "maximum_224_cls_error": 2.8312206268310547e-06,
+  "elapsed_seconds": 42.65083387098275,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false
+}

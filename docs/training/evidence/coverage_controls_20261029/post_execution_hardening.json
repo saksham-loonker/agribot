@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "path": "model_training/v3/phase246_whole_prefix_coverage.py",
+      "executed_sha256": "21cffa967bda9aa54e58b1dbec518a1b0477a91e1ad93f8c1c3648db646a7cc6",
+      "current_lf_sha256": "8347c007e7824cb764b43afc7aa36c361ac70620d3780f6c7dec5b54048b2cb5",
+      "reason": "Use tuple shape for NumPy prefix writer. Existing cache header repaired before training with bit-identical payload; original source and receipt preserved. No encoder computation repeated."
+    }
+  ]
+}

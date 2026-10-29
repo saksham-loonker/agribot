@@ -1,0 +1,1172 @@
+{
+  "protocol_sha256": "07e5e21a8486490a73798787210f2712caee4371a46353486124466a5d88ccb4",
+  "gallery_identities": 36101,
+  "missing_prior_identities": 0,
+  "overlap_images": 64,
+  "overlapping_families": 60,
+  "retained_images": 2461,
+  "retained_counts": {
+    "Healthy": 791,
+    "Other": 1670
+  },
+  "edges": [
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (1294).JPG",
+      "query_group": "tcp4:inferred_family:044021a43b276606d7c3",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantVillage/diagnostic255/Tomato___healthy__1d31b822-7933-4801-a18c-657b8af377d6___RS_HL 0636.JPG",
+        "file_sha256": "9629345d964ea7579b32cc80ba264820a7b0486cfc723d6d7285bcbf92560dee",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 32,
+      "inliers": 322,
+      "inlier_fraction": 1.0,
+      "median_error": 0.13174930214881897,
+      "coverage": [
+        0.5618964974905322,
+        0.5621138396971049
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (1297).JPG",
+      "query_group": "tcp4:inferred_family:044021a43b276606d7c3",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantVillage/diagnostic255/Tomato___healthy__1d31b822-7933-4801-a18c-657b8af377d6___RS_HL 0636.JPG",
+        "file_sha256": "9629345d964ea7579b32cc80ba264820a7b0486cfc723d6d7285bcbf92560dee",
+        "box": null
+      },
+      "mirrored": true,
+      "votes": 8,
+      "inliers": 117,
+      "inlier_fraction": 0.975,
+      "median_error": 0.6131115555763245,
+      "coverage": [
+        0.3798592690129402,
+        0.38043236863913715
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (1322).JPG",
+      "query_group": "tcp4:inferred_family:38ef0b5715fd199854b0",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantVillage/diagnostic255/Tomato___healthy__1dae303e-6545-4c87-8c95-8805108f5282___RS_HL 0437.JPG",
+        "file_sha256": "ada63c98bb00fb4657782f0df913a3e2cdaf2b04e143ca93d7e2e79dd50dd589",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 46,
+      "inliers": 319,
+      "inlier_fraction": 0.9937694704049844,
+      "median_error": 0.14970017969608307,
+      "coverage": [
+        0.615996082143043,
+        0.6161628989322313
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (1324).JPG",
+      "query_group": "tcp4:inferred_family:38ef0b5715fd199854b0",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantVillage/diagnostic255/Tomato___healthy__1dae303e-6545-4c87-8c95-8805108f5282___RS_HL 0437.JPG",
+        "file_sha256": "ada63c98bb00fb4657782f0df913a3e2cdaf2b04e143ca93d7e2e79dd50dd589",
+        "box": null
+      },
+      "mirrored": true,
+      "votes": 14,
+      "inliers": 110,
+      "inlier_fraction": 0.9482758620689655,
+      "median_error": 0.5072007179260254,
+      "coverage": [
+        0.47071028719455466,
+        0.47015160214518786
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (1325).JPG",
+      "query_group": "tcp4:inferred_family:38ef0b5715fd199854b0",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantVillage/diagnostic255/Tomato___healthy__1dae303e-6545-4c87-8c95-8805108f5282___RS_HL 0437.JPG",
+        "file_sha256": "ada63c98bb00fb4657782f0df913a3e2cdaf2b04e143ca93d7e2e79dd50dd589",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 13,
+      "inliers": 57,
+      "inlier_fraction": 0.8507462686567164,
+      "median_error": 0.48125341534614563,
+      "coverage": [
+        0.38409895438804936,
+        0.38518983842320015
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (16).JPG",
+      "query_group": "tcp4:inferred_family:365688f10eaef1e34bb4",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantVillage/diagnostic255/Tomato___healthy__2a1dd125-ece3-499f-a24b-1d00dbcc3184___GH_HL Leaf 227.JPG",
+        "file_sha256": "90359de938d5de3fabebb2cf73e066bfda187ca25cc134ed53d84f8feed6010b",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 17,
+      "inliers": 174,
+      "inlier_fraction": 1.0,
+      "median_error": 0.24097269773483276,
+      "coverage": [
+        0.8685259793265888,
+        0.8687794688547519
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (726).jpg",
+      "query_group": "tcp4:inferred_family:0bed928f23971a9ee419",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/003.JPG.jpg",
+        "file_sha256": "b070fe8ff66dc8071997ee06f13d31ff5bf7c5348eab09a9f5ef39b76861b50f",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 22,
+      "inliers": 252,
+      "inlier_fraction": 0.9692307692307692,
+      "median_error": 0.4114065170288086,
+      "coverage": [
+        0.8781494493857841,
+        0.876303785606672
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (729).jpg",
+      "query_group": "tcp4:inferred_family:af5f183c1c3d290d1629",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/100_8283.jpg",
+        "file_sha256": "2e6dc8d894d71a2b75362f3edacf4f0caf9e27ce68bb85508f4e4f86511970d7",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 28,
+      "inliers": 220,
+      "inlier_fraction": 0.990990990990991,
+      "median_error": 0.39887678623199463,
+      "coverage": [
+        0.7190251724265241,
+        0.7179564200618551
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (732).jpg",
+      "query_group": "tcp4:inferred_family:ffe328a4479c00d9418c",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/2013-08-20-03.jpg",
+        "file_sha256": "5e2472f415aeb8e7cc254db1f17b2d14a4f2daae70b685ee8a70a29f0f99308a",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 28,
+      "inliers": 289,
+      "inlier_fraction": 0.9633333333333334,
+      "median_error": 0.55292147397995,
+      "coverage": [
+        0.8621693170912179,
+        0.8611834364359622
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (733).jpg",
+      "query_group": "tcp4:inferred_family:ec82143423aff0ba0a5c",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/2013-08-20-04.jpg",
+        "file_sha256": "50e8f7928017878f7f020bb8f52b61f99d74f3db1d20c80d41a612e04695d32d",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 26,
+      "inliers": 232,
+      "inlier_fraction": 0.9666666666666667,
+      "median_error": 0.5485280752182007,
+      "coverage": [
+        0.8216381406771338,
+        0.823004060660278
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (737).jpg",
+      "query_group": "tcp4:inferred_family:e74f3344d4d1c2236f75",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/20140818-tomato-sauce-vicky-wasik-1.jpg",
+        "file_sha256": "b841720c688db5f8a1989394b8f5aaf59c1a9ce5a855d66ad843be928db7c41a",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 36,
+      "inliers": 253,
+      "inlier_fraction": 0.9301470588235294,
+      "median_error": 0.524436891078949,
+      "coverage": [
+        0.7314871102671029,
+        0.7336567403999528
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (749).jpg",
+      "query_group": "tcp4:inferred_family:c9e96e13d674d2f2828e",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/flies.jpg",
+        "file_sha256": "9065172ad0176788c4341230bbd34e13434039e41fdca01da77cc962dea8f128",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 8,
+      "inliers": 143,
+      "inlier_fraction": 0.9470198675496688,
+      "median_error": 0.5676335096359253,
+      "coverage": [
+        0.8762437550295078,
+        0.8725072950572625
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (759).jpg",
+      "query_group": "tcp4:inferred_family:bb25e887972b1fca6e86",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/Leaves-of-Tomato.jpg",
+        "file_sha256": "356f9de00f0ef794de790bcd76200255fe2dbbf027ebdc2fb23607dde218141b",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 10,
+      "inliers": 196,
+      "inlier_fraction": 0.937799043062201,
+      "median_error": 0.6964784860610962,
+      "coverage": [
+        0.8441088908108016,
+        0.8400469902785338
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (763).jpg",
+      "query_group": "tcp4:inferred_family:5766296c4a92cca1d8e1",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/russian-2-319-dt-2010-leaves-high-tunnel-9-29-2014-c.jpg",
+        "file_sha256": "67fee2ee91add5373f3bdd4c52f92adb15277864c2f8f416c53be446f30ead2e",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 10,
+      "inliers": 87,
+      "inlier_fraction": 1.0,
+      "median_error": 0.3674400746822357,
+      "coverage": [
+        0.8715863996084471,
+        0.8724151736590386
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (765).jpg",
+      "query_group": "tcp4:inferred_family:29ff2f3fa7e871b13ea2",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/stock-photo-northern-corn-leaf-blight-nclb-is-a-foliar-disease-of-corn-maize-caused-by-exserohilum-turcicum-592778840.jpg",
+        "file_sha256": "7d8165558c441580514b96d9eb3cb996844204bbd8b6048a5263d1b12eb5102c",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 8,
+      "inliers": 25,
+      "inlier_fraction": 0.8620689655172413,
+      "median_error": 0.5926448702812195,
+      "coverage": [
+        0.04079462390616504,
+        0.05328256614506647
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (767).jpg",
+      "query_group": "tcp4:inferred_family:9b9bb355fc9a7ce2ad4d",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/stock-photo-tomato-leaves-close-up-macro-shot-isolated-on-white-background-78796204.jpg",
+        "file_sha256": "1f4c83af039d3ffa8d0e40c482b09502d280265e5f3d8fad32f681679e2300b7",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 33,
+      "inliers": 249,
+      "inlier_fraction": 0.9291044776119403,
+      "median_error": 0.30370861291885376,
+      "coverage": [
+        0.6637699986129805,
+        0.6633840950667537
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (768).jpg",
+      "query_group": "tcp4:inferred_family:26416d4450840346d61f",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/stock-photo-strawberry-leaves-isolated-on-white-background-collection-227987416.jpg",
+        "file_sha256": "ae74eda8798b195095f52e08f3371b14500928a196683624a33a16ce474faae3",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 8,
+      "inliers": 25,
+      "inlier_fraction": 0.7352941176470589,
+      "median_error": 0.3677811622619629,
+      "coverage": [
+        0.1171228770507616,
+        0.12119722624254309
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (774).jpg",
+      "query_group": "tcp4:inferred_family:dd93f58b0da9bdcc73cb",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/tomato-leaf-26180166.jpg",
+        "file_sha256": "0107bd4cb932f1ab7e56701dcd5d8de0a8bf59dacca6332d6245ff42832702e1",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 13,
+      "inliers": 134,
+      "inlier_fraction": 0.9178082191780822,
+      "median_error": 0.6458919048309326,
+      "coverage": [
+        0.5950192049155326,
+        0.5964046542452628
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato healthy leaf/THL (775).jpg",
+      "query_group": "tcp4:inferred_family:ee264832726bbbfc2266",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Healthy_leaf/Brown-Spots-on-Tomato-Leaves.jpg",
+        "file_sha256": "23720085fb321ea981d32857dcb3654ac0b4fb7c029be24ff886c759fd697ed4",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 22,
+      "inliers": 192,
+      "inlier_fraction": 0.9458128078817734,
+      "median_error": 0.558635950088501,
+      "coverage": [
+        0.5443045404579778,
+        0.7054126257517023
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (139).jpg",
+      "query_group": "tcp4:inferred_family:e16951d869e175db5542",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SS_ (9).jpg",
+        "file_sha256": "d8e34f590c2bf668dc6f3df9a84cb76e3b36d2adf844a27c399d788a221e453f",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 9,
+      "inliers": 96,
+      "inlier_fraction": 0.9696969696969697,
+      "median_error": 0.6206786036491394,
+      "coverage": [
+        0.15573351418607248,
+        0.5996972453466665
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (141).jpg",
+      "query_group": "tcp4:inferred_family:b10f3863c5a4afde1923",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/46-Septoria-leaf-spot.jpg",
+        "file_sha256": "1f4a189a12c8b7e3fe9eb39e588dd48387f946606bf03d8df472523f9dc59180",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 19,
+      "inliers": 236,
+      "inlier_fraction": 0.9291338582677166,
+      "median_error": 0.3496347665786743,
+      "coverage": [
+        0.5589477271878419,
+        0.5605799119958645
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (143).jpg",
+      "query_group": "tcp4:inferred_family:01c12a28be38aeaf5f55",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/66e7583ebe11cf0bd06435e4167bd4fd.jpg",
+        "file_sha256": "f375f980eed0aa524b8130d0449c8239620f302593a65befbe083cb1808353bc",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 25,
+      "inliers": 257,
+      "inlier_fraction": 0.9734848484848485,
+      "median_error": 0.39652371406555176,
+      "coverage": [
+        0.5493455690849561,
+        0.6163970743718249
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (148).jpg",
+      "query_group": "tcp4:inferred_family:c0d486a6bb1350dd63a0",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/140714+%2811%29.JPG.jpg",
+        "file_sha256": "415d67394b5ba63eeb5eb3e3c2b5bad457545ab95d36e371e668b932efc2fb54",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 22,
+      "inliers": 220,
+      "inlier_fraction": 0.9401709401709402,
+      "median_error": 0.3883667588233948,
+      "coverage": [
+        0.807012885385694,
+        0.8062564981557666
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (151).jpg",
+      "query_group": "tcp4:inferred_family:beda6305debbf9343712",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/128110613-56a6d3633df78cf7729070ad.jpg",
+        "file_sha256": "9b6ce8f0e3b4cfd7bb9f4235ef5cff30f7a3d1da27be970612424a0ae1b3c5ef",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 17,
+      "inliers": 184,
+      "inlier_fraction": 0.9583333333333334,
+      "median_error": 0.38425129652023315,
+      "coverage": [
+        0.6248610618651924,
+        0.6246760723656253
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (154).jpg",
+      "query_group": "tcp4:inferred_family:4bd11de050c725533867",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/28018723549_3a16c1467b_b.jpg",
+        "file_sha256": "ec94d4babad810979b404e7fb19093de03ca06d10e37ee99af2cfc86eedc2277",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 25,
+      "inliers": 279,
+      "inlier_fraction": 0.9928825622775801,
+      "median_error": 0.34175410866737366,
+      "coverage": [
+        0.8797771646538826,
+        0.879250939604364
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (155).jpg",
+      "query_group": "tcp4:inferred_family:dda69127fd6e638c38f3",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/5315825271570432.jpeg.jpg",
+        "file_sha256": "6340fee78e5aa661da4418f4afc43b802c972b436f4ede4094e1188798c3f83a",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 20,
+      "inliers": 243,
+      "inlier_fraction": 0.9681274900398407,
+      "median_error": 0.3940872251987457,
+      "coverage": [
+        0.5363063044467863,
+        0.5344825970760715
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (158).jpg",
+      "query_group": "tcp4:inferred_family:1955618a62748ca52039",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SS_ (31).jpg",
+        "file_sha256": "af6a4cc5b37c1617273e15a197a6695b1e93787315a361b3b085cda987d71a05",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 15,
+      "inliers": 140,
+      "inlier_fraction": 0.9655172413793104,
+      "median_error": 0.44208037853240967,
+      "coverage": [
+        0.45228325855173007,
+        0.8159230369407604
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (161).jpg",
+      "query_group": "tcp4:inferred_family:6b2124ff77e0a10c043d",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/5775225744523264.jpeg.jpg",
+        "file_sha256": "94a8ea8452cec2540ead310d93a6375e371b9b7e5077b7614044ec430a03606e",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 21,
+      "inliers": 272,
+      "inlier_fraction": 0.9927007299270073,
+      "median_error": 0.29795974493026733,
+      "coverage": [
+        0.8641409040460767,
+        0.8634923439600619
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (163).jpg",
+      "query_group": "tcp4:inferred_family:94f59da2af9b37af2448",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SS_ (36).jpg",
+        "file_sha256": "9757e78d0ebcd10592eac603ec7cf331762a8cce87f5f66a9e1bfc3107bd9b84",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 6,
+      "inliers": 138,
+      "inlier_fraction": 0.971830985915493,
+      "median_error": 0.5178114771842957,
+      "coverage": [
+        0.36596192618875517,
+        0.7926652382337532
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (167).jpg",
+      "query_group": "tcp4:inferred_family:2981978173e20c7c71a9",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/6242739939180544.jpeg.jpg",
+        "file_sha256": "386c07ac0ead76fb91a38688798c9572dc4798693365a39f661e2618ac1476f7",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 19,
+      "inliers": 256,
+      "inlier_fraction": 0.9696969696969697,
+      "median_error": 0.36847203969955444,
+      "coverage": [
+        0.7692079765196437,
+        0.770542972570551
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (169).jpg",
+      "query_group": "tcp4:inferred_family:3c6e9255957a34be7d5e",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SS_ (974)1.jpg",
+        "file_sha256": "17cfe3677d1c3d09bc894de2eec26d15c6a6169c996422a9062ec58156023ce7",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 23,
+      "inliers": 255,
+      "inlier_fraction": 0.9883720930232558,
+      "median_error": 0.5454509854316711,
+      "coverage": [
+        0.7082557111848233,
+        0.7823195445284468
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (177).jpg",
+      "query_group": "tcp4:inferred_family:9a6d061b2b92ce67c0c6",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/caf212ccf4696675469a0beaa9e57213.jpg",
+        "file_sha256": "909e493ee0f14f4757b15c40f19bac1e81ae6b639087c7a3945f657d88bc2397",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 25,
+      "inliers": 274,
+      "inlier_fraction": 0.9750889679715302,
+      "median_error": 0.4458756148815155,
+      "coverage": [
+        0.7489647582671912,
+        0.7484525484737804
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (181).jpg",
+      "query_group": "tcp4:inferred_family:85b612a79afc166dcb24",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/early+blight+on+leaf+yel+halo+IMG_2313.JPG.jpg",
+        "file_sha256": "3503ea91ae5be3ef0c70f9cfb8b4cb0a585ffd8497fdba7be3a2334a3cbb2025",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 6,
+      "inliers": 93,
+      "inlier_fraction": 0.9587628865979382,
+      "median_error": 0.49522438645362854,
+      "coverage": [
+        0.825718929188473,
+        0.8253904212634063
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (182).jpg",
+      "query_group": "tcp4:inferred_family:25f8ae31170651f1a6db",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/early-blight-septoria-ls-fig-3.jpg",
+        "file_sha256": "93c989d8551209bf34d4002ee9fae48ddbf6ab66fc3c27466c0473bcc7c0a2b7",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 26,
+      "inliers": 262,
+      "inlier_fraction": 0.9886792452830189,
+      "median_error": 0.38325488567352295,
+      "coverage": [
+        0.851715086175733,
+        0.8520587232971516
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (188).jpg",
+      "query_group": "tcp4:inferred_family:058c89bdf89ac889d96f",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/IMG_3175.jpg",
+        "file_sha256": "f3f4f9196a6d2e625c9dda9fde63f4e7ccb5aa30e285dd0f2cd2c255891a28ae",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 12,
+      "inliers": 113,
+      "inlier_fraction": 0.875968992248062,
+      "median_error": 0.5124388933181763,
+      "coverage": [
+        0.6717750286651544,
+        0.7173218829339637
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (191).jpg",
+      "query_group": "tcp4:inferred_family:574667f100c8123c4e18",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/Leaf%20spot.jpg",
+        "file_sha256": "b9edb6c3261c549c1464a7e0fdd17d788df2f35ddea9cfdc53ca35e5cf4b77cb",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 16,
+      "inliers": 174,
+      "inlier_fraction": 0.9508196721311475,
+      "median_error": 0.44900956749916077,
+      "coverage": [
+        0.7273092146985597,
+        0.7245215723779201
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (193).jpg",
+      "query_group": "tcp4:inferred_family:a95002ef016c879b9844",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/MPC105550.jpg.rendition.largest.550.jpg",
+        "file_sha256": "9d29d49bd39a44a7c9f3dc663df9a18848d22de832995550ae37c7f8c01ff085",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 42,
+      "inliers": 341,
+      "inlier_fraction": 0.9970760233918129,
+      "median_error": 0.14271244406700134,
+      "coverage": [
+        0.8794525348198843,
+        0.8795359881691741
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (195).jpg",
+      "query_group": "tcp4:inferred_family:fe78d288a25f28794566",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/PHOTO_1333642740144.jpg",
+        "file_sha256": "96de8e01c001bb855bfb8509a43d77f0b97a77bd730eebb99ca17bdba5bac46c",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 9,
+      "inliers": 94,
+      "inlier_fraction": 0.9038461538461539,
+      "median_error": 0.6772565841674805,
+      "coverage": [
+        0.7593196976437914,
+        0.7614988433607536
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (199).jpg",
+      "query_group": "tcp4:inferred_family:3c6e9255957a34be7d5e",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SS_ (974)1.jpg",
+        "file_sha256": "17cfe3677d1c3d09bc894de2eec26d15c6a6169c996422a9062ec58156023ce7",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 21,
+      "inliers": 200,
+      "inlier_fraction": 0.9803921568627451,
+      "median_error": 0.5577808022499084,
+      "coverage": [
+        0.47874606446450896,
+        0.810687845375581
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (202).jpg",
+      "query_group": "tcp4:inferred_family:7db54c3c12e554af81cf",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SS_ (974).jpg",
+        "file_sha256": "aec0bc06e6fe25f629aa47255c77523c7e67335c3747957412ab4e0dcd805036",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 25,
+      "inliers": 251,
+      "inlier_fraction": 0.9728682170542635,
+      "median_error": 0.45801037549972534,
+      "coverage": [
+        0.6978229046059559,
+        0.7260760665534143
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (209).jpg",
+      "query_group": "tcp4:inferred_family:8b6c827506ccfe0f646d",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/Septoria+Leaf+Spot.jpg",
+        "file_sha256": "db7621c315802b3a9a15c00a0d68519adebc8cc1bea0194853b79f0d726d4e78",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 15,
+      "inliers": 152,
+      "inlier_fraction": 0.8491620111731844,
+      "median_error": 0.5301642417907715,
+      "coverage": [
+        0.38065557798634253,
+        0.3801683906510734
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (214).jpg",
+      "query_group": "tcp4:inferred_family:96fc2534fbecdb990de1",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/septoria3.jpg",
+        "file_sha256": "87ec4f74f4314d1d58616e525f2b8b4e592e029b86677f595d8fb6cae3149bcf",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 12,
+      "inliers": 180,
+      "inlier_fraction": 0.9230769230769231,
+      "median_error": 0.5434562563896179,
+      "coverage": [
+        0.6324971454981699,
+        0.6706346003603093
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (215).jpg",
+      "query_group": "tcp4:inferred_family:b3128625c8ae90f1b5e9",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/septoria5.jpg",
+        "file_sha256": "9d7f86bc562cc7dc2bcf670c807bd0ea95027da0a8c36b26f0737fd343d09445",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 21,
+      "inliers": 183,
+      "inlier_fraction": 0.9682539682539683,
+      "median_error": 0.5800827741622925,
+      "coverage": [
+        0.634825406129356,
+        0.6340937882484501
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (217).jpg",
+      "query_group": "tcp4:inferred_family:ecb7109502fb5f75f627",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SeptoriaLeaf_T3.jpg",
+        "file_sha256": "05f771c677cbfd7fafe9ca390d990b18f0c115e0928cb0f7a133f456e1a21297",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 11,
+      "inliers": 193,
+      "inlier_fraction": 0.965,
+      "median_error": 0.2720942199230194,
+      "coverage": [
+        0.7890404109415827,
+        0.8641917520638378
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (221).jpg",
+      "query_group": "tcp4:inferred_family:86f4f6981fa645b10fa4",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/Septoria-leaf-spot-hc.jpg",
+        "file_sha256": "aded414795beadec507c6fc3051ba11ae1fd1c4f7c03465e1973b2311d876d6b",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 21,
+      "inliers": 245,
+      "inlier_fraction": 0.9459459459459459,
+      "median_error": 0.45842909812927246,
+      "coverage": [
+        0.7674054689221286,
+        0.7671786979548354
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (222).jpg",
+      "query_group": "tcp4:inferred_family:3e5eef4e317b8486f6b9",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/septoria-leaf-spot-in-tomatoes.jpg",
+        "file_sha256": "aa232349743dbaf811d19e952b01a883f79e2a701ff030fbce52f2a4d8ecc279",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 15,
+      "inliers": 102,
+      "inlier_fraction": 0.9272727272727272,
+      "median_error": 0.36788466572761536,
+      "coverage": [
+        0.5122103146984193,
+        0.5109400957729625
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (225).jpg",
+      "query_group": "tcp4:inferred_family:282f5c8eccf45a53ef4a",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/septoria-leaf-spot-tomato-1.jpg",
+        "file_sha256": "c2df9ef9cc05534ad4855678f62bfe9d5312aa9dc0e53c0c5e8f5b13f69ab713",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 21,
+      "inliers": 264,
+      "inlier_fraction": 0.9850746268656716,
+      "median_error": 0.3319038152694702,
+      "coverage": [
+        0.8053574633431291,
+        0.8039818784856815
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (233).jpg",
+      "query_group": "tcp4:inferred_family:9073220d376a775135f5",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/sls1.jpg",
+        "file_sha256": "094fcb904432cbf854ac6691409fee5591aade7d7434112ba823e09ff2c59759",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 33,
+      "inliers": 349,
+      "inlier_fraction": 0.9971428571428571,
+      "median_error": 0.1844833493232727,
+      "coverage": [
+        0.8813421482737797,
+        0.8813243780658848
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (234).jpg",
+      "query_group": "tcp4:inferred_family:562ed71279ef8d35e976",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/Tom_Sept1.jpg",
+        "file_sha256": "fce1bfc413bec680efb6f36a57ef8ceb673c09a716b1ffbb26d55dcda2a1b0a2",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 12,
+      "inliers": 239,
+      "inlier_fraction": 0.9715447154471545,
+      "median_error": 0.4149470627307892,
+      "coverage": [
+        0.7472988677288736,
+        0.7458980849836022
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (239).jpg",
+      "query_group": "tcp4:inferred_family:d5b9868417b6543bdfeb",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SS_ (968).jpg",
+        "file_sha256": "bedcd49efab83419612d7a371029d896c51e9bfc190e7c13f9722e4a5ff6a20b",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 31,
+      "inliers": 315,
+      "inlier_fraction": 1.0,
+      "median_error": 0.22567975521087646,
+      "coverage": [
+        0.6421398922608793,
+        0.8866704438348832
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (240).jpg",
+      "query_group": "tcp4:inferred_family:1806a3c2077d154a942e",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SS_ (969).jpg",
+        "file_sha256": "c49689283b00f4378717737cc4922d05ad1eb5d2643d53ea852221103a4dd405",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 11,
+      "inliers": 104,
+      "inlier_fraction": 0.9203539823008849,
+      "median_error": 0.7350407838821411,
+      "coverage": [
+        0.32567013903100644,
+        0.7123416847698011
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (241).jpg",
+      "query_group": "tcp4:inferred_family:0dc4dcf111a940c5d8d7",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/tomato_septoria_alternaria_1.jpg",
+        "file_sha256": "566a63d77cac3d5b7966f8909f0884e85e2af8b20775cad0e0bfce0d5b751d74",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 17,
+      "inliers": 206,
+      "inlier_fraction": 0.9406392694063926,
+      "median_error": 0.4951852560043335,
+      "coverage": [
+        0.8491212193516077,
+        0.8488486203910492
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (242).jpg",
+      "query_group": "tcp4:inferred_family:195ad81598c9182e3091",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/Tomato_Septoria_Leaf_Spot.jpg",
+        "file_sha256": "a74386fd3264b6d486a5676e87a00f27b0ba135adb4545bb75a68027b9cc90ca",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 24,
+      "inliers": 276,
+      "inlier_fraction": 0.971830985915493,
+      "median_error": 0.38436564803123474,
+      "coverage": [
+        0.8654928041776181,
+        0.8651471784273764
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (243).jpg",
+      "query_group": "tcp4:inferred_family:ef0be9d9524ff2ba9aed",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TEST/tomato_V8.jpg",
+        "file_sha256": "e23a29c94b58aac28e92f57f95eb6f53e99c874323cb2b90ebd327085721574e",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 34,
+      "inliers": 307,
+      "inlier_fraction": 0.9903225806451613,
+      "median_error": 0.2782752513885498,
+      "coverage": [
+        0.71252558993617,
+        0.7110972995238015
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (244).jpg",
+      "query_group": "tcp4:inferred_family:993eea8dd0ce25acee48",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/Tomato+leaf+spot2.jpg",
+        "file_sha256": "b74478400d645250748d20ab0e829d5bb9a94d90e8d8c342d6be21902cc27e74",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 35,
+      "inliers": 259,
+      "inlier_fraction": 0.9885496183206107,
+      "median_error": 0.3118509352207184,
+      "coverage": [
+        0.739950551440645,
+        0.739926467792434
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (245).jpg",
+      "query_group": "tcp4:inferred_family:188ae707d81d183ae74b",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/Tomato+Problems+Septoria+Leaf+Spot.jpg",
+        "file_sha256": "44fa15ec1a60faa07d2e1b36692d07d9050716503ce2746a8a1cb1d982477a45",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 18,
+      "inliers": 65,
+      "inlier_fraction": 0.8227848101265823,
+      "median_error": 0.47947412729263306,
+      "coverage": [
+        0.5504097509102024,
+        0.5501200550819304
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (246).jpg",
+      "query_group": "tcp4:inferred_family:1a98c48da48fe46e1fe9",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SS_ (975)1.jpg",
+        "file_sha256": "2847e7741cb86d6ac019991b87b6fcb7af316ce366bff7445ce7b00b2fb21523",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 11,
+      "inliers": 46,
+      "inlier_fraction": 0.8363636363636363,
+      "median_error": 0.8610552549362183,
+      "coverage": [
+        0.13899327597741018,
+        0.5989870419250293
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (247).jpg",
+      "query_group": "tcp4:inferred_family:f304daffee79e5337ef1",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SS_ (976).jpg",
+        "file_sha256": "a492cc0277f3c05853e9e9f68e70e5114c93a15a09b6903d8beaf37c48888578",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 26,
+      "inliers": 198,
+      "inlier_fraction": 0.9383886255924171,
+      "median_error": 0.5803131461143494,
+      "coverage": [
+        0.5421636933697326,
+        0.802521558304786
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (252).jpg",
+      "query_group": "tcp4:inferred_family:fa0438be50caa4f9416d",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/SS_ (981).jpg",
+        "file_sha256": "fcfce558d0e0407f038ab85b362a1a417846c3e8e1459ec875396b245941b8d2",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 11,
+      "inliers": 165,
+      "inlier_fraction": 0.953757225433526,
+      "median_error": 0.540755569934845,
+      "coverage": [
+        0.6710355807173313,
+        0.797880855816658
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (253).jpg",
+      "query_group": "tcp4:inferred_family:164bdf283f5613d52317",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/tomato-early-blight-e1437503226856.jpg",
+        "file_sha256": "5e1c6b5b5efa1af962ba2d1b08afe1f1622b86d6a95208cd535356a93fe11e5f",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 34,
+      "inliers": 252,
+      "inlier_fraction": 0.984375,
+      "median_error": 0.2836822271347046,
+      "coverage": [
+        0.7035374848855859,
+        0.7494634179860775
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (257).jpg",
+      "query_group": "tcp4:inferred_family:e3251908eda2b2dcf7e1",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TEST/55830b60a7cf2.image.jpg",
+        "file_sha256": "9dbcc935858b4fcc4b4f6c895c48045735b1f577959e995f2941bf761e42390a",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 40,
+      "inliers": 358,
+      "inlier_fraction": 0.9944444444444445,
+      "median_error": 0.13952258229255676,
+      "coverage": [
+        0.6542778323122992,
+        0.42613695708541716
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (258).jpg",
+      "query_group": "tcp4:inferred_family:8b77e3681174ad129f01",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/tomato-septoria-3.jpg",
+        "file_sha256": "94dddabc3c29835b9e2be96cf6a12440606c98ffa45aeb890369cd2434f6c287",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 27,
+      "inliers": 280,
+      "inlier_fraction": 0.9929078014184397,
+      "median_error": 0.3640406131744385,
+      "coverage": [
+        0.8802635962441859,
+        0.8798963555207624
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (260).jpg",
+      "query_group": "tcp4:inferred_family:5fef292793fd71c1ba4e",
+      "prior": {
+        "path": "/home/genesis/agribot-data/recognition_campaign_20261024/sources/pakistan/images/Tomato Dataset/Dataset (raw)/Tomato_Septoria_leaf_spot/tomato-septoria-5.jpg",
+        "file_sha256": "6dbdb4f99a7533193d70ebf7fdcabbacfcd3693a0a39546cde879a46b7ce8db5",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 20,
+      "inliers": 241,
+      "inlier_fraction": 0.9796747967479674,
+      "median_error": 0.36507073044776917,
+      "coverage": [
+        0.717171192969868,
+        0.7164045056902638
+      ]
+    },
+    {
+      "query_id": "tcp4:3 Fruit and Leaf Crops-Disease/Tomato septoria leaf spot/TSLS (264).jpg",
+      "query_group": "tcp4:inferred_family:c52a59ae66fef9500927",
+      "prior": {
+        "path": "/home/genesis/agribot-data/PlantDoc/TRAIN/tomato-septoria-leaf-spot-.jpg",
+        "file_sha256": "3c0500015b9ee00e6c4a40038ae26e4e4fb2a50ba1e566103315983aaafabd41",
+        "box": null
+      },
+      "mirrored": false,
+      "votes": 20,
+      "inliers": 160,
+      "inlier_fraction": 1.0,
+      "median_error": 0.25593435764312744,
+      "coverage": [
+        0.5028524200758852,
+        0.8556889331071197
+      ]
+    }
+  ],
+  "training_used": false,
+  "diagnostic_predictions_opened": false,
+  "acceptance_ready": false,
+  "independence_established": false,
+  "elapsed_seconds": 92.51158095302526,
+  "limitations": "Approximate 64-feature retrieval and 20-candidate cap; full 512-feature homography verification. Source mixes internet/prior datasets, and successful overlap screening does not establish independent capture or clinical labels."
+}

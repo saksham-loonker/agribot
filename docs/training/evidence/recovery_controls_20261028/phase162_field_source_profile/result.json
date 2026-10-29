@@ -1,0 +1,183 @@
+{
+  "protocol_sha256": "290a739b60faeea94948cfec25fc107184ee5907012255d241f18b853093c113",
+  "manifest_sha256": "9d4ea8ac39e34e14a2afa337e4b221818b04ba0f1441e9db5c70d0e640b33427",
+  "images": 391,
+  "label_counts": {
+    "Healthy": 103,
+    "Early_blight": 32,
+    "Late_blight": 32,
+    "Leaf Miner": 32,
+    "Diseased_unspecified": 192
+  },
+  "publisher_class_counts": {
+    "Healthy": 103,
+    "Early Blight": 32,
+    "Late Blight": 32,
+    "Leaf Miner": 32,
+    "Bacterial Spot": 32,
+    "Cercospora leaf mold": 32,
+    "Insect Damage": 32,
+    "Leaf Mold": 32,
+    "Spider Mites": 32,
+    "Tomato Leaf Curl Virus": 32
+  },
+  "file_unique": 391,
+  "decoded_unique": 391,
+  "exact_label_conflict_pixel_identities": 0,
+  "inferred_photo_families": 377,
+  "similarity_edges": 14,
+  "largest_inferred_family": 5,
+  "quarantined_images": 0,
+  "by_publisher_class": {
+    "Bacterial Spot": {
+      "images": 32,
+      "orientation": {
+        "landscape": 32
+      },
+      "camera": {
+        "iPhone 11": 32
+      },
+      "missing_capture_time": 0,
+      "exif_orientations": {
+        "1": 32
+      },
+      "inferred_families": 32
+    },
+    "Cercospora leaf mold": {
+      "images": 32,
+      "orientation": {
+        "landscape": 32
+      },
+      "camera": {
+        "iPhone 14": 17,
+        "iPhone 11": 15
+      },
+      "missing_capture_time": 0,
+      "exif_orientations": {
+        "1": 32
+      },
+      "inferred_families": 31
+    },
+    "Early Blight": {
+      "images": 32,
+      "orientation": {
+        "landscape": 32
+      },
+      "camera": {
+        "iPhone 11": 20,
+        "iPhone 14": 12
+      },
+      "missing_capture_time": 0,
+      "exif_orientations": {
+        "1": 32
+      },
+      "inferred_families": 32
+    },
+    "Healthy": {
+      "images": 103,
+      "orientation": {
+        "landscape": 103
+      },
+      "camera": {
+        "iPhone 11": 103
+      },
+      "missing_capture_time": 0,
+      "exif_orientations": {
+        "1": 103
+      },
+      "inferred_families": 100
+    },
+    "Insect Damage": {
+      "images": 32,
+      "orientation": {
+        "landscape": 32
+      },
+      "camera": {
+        "iPhone 11": 32
+      },
+      "missing_capture_time": 0,
+      "exif_orientations": {
+        "1": 32
+      },
+      "inferred_families": 31
+    },
+    "Late Blight": {
+      "images": 32,
+      "orientation": {
+        "landscape": 32
+      },
+      "camera": {
+        "iPhone 11": 32
+      },
+      "missing_capture_time": 0,
+      "exif_orientations": {
+        "1": 32
+      },
+      "inferred_families": 30
+    },
+    "Leaf Miner": {
+      "images": 32,
+      "orientation": {
+        "landscape": 32
+      },
+      "camera": {
+        "iPhone 11": 32
+      },
+      "missing_capture_time": 0,
+      "exif_orientations": {
+        "1": 32
+      },
+      "inferred_families": 32
+    },
+    "Leaf Mold": {
+      "images": 32,
+      "orientation": {
+        "landscape": 32
+      },
+      "camera": {
+        "iPhone 11": 32
+      },
+      "missing_capture_time": 0,
+      "exif_orientations": {
+        "1": 32
+      },
+      "inferred_families": 31
+    },
+    "Spider Mites": {
+      "images": 32,
+      "orientation": {
+        "landscape": 32
+      },
+      "camera": {
+        "iPhone 11": 32
+      },
+      "missing_capture_time": 0,
+      "exif_orientations": {
+        "1": 32
+      },
+      "inferred_families": 32
+    },
+    "Tomato Leaf Curl Virus": {
+      "images": 32,
+      "orientation": {
+        "landscape": 32
+      },
+      "camera": {
+        "iPhone 11": 32
+      },
+      "missing_capture_time": 0,
+      "exif_orientations": {
+        "1": 32
+      },
+      "inferred_families": 32
+    }
+  },
+  "source_role": "development_only",
+  "training_ready": false,
+  "training_used": false,
+  "model_predictions_opened": false,
+  "independence_established": false,
+  "acceptance_ready": false,
+  "remaining": "Cross-source and protected-reservation exact/geometric overlap audit before any fitting; no random source split; no disease target inferred for individual leaves.",
+  "elapsed_seconds": 13.864325073082
+}

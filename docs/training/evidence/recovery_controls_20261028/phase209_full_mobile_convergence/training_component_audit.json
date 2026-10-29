@@ -1,0 +1,10 @@
+{
+  "binary_bce": 0.13339675090977998,
+  "clinical": 0.359143420610053,
+  "ranking": 0.003231426043584475,
+  "draws": 256,
+  "training_only": true,
+  "augmented": false,
+  "seed": 220800,
+  "parent_checkpoint_sha256": "701e2749a461989e08d0d517cacd88e9cd893c05c33d9b956192447cd695b1b7"
+}

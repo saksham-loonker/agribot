@@ -1,9 +1,244 @@
 # Agribot training failure investigation, recovery, and Android integration
 
-Revision: 2026-10-24. Original handoff: 2026-10-15.
+**Latest continuation:** [auxiliary supervision and missing no-ROI coverage](NO_ROI_AND_AUXILIARY_REPAIR_20261029.md)
+records phases226–248, independent checkpoint backups, explicit attribution
+corrections, and a newly identified training-coverage gap. Whole-photo encoder
+adaptation included 20 Healthy and 15 nitrogen-deficiency training photos
+absent from earlier exact prefix caches. The matched adaptation and target-only
+OOF calibration also failed; this whole-photo family is stopped. Best safe development policy remains
+19/40 versus the unchanged28/40 gate. No model export or Android replacement.
+
+**Latest continuation:** [full-feature, bilinear and spatial-colour controls](FISHER_BILINEAR_SPATIAL_REPAIR_20261029.md)
+records phases 220-225: eight model controls, 80 additional saved epochs and 576
+cached routing checks. All fail the unchanged gate; best safe development policy
+remains 19/40 Healthy, below 28/40. No app model replacement. Preserve verified
+laptop backups and prediction caches; the 84 phase-221 PT files were offloaded
+only after independent member-SHA verification. Restore them before weight loading.
+The checkpoint-selection audit and post-execution source changes are explicit.
+
+**Latest continuation:** [density and held-source meta-learning](DENSITY_AND_META_REPAIR_20261029.md)
+records phases 215–219: eight model settings, 80 saved training epochs and 288
+cached policy evaluations. The best new fixed rule reaches 19/40 Healthy at
+zero new false Healthy on consumed development, below 28/40. All new controls
+are stopped; no replacement is qualified. Preserve the verified laptop backup,
+exact executed source bytes, unchanged gates and sealed provisional TCP data.
+
+**29 October continuation takes precedence:**
+[convergence, capacity and checkpoint handoff](CONVERGENCE_AND_CAPACITY_20261029.md)
+records phases 183–214, exhaustive replay, longer/full-encoder adaptation,
+unclipped-score stopping evidence, strict full-CNN checkpoint restoration and
+verified laptop backups. No replacement is qualified. The longer full-model,
+clinical-loss ablation and cached worst-group controls have all stopped
+unsuccessful. Preserve exact caches, completed evidence and original gates.
+
+**Latest continuation:** [field supervision and native-resolution repair](FIELD_AND_NATIVE_REPAIR_20261028.md).
+Phases 159–182 stop below unchanged recognition/safety gates. Preserve the exact
+caches and completed checkpoints; do not repeat failed objectives or export them.
+The suspected training-eligibility mismatch was audited and rejected. The newly
+audited publisher collection is entirely development-only. Full field replay,
+native full-block finetuning and expected logit rewards did not qualify a model.
+
+**28 October takes precedence:** [app delivery and bounded recognition continuation](COMPLETION_CHECKPOINT_20261028.md).
+See [latest repair evidence](RECOGNITION_REPAIR_20261028.md) for the clinical
+photo-weighting correction, CNN output semantics and completed semantic,
+native-resolution, normal-patch, alternative-CNN and hard-negative controls.
+None qualified a replacement. Preserve completed runs and exact-identity caches.
+The actual minified ARM64 release passes additional runtime smoke checks.
+The user cancelled recurring PR-monitor prompts; the scheduled task is disabled.
+AD and OLID are consumed development. Older sealed-OLID and monitoring
+instructions below are historical and must not override this checkpoint.
+
+**Normal app 2.0.4 is built:** [delivery and verification](NORMAL_APP_DELIVERY_20261027.md).
+The original release-baseline model is retained; no failed replacement is bundled.
+
+**Latest offline evidence:** [corrected cache joins and bounded supervised/reward
+controls](OFFLINE_RECOGNITION_20261027.md). Phase 89/91 are explicitly invalidated;
+their corrected successors and later CNN/reward controls still fail recognition.
+No failed replacement model may enter the normal app bundle.
+
+**Latest outcome:** [27 October acceptance failure and continuation](FIELD_ACCEPTANCE_20261027.md).
+The app passes 133 native unit and 22 emulator checks. The frozen recognition
+candidate fails fresh OLID Healthy recovery at 87/223, with no improvement.
+Both AD and OLID are now consumed development. PR #6 stays draft; no phone
+promotion is authorized by these results. Earlier “OLID sealed” notes are history.
+
+**Earlier development pass:** [historical development evidence](QUALIFIED_DEVELOPMENT_20261027.md).
+Phase 69 passes every unchanged development gate. Restored and actual LiteRT
+verification both preserve all 6,742 verdicts; shared model bytes are frozen.
+The later Android port passed verification; OLID acceptance then failed as
+described above. The model remains unqualified for promotion.
+
+**27 October takes precedence:** read the
+[app and recognition checkpoint](APP_RECOGNITION_CHECKPOINT_20261027.md).
+Copied DINO-tail adaptation meets Healthy minima but fails unsupported retention;
+whole-image confirmation restores safety but fails Healthy minima. Both are
+stopped. The large-cache hash OOM is repaired and cached prefixes audited.
+Native app repairs pass final local builds, lint and 20 emulator checks. AD is consumed, OLID is
+sealed, the phone is disconnected, and model export/integration remain deferred.
+
+**Latest checkpoint:** [PR 6 code review and bounded continuation](PR6_CODE_REVIEW_20261026.md). Useful cache, training and native safeguards are retained; image/cache integrity findings are repaired, and both CI jobs passed at `399418f`. The subsequent cached/spatial/routing and symptom-region controls have completed and stopped without qualifying recognition. Read the final section for measured results, unchanged gates and the four-hour PR review schedule. AD is consumed development, OLID stays sealed, and export/Android integration remain deferred. The disconnected phone and installed model are unchanged. Historical statements below about AD being unopened are superseded.
+
+Revision: 2026-10-26. Original handoff: 2026-10-15.
 Repository: https://github.com/saksham-loonker/agribot.
 Audience: the originating assistant returning later over SSH to a PC with an
 NVIDIA RTX 5090, or an implementation agent continuing the same investigation.
+
+## Current continuation - 25 October 2026
+
+**26 October takes precedence:** read
+[SIGLIP2_CONTINUATION_20261026.md](SIGLIP2_CONTINUATION_20261026.md).
+All MobileCLIP-dependent app candidates are blocked by the full Apple research
+license. The human-only phase-twelve data is now used for an independent
+Apache-2.0 SigLIP2 encoder; no restricted teacher parameters or logits are used.
+The corrected MobileCLIP union app replay reaches only 31/53 Healthy on new
+internal families, despite passing the older development cohorts. It remains a
+research result. The consumed 246 and all related families remain retired from
+benchmarking. The independent AD source is still unopened. The app is not fixed.
+
+**Newest work:** read [the MobileCLIP/data-revision continuation](MOBILECLIP_CONTINUATION_20261025.md).
+There are 285 valid completed controls before the next revision; eight invalid
+new-experiment fits are quarantined and excluded. A five-expert image prototype
+passes every development gate (94/129 field Healthy, 112/119 paper Healthy) and
+all 6,468 exact-graph verdict checks, but reaches only 51/95 on the consumed
+field cohort. It is not qualified. Phase twelve now retires that cohort and its
+787 related photos into grouped training/development; the old 246 must never be
+used as a benchmark for phase twelve. Original eight regression cohorts and the
+untouched independent AD source remain gates. New-data controls are running.
+Both APK variants rebuilt successfully with the unchanged interim model; no
+new model was installed. Python: 122 run, 121 passed, one skipped. Native CI
+passed `ed72afd`. Older reservation-exclusion statements describe earlier revisions.
+
+**Read the newest [leaf-scope continuation](LEAF_SCOPE_CONTINUATION_20261025.md)
+before the chronological notes below.** FieldPlant download and role/family audits
+are complete. There are 269 completed controls; the first copied-tail leaf control
+fails recall and a separate augmented control is running through
+`phase10_leaf_pipeline.py`. Weak TOM fitting
+targets are masked; regression labels are retained. The cold Abu Dhabi source
+remains unopened diagnostically. Leaf CNN/genus and four original-feature heads
+still fail end-to-end recall. An opt-in schema-four native/host contract protects
+the frozen reference's aggregate named disease verdict on the same observations.
+Its native unit tests, release lint and test-APK build pass; the Python suite ran
+121 tests (120 passed, one skipped). Phone remains on interim 2.0.2 and was absent
+from ADB at the latest check. Do not confuse a completed experiment or successful
+build with a qualified recognition improvement.
+
+**Newer continuation:** 262 trained controls are complete. Stronger supervised
+four-block and twelve-block Healthy branches reach 51/95 and 55/95 on the opened
+field regression, but false Healthy rises from 3 to 4; neither qualifies. A
+full-depth mixup control also fails development recall. The original disease
+branch remains frozen. Local Python tests: 119 passed, one skipped; Native CI
+passed `8f6fe18`. Phone remains 2.0.2.
+
+The next work is data scope rather than another blind loss sweep. FieldPlant's
+1,403-photo/2,786-leaf tomato subset is being acquired by
+`phase10_fieldplant.py`; check `phase10_fieldplant.log` and
+`phase10_fieldplant/download_complete.json`. Confirm actual whole-leaf box roles
+and audit overlaps/families before fitting. Broad blight/spot labels must not
+be invented named classes. The separate 502-image Abu Dhabi source is downloaded
+and family-audited but remains **unopened for diagnostic inference and fitting**;
+its 104 Healthy images span only 20 inferred families. Preserve that source for
+a future frozen evaluation. Read the campaign record's latest continuation and
+machine evidence before acting; older pending-job/reservation statements below
+are chronological history.
+
+**Latest decision:** 246 trained controls completed. The focal image-context
+candidate passed development gates, but failed the one-time prospective
+reservation: Healthy 44/95 versus interim 8/95, below the frozen 70% target.
+False Healthy remained 3; per-source disease/unsupported retention passed. It is
+rejected for deployment. The reservation is now opened regression data, including
+related capture families; do not reuse it as fresh acceptance after further
+tuning. The next experiment is broader supervised image-context backbone
+adaptation with the original nine-class branch frozen; later promotion needs
+new independent field evidence. Phase-seven controllers are complete. Phone
+2.0.2 remains installed. This decision supersedes the older progress notes below.
+
+Read [the current campaign record](RECOGNITION_CAMPAIGN_20261024.md) first.
+App 2.0.2 is installed and its phone parity checks pass, but field generalization
+is unresolved. Earlier adapted candidates failed SLIF and fresh TOM2024/paper-leaf
+acceptance. They were not installed. Those cohorts are now opened development
+data; do not call them independent again. See the campaign record's phase-five
+continuation for the current supervised training and untouched reservation.
+
+The attempted generic detector trial was stopped and quarantined. Its SLIF boxes
+describe disease/healthy regions, not whole-leaf boundaries, so the apparent
+0.61176 versus 0.01238 mAP gap compares different annotation targets and is invalid
+evidence of a detector failure. Do not resume those detector checkpoints. Separate
+logit-adjustment, expected-reward-plus-CE and PPO controls completed and failed
+retention when used alone. The full-ROI confirmation prototype improves their
+safety, but its fresh acceptance improvement was insufficient for promotion.
+Broader supervised adaptation now uses correctly scoped TOM2024 and paper-leaf
+classification data, with 246 previously unopened photos reserved before fitting.
+
+SSH alias: `agribot-5090`. Remote repository: `/home/genesis/agribot`.
+Python: `/home/genesis/.venvs/agribot-train/bin/python`. Artifact root:
+`/home/genesis/agribot-data/recognition_campaign_20261024`.
+Inspect `tmux list-windows -t agribot` and the campaign record's current checkpoint.
+The teacher audit, detector control, ROI adaptation, separate species/Healthy
+CNNs, five frozen-feature heads and monotone logit fusion have completed.
+There were 238 completed trained controls before the two current scene-negative
+continuations; policy threshold grids are not additional training runs.
+The best relative-safe ensemble reaches TOM2024 Healthy 87/129 (67.44%), below
+the 70% development target. A 97/129 alternative adds one unsupported-condition
+false Healthy call and is rejected under the unchanged gates. No new candidate
+has been installed. Do not infer that a more complex loss fixed recognition.
+
+Current controller: `phase7_negative_controls.py` under the artifact root;
+tmux window `scene-negatives`; log `phase7_negative_controls.log`. It trains
+16-epoch CE-negative-cost-8 and focal-gamma-2-negative-cost-4 image-level CNN
+continuations, then fits calibration-only logit fusion and replays opened app
+cohorts. Research outputs are in `phase6_roi/scene_*_selection/` and
+`phase6_roi/fusion_selection/`. Check completion files before restarting.
+All inference remains development-only. Whole-image image-label evidence is
+not a verified disease-free-plant diagnosis. Native schema-three full-ROI
+confirmation is implemented, including optional Unknown confirmation; the newer
+whole-frame ensemble has no native runtime/export implementation yet.
+`phase5/reserved_manifest.json` has not been inferred yet. The work is saved in
+draft PR #6, whose initial Android Native CI passed.
+`phase3_pipeline.sh` is stopped; its dataset is quarantined and new guards reject
+resumption/export. Full app replay and independent field acceptance remain
+mandatory before installation. The stable original comparator is under
+`original_reference/`; repository Android assets now contain the 2.0.2 interim
+model and must not be mistaken for the original classifier.
+
+Local authoring checkout: `.toolchains/recognition-work` on branch
+`research/recognition-campaign-20261024`. Cached native build checkout:
+`.toolchains/production-work`. The phone has the maintained package
+`com.sakshyam.agribot`; the obsolete `.field` package is disabled with data kept.
+Never clear either package's user data to install a candidate.
+
+## Execution update - 24 October 2026
+
+The subsequent exhaustive supervised, logit, reward, CNN, tree and isolated DINO
+adapter campaign is documented in
+[RECOGNITION_CAMPAIGN_20261024.md](RECOGNITION_CAMPAIGN_20261024.md). Read its
+candidate decisions and acceptance accounting before reusing any newly opened
+cohort. Earlier rejected candidates below remain historical context.
+
+Further supervised Healthy/retention experiments and a shared-backbone adapter
+were completed after the initial recovery. Broader grouped regression exposed
+three new disease-to-Healthy errors, so the adapter was rejected and the original
+classifier retained in app 2.0.1. Read
+[APP_VALIDATION_20261024.md](APP_VALIDATION_20261024.md) and its linked results
+before any further training. The former locked test has now been opened and
+must only be called regression data. Collect a fresh, adjudicated field set for
+the next acceptance decision; do not tune another confidence threshold on these
+same errors and describe it as independent validation.
+
+Also make colour decoding explicit. Some downloaded JPEGs carry an OPPO/Apple
+ICC profile. PIL's raw RGB conversion and Android BitmapFactory's colour-managed
+decode can produce different pixels even with identical normalization code.
+Phone parity fixtures must preserve the Python reference's RGB byte values in
+metadata-free PNGs; retain source identity separately. Test colour-managed photo
+import independently if that feature is added. The current camera pipeline does
+not decode these source JPEGs.
+
+The PC was inspected and the original trainable `field_vits2` checkpoint was
+recovered and verified against all 13 shipped golden fixtures. The v3 trainer
+was repaired, genuine head-only fine-tuning completed, and full development app
+replay performed. The candidate did not improve app Healthy recall, so production
+assets remain unchanged. Read the [recovery report](../../model_training/v3/RECOVERY_20261024.md)
+and its compact results before continuing; the unknown checkpoint/remote-state
+entries below describe the pre-investigation baseline, not current findings.
 
 ## Read first: the October 24 recovery mandate
 

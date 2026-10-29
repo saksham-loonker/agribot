@@ -1,0 +1,17 @@
+{
+  "parent_checkpoint_sha256": "701e2749a461989e08d0d517cacd88e9cd893c05c33d9b956192447cd695b1b7",
+  "parent_epoch": 39,
+  "parent_optimizer_and_rng_restored": true,
+  "parent_backup": {
+    "verified": true,
+    "backup_directory": "C:\\Users\\Manisha\\agribot\\.toolchains\\model-checkpoints\\phase206",
+    "best_sha256": "f83d840d6dbe8cdf62523809d53cada21de2a7d9e1de23abce47219440b93a76",
+    "last_sha256": "701e2749a461989e08d0d517cacd88e9cd893c05c33d9b956192447cd695b1b7",
+    "files": {
+      "best.pt": 93403181,
+      "last.pt": 280292733
+    },
+    "scope": "Exact phase206 selected model and final model/optimizer/RNG; independent laptop disk backup verified before rolling-state relocation"
+  },
+  "rolling_state_relocated": true
+}

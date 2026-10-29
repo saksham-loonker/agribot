@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.domain.scan.ReferenceDiseasePriorityTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-27T17:17:17" hostname="vewmet" time="0.003">
+  <properties/>
+  <testcase name="healthy recovery remains available when reference cannot identify a condition" classname="com.sakshyam.agribot.domain.scan.ReferenceDiseasePriorityTest" time="0.0"/>
+  <testcase name="healthy recovery cannot outvote an accumulated reference disease" classname="com.sakshyam.agribot.domain.scan.ReferenceDiseasePriorityTest" time="0.0"/>
+  <testcase name="reference disease priority requires the complete model contract" classname="com.sakshyam.agribot.domain.scan.ReferenceDiseasePriorityTest" time="0.001"/>
+  <testcase name="reference diseases survive changing quality and candidate predictions" classname="com.sakshyam.agribot.domain.scan.ReferenceDiseasePriorityTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

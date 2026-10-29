@@ -1,0 +1,65 @@
+{
+  "files": [
+    {
+      "path": "phase223_structured_leaf_cache/complete.json",
+      "sha256": "6fa78b2252146457ca0b6e46937476123e76e4575b03c3e09fbe19da6f7f6e81",
+      "bytes": 571
+    },
+    {
+      "path": "phase223_structured_leaf_cache/features.npy",
+      "sha256": "a56f05e9b3c04beff84ed1a5868490e41ba6f3ea26208c9fdc5c0f9c9bd5ca8a",
+      "bytes": 1294976
+    },
+    {
+      "path": "phase223_structured_leaf_cache/cache.sqlite",
+      "sha256": "7fbbd268c55a9a3560482a96121b9556c6676d64abece0b9e79c3470a5371ebb",
+      "bytes": 1728512
+    },
+    {
+      "path": "phase223_structured_leaf_cache/protocol.json",
+      "sha256": "b9778dc64fada363e4f6b8d8b35fa0c2d7775d2c70a801dd69fe76490da0884a",
+      "bytes": 457487
+    },
+    {
+      "path": "phase224_structured_kernels/result.json",
+      "sha256": "3d2c753ab9fa45df447b6dd6f2b681624fd8d9b1cee9421f727515283cb9e242",
+      "bytes": 1857
+    },
+    {
+      "path": "phase224_structured_kernels/protocol.json",
+      "sha256": "aabe229f8cf60372bb4628f3894704fdf3f6e9b99a4f8663434625e35fec3338",
+      "bytes": 93765
+    },
+    {
+      "path": "phase224_structured_kernels/native_plus_structured/predictions.npz",
+      "sha256": "e98a83e18dfc3d6c4b0097655b16796631acda54104073901b8468f3c2c72a23",
+      "bytes": 20309
+    },
+    {
+      "path": "phase224_structured_kernels/native_plus_structured/model.npz",
+      "sha256": "c6297996a7113a82a91eef8d64a3d6178901ddf062950d4519504ee91cade13e",
+      "bytes": 16148406
+    },
+    {
+      "path": "phase224_structured_kernels/structured_only/predictions.npz",
+      "sha256": "ddbcec3c73f9443201e1fd9c9ca487b22dd8c88f2e54232749c260f7477c2db5",
+      "bytes": 20309
+    },
+    {
+      "path": "phase224_structured_kernels/structured_only/model.npz",
+      "sha256": "71c6f10bde919661a7e88cd5c77605bdfd65bb672b44c87180dfb2c33bbb041d",
+      "bytes": 1472454
+    },
+    {
+      "path": "phase225_structured_kernel_policy/protocol.json",
+      "sha256": "350982786152ba99a979979f7a8b4db2c411060d6edf1c0213f72808c2b6f09d",
+      "bytes": 1573
+    },
+    {
+      "path": "phase225_structured_kernel_policy/result.json",
+      "sha256": "e1c7f44f7062f4bca16c22472434a3358423f56a60a75f0adc714003e10f8a1f",
+      "bytes": 76958
+    }
+  ],
+  "model_promoted": false
+}

@@ -1,0 +1,171 @@
+{
+ "outcome": "rejected_no_deployment",
+ "production_retained": {
+  "sha256": "12b9b17194ac5ba779126274d1a475016478e1b07ac6c2170fe51c2ef816af39",
+  "size_bytes": 86698908,
+  "changed": false
+ },
+ "selected_candidate": {
+  "run": "v3_logit_fix_s17",
+  "checkpoint": "/home/genesis/agribot-data/runs/v3_logit_fix_s17/best.pt",
+  "selected_epoch": 8,
+  "classifier_sha256": "fdd8cdadb203b225e0a772443a9d49baa9b09398cb016769432294265602acb9",
+  "size_bytes": 86702380,
+  "input_shape": [
+   1,
+   224,
+   224,
+   3
+  ],
+  "output_shape": [
+   1,
+   9
+  ],
+  "tflite_parity": {
+   "passed": true,
+   "worst_max_abs_logit_error": 1.8596649169921875e-05
+  },
+  "temperature": 0.9166198968887329,
+  "other_logit_bias": 0.75,
+  "energy_gate": false,
+  "calibration_split": "calib",
+  "calibration_objective": "known_macro_recall + 0.5*healthy_recall - false_healthy_rate + 0.25*other_recall (other_recall>=0.90 constraint)",
+  "calibration_metrics": {
+   "macro_recall": 0.6662394004119676,
+   "healthy_recall": 0.9152542372881356,
+   "false_healthy_rate": 0.016719745222929936,
+   "other_recall": 0.9399744572158365,
+   "nll": 0.44447749853134155,
+   "brier": 0.21363742085836082,
+   "ece15": 0.03390944801809216,
+   "reliability": [
+    {
+     "lo": 0.2,
+     "hi": 0.26666666666666666,
+     "n": 1,
+     "accuracy": 0.0,
+     "confidence": 0.2597063183784485
+    },
+    {
+     "lo": 0.26666666666666666,
+     "hi": 0.3333333333333333,
+     "n": 7,
+     "accuracy": 0.42857142857142855,
+     "confidence": 0.3038499057292938
+    },
+    {
+     "lo": 0.3333333333333333,
+     "hi": 0.4,
+     "n": 11,
+     "accuracy": 0.36363636363636365,
+     "confidence": 0.3784375488758087
+    },
+    {
+     "lo": 0.4,
+     "hi": 0.4666666666666667,
+     "n": 23,
+     "accuracy": 0.6086956521739131,
+     "confidence": 0.4410381317138672
+    },
+    {
+     "lo": 0.4666666666666667,
+     "hi": 0.5333333333333333,
+     "n": 34,
+     "accuracy": 0.4411764705882353,
+     "confidence": 0.5024669766426086
+    },
+    {
+     "lo": 0.5333333333333333,
+     "hi": 0.6,
+     "n": 51,
+     "accuracy": 0.47058823529411764,
+     "confidence": 0.5666296482086182
+    },
+    {
+     "lo": 0.6,
+     "hi": 0.6666666666666666,
+     "n": 44,
+     "accuracy": 0.6136363636363636,
+     "confidence": 0.633598804473877
+    },
+    {
+     "lo": 0.6666666666666666,
+     "hi": 0.7333333333333333,
+     "n": 60,
+     "accuracy": 0.7166666666666667,
+     "confidence": 0.7012345194816589
+    },
+    {
+     "lo": 0.7333333333333333,
+     "hi": 0.8,
+     "n": 69,
+     "accuracy": 0.7101449275362319,
+     "confidence": 0.7691143751144409
+    },
+    {
+     "lo": 0.8,
+     "hi": 0.8666666666666667,
+     "n": 130,
+     "accuracy": 0.7846153846153846,
+     "confidence": 0.8348633050918579
+    },
+    {
+     "lo": 0.8666666666666667,
+     "hi": 0.9333333333333333,
+     "n": 220,
+     "accuracy": 0.85,
+     "confidence": 0.9021798968315125
+    },
+    {
+     "lo": 0.9333333333333333,
+     "hi": 1.0,
+     "n": 665,
+     "accuracy": 0.98796992481203,
+     "confidence": 0.9750792980194092
+    }
+   ]
+  },
+  "run_args": {
+   "work": "/home/genesis/agribot-data/work",
+   "runs": "/home/genesis/agribot-data/runs",
+   "run_name": "v3_logit_fix_s17",
+   "model": "vit_small_patch14_dinov2.lvd142m",
+   "img": 224,
+   "cache_size": 256,
+   "epochs": 25,
+   "warmup_epochs": 2,
+   "unfreeze_blocks": 6,
+   "bs": 64,
+   "lr_head": 0.0003,
+   "lr_backbone": 2e-05,
+   "wd": 0.03,
+   "layer_decay": 0.8,
+   "drop_path": 0.1,
+   "loss": "logit_adjusted",
+   "sampling": "class_source",
+   "label_smoothing": 0.05,
+   "logit_tau": 0.5,
+   "max_class_weight": 4.0,
+   "seed": 17,
+   "resume": false,
+   "max_steps": 0,
+   "no_pretrained": false,
+   "compile": false
+  }
+ },
+ "data": {
+  "dev_items": 11646,
+  "train": 9054,
+  "val": 1277,
+  "calib": 1315,
+  "locked_test": 980,
+  "locked_test_eligible": 969,
+  "diagnostic": 952,
+  "diagnostic_eligible": 941
+ },
+ "notes": [
+  "Candidate selected on grouped development replay before the locked test was opened.",
+  "The shipped baseline was developed on these source families; the locked test is clean for the new model but not independent for the baseline.",
+  "Static repeated-frame app replay only; no camera or device benchmark."
+ ]
+}

@@ -1,0 +1,13 @@
+{
+  "protocol_sha256": "b293320776d02d58140c5284e0247eee4bd17c2506ad9335d991f227d1ed2a4e",
+  "tokens_sha256": "e8a77f33043a7d92206da85927e4519d01ee252852ebef90cf6e20735577f093",
+  "completed": 1618,
+  "reused": 723,
+  "new_input_embeddings": 895,
+  "original_transformer_audit_inputs": 16,
+  "maximum_original_cls_error": 3.4868717193603516e-06,
+  "elapsed_seconds": 9.975734896026552,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false
+}

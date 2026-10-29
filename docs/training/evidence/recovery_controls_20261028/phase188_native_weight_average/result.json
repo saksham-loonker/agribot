@@ -1,0 +1,36 @@
+{
+  "source_sha256": "b9f8d3623a94ca7365e3e74847fee998f4d420a23255bc57038db348b9a31fa2",
+  "protocol_sha256": "75b134bdd024a0ee3659dffa968a65bac98c327e63f5fe97a2db042f45c1e58c",
+  "checkpoint_sha256": "05ccd0f7b0b5eeed06781f9a81ed15eba42fc68d8cd41e04ee51aebaa125b9cc",
+  "best_decision": [
+    -3,
+    24,
+    10,
+    -1.9743151664733887
+  ],
+  "new_false_healthy_by_source": {
+    "plantvillage": 0,
+    "tlid": 1,
+    "bangladesh_classification": 0,
+    "olid_tomato": 2
+  },
+  "cheap_pass": false,
+  "passed": false,
+  "model_promoted": false,
+  "weight_average_inputs": {
+    "epoch_038.pt": "2bf6b07d28ee7d97de650db4aa98b1dc045cd32a2888e2561141539ae3b6075e",
+    "epoch_039.pt": "8b4688e083f7f1b51bece55257b16870b0de340a86749cef47644740d72b9781",
+    "epoch_040.pt": "cf2eb3c57fae880273b2033c6fa24dca5f133ebd4ff47ff9440eba4dc2547ac3",
+    "epoch_041.pt": "a3a717ea2fa0aa2d6856a46df9c8813f439bfc770b09817f94c303158cfb751e",
+    "epoch_042.pt": "c293354da120a9fd35e140f1eece9f8067e353c34eecdebf81cf2cd3bd7da215",
+    "epoch_043.pt": "f494a3a8f88e75203a59cdfb3b4ac2d5db5a57e9b87db730711754504a0dd09f",
+    "epoch_044.pt": "e7448c668fd73aa9c0f0fd71a47f4b6fcc614ca129a932b11f8a12adbd67195f",
+    "epoch_045.pt": "58f0c8e14abc4e57d52b699ce5e5dcc8c1a77ba86cbacfa25bfa716c36ec8701",
+    "epoch_046.pt": "102dfa4b82a116298e2273e306f62f574b266a010bfec89796aab9f8cdd753a8",
+    "epoch_047.pt": "a5cb06290f72898a2a1b8a44dd2d222061f0c74e6e994423f38bb4d55718fe80"
+  },
+  "elapsed_seconds": 92.86149590299465,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false
+}

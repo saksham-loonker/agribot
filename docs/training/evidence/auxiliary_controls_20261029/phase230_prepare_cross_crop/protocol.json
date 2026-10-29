@@ -1,0 +1,12 @@
+{
+  "source_doi": "10.5281/zenodo.8105154",
+  "archive": "cucumber.zip",
+  "bytes": 731075531,
+  "publisher_checksum": "md5:ee699a9bc84dcdd9c78cba37f79bf900",
+  "license": "CC BY4.0",
+  "role": "Entire cucumber collection auxiliary training only, never independent acceptance. Existing tomato AD/OLID consumed. No TCP labels or predictions opened.",
+  "hypothesis": "Auxiliary expert-labelled cross-crop nutrient stress may teach shared deficiency cues for the observed tomato Healthy/deficiency overlap; no cucumber labels are assigned to tomato or accepted as tomato app input.",
+  "candidate_scope": "Initial bounded frozen original encoder features and supervised auxiliary head/negative veto. No encoder adaptation or app export before unchanged recognition/safety gates.",
+  "required_before_training": "Safe archive catalog, exact/perceptual input overlap against quarantined/reserved identity manifests without viewing reserved labels, frozen clinical folder mapping and whole collection training role.",
+  "images_previously_opened": false
+}

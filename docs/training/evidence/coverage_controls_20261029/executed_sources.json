@@ -1,0 +1,65 @@
+{
+  "archive_sha256": "fc13d6d65fc47b71d1bb602043242f8a1f19387c1145f601228f592d5aae96b1",
+  "files": [
+    {
+      "path": "model_training/v3/phase244_whole_context_recovery.py",
+      "bytes": 7199,
+      "sha256": "2b23eebd51bf5b6ef7786ec62a344350e6acbda97b75eb3ae717579f157f99e9"
+    },
+    {
+      "path": "model_training/v3/phase245_all_photo_nonlinear_supervision.py",
+      "bytes": 8332,
+      "sha256": "2bd8778592c421306a1cc04a62c97b29423b655f584768510e19febbaadd36d2"
+    },
+    {
+      "path": "model_training/v3/phase246_whole_prefix_coverage.py",
+      "bytes": 7370,
+      "sha256": "21cffa967bda9aa54e58b1dbec518a1b0477a91e1ad93f8c1c3648db646a7cc6"
+    },
+    {
+      "path": "model_training/v3/phase247_all_photo_suffix_adaptation.py",
+      "bytes": 10161,
+      "sha256": "006039242af1598ad7d3c9bdae1b549c1c853e2dc1ff9f6b5416df139d24d159"
+    },
+    {
+      "path": "model_training/v3/phase248_target_scope_calibration.py",
+      "bytes": 9563,
+      "sha256": "712aa35c062ac2978a6845226f908e7ea84bdc8284e34464b68cf74f23cd562f"
+    },
+    {
+      "path": "model_training/v3/auxiliary_suffix_expert.py",
+      "bytes": 1537,
+      "sha256": "5648405d71a34e7d53f95358b61f0beff3a2a92bfc0774c40fbf471e5e0983be"
+    },
+    {
+      "path": "model_training/v3/prepared_overlap.py",
+      "bytes": 1099,
+      "sha256": "18aeafb9594dd53807634fe87be9a8a97d0e5b2a11b12faf4d037df8eda5dd4f"
+    },
+    {
+      "path": "model_training/v3/lossless_input_transport.py",
+      "bytes": 992,
+      "sha256": "2ec9eaea75895e5364945b562a7ea0d1c278fae2030cde87f79c38acb148e43b"
+    },
+    {
+      "path": "model_training/v3/clinical_replay_balance.py",
+      "bytes": 941,
+      "sha256": "42cc6e1dddd400b9405022ca43c95cb67519abfa27c5dbbd7311e2329281e724"
+    },
+    {
+      "path": "model_training/v3/cached_rbf.py",
+      "bytes": 711,
+      "sha256": "afb63e294368e908531c221241344b0911764667a42db34581fc125d65df4044"
+    },
+    {
+      "path": "model_training/v3/training_support.py",
+      "bytes": 7147,
+      "sha256": "83040dbb8b2c321c1f13be9d1e42bc8cae475c693d0274521b78a1b172d5b67c"
+    },
+    {
+      "path": "model_training/v3/conditional_recovery_policy.py",
+      "bytes": 522,
+      "sha256": "ca188430f54d143e92729ceef71ac82cf35b54663012cd3432d6528780b22b66"
+    }
+  ]
+}

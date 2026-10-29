@@ -41,3 +41,11 @@ dependencies {
     testImplementation "io.mockk:mockk:$mockkVersion"
     testImplementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinxSerializationJsonVersion"
 }
+
+// Several contract tests read the app's real manifest outside this module's
+// resources. A model-bundle change must invalidate their cached test result.
+tasks.withType(Test).configureEach {
+    inputs.file(rootProject.file("app/src/main/assets/model_manifest.json"))
+            .withPropertyName("bundledModelManifest")
+            .withPathSensitivity(org.gradle.api.tasks.PathSensitivity.RELATIVE)
+}

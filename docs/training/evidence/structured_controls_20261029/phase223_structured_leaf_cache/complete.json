@@ -1,0 +1,17 @@
+{
+  "source_sha256": "3aae18f307dacbd9c8652b2449431d5bec9cd7073e71f114a24eebdccf45bc8c",
+  "protocol_sha256": "b9778dc64fada363e4f6b8d8b35fa0c2d7775d2c70a801dd69fe76490da0884a",
+  "features_sha256": "a56f05e9b3c04beff84ed1a5868490e41ba6f3ea26208c9fdc5c0f9c9bd5ca8a",
+  "shape": [
+    2248,
+    144
+  ],
+  "new_encoder_inputs": 0,
+  "new_spatial_inputs": 2248,
+  "reused_spatial_inputs": 0,
+  "old_global_rows_reused": 2106,
+  "old_global_rows_bitwise_equal": true,
+  "invalid_foreground_rows": 0,
+  "elapsed_seconds": 117.35926113906316,
+  "acceptance_data_used": false
+}

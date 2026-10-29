@@ -1,0 +1,27 @@
+{
+  "protocol_sha256": "0e6658a45fcafefd053e130c93dc14ccb258c12be5f90fc7e2521a082300c52d",
+  "text_features_sha256": "5d8753a6522070095b8f383183e9bb1f33e68123f6e5ea2088ada3ee0ea9b2dd",
+  "range_manifest_sha256": "795badcf91020b10d19a2247a5c2312c17ae7aaf05a4f76afab14f7ea8de4330",
+  "used_token_ids_sha256": "3f9c50060432c37b196662b8842e260061314cfc7a0b60c73eddb8cb53a38c34",
+  "vision_weight_proof": {
+    "timm_tensors": 162,
+    "official_vision_tensors": 208,
+    "maximum_weight_error": 0.0,
+    "all_vision_weights_exact": true
+  },
+  "transformers_version": "5.20.2",
+  "torch_version": "2.11.0+cu128",
+  "vocabulary_rows_used": 103,
+  "original_vocabulary_rows": 256000,
+  "pruning_runtime_maximum_error": 0.0,
+  "new_image_encoder_inputs": 0,
+  "range_bytes": 714918784,
+  "elapsed_seconds": 240.47757662495133,
+  "full_parent_safetensors_downloaded": false,
+  "full_parent_file_hash_verified": false,
+  "transport": "HTTPS ranges at immutable commit; local range hashes and every vision tensor verified",
+  "model_promoted": false,
+  "ad_independent": false,
+  "olid_independent": false,
+  "acceptance_data_used": false
+}

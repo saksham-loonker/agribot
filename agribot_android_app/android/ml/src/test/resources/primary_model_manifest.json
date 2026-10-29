@@ -1,0 +1,152 @@
+{
+  "bundle_id": "agribot-v3-field-3b38256d-e11c8503",
+  "schema": 5,
+  "status": "FIELD RECOVERY CANDIDATE: qualification and release status tracked in release evidence",
+  "classifier": {
+    "members": [
+      {
+        "file": "disease_classifier_0.tflite",
+        "sha256": "3b38256d9a6a0b443423ade08d8c6da4460ced51e27f9295eb0d38380d47ad7a",
+        "arch": "Original DINOv2/CNN classifier with shared frozen-prefix Healthy auxiliaries",
+        "licence": "Apache-2.0",
+        "input": [
+          1,
+          224,
+          224,
+          3
+        ],
+        "output": [
+          1,
+          12
+        ]
+      }
+    ],
+    "combine": "log(mean_i softmax(logits_i)); then add other_logit_bias to index 8; label = argmax; confidence = softmax(z / temperature)",
+    "layout": "NHWC",
+    "preprocess": "crop(box,+10% pad, floor/ceil) -> centred square of short side -> canonical resize -> /255 -> ImageNet mean/std",
+    "mean": [
+      0.48500001430511475,
+      0.4560000002384186,
+      0.4059999883174896
+    ],
+    "std": [
+      0.2290000021457672,
+      0.2240000069141388,
+      0.22499999403953552
+    ],
+    "labels": [
+      "Early_blight",
+      "Healthy",
+      "Late_blight",
+      "Leaf Miner",
+      "Magnesium Deficiency",
+      "Nitrogen Deficiency",
+      "Pottassium Deficiency",
+      "Spotted Wilt Virus",
+      "Other"
+    ],
+    "other_index": 8,
+    "other_logit_bias": 0.75,
+    "temperature": 0.8814700841903687,
+    "energy_gate": false,
+    "energy_reject_below": null,
+    "energy_definition": "T * logsumexp(z[0:8] / T) with z = logits + bias",
+    "auxiliary_outputs": [
+      "compact_positive_H",
+      "compact_negative_H",
+      "adapted_dino_H"
+    ]
+  },
+  "detector": {
+    "file": "leaf_detector.tflite",
+    "sha256": "0a8c9128544726348a8400ec2f481b5985f47a778b601f4025be582eaa30a0d4",
+    "arch": "YOLOv9-T (LibreYOLO, MIT)",
+    "input": [
+      1,
+      320,
+      320,
+      3
+    ],
+    "layout": "NHWC",
+    "preprocess": "letterbox centred, pad 114, canonical resize, /255",
+    "output": [
+      1,
+      5,
+      2100
+    ],
+    "output_rows": [
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "score"
+    ],
+    "coordinate_space": "letterboxed_input_pixels",
+    "score_threshold": 0.35,
+    "nms_iou": 0.6,
+    "max_detections": 16,
+    "labels": [
+      "leaf"
+    ]
+  },
+  "resize_algorithm": "separable; scale>1 area-average, else bilinear half-pixel centres (see golden/canon_reference.py)",
+  "training": {
+    "architecture": "Shared-prefix phase69 recognition",
+    "restricted_teacher_used": false,
+    "original_classifier_bundle_sha256": "43e4bb99d6cb1164f2d63ca370316f1cb877271982ffb53fa1690a95d2fa0a47",
+    "original_classifier_tflite_sha256": "d70135804cf750341218e89a055370bef46a9b337951897b9f55f2570844ed39",
+    "candidate_sha256": "c296424a962276ece8d104faf5fdca71df470e595ca0dbbaa23c55aaa4de7874",
+    "mobile_development_verification_sha256": "364ca903f715dd44a37cd5e0701273e5d4a9db09d4fd026048daa5aa5ac0d24f",
+    "ad_role": "Consumed grouped training/development; permanently not independent",
+    "olid_used_for_training": false,
+    "primary_label_scope": "Publisher primary visible view; not every-leaf clinical health"
+  },
+  "primary_recovery": {
+    "policy": "phase69_whole_local",
+    "scope": "primary_visible_view",
+    "healthy_min": 0.85,
+    "negative_max": 0.001,
+    "genus_min": 0.5,
+    "natural_min": 0.5,
+    "compact_min": 0.1,
+    "closed_other_max": 0.1,
+    "closed_disease_mass_min": 0.6,
+    "strong_local_max": 0.2,
+    "partial_local_max": 0.3,
+    "partial_local_leaves": 2,
+    "isolated_min": 0.95,
+    "local_center_min": 0.5,
+    "whole_healthy_min": 0.5,
+    "whole_local_leaves": 2,
+    "minimum_frames": 7,
+    "maximum_leaves": 6,
+    "model": {
+      "file": "plant_context.tflite",
+      "sha256": "e11c8503398160ddc60d2dfa65cb28493a4458f5a079063a1c8f703102659d01",
+      "input": [
+        1,
+        224,
+        224,
+        3
+      ],
+      "output": [
+        1,
+        4
+      ],
+      "outputs": [
+        "positive_H",
+        "negative_H",
+        "tomato_genus",
+        "natural_context"
+      ],
+      "preprocess": "canonical_whole_letterbox_gray114",
+      "layout": "NHWC",
+      "licence": "Apache-2.0"
+    },
+    "leaf_views": [
+      "canonical_center_crop_pad10",
+      "canonical_full_roi_letterbox_pad10_gray114"
+    ],
+    "whole_dino_preprocess": "canonical_whole_letterbox_gray114"
+  }
+}

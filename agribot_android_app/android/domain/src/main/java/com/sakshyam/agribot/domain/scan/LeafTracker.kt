@@ -12,6 +12,7 @@ class LeafObservation(
     val probabilities: FloatArray,
     /** 0..1 frame quality (sharpness/exposure); scales how much this frame counts. */
     val frameQuality: Float = 1f,
+    val referenceProbabilities: FloatArray? = null,
 )
 
 /**

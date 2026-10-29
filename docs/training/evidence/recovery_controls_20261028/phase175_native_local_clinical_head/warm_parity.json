@@ -1,0 +1,11 @@
+{
+  "protocol_sha256": "66044af7fd5795b8aae08ecc38ca2de2847a2bf3502c5e1631241a3dbdbf6df4",
+  "maximum_probability_error": 2.384185791015625e-07,
+  "warm_decision": [
+    0,
+    14,
+    2,
+    -0.5776537656784058
+  ],
+  "zero_local_residual": true
+}

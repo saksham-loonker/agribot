@@ -1,0 +1,15 @@
+{
+  "protocol_sha256": "247c7d7326e998bb117d46a7769e787d56c52269e77f377e4fe4267e64fcf9a0",
+  "overlap_images": 0,
+  "edges": [],
+  "proposed_training_photos": 256,
+  "protected_images": 2461,
+  "new_fingerprints": 0,
+  "new_encoder_inputs": 0,
+  "clinical_predictions_opened": false,
+  "protected_training_used": false,
+  "acceptance_ready": false,
+  "independence_established": false,
+  "limitations": "Approximate geometry screen cannot establish capture independence. The protected reservation stays provisional and diagnostically sealed.",
+  "elapsed_seconds": 4.774592529982328
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.ml.vision.VisionManifestTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:48:31" hostname="LAPTOP-QCI1PSIL" time="0.006">
+  <properties/>
+  <testcase name="wrong Other mapping and enabled gate without threshold are rejected" classname="com.sakshyam.agribot.ml.vision.VisionManifestTest" time="0.003"/>
+  <testcase name="bundled manifest parses into a complete contract" classname="com.sakshyam.agribot.ml.vision.VisionManifestTest" time="0.001"/>
+  <testcase name="unsupported schema or detector layout is rejected" classname="com.sakshyam.agribot.ml.vision.VisionManifestTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sakshyam.agribot.ml.vision.EnsembleDecisionTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-26T12:48:31" hostname="LAPTOP-QCI1PSIL" time="0.011">
+  <properties/>
+  <testcase name="invalid calibration and non-finite logits fail instead of reporting a label" classname="com.sakshyam.agribot.ml.vision.EnsembleDecisionTest" time="0.002"/>
+  <testcase name="members are averaged in probability space" classname="com.sakshyam.agribot.ml.vision.EnsembleDecisionTest" time="0.001"/>
+  <testcase name="single member is a biased tempered softmax" classname="com.sakshyam.agribot.ml.vision.EnsembleDecisionTest" time="0.0"/>
+  <testcase name="energy gate rejects low-evidence inputs to Other" classname="com.sakshyam.agribot.ml.vision.EnsembleDecisionTest" time="0.0"/>
+  <testcase name="wrong class count is rejected" classname="com.sakshyam.agribot.ml.vision.EnsembleDecisionTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

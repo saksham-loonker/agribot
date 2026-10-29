@@ -1,0 +1,8 @@
+{
+  "input_manifest_sha256": "4be0186c26ae60fa92992c39d336159a7a06dd8f45fbaba1f2de820bbe48993d",
+  "sha256": "5c836a6b064f504172fbf518bdcffaa43746b6e17b51eadba0fb3a0cfa049e09",
+  "bytes": 109837558,
+  "unique_inputs": 247,
+  "all_float32_bits_roundtrip_equal": true,
+  "elapsed_seconds": 22.921000000089407
+}

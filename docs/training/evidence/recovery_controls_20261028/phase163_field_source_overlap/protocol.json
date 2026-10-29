@@ -1,0 +1,23 @@
+{
+  "acceptance_data_used": false,
+  "feature_version": "0402728551b86a48f0892deb94fa66a928e1adb39c2e35f8aa0c920f4f65d797",
+  "gallery_entries": 40625,
+  "gallery_identity_sha256": "51e2be45e07ebe97e019466886136543d43773455bab598e626fa33122c93630",
+  "maximum_candidates": 20,
+  "minimum_votes": 6,
+  "mirrored_queries": true,
+  "neighbors": 8,
+  "new107_manifest_sha256": "8320717fe724418471f58a2f980888bc535d08c93931a5808d6ab24b3f378107",
+  "new_encoder_inputs": 0,
+  "old_gallery_protocol_sha256": "07e5e21a8486490a73798787210f2712caee4371a46353486124466a5d88ccb4",
+  "protected_clinical_predictions_opened": false,
+  "protected_manifest_sha256": "82207b5426d888c01cca869bd944fdf43c67851c2f4c91fd69fb635cf3dae680",
+  "quarantine": "Exact prior encoded-file identity or geometrically verified crop/augmentation match removes the complete inferred new-photo family; all old fitting/validation/consumed and provisional protected photos are included",
+  "query_images": 391,
+  "retrieval_features": 64,
+  "source_profile_sha256": "91de3c5f8db90d87e12c32d8342d870aa1f5ea601f086af4a7de4f3acdbacbe0",
+  "source_role": "development_only",
+  "source_sha256": "d8454be97d03857f2be2104e77172149490d52d12cce5911a00dee2fbf67ed3b",
+  "unique_target_correspondences": true,
+  "verifier_sha256": "401b44e8394852df5a77fef599b72f815a4c5fbb96be58677ff0359c103f6498"
+}

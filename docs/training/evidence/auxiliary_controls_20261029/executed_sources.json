@@ -1,0 +1,105 @@
+{
+  "archive_sha256": "c17ba10d5b0d22b7357a0c59d902fda2c9e7afd089170a648ea168f9689c0f5e",
+  "files": [
+    {
+      "path": "model_training/v3/phase231_cross_crop_features.py",
+      "bytes": 10186,
+      "sha256": "00753eab8df0d5b563e8467f62b098a05f180aef5f4d6e25f65300acb5864107"
+    },
+    {
+      "path": "model_training/v3/phase232_auxiliary_nutrition_heads.py",
+      "bytes": 11711,
+      "sha256": "3eb6872d5b5a2e08783728b89dbc309eb6823285150e2e6e76cee7d0cbe97bb2"
+    },
+    {
+      "path": "model_training/v3/phase233_deployment_scope_calibration.py",
+      "bytes": 6116,
+      "sha256": "cf51301806b256fae331a5d27d8b2984239000e810418b9110a0ab8522c8a7db"
+    },
+    {
+      "path": "model_training/v3/phase234_auxiliary_nutrition_policy.py",
+      "bytes": 7762,
+      "sha256": "2b540181f0b43f2b79ee619b1c8e1ecafe1d55a99ff5646570439418c6332953"
+    },
+    {
+      "path": "model_training/v3/phase235_scope_attribution.py",
+      "bytes": 4763,
+      "sha256": "aec720fc3e52788eb9595c558c175463ea721d4108b9b687cc169a4e1616ea92"
+    },
+    {
+      "path": "model_training/v3/phase236_whole_primary_probe.py",
+      "bytes": 5916,
+      "sha256": "066f68e995f535277c7335c7739fea04a2a1e00f7f5b984d5f5201ac0ec8d62a"
+    },
+    {
+      "path": "model_training/v3/phase237_auxiliary_prefix_cache.py",
+      "bytes": 13259,
+      "sha256": "37306733b18384798457124036912b65ed24453746ccac29851bee80b6abdfee"
+    },
+    {
+      "path": "model_training/v3/phase238_auxiliary_encoder_adaptation.py",
+      "bytes": 11021,
+      "sha256": "64462d67d2975c3c4b299897cf49a4a6e789a74b30fa5b59af0495d2b341a030"
+    },
+    {
+      "path": "model_training/v3/phase239_auxiliary_encoder_policy.py",
+      "bytes": 7384,
+      "sha256": "568dbf58f9ce73607256a22902e5d33cc92c4c8fbdbc56bb993350885676a658"
+    },
+    {
+      "path": "model_training/v3/phase240_local_visual_veto.py",
+      "bytes": 7147,
+      "sha256": "f4178916eb1fe60148bb7264fb602b0735963a3dc03959a0b511ea46c0f793e2"
+    },
+    {
+      "path": "model_training/v3/phase241_cached_visual_policy.py",
+      "bytes": 6929,
+      "sha256": "8c61070c459a8d03c662585bc6c4a33874609cefaa30569cd4f2a7f986d2a810"
+    },
+    {
+      "path": "model_training/v3/phase242_training_coverage_audit.py",
+      "bytes": 3163,
+      "sha256": "317a2949243d80c0b2fd1d46f86246de83f045f1af99aebf4528e56fd0e1d82d"
+    },
+    {
+      "path": "model_training/v3/phase243_all_photo_context_supervision.py",
+      "bytes": 8548,
+      "sha256": "5adee0a7e8cf2a5ebfa7df384d9c84cd3f51f6d12705ba78d478ee48be243227"
+    },
+    {
+      "path": "model_training/v3/auxiliary_suffix_expert.py",
+      "bytes": 1537,
+      "sha256": "5648405d71a34e7d53f95358b61f0beff3a2a92bfc0774c40fbf471e5e0983be"
+    },
+    {
+      "path": "model_training/v3/prepared_overlap.py",
+      "bytes": 1099,
+      "sha256": "18aeafb9594dd53807634fe87be9a8a97d0e5b2a11b12faf4d037df8eda5dd4f"
+    },
+    {
+      "path": "model_training/v3/lossless_input_transport.py",
+      "bytes": 992,
+      "sha256": "2ec9eaea75895e5364945b562a7ea0d1c278fae2030cde87f79c38acb148e43b"
+    },
+    {
+      "path": "model_training/v3/clinical_replay_balance.py",
+      "bytes": 941,
+      "sha256": "42cc6e1dddd400b9405022ca43c95cb67519abfa27c5dbbd7311e2329281e724"
+    },
+    {
+      "path": "model_training/v3/cached_rbf.py",
+      "bytes": 711,
+      "sha256": "afb63e294368e908531c221241344b0911764667a42db34581fc125d65df4044"
+    },
+    {
+      "path": "model_training/v3/training_support.py",
+      "bytes": 7147,
+      "sha256": "83040dbb8b2c321c1f13be9d1e42bc8cae475c693d0274521b78a1b172d5b67c"
+    },
+    {
+      "path": "model_training/v3/conditional_recovery_policy.py",
+      "bytes": 522,
+      "sha256": "ca188430f54d143e92729ceef71ac82cf35b54663012cd3432d6528780b22b66"
+    }
+  ]
+}
